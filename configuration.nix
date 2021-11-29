@@ -162,6 +162,7 @@
     bat
     curlie
     delta
+    dig
     fd
     fzf
     gcc
@@ -202,6 +203,14 @@
 
   # Disable DNSSEC for now
   services.resolved.dnssec = "false";
+
+  # Add script for split DNS when connecting to corporate VPN
+  environment.etc = {
+    "vpnc/post-connect.d/resolved" = {
+      text = "resolvectl default-route \${TUNDEV} false";
+      mode = "0755";
+    };
+  };
 
   # -- SYSTEM
   system = {
