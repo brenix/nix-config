@@ -171,6 +171,7 @@
     gnumake
     gnupg
     go
+    home-manager
     htop
     lsof
     nmap
