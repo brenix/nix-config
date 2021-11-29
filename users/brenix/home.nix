@@ -2,6 +2,7 @@
   imports = [
     ../../modules/settings.nix
     ./dunst.nix
+    ./firefox.nix
   ];
 
   # Enable home-manager
@@ -51,9 +52,6 @@
   # BSPWM
   # Bash
   # Firefox
-  programs.firefox = {
-    enable = true;
-  };
 
   # Git
   programs.git = {

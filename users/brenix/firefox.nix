@@ -1,5 +1,10 @@
-pkgs:
-{
+{ pkgs, ... }: {
+
+  imports = [
+    ../../modules/settings.nix
+  ];
+
+  programs.firefox = {
     enable = true;
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         decentraleyes
@@ -8,7 +13,7 @@ pkgs:
         grammarly
         h264ify
     ];
-    profiles.${config.settings.username} = {
+    profiles.default = {
         settings = {
           "app.normandy.enabled" = false;
           "app.shield.optoutstudies.enabled" = false;
@@ -111,9 +116,9 @@ pkgs:
           "signon.rememberSignons" = false;
           "svg.context-properties.content.enabled" = true;
           "toolkit.cosmeticAnimations.enabled" = false;
-          "toolkit.legacyUserProfileCustomizations.stylesheets" = rue;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
-        userChrome = "
+        userChrome = ''
           /* Hide extra icons in address bar */
           #page-action-buttons > *:not(#star-button-box),
           .urlbar-history-dropmarker {
@@ -187,6 +192,7 @@ pkgs:
           }
 
           /* END Firefox Ultra Compact Mode */
-        ";
+        '';
     };
+  };
 }
