@@ -22,9 +22,9 @@ with lib;
         default = false;
       };
       browser = mkOption {
-        default = "firefox;"
+        default = "firefox";
         type = with types; uniq str;
-      }
+      };
       terminal = mkOption {
         default = "alacritty";
         type = with types; uniq str;
