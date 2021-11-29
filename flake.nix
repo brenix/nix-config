@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-colors = {
+      url = "github:misterio77/nix-colors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Neovim nightly
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
@@ -22,7 +27,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, neovim-nightly-overlay, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, nix-colors, neovim-nightly-overlay, ... }@inputs:
     let
       overlays = [
         inputs.neovim-nightly-overlay.overlay
