@@ -21,6 +21,10 @@ with lib;
         type = types.bool;
         default = false;
       };
+      browser = mkOption {
+        default = "firefox;"
+        type = with types; uniq str;
+      }
       terminal = mkOption {
         default = "alacritty";
         type = with types; uniq str;

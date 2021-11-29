@@ -8,6 +8,14 @@
 
   # -- ENVIRONMENT
 
+  # Session variables
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    LC_CTYPE = "en_US.UTF-8";
+    BROWSER = config.settings.browser;
+    TERM = config.settings.terminal;
+  };
+
   # XDG user dirs
   xdg.userDirs = {
     enable = true;
@@ -67,7 +75,7 @@
   # Polybar
   # Rofi
   # SSH
-  
+
   # Starship
   programs.starship = {
     enable = true;
