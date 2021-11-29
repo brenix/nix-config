@@ -120,9 +120,9 @@
   # Enable systemd-resolved
   services.resolved.enable = true;
 
-  # Logind
+  # Increase tmpfs storage for /run/user/<uid>
   services.logind.extraConfig = ''
-    RuntimeDirectorySize=8G
+    RuntimeDirectorySize=50%
   '';
 
   # -- FONTS
