@@ -13,7 +13,6 @@
     EDITOR = "nvim";
     LC_CTYPE = "en_US.UTF-8";
     BROWSER = config.settings.browser;
-    TERM = config.settings.terminal;
   };
 
   # XDG user dirs
