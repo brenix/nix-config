@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ../../modules/settings.nix
+    ./dunst.nix
   ];
 
   # Enable home-manager
