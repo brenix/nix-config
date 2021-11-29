@@ -97,6 +97,21 @@
         "type": "github"
       }
     },
+    "nix-colors": {
+      "locked": {
+        "lastModified": 1637524031,
+        "narHash": "sha256-6dklAb7obavjpJpWJ3KSno/jvg8TV89vzvxz2BKQdsw=",
+        "owner": "misterio77",
+        "repo": "nix-colors",
+        "rev": "c4feb9effb45f05b1a0e510aa51fbc7c358b271f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "misterio77",
+        "repo": "nix-colors",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1637841632,
@@ -132,6 +147,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs",
         "nur": "nur"
       }
