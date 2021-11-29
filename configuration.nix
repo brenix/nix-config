@@ -190,8 +190,18 @@
   # Dont prompt for sudo password
   security.sudo.wheelNeedsPassword = false;
 
+
+  # -- NETWORKING
+
   # Disable firewall
   networking.firewall.enable = false;
+
+  # Enable systemd-networkd
+  networking.dhcpcd.enable = false;
+  systemd.network.enable = true;
+
+  # Disable DNSSEC for now
+  services.resolved.dnssec = "false";
 
   # -- SYSTEM
   system = {

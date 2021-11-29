@@ -6,5 +6,8 @@
   /* ]; */
 
   # Enable DHCP
-  networking.interfaces.enp7s0.useDHCP = true;
+  systemd.network.networks.enp7s0 = {
+    matchConfig = { Name = "enp7s0"; };
+    DHCP = "yes";
+  };
 }

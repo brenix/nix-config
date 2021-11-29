@@ -30,5 +30,8 @@
   virtualisation.vmware.guest.enable = true;
 
   # Enable DHCP
-  networking.interfaces.ens33.useDHCP = true;
+  systemd.network.networks.ens33 = {
+    matchConfig = { Name = "ens33"; };
+    DHCP = "yes";
+  };
 }

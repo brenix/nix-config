@@ -20,5 +20,8 @@
   services.qemuGuest.enable = true;
 
   # Enable DHCP
-  networking.interfaces.enp1s0.useDHCP = true;
+  systemd.network.networks.enp1s0 = {
+    matchConfig = { Name = "enp1s0"; };
+    DHCP = "yes";
+  };
 }
