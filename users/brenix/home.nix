@@ -68,7 +68,15 @@
   # Rofi
   # SSH
   # Starship
+
   # TMUX
+  programs.tmux = {
+    enable = true;
+    prefix = "C-x";
+    terminal = "tmux-256color";
+    escapeTime = 0;
+  };
+
   # Terraform
   # ZSH
 }
