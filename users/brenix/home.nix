@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ../../modules/settings.nix
+    ./alacritty.nix
     ./dunst.nix
     ./firefox.nix
   ];
@@ -31,8 +32,6 @@
   };
 
   # -- APPLICATIONS
-
-  # Alacritty
 
   # Autocutsel
   systemd.user.services.autocutsel = {

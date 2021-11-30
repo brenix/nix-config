@@ -5,7 +5,6 @@
 
   # Packages to be installed
   environment.systemPackages = with pkgs; [
-    alacritty
     autocutsel
     awless
     aws-vault
