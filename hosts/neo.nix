@@ -9,6 +9,4 @@
   ];
 
   networking.hostName = "neo";
-
-  fonts.fontconfig.dpi = 109;
 }
