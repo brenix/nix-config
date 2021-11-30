@@ -5,6 +5,7 @@
     ./dunst.nix
     ./firefox.nix
     ./git.nix
+    #./polybar.nix
   ];
 
   # Enable home-manager

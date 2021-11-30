@@ -6,6 +6,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      dpi = { x = config.settings.dpi; y = config.settings.dpi; };
       env.term = "xterm-256color";
       scrolling.history = 10000;
       scrolling.multiplier = 3;

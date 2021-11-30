@@ -9,6 +9,7 @@
 
   settings = {
     vm = true;
+    primaryDisplay = "Virtual-1";
   };
 
   networking.hostName = "dozer";

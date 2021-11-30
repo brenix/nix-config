@@ -21,6 +21,10 @@ with lib;
         type = types.bool;
         default = false;
       };
+      primaryDisplay = mkOption {
+        default = "";
+        type = with types; uniq str;
+      };
       browser = mkOption {
         default = "firefox";
         type = with types; uniq str;
@@ -36,6 +40,10 @@ with lib;
       fontSize = mkOption {
         default = 12.0;
         type = types.float;
+      };
+      dpi = mkOption {
+        default = 109;
+        type = types.int;
       };
       profile = mkOption {
         default = "brenix";
