@@ -4,6 +4,7 @@
     ./alacritty.nix
     ./dunst.nix
     ./firefox.nix
+    ./git.nix
   ];
 
   # Enable home-manager
@@ -32,35 +33,6 @@
   };
 
   # -- APPLICATIONS
-
-  # Autocutsel
-  systemd.user.services.autocutsel = {
-    Unit.Description = "AutoCutSel";
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      Type = "forking";
-      Restart = "always";
-      RestartSec = 2;
-      ExecStartPre = "${pkgs.autocutsel}/bin/autocutsel -fork";
-      ExecStart = "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
-    };
-  };
-
-  # BSPWM
-  # Bash
-  # Firefox
-
-  # Git
-  programs.git = {
-    enable = true;
-    userName = config.settings.name;
-    userEmail = config.settings.email;
-    extraConfig = {
-      init = { defaultBranch = "main"; };
-    };
-  };
 
   # GPG
   programs.gpg = {
@@ -128,4 +100,21 @@
 
   # Terraform
   # ZSH
+
+  # -- SERVICES
+
+  # Autocutsel
+  systemd.user.services.autocutsel = {
+    Unit.Description = "AutoCutSel";
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      Type = "forking";
+      Restart = "always";
+      RestartSec = 2;
+      ExecStartPre = "${pkgs.autocutsel}/bin/autocutsel -fork";
+      ExecStart = "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
+    };
+  };
 }

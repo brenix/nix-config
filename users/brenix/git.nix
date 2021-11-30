@@ -1,0 +1,61 @@
+{ config, pkgs, ...}: {
+
+  imports = [
+    ../../modules/settings.nix
+  ];
+
+  programs.git = {
+    enable = true;
+    userName = config.settings.name;
+    userEmail = config.settings.email;
+
+    aliases = {
+      publish = "!git push -u origin $(git branch-name)";
+      unpublish = "!git push origin :$(git branch-name)";
+      da = "!git checkout main && bit branch --no-color | grep -v 'main' | xargs -n 1 git branch -d";
+    };
+    delta = {
+      enable = true;
+      options = {
+        minus-style = "black #ffebe9";
+        minus-emph-style = "black #f7b9b9";
+        plus-style = "black #e6ffec";
+        plus-emph-style = "black #abf2bc";
+        syntax-theme = "none";
+      };
+    };
+    ignores = [
+      # compiled source files
+      "*.com" "*.class" "*.dll" "*.exe" "*.o" "*.so"
+      # compressed files
+      "*.7zip" "*.dmg" "*.gz" "*.iso" "*.jar" "*.rar" "*.tar" "*.xz" "*.zip"
+      # logs
+      "*.log" "*.sql" "*.sqlite"
+      # os generated files
+      ".DS_Store" ".DS_Store?" "._*" ".Spotlight-V100" ".Trashes" "ehthumbs.db" "Thumbs.db"
+    ];
+    includes = [
+      {
+        path = "~/work/.gitconfig";
+        condition = "gitdir:~/work/";
+        # TODO: add contents in a sane way without exposing sensitive text
+        # contents = {};
+      }
+    ];
+    extraConfig = {
+      apply = { whitespace = "strip"; };
+      branch = { autosetuprebase = "always"; };
+      color."branch" = { current = "normal reverse"; local = "normal"; remote = "green"; };
+      color."diff" = { meta = "white bold"; frag = "magenta bold"; old = "red bold"; new = "green bold"; };
+      color."status" = { added = "green"; changed = "magenta"; untracked = "white"; };
+      core = { preloadindex = true; whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol"; };
+      diff."sopsdiffer" = { textconv = "sops -d"; };
+      format = { pretty = "%C(yellow)%H%Creset %C(magenta)%cd%Creset %d %s %C(green)%an"; };
+      init = { defaultBranch = "main"; };
+      log = { date = "short"; };
+      protocol = { version = 2; };
+      pull = { rebase = true; };
+      push = { default = "simple"; };
+    };
+  };
+}
