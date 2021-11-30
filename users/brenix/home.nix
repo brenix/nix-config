@@ -40,11 +40,15 @@
     enable = true;
   };
 
-  # NVIM
-  # Openbox
-  # Polybar
-  # Rofi
-  # SSH
+  # TODO: Autorandr
+  # TODO: NVIM
+  # TODO: Openbox
+  # TODO: Polybar
+  # TODO: Rofi
+  # TODO: SSH
+  # TODO: Terraform
+  # TODO: ZSH
+
 
   # Starship
   programs.starship = {
@@ -98,9 +102,6 @@
     terminal = "tmux-256color";
     escapeTime = 0;
   };
-
-  # Terraform
-  # ZSH
 
   # -- SERVICES
 
