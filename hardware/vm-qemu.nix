@@ -24,4 +24,7 @@
     matchConfig = { Name = "enp1s0"; };
     DHCP = "yes";
   };
+
+  # Install qxl video driver
+  environment.systemPackages = [ pkgs.xorg.xf86videoqxl ];
 }
