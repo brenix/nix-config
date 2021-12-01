@@ -14,6 +14,7 @@
     buildah
     chamber
     cosign
+    dconf
     discord
     dunst
     feh
