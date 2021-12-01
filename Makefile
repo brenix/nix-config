@@ -9,7 +9,7 @@ $(error NIX_CONFIG is not set)
 endif
 
 switch:
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#$(NIX_CONFIG)"
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#$(NIX_CONFIG)" --upgrade
 
 test:
 	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test
