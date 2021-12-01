@@ -58,6 +58,12 @@
     escapeTime = 0;
   };
 
+  programs.rofi = {
+    enable = true;
+    font = "Terminus 10";
+    theme = "paper-float";
+  };
+
   # -- SERVICES
 
   # Autocutsel
@@ -74,4 +80,6 @@
       ExecStart = "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
     };
   };
+
+  services.flameshot.enable = true;
 }

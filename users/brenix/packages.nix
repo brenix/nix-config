@@ -17,7 +17,6 @@
     discord
     dunst
     feh
-    flameshot
     fluxcd
     go
     gomplate
