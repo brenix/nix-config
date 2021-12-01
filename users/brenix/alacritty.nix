@@ -30,6 +30,34 @@
       window.padding.x = 0;
       window.padding.y = 0;
       decorations = "none";
+      colors = {
+        primary.background = "#ffffff";
+        primary.foreground = "#1b1f23";
+        normal = {
+          black = "#24292e";
+          red = "#cb2431";
+          green = "#22863a";
+          yellow = "#a04100";
+          blue = "#005cc5";
+          magenta = "#4c2889";
+          cyan = "#0a3069";
+          white = "#959da5";
+        };
+        bright = {
+          black = "#959da5";
+          red = "#d73a49";
+          green = "#28a745";
+          yellow = "#c24e00";
+          blue = "#0366d6";
+          magenta = "#6f42c1";
+          cyan = "#0a3069";
+          white = "#d1d5da";
+        };
+        indexed_colors = [
+          { index = 16; color = "#d18616"; }
+          { index = 17; color = "#cd3131"; }
+        ];
+      };
     };
   };
 }
