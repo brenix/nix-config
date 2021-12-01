@@ -34,6 +34,24 @@
     templates = "$HOME/downloads/templates/";
   };
 
+  # GTK
+  gtk = {
+    enable = true;
+    font = {
+      package = pkgs.corefonts;
+      name = "Verdana";
+      size = 10;
+    };
+    iconTheme = {
+      package = pkgs.arc-icon-theme;
+      name = "Arc";
+    };
+    theme = {
+      package = pkgs.arc-theme;
+      name = "Arc";
+    };
+  };
+
   # -- APPLICATIONS
 
   # GPG
