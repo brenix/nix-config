@@ -191,6 +191,7 @@
     tcpdump
     tmux
     wireguard
+    xorg.xdpyinfo
     zsh
     zsh-completions
   ];
