@@ -155,15 +155,6 @@
     })
   ];
 
-  # -- ENVIRONMENT
-
-  # Common environment variables
-  environment.variables = {
-    GDK_SCALE = "1";
-    GDK_DPI_SCALE = "1";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-  };
-
   # -- PACKAGES
 
   # Install some common packages
@@ -202,7 +193,6 @@
 
   # Dont prompt for sudo password
   security.sudo.wheelNeedsPassword = false;
-
 
   # -- NETWORKING
 

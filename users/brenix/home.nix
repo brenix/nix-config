@@ -40,7 +40,7 @@
     font = {
       package = pkgs.corefonts;
       name = "Verdana";
-      size = 9;
+      size = 10;
     };
     iconTheme = {
       package = pkgs.arc-icon-theme;
