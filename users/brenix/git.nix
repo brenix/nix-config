@@ -1,4 +1,4 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, ... }: {
 
   imports = [
     ../../modules/settings.nix
@@ -6,6 +6,7 @@
 
   programs.git = {
     enable = true;
+
     userName = config.settings.name;
     userEmail = config.settings.email;
 
@@ -14,6 +15,7 @@
       unpublish = "!git push origin :$(git branch-name)";
       da = "!git checkout main && bit branch --no-color | grep -v 'main' | xargs -n 1 git branch -d";
     };
+
     delta = {
       enable = true;
       options = {
@@ -24,16 +26,39 @@
         syntax-theme = "none";
       };
     };
+
     ignores = [
       # compiled source files
-      "*.com" "*.class" "*.dll" "*.exe" "*.o" "*.so"
+      "*.com"
+      "*.class"
+      "*.dll"
+      "*.exe"
+      "*.o"
+      "*.so"
       # compressed files
-      "*.7zip" "*.dmg" "*.gz" "*.iso" "*.jar" "*.rar" "*.tar" "*.xz" "*.zip"
+      "*.7zip"
+      "*.dmg"
+      "*.gz"
+      "*.iso"
+      "*.jar"
+      "*.rar"
+      "*.tar"
+      "*.xz"
+      "*.zip"
       # logs
-      "*.log" "*.sql" "*.sqlite"
+      "*.log"
+      "*.sql"
+      "*.sqlite"
       # os generated files
-      ".DS_Store" ".DS_Store?" "._*" ".Spotlight-V100" ".Trashes" "ehthumbs.db" "Thumbs.db"
+      ".DS_Store"
+      ".DS_Store?"
+      "._*"
+      ".Spotlight-V100"
+      ".Trashes"
+      "ehthumbs.db"
+      "Thumbs.db"
     ];
+
     includes = [
       {
         path = "~/work/.gitconfig";
@@ -42,6 +67,7 @@
         # contents = {};
       }
     ];
+
     extraConfig = {
       apply = { whitespace = "strip"; };
       branch = { autosetuprebase = "always"; };
