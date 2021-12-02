@@ -5,6 +5,7 @@
     ./dunst.nix
     ./firefox.nix
     ./git.nix
+    ./polybar.nix
     ./starship.nix
     ./tmux.nix
   ];

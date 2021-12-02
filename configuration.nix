@@ -137,6 +137,7 @@
     gohufont
     hack-font
     liberation_ttf
+    material-icons
     noto-fonts
     open-sans
     roboto
