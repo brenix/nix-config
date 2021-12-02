@@ -67,6 +67,7 @@
   # TODO: SSH
   # TODO: Terraform
   # TODO: ZSH
+  # TODO: dircolors
 
   programs.rofi = {
     enable = true;
