@@ -69,7 +69,6 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    dpi = config.settings.dpi;
 
     # Fast keyboard response
     autoRepeatDelay = 195;

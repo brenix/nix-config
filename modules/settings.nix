@@ -41,10 +41,6 @@ with lib;
         default = 12.0;
         type = types.float;
       };
-      dpi = mkOption {
-        default = 109;
-        type = types.int;
-      };
       profile = mkOption {
         default = "brenix";
         type = with types; uniq str;
