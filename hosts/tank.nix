@@ -14,7 +14,7 @@
   networking.hostName = "tank";
 
   # DPI settings
-  services.xserver.dpi = config.settings.dpi;
+  services.xserver.dpi = 180;
   hardware.video.hidpi.enable = true;
 
   # Fix alacritty font scaling on hidpi

@@ -28,6 +28,8 @@
       selection.save_to_clipboard = true;
       window.padding.x = 0;
       window.padding.y = 0;
+      window.dimensions.columns = 140;
+      window.dimensions.lines = 50;
       decorations = "none";
       colors = {
         primary.background = "#ffffff";
