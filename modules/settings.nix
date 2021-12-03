@@ -1,8 +1,6 @@
 { config, pkgs, lib, ... }:
 
-with lib;
-
-{
+with lib; {
   options = {
     settings = {
       name = mkOption {
@@ -15,14 +13,6 @@ with lib;
       };
       email = mkOption {
         default = "brenix@gmail.com";
-        type = with types; uniq str;
-      };
-      vm = mkOption {
-        type = types.bool;
-        default = false;
-      };
-      primaryDisplay = mkOption {
-        default = "";
         type = with types; uniq str;
       };
       browser = mkOption {
@@ -40,15 +30,6 @@ with lib;
       fontSize = mkOption {
         default = 12.0;
         type = types.float;
-      };
-      profile = mkOption {
-        default = "brenix";
-        type = with types; uniq str;
-        description = ''
-          Profiles are a higher-level grouping than hosts. They are
-          useful to combine multiple related things (e.g. ssh keys)
-          that should be available on multiple hosts.
-        '';
       };
     };
   };

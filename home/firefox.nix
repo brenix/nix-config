@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   imports = [
-    ../../modules/settings.nix
+    ../modules/settings.nix
   ];
 
   programs.firefox = {

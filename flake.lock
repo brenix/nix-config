@@ -38,15 +38,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1638484748,
-        "narHash": "sha256-Xb5X84/PUMXCyZGnixyqjtVyEt5tlCCrSp4lfJdtiHw=",
+        "lastModified": 1638571010,
+        "narHash": "sha256-KSO7u13VRLdklQTKYJaBSfVcurEvw+HifAsHR7V2i5E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fbb80207f3840785e2918143ebe709f26372f91d",
+        "rev": "781d25b315def05cd7ede3765226c54216f0b1fe",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "home-manager",
         "type": "github"
       }
@@ -112,29 +113,44 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1638440530,
+        "narHash": "sha256-kmoNW+RmSka988iWvSrkiAxO8g6D76O0gW2cIIhL6U8=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "4c9f07277bd4bc29a051ff2a0ca58c6403e3881a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1638376152,
         "narHash": "sha256-ucgLpVqhFnClH7YRUHBHnmiOd82RZdFR3XJt36ks5fE=",
-        "owner": "nixos",
+        "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "6daa4a5c045d40e6eae60a3b6e427e8700f1c07f",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "id": "nixpkgs",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "indirect"
       }
     },
     "nur": {
       "locked": {
-        "lastModified": 1638486406,
-        "narHash": "sha256-kuObEcRzNwap8ZK0ouQYj0VyHo1LqZ4HlFixp4CJDtw=",
+        "lastModified": 1638574066,
+        "narHash": "sha256-2sMVEMMbBc6ifdv+wgRA8FugX41CVLnID+VKwGgoMi8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "7c1751329931c7288490ea064f9e9060b1cf7573",
+        "rev": "d62ca898c6f6e1cdaf4d4bb48ee0403d842d4b6e",
         "type": "github"
       },
       "original": {
@@ -148,6 +164,7 @@
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-colors": "nix-colors",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nur": "nur"
       }

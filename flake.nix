@@ -5,14 +5,20 @@
 
   inputs = {
     # Install bleeding edge updates
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     # NixOS hardware profiles
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Nix user repository
+    nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -31,9 +37,8 @@
 
   # -- OUTPUTS
 
-  outputs = inputs@{ self, home-manager, nixpkgs, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
-
       system = "x86_64-linux";
       # Add nixpkgs overlays and config here. They apply to system and home-manager builds.
       pkgs = import nixpkgs {
@@ -53,8 +58,10 @@
             configurationNix
 
             # Common configuration for all hosts
-            ./config/common/sysctl.nix
-            ./config/common/services.nix
+            ./config/common
+            ./config/openconnect.nix
+            ./config/pipewire.nix
+            ./config/xorg.nix
 
             # home-manager configuration
             home-manager.nixosModules.home-manager
@@ -69,78 +76,53 @@
           ] ++ extraModules
         );
       };
-
     in
-
     {
       # The "name" in nixosConfigurations.${name} should match the `hostname`
       nixosConfigurations = {
         dozer = mkHost
           ./hosts/dozer.nix
           [
-            #./config/server/harden.nix
-            #./config/server/unlaptop.nix
-            #./config/server/wakeonlan.nix
-            #./config/kde.nix
-            #./config/desktopish/guiapps.nix
-            #./config/desktopish/fonts.nix
-            #./config/protonvpn.nix
-            #./config/lxd.nix
-            #./config/docker.nix
-            #./config/postgres.nix
+            # TBD
           ];
         tank = mkHost
           ./hosts/tank.nix
           [
-            #./config/server/harden.nix
-            #./config/distributed-build.nix
-            #./config/gnome.nix
-            #./config/desktopish/guiapps.nix
-            #./config/desktopish/fonts.nix
-            #./config/protonvpn.nix
+            # TBD
           ];
         neo = mkHost
           ./hosts/neo.nix
           [
             # Hardware profiles from: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
-            nixos-hardware.nixosModules.common-cpu-amd
-            nixos-hardware.nixosModules.common-pc-ssd
-            nixos-hardware.nixosModules.common-gpu-nvidia
+            inputs.nixos-hardware.nixosModules.common-cpu-amd
+            inputs.nixos-hardware.nixosModules.common-pc-ssd
+            inputs.nixos-hardware.nixosModules.common-gpu-nvidia
 
-            #./config/server/harden.nix
-            #./config/distributed-build.nix
-            #./config/gnome.nix
-            #./config/desktopish/guiapps.nix
-            #./config/desktopish/fonts.nix
-            #./config/protonvpn.nix
-            #./config/desktopish
+            ./config/libvirt.nix
           ];
       };
 
       # non-NixOS systems
-      homeConfigurations =
-        let
-          username = "brenix";
-          baseConfiguration = {
-            programs.home-manager.enable = true;
-            home.username = "brenix";
-            home.homeDirectory = "/home/brenix";
-          };
-          mkHomeConfig = cfg: home-manager.lib.homeManagerConfiguration {
-            inherit username system;
-            homeDirectory = "/home/${username}";
-            configuration = baseConfiguration // cfg;
-          };
-        in
-        {
-          "x1c7" = mkHomeConfig {
-            programs.git = import ./home/git.nix;
-            programs.tmux = import ./home/tmux.nix;
-          };
-        };
+      #homeConfigurations =
+      #  let
+      #    username = "brenix";
+      #    baseConfiguration = {
+      #      programs.home-manager.enable = true;
+      #      home.username = "brenix";
+      #      home.homeDirectory = "/home/brenix";
+      #    };
+      #    mkHomeConfig = cfg: home-manager.lib.homeManagerConfiguration {
+      #      inherit username system;
+      #      homeDirectory = "/home/${username}";
+      #      configuration = baseConfiguration // cfg;
+      #    };
+      #  in
+      #  {
+      #    "FIXME" = mkHomeConfig {
+      #      programs.git = import ./home/git.nix;
+      #      programs.tmux = import ./home/tmux.nix;
+      #    };
+      #  };
     };
-
-  # -- HOST CONFIGURATIONS
-
 
 }

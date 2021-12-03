@@ -1,28 +1,25 @@
-{ config, pkgs, ... }: {
+{ pkgs, inputs, system, ... }: {
+
   imports = [
-    ../../modules/settings.nix
-    ./alacritty.nix
-    ./dunst.nix
-    ./firefox.nix
-    ./git.nix
-    ./polybar.nix
-    ./starship.nix
-    ./tmux.nix
+    ./home/alacritty.nix
+    ./home/dunst.nix
+    ./home/git.nix
+    ./home/packages.nix
+    ./home/polybar.nix
+    ./home/starship.nix
+    ./home/tmux.nix
   ];
 
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  # -- ENVIRONMENT
-
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";
     LC_CTYPE = "en_US.UTF-8";
-    BROWSER = config.settings.browser;
   };
 
-  # XDG user dirs
+  # XDG
   xdg.userDirs = {
     enable = true;
     documents = "$HOME/downloads/documents/";
@@ -53,30 +50,18 @@
     };
   };
 
-  # -- APPLICATIONS
-
   # GPG
   programs.gpg = {
     enable = true;
   };
 
-  # TODO: Autorandr
-  # TODO: NVIM
-  # TODO: Openbox
-  # TODO: Polybar
-  # TODO: Rofi
-  # TODO: SSH
-  # TODO: Terraform
-  # TODO: ZSH
-  # TODO: dircolors
-
+  # rofi
   programs.rofi = {
     enable = true;
     font = "Terminus 10";
     theme = "paper-float";
   };
 
-  # -- SERVICES
 
   # Autocutsel
   systemd.user.services.autocutsel = {
@@ -93,5 +78,7 @@
     };
   };
 
+
+  # Flameshot
   services.flameshot.enable = true;
 }
