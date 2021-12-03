@@ -11,6 +11,12 @@
     vm = true;
   };
 
+  # Switch the left Alt and Cmd key as well as the right Alt/AltGr and Cmd key
+  boot.kernelParams = [
+    "hid_apple.swap_opt_cmd=1"
+  ];
+
+  # Set Hostname
   networking.hostName = "tank";
 
   # DPI settings
