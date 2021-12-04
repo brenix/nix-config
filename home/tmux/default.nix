@@ -84,7 +84,7 @@
   };
 
   xdg.configFile = {
-    "tmux/kube.tmux".source = ./tmux/kube.tmux;
+    "tmux/kube.tmux".source = ./kube.tmux;
   };
 }
 

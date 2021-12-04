@@ -1,16 +1,7 @@
 { pkgs, inputs, system, ... }: {
 
   imports = [
-    ./home/alacritty.nix
-    ./home/dunst.nix
-    ./home/firefox.nix
-    ./home/git.nix
-    ./home/neovim.nix
-    ./home/packages.nix
-    ./home/polybar.nix
-    ./home/rofi.nix
-    ./home/starship.nix
-    ./home/tmux.nix
+    ./home
   ];
 
   # Enable home-manager
@@ -37,6 +28,80 @@
       templates = "$HOME/downloads/templates/";
     };
   };
+
+  # Packages to be installed
+  home.packages = with pkgs; [
+    authy
+    autocutsel
+    awless
+    aws-vault
+    awscli
+    barrier
+    bspwm
+    buildah
+    chamber
+    cosign
+    dconf
+    discord
+    dunst
+    feh
+    fluxcd
+    go
+    gomplate
+    googler
+    goreleaser
+    grc
+    gsimplecal
+    guvcview
+    handlr
+    helmfile
+    hugo
+    kubectl
+    kubernetes-helm
+    kustomize
+    lab
+    lxappearance
+    mpv
+    mr
+    mupdf
+    neovim
+    nodePackages.npm
+    nodePackages.prettier
+    nodejs
+    obconf
+    openbox
+    openconnect
+    openrgb
+    packer
+    pavucontrol
+    pcmanfm
+    pgcli
+    podman
+    polybar
+    python3
+    python39Packages.pynvim   # nvim dep
+    python39Packages.ueberzug # nvim dep
+    ranger
+    rnix-lsp
+    rofi
+    rofi-calc
+    sd
+    slack
+    sops
+    spotify
+    starship
+    stern
+    sumneko-lua-language-server
+    sxhkd
+    sxiv
+    theme-vertex
+    vault-bin
+    velero
+    virt-manager
+    win-virtio
+    xclip
+    zoom-us
+  ];
 
   # GTK
   gtk = {
