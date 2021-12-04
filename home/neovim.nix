@@ -1,9 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, ... }: {
 
-xdg.configFile.nvim = {
-  source  = ./nvim;
-  recursive = true;
-};
+  xdg.configFile."nvim" = {
+    source = ./nvim;
+    recursive = true;
+  };
+
+}
 
 #{ pkgs, inputs, system, ... }:
 #let
