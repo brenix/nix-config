@@ -44,6 +44,10 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        config.permittedInsecurePackages = [
+          # needed for authy to work
+          "electron-9.4.4"
+        ];
         overlays = [
           nur.overlay
           (import inputs.neovim-nightly-overlay)
