@@ -19,10 +19,10 @@
     delta = {
       enable = true;
       options = {
-        minus-style = "black #ffebe9";
+        minus-style = "black #9f7777";
         minus-emph-style = "black #f7b9b9";
-        plus-style = "black #e6ffec";
-        plus-emph-style = "black #abf2bc";
+        plus-style = "black #98ad9c";
+        plus-emph-style = "black #e1ffe6";
         syntax-theme = "none";
       };
     };
@@ -84,4 +84,5 @@
       push = { default = "simple"; };
     };
   };
+
 }

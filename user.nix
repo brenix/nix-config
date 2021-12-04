@@ -3,6 +3,7 @@
   imports = [
     ./home/alacritty.nix
     ./home/dunst.nix
+    ./home/firefox.nix
     ./home/git.nix
     ./home/neovim.nix
     ./home/packages.nix
@@ -75,7 +76,7 @@
     };
   };
 
-
   # Flameshot
   services.flameshot.enable = true;
+
 }

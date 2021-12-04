@@ -37,7 +37,7 @@
 
   # -- OUTPUTS
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, ... }:
     let
       system = "x86_64-linux";
       # Add nixpkgs overlays and config here. They apply to system and home-manager builds.
@@ -45,6 +45,7 @@
         inherit system;
         config.allowUnfree = true;
         overlays = [
+          nur.overlay
           (import inputs.neovim-nightly-overlay)
         ];
       };
