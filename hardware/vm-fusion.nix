@@ -30,11 +30,14 @@
   virtualisation.vmware.guest.enable = true;
 
   # Install VMWare video driver
-  environment.systemPackages = [ pkgs.xorg.xf86videovmware ];
+  environment.systemPackages = with pkgs; [
+    xorg.xf86videovmware
+  ];
 
   # Enable DHCP
   systemd.network.networks.ens33 = {
     matchConfig = { Name = "ens33"; };
     DHCP = "yes";
   };
+
 }

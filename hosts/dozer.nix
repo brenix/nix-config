@@ -1,18 +1,9 @@
-{ config, pkgs, ... }:
+{ config, ... }: {
 
-{
-  imports = [
-    ../configuration.nix
-    ../hardware/vm-qemu.nix
-    ../modules/settings.nix
-  ];
-
-  settings = {
-    vm = true;
-  };
-
+  # Hostname
   networking.hostName = "dozer";
 
   # DPI settings
   services.xserver.dpi = 109;
+
 }

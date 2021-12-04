@@ -1,17 +1,17 @@
 { config, pkgs, ... }: {
 
   # Allow unfree packages to be installed
-  nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnfree = true;
 
   # Allow insecure packages
-  nixpkgs.config.permittedInsecurePackages = [
-    # needed for authy
-    "electron-9.4.4"
-  ];
+  #nixpkgs.config.permittedInsecurePackages = [
+  #  # needed for authy
+  #  "electron-9.4.4"
+  #];
 
   # Packages to be installed
-  environment.systemPackages = with pkgs; [
-    authy
+  home.packages = with pkgs; [
+    #authy
     autocutsel
     awless
     aws-vault

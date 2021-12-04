@@ -1,17 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }: {
 
-{
   imports = [
-    ../configuration.nix
     ../hardware/vm-fusion.nix
-    ../modules/settings.nix
   ];
 
-  settings = {
-    vm = true;
-  };
-
-  # Set Hostname
+  # Hostname
   networking.hostName = "tank";
 
   # DPI settings
@@ -24,4 +17,5 @@
   # Fix scaling in GTK apps
   environment.variables.GDK_SCALE = "2";
   environment.variables.GDK_DPI_SCALE = "0.5";
+
 }
