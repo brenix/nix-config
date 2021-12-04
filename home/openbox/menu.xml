@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="APPLICATIONS" />
+  <item label="FIREFOX">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="PCMANFM">
+    <action name="Execute">
+      <command>pcmanfm</command>
+    </action>
+  </item>
+  <item label="SLACK">
+    <action name="Execute">
+      <command>slack</command>
+    </action>
+  </item>
+  <item label="DISCORD">
+    <action name="Execute">
+      <command>discord</command>
+    </action>
+  </item>
+  <item label="SPOTIFY">
+    <action name="Execute">
+      <command>spotify</command>
+    </action>
+  </item>
+  <separator label="VIRTUALIZATION" />
+  <item label="SINGLE-MONITOR">
+    <action name="Execute">
+      <command>xrandr --output HDMI-0 --off</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="DUAL-MONITOR">
+    <action name="Execute">
+      <command>xrandr --output HDMI-0 --mode 2560x1440 --rate 144 --right-of DP-4</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="START-WIN10">
+    <action name="Execute">
+      <command>virsh start win10</command>
+    </action>
+  </item>
+  <separator label="SYSTEM" />
+  <item label="LXAPPEARANCE">
+    <action name="Execute">
+      <command>lxappearance</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="VOLUME CONTROL">
+    <action name="Execute">
+      <command>pavucontrol</command>
+    </action>
+  </item>
+  <separator label="OPENBOX" />
+  <item label="OBCONF">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="RELOAD CONFIG">
+    <action name="Reconfigure" />
+  </item>
+  <separator />
+  <item label="LOGOFF">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+  <item label="REBOOT">
+    <action name="Execute">
+      <prompt>Reboot Computer?</prompt>
+      <command>reboot</command>
+    </action>
+  </item>
+  <item label="SHUTDOWN">
+    <action name="Execute">
+      <prompt>Shutdown Computer?</prompt>
+      <command>poweroff</command>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>

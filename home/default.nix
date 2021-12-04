@@ -6,6 +6,7 @@
     ./firefox
     ./git
     ./neovim
+    ./openbox
     ./polybar
     ./rofi
     ./starship
