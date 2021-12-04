@@ -32,27 +32,48 @@
       window.dimensions.lines = 50;
       decorations = "none";
       colors = {
-        primary.background = "#ffffff";
-        primary.foreground = "#1b1f23";
+        primary.background = "#161821";
+        primary.foreground = "#d8dee9";
+        dim_foreground = "#a5abb6";
+        cursor.text = "#161821";
+        cursor.cursor = "#d8dee9";
+        selection.text = "CellForeground";
+        selection.background = "#4c566a";
+        search = {
+          matches.foreground = "CellBackground";
+          matches.background = "#88c0d0";
+          bar.background = "#434c5e";
+          bar.foreground = "#d8dee9";
+        };
         normal = {
-          black = "#24292e";
-          red = "#cb2431";
-          green = "#22863a";
-          yellow = "#a04100";
-          blue = "#005cc5";
-          magenta = "#4c2889";
-          cyan = "#0a3069";
-          white = "#959da5";
+          black = "#3b4252";
+          red = "#bf616a";
+          green = "#a3be8c";
+          yellow = "#ebcb8b";
+          blue = "#81a1c1";
+          magenta = "#b48ead";
+          cyan = "#88c0d0";
+          white = "#e5e9f0";
         };
         bright = {
-          black = "#959da5";
-          red = "#d73a49";
-          green = "#28a745";
-          yellow = "#c24e00";
-          blue = "#0366d6";
-          magenta = "#6f42c1";
-          cyan = "#0a3069";
-          white = "#d1d5da";
+          black = "#4c566a";
+          red = "#bf616a";
+          green = "#a3be8c";
+          yellow = "#ebcb8b";
+          blue = "#81a1c1";
+          magenta = "#b48ead";
+          cyan = "#88c0d0";
+          white = "#eceff4";
+        };
+        dim = {
+          black = "#373e4d";
+          red = "#94545d";
+          green = "#809575";
+          yellow = "#b29e75";
+          blue = "#68809a";
+          magenta = "#8c738c";
+          cyan = "#6d96a5";
+          white = "#aeb3bb";
         };
         indexed_colors = [
           { index = 16; color = "#d18616"; }
