@@ -7,6 +7,7 @@
     ./home/neovim.nix
     ./home/packages.nix
     ./home/polybar.nix
+    ./home/rofi.nix
     ./home/starship.nix
     ./home/tmux.nix
   ];
@@ -55,14 +56,6 @@
   programs.gpg = {
     enable = true;
   };
-
-  # rofi
-  programs.rofi = {
-    enable = true;
-    font = "Terminus 10";
-    theme = "paper-float";
-  };
-
 
   # Autocutsel
   systemd.user.services.autocutsel = {
