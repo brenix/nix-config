@@ -79,11 +79,12 @@
       # right side
       set -g status-right-length 120
       set -g status-right ""
-      set -g status-right "#(/usr/bin/env bash $HOME/.tmux/kube.tmux black white)"
+      set -g status-right "#(/usr/bin/env bash $HOME/.config/tmux/kube.tmux black white)"
     '';
   };
 
-  # FIXME: kubernetes context tmux script (really old)
-  #home.file.".tmux/kube.tmux".source = "tmux/kube.tmux";
+  xdg.configFile = {
+    "tmux/kube.tmux".source = ./tmux/kube.tmux;
+  };
 }
 
