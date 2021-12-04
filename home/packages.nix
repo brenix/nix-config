@@ -35,7 +35,9 @@
     mr
     mupdf
     neovim
+    nodePackages.npm
     nodePackages.prettier
+    nodejs
     obconf
     openbox
     openconnect
@@ -47,6 +49,8 @@
     podman
     polybar
     python3
+    python39Packages.pynvim   # nvim dep
+    python39Packages.ueberzug # nvim dep
     ranger
     rnix-lsp
     rofi
