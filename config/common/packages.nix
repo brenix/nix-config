@@ -8,14 +8,11 @@
     dconf
     dig
     fd
-    fzf
     gcc
     git
     glances
     gnumake
     gnupg
-    go
-    htop
     lsof
     nmap
     ripgrep

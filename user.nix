@@ -29,6 +29,13 @@
     };
   };
 
+  # xsession
+  xsession = {
+    /* enable = true; */
+    pointerCursor.package = pkgs.capitaine-cursors;
+    pointerCursor.name = "Capitaine Cursors";
+  };
+
   # Packages to be installed
   home.packages = with pkgs; [
     authy
@@ -61,7 +68,6 @@
     kustomize
     lab
     lxappearance
-    mpv
     mr
     mupdf
     neovim
@@ -103,6 +109,51 @@
     zoom-us
   ];
 
+  # Autocutsel
+  systemd.user.services.autocutsel = {
+    Unit.Description = "AutoCutSel";
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      Type = "forking";
+      Restart = "always";
+      RestartSec = 2;
+      ExecStartPre = "${pkgs.autocutsel}/bin/autocutsel -fork";
+      ExecStart = "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
+    };
+  };
+
+  # bat
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "ansi";
+      pager = "less -inMRF";
+    };
+  };
+
+  # dircolors
+  programs.dircolors.enable = true;
+
+  # fzf
+  programs.fzf = {
+    enable = true;
+    defaultOptions = [
+      # nord colorscheme
+      "--color=fg:#e5e9f0,bg:#191c26,hl:#a3be8b"
+      "--color=fg+:#e5e9f0,bg+:#191c26,hl+:#a3be8b"
+      "--color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac"
+      "--color=marker:#81a1c1,spinner:#b48dac,header:#81a1c1"
+    ];
+  };
+
+  # go
+  programs.go = {
+    enable = true;
+    goPath = "go";
+  };
+
   # GTK
   gtk = {
     enable = true;
@@ -126,22 +177,49 @@
     enable = true;
   };
 
-  # Autocutsel
-  systemd.user.services.autocutsel = {
-    Unit.Description = "AutoCutSel";
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      Type = "forking";
-      Restart = "always";
-      RestartSec = 2;
-      ExecStartPre = "${pkgs.autocutsel}/bin/autocutsel -fork";
-      ExecStart = "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
+  services.gpg-agent.enable = true;
+
+  # htop
+  programs.htop = {
+    enable = true;
+    settings = {
+      sort_direction = true;
+      sort_key = "PERCENT_CPU";
     };
   };
 
-  # Flameshot
-  services.flameshot.enable = true;
+  # flameshot
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        disabledTrayIcon = true;
+        showStartupLaunchMessage = false;
+      };
+    };
+  };
+
+  # jq
+  programs.jq.enable = true;
+
+  # disable man pages
+  programs.man.enable = false;
+
+  # mpv
+  programs.mpv.enable = true;
+
+  # playerctl
+  services.playerctld.enable = true;
+
+  # unclutter
+  services.unclutter.enable = true;
+
+  # ssh
+  programs.ssh = {
+    enable = true;
+    includes = [
+      "~/.ssh/cells/config/*"
+    ];
+  };
 
 }
