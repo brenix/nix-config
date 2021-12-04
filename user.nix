@@ -29,13 +29,6 @@
     };
   };
 
-  # xsession
-  xsession = {
-    /* enable = true; */
-    pointerCursor.package = pkgs.capitaine-cursors;
-    pointerCursor.name = "Capitaine Cursors";
-  };
-
   # Packages to be installed
   home.packages = with pkgs; [
     authy
