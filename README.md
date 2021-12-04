@@ -11,5 +11,5 @@
 | home      | Application-specific components (aka dotfiles)            |
 | hosts     | Host-specific configuration                               |
 | modules   | Nix modules that can be re-used across components         |
-| home.nix  | Entrypoint for my dotfiles and overall home configuration |
+| user.nix  | Entrypoint for my dotfiles and overall home configuration |
 | flake.nix | Flake configuration which ties everything together        |

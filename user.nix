@@ -22,16 +22,19 @@
   };
 
   # XDG
-  xdg.userDirs = {
+  xdg = {
     enable = true;
-    documents = "$HOME/downloads/documents/";
-    download = "$HOME/downloads/";
-    videos = "$HOME/downloads/videos/";
-    music = "$HOME/downloads/music/";
-    pictures = "$HOME/downloads/pictures/";
-    desktop = "$HOME/downloads/desktop/";
-    publicShare = "$HOME/downloads/public/";
-    templates = "$HOME/downloads/templates/";
+    userDirs = {
+      enable = true;
+      documents = "$HOME/downloads/documents/";
+      download = "$HOME/downloads/";
+      videos = "$HOME/downloads/videos/";
+      music = "$HOME/downloads/music/";
+      pictures = "$HOME/downloads/pictures/";
+      desktop = "$HOME/downloads/desktop/";
+      publicShare = "$HOME/downloads/public/";
+      templates = "$HOME/downloads/templates/";
+    };
   };
 
   # GTK

@@ -9,10 +9,10 @@ $(error NIX_CONFIG is not set)
 endif
 
 switch:
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#$(NIX_CONFIG)" --upgrade
+	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch -v --flake ".#$(NIX_CONFIG)" --upgrade
 
 test:
-	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test
+	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test
 
 install:
 	@ssh $(SSH_OPTIONS) root@$(NIX_HOST) " \

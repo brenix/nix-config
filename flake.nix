@@ -68,7 +68,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.brenix = import ./home.nix
+              home-manager.users.brenix = import ./user.nix
                 {
                   inherit inputs system pkgs;
                 };
