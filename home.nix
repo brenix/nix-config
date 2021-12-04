@@ -4,6 +4,7 @@
     ./home/alacritty.nix
     ./home/dunst.nix
     ./home/git.nix
+    ./home/neovim.nix
     ./home/packages.nix
     ./home/polybar.nix
     ./home/starship.nix
