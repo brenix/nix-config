@@ -7,11 +7,13 @@
   programs.firefox = {
     enable = true;
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        decentraleyes
         bitwarden
-        ublock-origin
-        grammarly
+        decentraleyes
         h264ify
+        i-dont-care-about-cookies
+        theme-nord-polar-night
+        ublock-origin
+        vimium
     ];
     profiles.default = {
         settings = {
