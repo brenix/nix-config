@@ -18,7 +18,7 @@
     enable = true;
     pointerCursor = {
       package = pkgs.capitaine-cursors;
-      name = "Capitaine Cursors";
+      name = "capitaine-cursors-white";
     };
     windowManager = {
       command = "openbox-session";
