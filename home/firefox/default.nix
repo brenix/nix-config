@@ -59,6 +59,7 @@
           "browser.urlbar.update1" = false;
           "browser.xul.error_pages.enabled" = false;
           "dom.webgpu.enabled" = true;
+          "extensions.autoDisableScopes" = 0;
           "extensions.formautofill.addresses.enabled" = false;
           "extensions.formautofill.available" = "off";
           "extensions.formautofill.creditCards.enabled" = false;
@@ -79,8 +80,9 @@
           "general.warnOnAboutConfig" = false;
           "gfx.canvas.azure.accelerated" = true;
           "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
-          "gfx.webrender.all" = true;
-          "gfx.webrender.enabled" = true;
+          /* FIXME: Disabled due to black box that appears on VMs
+          /* "gfx.webrender.all" = true; */
+          /* "gfx.webrender.enabled" = true; */
           "javascript.options.warp" = true;
           "layers.acceleration.force-enabled" = true;
           "layout.css.backdrop-filter.enabled" = true;
