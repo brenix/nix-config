@@ -37,7 +37,7 @@
 
   # -- OUTPUTS
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, neovim-nightly-overlay, ... }:
     let
       system = "x86_64-linux";
       # Add nixpkgs overlays and config here. They apply to system and home-manager builds.
@@ -50,8 +50,8 @@
         ];
         overlays = [
           nur.overlay
-          ./overlays/freetype.nix
-          (import inputs.neovim-nightly-overlay)
+          neovim-nightly-overlay.overlay
+          (import ./overlays/freetype.nix)
         ];
       };
       mkHost = configurationNix: extraModules: nixpkgs.lib.nixosSystem {
