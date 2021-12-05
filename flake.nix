@@ -50,6 +50,7 @@
         ];
         overlays = [
           nur.overlay
+          ./overlays/freetype.nix
           (import inputs.neovim-nightly-overlay)
         ];
       };
