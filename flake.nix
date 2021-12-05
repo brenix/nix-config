@@ -51,7 +51,7 @@
         overlays = [
           nur.overlay
           neovim-nightly-overlay.overlay
-          (import ./overlays/freetype.nix)
+          #(import ./overlays/freetype.nix)
         ];
       };
       mkHost = configurationNix: extraModules: nixpkgs.lib.nixosSystem {
@@ -65,6 +65,7 @@
 
             # Common configuration for all hosts
             ./config/common
+            ./config/freetype.nix
             ./config/openconnect.nix
             ./config/pipewire.nix
             ./config/xorg.nix
