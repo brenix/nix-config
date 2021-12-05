@@ -13,6 +13,18 @@
     LC_CTYPE = "en_US.UTF-8";
   };
 
+  # X11
+  xsession = {
+    enable = true;
+    pointerCursor = {
+      package = pkgs.capitaine-cursors;
+      name = "Capitaine Cursors";
+    };
+    windowManager = {
+      command = "openbox-session";
+    };
+  };
+
   # XDG
   xdg = {
     enable = true;

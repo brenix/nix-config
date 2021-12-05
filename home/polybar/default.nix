@@ -3,13 +3,13 @@
   services.polybar = {
     enable = true;
 
-    script = "";
+    script = "polybar main &";
 
     settings = {
 
       "colors" = {
-        bg = "#2d3036";
-        bg-alt = "#2d3036";
+        bg = "#161821";
+        bg-alt = "#161821";
         fg = "#ECEFF4";
         fg-alt = "#E5E9F0";
 
