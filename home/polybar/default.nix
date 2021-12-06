@@ -6,6 +6,9 @@
     script = "polybar main &";
 
     settings = {
+      "settings" = {
+        screenchange-reload = true;
+      };
 
       "colors" = {
         bg = "#161821";

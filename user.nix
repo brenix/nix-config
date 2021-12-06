@@ -87,7 +87,6 @@
     pavucontrol
     pcmanfm
     pgcli
-    podman
     polybar
     python3
     python39Packages.pynvim   # nvim dep

@@ -19,6 +19,9 @@
   # Enable qemu guest service
   services.qemuGuest.enable = true;
 
+  # Enable spice guest daemon
+  services.spice-vdagentd.enable = true;
+
   # Enable DHCP
   systemd.network.networks.enp1s0 = {
     matchConfig = { Name = "enp1s0"; };

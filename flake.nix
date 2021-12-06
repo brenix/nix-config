@@ -68,6 +68,7 @@
             ./config/freetype.nix
             ./config/openconnect.nix
             ./config/pipewire.nix
+            ./config/podman.nix
             ./config/xorg.nix
 
             # home-manager configuration
