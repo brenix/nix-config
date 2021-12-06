@@ -7,7 +7,7 @@
 
     defaultKeymap = "vicmd";
 
-    dotDir = ".zsh.d"
+    dotDir = ".zsh.d";
 
     sessionVariables = {
       GREP_COLOR = "1;31";
@@ -34,40 +34,44 @@
       vm = "virsh start win10";
     };
 
-    plugins = {
+    plugins = [
       {
         name = "zsh-aws-vault";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "blimmer";
           repo = "zsh-aws-vault";
-          rev = "master";
+          rev = "main";
+          sha256 = "sha256-0moXhhSHShnISBxG2xhrmn29MJ0zos+jcjnAMOdOU1Y=";
         };
       }
       {
         name = "tipz";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "molovo";
           repo = "tipz";
           rev = "master";
+          sha256 = "sha256-pLdF8wbkA9mPI5cg8VPYAW7i3cWNJX3+lfAZ5cZPUgE=";
         };
       }
       {
         name = "z";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "rupa";
           repo = "z";
           rev = "master";
+          sha256 = "sha256-pLdF8wbkA9mPI5cg8VPYAW7i3cWNJX3+lfAZ5cZPUgE=";
         };
       }
       {
         name = "cd-gitroot";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "mollifier";
           repo = "cd-gitroot";
           rev = "master";
+          sha256 = "sha256-pLdF8wbkA9mPI5cg8VPYAW7i3cWNJX3+lfAZ5cZPUgE=";
         };
       }
-    };
+    ];
   };
 
 }
