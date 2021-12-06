@@ -1,0 +1,1 @@
+export DATASTORE_TYPE=kubernetes
