@@ -11,6 +11,7 @@
     ./rofi
     ./starship
     ./tmux
+    ./zsh
   ];
 
 }
