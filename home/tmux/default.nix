@@ -5,6 +5,7 @@
     prefix = "C-x";
     terminal = "tmux-256color";
     escapeTime = 0;
+    keyMode = "vi";
     baseIndex = 1;
     extraConfig = ''
       # -- options
@@ -45,7 +46,7 @@
       bind v setw synchronize-panes\; display "Sync panes is now #{?pane_synchronized,on,off}!"
 
       # reload config
-      bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+      bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
 
       # vim style copy paste mode
       unbind [
