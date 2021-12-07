@@ -6,7 +6,6 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      env.term = "xterm-256color";
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal.family = config.settings.fontName;

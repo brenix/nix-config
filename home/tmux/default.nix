@@ -9,6 +9,15 @@
     extraConfig = ''
       # -- options
 
+      # screen mode
+      set -g default-terminal "tmux-256color"
+      set -ga terminal-overrides ",xterm*:Tc"
+      set -ga terminal-overrides ",rxvt*:Tc"
+      set -ga terminal-overrides ",screen*:Tc"
+      set -ga terminal-overrides ",tmux*:Tc"
+      set -ga terminal-overrides ",alacritty*:Tc"
+      set -ga terminal-overrides ",st*:Tc"
+
       # mouse
       set-option -g mouse on
 
