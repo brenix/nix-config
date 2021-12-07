@@ -40,8 +40,8 @@ dnc() {
   local note="${NOTEDIR}/work/daily/$year/$month/$day.md"
 
   case "$OSTYPE" in
-    linux*) /usr/bin/cat "${note}" | xclip ;;
-    darwin*) /usr/bin/cat "${note}" | pbcopy ;;
+    linux*) bat --color=never --paging=never "${note}" | xclip ;;
+    darwin*) bat --color=never --paging=never "${note}" | pbcopy ;;
     *) echo "Unknown OS" ;;
   esac
 }
