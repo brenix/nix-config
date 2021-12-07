@@ -18,4 +18,7 @@
   environment.variables.GDK_SCALE = "2";
   environment.variables.GDK_DPI_SCALE = "0.5";
 
+  # Enable touchpad
+  services.xserver.libinput.enable = true;
+
 }
