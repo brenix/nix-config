@@ -104,6 +104,7 @@
     sumneko-lua-language-server
     sxhkd
     sxiv
+    terraform
     theme-vertex
     vault-bin
     velero
@@ -225,5 +226,15 @@
       "~/.ssh/cells/config/*"
     ];
   };
+
+  # terraform
+  # TODO: fix hardcoded username
+  home.file.".terraformrc".text = ''
+    plugin_cache_dir = "/home/brenix/.cache/terraform-plugin-cache"
+    disable_checkpoint = true
+  '';
+  systemd.user.tmpfiles.rules = [
+    "d /home/brenix/.cache/terraform-plugin-cache 0755 brenix users"
+  ];
 
 }
