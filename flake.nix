@@ -108,6 +108,14 @@
 
             ./config/libvirt.nix
           ];
+        trinity = mkHost
+          ./hosts/trinity.nix
+          [
+            # Hardware profiles from: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
+            inputs.nixos-hardware.nixosModules.common-cpu-intel
+
+            ./config/kubernetes-controlller.nix
+          ];
       };
 
       # non-NixOS systems
