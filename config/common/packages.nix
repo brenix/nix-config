@@ -24,4 +24,7 @@
     zsh-completions
   ];
 
+  # Enable mtr and configure a setcap wrapper to run without sudo
+  programs.mtr.enable = true;
+
 }
