@@ -106,6 +106,8 @@
     sxiv
     terraform
     theme-vertex
+    unrar
+    unzip
     vault-bin
     velero
     virt-manager
