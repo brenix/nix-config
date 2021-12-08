@@ -1,4 +1,6 @@
 { pkgs, system, ... }: {
+
+  # Replace freetype package without recompiling everything
   system.replaceRuntimeDependencies = with pkgs; [
     {
       original = freetype;
@@ -12,4 +14,5 @@
       });
     }
   ];
+
 }

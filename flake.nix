@@ -51,6 +51,8 @@
         overlays = [
           nur.overlay
           neovim-nightly-overlay.overlay
+
+          # Not in use due to recompiling dep for many packages
           #(import ./overlays/freetype.nix)
         ];
       };
