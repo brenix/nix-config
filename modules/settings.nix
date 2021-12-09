@@ -31,6 +31,10 @@ with lib; {
         default = 12.0;
         type = types.float;
       };
+      monitor = mkOption {
+        default = "Virtual-1";
+        type = with types; uniq str;
+      };
     };
   };
 }
