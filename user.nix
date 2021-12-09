@@ -97,6 +97,7 @@
     rofi
     rofi-calc
     sd
+    shfmt
     slack
     sops
     spotify
