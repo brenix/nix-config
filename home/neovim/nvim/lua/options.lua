@@ -1,7 +1,7 @@
 local indent = 2
 
 vim.opt.autochdir = true
-vim.opt.autoindent = false
+vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.backup = false
