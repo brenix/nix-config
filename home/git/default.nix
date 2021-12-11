@@ -74,9 +74,10 @@
       color."branch" = { current = "normal reverse"; local = "normal"; remote = "green"; };
       color."diff" = { meta = "white bold"; frag = "magenta bold"; old = "red bold"; new = "green bold"; };
       color."status" = { added = "green"; changed = "magenta"; untracked = "white"; };
-      core = { preloadindex = true; whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol"; };
+      core = { compression = 0; preloadindex = true; whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol"; };
       diff."sopsdiffer" = { textconv = "sops -d"; };
       format = { pretty = "%C(yellow)%H%Creset %C(magenta)%cd%Creset %d %s %C(green)%an"; };
+      http = { postBuffer = 524288000; };
       init = { defaultBranch = "main"; };
       log = { date = "short"; };
       protocol = { version = 2; };
