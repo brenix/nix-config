@@ -176,7 +176,7 @@
         type = "internal/date";
         interval = 3600;
         date = "%Y-%m-%d";
-        label = "%{A1:${pkgs.gsimplecal} & disown:}%{A3:${pkgs.gsimplecal} & disown:} %date%%{A}%{A}";
+        label = "%{A1:${pkgs.gsimplecal}/bin/gsimplecal & disown:}%{A3:${pkgs.gsimplecal}/bin/gsimplecal & disown:} %date%%{A}%{A}";
       };
     };
   };
