@@ -1,33 +1,26 @@
 {
   description = "NixOS configuration";
 
-  # -- INPUTS
-
   inputs = {
     # Install bleeding edge updates
     nixpkgs.url = "nixpkgs/nixos-unstable";
-
     # NixOS hardware profiles
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # Nix user repository
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Colors manager
+    # Color manager
     nix-colors = {
       url = "github:misterio77/nix-colors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # Neovim nightly
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
@@ -37,9 +30,10 @@
 
   # -- OUTPUTS
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, neovim-nightly-overlay, ... }: let
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+
     system = "x86_64-linux";
-    # Add nixpkgs overlays and config here. They apply to system and home-manager builds.
+
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
@@ -48,13 +42,11 @@
         "electron-9.4.4"
       ];
       overlays = [
-        nur.overlay
-        neovim-nightly-overlay.overlay
-
-        # Not in use due to recompiling dep for many packages
-        #(import ./overlays/freetype.nix)
+        inputs.nur.overlay
+        inputs.neovim-nightly-overlay.overlay
       ];
     };
+
     mkHost = configurationNix: extraModules: nixpkgs.lib.nixosSystem {
       inherit system pkgs;
       # Arguments to pass to all modules.
