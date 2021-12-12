@@ -54,7 +54,7 @@ cmp.setup {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   sources = {
-    { name = 'nvim_lsp' },
+    { name = 'nvim_diagnostic' },
     { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'buffer' },

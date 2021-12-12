@@ -272,6 +272,7 @@ if not configs.yamlls then
       on_attach = on_attach,
       filetypes = { "yaml" },
       cmd = {DATA_PATH .. "/lsp_servers/yaml/node_modules/.bin/yaml-language-server", "--stdio"},
+      root_dir = vim.loop.cwd,
       settings = {
         yaml = {
           validate = false,

@@ -1,3 +1,6 @@
+-- Explicitly set python path for performance
+vim.g.python3_host_prog       = '/usr/bin/python3'
+
 -- Disable providers we don't need
 vim.g.loaded_python_provider  = 0
 vim.g.loaded_ruby_provider    = 0
@@ -18,6 +21,9 @@ vim.g.loaded_spellfile_plugin = 1
 vim.g.loaded_tarPlugin        = 1
 vim.g.loaded_vimballPlugin    = 1
 vim.g.loaded_zipPlugin        = 1
+
+-- Stop sourcing filetype.vim
+vim.g.did_load_filetypes = 1
 
 -- Install packer
 local execute = vim.api.nvim_command

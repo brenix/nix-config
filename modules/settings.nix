@@ -28,7 +28,7 @@ with lib; {
         type = with types; uniq str;
       };
       fontSize = mkOption {
-        default = 12.0;
+        default = 10.5;
         type = types.float;
       };
       monitor = mkOption {

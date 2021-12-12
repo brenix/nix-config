@@ -10,7 +10,7 @@ require('bufferline').setup {
     max_name_length = 18,
     max_prefix_length = 15,
     tab_size = 25,
-    diagnostics = "nvim_lsp",
+    diagnostics = "nvim_diagnostic",
     enforce_regular_tabs = true,
     view = "multiwindow",
     show_buffer_close_icons = true,

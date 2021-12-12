@@ -100,6 +100,10 @@ return require("packer").startup(function()
   -- nvim-bufdel
   use {"ojroques/nvim-bufdel"}
 
+  -- stabilize
+  use {"luukvbaal/stabilize.nvim",
+        config=[[require("config.stabilize")]]}
+
   -- circles
   use {"projekt0n/circles.nvim",
         config=[[require("config.circles")]],
