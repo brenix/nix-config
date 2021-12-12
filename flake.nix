@@ -61,7 +61,6 @@
 
           # Common configuration for all hosts
           ./config/common
-          ./config/freetype.nix
           ./config/openconnect.nix
           ./config/pipewire.nix
           ./config/podman.nix

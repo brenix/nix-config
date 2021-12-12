@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   imports = [
-    ./boot.nix
+    ./bootloader.nix
     ./fonts.nix
     ./i18n.nix
     ./network.nix
