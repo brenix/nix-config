@@ -9,7 +9,7 @@
 
     settings = {
       global = {
-        font = "NotoSans Nerd Font Regular 12";
+        font = "NotoSans Nerd Font Regular 10";
         markup = "full";
         format = "<b>%s</b>\n%b";
         sort = "no";

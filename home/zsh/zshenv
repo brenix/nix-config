@@ -5,4 +5,3 @@ export HISTSIZE=10000000
 export PAGER="less -inMRF"
 export SAVEHIST=10000000
 export ZSH_CACHE_DIR=$HOME/.cache
-export LC_CTYPE="en_US.UTF-8"
