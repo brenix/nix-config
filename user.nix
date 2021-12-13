@@ -10,7 +10,6 @@
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";
-    LC_CTYPE = "en_US.UTF-8";
   };
 
   # X11
