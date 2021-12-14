@@ -24,6 +24,7 @@
   # Configure host-specific settings
   settings = {
     dpi = 180;
+    fontSize = 14.0;
   };
 
   # Pass settings to home-manager
