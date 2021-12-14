@@ -47,17 +47,17 @@
       ];
     };
 
-    mkHost = configurationNix: extraModules: nixpkgs.lib.nixosSystem {
+    mkHost = hostConfiguration: extraModules: nixpkgs.lib.nixosSystem {
       inherit system pkgs;
       # Arguments to pass to all modules.
       specialArgs = { inherit system inputs; };
       modules = (
         [
-          # System configuration for this host
-          configurationNix
-
           # Settings
           ./modules/settings.nix
+
+          # Host configuration
+          hostConfiguration
 
           # Common configuration for all hosts
           ./config/common
@@ -71,15 +71,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.brenix = import ./user.nix
-              {
-                inherit inputs system pkgs;
-              };
+            home-manager.users.brenix = import ./user.nix;
           }
         ] ++ extraModules
-      );
-    };
-    in {
+    );
+  };
+  in {
     # The "name" in nixosConfigurations.${name} should match the `hostname`
     nixosConfigurations = {
       dozer = mkHost
@@ -114,4 +111,5 @@
       */
     };
   };
+
 }

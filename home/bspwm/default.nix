@@ -1,6 +1,8 @@
 { ... }: {
 
-  imports = [ ../../modules/settings.nix ]
+  imports = [
+    ../../modules/settings.nix
+  ]
 
   xsession.windowManager.bspwm = {
     enable = true;

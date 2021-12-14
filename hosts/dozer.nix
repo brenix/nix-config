@@ -2,6 +2,7 @@
 
   imports = [
     ../hardware/vm-qemu.nix
+    ../modules/settings.nix
   ];
 
   # Hostname
@@ -9,6 +10,8 @@
 
   # DPI settings
   services.xserver.dpi = 109;
+
+  settings.dpi = 109;
 
   # Fix scaling in GTK apps
   environment.variables.GDK_SCALE = "1";

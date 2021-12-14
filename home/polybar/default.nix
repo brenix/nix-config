@@ -1,5 +1,9 @@
 { config, pkgs, ...}:{
 
+  imports = [
+    ../../modules/settings.nix
+  ];
+
   services.polybar = {
     enable = true;
 
@@ -37,6 +41,7 @@
       "bar/main" = {
         top = true;
         height = 20;
+        dpi = config.settings.dpi;
         enable-ipc = true;
         width = "100%";
         spacing = 0;

@@ -35,6 +35,10 @@ with lib; {
         default = "Virtual-1";
         type = with types; uniq str;
       };
+      dpi = mkOption {
+        default = 96;
+        type = types.int;
+      };
     };
   };
 }
