@@ -21,4 +21,11 @@
   # Enable touchpad
   services.xserver.libinput.enable = true;
 
+  # Configure host-specific settings
+  settings = {
+    dpi = 180;
+  };
+
+  # Pass settings to home-manager
+  home-manager.users.${config.settings.username}.settings = config.settings;
 }

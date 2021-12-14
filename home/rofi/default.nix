@@ -1,5 +1,9 @@
 { pkgs, ... }: {
 
+  imports = [
+    ../../modules/settings.nix
+  ];
+
   programs.rofi = {
     enable = true;
     font = "Verdana 10";

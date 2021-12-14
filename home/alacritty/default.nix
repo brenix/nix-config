@@ -7,6 +7,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      dpi = { x = config.settings.dpi; y = config.settings.dpi; };
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal.family = config.settings.fontName;

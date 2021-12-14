@@ -1,5 +1,9 @@
 { config, pkgs, ...}: {
 
+  imports = [
+    ../../modules/settings.nix
+  ];
+
   services.polybar = {
     enable = true;
 
