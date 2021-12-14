@@ -2,30 +2,37 @@
   description = "NixOS configuration";
 
   inputs = {
+
     # Install bleeding edge updates
     nixpkgs.url = "nixpkgs/nixos-unstable";
+
     # NixOS hardware profiles
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Nix user repository
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Color manager
     nix-colors = {
       url = "github:misterio77/nix-colors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Neovim nightly
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   # -- OUTPUTS
@@ -49,13 +56,11 @@
 
     mkHost = hostConfiguration: extraModules: nixpkgs.lib.nixosSystem {
       inherit system pkgs;
-      # Arguments to pass to all modules.
+
       specialArgs = { inherit system inputs; };
+
       modules = (
         [
-          # Settings
-          ./modules/settings.nix
-
           # Host configuration
           hostConfiguration
 
@@ -74,9 +79,9 @@
             home-manager.users.brenix = import ./user.nix;
           }
         ] ++ extraModules
-    );
-  };
-  in {
+      );
+
+  }; in {
     # The "name" in nixosConfigurations.${name} should match the `hostname`
     nixosConfigurations = {
       dozer = mkHost
@@ -111,5 +116,4 @@
       */
     };
   };
-
 }
