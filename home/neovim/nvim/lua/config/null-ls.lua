@@ -13,8 +13,11 @@ local sources = {
   b.formatting.terraform_fmt,
 }
 
-null_ls.config({ sources = sources })
+local null_ls = require("null-ls")
 
-require("lspconfig")["null-ls"].setup({ on_attach = on_attach })
+null_ls.setup({
+  sources = sources,
+  on_attach = on_attach,
+})
 
 vim.api.nvim_set_keymap("n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", { noremap = true, silent = true })
