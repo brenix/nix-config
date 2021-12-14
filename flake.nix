@@ -92,6 +92,7 @@
         [
           # TBD
         ];
+      /*
       neo = mkHost
         ./hosts/neo.nix
         [
@@ -110,6 +111,7 @@
 
           ./config/kubernetes-controlller.nix
         ];
+      */
     };
   };
 }

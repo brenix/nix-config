@@ -4,15 +4,11 @@ export NIX_DISK ?=
 export NIX_HOST ?=
 export SSH_OPTIONS ?= -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
-ifndef NIX_CONFIG
-$(error NIX_CONFIG is not set)
-endif
-
 switch:
 	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch -v --flake ".#$(NIX_CONFIG)" --upgrade
 
 test:
-	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test
+	@unset NIX_CONFIG; nix --extra-experimental-features 'nix-command flakes' flake check
 
 install:
 	@ssh $(SSH_OPTIONS) root@$(NIX_HOST) " \
