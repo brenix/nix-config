@@ -5,7 +5,7 @@ export NIX_HOST ?=
 export SSH_OPTIONS ?= -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 switch:
-	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch -v --flake ".#$(NIX_CONFIG)" --upgrade
+	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch -v --flake ".#$(NIX_CONFIG)" --upgrade --impure
 
 test:
 	@unset NIX_CONFIG; nix --extra-experimental-features 'nix-command flakes' flake check
