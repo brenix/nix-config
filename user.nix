@@ -93,8 +93,6 @@
     python39Packages.ueberzug # nvim dep
     ranger
     rnix-lsp
-    rofi
-    rofi-calc
     sd
     shfmt
     slack
