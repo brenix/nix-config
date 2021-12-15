@@ -6,7 +6,7 @@
 
   programs.rofi = {
     enable = true;
-    font = "Verdana 10";
+    font = "${config.settings.fonts.launcher.font} ${toString config.settings.fonts.launcher.size}";
     theme = "Arc";
     plugins = with pkgs; [
       rofi-calc

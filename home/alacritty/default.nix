@@ -10,13 +10,13 @@
       dpi = { x = config.settings.dpi; y = config.settings.dpi; };
       scrolling.history = 10000;
       scrolling.multiplier = 3;
-      font.normal.family = config.settings.fontName;
+      font.normal.family = config.settings.fonts.terminal.font;
       font.normal.style = "Regular";
-      font.bold.family = config.settings.fontName;
+      font.bold.family = config.settings.fonts.terminal.font;
       font.bold.style = "Regular";
-      font.italic.family = config.settings.fontName;
+      font.italic.family = config.settings.fonts.terminal.font;
       font.italic.style = "Italic";
-      font.size = config.settings.fontSize;
+      font.size = config.settings.fonts.terminal.size;
       font.offset.y = -3;
       font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;

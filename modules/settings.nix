@@ -23,14 +23,6 @@ with lib; {
         default = "alacritty";
         type = with types; uniq str;
       };
-      fontName = mkOption {
-        default = "JetBrainsMono Nerd Font";
-        type = with types; uniq str;
-      };
-      fontSize = mkOption {
-        default = 10.5;
-        type = types.float;
-      };
       monitor = mkOption {
         default = "Virtual-1";
         type = with types; uniq str;
@@ -38,6 +30,22 @@ with lib; {
       dpi = mkOption {
         default = 96;
         type = types.int;
+      };
+      fonts = mkOption {
+        default = {
+          browser = {
+            font = "Verdana";
+            size = 16;
+          };
+          launcher = {
+            font = "Verdana";
+            size = 10;
+          };
+          terminal = {
+            font = "JetBrains Mono Nerd Font";
+            size = 12;
+          };
+        };
       };
     };
   };

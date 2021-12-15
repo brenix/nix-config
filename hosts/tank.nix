@@ -24,7 +24,12 @@
   # Configure host-specific settings
   settings = {
     dpi = 180;
-    fontSize = 14.0;
+    fonts = {
+      terminal.font = "JetBrains Mono Nerd Font";
+      terminal.size = 14.5;
+      launcher.font = "Verdana";
+      launcher.size = 10;
+    };
   };
 
   # Pass settings to home-manager
