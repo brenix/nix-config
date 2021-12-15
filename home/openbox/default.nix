@@ -1,4 +1,9 @@
-{ ... }: {
+{ pkgs, ... }: {
+
+  home.packages = with pkgs; [
+    openbox
+    obconf
+  ];
 
   xdg.configFile = {
     "openbox/rc.xml".source = ./rc.xml;

@@ -1,7 +1,17 @@
 { config, pkgs, inputs, system, ... }: {
 
   imports = [
-    ./home
+    ./home/alacritty
+    ./home/dunst
+    ./home/firefox
+    ./home/git
+    ./home/neovim
+    ./home/openbox
+    ./home/polybar
+    ./home/rofi
+    ./home/starship
+    ./home/tmux
+    ./home/zsh
   ];
 
   # Enable home-manager
@@ -43,26 +53,20 @@
   # Packages to be installed
   home.packages = with pkgs; [
     authy
-    autocutsel
     awless
     aws-vault
     awscli
-    barrier
-    bspwm
     buildah
     chamber
     cosign
-    dconf
+    dconf # gtk dep
     discord
-    dunst
     feh
     fluxcd
-    go
     gomplate
     googler
     goreleaser
     grc
-    gsimplecal
     guvcview
     handlr
     helmfile
@@ -74,20 +78,15 @@
     lxappearance
     mr
     mupdf
-    neovim
     nodePackages.npm
     nodePackages.prettier
     nodejs
-    obconf
-    openbox
-    openconnect
     openrgb
     packer
     pavucontrol
     pcmanfm
     pgcli
     pipenv
-    polybar
     python3
     python39Packages.pynvim   # nvim dep
     python39Packages.ueberzug # nvim dep
@@ -98,10 +97,8 @@
     slack
     sops
     spotify
-    starship
     stern
     sumneko-lua-language-server
-    sxhkd
     sxiv
     terraform
     theme-vertex
