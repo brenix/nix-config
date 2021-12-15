@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
 
   imports = [
     ../../modules/settings.nix
@@ -11,6 +11,9 @@
     plugins = with pkgs; [
       rofi-calc
     ];
+    extraConfig = {
+      dpi = config.settings.dpi;
+    };
   };
 
 }
