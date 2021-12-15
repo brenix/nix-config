@@ -191,8 +191,10 @@ lspconfig.jsonls.setup{}
 if not configs.rnix then
   configs.rnix = {
     default_config = {
+      cmd = {"rnix-lsp"},
       on_attach = on_attach,
       filetypes = { "nix" },
+      root_dir = vim.loop.cwd,
     },
   }
 end
