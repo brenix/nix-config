@@ -25,10 +25,12 @@
   settings = {
     dpi = 180;
     fonts = {
-      terminal.font = "JetBrains Mono Nerd Font";
-      terminal.size = 14.5;
+      browser.font = "Verdana";
+      browser.size = 16;
       launcher.font = "Verdana";
       launcher.size = 10;
+      terminal.font = "JetBrains Mono Nerd Font";
+      terminal.size = 14.5;
     };
   };
 

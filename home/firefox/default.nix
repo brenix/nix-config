@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
+
+  imports = [
+    ../../modules/settings.nix
+  ];
 
   programs.firefox = {
     enable = true;
@@ -72,8 +76,8 @@
           "findbar.modalHighlight" = true;
           "font.default.x-western" = "sans-serif";
           "font.name.monospace.x-western" = "Hack Nerd Font Mono";
-          "font.name.sans-serif.x-western" = "Verdana";
-          "font.name.serif.x-western" = "Verdana";
+          "font.name.sans-serif.x-western" = config.settings.fonts.browser.font;
+          "font.name.serif.x-western" = config.settings.fonts.browser.font;
           "full-screen-api.warning.timeout" = 0;
           "general.warnOnAboutConfig" = false;
           "gfx.canvas.azure.accelerated" = true;
