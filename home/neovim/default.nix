@@ -2,9 +2,14 @@
 
   home.packages = with pkgs; [
     neovim
+
+    # formatting
     nixfmt
+    shellharden
     shfmt
     stylua
+
+    # language servers
     rnix-lsp
   ];
 
