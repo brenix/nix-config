@@ -1,23 +1,28 @@
--- Disable providers we don't need
-vim.g.loaded_python_provider  = 0
-vim.g.loaded_ruby_provider    = 0
-vim.g.loaded_perl_provider    = 0
-vim.g.loaded_node_provider    = 0
+-- Disable some builtin vim plugins
+local disabled_built_ins = {
+   "2html_plugin",
+   "getscript",
+   "getscriptPlugin",
+   "gzip",
+   "logipat",
+   "netrw",
+   "netrwPlugin",
+   "netrwSettings",
+   "netrwFileHandlers",
+   "matchit",
+   "tar",
+   "tarPlugin",
+   "rrhelper",
+   "spellfile_plugin",
+   "vimball",
+   "vimballPlugin",
+   "zip",
+   "zipPlugin",
+}
 
--- Disable some in built plugins completely
-vim.g.loaded_netrw            = 1
-vim.g.loaded_netrwPlugin      = 1
-vim.g.loaded_matchparen       = 1
-vim.g.loaded_matchit          = 1
-vim.g.loaded_2html_plugin     = 1
-vim.g.loaded_getscriptPlugin  = 1
-vim.g.loaded_gzip             = 1
-vim.g.loaded_logipat          = 1
-vim.g.loaded_rrhelper         = 1
-vim.g.loaded_spellfile_plugin = 1
-vim.g.loaded_tarPlugin        = 1
-vim.g.loaded_vimballPlugin    = 1
-vim.g.loaded_zipPlugin        = 1
+for _, plugin in pairs(disabled_built_ins) do
+   vim.g["loaded_" .. plugin] = 1
+end
 
 -- Stop sourcing filetype.vim
 vim.g.did_load_filetypes = 1
