@@ -1,6 +1,3 @@
--- Explicitly set python path for performance
-vim.g.python3_host_prog       = '/usr/bin/python3'
-
 -- Disable providers we don't need
 vim.g.loaded_python_provider  = 0
 vim.g.loaded_ruby_provider    = 0
