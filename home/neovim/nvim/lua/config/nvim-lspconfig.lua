@@ -18,6 +18,8 @@ local on_attach = function(client, bufnr)
   buf_map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_map('n', '<Leader>rn', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
+  require "lsp_signature".on_attach()
+
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_exec([[
     augroup lsp_format
@@ -191,10 +193,8 @@ lspconfig.jsonls.setup{}
 if not configs.rnix then
   configs.rnix = {
     default_config = {
-      cmd = {"rnix-lsp"},
       on_attach = on_attach,
       filetypes = { "nix" },
-      root_dir = vim.loop.cwd,
     },
   }
 end

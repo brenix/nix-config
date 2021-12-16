@@ -83,6 +83,10 @@ return require("packer").startup(function()
   use {"onsails/lspkind-nvim",
         config=[[require("config.lspkind-nvim")]]}
 
+  -- lsp-signature
+  use {"ray-x/lsp_signature.nvim",
+        config=[[require("config.lsp-signature")]]}
+
   -- nvim-lsp-installer
   use {"williamboman/nvim-lsp-installer",
         config=[[require("config.nvim-lsp-installer")]]}
