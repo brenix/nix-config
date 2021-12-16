@@ -1,15 +1,11 @@
 { ... }: {
 
-  imports = [
-    ../../modules/settings.nix
-  ];
+  imports = [ ../../modules/settings.nix ];
 
   xsession.windowManager.bspwm = {
     enable = true;
 
-    monitors = {
-      config.settings.monitor = [ "1" "2" "3" "4" ];
-    };
+    monitors = { config.settings.monitor = [ "1" "2" "3" "4" ]; };
 
     settings = {
       remove_disabled_monitors = true;
@@ -31,9 +27,7 @@
       pointer_motion_interval = 7;
     };
 
-    startupPrograms = [
-      "sxhkd"
-    ];
+    startupPrograms = [ "sxhkd" ];
 
     rules = {
       "Authy" = {
@@ -41,18 +35,10 @@
         follow = true;
         focus = true;
       };
-      "Spotify" = {
-        desktop = "^3";
-      };
-      "Pavucontrol" = {
-        state = "floating";
-      };
-      "Slack" = {
-        desktop = "^2";
-      };
-      "sxiv" = {
-        state = "floating";
-      };
+      "Spotify" = { desktop = "^3"; };
+      "Pavucontrol" = { state = "floating"; };
+      "Slack" = { desktop = "^2"; };
+      "sxiv" = { state = "floating"; };
       "zoom" = {
         state = "floating";
         sticky = true;
@@ -61,8 +47,6 @@
         state = "floating";
         sticky = true;
       };
+    };
   };
-
-
-
 }

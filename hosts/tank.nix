@@ -1,8 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [
-    ../hardware/vm-fusion.nix
-  ];
+  imports = [ ../hardware/vm-fusion.nix ];
 
   # Hostname
   networking.hostName = "tank";

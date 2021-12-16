@@ -1,9 +1,6 @@
 { config, ... }: {
 
-  imports = [
-    ../hardware/vm-qemu.nix
-    ../modules/settings.nix
-  ];
+  imports = [ ../hardware/vm-qemu.nix ../modules/settings.nix ];
 
   # Hostname
   networking.hostName = "dozer";
@@ -16,9 +13,7 @@
   environment.variables.GDK_DPI_SCALE = "1";
 
   # Configure host-specific settings
-  settings = {
-    dpi = 109;
-  };
+  settings = { dpi = 109; };
 
   # Pass settings to home-manager
   home-manager.users.${config.settings.username}.settings = config.settings;

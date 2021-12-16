@@ -1,8 +1,6 @@
 { config, ... }: {
 
-  imports = [
-    ../../modules/settings.nix
-  ];
+  imports = [ ../../modules/settings.nix ];
 
   programs.git = {
     enable = true;
@@ -13,7 +11,8 @@
     aliases = {
       publish = "!git push -u origin $(git branch-name)";
       unpublish = "!git push origin :$(git branch-name)";
-      da = "!git checkout main && bit branch --no-color | grep -v 'main' | xargs -n 1 git branch -d";
+      da =
+        "!git checkout main && bit branch --no-color | grep -v 'main' | xargs -n 1 git branch -d";
     };
 
     delta = {
@@ -59,24 +58,41 @@
       "Thumbs.db"
     ];
 
-    includes = [
-      {
-        path = "~/work/.gitconfig";
-        condition = "gitdir:~/work/";
-        # TODO: add contents in a sane way without exposing sensitive text
-        # contents = {};
-      }
-    ];
+    includes = [{
+      path = "~/work/.gitconfig";
+      condition = "gitdir:~/work/";
+      # TODO: add contents in a sane way without exposing sensitive text
+      # contents = {};
+    }];
 
     extraConfig = {
       apply = { whitespace = "strip"; };
       branch = { autosetuprebase = "always"; };
-      color."branch" = { current = "normal reverse"; local = "normal"; remote = "green"; };
-      color."diff" = { meta = "white bold"; frag = "magenta bold"; old = "red bold"; new = "green bold"; };
-      color."status" = { added = "green"; changed = "magenta"; untracked = "white"; };
-      core = { compression = 0; preloadindex = true; whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol"; };
+      color."branch" = {
+        current = "normal reverse";
+        local = "normal";
+        remote = "green";
+      };
+      color."diff" = {
+        meta = "white bold";
+        frag = "magenta bold";
+        old = "red bold";
+        new = "green bold";
+      };
+      color."status" = {
+        added = "green";
+        changed = "magenta";
+        untracked = "white";
+      };
+      core = {
+        compression = 0;
+        preloadindex = true;
+        whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol";
+      };
       diff."sopsdiffer" = { textconv = "sops -d"; };
-      format = { pretty = "%C(yellow)%H%Creset %C(magenta)%cd%Creset %d %s %C(green)%an"; };
+      format = {
+        pretty = "%C(yellow)%H%Creset %C(magenta)%cd%Creset %d %s %C(green)%an";
+      };
       http = { postBuffer = 524288000; };
       init = { defaultBranch = "main"; };
       log = { date = "short"; };

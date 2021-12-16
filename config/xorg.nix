@@ -1,8 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [
-    ../modules/settings.nix
-  ];
+  imports = [ ../modules/settings.nix ];
 
   services.xserver = {
     enable = true;
@@ -28,8 +26,6 @@
     xkbOptions = "caps:escape";
   };
 
-  environment.systemPackages = with pkgs; [
-    xorg.xdpyinfo
-  ];
+  environment.systemPackages = with pkgs; [ xorg.xdpyinfo ];
 
 }

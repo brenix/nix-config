@@ -1,8 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [
-    ../../modules/settings.nix
-  ];
+  imports = [ ../../modules/settings.nix ];
 
   users.users.${config.settings.username} = {
     isNormalUser = true;

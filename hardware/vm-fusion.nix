@@ -1,6 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }: {
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "mptspi" "uhci_hcd" "ehci_pci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "ata_piix" "mptspi" "uhci_hcd" "ehci_pci" "sd_mod" "sr_mod" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
@@ -30,9 +31,7 @@
   virtualisation.vmware.guest.enable = true;
 
   # Install VMWare video driver
-  environment.systemPackages = with pkgs; [
-    xorg.xf86videovmware
-  ];
+  environment.systemPackages = with pkgs; [ xorg.xf86videovmware ];
 
   # Enable DHCP
   systemd.network.networks.ens33 = {

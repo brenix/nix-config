@@ -1,8 +1,6 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, ... }: {
 
-  imports = [
-    ../../modules/settings.nix
-  ];
+  imports = [ ../../modules/settings.nix ];
 
   services.polybar = {
     enable = true;
@@ -10,9 +8,7 @@
     script = "polybar main &";
 
     settings = {
-      "settings" = {
-        screenchange-reload = true;
-      };
+      "settings" = { screenchange-reload = true; };
 
       "colors" = {
         bg = "#161821";
@@ -56,7 +52,7 @@
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "workspaces";
-        /* modules-center = previous playpause next spotify; */
+        # modules-center = previous playpause next spotify;
         modules-right = "cpu temperature memory volume date time";
         offset-x = 0;
         offset-y = 0;
@@ -80,7 +76,8 @@
         host = "127.0.0.1";
         port = 6600;
         interval = 5;
-        format-online = "<icon-prev> <toggle> <icon-next> <icon-stop> <label-song>";
+        format-online =
+          "<icon-prev> <toggle> <icon-next> <icon-stop> <label-song>";
         label-song = "%artist% - %title%";
         format-stopped = "";
         click-left = "mpc -q toggle";
@@ -122,7 +119,7 @@
       "module/temperature" = {
         type = "internal/temperature";
         interval = 3;
-        /* hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input"; */
+        # hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
         thermal-zone = 0;
         base-temperature = 20;
         warn-temperature = 60;
@@ -154,7 +151,7 @@
 
       "module/volume" = {
         type = "internal/pulseaudio";
-        /* sink = "alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo"; */
+        # sink = "alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo";
         use-ui-max = false;
         interval = 2;
         format-volume = "<ramp-volume> <label-volume>";
@@ -181,7 +178,8 @@
         type = "internal/date";
         interval = 3600;
         date = "%Y-%m-%d";
-        label = "%{A1:${pkgs.gsimplecal}/bin/gsimplecal & disown:}%{A3:${pkgs.gsimplecal}/bin/gsimplecal & disown:} %date%%{A}%{A}";
+        label =
+          "%{A1:${pkgs.gsimplecal}/bin/gsimplecal & disown:}%{A3:${pkgs.gsimplecal}/bin/gsimplecal & disown:} %date%%{A}%{A}";
       };
     };
   };

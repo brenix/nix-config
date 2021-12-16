@@ -11,7 +11,9 @@
       global = {
         font = "NotoSans Nerd Font Regular 10";
         markup = "full";
-        format = "<b>%s</b>\n%b";
+        format = ''
+          <b>%s</b>
+          %b'';
         sort = "no";
         indicate_hidden = "yes";
         alignment = "left";

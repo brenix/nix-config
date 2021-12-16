@@ -18,9 +18,7 @@
   programs.home-manager.enable = true;
 
   # Session variables
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # X11
   xsession = {
@@ -29,9 +27,7 @@
       package = pkgs.capitaine-cursors;
       name = "capitaine-cursors-white";
     };
-    windowManager = {
-      command = "openbox-session";
-    };
+    windowManager = { command = "openbox-session"; };
   };
 
   # XDG
@@ -75,6 +71,7 @@
     kubernetes-helm
     kustomize
     lab
+    lefthook
     lxappearance
     mr
     mupdf
@@ -113,9 +110,7 @@
   # Autocutsel
   systemd.user.services.autocutsel = {
     Unit.Description = "AutoCutSel";
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
+    Install = { WantedBy = [ "default.target" ]; };
     Service = {
       Type = "forking";
       Restart = "always";
@@ -174,9 +169,7 @@
   };
 
   # GPG
-  programs.gpg = {
-    enable = true;
-  };
+  programs.gpg = { enable = true; };
 
   services.gpg-agent.enable = true;
 
@@ -218,9 +211,7 @@
   # ssh
   programs.ssh = {
     enable = true;
-    includes = [
-      "~/.ssh/cells/config/*"
-    ];
+    includes = [ "~/.ssh/cells/config/*" ];
   };
 
   # terraform
@@ -229,8 +220,7 @@
     plugin_cache_dir = "/home/brenix/.cache/terraform-plugin-cache"
     disable_checkpoint = true
   '';
-  systemd.user.tmpfiles.rules = [
-    "d /home/brenix/.cache/terraform-plugin-cache 0755 brenix users"
-  ];
+  systemd.user.tmpfiles.rules =
+    [ "d /home/brenix/.cache/terraform-plugin-cache 0755 brenix users" ];
 
 }

@@ -10,7 +10,7 @@
       };
       aws = {
         disabled = false;
-        format = "[$profile(\$region\))]($style) ";
+        format = "[$profile($region))]($style) ";
       };
       directory = {
         disabled = false;
@@ -31,7 +31,7 @@
       };
       python = {
         disabled = false;
-        format = "[(\($virtualenv\))]($style) ";
+        format = "[(($virtualenv))]($style) ";
       };
 
       cmd_duration.disabled = true;

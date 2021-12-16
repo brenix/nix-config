@@ -93,8 +93,6 @@
     '';
   };
 
-  xdg.configFile = {
-    "tmux/kube.tmux".source = ./kube.tmux;
-  };
+  xdg.configFile = { "tmux/kube.tmux".source = ./kube.tmux; };
 }
 

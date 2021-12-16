@@ -1,8 +1,6 @@
 { pkgs, ... }: {
 
-  environment.systemPackages = with pkgs; [
-    openconnect
-  ];
+  environment.systemPackages = with pkgs; [ openconnect ];
 
   # Add script for split DNS when connecting to corporate VPN
   environment.etc = {
