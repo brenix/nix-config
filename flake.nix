@@ -77,8 +77,7 @@
           ] ++ extraModules);
 
         };
-    in
-    {
+    in {
       # The "name" in nixosConfigurations.${name} should match the `hostname`
       nixosConfigurations = {
         dozer = mkHost ./hosts/dozer.nix [ ];
