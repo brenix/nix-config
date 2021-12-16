@@ -88,12 +88,10 @@
     pgcli
     pipenv
     python3
-    python39Packages.pynvim   # nvim dep
+    python39Packages.pynvim # nvim dep
     python39Packages.ueberzug # nvim dep
     ranger
-    rnix-lsp
     sd
-    shfmt
     slack
     sops
     spotify

@@ -2,6 +2,10 @@
 
   home.packages = with pkgs; [
     neovim
+    nixfmt
+    shfmt
+    stylua
+    rnix-lsp
   ];
 
   xdg.configFile."nvim" = {
