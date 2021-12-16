@@ -39,9 +39,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-
       system = "x86_64-linux";
-
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -79,34 +77,25 @@
           ] ++ extraModules);
 
         };
-    in {
+    in
+    {
       # The "name" in nixosConfigurations.${name} should match the `hostname`
       nixosConfigurations = {
-        dozer = mkHost ./hosts/dozer.nix [
-          # TBD
-        ];
-        tank = mkHost ./hosts/tank.nix [
-          # TBD
-        ];
-        /* neo = mkHost
-           ./hosts/neo.nix
-           [
-           # Hardware profiles from: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
-           inputs.nixos-hardware.nixosModules.common-cpu-amd
-           inputs.nixos-hardware.nixosModules.common-pc-ssd
-           inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+        dozer = mkHost ./hosts/dozer.nix [ ];
+        tank = mkHost ./hosts/tank.nix [ ];
+        neo = mkHost ./hosts/neo.nix [
+          # Hardware profiles from: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-pc-ssd
+          inputs.nixos-hardware.nixosModules.common-gpu-nvidia
 
-           ./config/libvirt.nix
-           ];
-           trinity = mkHost
-           ./hosts/trinity.nix
-           [
-           # Hardware profiles from: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
-           inputs.nixos-hardware.nixosModules.common-cpu-intel
-
-           ./config/kubernetes-controlller.nix
-           ];
-        */
+          ./config/libvirt.nix
+        ];
+        trinity = mkHost ./hosts/trinity.nix [
+          # Hardware profiles from: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
+          ./config/kubernetes-controlller.nix
+        ];
       };
     };
 }
