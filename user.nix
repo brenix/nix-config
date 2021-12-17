@@ -17,9 +17,6 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
-  # Session variables
-  home.sessionVariables = { EDITOR = "nvim"; };
-
   # X11
   xsession = {
     enable = true;
@@ -76,7 +73,6 @@
     mr
     mupdf
     nodePackages.npm
-    nodePackages.prettier
     nodejs
     openrgb
     packer
@@ -85,15 +81,12 @@
     pgcli
     pipenv
     python3
-    python39Packages.pynvim # nvim dep
-    python39Packages.ueberzug # nvim dep
     ranger
     sd
     slack
     sops
     spotify
     stern
-    sumneko-lua-language-server
     sxiv
     terraform
     theme-vertex
