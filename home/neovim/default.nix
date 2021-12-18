@@ -12,7 +12,8 @@ let
     };
   # always installs latest version
   plugin = pluginGit "HEAD";
-in {
+in
+{
   home.sessionVariables.EDITOR = "nvim";
 
   programs.neovim = {
@@ -76,7 +77,7 @@ in {
       # plugin deps
       (python3.withPackages (ps: with ps; [ pynvim ueberzug ]))
       tree-sitter
-      ranger
+      # ranger
 
       # language servers
       gopls

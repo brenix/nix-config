@@ -58,9 +58,7 @@ map("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
 
 -- nvim-tree
 map("n", "<Leader>n", ":NvimTreeToggle<CR>", { silent = true })
-
--- rnvimr
-map("n", "-", ":RnvimrToggle<CR>", { silent = true })
+map("n", "-", ":NvimTreeFindFile<CR>", { silent = true })
 
 -- telescope
 map("n", "<Leader>ff", [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], { silent = true })
