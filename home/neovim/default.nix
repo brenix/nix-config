@@ -52,7 +52,7 @@ in {
       nvim-treesitter
       nvim-web-devicons
       quickfix-reflector-vim
-      rnvimr
+      # rnvimr
       telescope-fzf-native-nvim
       telescope-nvim
       telescope-project-nvim

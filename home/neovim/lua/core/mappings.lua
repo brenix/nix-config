@@ -37,34 +37,34 @@ map("n", "<Tab>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })
 map("n", "<S-Tab>", [[<Cmd>BufferLineCyclePrev<CR>]], { silent = true })
 
 -- comment
-map("n", "<leader>'", ":CommentToggle<CR>", { silent = true} )
-map("v", "<leader>'", ":CommentToggle<CR>", { silent = true} )
+map("n", "<leader>'", ":CommentToggle<CR>", { silent = true })
+map("v", "<leader>'", ":CommentToggle<CR>", { silent = true })
 
 -- git-blame
 map("n", "<leader>g", ":GitBlameToggle<CR>", { silent = true })
 
 -- indentline
-map('n', '<leader>i', ':IndentBlanklineToggle<CR>', { silent = true })
+map("n", "<leader>i", ":IndentBlanklineToggle<CR>", { silent = true })
 
 -- navigator
-map('n', "<A-h>", "<CMD>lua require('Navigator').left()<CR>", { silent = true })
-map('n', "<A-k>", "<CMD>lua require('Navigator').up()<CR>", { silent = true })
-map('n', "<A-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true })
-map('n', "<A-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
-map('n', "<C-h>", "<CMD>lua require('Navigator').left()<CR>", { silent = true })
-map('n', "<C-k>", "<CMD>lua require('Navigator').up()<CR>", { silent = true })
-map('n', "<C-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true })
-map('n', "<C-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
+map("n", "<A-h>", "<CMD>lua require('Navigator').left()<CR>", { silent = true })
+map("n", "<A-k>", "<CMD>lua require('Navigator').up()<CR>", { silent = true })
+map("n", "<A-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true })
+map("n", "<A-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
+map("n", "<C-h>", "<CMD>lua require('Navigator').left()<CR>", { silent = true })
+map("n", "<C-k>", "<CMD>lua require('Navigator').up()<CR>", { silent = true })
+map("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true })
+map("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
 
 -- nvim-tree
-map("n", '<leader>\\', ":NvimTreeToggle<CR>", { silent = true })
+map("n", "<leader>\\\\", ":NvimTreeToggle<CR>", { silent = true })
 
 -- rnvimr
 map("n", "-", ":RnvimrToggle<CR>", { silent = true })
 
 -- telescope
 map("n", "<Leader>ff", [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], { silent = true })
-map("n", "<Leader>p", [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], { silent = true })
+map("n", "<Leader>p", [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], { silent = true })
 map("n", "<C-p>", [[<Cmd>lua require('telescope').extensions.project.project{}<CR>]], { silent = true })
 map("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], { silent = true })
 map("n", "<Leader>fb", [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], { silent = true })

@@ -18,7 +18,7 @@ local plugins = {
 	"navigator",
 	"null-ls",
 	"nvim-tree",
-	"rnvimr",
+	-- "rnvimr",
 	"stabilize",
 	"telescope",
 	"todo-comments",
