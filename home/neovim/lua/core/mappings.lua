@@ -57,7 +57,7 @@ map("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true }
 map("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
 
 -- nvim-tree
-map("n", "<leader>\\\\", ":NvimTreeToggle<CR>", { silent = true })
+map("n", "<leader>n", ":NvimTreeToggle<CR>", { silent = true })
 
 -- rnvimr
 map("n", "-", ":RnvimrToggle<CR>", { silent = true })
