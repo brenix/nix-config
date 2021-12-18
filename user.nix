@@ -80,7 +80,6 @@
     pcmanfm
     pgcli
     pipenv
-    ranger
     sd
     slack
     sops
