@@ -74,8 +74,7 @@ in {
 
     extraPackages = with pkgs; [
       # plugin deps
-      python39Packages.pynvim
-      python39Packages.ueberzug
+      (python3.withPackages (ps: with ps; [ pynvim ueberzug ]))
       tree-sitter
 
       # language servers
