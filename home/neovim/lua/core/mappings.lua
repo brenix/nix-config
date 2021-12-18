@@ -12,18 +12,18 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- General
-map("n", "<leader>w", ":w<CR>")
-map("n", "<leader>W", ":wq<CR>")
-map("n", "<leader>q", ":q<CR>")
-map("n", "<leader>Q", ":q!<CR>")
-map("n", "<leader>e", ':e <C-R>=expand("%:p:h") . "/"<CR>')
-map("n", "<leader>x", ":BufDel<CR>", { silent = true })
-map("n", "<leader>X", ":BufDel!<CR>", { silent = true })
-map("n", "<leader>s", ":split<CR>", { silent = true })
-map("n", "<leader>S", ":new<CR>", { silent = true })
-map("n", "<leader>v", ":vsplit<CR>", { silent = true })
-map("n", "<leader>V", ":vnew<CR>", { silent = true })
-map("n", "<leader>l", ":set invnumber<CR>", { silent = true })
+map("n", "<Leader>w", ":w<CR>")
+map("n", "<Leader>W", ":wq<CR>")
+map("n", "<Leader>q", ":q<CR>")
+map("n", "<Leader>Q", ":q!<CR>")
+map("n", "<Leader>e", ':e <C-R>=expand("%:p:h") . "/"<CR>')
+map("n", "<Leader>x", ":BufDel<CR>", { silent = true })
+map("n", "<Leader>X", ":BufDel!<CR>", { silent = true })
+map("n", "<Leader>s", ":split<CR>", { silent = true })
+map("n", "<Leader>S", ":new<CR>", { silent = true })
+map("n", "<Leader>v", ":vsplit<CR>", { silent = true })
+map("n", "<Leader>V", ":vnew<CR>", { silent = true })
+map("n", "<Leader>l", ":set invnumber<CR>", { silent = true })
 map("i", "<S-Tab>", "<C-D>")
 map("v", "<Tab>", ">gv", { silent = true })
 map("v", "<S-Tab>", "<gv", { silent = true })
@@ -37,14 +37,14 @@ map("n", "<Tab>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })
 map("n", "<S-Tab>", [[<Cmd>BufferLineCyclePrev<CR>]], { silent = true })
 
 -- comment
-map("n", "<leader>'", ":CommentToggle<CR>", { silent = true })
-map("v", "<leader>'", ":CommentToggle<CR>", { silent = true })
+map("n", "<Leader>'", ":CommentToggle<CR>", { silent = true })
+map("v", "<Leader>'", ":CommentToggle<CR>", { silent = true })
 
 -- git-blame
-map("n", "<leader>g", ":GitBlameToggle<CR>", { silent = true })
+map("n", "<Leader>g", ":GitBlameToggle<CR>", { silent = true })
 
 -- indentline
-map("n", "<leader>i", ":IndentBlanklineToggle<CR>", { silent = true })
+map("n", "<Leader>i", ":IndentBlanklineToggle<CR>", { silent = true })
 
 -- navigator
 map("n", "<A-h>", "<CMD>lua require('Navigator').left()<CR>", { silent = true })
@@ -57,7 +57,7 @@ map("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true }
 map("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
 
 -- nvim-tree
-map("n", "<leader>n", ":NvimTreeToggle<CR>", { silent = true })
+map("n", "<Leader>n", ":NvimTreeToggle<CR>", { silent = true })
 
 -- rnvimr
 map("n", "-", ":RnvimrToggle<CR>", { silent = true })
@@ -72,4 +72,4 @@ map("n", "<Leader>fh", [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]]
 map("n", "<Leader>fo", [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]], { silent = true })
 
 -- todo-comments
-map("n", "<leader>t", ":TodoQuickFix<CR>", { silent = true })
+map("n", "<Leader>t", ":TodoQuickFix<CR>", { silent = true })
