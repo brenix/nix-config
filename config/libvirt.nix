@@ -17,10 +17,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    virt-manager
-    win-virtio
-  ];
+  environment.systemPackages = with pkgs; [ virt-manager win-virtio ];
 
   # TODO: libvirt-hooks
 }

@@ -23,10 +23,12 @@ in {
       "amd_iommu=on"
       "default_hugepagesz=1G"
       "hugepagesz=1G"
+      "intremap=no_x2apic_optout"
       "iommu=pt"
       "mitigations=off"
       "module_blacklist=xhci_pci"
       "nohz_full=8-15,24-31"
+      "rcu_nocb_poll"
       "rcu_nocbs=8-15,24-31"
       "rd.driver.pre=vfio-pci"
       "systemd.unified_cgroup_hierarchy=1"
@@ -38,12 +40,28 @@ in {
 
     blacklistedKernelModules = [ "nouveau" ];
 
-    kernelModules =
-      [ "kvm-amd" "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
+    kernelModules = [
+      "kvm-amd"
+      "vfio_virqfd"
+      "vfio_pci"
+      "vfio_iommu_type1"
+      "vfio"
+      "i2c-dev"
+    ];
 
     extraModprobeConfig = ''
+      options kvm halt_poll_ns=80000
       options kvm ignore_msrs=1
-      options kvm avic=1
+      options kvm nx_huge_pages=off
+      options kvm report_ignored_msrs=0
+      options kvm_amd avic=1
+      options kvm_amd nested=0
+      options kvm_amd npt=1
+      options usbhid kbpoll=2
+      options usbhid mousepoll=2
+      options vfio-pci disable_vga=1
+      options vfio_iommu_type1 allow_unsafe_interrupts=1
+      options vfio_iommu_type1 disable_hugepages=0
     '';
   };
 
