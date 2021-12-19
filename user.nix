@@ -51,7 +51,6 @@
     awscli
     buildah
     chamber
-    cosign
     dconf # gtk dep
     discord
     feh
@@ -80,6 +79,7 @@
     pcmanfm
     pgcli
     pipenv
+    piper
     sd
     slack
     sops
@@ -92,8 +92,6 @@
     unzip
     vault-bin
     velero
-    virt-manager
-    win-virtio
     xclip
     zoom-us
   ];

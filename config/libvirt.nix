@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
 
   imports = [ ../modules/settings.nix ];
 
@@ -16,6 +16,11 @@
       '';
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    virt-manager
+    win-virtio
+  ];
 
   # TODO: libvirt-hooks
 }
