@@ -137,7 +137,7 @@ nvim_lsp["yamlls"].setup({
 				enable = true,
 			},
 			schemas = {
-				["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/master-standalone-strict/all.json"] = "/*.yaml",
+				["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/master-standalone-strict/all.json"] = "*.yaml",
 				["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
 				["http://json.schemastore.org/helmfile"] = "helmfile.{yml,yaml}",
 				["http://json.schemastore.org/gitlab-ci"] = "/*lab-ci.{yml,yaml}",
