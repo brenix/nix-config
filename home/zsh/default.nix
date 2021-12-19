@@ -146,6 +146,8 @@
       bindkey "^[d" clear-screen
 
       # -- SOURCE ADDITIONAL FILES
+      source ${pkgs.grc}/etc/grc.zsh
+
       for f in $HOME/.zsh.d/*.zsh $HOME/.zsh.local.d/*.zsh; do
         source $f
       done
