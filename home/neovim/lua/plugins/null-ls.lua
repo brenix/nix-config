@@ -15,14 +15,7 @@ local sources = {
 	b.formatting.trim_whitespace,
 }
 
--- TODO: Remove the following and uncomment the other once null-ls plugin is updated in nix
-null_ls.config({
+null_ls.setup({
 	sources = sources,
+	on_attach = on_attach,
 })
-
-require("lspconfig")["null-ls"].setup({ on_attach = on_attach })
-
--- null_ls.setup({
---   sources = sources,
---   on_attach = on_attach,
--- })

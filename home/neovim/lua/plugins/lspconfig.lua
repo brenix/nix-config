@@ -113,7 +113,7 @@ nvim_lsp["sumneko_lua"].setup({
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { "vim" },
+				globals = { "vim", "on_attach" },
 			},
 			telemetry = {
 				enable = false,
