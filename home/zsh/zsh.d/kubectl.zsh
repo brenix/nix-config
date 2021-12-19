@@ -1,23 +1,23 @@
 if [[ $commands[kubectl] ]]; then
   # aliases
-  alias k=kubectl
-  alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
-  alias kgp='kubectl get pods'
-  alias kdp='kubectl delete pod'
-  alias kgs='kubectl get svc'
-  alias kgns='kubectl get namespaces'
-  alias kgcm='kubectl get configmaps'
-  alias kgsec='kubectl get secret'
-  alias kgd='kubectl get deployment'
-  alias kgds='kubectl get daemonset'
-  alias kgss='kubectl get statefulset'
-  alias kgno='kubectl get nodes'
-  alias kgsa="kubectl get sa"
-
-  # hack to fix kubectl edit when using grc for colors
-  [[ "$OSTYPE" == "darwin"*  ]] && alias ke='/usr/local/bin/kubectl edit'
-  [[ "$OSTYPE" == "linux-gnu" ]] && alias ke='/usr/bin/kubectl edit'
-  [[ "$OSTYPE" == "linux-gnu" ]] && alias kr='/usr/bin/kubectl run'
+#   alias k=kubectl
+#   alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
+#   alias kgp='kubectl get pods'
+#   alias kdp='kubectl delete pod'
+#   alias kgs='kubectl get svc'
+#   alias kgns='kubectl get namespaces'
+#   alias kgcm='kubectl get configmaps'
+#   alias kgsec='kubectl get secret'
+#   alias kgd='kubectl get deployment'
+#   alias kgds='kubectl get daemonset'
+#   alias kgss='kubectl get statefulset'
+#   alias kgno='kubectl get nodes'
+#   alias kgsa="kubectl get sa"
+#
+#   # hack to fix kubectl edit when using grc for colors
+#   [[ "$OSTYPE" == "darwin"*  ]] && alias ke='/usr/local/bin/kubectl edit'
+#   [[ "$OSTYPE" == "linux-gnu" ]] && alias ke='/usr/bin/kubectl edit'
+#   [[ "$OSTYPE" == "linux-gnu" ]] && alias kr='/usr/bin/kubectl run'
 
 
   # load all kubeconfigs
@@ -108,8 +108,8 @@ if [[ $commands[kubectl] ]]; then
   }
 
   # use grc to colorize output from kubectl
-  kubectl() {
-    grc -e -s -c conf.kubectl kubectl "$@"
-  }
+  # kubectl() {
+  #   grc -e -s -c conf.kubectl kubectl "$@"
+  # }
 
 fi

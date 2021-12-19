@@ -45,6 +45,7 @@
 
   # Packages to be installed
   home.packages = with pkgs; [
+    asdf-vm
     authy
     awless
     aws-vault
@@ -55,6 +56,7 @@
     discord
     feh
     fluxcd
+    git-ignore
     gomplate
     googler
     goreleaser
@@ -117,9 +119,6 @@
       pager = "less -inMRF";
     };
   };
-
-  # dircolors
-  programs.dircolors.enable = true;
 
   # fzf
   programs.fzf = {
@@ -206,10 +205,10 @@
   # terraform
   # TODO: fix hardcoded username
   home.file.".terraformrc".text = ''
-    plugin_cache_dir = "/home/brenix/.cache/terraform-plugin-cache"
+    plugin_cache_dir = "${config.xdg.cacheHome}/terraform-plugin-cache"
     disable_checkpoint = true
   '';
   systemd.user.tmpfiles.rules =
-    [ "d /home/brenix/.cache/terraform-plugin-cache 0755 brenix users" ];
+    [ "d ${config.xdg.cacheHome}/terraform-plugin-cache 0755 brenix users" ];
 
 }

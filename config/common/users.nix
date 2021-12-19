@@ -2,6 +2,8 @@
 
   imports = [ ../../modules/settings.nix ];
 
+  environment.pathsToLink = [ "/share/zsh" ];
+
   users.users.${config.settings.username} = {
     isNormalUser = true;
     createHome = true;

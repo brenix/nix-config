@@ -1,1 +1,0 @@
-zcomet load rupa/z
