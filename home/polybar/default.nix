@@ -7,22 +7,23 @@
 
     script = "polybar main &";
 
-    settings = {
+    settings = let colors = config.colorscheme.colors;
+    in {
       "settings" = { screenchange-reload = true; };
 
       "colors" = {
-        bg = "#161821";
-        bg-alt = "#161821";
-        fg = "#ECEFF4";
-        fg-alt = "#E5E9F0";
+        bg = "#${colors.base00}";
+        bg-alt = "#${colors.base00}";
+        fg = "#${colors.base06}";
+        fg-alt = "#${colors.base05}";
 
-        blue = "#81A1C1";
-        cyan = "#88C0D0";
-        green = "#A3BE8C";
-        orange = "#D08770";
-        purple = "#B48EAD";
-        red = "#BF616A";
-        yellow = "#EBCB8B";
+        blue = "#${colors.base0D}";
+        cyan = "#${colors.base0C}";
+        green = "#${colors.base0B}";
+        orange = "#${colors.base09}";
+        purple = "#${colors.base0F}";
+        red = "#${colors.base08}";
+        yellow = "#${colors.base0A}";
 
         trans = "#00000000";
         semi-trans-black = "#aa000000";

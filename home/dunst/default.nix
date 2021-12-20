@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   services.dunst = {
     enable = true;
 
@@ -57,21 +57,21 @@
       };
 
       urgency_low = {
-        background = "#161821";
-        foreground = "#d8dee9";
+        background = "#${config.colorscheme.colors.base00}";
+        foreground = "#${config.colorscheme.colors.base04}";
         timeout = 6;
       };
 
       urgency_normal = {
-        background = "#161821";
-        foreground = "#d8dee9";
+        background = "#${config.colorscheme.colors.base00}";
+        foreground = "#${config.colorscheme.colors.base04}";
         timeout = 10;
       };
 
       urgency_critical = {
-        background = "#161821";
-        foreground = "#ffffff";
-        frame_color = "#bf616a";
+        background = "#${config.colorscheme.colors.base00}";
+        foreground = "#${config.colorscheme.colors.base04}";
+        frame_color = "#${config.colorscheme.colors.base08}";
         timeout = 0;
       };
     };
