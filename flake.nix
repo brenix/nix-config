@@ -72,12 +72,14 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.sharedModules = [ inputs.nix-colors.homeManagerModule ];
               home-manager.users.brenix = import ./user.nix;
             }
           ] ++ extraModules);
 
         };
-    in {
+    in
+    {
       # The "name" in nixosConfigurations.${name} should match the `hostname`
       nixosConfigurations = {
         dozer = mkHost ./hosts/dozer.nix [ ];
