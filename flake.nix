@@ -54,6 +54,8 @@
       hosts = {
         dozer.modules = [ ./hosts/dozer.nix ];
         tank.modules = [ ./hosts/tank.nix ];
+        neo.modules = [ ./hosts/tank.nix ./config/libvirt.nix ];
+        trinity.modules = [ ./hosts/tank.nix ];
       };
 
       overlay = import ./overlays { inherit inputs; };
