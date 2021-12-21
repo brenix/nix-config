@@ -1,6 +1,4 @@
-{ config, pkgs, ... }: {
-
-  imports = [ ../modules/settings.nix ];
+{ pkgs, ... }: {
 
   virtualisation.libvirtd = {
     enable = true;
@@ -10,7 +8,6 @@
       verbatimConfig = ''
         security_driver = "none"
         security_default_confined = 0
-        user = ${config.settings.username}
         seccomp_sandbox = 0
       '';
     };
