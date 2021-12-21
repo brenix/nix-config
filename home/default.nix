@@ -55,7 +55,6 @@
             package = pkgs.capitaine-cursors;
             name = "capitaine-cursors-white";
           };
-          windowManager = { command = "openbox-session"; };
         };
 
         # XDG

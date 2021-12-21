@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
 
   imports = [ ../../modules/settings.nix ];
 
@@ -14,16 +14,16 @@
       focus_follows_pointer = true;
       border_width = 3;
       window_gap = 1;
-      automatic_scheme = spiral;
-      initial_polarity = first_child;
+      automatic_scheme = "spiral";
+      initial_polarity = "first_child";
       split_ratio = 0.52;
       borderless_monocle = true;
       single_monocle = true;
       gapless_monocle = false;
-      click_to_focus = button1;
-      pointer_modifier = mod4;
-      pointer_action1 = move;
-      pointer_action2 = resize_side;
+      click_to_focus = "button1";
+      pointer_modifier = "mod4";
+      pointer_action1 = "move";
+      pointer_action2 = "resize_side";
       pointer_motion_interval = 7;
       normal_border_color = "#${config.colorscheme.colors.base00}";
       active_border_color = "#${config.colorscheme.colors.base00}";

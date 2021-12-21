@@ -2,6 +2,8 @@
 
   home.packages = with pkgs; [ openbox obconf ];
 
+  xsession = { windowManager = { command = "openbox-session"; }; };
+
   xdg.configFile = {
     "openbox/rc.xml".source = ./rc.xml;
     "openbox/menu.xml".source = ./menu.xml;
