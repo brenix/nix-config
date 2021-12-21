@@ -5,7 +5,7 @@
     useUserPackages = true;
     sharedModules = [ inputs.nix-colors.homeManagerModule ];
     users = {
-      brenix = {
+      ${config.settings.username} = {
         imports = [
           ./alacritty
           ./dunst
@@ -234,13 +234,13 @@
         };
 
         # terraform
-        # TODO: fix hardcoded username
         home.file.".terraformrc".text = ''
-          plugin_cache_dir = "/home/brenix/.cache/terraform-plugin-cache"
+          plugin_cache_dir = "$HOME/.cache/terraform-plugin-cache"
           disable_checkpoint = true
         '';
-        systemd.user.tmpfiles.rules =
-          [ "d /home/brenix/.cache/terraform-plugin-cache 0755 brenix users" ];
+        systemd.user.tmpfiles.rules = [
+          "d $HOME/.cache/terraform-plugin-cache 0755 ${config.settings.username} users"
+        ];
       };
     };
   };

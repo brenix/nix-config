@@ -41,6 +41,7 @@
       hostDefaults = {
         modules = [
           inputs.home-manager.nixosModule
+          ./modules/settings.nix
           ./home
           ./config/common
           ./config/openconnect.nix
