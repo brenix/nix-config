@@ -1,7 +1,7 @@
 { ... }: {
 
   services.sxhkd = {
-    enable = false;
+    enable = true;
 
     keybindings = {
       # reload config

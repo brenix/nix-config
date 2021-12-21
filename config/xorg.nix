@@ -15,8 +15,8 @@
     #  startx.enable = true;
     #};
 
-    # Add openbox to lightdm sessions
     windowManager.openbox.enable = true;
+    windowManager.bspwm.enable = false;
 
     # Autologn
     displayManager.autoLogin.enable = true;

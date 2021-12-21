@@ -8,6 +8,7 @@
       ${config.settings.username} = {
         imports = [
           ./alacritty
+          #./bspwm
           ./dunst
           ./firefox
           ./git
@@ -16,6 +17,7 @@
           ./polybar
           ./rofi
           ./starship
+          #./sxhkd
           ./tmux
           ./zsh
         ];

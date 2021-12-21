@@ -1,11 +1,11 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
 
   imports = [ ../../modules/settings.nix ];
 
   xsession.windowManager.bspwm = {
     enable = true;
 
-    monitors = { config.settings.monitor = [ "1" "2" "3" "4" ]; };
+    monitors = { ${config.settings.monitor} = [ "1" "2" "3" "4" ]; };
 
     settings = {
       remove_disabled_monitors = true;
@@ -31,7 +31,8 @@
       presel_feedback_color = "#${config.colorscheme.colors.base01}";
     };
 
-    startupPrograms = [ "sxhkd" ];
+    startupPrograms =
+      [ "${pkgs.feh}/bin/feh --no-fehbg --bg-scale $HOME/.background-image" ];
 
     rules = {
       "Authy" = {
