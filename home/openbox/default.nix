@@ -8,7 +8,7 @@
     "openbox/rc.xml".source = ./rc.xml;
     "openbox/menu.xml".source = ./menu.xml;
     "openbox/autostart".text = ''
-      $HOME/.fehbg
+      ${pkgs.feh}/bin/feh --no-fehbg --bg-scale $HOME/.background-image
     '';
   };
 
