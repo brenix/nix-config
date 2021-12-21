@@ -17,6 +17,7 @@
       settings = {
         "app.normandy.enabled" = false;
         "app.shield.optoutstudies.enabled" = false;
+        "app.update.auto" = false;
         "browser.backspace_action" = 0;
         "browser.cache.disk.parent_directory" = "/run/user/1000/firefox";
         "browser.compactmode.show" = true;
@@ -88,8 +89,8 @@
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
         /* FIXME: Disabled due to black box that appears on VMs
            /* "gfx.webrender.all" = true;
+           /* "gfx.webrender.enabled" = true;
         */
-        # "gfx.webrender.enabled" = true;
         "javascript.options.warp" = true;
         "layers.acceleration.force-enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
