@@ -4,7 +4,6 @@
 
   virtualisation.libvirtd = {
     enable = true;
-    enableKVM = true;
     qemu = {
       ovmf.enable = true;
       runAsRoot = false;
