@@ -156,7 +156,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "gpg-agent" "kubectl" "ssh-agent" "z" ];
+      plugins = [ "git" "kubectl" "ssh-agent" "z" ];
     };
 
   };

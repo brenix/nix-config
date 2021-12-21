@@ -21,6 +21,7 @@
         ];
 
         # Colorscheme
+        # colorscheme = inputs.nix-colors.colorSchemes.nord;
         colorscheme = {
           slug = "nord-dark";
           name = "Nord-Dark";
@@ -155,7 +156,6 @@
         programs.fzf = {
           enable = true;
           defaultOptions = [
-            # nord colorscheme
             "--color=fg:#e5e9f0,bg:#191c26,hl:#a3be8b"
             "--color=fg+:#e5e9f0,bg+:#191c26,hl+:#a3be8b"
             "--color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac"
@@ -189,7 +189,6 @@
 
         # GPG
         programs.gpg = { enable = true; };
-
         services.gpg-agent.enable = true;
 
         # htop
