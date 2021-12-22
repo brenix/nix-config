@@ -54,7 +54,7 @@
       hosts = {
         dozer.modules = [ ./hosts/dozer.nix ];
         tank.modules = [ ./hosts/tank.nix ];
-        neo.modules = [ ./hosts/tank.nix ./config/libvirt.nix ];
+        neo.modules = [ ./hosts/tank.nix ./config/libvirt ];
         trinity.modules = [ ./hosts/tank.nix ];
       };
 

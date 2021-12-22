@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+
+TOTAL_CORES='0-31'              # All CPUs
+HOST_CORES='0-7,16-23'          # Cores to reserve for host
+VIRT_CORES='8-15,24-31'         # Cores to reserve for VM
+VIRT_CORES_MASK='ff00ff00'      # CPU affinity mask for VM cores
+DISPLAY_NUMBER='1'              # Display number according to ddcutil detect
+DISPLAY_INPUT_VM='0x0f'         # DisplayPort according to `ddcutil -d 1 capabilities``
+DISPLAY_INPUT_HOST='0x11'       # HDMI according to `ddcutil -d 1 capabilities`
+
+# Log a message in dmesg
+log() {
+  local msg="$*"
+  printf "libvirt-hook-qemu: %s\n" "${msg}" >/dev/kmsg
+}
+
+# Split a string based on delimiter
+# Usage: split foo,bar ,
+split() {
+  local string="$1"
+  local delimiter="$2"
+  IFS=$'\n' read -d "" -ra arr <<< "${1//$2/$'\n'}"
+  printf '%s\n' "${arr[@]}"
+}
+
+# List all CPUs individually given a range
+# Usage: listcpus 2-5,8-11
+listcpus() {
+  local range="$1"
+  local cpus=()
+  groups=$(split ${range} ,)
+  for g in ${groups[@]}; do
+    begin=$(echo ${g} | cut -d- -f1)
+    end=$(echo ${g} | cut -d- -f2)
+    cpus+=($(seq ${begin} ${end}))
+  done
+  printf '%s\n' "${cpus[@]}"
+}
+
+# Configure allowed CPUs
+set_cpu() {
+  systemctl set-property --runtime -- user.slice AllowedCPUs=${HOST_CORES}
+  systemctl set-property --runtime -- system.slice AllowedCPUs=${HOST_CORES}
+  systemctl set-property --runtime -- init.scope AllowedCPUs=${HOST_CORES}
+}
+
+# Restore allowed CPUs
+unset_cpu() {
+  systemctl set-property --runtime -- user.slice AllowedCPUs=${TOTAL_CORES}
+  systemctl set-property --runtime -- system.slice AllowedCPUs=${TOTAL_CORES}
+  systemctl set-property --runtime -- init.scope AllowedCPUs=${TOTAL_CORES}
+}
+
+# Set display input source
+set_display_input() {
+  local display="$1"
+  local input="$2"
+
+  sudo ddcutil -d ${display} setvcp 60 ${input}
+}
+
+# Load libvirt args
+VM_NAME=$1
+VM_ACTION=$2
+
+if [[ $VM_NAME == "win10" ]]; then
+  case "$VM_ACTION" in
+  "prepare")
+    # Switch display input
+    # set_display_input ${DISPLAY_NUMBER} ${DISPLAY_INPUT_VM}
+
+    # Memory preparation
+    sync
+    echo 3 >/proc/sys/vm/drop_caches
+    echo 1 >/proc/sys/vm/compact_memory
+
+    # Disable transparent hugepages
+    echo never >/sys/kernel/mm/transparent_hugepage/enabled
+
+    # Create cpusets and isolate cores
+    set_cpu
+
+    # Update CPU governor to performance
+    echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+    # Increase stat interval
+    echo 300 >/proc/sys/vm/stat_interval
+
+    # Tune the scheduler to allow full utilization
+    echo -1 > /proc/sys/kernel/sched_rt_runtime_us
+    ;;
+  "started")
+    # Set priority level and execution policy for qemu process
+    chrt -a -f -p 1 $(pidof qemu-system-x86_64)
+    chrt -p $(pidof qemu-system-x86_64)
+
+    sleep 10
+
+    # Assign guest cores/threads to vfio interrupts
+    # for i in $(awk -F ':' '/vfio/ { print $1 }' /proc/interrupts); do
+    # 		echo ${VIRT_CORES_MASK} > /proc/irq/${i}/smp_affinity
+    # done
+    ;;
+  "release")
+    # Switch display input
+    # set_display_input ${DISPLAY_NUMBER} ${DISPLAY_INPUT_HOST}
+
+    # Restore cpusets
+    unset_cpu
+
+    # Restore CPU governor to schedutil
+    echo schedutil | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+    # Restore stat interval
+    echo 1 >/proc/sys/vm/stat_interval
+
+    # Restore scheduler
+    echo 980000 > /proc/sys/kernel/sched_rt_runtime_us
+    ;;
+  esac
+fi
