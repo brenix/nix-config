@@ -1,5 +1,5 @@
 { inputs }:
 
 final: prev: {
-  calicoctl = prev.callPackage ../pkgs/calicoctl.nix { };
+  calicoctl = final.callPackage ../pkgs/calicoctl.nix { };
 }
