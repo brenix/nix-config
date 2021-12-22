@@ -53,12 +53,18 @@
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "workspaces";
-        # modules-center = previous playpause next spotify;
-        modules-right = "cpu temperature memory volume date time";
+        modules-center = "previous playpause next spotify";
+        modules-right = "battery cpu temperature memory volume date time";
         offset-x = 0;
         offset-y = 0;
         padding-left = 1;
         padding-right = 1;
+      };
+
+      "module/battery" = {
+        type = "internal/battery";
+        battery = "BAT1";
+        adapter = "ACAD";
       };
 
       "module/workspaces" = {
