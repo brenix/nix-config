@@ -91,7 +91,7 @@
         "rofi -show combi -kb-row-select 'Tab' -kb-row-tab ''";
 
       # calculator
-      "F1" = "rofi -show calc";
+      "F1" = "rofi -show calc -modi calc --no-show-match --no-sort -lines 2";
 
       # files
       "super + shift + p" = "pcmanfm";

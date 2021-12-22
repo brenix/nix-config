@@ -16,7 +16,7 @@
     #};
 
     windowManager.openbox.enable = true;
-    windowManager.bspwm.enable = false;
+    windowManager.bspwm.enable = true;
 
     # Autologn
     displayManager.autoLogin.enable = true;

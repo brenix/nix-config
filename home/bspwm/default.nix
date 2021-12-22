@@ -5,7 +5,7 @@
   xsession.windowManager.bspwm = {
     enable = true;
 
-    monitors = { ${config.settings.monitor} = [ "1" "2" "3" "4" ]; };
+    monitors = { ${config.settings.monitor} = [ "0" "1" "2" "3" ]; };
 
     settings = {
       remove_disabled_monitors = true;
@@ -31,8 +31,11 @@
       presel_feedback_color = "#${config.colorscheme.colors.base01}";
     };
 
-    startupPrograms =
-      [ "${pkgs.feh}/bin/feh --no-fehbg --bg-scale $HOME/.background-image" ];
+    # HACK: Figure out solution for the need to restart polybar
+    startupPrograms = [
+      "${pkgs.feh}/bin/feh --no-fehbg --bg-scale $HOME/.background-image"
+      "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
+    ];
 
     rules = {
       "Authy" = {

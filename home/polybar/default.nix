@@ -67,6 +67,13 @@
         adapter = "ACAD";
       };
 
+      "module/bspwm" = {
+        type = "internal/bspwm";
+        enable-click = true;
+        enable-scroll = true;
+        reverse-scrolle = true;
+      };
+
       "module/workspaces" = {
         type = "internal/xworkspaces";
         pin-workspaces = false;

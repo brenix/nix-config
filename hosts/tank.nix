@@ -22,6 +22,7 @@
   # Configure host-specific settings
   settings = {
     dpi = 180;
+    monitor = "Virtual1";
     fonts = {
       browser.font = "Verdana";
       browser.size = 16;
