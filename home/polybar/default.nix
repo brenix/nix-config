@@ -31,7 +31,7 @@
 
       "bar/main" = {
         top = true;
-        height = 20;
+        height = 25;
         dpi = config.settings.dpi;
         enable-ipc = true;
         width = "100%";
@@ -59,6 +59,8 @@
         type = "internal/battery";
         battery = "BAT1";
         adapter = "ACAD";
+        format-charging-prefix = " ";
+        format-discharging-prefix = " ";
       };
 
       "module/bspwm" = {
