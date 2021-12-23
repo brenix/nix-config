@@ -84,7 +84,6 @@
           awscli
           buildah
           chamber
-          dconf # gtk dep
           discord
           feh
           fluxcd
