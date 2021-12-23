@@ -53,7 +53,6 @@ in
       nvim-treesitter
       nvim-web-devicons
       quickfix-reflector-vim
-      # rnvimr
       telescope-fzf-native-nvim
       telescope-nvim
       telescope-project-nvim
@@ -77,7 +76,6 @@ in
       # plugin deps
       (python3.withPackages (ps: with ps; [ pynvim ueberzug ]))
       tree-sitter
-      # ranger
 
       # language servers
       gopls
