@@ -88,6 +88,7 @@
           feh
           fluxcd
           git-ignore
+          glab
           gomplate
           googler
           goreleaser
@@ -99,7 +100,6 @@
           kubectl
           kubernetes-helm
           kustomize
-          lab
           lefthook
           lxappearance
           mr
