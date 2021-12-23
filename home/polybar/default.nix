@@ -27,12 +27,6 @@
 
         trans = "#00000000";
         semi-trans-black = "#aa000000";
-
-        shade-1 = "#5D5E72";
-        shade-2 = "#7A7B8C";
-        shade-3 = "#A0A0AB";
-        shade-4 = "#CACACE";
-        shade-5 = "#F8F8F8";
       };
 
       "bar/main" = {
@@ -79,7 +73,7 @@
         pin-workspaces = false;
         enable-click = true;
         enable-scroll = true;
-        label-active-foreground = "\${colors.shade-1}";
+        label-active-foreground = "\${colors.bg}";
         label-active-background = "\${colors.blue}";
         format-padding = 0;
         format = "<label-state>";
