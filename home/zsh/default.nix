@@ -21,6 +21,8 @@
     shellAliases = {
       ave = "aws-vault exec";
       cat = "bat --paging=never --style=plain --decorations=never";
+      cd = "z";
+      cdi = "zi";
       cdu = "cd-gitroot";
       cp = "cp -riv";
       define = "googler -n 2 define";
