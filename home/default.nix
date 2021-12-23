@@ -127,6 +127,7 @@
           velero
           xclip
           zoom-us
+          zoxide
         ];
 
         # Autocutsel
