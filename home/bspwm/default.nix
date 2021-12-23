@@ -5,7 +5,7 @@
   xsession.windowManager.bspwm = {
     enable = true;
 
-    monitors = { ${config.settings.monitor} = [ "0" "1" "2" "3" ]; };
+    monitors = { ${config.settings.monitor} = [ "1" "2" "3" "4" ]; };
 
     settings = {
       remove_disabled_monitors = true;
@@ -43,9 +43,10 @@
         follow = true;
         focus = true;
       };
-      "Spotify" = { desktop = "^3"; };
+      "Firefox" = { desktop = "^2"; };
+      "Spotify" = { desktop = "^4"; };
       "Pavucontrol" = { state = "floating"; };
-      "Slack" = { desktop = "^2"; };
+      "Slack" = { desktop = "^3"; };
       "sxiv" = { state = "floating"; };
       "zoom" = {
         state = "floating";
