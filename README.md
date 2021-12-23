@@ -1,5 +1,9 @@
 # ❄️ NixOS Configuration
 
+## Screenshot
+
+![Screenshot](screenshot.png)
+
 ## Organization
 
 | Dir/File  | Description                                                   |
