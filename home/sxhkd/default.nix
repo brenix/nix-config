@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 
   services.sxhkd = {
     enable = true;
@@ -97,7 +97,8 @@
       "super + shift + p" = "pcmanfm";
 
       # browser
-      "super + d" = "firefox";
+      "super + d" =
+        "${pkgs.xdotool}/bin/xdotool search Firefox windowactivate || firefox";
 
       # spotify
       "super + s" = "LC_NUMERIC=en_US.utf8 spotify";
