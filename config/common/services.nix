@@ -12,6 +12,9 @@
     passwordAuthentication = false;
   };
 
+  # Disable X11 askpass
+  programs.ssh.askPassword = "";
+
   # Increase tmpfs storage for /run/user/<uid>
   services.logind.extraConfig = ''
     RuntimeDirectorySize=50%
