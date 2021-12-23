@@ -15,6 +15,8 @@
     #  startx.enable = true;
     #};
 
+    displayManager.defaultSession = "none+bspwm";
+
     windowManager.openbox.enable = true;
     windowManager.bspwm.enable = true;
 
