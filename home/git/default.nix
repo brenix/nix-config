@@ -62,8 +62,6 @@
     includes = [{
       path = "~/work/.gitconfig";
       condition = "gitdir:~/work/";
-      # TODO: add contents in a sane way without exposing sensitive text
-      # contents = {};
     }];
 
     extraConfig = {

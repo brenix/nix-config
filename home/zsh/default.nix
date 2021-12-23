@@ -68,7 +68,7 @@
       }
     ];
 
-    initExtra = ''
+    initExtraFirst = ''
       # -- OPTIONS
       setopt alwaystoend         # Move cursor to end of word if completed in-word
       setopt appendhistory       # allow multiple sessions to append to history
@@ -100,7 +100,9 @@
         identities+=''${i##*/}
       done
       zstyle :omz:plugins:ssh-agent identities ''${identities[@]}
+    '';
 
+    initExtra = ''
       # -- COMPLETION
       zstyle ':completion::complete:*' gain-privileges 1
       zstyle ':completion:*' rehash true
