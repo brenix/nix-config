@@ -11,7 +11,7 @@
     in {
       "settings" = {
         screenchange-reload = true;
-        format-padding = 1;
+        format-padding = 0.5;
       };
 
       "colors" = {
