@@ -43,11 +43,18 @@
         follow = true;
         focus = true;
       };
-      "Firefox" = { desktop = "^2"; };
-      "Spotify" = { desktop = "^4"; };
-      "Pavucontrol" = { state = "floating"; };
-      "Slack" = { desktop = "^3"; };
-      "sxiv" = { state = "floating"; };
+      "Firefox" = {
+        desktop = "^2";
+        focus = true;
+      };
+      "Spotify" = {
+        desktop = "^4";
+        focus = true;
+      };
+      "Slack" = {
+        desktop = "^3";
+        focus = true;
+      };
       "zoom" = {
         state = "floating";
         sticky = true;
@@ -56,6 +63,8 @@
         state = "floating";
         sticky = true;
       };
+      "sxiv" = { state = "floating"; };
+      "Pavucontrol" = { state = "floating"; };
     };
   };
 }
