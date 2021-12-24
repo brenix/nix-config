@@ -9,6 +9,4 @@
     pulse.enable = true;
   };
 
-  systemd.user.services.pipewire-pulse.serviceConfig.LimitMEMLOCK = "131072";
-
 }

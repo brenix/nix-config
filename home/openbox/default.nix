@@ -2,8 +2,6 @@
 
   home.packages = with pkgs; [ openbox obconf ];
 
-  xsession = { windowManager = { command = "openbox-session"; }; };
-
   # HACK: Figure out solution for the need to restart polybar
   xdg.configFile = {
     "openbox/rc.xml".source = ./rc.xml;
