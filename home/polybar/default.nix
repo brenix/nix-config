@@ -16,7 +16,6 @@
         bg-alt = "#${colors.base00}";
         fg = "#${colors.base06}";
         fg-alt = "#${colors.base05}";
-
         blue = "#${colors.base0D}";
         cyan = "#${colors.base0C}";
         green = "#${colors.base0B}";
@@ -24,14 +23,13 @@
         purple = "#${colors.base0F}";
         red = "#${colors.base08}";
         yellow = "#${colors.base0A}";
-
         trans = "#00000000";
         semi-trans-black = "#aa000000";
       };
 
       "bar/main" = {
         top = true;
-        height = 25;
+        height = 22;
         dpi = config.settings.dpi;
         enable-ipc = true;
         width = "100%";
@@ -43,7 +41,8 @@
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
         font-0 = "Verdana:size=9;2";
-        font-1 = "Material Icons:size=9;3";
+        font-1 = ''"Material Icons:size=9;3"'';
+        font-2 = ''"JetBrainsMono Nerd Font Mono:size=14;3"'';
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "workspaces";
@@ -63,22 +62,27 @@
         format-discharging-prefix = " ";
       };
 
-      "module/bspwm" = {
+      "module/workspaces" = {
         type = "internal/bspwm";
         enable-click = true;
         enable-scroll = true;
-        reverse-scrolle = true;
-      };
-
-      "module/workspaces" = {
-        type = "internal/xworkspaces";
-        pin-workspaces = false;
-        enable-click = true;
-        enable-scroll = true;
-        label-active-foreground = "\${colors.bg}";
-        label-active-background = "\${colors.blue}";
-        format-padding = 0;
         format = "<label-state>";
+        label-focused = "%icon%";
+        label-focused-padding = 1;
+        # label-focused-background = "\${colors.blue}";
+        label-focused-foreground = "\${colors.blue}";
+        label-empty = "%icon%";
+        label-empty-padding = 1;
+        label-occupied = "%icon%";
+        label-occupied-padding = 1;
+        label-urgent = "%icon%";
+        label-urgent-padding = 1;
+        ws-icon-0 = "1;";
+        ws-icon-1 = "2;";
+        ws-icon-2 = "3;";
+        ws-icon-3 = "4;";
+        ws-icon-default = "";
+        #ws-icon-default = "";
       };
 
       "module/mpd" = {
@@ -138,7 +142,6 @@
         label-warn-foreground = "\${colors.red}";
         format = "<label>";
         format-prefix = " ";
-        format-prefix-font = 2;
         format-prefix-foreground = "\${colors.fg}";
         format-warn = "<label-warn>";
       };
