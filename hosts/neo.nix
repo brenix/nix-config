@@ -20,6 +20,15 @@ let
 in
 {
   boot = {
+
+    initrd.availableKernelModules = [
+      "pci_stub"
+      "vfio"
+      "vfio_iommu_type1"
+      "vfio_pci"
+      "vfio_virqfd"
+    ];
+
     kernelParams = [
       "amd_iommu=on"
       "default_hugepagesz=1G"
@@ -43,10 +52,6 @@ in
 
     kernelModules = [
       "kvm-amd"
-      "vfio_virqfd"
-      "vfio_pci"
-      "vfio_iommu_type1"
-      "vfio"
       "i2c-dev"
     ];
 
@@ -69,17 +74,17 @@ in
   # VFIO input devices
   virtualisation.libvirtd.qemu.verbatimConfig = ''
     cgroup_device_acl = [
-        "/dev/null", "/dev/full", "/dev/zero",
-        "/dev/random", "/dev/urandom",
-        "/dev/ptmx", "/dev/kvm",
-        "/dev/vfio/vfio", "/dev/vfio/26", "/dev/vfio/28",
-        "/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse",
-        "/dev/input/by-id/usb-Logitech_USB_Receiver-if01-event-kbd",
-        "/dev/input/by-id/usb-Logitech_USB_Receiver-mouse",
-        "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-event-mouse",
-        "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-if01-event-kbd",
-        "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-mouse",
-        "/dev/input/by-id/usb-Topre_REALFORCE_87_US-event-kbd",
+      "/dev/null", "/dev/full", "/dev/zero",
+      "/dev/random", "/dev/urandom",
+      "/dev/ptmx", "/dev/kvm",
+      "/dev/vfio/vfio", "/dev/vfio/26", "/dev/vfio/28",
+      "/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse",
+      "/dev/input/by-id/usb-Logitech_USB_Receiver-if01-event-kbd",
+      "/dev/input/by-id/usb-Logitech_USB_Receiver-mouse",
+      "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-event-mouse",
+      "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-if01-event-kbd",
+      "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-mouse",
+      "/dev/input/by-id/usb-Topre_REALFORCE_87_US-event-kbd",
     ]
   '';
 
