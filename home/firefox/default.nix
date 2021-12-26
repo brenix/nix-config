@@ -18,6 +18,7 @@
         "app.normandy.enabled" = false;
         "app.shield.optoutstudies.enabled" = false;
         "app.update.auto" = false;
+        "browser.aboutConfig.showWarning" = false;
         "browser.backspace_action" = 0;
         "browser.cache.disk.parent_directory" = "/run/user/1000/firefox";
         "browser.compactmode.show" = true;
@@ -26,33 +27,9 @@
         "browser.formfill.enable" = false;
         "browser.library.activity-stream.enabled" = false;
         "browser.newtab.preload" = false;
-        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" =
-          false;
-        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" =
-          false;
-        "browser.newtabpage.activity-stream.disableSnippets" = true;
         "browser.newtabpage.activity-stream.enabled" = false;
-        "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-        "browser.newtabpage.activity-stream.feeds.snippets" = false;
-        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
-        "browser.newtabpage.activity-stream.feeds.topsites" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" =
-          false;
-        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" =
-          false;
-        "browser.newtabpage.activity-stream.section.highlights.includePocket" =
-          false;
-        "browser.newtabpage.activity-stream.section.highlights.includeVisited" =
-          false;
-        "browser.newtabpage.activity-stream.showSearch" = false;
-        "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.telemetry" = false;
-        "browser.newtabpage.activity-stream.telemetry.ping.endpoint" = "";
-        "browser.newtabpage.directory.source" = "data:text/plain ={}";
-        "browser.newtabpage.enabled" = false;
-        "browser.newtabpage.enhanced" = false;
-        "browser.newtabpage.introShown" = true;
         "browser.onboarding.enabled" = false;
         "browser.pagethumbnails.capturing_disabled" = true;
         "browser.pocket.enabled" = false;
@@ -61,6 +38,7 @@
         "browser.shell.checkDefaultBrowser" = false;
         "browser.startup.homepage" = "about:blank";
         "browser.startup.page" = 0;
+        "browser.uidensity" = 1;
         "browser.urlbar.clickSelectsAll" = true;
         "browser.urlbar.trimURLs" = false;
         "browser.urlbar.update1" = false;
@@ -84,13 +62,8 @@
         "font.name.sans-serif.x-western" = config.settings.fonts.browser.font;
         "font.name.serif.x-western" = config.settings.fonts.browser.font;
         "full-screen-api.warning.timeout" = 0;
-        "general.warnOnAboutConfig" = false;
         "gfx.canvas.azure.accelerated" = true;
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
-        /* FIXME: Disabled due to black box that appears on VMs
-          /* "gfx.webrender.all" = true;
-          /* "gfx.webrender.enabled" = true;
-        */
         "javascript.options.warp" = true;
         "layers.acceleration.force-enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
