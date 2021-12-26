@@ -113,6 +113,7 @@
           pgcli
           pipenv
           piper
+          playerctl
           sd
           slack
           sops
