@@ -88,8 +88,8 @@
         "gfx.canvas.azure.accelerated" = true;
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
         /* FIXME: Disabled due to black box that appears on VMs
-           /* "gfx.webrender.all" = true;
-           /* "gfx.webrender.enabled" = true;
+          /* "gfx.webrender.all" = true;
+          /* "gfx.webrender.enabled" = true;
         */
         "javascript.options.warp" = true;
         "layers.acceleration.force-enabled" = true;
