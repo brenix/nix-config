@@ -14,6 +14,7 @@
     gnupg
     lsof
     nmap
+    pciutils
     ripgrep
     rsync
     tcpdump
