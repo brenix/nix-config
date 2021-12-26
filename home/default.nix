@@ -64,14 +64,14 @@
           enable = true;
           userDirs = {
             enable = true;
-            documents = "$HOME/downloads/documents/";
-            download = "$HOME/downloads/";
-            videos = "$HOME/downloads/videos/";
-            music = "$HOME/downloads/music/";
-            pictures = "$HOME/downloads/pictures/";
-            desktop = "$HOME/downloads/desktop/";
-            publicShare = "$HOME/downloads/public/";
-            templates = "$HOME/downloads/templates/";
+            documents = "$XDG_RUNTIME_DIR/documents/";
+            download = "$HOME/downloads";
+            videos = "$XDG_RUNTIME_DIR/videos/";
+            music = "$XDG_RUNTIME_DIR/music/";
+            pictures = "$XDG_RUNTIME_DIR/pictures/";
+            desktop = "$XDG_RUNTIME_DIR/desktop/";
+            publicShare = "$XDG_RUNTIME_DIR/public/";
+            templates = "$XDG_RUNTIME_DIR/templates/";
           };
         };
 
