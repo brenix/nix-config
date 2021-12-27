@@ -16,5 +16,9 @@
   settings = { dpi = 109; };
 
   # Pass settings to home-manager
-  home-manager.users.${config.settings.username}.settings = config.settings;
+  home-manager.users.${config.settings.username} = {
+    settings = config.settings;
+
+    xsession.windowManager.bspwm.monitors = { Virtual1 = [ "1" "2" "3" "4" ]; };
+  };
 }

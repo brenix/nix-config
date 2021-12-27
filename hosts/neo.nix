@@ -149,6 +149,13 @@ in {
   };
 
   # Pass settings to home-manager
-  home-manager.users.${config.settings.username}.settings = config.settings;
+  home-manager.users.${config.settings.username} = {
+    settings = config.settings;
+
+    xsession.windowManager.bspwm.monitors = {
+      DP-4 = [ "1" "3" ];
+      HDMI-0 = [ "2" "4" ];
+    };
+  };
 
 }

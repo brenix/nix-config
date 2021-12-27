@@ -5,8 +5,6 @@
   xsession.windowManager.bspwm = {
     enable = true;
 
-    monitors = { ${config.settings.monitor} = [ "1" "2" "3" "4" ]; };
-
     settings = {
       remove_disabled_monitors = true;
       remove_unplugged_monitors = true;
