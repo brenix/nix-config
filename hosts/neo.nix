@@ -169,6 +169,11 @@ in {
       DP-4 = [ "1" "2" ];
       HDMI-0 = [ "3" "4" ];
     };
+
+    home.sessionVariables = {
+      HWMON_PATH =
+        "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
+    };
   };
 
 }
