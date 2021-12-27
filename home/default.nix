@@ -75,6 +75,9 @@
           };
         };
 
+        # HACK: Fixes xkb options
+        home.keyboard = null;
+
         # Packages to be installed
         home.packages = with pkgs; [
           asdf-vm
