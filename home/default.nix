@@ -235,7 +235,7 @@
         # ssh
         programs.ssh = {
           enable = true;
-          includes = [ "~/.ssh/cells/config/*" "~/.ssh/local-config" ];
+          includes = [ "~/.ssh/cells/config/*" "~/.ssh/config.local" ];
         };
 
         # terraform
