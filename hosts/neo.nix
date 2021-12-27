@@ -62,6 +62,11 @@ in {
       "vfio-pci.ids=${lib.concatMapStringsSep "," (d: d.device) devices}"
     ];
 
+    kernel.sysctl = {
+      # 20GiB hugepages for VM guest
+      "vm.nr_hugepages" = 20;
+    };
+
     blacklistedKernelModules = [ "nouveau" ];
 
     kernelModules = [ "kvm-amd" "i2c-dev" "dm-snapshot" ];
