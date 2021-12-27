@@ -71,6 +71,27 @@ in
     '';
   };
 
+  # Filesystems
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/nixos";
+    fsType = "ext4";
+    options = [ "noatime" "nodiratime" ];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/boot";
+    fsType = "vfat";
+  };
+
+  # Mounts
+  systemd.mounts = [{
+    what = "/dev/mapper/data-cache";
+    where = "/home/brenix/.cache";
+    type = "ext4";
+    options = "rw,noatime,barrier=0";
+    wantedBy = [ "multi-user.target" ];
+  }];
+
   # VFIO input devices
   virtualisation.libvirtd.qemu.verbatimConfig = ''
     cgroup_device_acl = [
