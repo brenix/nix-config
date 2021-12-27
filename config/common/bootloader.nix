@@ -6,9 +6,12 @@
     cleanTmpDir = true;
 
     loader = {
-      systemd-boot.enable = true;
-      systemd-boot.editor = true;
       efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 256;
+      systemd-boot.consoleMode = "max";
+      systemd-boot.editor = true;
+      systemd-boot.enable = true;
+      timeout = 2;
     };
   };
 
