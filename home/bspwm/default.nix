@@ -42,7 +42,7 @@
         focus = true;
       };
       "Firefox" = {
-        desktop = "^2";
+        desktop = "^3";
         focus = true;
       };
       "Spotify" = {
@@ -50,7 +50,7 @@
         focus = true;
       };
       "Slack" = {
-        desktop = "^3";
+        desktop = "^2";
         focus = true;
       };
       "zoom" = {
