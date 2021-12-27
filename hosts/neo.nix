@@ -19,6 +19,15 @@ let
   ];
 in
 {
+  # Hostname
+  networking.hostName = "neo";
+
+  # Enable DHCP
+  systemd.network.networks.enp7s0 = {
+    matchConfig = { Name = "enp7s0"; };
+    DHCP = "yes";
+  };
+
   boot = {
 
     initrd.availableKernelModules = [
@@ -113,15 +122,6 @@ in
   services.udev.extraRules = ''
     SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTRS{product}=="HD Pro Webcam C920",RUN+="${pkgs.v4l-utils}/bin/v4l2-ctl -d $devnode --set-ctrl brightness=128,contrast=128,saturation=110,white_balance_temperature_auto=0,gain=30,white_balance_temperature=3700,exposure_auto=1,exposure_absolute=777,exposure_auto_priority=0,pan_absolute=0,zoom_absolute=140,focus_auto=0"
   '';
-
-  # Hostname
-  networking.hostName = "neo";
-
-  # Enable DHCP
-  systemd.network.networks.enp7s0 = {
-    matchConfig = { Name = "enp7s0"; };
-    DHCP = "yes";
-  };
 
   # DPI settings
   services.xserver.dpi = 109;
