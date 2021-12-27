@@ -69,7 +69,15 @@ in {
 
     blacklistedKernelModules = [ "nouveau" ];
 
-    kernelModules = [ "kvm-amd" "i2c-dev" "dm-snapshot" ];
+    kernelModules = [
+      "dm-snapshot"
+      "i2c-dev"
+      "kvm-amd"
+      "vfio"
+      "vfio_iommu_type1"
+      "vfio_pci"
+      "vfio_virqfd"
+    ];
 
     extraModprobeConfig = ''
       options kvm halt_poll_ns=80000
@@ -158,8 +166,8 @@ in {
     settings = config.settings;
 
     xsession.windowManager.bspwm.monitors = {
-      DP-4 = [ "1" "3" ];
-      HDMI-0 = [ "2" "4" ];
+      DP-4 = [ "1" "2" ];
+      HDMI-0 = [ "3" "4" ];
     };
   };
 
