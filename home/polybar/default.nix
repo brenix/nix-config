@@ -114,7 +114,7 @@
         label-warn = "%temperature-c%";
         label-warn-foreground = "\${colors.red}";
         format = "<label>";
-        format-prefix = " ";
+        format-prefix = " ";
         format-warn = "<label-warn>";
       };
 
