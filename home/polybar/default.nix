@@ -89,8 +89,8 @@
         label-urgent = "%icon%";
         label-urgent-padding = 1;
         ws-icon-0 = "1;";
-        ws-icon-2 = "2;";
-        ws-icon-1 = "3;";
+        ws-icon-1 = "2;";
+        ws-icon-2 = "3;";
         ws-icon-3 = "4;";
         ws-icon-default = "";
       };
