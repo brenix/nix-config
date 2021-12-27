@@ -32,8 +32,7 @@
     # HACK: Figure out solution for the need to restart polybar
     startupPrograms = [
       "${pkgs.feh}/bin/feh --no-fehbg --bg-scale $HOME/.background-image"
-      # "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
-      "polybar main"
+      "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
     ];
 
     rules = {

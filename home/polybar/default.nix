@@ -1,4 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+
+let
+
+  mprisScript = pkgs.callPackage ./scripts/mpris.nix { };
+
+in {
 
   imports = [ ../../modules/settings.nix ];
 
@@ -7,7 +13,7 @@
 
     package = pkgs.polybarFull;
 
-    script = "";
+    script = "polybar main &";
 
     settings = let colors = config.colorscheme.colors;
     in {
@@ -59,10 +65,12 @@
 
       "module/now-playing" = {
         type = "custom/script";
+        exec = "${mprisScript}/bin/mpris";
         tail = true;
-        format = "<label>";
-        exec = "${config.xdg.configHome}/polybar/scripts/polybar-now-playing";
-        click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)";
+        label-maxlen = 60;
+        interval = 2;
+        format = "  <label>";
+        format-padding = 2;
       };
 
       "module/battery" = {

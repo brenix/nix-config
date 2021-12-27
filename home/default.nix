@@ -117,7 +117,6 @@
           pipenv
           piper
           playerctl
-          (python3.withPackages (ps: with ps; [ dbus-python ]))
           sd
           slack
           sops
