@@ -12,12 +12,26 @@
     passwordAuthentication = false;
   };
 
+  # Set NTP servers
+  services.timesyncd.servers = [
+    "192.168.1.1"
+    "time.cloudflare.com"
+    "0.nixos.pool.ntp.org"
+    "1.nixos.pool.ntp.org"
+  ];
+
   # Disable X11 askpass
   programs.ssh.askPassword = "";
 
   # Increase tmpfs storage for /run/user/<uid>
   services.logind.extraConfig = ''
     RuntimeDirectorySize=50%
+  '';
+
+  # Limit journald
+  services.journald.extraConfig = ''
+    MaxLevelStore=info
+    MaxRetentionSec=1week
   '';
 
 }
