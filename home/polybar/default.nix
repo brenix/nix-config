@@ -5,7 +5,9 @@
   services.polybar = {
     enable = true;
 
-    script = "polybar main &";
+    package = pkgs.polybarFull;
+
+    script = "";
 
     settings = let colors = config.colorscheme.colors;
     in {
