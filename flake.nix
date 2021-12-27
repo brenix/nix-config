@@ -59,6 +59,7 @@
           inputs.nixos-hardware.nixosModules.common-pc-ssd
           ./hosts/neo.nix
           ./config/libvirt
+          ./config/ratbagd.nix
         ];
       };
 
