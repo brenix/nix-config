@@ -46,12 +46,20 @@
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "workspaces";
-        modules-center = "";
+        modules-center = "now-playing";
         modules-right = "battery cpu temperature memory volume date time";
         offset-x = 0;
         offset-y = 0;
         padding-left = 1;
         padding-right = 1;
+      };
+
+      "module/now-playing" = {
+        type = "custom/script";
+        tail = true;
+        format = "<label>";
+        exec = "${config.xdg.configHome}/polybar/scripts/polybar-now-playing";
+        click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)";
       };
 
       "module/battery" = {
@@ -156,4 +164,10 @@
       };
     };
   };
+
+  xdg.configFile."polybar/scripts" = {
+    source = ./scripts;
+    recursive = true;
+  };
 }
+
