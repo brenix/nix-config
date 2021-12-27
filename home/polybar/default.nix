@@ -67,7 +67,7 @@ in {
         type = "custom/script";
         exec = "${mprisScript}/bin/mpris";
         tail = true;
-        label-maxlen = 60;
+        label-maxlen = 800;
         interval = 2;
         format = "  <label>";
         format-padding = 2;
