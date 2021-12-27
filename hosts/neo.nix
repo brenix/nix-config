@@ -161,6 +161,10 @@ in {
     };
   };
 
+  # Set thermal path for polybar
+  environment.variables.HWMON_PATH =
+    "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
+
   # Pass settings to home-manager
   home-manager.users.${config.settings.username} = {
     settings = config.settings;
@@ -170,10 +174,6 @@ in {
       HDMI-0 = [ "2" "4" ];
     };
 
-    home.sessionVariables = {
-      HWMON_PATH =
-        "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
-    };
   };
 
 }
