@@ -18,6 +18,11 @@
 
     windowManager = { bspwm.enable = true; };
 
+    libinput = {
+      enable = true;
+      mouse = { accelProfile = "flat"; };
+    };
+
     # Remap capslock to escape
     xkbOptions = "caps:escape";
   };
