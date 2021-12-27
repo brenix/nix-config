@@ -23,6 +23,7 @@
       env = pkgs.buildEnv {
         name = "qemu-hook-env";
         paths = with pkgs; [
+          bash
           config.boot.kernelPackages.cpupower
           ddcutil
           killall
