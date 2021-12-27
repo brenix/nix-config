@@ -7,7 +7,6 @@ require("telescope").setup({
 		project = {
 			base_dirs = {
 				{ path = "~/work", max_depth = 2 },
-				{ path = "~/.dotfiles" },
 			},
 		},
 	},
