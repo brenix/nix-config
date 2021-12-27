@@ -7,13 +7,13 @@ from unicodedata import east_asian_width
 # Config options
 
 # (int) : Length of media info string. If length of string exceedes this value, the text will scroll. Default value is 20
-message_display_len = 20
+message_display_len = 64
 
 # (int) : Font index of polybar. this value should be 1 more than the font value specified in polybar config.
-font_index = 2
+font_index = 1
 
 # (float) : Update speed of the text in seconds.
-update_delay = 0.3
+update_delay = 3.0
 
 # (list) : list of chars containing previous, play, pause, next glyphs for media controls in respective order
 control_chars = ['','','','']
@@ -30,13 +30,13 @@ display_player_prefix = {
 
 # (list) : list of metadata fields based on mpris sepecification.
 # For more details/ field names, refer [mpris sepecification](https://www.freedesktop.org/wiki/Specifications/mpris-spec/metadata/)
-metadata_fields = ["xesam:title", "xesam:artist"]
+metadata_fields = ["xesam:artist", "xesam:title"]
 
 # (char) : separator for metadata fields
 metadata_separator = "-"
 
 # (bool) : Hide text when no player is available? True disables the output for no players.
-hide_output = False
+hide_output = True
 
 # Defult initialization
 current_player = None
@@ -89,7 +89,7 @@ def update_prefix_suffix(player_name="", status=""):
     pause_button = "%%{A:playerctl %s pause :}%c%%{A}"      %(player_option,control_chars[2])
     next_button = "%%{A:playerctl %s next :}%c%%{A}"        %(player_option,control_chars[3])
 
-    suffix = "| " + prev_button
+    suffix = " " + prev_button
     if status == "Playing":
         suffix += " "+pause_button
         status_paused = False
@@ -196,11 +196,13 @@ def print_text():
     if hide_output and len(players)==0:
         print("", flush = True)
         return
-    scroll()
+    # scroll()
     print(display_prefix + " " +
         "%%{T%d}" % (font_index) +
-        make_visual_len(display_text, message_display_len) +
-        "%{T-}" + display_suffix, flush=True)
+        # make_visual_len(display_text, message_display_len) +
+        display_text +
+        # "%{T-}" + display_suffix, flush=True)
+        display_suffix, flush=True)
 
 def main():
     global current_player, players

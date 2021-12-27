@@ -151,6 +151,7 @@ in {
   # Configure host-specific settings
   settings = {
     dpi = 109;
+    monitor = "DP-4";
     fonts = {
       browser.font = "Verdana";
       browser.size = 16;

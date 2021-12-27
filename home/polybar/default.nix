@@ -32,6 +32,7 @@
         top = true;
         height = 22;
         dpi = config.settings.dpi;
+        monitor = config.settings.monitor;
         enable-ipc = true;
         width = "100%";
         foreground = "\${colors.fg}";
@@ -114,7 +115,7 @@
         label-warn = "%temperature-c%";
         label-warn-foreground = "\${colors.red}";
         format = "<label>";
-        format-prefix = " ";
+        format-prefix = " ";
         format-warn = "<label-warn>";
       };
 
