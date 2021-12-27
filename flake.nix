@@ -57,7 +57,6 @@
         neo.modules = [
           inputs.nixos-hardware.nixosModules.common-cpu-amd
           inputs.nixos-hardware.nixosModules.common-pc-ssd
-          inputs.nixos-hardware.nixosModules.common-gpu-nvidia
           ./hosts/neo.nix
           ./config/libvirt
         ];

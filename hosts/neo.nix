@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   devices = [
     # GPU
@@ -17,8 +17,7 @@ let
       slot = "06:00.0";
     }
   ];
-in
-{
+in {
   # Hostname
   networking.hostName = "neo";
 
@@ -30,22 +29,17 @@ in
 
   boot = {
 
-    initrd.availableKernelModules = [
-      "pci_stub"
-      "vfio"
-      "vfio_iommu_type1"
-      "vfio_pci"
-      "vfio_virqfd"
-    ];
+    initrd.availableKernelModules =
+      [ "pci_stub" "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
 
     kernelParams = [
       "amd_iommu=on"
+      "boot.shell_on_fail"
       "default_hugepagesz=1G"
       "hugepagesz=1G"
       "intremap=no_x2apic_optout"
       "iommu=pt"
       "mitigations=off"
-      "module_blacklist=xhci_pci"
       "nohz_full=8-15,24-31"
       "rcu_nocb_poll"
       "rcu_nocbs=8-15,24-31"
@@ -59,10 +53,7 @@ in
 
     blacklistedKernelModules = [ "nouveau" ];
 
-    kernelModules = [
-      "kvm-amd"
-      "i2c-dev"
-    ];
+    kernelModules = [ "kvm-amd" "i2c-dev" ];
 
     extraModprobeConfig = ''
       options kvm halt_poll_ns=80000
@@ -100,6 +91,9 @@ in
     options = "rw,noatime,barrier=0";
     wantedBy = [ "multi-user.target" ];
   }];
+
+  # NVIDIA
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # VFIO input devices
   virtualisation.libvirtd.qemu.verbatimConfig = ''
