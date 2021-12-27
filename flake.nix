@@ -52,22 +52,14 @@
       };
 
       hosts = {
-        dozer.modules = [
-          ./hosts/dozer.nix
-        ];
-        tank.modules = [
-          ./hosts/tank.nix
-        ];
+        dozer.modules = [ ./hosts/dozer.nix ];
+        tank.modules = [ ./hosts/tank.nix ];
         neo.modules = [
           inputs.nixos-hardware.nixosModules.common-cpu-amd
           inputs.nixos-hardware.nixosModules.common-pc-ssd
           inputs.nixos-hardware.nixosModules.common-gpu-nvidia
-          ./hosts/tank.nix
+          ./hosts/neo.nix
           ./config/libvirt
-        ];
-        trinity.modules = [
-          inputs.nixos-hardware.nixosModules.common-cpu-intel
-          ./hosts/tank.nix
         ];
       };
 
