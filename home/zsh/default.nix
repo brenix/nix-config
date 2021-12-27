@@ -37,6 +37,7 @@
       s = "sudo systemctl";
       sw = "git switch";
       v = "nvim";
+      virsh = "virsh -c qemu:///system";
       vm = "virsh start win10";
     };
 
