@@ -29,8 +29,19 @@ in {
 
   boot = {
 
-    initrd.availableKernelModules =
-      [ "pci_stub" "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
+    initrd.availableKernelModules = [
+      "ahci"
+      "nvme"
+      "pci_stub"
+      "sd_mod"
+      "usb_storage"
+      "usbhid"
+      "vfio"
+      "vfio_iommu_type1"
+      "vfio_pci"
+      "vfio_virqfd"
+      "xhci_pci"
+    ];
 
     kernelParams = [
       "amd_iommu=on"
@@ -53,7 +64,7 @@ in {
 
     blacklistedKernelModules = [ "nouveau" ];
 
-    kernelModules = [ "kvm-amd" "i2c-dev" ];
+    kernelModules = [ "kvm-amd" "i2c-dev" "dm-snapshot" ];
 
     extraModprobeConfig = ''
       options kvm halt_poll_ns=80000
@@ -73,13 +84,13 @@ in {
 
   # Filesystems
   fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
+    device = "/dev/disk/by-uuid/46d2e29d-bdd3-4ad3-b907-41dc56058c9c";
     fsType = "ext4";
     options = [ "noatime" "nodiratime" ];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-label/boot";
+    device = "/dev/disk/by-uuid/D346-5109";
     fsType = "vfat";
   };
 
