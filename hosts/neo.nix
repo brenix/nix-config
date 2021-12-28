@@ -17,7 +17,8 @@ let
       slot = "06:00.0";
     }
   ];
-in {
+in
+{
   # Hostname
   networking.hostName = "neo";
 

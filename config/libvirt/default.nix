@@ -19,22 +19,24 @@
 
   systemd.services.libvirtd = {
     # Libvirt hooks use binaries from these packages
-    path = let
-      env = pkgs.buildEnv {
-        name = "qemu-hook-env";
-        paths = with pkgs; [
-          bash
-          config.boot.kernelPackages.cpupower
-          ddcutil
-          killall
-          libvirt
-          procps
-          systemd
-          util-linux
-        ];
-      };
-      # TODO: pass host cpu/hardware specs here?
-    in [ env ];
+    path =
+      let
+        env = pkgs.buildEnv {
+          name = "qemu-hook-env";
+          paths = with pkgs; [
+            bash
+            config.boot.kernelPackages.cpupower
+            ddcutil
+            killall
+            libvirt
+            procps
+            systemd
+            util-linux
+          ];
+        };
+        # TODO: pass host cpu/hardware specs here?
+      in
+      [ env ];
 
     preStart = ''
       mkdir -p /var/lib/libvirt/hooks

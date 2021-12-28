@@ -1,7 +1,8 @@
 { pkgs, ... }:
 
 let pctl = "${pkgs.playerctl}/bin/playerctl";
-in pkgs.writeShellScriptBin "mpris" ''
+in
+pkgs.writeShellScriptBin "mpris" ''
   playing=$(${pctl} -s --player=spotify,%any metadata --format '{{ artist }} - {{ title }}')
 
   if [[ $? -eq 0 ]]; then

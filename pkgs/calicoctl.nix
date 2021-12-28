@@ -1,7 +1,8 @@
 { pkgs ? import <nixpkgs> { } }:
 
 let version = "3.21.2";
-in pkgs.stdenv.mkDerivation rec {
+in
+pkgs.stdenv.mkDerivation rec {
   inherit version;
 
   name = "calicoctl";
