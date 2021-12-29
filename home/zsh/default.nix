@@ -117,6 +117,8 @@
       zstyle ':completion::complete:*' use-cache 1
       zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
+      complete -C ${pkgs.awscli}/bin/aws_completer aws
+
       # -- KEYBINDINGS
       bindkey "^A" beginning-of-line    # ctrl+a
       bindkey "^E" end-of-line          # ctrl+e
