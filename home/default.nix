@@ -59,6 +59,9 @@
           };
         };
 
+        # Fontconfig
+        fonts.fontconfig.enable = true;
+
         # XDG
         xdg = {
           enable = true;
