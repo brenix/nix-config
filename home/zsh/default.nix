@@ -34,7 +34,8 @@
       mv = "mv -iv";
       q = "googler";
       rm = "rm -I";
-      s = "sudo systemctl";
+      s = "doas systemctl";
+      svim = "doas nvim";
       sw = "git switch";
       v = "nvim";
       virsh = "virsh -c qemu:///system";
