@@ -16,6 +16,8 @@
       autoLogin.user = config.settings.username;
     };
 
+    desktopManager.xterm.enable = false;
+
     windowManager = { bspwm.enable = true; };
 
     libinput = {
