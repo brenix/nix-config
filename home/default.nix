@@ -103,6 +103,7 @@
           handlr
           helmfile
           hugo
+          imagemagick
           kubectl
           kubernetes-helm
           kustomize
