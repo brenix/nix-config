@@ -64,6 +64,7 @@ in
           offset-y = 0;
           padding-left = 1;
           padding-right = 1;
+          tray-position = "right";
         };
 
         "module/now-playing" = {
