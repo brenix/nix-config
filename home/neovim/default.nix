@@ -44,7 +44,7 @@ in
       luasnip
       nginx-vim
       nord-nvim
-      null-ls-nvim
+      # null-ls-nvim
       nvim-autopairs
       nvim-cmp
       nvim-colorizer-lua
@@ -63,13 +63,14 @@ in
       vim-easy-align
       vim-terraform
       vim-terraform-completion
+      (plugin "AndrewRadev/switch.vim")
+      (plugin "jose-elias-alvarez/null-ls.nvim")
       (plugin "luukvbaal/stabilize.nvim")
       (plugin "numToStr/Navigator.nvim")
       (plugin "ojroques/nvim-bufdel")
       (plugin "projekt0n/circles.nvim")
       (plugin "ray-x/go.nvim")
       (plugin "terrortylor/nvim-comment")
-      (plugin "AndrewRadev/switch.vim")
     ];
 
     extraPackages = with pkgs; [
