@@ -81,6 +81,9 @@
         # HACK: Fixes xkb options
         home.keyboard = null;
 
+        # Dirs to add to PATH
+        home.sessionPath = [ "$HOME/.krew/bin" ];
+
         # Packages to be installed
         home.packages = with pkgs; [
           age
