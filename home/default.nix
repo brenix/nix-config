@@ -83,6 +83,7 @@
 
         # Packages to be installed
         home.packages = with pkgs; [
+          age
           asdf-vm
           authy
           awless
