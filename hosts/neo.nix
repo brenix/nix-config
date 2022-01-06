@@ -17,7 +17,8 @@ let
       slot = "06:00.0";
     }
   ];
-in {
+in
+{
   # Hostname
   networking.hostName = "neo";
 
@@ -119,6 +120,9 @@ in {
 
   # NVIDIA
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # I2C devices
+  hardware.i2c.enable = true;
 
   # VFIO input devices
   virtualisation.libvirtd.qemu.verbatimConfig = ''
