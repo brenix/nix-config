@@ -17,8 +17,7 @@ let
       slot = "06:00.0";
     }
   ];
-in
-{
+in {
   # Hostname
   networking.hostName = "neo";
 
@@ -73,6 +72,7 @@ in
     kernelModules = [
       "dm-snapshot"
       "i2c-dev"
+      "i2c-piix4"
       "kvm-amd"
       "vfio"
       "vfio_iommu_type1"
