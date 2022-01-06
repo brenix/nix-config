@@ -105,6 +105,7 @@
           helmfile
           hugo
           imagemagick
+          krew
           kubectl
           kubernetes-helm
           kustomize
