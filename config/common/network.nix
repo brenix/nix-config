@@ -4,6 +4,7 @@
 
   # Enable systemd-resolved
   services.resolved.enable = true;
+  services.resolved.domains = [ "localdomain" ];
 
   # Enable systemd-networkd
   networking.dhcpcd.enable = false;
