@@ -92,7 +92,6 @@ local default_servers = {
 	"bashls",
 	"dockerls",
 	"cssls",
-	"jsonls",
 	"gopls",
 	"html",
 	"rnix",
@@ -125,6 +124,11 @@ nvim_lsp["sumneko_lua"].setup({
 -- terraform
 nvim_lsp["terraformls"].setup({
 	root_dir = nvim_lsp.util.root_pattern("main.tf", "."),
+})
+
+-- json
+nvim_lsp["jsonls"].setup({
+	cmd = { "json-languageserver", "--stdio" },
 })
 
 -- yaml
