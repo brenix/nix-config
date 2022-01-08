@@ -22,7 +22,7 @@
       pointer_modifier = "mod4";
       pointer_action1 = "move";
       pointer_action2 = "resize_side";
-      pointer_motion_interval = 7;
+      pointer_motion_interval = 6;
       normal_border_color = "#${config.colorscheme.colors.base00}";
       active_border_color = "#${config.colorscheme.colors.base00}";
       focused_border_color = "#${config.colorscheme.colors.base03}";
