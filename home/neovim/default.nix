@@ -44,15 +44,13 @@ in
       luasnip
       nginx-vim
       nord-nvim
-      # TODO: Re-enable once fixed upstream
-      # null-ls-nvim
+      null-ls-nvim
       nvim-autopairs
       nvim-cmp
       nvim-colorizer-lua
       nvim-lspconfig
       nvim-tree-lua
-      # TODO: Re-enable once fixed upstream
-      # nvim-treesitter
+      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       nvim-web-devicons
       quickfix-reflector-vim
       telescope-fzf-native-nvim
@@ -66,12 +64,8 @@ in
       vim-terraform
       vim-terraform-completion
       (plugin "AndrewRadev/switch.vim")
-      # TODO: Remove once fixed upstream
-      (plugin "jose-elias-alvarez/null-ls.nvim")
       (plugin "luukvbaal/stabilize.nvim")
       (plugin "numToStr/Navigator.nvim")
-      # TODO: Remove once fixed upstream
-      (plugin "nvim-treesitter/nvim-treesitter")
       (plugin "ojroques/nvim-bufdel")
       (plugin "projekt0n/circles.nvim")
       (plugin "ray-x/go.nvim")
