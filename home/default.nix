@@ -82,7 +82,7 @@
         home.keyboard = null;
 
         # Dirs to add to PATH
-        home.sessionPath = [ "$HOME/.krew/bin" ];
+        home.sessionPath = [ "$HOME/.krew/bin" "$HOME/go/bin" ];
 
         # Packages to be installed
         home.packages = with pkgs; [
@@ -181,6 +181,7 @@
         programs.go = {
           enable = true;
           goPath = "go";
+          goBin = "go/bin";
         };
 
         # GTK
