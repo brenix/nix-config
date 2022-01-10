@@ -22,6 +22,9 @@
       # use xterm keycodes
       setw -g xterm-keys on
 
+      # disable mouse
+      set -g mouse off
+
       # -- keybindings
 
       # windows
