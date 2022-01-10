@@ -10,7 +10,7 @@
       };
       aws = {
         disabled = false;
-        format = "[$profile($region))]($style) ";
+        format = "[$profile \\($region\\)]($style) ";
       };
       directory = {
         disabled = false;
