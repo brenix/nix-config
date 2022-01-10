@@ -82,7 +82,8 @@
         home.keyboard = null;
 
         # Dirs to add to PATH
-        home.sessionPath = [ "$HOME/.krew/bin" "$HOME/go/bin" ];
+        home.sessionPath =
+          [ "$HOME/.local/bin" "$HOME/.krew/bin" "$HOME/go/bin" ];
 
         # Packages to be installed
         home.packages = with pkgs; [
