@@ -8,6 +8,7 @@
     dig
     fd
     gcc
+    gettext
     git
     glances
     gnumake
