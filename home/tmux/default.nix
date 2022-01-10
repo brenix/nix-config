@@ -19,9 +19,6 @@
       set -ga terminal-overrides ",alacritty*:Tc"
       set -ga terminal-overrides ",st*:Tc"
 
-      # mouse
-      set-option -g mouse on
-
       # use xterm keycodes
       setw -g xterm-keys on
 
