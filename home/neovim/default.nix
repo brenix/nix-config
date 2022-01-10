@@ -50,7 +50,8 @@ in
       nvim-colorizer-lua
       nvim-lspconfig
       nvim-tree-lua
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      nvim-treesitter
+      # (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       nvim-web-devicons
       quickfix-reflector-vim
       telescope-fzf-native-nvim
