@@ -9,6 +9,7 @@
     userEmail = config.settings.email;
 
     aliases = {
+      branch-name = "!git rev-parse --abbrev-ref HEAD";
       publish = "!git push -u origin $(git branch-name)";
       unpublish = "!git push origin :$(git branch-name)";
       da =
