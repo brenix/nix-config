@@ -15,6 +15,7 @@
     gnupg
     lsof
     nmap
+    openssl
     pciutils
     ripgrep
     rsync

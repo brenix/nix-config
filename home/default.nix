@@ -94,6 +94,7 @@
           aws-vault
           awscli
           buildah
+          certigo
           chamber
           discord
           feh
