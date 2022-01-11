@@ -24,6 +24,6 @@
     };
   };
 
-  documentation.nixos.enable = false;
+  # documentation.nixos.enable = false;
 
 }
