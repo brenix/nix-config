@@ -34,7 +34,6 @@
             util-linux
           ];
         };
-        # TODO: pass host cpu/hardware specs here?
       in
       [ env ];
 

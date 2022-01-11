@@ -78,7 +78,7 @@
           };
         };
 
-        # HACK: Fixes xkb options
+        # TODO: Fixes issue with capslock->escape xkb option (https://github.com/NixOS/nixpkgs/issues/18173#issuecomment-954207948)
         home.keyboard = null;
 
         # Dirs to add to PATH

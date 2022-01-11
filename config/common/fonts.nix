@@ -22,7 +22,7 @@
     })
   ];
 
-  # FIXME: Causes evaluation to be "impure" - bleh..
+  # HACK: Causes evaluation to be "impure"
   # Replace freetype with patched lcdfilter
   system.replaceRuntimeDependencies = with pkgs; [{
     original = freetype;

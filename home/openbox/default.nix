@@ -2,7 +2,6 @@
 
   home.packages = with pkgs; [ openbox obconf ];
 
-  # HACK: Figure out solution for the need to restart polybar
   xdg.configFile = {
     "openbox/rc.xml".source = ./rc.xml;
     "openbox/menu.xml".source = ./menu.xml;
