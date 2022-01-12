@@ -25,6 +25,9 @@
       # disable mouse
       set -g mouse off
 
+      # history
+      set -g history-limit 1000000
+
       # -- keybindings
 
       # windows
