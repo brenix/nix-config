@@ -91,9 +91,7 @@ require("core.utils").set_augroup("lsp_format", {
 local default_servers = {
 	"bashls",
 	"dockerls",
-	"cssls",
 	"gopls",
-	"html",
 	"rnix",
 	"pyright",
 }
@@ -124,6 +122,16 @@ nvim_lsp["sumneko_lua"].setup({
 -- terraform
 nvim_lsp["terraformls"].setup({
 	root_dir = nvim_lsp.util.root_pattern("main.tf", "."),
+})
+
+-- css
+nvim_lsp["jsonls"].setup({
+	cmd = { "css-languageserver", "--stdio" },
+})
+
+-- html
+nvim_lsp["jsonls"].setup({
+	cmd = { "html-languageserver", "--stdio" },
 })
 
 -- json
