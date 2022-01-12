@@ -50,7 +50,6 @@ in
       nvim-colorizer-lua
       nvim-lspconfig
       nvim-tree-lua
-      nvim-treesitter
       # (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       nvim-web-devicons
       quickfix-reflector-vim
@@ -67,6 +66,7 @@ in
       (plugin "AndrewRadev/switch.vim")
       (plugin "luukvbaal/stabilize.nvim")
       (plugin "numToStr/Navigator.nvim")
+      (plugin "nvim-treesitter/nvim-treesitter")
       (plugin "ojroques/nvim-bufdel")
       (plugin "projekt0n/circles.nvim")
       (plugin "ray-x/go.nvim")
