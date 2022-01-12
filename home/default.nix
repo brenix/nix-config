@@ -128,6 +128,7 @@
           pipenv
           piper
           playerctl
+          python310
           sd
           slack
           sops
