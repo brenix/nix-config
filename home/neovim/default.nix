@@ -26,6 +26,7 @@ in
       better-escape-nvim
       bufferline-nvim
       cmp-buffer
+      cmp-emoji
       cmp-nvim-lsp
       cmp-nvim-lua
       cmp-path

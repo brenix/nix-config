@@ -24,6 +24,7 @@ cmp.setup({
 				buffer = "[BUF]",
 				luasnip = "[LuaSnip]",
 				path = "[Path]",
+				emoji = "[Emoji]",
 			})[entry.source.name]
 
 			return vim_item
@@ -65,6 +66,7 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "nvim_lua" },
 		{ name = "path" },
+		{ name = "emoji" },
 	},
 })
 
