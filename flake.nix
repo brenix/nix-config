@@ -54,6 +54,7 @@
           ./hosts/neo.nix
           ./config/libvirt
           ./config/ratbagd.nix
+          ./config/node-exporter.nix
         ];
       };
 
