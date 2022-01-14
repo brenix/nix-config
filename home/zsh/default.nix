@@ -97,17 +97,15 @@
       setopt promptsubst         # allow expansion in prompts
       setopt pushdignoredups     # dont push the same dir twice
       setopt unset               # dont error out when unset parameters are used
-
-      # -- SSH
-      identities=()
-      for i in $HOME/.ssh/id_(*~*pub); do
-        identities+=''${i##*/}
-      done
-      zstyle :omz:plugins:ssh-agent identities ''${identities[@]}
     '';
 
     initExtra = ''
       # -- COMPLETION
+
+      # HACK: Added because oh-my-zsh doesnt seem to run compinit properly
+      autoload -Uz compinit && compinit
+      autoload -Uz bashcompinit && bashcompinit
+
       zstyle ':completion::complete:*' gain-privileges 1
       zstyle ':completion:*' rehash true
       zstyle ':completion:*:approximate:' max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )'
@@ -165,6 +163,13 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "kubectl" "ssh-agent" "zoxide" ];
+      extraConfig = ''
+        identities=()
+        for i in $HOME/.ssh/id_(*~*pub); do
+          identities+=''${i##*/}
+        done
+        zstyle :omz:plugins:ssh-agent identities ''${identities[@]}
+      '';
     };
 
   };
