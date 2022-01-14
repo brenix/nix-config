@@ -124,6 +124,9 @@ in
   # I2C devices
   hardware.i2c.enable = true;
 
+  # Enable all firmware
+  hardware.enableAllFirmware = true;
+
   # VFIO input devices
   virtualisation.libvirtd.qemu.verbatimConfig = ''
     cgroup_device_acl = [
