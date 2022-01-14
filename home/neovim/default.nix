@@ -45,7 +45,7 @@ in
       luasnip
       nginx-vim
       nord-nvim
-      null-ls-nvim
+      #null-ls-nvim
       nvim-autopairs
       nvim-cmp
       nvim-colorizer-lua
@@ -68,6 +68,7 @@ in
       (plugin "luukvbaal/stabilize.nvim")
       (plugin "numToStr/Navigator.nvim")
       (plugin "nvim-treesitter/nvim-treesitter")
+      (plugin "jose-elias-alvarez/null-ls.nvim")
       (plugin "ojroques/nvim-bufdel")
       (plugin "projekt0n/circles.nvim")
       (plugin "ray-x/go.nvim")
