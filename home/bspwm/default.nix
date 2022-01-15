@@ -30,7 +30,7 @@
     };
 
     startupPrograms = [
-      "${pkgs.feh}/bin/feh --no-fehbg --bg-scale $HOME/.background-image"
+      "${pkgs.feh}/bin/feh --no-fehbg --bg-tile $HOME/.background-image"
       "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
     ];
 
