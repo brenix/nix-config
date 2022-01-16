@@ -62,14 +62,17 @@
     apiserver.advertiseAddress = "192.168.1.10";
     masterAddress = "api.kubernetes";
 
+    # Enable feature gates
+    featureGates = [ "MixedProtocolLBService" ];
+
     # Allow privileged pods
     apiserver.allowPrivileged = true;
 
+    # Disable addon manager
+    addonManager.enable = false;
+
     # Use cloudflare certmgr to manage all certs
     easyCerts = true;
-
-    # Enable CoreDNS
-    addons.dns.enable = true;
 
     # Kubelet
     kubelet.extraOpts =

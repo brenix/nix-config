@@ -1,9 +1,9 @@
-{ ... }: {
+{ lib, ... }: {
   # Disable firewall
   networking.firewall.enable = false;
 
   # Enable systemd-resolved
-  services.resolved.enable = true;
+  services.resolved.enable = lib.mkDefault true;
   services.resolved.domains = [ "localdomain" ];
 
   # Enable systemd-networkd
