@@ -63,7 +63,6 @@
         trinity.modules = [
           inputs.nixos-hardware.nixosModules.common-cpu-intel
           inputs.nixos-hardware.nixosModules.common-pc-ssd
-          ./config/kubernetes.nix
           ./hosts/trinity.nix
         ];
       };

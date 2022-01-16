@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
 
   boot = {
     # Needed to install bootloader
@@ -49,6 +49,38 @@
       wantedBy = [ "multi-user.target" ];
     }
   ];
+
+  # Kubernetes
+  environment.systemPackages = with pkgs; [ helm helmfile kubectl kubernetes ];
+
+  networking.extraHosts = "192.168.1.10 api.kubernetes";
+
+  services.kubernetes = {
+    roles = [ "master" "node" ];
+
+    apiserverAddress = "https://api.kubernetes:6443";
+    apiserver.advertiseAddress = "192.168.1.10";
+    masterAddress = "api.kubernetes";
+
+    # Use cloudflare certmgr to manage all certs
+    easyCerts = true;
+
+    # Enable CoreDNS
+    addons.dns.enable = true;
+
+    # Kubelet
+    kubelet.extraOpts = "--fail-swap-on=false";
+  };
+
+  # Create k8s@home user/group
+  users.users.kah = {
+    uid = 568;
+    group = "kah";
+    isNormalUser = true;
+    createHome = false;
+  };
+
+  users.groups.kah = { gid = 568; };
 
   # Enable all firmware
   hardware.enableAllFirmware = true;
