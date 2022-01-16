@@ -5,13 +5,14 @@
     autoUpgrade = {
       enable = true;
       allowReboot = true;
+      randomizedDelaySec = "120";
       flake = "github:brenix/nixos-config";
       flags = [
         "--recreate-lock-file"
         "--no-write-lock-file"
         "-L" # print build logs
+        "--impure"
       ];
-      dates = "daily";
     };
   };
 
