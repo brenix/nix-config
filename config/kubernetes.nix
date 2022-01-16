@@ -13,10 +13,24 @@
     easyCerts = true;
 
     # Addons
+    # Disable addon manager
+    addonManager.enable = false;
+
+    # Enable CoreDNS
     addons.dns.enable = true;
 
     # Kubelet
     kubelet.extraOpts = "--fail-swap-on=false";
   };
+
+  # Create k8s@home user/group
+  users.users.kah = {
+    uid = 568;
+    group = "kah";
+    isNormalUser = true;
+    createHome = false;
+  };
+
+  users.groups.kah = { gid = 568; };
 }
 

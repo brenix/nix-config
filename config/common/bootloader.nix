@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
 
   boot = {
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
     cleanTmpDir = true;
 
