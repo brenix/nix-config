@@ -1,6 +1,13 @@
 { config, ... }: {
 
-  boot = { kernelModules = [ "dm-snapshot" ]; };
+  boot = {
+    initrd = {
+      availableKernelModules =
+        [ "ahci" "xhci_pci" "ehci_pci" "usbhid" "usb_storage" "sd_mod" ];
+      kernelModules = [ "dm-snapshot" ];
+    };
+    kernelModules = [ "kvm-intel" ];
+  };
 
   # Hostname
   networking.hostName = "trinity";
@@ -13,13 +20,13 @@
 
   # Filesystems
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/46d2e29d-bdd3-4ad3-b907-41dc56058c9c";
+    device = "/dev/disk/by-uuid/5796da76-5092-4278-bdbd-2b7a65317407";
     fsType = "ext4";
     options = [ "noatime" "nodiratime" ];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/D346-5109";
+    device = "/dev/disk/by-uuid/D891-9B3F";
     fsType = "vfat";
   };
 
