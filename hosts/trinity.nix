@@ -69,7 +69,8 @@
     addons.dns.enable = true;
 
     # Kubelet
-    kubelet.extraOpts = "--fail-swap-on=false";
+    kubelet.extraOpts =
+      "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false";
   };
 
   # Create k8s@home user/group
