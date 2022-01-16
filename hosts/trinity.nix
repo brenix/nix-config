@@ -62,6 +62,9 @@
     apiserver.advertiseAddress = "192.168.1.10";
     masterAddress = "api.kubernetes";
 
+    # Allow privileged pods
+    apiserver.allowPrivileged = true;
+
     # Use cloudflare certmgr to manage all certs
     easyCerts = true;
 
