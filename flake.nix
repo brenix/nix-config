@@ -38,23 +38,33 @@
           ./modules/settings.nix
           ./home
           ./config/common
-          ./config/openconnect.nix
-          ./config/pipewire.nix
-          ./config/podman.nix
-          ./config/xorg.nix
         ];
       };
 
       hosts = {
-        dozer.modules = [ ./hosts/dozer.nix ];
-        tank.modules = [ ./hosts/tank.nix ];
+        tank.modules = [
+          ./config/openconnect.nix
+          ./config/podman.nix
+          ./config/xorg.nix
+          ./hosts/tank.nix
+        ];
         neo.modules = [
           inputs.nixos-hardware.nixosModules.common-cpu-amd
           inputs.nixos-hardware.nixosModules.common-pc-ssd
-          ./hosts/neo.nix
           ./config/libvirt
-          ./config/ratbagd.nix
           ./config/node-exporter.nix
+          ./config/openconnect.nix
+          ./config/pipewire.nix
+          ./config/podman.nix
+          ./config/ratbagd.nix
+          ./config/xorg.nix
+          ./hosts/neo.nix
+        ];
+        trinity.modules = [
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
+          inputs.nixos-hardware.nixosModules.common-pc-ssd
+          ./config/kubernetes.nix
+          ./hosts/trinity.nix
         ];
       };
 
