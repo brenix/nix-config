@@ -18,6 +18,12 @@
   systemd.network.networks.enp7s0 = {
     matchConfig = { Name = "enp7s0"; };
     DHCP = "yes";
+    routes = [{
+      routeConfig = {
+        InitialCongestionWindow = 50;
+        InitialAdvertisedReceiveWindow = 50;
+      };
+    }];
   };
 
   # Filesystems
