@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, lib, ... }: {
 
   home-manager = {
     useGlobalPkgs = true;
@@ -147,18 +147,19 @@
         ];
 
         # Autocutsel
-        systemd.user.services.autocutsel = {
-          Unit.Description = "AutoCutSel";
-          Install = { WantedBy = [ "default.target" ]; };
-          Service = {
-            Type = "forking";
-            Restart = "always";
-            RestartSec = 2;
-            ExecStartPre = "${pkgs.autocutsel}/bin/autocutsel -fork";
-            ExecStart =
-              "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
+        systemd.user.services.autocutsel =
+          lib.mkIf (config.services.xserver.enable) {
+            Unit.Description = "AutoCutSel";
+            Install = { WantedBy = [ "default.target" ]; };
+            Service = {
+              Type = "forking";
+              Restart = "always";
+              RestartSec = 2;
+              ExecStartPre = "${pkgs.autocutsel}/bin/autocutsel -fork";
+              ExecStart =
+                "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
+            };
           };
-        };
 
         # bat
         programs.bat = {
@@ -188,7 +189,7 @@
         };
 
         # GTK
-        gtk = {
+        gtk = lib.mkIf (config.services.xserver.enable) {
           enable = true;
           font = {
             package = pkgs.corefonts;
@@ -220,7 +221,7 @@
         };
 
         # flameshot
-        services.flameshot = {
+        services.flameshot = lib.mkIf (config.services.xserver.enable) {
           enable = true;
           settings = {
             General = {
@@ -237,13 +238,15 @@
         programs.man.enable = false;
 
         # mpv
-        programs.mpv.enable = true;
+        programs.mpv =
+          lib.mkIf (config.services.xserver.enable) { enable = true; };
 
         # playerctl
         services.playerctld.enable = true;
 
         # unclutter
-        services.unclutter.enable = true;
+        services.unclutter =
+          lib.mkIf (config.services.xserver.enable) { enable = true; };
 
         # ssh
         programs.ssh = {
