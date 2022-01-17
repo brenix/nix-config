@@ -47,13 +47,15 @@ in
       nord-nvim
       #null-ls-nvim
       nvim-autopairs
+      nvim-bufdel
       nvim-cmp
       nvim-colorizer-lua
       nvim-lspconfig
       nvim-tree-lua
-      # (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      #(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       nvim-web-devicons
       quickfix-reflector-vim
+      stabilize-nvim
       telescope-fzf-native-nvim
       telescope-nvim
       telescope-project-nvim
@@ -65,11 +67,9 @@ in
       vim-terraform
       vim-terraform-completion
       (plugin "AndrewRadev/switch.vim")
-      (plugin "luukvbaal/stabilize.nvim")
       (plugin "numToStr/Navigator.nvim")
       (plugin "nvim-treesitter/nvim-treesitter")
       (plugin "jose-elias-alvarez/null-ls.nvim")
-      (plugin "ojroques/nvim-bufdel")
       (plugin "projekt0n/circles.nvim")
       (plugin "ray-x/go.nvim")
       (plugin "terrortylor/nvim-comment")
