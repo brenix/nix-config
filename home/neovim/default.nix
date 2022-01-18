@@ -48,7 +48,7 @@ in
       #null-ls-nvim
       nvim-autopairs
       nvim-bufdel
-      nvim-cmp
+      #nvim-cmp
       nvim-colorizer-lua
       nvim-lspconfig
       nvim-tree-lua
@@ -67,9 +67,10 @@ in
       vim-terraform
       vim-terraform-completion
       (plugin "AndrewRadev/switch.vim")
+      (plugin "hrsh7th/nvim-cmp")
+      (plugin "jose-elias-alvarez/null-ls.nvim")
       (plugin "numToStr/Navigator.nvim")
       (plugin "nvim-treesitter/nvim-treesitter")
-      (plugin "jose-elias-alvarez/null-ls.nvim")
       (plugin "projekt0n/circles.nvim")
       (plugin "ray-x/go.nvim")
       (plugin "terrortylor/nvim-comment")
