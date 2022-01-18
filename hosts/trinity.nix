@@ -74,6 +74,9 @@
     # Allow privileged pods
     apiserver.allowPrivileged = true;
 
+    # Additional apiserver flags
+    apiserver.extraOpts = "--permit-port-sharing=true --permit-address-sharing=true";
+
     # Disable addon manager
     addonManager.enable = false;
 
