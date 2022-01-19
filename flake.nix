@@ -2,7 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     home-manager = {
@@ -70,4 +70,3 @@
       overlay = import ./overlays { inherit inputs; };
     };
 }
-

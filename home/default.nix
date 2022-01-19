@@ -106,11 +106,9 @@
           googler
           goreleaser
           grc
-          guvcview
           handlr
           helmfile
           hugo
-          imagemagick
           krew
           kubectl
           kubernetes-helm
