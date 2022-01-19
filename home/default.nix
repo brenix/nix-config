@@ -51,7 +51,7 @@
         programs.home-manager.enable = true;
 
         # X11
-        xsession = {
+        xsession = lib.mkIf (config.services.xserver.enable) {
           enable = true;
           pointerCursor = {
             package = pkgs.capitaine-cursors;
@@ -60,7 +60,8 @@
         };
 
         # Fontconfig
-        fonts.fontconfig.enable = true;
+        fonts.fontconfig =
+          lib.mkIf (config.services.xserver.enable) { enable = true; };
 
         # XDG
         xdg = {
