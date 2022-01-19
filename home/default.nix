@@ -93,7 +93,7 @@
           authy
           awless
           aws-vault
-          awscli
+          awscli2
           buildah
           certigo
           chamber
