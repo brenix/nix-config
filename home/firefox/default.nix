@@ -64,6 +64,8 @@
         "full-screen-api.warning.timeout" = 0;
         "gfx.canvas.azure.accelerated" = true;
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
+        "gfx.webrender.all" = true;
+        "gfx.webrender.enabled" = true;
         "javascript.options.warp" = true;
         "layers.acceleration.force-enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
