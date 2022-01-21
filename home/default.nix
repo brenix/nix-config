@@ -94,6 +94,7 @@
           awless
           aws-vault
           awscli2
+          blanket
           buildah
           certigo
           chamber

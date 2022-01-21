@@ -123,6 +123,9 @@
       # zoom
       "super + z" = "zoom";
 
+      # blanket
+      "super + b" = "blanket";
+
       # -- volume control
 
       # pavucontrol
