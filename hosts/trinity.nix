@@ -56,6 +56,12 @@
     }
   ];
 
+  # Reduce loggin
+  services.journald.extraConfig = ''
+    MaxLevelStore=info
+    MaxRetentionSec=3day
+  '';
+
   # Kubernetes
   environment.systemPackages = with pkgs; [ helm helmfile kubectl kubernetes ];
 
@@ -75,7 +81,8 @@
     apiserver.allowPrivileged = true;
 
     # Additional apiserver flags
-    apiserver.extraOpts = "--permit-port-sharing=true --permit-address-sharing=true";
+    apiserver.extraOpts =
+      "--permit-port-sharing=true --permit-address-sharing=true";
 
     # Disable addon manager
     addonManager.enable = false;

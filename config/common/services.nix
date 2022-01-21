@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
 
   # Speed up boot
   # https://discourse.nixos.org/t/boot-faster-by-disabling-udev-settle-and-nm-wait-online/6339
@@ -13,7 +13,7 @@
   };
 
   # Set NTP servers
-  services.timesyncd.servers = [
+  services.timesyncd.servers = lib.mkDefault [
     "192.168.1.1"
     "time.cloudflare.com"
     "0.nixos.pool.ntp.org"
@@ -24,12 +24,12 @@
   programs.ssh.askPassword = "";
 
   # Increase tmpfs storage for /run/user/<uid>
-  services.logind.extraConfig = ''
+  services.logind.extraConfig = lib.mkDefault ''
     RuntimeDirectorySize=50%
   '';
 
   # Limit journald
-  services.journald.extraConfig = ''
+  services.journald.extraConfig = lib.mkDefault ''
     MaxLevelStore=info
     MaxRetentionSec=1week
   '';
