@@ -8,7 +8,7 @@ switch:
 	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --recreate-lock-file --no-write-lock-file -L -v --flake ".#$(NIX_CONFIG)" --upgrade --impure
 
 gc:
-	@sudo nix-garbage-collect -d
+	@sudo nix-collect-garbage -d
 
 test:
 	@unset NIX_CONFIG; nix --extra-experimental-features 'nix-command flakes' flake check
