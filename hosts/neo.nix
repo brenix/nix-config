@@ -17,8 +17,7 @@ let
       slot = "06:00.0";
     }
   ];
-in
-{
+in {
   # Hostname
   networking.hostName = "neo";
 
@@ -132,6 +131,8 @@ in
 
   # Enable all firmware
   hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
 
   # VFIO input devices
   virtualisation.libvirtd.qemu.verbatimConfig = ''

@@ -113,6 +113,8 @@
 
   # Enable all firmware
   hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.intel.updateMicrocode = true;
 
   home-manager.users.${config.settings.username} = {
     settings = config.settings;
