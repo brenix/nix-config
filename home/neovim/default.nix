@@ -66,6 +66,8 @@ in
       vim-easy-align
       vim-terraform
       vim-terraform-completion
+
+      # install from HEAD
       (plugin "AndrewRadev/switch.vim")
       (plugin "hrsh7th/nvim-cmp")
       (plugin "jose-elias-alvarez/null-ls.nvim")
@@ -74,6 +76,12 @@ in
       (plugin "projekt0n/circles.nvim")
       (plugin "ray-x/go.nvim")
       (plugin "terrortylor/nvim-comment")
+
+      # go.nvim deps
+      (plugin "ray-x/guihua.lua")
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
     ];
 
     extraPackages = with pkgs; [
