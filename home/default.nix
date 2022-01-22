@@ -103,9 +103,12 @@
           fluxcd
           git-ignore
           glab
+          go-tools
           gomplate
           googler
+          gopls
           goreleaser
+          gotools
           grc
           handlr
           helmfile
@@ -129,6 +132,7 @@
           piper
           playerctl
           python310
+          reftools
           sd
           slack
           sops
