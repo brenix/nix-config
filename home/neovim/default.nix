@@ -45,14 +45,14 @@ in
       luasnip
       nginx-vim
       nord-nvim
-      #null-ls-nvim
+      null-ls-nvim
       nvim-autopairs
       nvim-bufdel
-      #nvim-cmp
+      nvim-cmp
       nvim-colorizer-lua
       nvim-lspconfig
       nvim-tree-lua
-      #(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      #(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) # FIXME: Broken upstream
       nvim-web-devicons
       quickfix-reflector-vim
       stabilize-nvim
@@ -69,19 +69,10 @@ in
 
       # install from HEAD
       (plugin "AndrewRadev/switch.vim")
-      (plugin "hrsh7th/nvim-cmp")
-      (plugin "jose-elias-alvarez/null-ls.nvim")
       (plugin "numToStr/Navigator.nvim")
       (plugin "nvim-treesitter/nvim-treesitter")
       (plugin "projekt0n/circles.nvim")
-      (plugin "ray-x/go.nvim")
       (plugin "terrortylor/nvim-comment")
-
-      # go.nvim deps
-      (plugin "ray-x/guihua.lua")
-      nvim-dap
-      nvim-dap-ui
-      nvim-dap-virtual-text
     ];
 
     extraPackages = with pkgs; [

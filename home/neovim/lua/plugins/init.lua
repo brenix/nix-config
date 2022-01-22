@@ -8,7 +8,6 @@ local plugins = {
 	"comment",
 	"git-blame",
 	"gitsigns",
-	"go",
 	"indentline",
 	"lsp-rooter",
 	"lsp-signature",
