@@ -9,7 +9,7 @@
       }";
     theme = "Arc";
     plugins = with pkgs; [ rofi-calc ];
-    extraConfig = { dpi = config.settings.dpi; };
+    extraConfig = { inherit (config.settings) dpi; };
   };
 
 }

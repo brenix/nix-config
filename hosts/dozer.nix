@@ -17,7 +17,7 @@
 
   # Pass settings to home-manager
   home-manager.users.${config.settings.username} = {
-    settings = config.settings;
+    inherit (config) settings;
 
     xsession.windowManager.bspwm.monitors = { Virtual1 = [ "1" "2" "3" "4" ]; };
   };

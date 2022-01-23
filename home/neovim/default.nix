@@ -7,7 +7,7 @@ let
       version = ref;
       src = builtins.fetchGit {
         url = "https://github.com/${repo}.git";
-        ref = ref;
+        inherit ref;
       };
     };
   # always installs latest version

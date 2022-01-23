@@ -17,7 +17,7 @@ in
     script = "polybar main &";
 
     settings =
-      let colors = config.colorscheme.colors;
+      let inherit (config.colorscheme) colors;
       in
       {
         "settings" = {
@@ -42,8 +42,8 @@ in
         "bar/main" = {
           top = true;
           height = 22;
-          dpi = config.settings.dpi;
-          monitor = config.settings.monitor;
+          inherit (config.settings) dpi;
+          inherit (config.settings) monitor;
           enable-ipc = true;
           width = "100%";
           foreground = "\${colors.fg}";

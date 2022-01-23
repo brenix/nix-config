@@ -32,7 +32,7 @@
       window.dimensions.lines = 50;
       decorations = "none";
       colors =
-        let colors = config.colorscheme.colors;
+        let inherit (config.colorscheme) colors;
         in
         {
           primary.background = "#${colors.base00}";

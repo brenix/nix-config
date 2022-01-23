@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
 
   boot = {
     kernelModules = [ "tcp_bbr" ];
