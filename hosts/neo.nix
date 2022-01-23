@@ -17,8 +17,7 @@ let
       slot = "06:00.0";
     }
   ];
-in
-{
+in {
   # Hostname
   networking.hostName = "neo";
 
@@ -174,7 +173,7 @@ in
       launcher.font = "Verdana";
       launcher.size = 10;
       terminal.font = "JetBrains Mono Nerd Font";
-      terminal.size = 10.5;
+      terminal.size = 12.5;
     };
   };
 
