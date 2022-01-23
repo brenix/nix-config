@@ -11,7 +11,7 @@
         "--recreate-lock-file"
         "--no-write-lock-file"
         "-L" # print build logs
-        "--impure"
+        # "--impure"
       ];
     };
   };

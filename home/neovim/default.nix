@@ -24,6 +24,7 @@ in
 
     plugins = with pkgs.vimPlugins; [
       #(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) # FIXME: Broken upstream
+      nvim-treesitter
       Navigator-nvim
       better-escape-nvim
       bufferline-nvim
@@ -70,9 +71,6 @@ in
       vim-easy-align
       vim-terraform
       vim-terraform-completion
-
-      # install from HEAD
-      (plugin "nvim-treesitter/nvim-treesitter")
     ];
 
     extraPackages = with pkgs; [
