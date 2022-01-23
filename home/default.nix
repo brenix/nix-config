@@ -51,7 +51,7 @@
         programs.home-manager.enable = true;
 
         # X11
-        xsession = lib.mkIf (config.services.xserver.enable) {
+        xsession = lib.mkIf config.services.xserver.enable {
           enable = true;
           pointerCursor = {
             package = pkgs.capitaine-cursors;
@@ -61,7 +61,7 @@
 
         # Fontconfig
         fonts.fontconfig =
-          lib.mkIf (config.services.xserver.enable) { enable = true; };
+          lib.mkIf config.services.xserver.enable { enable = true; };
 
         # XDG
         xdg = {
@@ -152,7 +152,7 @@
 
         # Autocutsel
         systemd.user.services.autocutsel =
-          lib.mkIf (config.services.xserver.enable) {
+          lib.mkIf config.services.xserver.enable {
             Unit.Description = "AutoCutSel";
             Install = { WantedBy = [ "default.target" ]; };
             Service = {
@@ -193,7 +193,7 @@
         };
 
         # GTK
-        gtk = lib.mkIf (config.services.xserver.enable) {
+        gtk = lib.mkIf config.services.xserver.enable {
           enable = true;
           font = {
             package = pkgs.corefonts;
@@ -225,7 +225,7 @@
         };
 
         # flameshot
-        services.flameshot = lib.mkIf (config.services.xserver.enable) {
+        services.flameshot = lib.mkIf config.services.xserver.enable {
           enable = true;
           settings = {
             General = {
@@ -243,14 +243,14 @@
 
         # mpv
         programs.mpv =
-          lib.mkIf (config.services.xserver.enable) { enable = true; };
+          lib.mkIf config.services.xserver.enable { enable = true; };
 
         # playerctl
         services.playerctld.enable = true;
 
         # unclutter
         services.unclutter =
-          lib.mkIf (config.services.xserver.enable) { enable = true; };
+          lib.mkIf config.services.xserver.enable { enable = true; };
 
         # ssh
         programs.ssh = {

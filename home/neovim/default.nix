@@ -92,11 +92,14 @@ in
       terraform-ls
 
       # formatters
-      nixfmt
+      nixpkgs-fmt
       nodePackages.prettier
       shellharden
       shfmt
       stylua
+
+      # diagnostics
+      statix
     ];
 
     extraConfig = ''

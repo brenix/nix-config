@@ -4,7 +4,10 @@ local b = null_ls.builtins
 local sources = {
 	b.formatting.gofmt,
 	b.formatting.goimports,
-	b.formatting.nixfmt,
+	b.formatting.nixfmt.with({
+		command = "nixpkgs-fmt",
+	}),
+	b.diagnostics.statix,
 	-- HACK: Remove bracket spacing for helm template support (https://github.com/prettier/prettier/issues/6517)
 	b.formatting.prettier.with({
 		extra_args = { "--no-bracket-spacing" },
