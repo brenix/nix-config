@@ -23,8 +23,11 @@ in
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
+      #(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) # FIXME: Broken upstream
+      Navigator-nvim
       better-escape-nvim
       bufferline-nvim
+      circles-nvim
       cmp-buffer
       cmp-emoji
       cmp-nvim-lsp
@@ -50,12 +53,13 @@ in
       nvim-bufdel
       nvim-cmp
       nvim-colorizer-lua
+      nvim-comment
       nvim-lspconfig
       nvim-tree-lua
-      #(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) # FIXME: Broken upstream
       nvim-web-devicons
       quickfix-reflector-vim
       stabilize-nvim
+      switch-vim
       telescope-fzf-native-nvim
       telescope-nvim
       telescope-project-nvim
@@ -68,11 +72,7 @@ in
       vim-terraform-completion
 
       # install from HEAD
-      (plugin "AndrewRadev/switch.vim")
-      (plugin "numToStr/Navigator.nvim")
       (plugin "nvim-treesitter/nvim-treesitter")
-      (plugin "projekt0n/circles.nvim")
-      (plugin "terrortylor/nvim-comment")
     ];
 
     extraPackages = with pkgs; [
