@@ -202,8 +202,8 @@
             size = 10;
           };
           iconTheme = {
-            package = pkgs.arc-icon-theme;
-            name = "Arc";
+            package = pkgs.nordzy-icon-theme;
+            name = "Nordzy";
           };
           theme = {
             package = pkgs.arc-theme;
