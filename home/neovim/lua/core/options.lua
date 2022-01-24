@@ -10,7 +10,7 @@ vim.opt.copyindent = true
 vim.opt.expandtab = true
 vim.opt.fillchars = { eob = " " }
 vim.opt.hidden = true
-vim.opt.ignorecase = true
+vim.opt.ignorecase = false
 vim.opt.joinspaces = false
 vim.opt.linebreak = false
 vim.opt.mouse = "a"
