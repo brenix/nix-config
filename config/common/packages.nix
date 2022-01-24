@@ -10,7 +10,6 @@
     gcc
     gettext
     git
-    glances
     gnumake
     gnupg
     lsof
