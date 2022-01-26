@@ -134,6 +134,7 @@
           python310
           reftools
           sd
+          shfmt
           slack
           sops
           spotify
