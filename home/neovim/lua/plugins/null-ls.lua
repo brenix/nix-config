@@ -3,7 +3,9 @@ local b = null_ls.builtins
 
 local sources = {
 	b.formatting.gofmt,
-	b.formatting.goimports,
+	b.formatting.goimports.with({
+		extra_args = { "-local", "gitlab" }, -- Separate local gitlab imports from 3rd party ones
+	}),
 	b.formatting.nixfmt.with({
 		command = "nixpkgs-fmt",
 	}),
