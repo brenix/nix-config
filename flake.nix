@@ -43,7 +43,6 @@
 
       hosts = {
         tank.modules = [
-          ./config/distributed-build.nix
           ./config/openconnect.nix
           ./config/podman.nix
           ./config/xorg.nix
@@ -52,7 +51,6 @@
         neo.modules = [
           inputs.nixos-hardware.nixosModules.common-cpu-amd
           inputs.nixos-hardware.nixosModules.common-pc-ssd
-          ./config/distributed-build.nix
           ./config/libvirt
           ./config/node-exporter.nix
           ./config/openconnect.nix
