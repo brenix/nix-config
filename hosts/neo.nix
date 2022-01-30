@@ -22,6 +22,8 @@ in
   # Hostname
   networking.hostName = "neo";
 
+  services.resolved.domains = [ "localdomain" ];
+
   # Enable DHCP
   systemd.network.networks.enp7s0 = {
     matchConfig = { Name = "enp7s0"; };
