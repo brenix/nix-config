@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> { } }:
 
-let version = "3.21.2";
+let version = "3.22.0";
 in
 pkgs.stdenv.mkDerivation rec {
   inherit version;
@@ -9,8 +9,8 @@ pkgs.stdenv.mkDerivation rec {
 
   src = pkgs.fetchurl {
     url =
-      "https://github.com/projectcalico/calicoctl/releases/download/v${version}/calicoctl-linux-amd64";
-    sha256 = "1qxpfppqdpyj9mrcnszr3wm48pzg64m44wk8xw4g002f4pyfv5fl";
+      "https://github.com/projectcalico/calico/releases/download/v${version}/calicoctl-linux-amd64";
+    sha256 = "1jar2m8frzfmgs0dpf37cz8h8xyi041dkdfg93v1s1q8fcjzcf2i";
   };
 
   phases = [ "installPhase" ];
