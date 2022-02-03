@@ -156,7 +156,7 @@ in
 
   # Udev Rule for webcam
   services.udev.extraRules = ''
-    SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTRS{product}=="HD Pro Webcam C920",RUN+="${pkgs.v4l-utils}/bin/v4l2-ctl -d $devnode --set-ctrl brightness=128,contrast=128,saturation=110,white_balance_automatic=0,gain=30,white_balance_temperature=3700,auto_exposure=1,exposure_time_absolute=777,focus_automatic_continuous=0,pan_absolute=0,zoom_absolute=140"
+    SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTRS{product}=="HD Pro Webcam C920",RUN+="${pkgs.v4l-utils}/bin/v4l2-ctl -d $devnode --set-ctrl brightness=128,contrast=128,saturation=110,white_balance_automatic=0,gain=30,white_balance_temperature=3700,auto_exposure=1,exposure_time_absolute=777,focus_automatic_continuous=0,pan_absolute=0,zoom_absolute=150"
   '';
 
   # DPI settings
