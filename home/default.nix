@@ -147,6 +147,7 @@
           vault-bin
           velero
           xclip
+          yq
           zoom-us
           zoxide
         ];
