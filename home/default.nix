@@ -13,7 +13,7 @@
           ./firefox
           ./git
           ./neovim
-          ./openbox
+          #./openbox
           ./polybar
           ./rofi
           ./starship
