@@ -127,7 +127,15 @@ in
   }];
 
   # NVIDIA
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nvidia" ]; # LIBVA_DRIVER_NAME=vdpau
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      libvdpau-va-gl
+      vaapiVdpau
+    ];
+  };
+  environment.variables.LIBVA_DRIVER_NAME = "vdpau";
 
   # I2C devices
   hardware.i2c.enable = true;
