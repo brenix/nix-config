@@ -95,12 +95,6 @@
       "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false";
   };
 
-  # Duplicati
-  services.duplicati = {
-    enable = true;
-    interface = "any";
-  };
-
   # Create k8s@home user/group
   users.users.kah = {
     uid = 568;
