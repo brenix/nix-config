@@ -147,6 +147,7 @@
           unzip
           vault-bin
           velero
+          vendir
           xclip
           yq
           zoom-us
