@@ -103,6 +103,7 @@
           fluxcd
           git-ignore
           glab
+          golangci-lint
           go-tools
           gomplate
           googler
