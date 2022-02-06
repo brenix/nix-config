@@ -8,15 +8,17 @@
     generateRegistryFromInputs = true;
     linkInputs = true;
 
-    binaryCaches = [ "https://nix-community.cachix.org" ];
-    binaryCachePublicKeys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
+    settings = {
+      substituters = [ "https://nix-community.cachix.org" ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
 
-    autoOptimiseStore = true;
+      auto-optimise-store = true;
 
-    allowedUsers = [ "@wheel" ];
-    trustedUsers = [ "@wheel" ];
+      allowed-users = [ "@wheel" ];
+      trusted-users = [ "@wheel" ];
+    };
 
     extraOptions = ''
       experimental-features = nix-command flakes
