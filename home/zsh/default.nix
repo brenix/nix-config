@@ -118,6 +118,12 @@
 
       complete -C ${pkgs.awscli}/bin/aws_completer aws
 
+      # -- PATHS
+      fpath=(
+        $HOME/.local/share/zsh/site-functions
+        $fpath[@]
+      )
+
       # -- KEYBINDINGS
       bindkey "^A" beginning-of-line    # ctrl+a
       bindkey "^E" end-of-line          # ctrl+e
