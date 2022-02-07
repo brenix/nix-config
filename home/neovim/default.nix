@@ -12,6 +12,17 @@ let
     };
   # always installs latest version
   plugin = pluginGit "HEAD";
+
+  # comment-box
+  comment-box-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "comment-box-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "LudoPinelli";
+      repo = "comment-box.nvim";
+      rev = "117d55108edf3758da52cf1117584b974f5e76da";
+      sha256 = "sha256-E+wQUtLJwqN42XYLu2OzAEKMMUyRKjcZHwgOOEG0XDM=";
+    };
+  };
 in
 {
   home.sessionVariables.EDITOR = "nvim";
@@ -36,6 +47,7 @@ in
       cmp-path
       cmp-treesitter
       cmp_luasnip
+      comment-box-nvim
       git-blame-nvim
       gitsigns-nvim
       gruvbox-material
