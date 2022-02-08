@@ -149,7 +149,7 @@
           velero
           vendir
           xclip
-          yq
+          yq-go
           zoom-us
           zoxide
         ];
