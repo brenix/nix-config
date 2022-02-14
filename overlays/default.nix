@@ -3,6 +3,9 @@
 final: prev: {
 
   # Install calicoctl
-  calicoctl = final.callPackage ../pkgs/calicoctl.nix { };
+  calicoctl = prev.callPackage ../pkgs/calicoctl.nix { };
+
+  # Velero
+  velero = prev.callPackage ./velero { };
 
 }
