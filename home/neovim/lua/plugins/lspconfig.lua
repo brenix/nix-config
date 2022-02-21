@@ -11,22 +11,6 @@ lspSymbol("Info", "")
 lspSymbol("Hint", "")
 lspSymbol("Warn", "")
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	virtual_text = {
-		prefix = "",
-		spacing = 0,
-	},
-	signs = true,
-	underline = true,
-	update_in_insert = false, -- update diagnostics insert mode
-})
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = "single",
-})
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-	border = "single",
-})
-
 -- suppress error messages from lang servers
 vim.notify = function(msg, log_level)
 	if msg:match("exit code") then
