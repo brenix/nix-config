@@ -20,7 +20,7 @@
     rsync
     tcpdump
     tmux
-    wireguard
+    wireguard-tools
     zsh
     zsh-completions
   ];
