@@ -59,6 +59,7 @@ in
       lualine-lsp-progress
       lualine-nvim
       luasnip
+      mkdir-nvim
       nginx-vim
       nord-nvim
       null-ls-nvim

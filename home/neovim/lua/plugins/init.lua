@@ -14,6 +14,7 @@ local plugins = {
 	"lspconfig",
 	"lspkind",
 	"lualine",
+	"mkdir",
 	"navigator",
 	"null-ls",
 	"nvim-tree",
