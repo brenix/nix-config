@@ -96,6 +96,7 @@
           awscli2
           blanket
           buildah
+          calicoctl
           certigo
           chamber
           discord
