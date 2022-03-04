@@ -21,6 +21,9 @@ _: {
         ssh_only = true;
         format = "[$hostname]($style) ";
       };
+      localip = {
+        disabled = true;
+      };
       terraform = {
         disabled = false;
         format = "";
