@@ -143,6 +143,7 @@
           stern
           sxiv
           terraform
+          terraform-docs
           theme-vertex
           unrar
           unzip
