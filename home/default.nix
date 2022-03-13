@@ -89,6 +89,7 @@
         # Packages to be installed
         home.packages = with pkgs; [
           age
+          android-udev-rules
           asdf-vm
           authy
           awless
