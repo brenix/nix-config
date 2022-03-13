@@ -51,6 +51,7 @@
         neo.modules = [
           inputs.nixos-hardware.nixosModules.common-cpu-amd
           inputs.nixos-hardware.nixosModules.common-pc-ssd
+          ./config/android.nix
           ./config/libvirt
           ./config/node-exporter.nix
           ./config/openconnect.nix
