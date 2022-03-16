@@ -79,7 +79,7 @@
           };
         };
 
-        # TODO: Fixes issue with capslock->escape xkb option (https://github.com/NixOS/nixpkgs/issues/18173#issuecomment-954207948)
+        # Fix issue with capslock->escape xkb option (https://github.com/NixOS/nixpkgs/issues/18173#issuecomment-954207948)
         home.keyboard = null;
 
         # Dirs to add to PATH
@@ -99,6 +99,7 @@
           calicoctl
           certigo
           chamber
+          cool-retro-term
           discord
           feh
           fluxcd
