@@ -176,11 +176,14 @@
         done
         zstyle :omz:plugins:ssh-agent identities ''${identities[@]}
       '';
+
+      custom = "$HOME/.oh-my-zsh";
     };
 
   };
 
   home.file = {
+    ".oh-my-zsh/lib/vcs_info.zsh".text = ""; # Nullify this lib due to upstream bugs
     ".zsh.d".source = ./zsh.d;
     ".zsh.d".recursive = true;
   };
