@@ -53,10 +53,6 @@
         # X11
         xsession = lib.mkIf config.services.xserver.enable {
           enable = true;
-          pointerCursor = {
-            package = pkgs.capitaine-cursors;
-            name = "capitaine-cursors-white";
-          };
         };
 
         # Fontconfig
@@ -203,6 +199,10 @@
         # GTK
         gtk = lib.mkIf config.services.xserver.enable {
           enable = true;
+          cursorTheme = {
+            package = pkgs.capitaine-cursors;
+            name = "capitaine-cursors-white";
+          };
           font = {
             package = pkgs.corefonts;
             name = "Verdana";
