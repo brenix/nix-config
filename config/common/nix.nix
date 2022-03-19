@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, lib, nix-colors, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -34,6 +34,14 @@
       automatic = true;
       dates = [ "weekly" ];
     };
+
+    # This will add your inputs as registries, making operations with them
+    # consistent with your flake inputs.
+    registry = lib.mapAttrs'
+      (n: v:
+        lib.nameValuePair (n) ({ flake = v; })
+      )
+      inputs;
   };
 
   # documentation.nixos.enable = false;
