@@ -25,7 +25,7 @@
       browser.size = 16;
       launcher.font = "Verdana";
       launcher.size = 10;
-      terminal.font = "JetBrains Mono Nerd Font";
+      terminal.font = "Cousine";
       terminal.size = 14.5;
     };
   };
