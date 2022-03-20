@@ -11,6 +11,7 @@ vim.g.nvim_tree_root_folder_modifier = table.concat({ ":t:gs?$?/..", string.rep(
 require("nvim-tree").setup({
 	auto_close = false,
 	open_on_tab = false,
+	open_on_setup = true,
 	update_cwd = false,
 	update_focused_file = {
 		enable = true,
