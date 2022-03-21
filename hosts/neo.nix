@@ -130,10 +130,6 @@ in
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl = {
     enable = true;
-    extraPackages = with pkgs; [
-      libvdpau-va-gl
-      vaapiVdpau
-    ];
   };
 
   # I2C devices
@@ -182,8 +178,8 @@ in
       browser.size = 16;
       launcher.font = "Verdana";
       launcher.size = 10;
-      terminal.font = "Cousine";
-      terminal.size = 12.5;
+      terminal.font = "JetBrains Mono Nerd Font";
+      terminal.size = 13;
     };
   };
 
