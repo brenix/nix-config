@@ -30,7 +30,7 @@
     };
 
     startupPrograms = [
-      "$HOME/.fehbg"
+      "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#2d2f38'"
       "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
     ];
 
