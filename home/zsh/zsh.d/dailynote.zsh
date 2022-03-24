@@ -4,12 +4,13 @@ dn() {
   local year=$(date +%Y)
   local month=$(date +%m)
   local day=$(date +%d)
+  local category=${1:-work}
 
   pushd ${NOTEDIR} &>/dev/null && git pull && popd &>/dev/null
 
   # create dir
-  mkdir -p "${NOTEDIR}/work/daily/$year/$month" &>/dev/null
-  local note="${NOTEDIR}/work/daily/$year/$month/$day.md"
+  mkdir -p "${NOTEDIR}/$category/daily/$year/$month" &>/dev/null
+  local note="${NOTEDIR}/$category/daily/$year/$month/$day.md"
 
   test -f "${note}" && \
     local msg="Updated daily work notes" || \
@@ -20,8 +21,8 @@ dn() {
   $EDITOR "${note}"
 
   # cleanup empty files and dirs
-  find "${NOTEDIR}/work/daily -type d -empty -delete" &>/dev/null
-  find "${NOTEDIR}/work/daily -type f -size 0 -delete" &>/dev/null
+  find "${NOTEDIR}/$category/daily -type d -empty -delete" &>/dev/null
+  find "${NOTEDIR}/$category/daily -type f -size 0 -delete" &>/dev/null
 
   pushd "${NOTEDIR}" >/dev/null
   if [[ -f "${note}" ]]; then
@@ -37,7 +38,8 @@ dnc() {
   local year=$(date +%Y)
   local month=$(date +%m)
   local day=$(date +%d)
-  local note="${NOTEDIR}/work/daily/$year/$month/$day.md"
+  local category=${1:-work}
+  local note="${NOTEDIR}/$category/daily/$year/$month/$day.md"
 
   case "$OSTYPE" in
     linux*) bat --color=never --paging=never "${note}" | xclip ;;
