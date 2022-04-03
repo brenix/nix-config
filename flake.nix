@@ -53,6 +53,7 @@
           inputs.nixos-hardware.nixosModules.common-pc-ssd
           ./config/android.nix
           ./config/libvirt
+          ./config/mullvad.nix
           ./config/node-exporter.nix
           ./config/openconnect.nix
           ./config/pipewire.nix

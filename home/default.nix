@@ -119,6 +119,7 @@
           lefthook
           lxappearance
           mr
+          mullvad-vpn
           mupdf
           nodePackages.npm
           nodejs

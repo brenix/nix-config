@@ -32,6 +32,9 @@
       ls = "ls -v --color=always --group-directories-first";
       mkdir = "mkdir -vp";
       mv = "mv -iv";
+      mc = "mullvad connect";
+      md = "mullvad disconnect";
+      ms = "mullvad status";
       q = "googler";
       rm = "rm -I";
       s = "doas systemctl";
