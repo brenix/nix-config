@@ -22,7 +22,10 @@
 
     libinput = {
       enable = true;
-      mouse = { accelProfile = "flat"; };
+      mouse = {
+        accelProfile = "flat";
+        middleEmulation = false;
+      };
     };
 
     # Remap capslock to escape
