@@ -57,7 +57,7 @@ in
           font-2 = ''"JetBrainsMono Nerd Font Mono:size=14;3"'';
           module-margin-left = 1;
           module-margin-right = 1;
-          modules-left = "workspaces";
+          modules-left = "";
           modules-center = "now-playing";
           modules-right = "battery cpu temperature memory volume date time";
           offset-x = 0;
