@@ -96,6 +96,29 @@ in
         };
 
         "module/workspaces" = {
+          type = "internal/xworkspaces";
+          enable-click = true;
+          enable-scroll = true;
+          pin-workspaces = false;
+          format = "<label-state>";
+          format-padding = 0;
+          label-empty = "%icon%";
+          label-empty-padding = 1;
+          label-active = "%icon%";
+          label-active-foreground = "\${colors.blue}";
+          label-active-padding = 1;
+          label-occupied = "%icon%";
+          label-occupied-padding = 1;
+          label-urgent = "%icon%";
+          label-urgent-padding = 1;
+          icon-0 = "1;";
+          icon-1 = "2;";
+          icon-2 = "3;";
+          icon-3 = "4;";
+          icon-default = "";
+        };
+
+        "module/bspwm" = {
           type = "internal/bspwm";
           enable-click = true;
           enable-scroll = true;
@@ -187,4 +210,3 @@ in
     recursive = true;
   };
 }
-

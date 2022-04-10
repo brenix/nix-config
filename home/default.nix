@@ -8,16 +8,16 @@
       ${config.settings.username} = {
         imports = [
           ./alacritty
-          ./bspwm
+          #./bspwm
           ./dunst
           ./firefox
           ./git
           ./neovim
-          #./openbox
+          ./openbox
           ./polybar
           ./rofi
           ./starship
-          ./sxhkd
+          #./sxhkd
           ./tmux
           ./zsh
         ];
