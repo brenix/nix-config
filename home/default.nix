@@ -132,6 +132,7 @@
           piper
           playerctl
           python310
+          quake-champions
           reftools
           sd
           shfmt
