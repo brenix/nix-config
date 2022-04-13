@@ -109,7 +109,7 @@ in
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/46d2e29d-bdd3-4ad3-b907-41dc56058c9c";
     fsType = "ext4";
-    options = [ "noatime" "nodiratime" ];
+    options = [ "noatime" "nodiratime" "commit=60" ];
   };
 
   fileSystems."/boot" = {
@@ -118,13 +118,23 @@ in
   };
 
   # Mounts
-  systemd.mounts = [{
-    what = "/dev/mapper/data-cache";
-    where = "/home/brenix/.cache";
-    type = "ext4";
-    options = "rw,noatime,barrier=0";
-    wantedBy = [ "multi-user.target" ];
-  }];
+  systemd.mounts = [
+    {
+      what = "/dev/mapper/data-cache";
+      where = "/home/brenix/.cache";
+      type = "ext4";
+      options = "rw,noatime,barrier=0";
+      wantedBy = [ "multi-user.target" ];
+    }
+    {
+      what = "/dev/mapper/data-steam";
+      where = "/home/brenix/.local/share/Steam/steamapps";
+      type = "ext4";
+      options = "rw,noatime,barrier=0";
+      wantedBy = [ "multi-user.target" ];
+
+    }
+  ];
 
   # NVIDIA
   services.xserver.videoDrivers = [ "nvidia" ];
