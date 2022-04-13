@@ -182,14 +182,14 @@ in
   # Configure host-specific settings
   settings = {
     dpi = 109;
-    monitor = "DP-4";
+    monitor = "DP-2";
     fonts = {
       browser.font = "Verdana";
       browser.size = 16;
       launcher.font = "Verdana";
       launcher.size = 10;
       terminal.font = "JetBrains Mono Nerd Font";
-      terminal.size = 13;
+      terminal.size = 11.5;
     };
   };
 
@@ -202,8 +202,8 @@ in
     inherit (config) settings;
 
     xsession.windowManager.bspwm.monitors = {
-      DP-4 = [ "1" "2" ];
-      HDMI-0 = [ "3" "4" ];
+      DP-2 = [ "1" "2" ];
+      DP-0 = [ "3" "4" ];
     };
 
   };
