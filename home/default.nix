@@ -131,6 +131,7 @@
           pipenv
           piper
           playerctl
+          protonup
           python310
           quake-champions
           reftools
@@ -154,21 +155,6 @@
           zoom-us
           zoxide
         ];
-
-        # Autocutsel
-        systemd.user.services.autocutsel =
-          lib.mkIf config.services.xserver.enable {
-            Unit.Description = "AutoCutSel";
-            Install = { WantedBy = [ "default.target" ]; };
-            Service = {
-              Type = "forking";
-              Restart = "always";
-              RestartSec = 2;
-              ExecStartPre = "${pkgs.autocutsel}/bin/autocutsel -fork";
-              ExecStart =
-                "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
-            };
-          };
 
         # bat
         programs.bat = {
