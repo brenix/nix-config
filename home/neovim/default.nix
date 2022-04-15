@@ -34,8 +34,7 @@ in
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      #(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) # FIXME: Broken upstream
-      nvim-treesitter
+      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       Navigator-nvim
       better-escape-nvim
       bufferline-nvim
