@@ -9,7 +9,6 @@ vim.g.nvim_tree_respect_buf_cwd = 1
 vim.g.nvim_tree_root_folder_modifier = table.concat({ ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" })
 
 require("nvim-tree").setup({
-	auto_close = true,
 	open_on_tab = false,
 	open_on_setup = false,
 	update_cwd = false,
