@@ -45,10 +45,10 @@ in
       "sd_mod"
       "usb_storage"
       "usbhid"
-      "vfio"
-      "vfio_iommu_type1"
-      "vfio_pci"
-      "vfio_virqfd"
+      /* "vfio" */
+      /* "vfio_iommu_type1" */
+      /* "vfio_pci" */
+      /* "vfio_virqfd" */
       "xhci_pci"
     ];
 
@@ -60,10 +60,10 @@ in
       "intremap=no_x2apic_optout"
       "iommu=pt"
       "mitigations=off"
-      "nohz_full=8-15,24-31"
-      "rcu_nocb_poll"
-      "rcu_nocbs=8-15,24-31"
-      "rd.driver.pre=vfio-pci"
+      /* "nohz_full=8-15,24-31" */
+      /* "rcu_nocb_poll" */
+      /* "rcu_nocbs=8-15,24-31" */
+      /* "rd.driver.pre=vfio-pci" */
       "systemd.unified_cgroup_hierarchy=1"
       "transparent_hugepage=never"
       "tsc=reliable"
@@ -71,10 +71,10 @@ in
       "vfio-pci.ids=${lib.concatMapStringsSep "," (d: d.device) devices}"
     ];
 
-    kernel.sysctl = {
-      # 20GiB hugepages for VM guest
-      "vm.nr_hugepages" = 20;
-    };
+    /* kernel.sysctl = { */
+    /*   # 20GiB hugepages for VM guest */
+    /*   "vm.nr_hugepages" = 20; */
+    /* }; */
 
     blacklistedKernelModules = [ "nouveau" ];
 
@@ -82,11 +82,11 @@ in
       "dm-snapshot"
       "i2c-dev"
       "i2c-piix4"
-      "kvm-amd"
-      "vfio"
-      "vfio_iommu_type1"
-      "vfio_pci"
-      "vfio_virqfd"
+      /* "kvm-amd" */
+      /* "vfio" */
+      /* "vfio_iommu_type1" */
+      /* "vfio_pci" */
+      /* "vfio_virqfd" */
     ];
 
     extraModprobeConfig = ''
@@ -97,8 +97,8 @@ in
       options kvm_amd avic=0
       options kvm_amd nested=0
       options kvm_amd npt=1
-      options usbhid kbpoll=2
-      options usbhid mousepoll=2
+      options usbhid kbpoll=1
+      options usbhid mousepoll=1
       options vfio-pci disable_vga=1
       options vfio_iommu_type1 allow_unsafe_interrupts=1
       options vfio_iommu_type1 disable_hugepages=0
