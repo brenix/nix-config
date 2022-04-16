@@ -133,7 +133,6 @@
           playerctl
           protonup
           python310
-          quake-champions
           reftools
           sd
           shfmt

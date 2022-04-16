@@ -12,6 +12,16 @@
       </startupnotify>
     </action>
   </item>
+  <item label="STEAM">
+    <action name="Execute">
+      <command>steam</command>
+    </action>
+  </item>
+  <item label="QUAKE CHAMPIONS">
+    <action name="Execute">
+      <command>steam steam://611500</command>
+    </action>
+  </item>
   <item label="PCMANFM">
     <action name="Execute">
       <command>pcmanfm</command>
