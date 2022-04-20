@@ -42,7 +42,7 @@
       sw = "git switch";
       v = "nvim";
       virsh = "virsh -c qemu:///system";
-      vm = "virsh start win10";
+      vm = "virsh start win11";
     };
 
     plugins = [

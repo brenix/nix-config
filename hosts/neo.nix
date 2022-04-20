@@ -45,10 +45,10 @@ in
       "sd_mod"
       "usb_storage"
       "usbhid"
-      /* "vfio" */
-      /* "vfio_iommu_type1" */
-      /* "vfio_pci" */
-      /* "vfio_virqfd" */
+      "vfio"
+      "vfio_iommu_type1"
+      "vfio_pci"
+      "vfio_virqfd"
       "xhci_pci"
     ];
 
@@ -60,10 +60,10 @@ in
       "intremap=no_x2apic_optout"
       "iommu=pt"
       "mitigations=off"
-      /* "nohz_full=8-15,24-31" */
-      /* "rcu_nocb_poll" */
-      /* "rcu_nocbs=8-15,24-31" */
-      /* "rd.driver.pre=vfio-pci" */
+      "nohz_full=8-15,24-31"
+      "rcu_nocb_poll"
+      "rcu_nocbs=8-15,24-31"
+      "rd.driver.pre=vfio-pci"
       "systemd.unified_cgroup_hierarchy=1"
       "transparent_hugepage=never"
       "tsc=reliable"
@@ -71,10 +71,10 @@ in
       "vfio-pci.ids=${lib.concatMapStringsSep "," (d: d.device) devices}"
     ];
 
-    /* kernel.sysctl = { */
-    /*   # 20GiB hugepages for VM guest */
-    /*   "vm.nr_hugepages" = 20; */
-    /* }; */
+    kernel.sysctl = {
+      # 20GiB hugepages for VM guest
+      "vm.nr_hugepages" = 20;
+    };
 
     blacklistedKernelModules = [ "nouveau" ];
 
@@ -82,11 +82,11 @@ in
       "dm-snapshot"
       "i2c-dev"
       "i2c-piix4"
-      /* "kvm-amd" */
-      /* "vfio" */
-      /* "vfio_iommu_type1" */
-      /* "vfio_pci" */
-      /* "vfio_virqfd" */
+      "kvm-amd"
+      "vfio"
+      "vfio_iommu_type1"
+      "vfio_pci"
+      "vfio_virqfd"
     ];
 
     extraModprobeConfig = ''
@@ -182,7 +182,7 @@ in
   # Configure host-specific settings
   settings = {
     dpi = 109;
-    monitor = "DP-2";
+    monitor = "DP-4";
     fonts = {
       browser.font = "Verdana";
       browser.size = 16;
@@ -202,8 +202,8 @@ in
     inherit (config) settings;
 
     xsession.windowManager.bspwm.monitors = {
-      DP-2 = [ "1" "2" ];
-      DP-0 = [ "3" "4" ];
+      DP-4 = [ "1" "2" ];
+      HDMI-0 = [ "3" "4" ];
     };
 
   };

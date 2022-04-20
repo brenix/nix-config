@@ -6,7 +6,7 @@ ds() {
 # Display extend
 de() {
   xrandr --output HDMI-0 --mode 2560x1440 --rate 144 --right-of DP-4
-  bspc desktop 3 -m HDMI-0
-  bspc desktop 4 -m HDMI-0
-  bspc desktop Desktop -r
+  # bspc desktop 3 -m HDMI-0
+  # bspc desktop 4 -m HDMI-0
+  # bspc desktop Desktop -r
 }
