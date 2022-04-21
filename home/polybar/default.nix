@@ -40,7 +40,7 @@ in
         };
 
         "bar/main" = {
-          top = true;
+          bottom = true;
           height = 22;
           inherit (config.settings) dpi;
           inherit (config.settings) monitor;
