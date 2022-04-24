@@ -18,7 +18,7 @@
       font.italic.family = config.settings.fonts.terminal.font;
       font.italic.style = "Italic";
       font.size = config.settings.fonts.terminal.size;
-      font.offset.y = -3;
+      font.offset.y = -2;
       font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{

@@ -40,7 +40,7 @@ in
         };
 
         "bar/main" = {
-          bottom = true;
+          top = true;
           height = 22;
           inherit (config.settings) dpi;
           inherit (config.settings) monitor;
@@ -52,7 +52,7 @@ in
           border-bottom-size = 1;
           border-top-color = "\${colors.bg}";
           border-top-size = 1;
-          font-0 = "Verdana:size=9;2";
+          font-0 = "Terminus:size=11;2";
           font-1 = ''"Material Icons:size=9;3"'';
           font-2 = ''"JetBrainsMono Nerd Font Mono:size=14;3"'';
           module-margin-left = 1;

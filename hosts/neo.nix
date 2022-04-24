@@ -188,8 +188,8 @@ in
       browser.size = 16;
       launcher.font = "Verdana";
       launcher.size = 10;
-      terminal.font = "JetBrains Mono Nerd Font";
-      terminal.size = 11.5;
+      terminal.font = "Terminus";
+      terminal.size = 12;
     };
   };
 
