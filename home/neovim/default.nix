@@ -23,6 +23,16 @@ let
       sha256 = "sha256-E+wQUtLJwqN42XYLu2OzAEKMMUyRKjcZHwgOOEG0XDM=";
     };
   };
+
+  vim-gabriel = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-gabriel";
+    src = pkgs.fetchFromGitHub {
+      owner = "gantoreno";
+      repo = "vim-gabriel";
+      rev = "1d742fe7f96a3bb56eac26f21c8653cdebe325d6";
+      sha256 = "sha256-A7wyOJpBJlZbIVA85hD1/Ep/5nrbzFqG0FvOYIuUwJ4=";
+    };
+  };
 in
 {
   home.sessionVariables.EDITOR = "nvim";
@@ -81,6 +91,7 @@ in
       trouble-nvim
       vim-better-whitespace
       vim-easy-align
+      vim-gabriel
       vim-terraform
       vim-terraform-completion
     ];
