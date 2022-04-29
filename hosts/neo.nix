@@ -189,7 +189,7 @@ in
       launcher.font = "Verdana";
       launcher.size = 10;
       terminal.font = "Hack";
-      terminal.size = 10.5;
+      terminal.size = 11.5;
     };
   };
 
