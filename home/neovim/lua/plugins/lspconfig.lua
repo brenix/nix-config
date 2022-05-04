@@ -68,7 +68,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 -- Format on save
 require("core.utils").set_augroup("lsp_format", {
-	{ "BufWritePre", "*", "lua vim.lsp.buf.formatting_seq_sync(nil, 10000)" },
+	{ "BufWritePre", "*", "lua vim.lsp.buf.format(nil, 10000)" },
 })
 
 -- use default server configurations
