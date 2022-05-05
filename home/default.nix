@@ -233,6 +233,9 @@
         # jq
         programs.jq.enable = true;
 
+        # direnv
+        programs.direnv.enable = true;
+
         # disable man pages
         programs.man.enable = false;
 

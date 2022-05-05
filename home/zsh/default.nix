@@ -25,6 +25,7 @@
       cp = "cp -riv";
       define = "googler -n 2 define";
       grep = "grep --color=auto";
+      gl = "git pull --prune --tags";
       l = "ls -lhv";
       la = "ls -lAvh";
       ls = "ls -v --color=always --group-directories-first";
