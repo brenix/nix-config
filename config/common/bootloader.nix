@@ -4,6 +4,7 @@
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
     cleanTmpDir = true;
+    tmpOnTmpfs = true;
 
     loader = {
       efi.canTouchEfiVariables = true;
