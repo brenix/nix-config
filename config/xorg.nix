@@ -11,14 +11,14 @@
     autoRepeatInterval = 15;
 
     displayManager = {
-      defaultSession = "none+openbox";
+      defaultSession = "none+bspwm";
       autoLogin.enable = true;
       autoLogin.user = config.settings.username;
     };
 
     desktopManager.xterm.enable = false;
 
-    windowManager = { openbox.enable = true; };
+    windowManager = { bspwm.enable = true; };
 
     libinput = {
       enable = true;
