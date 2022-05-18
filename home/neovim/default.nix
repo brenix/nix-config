@@ -44,7 +44,8 @@ in
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      /* (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) */
+      nvim-treesitter
       Navigator-nvim
       better-escape-nvim
       bufferline-nvim
