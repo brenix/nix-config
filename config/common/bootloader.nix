@@ -8,7 +8,7 @@
 
     loader = {
       efi.canTouchEfiVariables = true;
-      systemd-boot.configurationLimit = 3;
+      systemd-boot.configurationLimit = 10;
       systemd-boot.consoleMode = "max";
       systemd-boot.editor = true;
       systemd-boot.enable = true;
