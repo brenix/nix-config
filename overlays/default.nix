@@ -2,6 +2,7 @@
 
 final: prev: {
   calicoctl = prev.callPackage ./calicoctl { };
+  dash-font = prev.callPackage ./dash-font { };
 
   # Add `--no-sandbox` flag to authy due to issues identifying GPU
   authy = prev.authy.overrideAttrs (oldAttrs: rec {

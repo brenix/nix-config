@@ -96,6 +96,7 @@
           certigo
           chamber
           cool-retro-term
+          dash-font
           discord
           feh
           fluxcd
@@ -143,6 +144,7 @@
           sxiv
           terraform
           terraform-docs
+          tewi-font
           theme-vertex
           unrar
           unzip
