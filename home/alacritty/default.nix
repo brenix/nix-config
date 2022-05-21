@@ -31,6 +31,7 @@
       window.dimensions.columns = 140;
       window.dimensions.lines = 50;
       decorations = "none";
+      dynamic_padding = false;
       colors =
         let inherit (config.colorscheme) colors;
         in

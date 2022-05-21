@@ -3,8 +3,8 @@
     enable = true;
 
     iconTheme = {
-      name = "Paper";
-      package = pkgs.paper-icon-theme;
+      name = "Nordzy";
+      package = pkgs.nordzy-icon-theme;
     };
 
     settings = {
