@@ -29,14 +29,27 @@ _: {
         format = "";
       };
       git_branch = {
-        disabled = false;
         format = "[\\(](white)[$branch](cyan)[\\)](white) ";
+        symbol = " ";
+      };
+      git_status = {
+        disabled = false;
+        conflicted = "";
+        ahead = "";
+        behind = "";
+        diverged = "";
+        up_to_date = "";
+        untracked = "";
+        stashed = "";
+        modified = "";
+        staged = "";
+        renamed = "";
+        deleted = "";
       };
       python = {
         disabled = false;
         format = "[(($virtualenv))]($style) ";
       };
-
       cmd_duration.disabled = true;
       golang.disabled = true;
       helm.disabled = true;

@@ -188,8 +188,8 @@ in
       browser.size = 16;
       launcher.font = "Verdana";
       launcher.size = 10;
-      terminal.font = "Dash";
-      terminal.size = 10;
+      terminal.font = "Hack";
+      terminal.size = 11.5;
     };
   };
 
