@@ -29,22 +29,8 @@ _: {
         format = "";
       };
       git_branch = {
-        format = "[\\(](white)[$branch](cyan)[\\)](white) ";
-        symbol = " ";
-      };
-      git_status = {
         disabled = false;
-        conflicted = "";
-        ahead = "";
-        behind = "";
-        diverged = "";
-        up_to_date = "";
-        untracked = "";
-        stashed = "";
-        modified = "";
-        staged = "";
-        renamed = "";
-        deleted = "";
+        format = "[\\(](white)[$branch](cyan)[\\)](white) ";
       };
       python = {
         disabled = false;
