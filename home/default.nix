@@ -90,22 +90,20 @@
           awless
           aws-vault
           awscli2
-          blanket
           buildah
           calicoctl
           certigo
           chamber
-          cool-retro-term
           dash-font
           discord
           feh
           fluxcd
+          fx
           git-ignore
           glab
           golangci-lint
           go-tools
           gomplate
-          googler
           gopls
           goreleaser
           gotools
