@@ -262,7 +262,9 @@
           disable_checkpoint = true
         '';
         systemd.user.tmpfiles.rules = [
-          "d /home/${config.settings.username}/.cache/terraform-plugin-cache 0755 ${config.settings.username} users"
+          "d %h/.cache/terraform-plugin-cache 0755"
+          "d %h/.kube 0700"
+          "d %h/work 0755"
         ];
       };
     };
