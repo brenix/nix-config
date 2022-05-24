@@ -90,16 +90,16 @@
           awless
           aws-vault
           awscli2
-          buildah
+          #buildah
           calicoctl
           certigo
-          chamber
+          #chamber
           dash-font
           discord
           feh
           fluxcd
           fx
-          git-ignore
+          #git-ignore
           glab
           golangci-lint
           go-tools
@@ -108,7 +108,7 @@
           goreleaser
           gotools
           grc
-          handlr
+          #handlr
           helmfile
           hugo
           krew
@@ -122,7 +122,7 @@
           mupdf
           nodePackages.npm
           nodejs
-          openrgb
+          #openrgb
           packer
           pavucontrol
           pcmanfm
@@ -147,7 +147,7 @@
           unrar
           unzip
           vault-bin
-          velero
+          #velero
           vendir
           xclip
           yq-go
