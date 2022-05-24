@@ -24,13 +24,14 @@ let
     };
   };
 
-  vim-gabriel = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-gabriel";
+  lsp-format-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "lsp-format-nvim";
+    dontBuild = true;
     src = pkgs.fetchFromGitHub {
-      owner = "gantoreno";
-      repo = "vim-gabriel";
-      rev = "1d742fe7f96a3bb56eac26f21c8653cdebe325d6";
-      sha256 = "sha256-A7wyOJpBJlZbIVA85hD1/Ep/5nrbzFqG0FvOYIuUwJ4=";
+      owner = "lukas-reineke";
+      repo = "lsp-format.nvim";
+      rev = "a5a54eeb36d7001b4a6f0874dde6afd167319ac9";
+      sha256 = "sha256-xFA+9JO3Rnj/CAYXb+oOnbslH3jgEapHA67I6dMFRFI=";
     };
   };
 in
@@ -63,7 +64,7 @@ in
       gruvbox-material
       gruvbox-nvim
       indent-blankline-nvim
-      lsp-rooter-nvim
+      lsp-format-nvim
       lsp_signature-nvim
       lspkind-nvim
       lualine-lsp-progress
@@ -81,6 +82,7 @@ in
       nvim-lspconfig
       nvim-tree-lua
       nvim-web-devicons
+      project-nvim
       quickfix-reflector-vim
       stabilize-nvim
       switch-vim
@@ -92,7 +94,6 @@ in
       trouble-nvim
       vim-better-whitespace
       vim-easy-align
-      vim-gabriel
       vim-terraform
       vim-terraform-completion
     ];
