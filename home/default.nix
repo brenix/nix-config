@@ -111,6 +111,7 @@
           #handlr
           helmfile
           hugo
+          imv
           krew
           kubectl
           kubernetes-helm
