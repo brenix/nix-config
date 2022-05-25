@@ -42,7 +42,7 @@ in
         "bar/main" = {
           top = true;
           height = 22;
-          inherit (config.settings) dpi;
+          dpi = -1;
           inherit (config.settings) monitor;
           enable-ipc = true;
           width = "100%";
