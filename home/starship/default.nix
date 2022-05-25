@@ -21,9 +21,6 @@ _: {
         ssh_only = true;
         format = "[$hostname]($style) ";
       };
-      localip = {
-        disabled = true;
-      };
       terraform = {
         disabled = false;
         format = "";
@@ -41,7 +38,9 @@ _: {
       helm.disabled = true;
       kubernetes.disabled = true;
       line_break.disabled = true;
+      localip.disabled = true;
       lua.disabled = true;
+      nix_shell.disabled = true;
       username.disabled = true;
     };
   };
