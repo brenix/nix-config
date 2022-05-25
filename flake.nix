@@ -17,7 +17,11 @@
     neovim-nightly = { url = "github:nix-community/neovim-nightly-overlay"; };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
+  outputs = { self, flake-utils, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+    in
 
     flake-utils.lib.mkFlake {
       inherit self inputs;
