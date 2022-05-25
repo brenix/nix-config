@@ -2,19 +2,13 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+    nur.url = "github:nix-community/NUR";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    flake-utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-colors = { url = "github:misterio77/nix-colors"; };
-    neovim-nightly = { url = "github:nix-community/neovim-nightly-overlay"; };
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    nix-colors.url = "github:misterio77/nix-colors";
+    pre-commit-hooks = { url = "github:cachix/pre-commit-hooks.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
   outputs = { self, flake-utils, ... }@inputs:
@@ -26,8 +20,19 @@
     flake-utils.lib.mkFlake {
       inherit self inputs;
 
+      devShells.${system}.default = pkgs.mkShell {
+        packages = [ pkgs.nixpkgs-fmt ];
+        inherit (self.checks.${system}.pre-commit-check) shellHook;
+      };
+
+      checks.${system}.pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+        src = self;
+        hooks.nixpkgs-fmt.enable = true;
+        hooks.shellcheck.enable = true;
+      };
+
       sharedOverlays =
-        [ self.overlay inputs.nur.overlay inputs.neovim-nightly.overlay ];
+        [ self.overlays.default inputs.nur.overlay inputs.neovim-nightly.overlay ];
 
       channelsConfig.allowUnfree = true;
 
@@ -74,6 +79,6 @@
         ];
       };
 
-      overlay = import ./overlays { inherit inputs; };
+      overlays.default = import ./overlays { inherit inputs; };
     };
 }
