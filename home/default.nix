@@ -267,6 +267,9 @@
           "d %h/.kube 0700"
           "d %h/work 0755"
         ];
+
+        # Reload system units when changing configs
+        systemd.user.startServices = "sd-switch";
       };
     };
   };
