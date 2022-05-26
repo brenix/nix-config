@@ -56,6 +56,10 @@
         state = "floating";
         sticky = true;
       };
+      ".zoom " = {
+        state = "floating";
+        sticky = true;
+      };
       "mpv" = {
         state = "floating";
         sticky = true;

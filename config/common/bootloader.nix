@@ -5,6 +5,7 @@
 
     cleanTmpDir = true;
     tmpOnTmpfs = true;
+    tmpOnTmpfsSize = "75%";
 
     loader = {
       efi.canTouchEfiVariables = true;

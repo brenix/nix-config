@@ -73,7 +73,7 @@ in
 
     kernel.sysctl = {
       # 20GiB hugepages for VM guest
-      "vm.nr_hugepages" = 20;
+      /* "vm.nr_hugepages" = 20; */
     };
 
     blacklistedKernelModules = [ "nouveau" ];
