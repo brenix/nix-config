@@ -64,7 +64,7 @@ set_display_input() {
 VM_NAME=$1
 VM_ACTION=$2
 
-if [[ $VM_NAME == "win10" ]]; then
+if [[ $VM_NAME == "win11" ]]; then
   case "$VM_ACTION" in
     "prepare")
       # Switch display input
@@ -73,10 +73,11 @@ if [[ $VM_NAME == "win10" ]]; then
       # Memory preparation
       sync
       echo 3 >/proc/sys/vm/drop_caches
+      sync
       echo 1 >/proc/sys/vm/compact_memory
 
       # Allocate hugepages
-      echo 20 >/proc/sys/vm/nr_hugepages
+      echo 20 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
 
       # Disable transparent hugepages
       echo never >/sys/kernel/mm/transparent_hugepage/enabled
@@ -119,7 +120,7 @@ if [[ $VM_NAME == "win10" ]]; then
       echo 1 >/proc/sys/vm/stat_interval
 
       # Restore hugepages
-      echo 0 >/proc/sys/vm/nr_hugepages
+      echo 0 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
 
       # Restore scheduler
       echo 980000 >/proc/sys/kernel/sched_rt_runtime_us
