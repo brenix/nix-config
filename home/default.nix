@@ -99,7 +99,7 @@
           feh
           fluxcd
           fx
-          #git-ignore
+          git-ignore
           glab
           golangci-lint
           go-tools
