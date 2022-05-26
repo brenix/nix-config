@@ -68,7 +68,6 @@
           ./config/pipewire.nix
           ./config/podman.nix
           ./config/ratbagd.nix
-          ./config/steam.nix
           ./config/xorg.nix
           ./hosts/neo.nix
         ];
