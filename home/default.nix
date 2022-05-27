@@ -251,6 +251,17 @@
         services.unclutter =
           lib.mkIf config.services.xserver.enable { enable = true; };
 
+        # picom
+        services.picom = {
+          enable = true;
+          activeOpacity = "1.0";
+          inactiveOpacity = "1.0";
+          shadow = false;
+          fade = false;
+          blur = false;
+          backend = "glx";
+        };
+
         # ssh
         programs.ssh = {
           enable = true;
