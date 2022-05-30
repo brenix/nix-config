@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, lib, ... }: {
 
   programs.alacritty = {
     enable = true;
@@ -17,7 +17,7 @@
         family = "Terminus";
         style = "Italic";
       };
-      font.size = 11.5;
+      font.size = lib.mkDefault 11.5;
       font.offset.y = -2;
       font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;

@@ -19,6 +19,8 @@
   # Pass settings to home-manager
   home-manager.users.brenix = {
     xsession.windowManager.bspwm.monitors = { Virtual1 = [ "1" "2" "3" "4" ]; };
+
+    programs.alacritty.settings.font.size = 16;
   };
 
 }
