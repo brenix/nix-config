@@ -1,7 +1,5 @@
 { config, ... }: {
 
-  imports = [ ../hardware/vm-qemu.nix ../modules/settings.nix ];
-
   # Hostname
   networking.hostName = "dozer";
 
@@ -12,13 +10,8 @@
   environment.variables.GDK_SCALE = "1";
   environment.variables.GDK_DPI_SCALE = "1";
 
-  # Configure host-specific settings
-  settings = { dpi = 109; };
-
   # Pass settings to home-manager
-  home-manager.users.${config.settings.username} = {
-    inherit (config) settings;
-
+  home-manager.users.brenix = {
     xsession.windowManager.bspwm.monitors = { Virtual1 = [ "1" "2" "3" "4" ]; };
   };
 }

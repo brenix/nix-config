@@ -1,14 +1,12 @@
 { config, pkgs, ... }: {
 
-  imports = [ ../../modules/settings.nix ];
 
   environment.pathsToLink = [ "/share/zsh" ];
 
-  users.users.${config.settings.username} = {
+  users.users.brenix = {
     isNormalUser = true;
     createHome = true;
-    home = "/home/${config.settings.username}";
-    description = config.settings.name;
+    home = "/home/brenix";
     extraGroups = [ "adbusers" "i2c" "input" "kvm" "libvirtd" "wheel" ];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [

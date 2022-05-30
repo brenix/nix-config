@@ -1,7 +1,5 @@
 { config, ... }: {
 
-  imports = [ ../../modules/settings.nix ];
-
   # Prevent replacing the running kernel image
   security.protectKernelImage = true;
 
@@ -16,7 +14,7 @@
 
   # Configure doas
   security.doas.extraRules = [{
-    users = [ config.settings.username ];
+    users = [ "brenix" ];
     keepEnv = true;
     noPass = true;
   }];

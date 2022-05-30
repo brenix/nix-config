@@ -1,7 +1,5 @@
 { config, pkgs, ... }: {
 
-  imports = [ ../../modules/settings.nix ];
-
   programs.firefox = {
     enable = true;
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
@@ -59,8 +57,8 @@
         "findbar.modalHighlight" = true;
         "font.default.x-western" = "sans-serif";
         "font.name.monospace.x-western" = "Hack Nerd Font Mono";
-        "font.name.sans-serif.x-western" = config.settings.fonts.browser.font;
-        "font.name.serif.x-western" = config.settings.fonts.browser.font;
+        "font.name.sans-serif.x-western" = "Verdana";
+        "font.name.serif.x-western" = "Verdana";
         "full-screen-api.warning.timeout" = 0;
         "gfx.canvas.azure.accelerated" = true;
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
@@ -97,7 +95,6 @@
         "reader.parse-on-load.enabled" = false;
         "reader.parse-on-load.force-enabled" = false;
         "security.enterprise_roots.enabled" = true;
-        /* "security.sandbox.content.level" = 2; */
         "signon.autofillForms" = false;
         "signon.rememberSignons" = false;
         "svg.context-properties.content.enabled" = true;

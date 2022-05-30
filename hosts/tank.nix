@@ -16,24 +16,8 @@
   environment.variables.GDK_SCALE = "2";
   environment.variables.GDK_DPI_SCALE = "0.5";
 
-  # Configure host-specific settings
-  settings = {
-    dpi = 180;
-    monitor = "Virtual1";
-    fonts = {
-      browser.font = "Verdana";
-      browser.size = 16;
-      launcher.font = "Verdana";
-      launcher.size = 10;
-      terminal.font = "Hack";
-      terminal.size = 12;
-    };
-  };
-
   # Pass settings to home-manager
-  home-manager.users.${config.settings.username} = {
-    inherit (config) settings;
-
+  home-manager.users.brenix = {
     xsession.windowManager.bspwm.monitors = { Virtual1 = [ "1" "2" "3" "4" ]; };
   };
 

@@ -71,11 +71,6 @@ in
       "vfio-pci.ids=${lib.concatMapStringsSep "," (d: d.device) devices}"
     ];
 
-    kernel.sysctl = {
-      # 20GiB hugepages for VM guest
-      /* "vm.nr_hugepages" = 20; */
-    };
-
     blacklistedKernelModules = [ "nouveau" ];
 
     kernelModules = [
@@ -179,28 +174,12 @@ in
   environment.variables.GDK_SCALE = "1";
   environment.variables.GDK_DPI_SCALE = "1";
 
-  # Configure host-specific settings
-  settings = {
-    dpi = 109;
-    monitor = "DP-4";
-    fonts = {
-      browser.font = "Verdana";
-      browser.size = 16;
-      launcher.font = "Verdana";
-      launcher.size = 10;
-      terminal.font = "Hack";
-      terminal.size = 10.5;
-    };
-  };
-
   # Set thermal path for polybar
   environment.variables.HWMON_PATH =
     "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
 
   # Pass settings to home-manager
-  home-manager.users.${config.settings.username} = {
-    inherit (config) settings;
-
+  home-manager.users.brenix = {
     xsession.windowManager.bspwm.monitors = {
       DP-4 = [ "1" "2" ];
       HDMI-0 = [ "3" "4" ];

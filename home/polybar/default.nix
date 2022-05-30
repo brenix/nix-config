@@ -1,14 +1,9 @@
 { config, pkgs, ... }:
 
 let
-
   mprisScript = pkgs.callPackage ./scripts/mpris.nix { };
-
 in
 {
-
-  imports = [ ../../modules/settings.nix ];
-
   services.polybar = {
     enable = true;
 
@@ -43,7 +38,6 @@ in
           top = true;
           height = 22;
           dpi = -1;
-          inherit (config.settings) monitor;
           enable-ipc = true;
           width = "100%";
           foreground = "\${colors.fg}";
@@ -52,7 +46,7 @@ in
           border-bottom-size = 1;
           border-top-color = "\${colors.bg}";
           border-top-size = 1;
-          font-0 = "Hack:size=8.5;2";
+          font-0 = "Terminus:size=10;2";
           font-1 = ''"Material Icons:size=9;3"'';
           font-2 = ''"JetBrainsMono Nerd Font Mono:size=14;3"'';
           module-margin-left = 1;

@@ -44,7 +44,6 @@
       hostDefaults = {
         modules = [
           inputs.home-manager.nixosModule
-          ./modules/settings.nix
           ./home
           ./config/common
         ];
@@ -78,6 +77,6 @@
         ];
       };
 
-      overlays.default = import ./overlays { inherit inputs; };
+      overlays.default = import ./pkgs { inherit inputs; };
     };
 }

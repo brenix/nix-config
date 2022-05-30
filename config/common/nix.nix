@@ -39,11 +39,8 @@
     # consistent with your flake inputs.
     registry = lib.mapAttrs'
       (n: v:
-        lib.nameValuePair (n) ({ flake = v; })
+        lib.nameValuePair n { flake = v; }
       )
       inputs;
   };
-
-  # documentation.nixos.enable = false;
-
 }

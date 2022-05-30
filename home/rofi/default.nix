@@ -1,15 +1,10 @@
 { config, pkgs, ... }: {
 
-  imports = [ ../../modules/settings.nix ];
-
   programs.rofi = {
     enable = true;
-    font = "${config.settings.fonts.launcher.font} ${
-        toString config.settings.fonts.launcher.size
-      }";
+    font = "Terminus 10";
     theme = "Arc";
     plugins = with pkgs; [ rofi-calc ];
-    extraConfig = { inherit (config.settings) dpi; };
   };
 
 }

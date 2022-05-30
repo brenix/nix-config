@@ -68,8 +68,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "blimmer";
           repo = "zsh-aws-vault";
-          rev = "0240d7cd13362353a8c1de0230934c59df81a842";
-          sha256 = "0mjk9vkk1h1rfaiwz8ikklqbszcsdccdnihw9341jjl72j31fsnj";
+          rev = "f65973613cc80fbed3a649f4069c0febb08a7408";
+          sha256 = "PaR4TFnN8j7QqxpgIYP58ZCmztNoYGzHiAsJUO6zeHg=";
         };
       }
     ];

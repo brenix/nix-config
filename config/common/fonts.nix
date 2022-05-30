@@ -12,6 +12,7 @@
     noto-fonts
     open-sans
     roboto
+    tamzen
     terminus_font
     ubuntu_font_family
     uw-ttyp0
@@ -22,7 +23,7 @@
     })
   ];
 
-  # HACK: Causes evaluation to be "impure"
+  # WARN: Causes evaluation to be "impure"
   # Replace freetype with patched lcdfilter
   # system.replaceRuntimeDependencies = with pkgs; [{
   # original = freetype;

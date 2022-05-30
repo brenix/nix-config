@@ -1,24 +1,24 @@
 { config, ... }: {
 
-  imports = [ ../../modules/settings.nix ];
-
   programs.alacritty = {
     enable = true;
     settings = {
-      dpi = {
-        x = config.settings.dpi;
-        y = config.settings.dpi;
-      };
       scrolling.history = 10000;
       scrolling.multiplier = 3;
-      font.normal.family = config.settings.fonts.terminal.font;
-      font.normal.style = "Regular";
-      font.bold.family = config.settings.fonts.terminal.font;
-      font.bold.style = "Regular";
-      font.italic.family = config.settings.fonts.terminal.font;
-      font.italic.style = "Italic";
-      font.size = config.settings.fonts.terminal.size;
-      font.offset.y = -3;
+      font.normal = {
+        family = "Terminus";
+        style = "Regular";
+      };
+      font.bold = {
+        family = "Terminus";
+        style = "Regular";
+      };
+      font.italic = {
+        family = "Terminus";
+        style = "Italic";
+      };
+      font.size = 11.5;
+      font.offset.y = -2;
       font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
@@ -69,26 +69,6 @@
             cyan = "#${colors.base0C}";
             white = "#${colors.base06}";
           };
-          dim = {
-            black = "#373e4d";
-            red = "#94545d";
-            green = "#809575";
-            yellow = "#b29e75";
-            blue = "#68809a";
-            magenta = "#8c738c";
-            cyan = "#6d96a5";
-            white = "#aeb3bb";
-          };
-          indexed_colors = [
-            {
-              index = 16;
-              color = "#d18616";
-            }
-            {
-              index = 17;
-              color = "#cd3131";
-            }
-          ];
         };
     };
   };

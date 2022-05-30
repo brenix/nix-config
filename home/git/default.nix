@@ -1,12 +1,10 @@
 { config, ... }: {
 
-  imports = [ ../../modules/settings.nix ];
-
   programs.git = {
     enable = true;
 
-    userName = config.settings.name;
-    userEmail = config.settings.email;
+    userName = "Paul Nicholson";
+    userEmail = "brenix@gmail.com";
 
     aliases = {
       branch-name = "!git rev-parse --abbrev-ref HEAD";

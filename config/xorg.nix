@@ -1,19 +1,16 @@
 { config, pkgs, ... }: {
 
-  imports = [ ../modules/settings.nix ];
-
   services.xserver = {
     enable = true;
     layout = "us";
 
-    # Fast keyboard response
     autoRepeatDelay = 195;
     autoRepeatInterval = 15;
 
     displayManager = {
       defaultSession = "none+bspwm";
       autoLogin.enable = true;
-      autoLogin.user = config.settings.username;
+      autoLogin.user = "brenix";
     };
 
     desktopManager.xterm.enable = false;
@@ -28,7 +25,6 @@
       };
     };
 
-    # Remap capslock to escape
     xkbOptions = "caps:escape";
   };
 
