@@ -83,7 +83,7 @@
         age
         asdf-vm
         authy
-        awless
+        #awless
         aws-vault
         awscli2
         #buildah
@@ -113,7 +113,7 @@
         kubernetes-helm
         kustomize
         lefthook
-        lxappearance
+        #lxappearance
         mr
         mullvad-vpn
         mupdf
@@ -122,12 +122,12 @@
         #openrgb
         packer
         pavucontrol
-        pcmanfm
+        #pcmanfm
         pgcli
         pipenv
         piper
         playerctl
-        protonup
+        #protonup
         python310
         reftools
         sd
@@ -244,8 +244,7 @@
       services.playerctld.enable = true;
 
       # unclutter
-      services.unclutter =
-        lib.mkIf config.services.xserver.enable { enable = true; };
+      services.unclutter = lib.mkIf config.services.xserver.enable { enable = true; };
 
       # picom
       services.picom = {

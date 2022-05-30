@@ -161,7 +161,7 @@
 
       # -- SOURCE ADDITIONAL FILES
       source ${pkgs.grc}/etc/grc.zsh
-      source /etc/profiles/per-user/$USER/etc/profile.d/asdf-prepare.sh
+      #source /etc/profiles/per-user/$USER/etc/profile.d/asdf-prepare.sh
 
       for f in $HOME/.zsh.d/*.zsh $HOME/.zsh.local.d/*.zsh; do
         source $f
