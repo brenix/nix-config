@@ -4,44 +4,40 @@ _: {
     enable = true;
     settings = {
       add_newline = false;
+      format = ''
+        $hostname$shlvl$directory$git_branch$git_commit$git_state$git_status$aws$python$jobs$status$character
+      '';
+      right_format = ''
+        $kubernetes
+      '';
+      aws = {
+        format = "[$profile \\($region\\)]($style) ";
+      };
       character = {
         success_symbol = "[▶](bold green)";
         error_symbol = "[▶](bold red)";
       };
-      aws = {
-        disabled = false;
-        format = "[$profile \\($region\\)]($style) ";
-      };
       directory = {
-        disabled = false;
         style = "blue";
       };
+      git_branch = {
+        format = "[$branch](cyan) ";
+      };
       hostname = {
-        disabled = false;
         ssh_only = true;
         format = "[$hostname]($style) ";
       };
-      terraform = {
+      kubernetes = {
         disabled = false;
-        format = "";
-      };
-      git_branch = {
-        disabled = false;
-        format = "[\\(](white)[$branch](cyan)[\\)](white) ";
+        format = "[$context](yellow)[:](bright-black)[$namespace](white)";
+        context_aliases = {
+          ".*vdp.*" = "vdp";
+          "(?P<var_cell>[\\\\w-]+)-aws-\\\\w+-(?P<var_cluster>[\\\\w-]+)-.*" = "$var_cell-$var_cluster";
+        };
       };
       python = {
-        disabled = false;
         format = "[(($virtualenv))]($style) ";
       };
-      cmd_duration.disabled = true;
-      golang.disabled = true;
-      helm.disabled = true;
-      kubernetes.disabled = true;
-      line_break.disabled = true;
-      localip.disabled = true;
-      lua.disabled = true;
-      nix_shell.disabled = true;
-      username.disabled = true;
     };
   };
 
