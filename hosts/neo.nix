@@ -37,7 +37,6 @@ in
   };
 
   boot = {
-
     initrd.availableKernelModules = [
       "ahci"
       "nvme"

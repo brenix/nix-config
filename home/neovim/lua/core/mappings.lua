@@ -30,7 +30,7 @@ map("v", "<S-Tab>", "<gv", { silent = true })
 map("n", "<Leader>h", ":nohlsearch<cr>", { silent = true })
 
 -- formatting
-map("n", "<Leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", { silent = true })
+map("n", "<Leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", { silent = true })
 
 -- bufferline
 map("n", "<Tab>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })

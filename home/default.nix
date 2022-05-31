@@ -12,7 +12,6 @@
         ./firefox
         ./git
         ./neovim
-        #./openbox
         ./polybar
         ./rofi
         ./starship
@@ -22,7 +21,7 @@
       ];
 
       # Colorscheme
-      # colorscheme = inputs.nix-colors.colorSchemes.nord;
+      /* colorscheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard; */
       colorscheme = {
         slug = "nord-dark";
         name = "Nord-Dark";
@@ -80,16 +79,22 @@
 
       # Packages to be installed
       home.packages = with pkgs; [
+        #awless
+        #buildah
+        #chamber
+        #handlr
+        #lxappearance
+        #openrgb
+        #pcmanfm
+        #protonup
+        #velero
         age
         asdf-vm
         authy
-        #awless
         aws-vault
         awscli2
-        #buildah
         calicoctl
         certigo
-        #chamber
         dash-font
         discord
         feh
@@ -97,14 +102,13 @@
         fx
         git-ignore
         glab
-        golangci-lint
         go-tools
+        golangci-lint
         gomplate
         gopls
         goreleaser
         gotools
         grc
-        #handlr
         helmfile
         hugo
         imv
@@ -113,21 +117,17 @@
         kubernetes-helm
         kustomize
         lefthook
-        #lxappearance
         mr
         mullvad-vpn
         mupdf
         nodePackages.npm
         nodejs
-        #openrgb
         packer
         pavucontrol
-        #pcmanfm
         pgcli
         pipenv
         piper
         playerctl
-        #protonup
         python310
         reftools
         sd
@@ -144,7 +144,6 @@
         unrar
         unzip
         vault-bin
-        #velero
         vendir
         xclip
         yq-go

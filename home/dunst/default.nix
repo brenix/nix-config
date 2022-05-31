@@ -9,7 +9,7 @@
 
     settings = {
       global = {
-        font = "Terminus 10";
+        font = "Verdana 10";
         markup = "full";
         format = ''
           <b>%s</b>
