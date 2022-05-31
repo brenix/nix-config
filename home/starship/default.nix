@@ -25,7 +25,7 @@ _: {
         style = "bg:#191c26 fg:blue";
       };
       git_branch = {
-        format = "[$branch ]($style)";
+        format = "[\\($branch\\) ]($style)";
         style = "bg:#191c26 fg:cyan";
       };
       git_status = {
@@ -38,8 +38,8 @@ _: {
         style = "bg:#191c26 fg:bright-black";
       };
       kubernetes = {
-        disabled = false;
-        format = "[\\(](bg:#191c26 fg:white)[$context](bg:#191c26 fg:yellow)[:](bg:#191c26 fg:bright-black)[$namespace](bg:#191c26 fg:white)[\\)](bg:#191c26 fg:white)";
+        disabled = true;
+        format = "[\\[](bg:#191c26 fg:white)[$context](bg:#191c26 fg:yellow)[:](bg:#191c26 fg:bright-black)[$namespace](bg:#191c26 fg:white)[\\]](bg:#191c26 fg:white)";
         context_aliases = {
           ".*vdp.*" = "vdp";
           "(?P<var_cell>[\\\\w-]+)-aws-\\\\w+-(?P<var_cluster>[\\\\w-]+)-.*" = "$var_cell-$var_cluster";
