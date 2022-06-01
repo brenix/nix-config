@@ -1,8 +1,13 @@
 { pkgs, inputs, lib, nix-colors, ... }: {
-  nixpkgs.config.allowUnfree = true;
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ inputs.nur.overlay ];
+  };
 
   nix = {
     package = pkgs.nixUnstable;
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
     generateNixPathFromInputs = true;
     generateRegistryFromInputs = true;
