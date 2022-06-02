@@ -16,7 +16,6 @@ local plugins = {
   "lualine",
   "mkdir",
   "navigator",
-  "null-ls",
   "nvim-tree",
   "project",
   "stabilize",
