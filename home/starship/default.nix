@@ -5,7 +5,7 @@ _: {
     settings = {
       add_newline = false;
       format = ''
-        $username$hostname$shlvl$directory$git_branch$git_commit$git_state$git_status$aws$python$kubernetes
+        $kubernetes$username$hostname$shlvl$directory$git_branch$git_commit$git_state$git_status$aws$python
         $jobs$status$character
       '';
       aws = {
@@ -38,7 +38,7 @@ _: {
       };
       kubernetes = {
         disabled = false;
-        format = "[\\[$context\\]]($style) ";
+        format = "[\\[$context:$namespace\\]]($style) ";
         style = "fg:#6f717b";
         /* format = "[\\[](bright-black)[$context](yellow)[:](bright-black)[$namespace](white)[\\]](bright-black)"; */
         context_aliases = {
