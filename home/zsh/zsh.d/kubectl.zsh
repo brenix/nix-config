@@ -1,4 +1,7 @@
 if [[ $commands[kubectl] ]]; then
+
+  alias kk="kubectl get pod"
+
   # load all kubeconfigs
   find $HOME/.kube -maxdepth 1 \( -type f -o -type l \) -print | while read -r line; do
     export KUBECONFIG="$KUBECONFIG:$line"
