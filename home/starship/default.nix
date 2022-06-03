@@ -30,6 +30,12 @@ _: {
       git_status = {
         format = "([\\[$all_status$ahead_behind\\] ]($style))";
         style = "bold red";
+        conflicted = "";
+        untracked = "";
+        modified = "";
+        staged = "";
+        renamed = "";
+        deleted = "";
       };
       hostname = {
         ssh_only = true;
