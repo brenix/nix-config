@@ -37,5 +37,5 @@ vim.opt.wildmode = "list:longest:full"
 vim.opt.wrap = false
 
 require("core.utils").set_augroup("set_formatoptions", {
-	{ "BufEnter", "*", string.format('lua vim.bo.formatoptions = "%s"', "cqrjt") },
+  { "BufEnter", "*", string.format('lua vim.bo.formatoptions = "%s"', "cqrjt") },
 })
