@@ -80,8 +80,7 @@
       "super + Return" = "alacritty";
 
       # terminal (floating)
-      "super + shift + Return" =
-        "bspc rule -a \* -o state=floating && alacritty";
+      "super + shift + Return" = "alacritty --class floating";
 
       # terminal (work)
       "super + m" = "alacritty -e zsh -c 'ssh macbook'";

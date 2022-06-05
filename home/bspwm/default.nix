@@ -10,7 +10,7 @@
       focus_follows_pointer = true;
       border_width = 1;
       window_gap = 15;
-      automatic_scheme = "spiral";
+      automatic_scheme = "floating";
       initial_polarity = "first_child";
       split_ratio = 0.52;
       borderless_monocle = true;
@@ -50,6 +50,9 @@
       "Slack" = {
         desktop = "^2";
         focus = true;
+      };
+      "Alacritty:floating" = {
+        state = "floating";
       };
       "zoom" = {
         state = "floating";

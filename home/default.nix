@@ -255,7 +255,11 @@
         fade = false;
         blur = true;
         backend = "glx";
-        opacityRule = [ "75:class_i ?= 'alacritty'" "75:class_i ?= 'polybar'" ];
+        opacityRule = [
+          "75:class_i ?= 'alacritty'"
+          "75:class_i ?= 'floating'"
+          "75:class_i ?= 'polybar'"
+        ];
       };
 
       # ssh
