@@ -36,7 +36,7 @@ in
 
         "bar/main" = {
           top = true;
-          height = 22;
+          height = 18;
           dpi = -1;
           enable-ipc = true;
           width = "100%";
@@ -46,9 +46,9 @@ in
           border-bottom-size = 1;
           border-top-color = "\${colors.bg}";
           border-top-size = 1;
-          font-0 = "Verdana:size=9;2";
-          font-1 = ''"Material Icons:size=9;3"'';
-          font-2 = ''"JetBrainsMono Nerd Font Mono:size=14;3"'';
+          font-0 = "Verdana:size=8;2";
+          font-1 = ''"Material Icons:size=8;3"'';
+          font-2 = ''"JetBrainsMono Nerd Font Mono:size=12;3"'';
           module-margin-left = 1;
           module-margin-right = 1;
           modules-left = "bspwm";

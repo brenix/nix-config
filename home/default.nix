@@ -26,7 +26,8 @@
         slug = "nord-dark";
         name = "Nord-Dark";
         colors = {
-          base00 = "161821";
+          /* base00 = "161821"; */
+          base00 = "000000";
           base01 = "2E3440";
           base02 = "3B4252";
           base03 = "4C566A";
@@ -250,10 +251,11 @@
         enable = true;
         activeOpacity = "1.0";
         inactiveOpacity = "1.0";
-        shadow = false;
+        shadow = true;
         fade = false;
-        blur = false;
+        blur = true;
         backend = "glx";
+        opacityRule = [ "82:class_i ?= 'alacritty'" "82:class_i ?= 'polybar'" ];
       };
 
       # ssh

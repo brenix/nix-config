@@ -8,8 +8,8 @@
       remove_unplugged_monitors = true;
       merge_overlapping_monitors = true;
       focus_follows_pointer = true;
-      border_width = 3;
-      window_gap = 10;
+      border_width = 2;
+      window_gap = 15;
       automatic_scheme = "spiral";
       initial_polarity = "first_child";
       split_ratio = 0.52;
@@ -23,12 +23,13 @@
       pointer_motion_interval = 6;
       normal_border_color = "#${config.colorscheme.colors.base00}";
       active_border_color = "#${config.colorscheme.colors.base00}";
-      focused_border_color = "#${config.colorscheme.colors.base03}";
+      focused_border_color = "#${config.colorscheme.colors.base01}";
       presel_feedback_color = "#${config.colorscheme.colors.base01}";
     };
 
     startupPrograms = [
-      "${pkgs.hsetroot}/bin/hsetroot -solid '#2d2f38'"
+      /* "${pkgs.hsetroot}/bin/hsetroot -solid '#2d2f38'" */
+      "$HOME/.fehbg"
       "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
     ];
 
