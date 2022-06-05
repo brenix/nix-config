@@ -190,7 +190,7 @@
         font = {
           package = pkgs.corefonts;
           name = "Verdana";
-          size = 10;
+          size = 9;
         };
         iconTheme = {
           package = pkgs.nordzy-icon-theme;
@@ -255,7 +255,7 @@
         fade = false;
         blur = true;
         backend = "glx";
-        opacityRule = [ "82:class_i ?= 'alacritty'" "82:class_i ?= 'polybar'" ];
+        opacityRule = [ "75:class_i ?= 'alacritty'" "75:class_i ?= 'polybar'" ];
       };
 
       # ssh

@@ -8,7 +8,7 @@
       remove_unplugged_monitors = true;
       merge_overlapping_monitors = true;
       focus_follows_pointer = true;
-      border_width = 2;
+      border_width = 1;
       window_gap = 15;
       automatic_scheme = "spiral";
       initial_polarity = "first_child";
