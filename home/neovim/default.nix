@@ -63,7 +63,6 @@ in
       gitsigns-nvim
       gruvbox-material
       gruvbox-nvim
-      indent-blankline-nvim
       lsp-format-nvim
       lsp_signature-nvim
       lspkind-nvim

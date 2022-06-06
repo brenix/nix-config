@@ -62,6 +62,10 @@
         state = "floating";
         sticky = true;
       };
+      "join*" = {
+        state = "floating";
+        sticky = true;
+      };
       "mpv" = {
         state = "floating";
         sticky = true;
