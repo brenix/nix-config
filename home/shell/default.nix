@@ -190,18 +190,53 @@
     ".zsh.d".recursive = true;
   };
 
+  # dircolors
   programs.dircolors = {
     enable = true;
     enableZshIntegration = true;
     extraConfig = builtins.readFile ./dircolors;
-
-    /* extraConfig = builtins.readFile "${pkgs.fetchurl { */
-    /*   url = */
-    /*     "https://github.com/arcticicestudio/nord-dircolors/raw/addb3b427e008d23affc721450fde86f27566f1d/src/dir_colors"; */
-    /*   sha256 = "sha256-hlezTQqouVKbxgQBxtZU4en0idDiTCRJtFGH6XYFmtc="; */
-    /* }}"; */
   };
 
+  # fzf
+  programs.fzf = {
+    enable = true;
+    defaultOptions = let inherit (config.colorscheme) colors; in
+      [
+        "--color=fg:#${colors.base05},bg:#${colors.base01},hl:#${colors.base0B}"
+        "--color=fg+:#${colors.base05},bg+:#${colors.base01},hl+:#${colors.base0B}"
+        "--color=info:#${colors.base0A},prompt:#${colors.base08},pointer:#${colors.base0E}"
+        "--color=marker:#${colors.base0D},spinner:#${colors.base0E},header:#${colors.base0D}"
+      ];
+  };
+
+  # bat
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "ansi";
+      pager = "less -inMRF";
+    };
+  };
+
+  # GPG
+  programs.gpg.enable = true;
+  services.gpg-agent.enable = true;
+  services.gpg-agent.pinentryFlavor = "curses";
+
+  # htop
+  programs.htop = {
+    enable = true;
+    settings = {
+      sort_direction = true;
+      sort_key = "PERCENT_CPU";
+    };
+  };
+
+  # jq
+  programs.jq.enable = true;
+
+  # direnv
+  programs.direnv.enable = true;
 }
 
 # vim: set ft=nix:

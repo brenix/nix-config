@@ -18,9 +18,9 @@ require("bufferline").setup({
   },
   highlights = {
     -- Change background color of bar
-    fill = {
-      guibg = "#1e212d",
-    },
+    -- fill = {
+    --   guibg = "#1e212d",
+    -- },
     -- Disable italic fonts
     buffer_selected = {
       gui = "bold",

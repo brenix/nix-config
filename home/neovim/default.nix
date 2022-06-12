@@ -178,7 +178,8 @@ in
         vim.g.nord_disable_background = true
         vim.g.nord_italic = true
         vim.g.nord_bold = false
-        vim.cmd[[colorscheme nord]]
+        vim.g.gruvbox_material_background = "hard"
+        vim.cmd[[colorscheme gruvbox-material]]
 
       EOF
     '';

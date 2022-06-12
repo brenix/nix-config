@@ -38,7 +38,6 @@
         {
           primary.background = "#${colors.base00}";
           primary.foreground = "#${colors.base04}";
-          dim_foreground = "##aeb3bb";
           cursor.text = "#${colors.base00}";
           cursor.cursor = "#${colors.base04}";
           selection.text = "CellForeground";

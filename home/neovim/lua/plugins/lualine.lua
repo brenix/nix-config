@@ -34,7 +34,7 @@ local nord_dark = {
 
 require("lualine").setup({
   options = {
-    theme = nord_dark,
+    theme = "gruvbox_material",
     section_separators = "",
     component_separators = "",
   },
