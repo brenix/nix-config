@@ -1,4 +1,4 @@
-_: {
+{ config, ... }: {
 
   programs.tmux = {
     enable = true;
@@ -75,16 +75,16 @@ _: {
       set -g pane-active-border-style "fg=colour8"
 
       # status bar
-      set -g status-bg '#191c26'
-      set -g status-fg black
+      set -g status-bg black
+      set -g status-fg white
       set -g status-justify "left"
       set -g status "on"
       set -g status-interval 2
 
       # windows
       set -g set-titles off
-      setw -g window-status-current-format "#[fg=#161821,bg=#68809A] #I #[fg=white,bg=default] #W"
-      setw -g window-status-format "#[fg=black,bg=brightblack] #I #[fg=brightblack,bg=default] #W"
+      setw -g window-status-current-format "#[fg=black,bg=blue] #I #[fg=brightwhite,bg=black] #W"
+      setw -g window-status-format "#[fg=black,bg=white] #I #[fg=white,bg=default] #W"
 
       # left side
       set -g status-left ""
@@ -98,4 +98,3 @@ _: {
 
   /* xdg.configFile = { "tmux/kube.tmux".source = ./kube.tmux; }; */
 }
-

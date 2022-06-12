@@ -39,7 +39,8 @@ _: {
       kubernetes = {
         disabled = false;
         format = "[\\[$context:$namespace\\]]($style) ";
-        style = "fg:#6f717b";
+        style = "bright-black";
+        /* style = "fg:#6f717b"; */
         /* format = "[\\[](bright-black)[$context](yellow)[:](bright-black)[$namespace](white)[\\]](bright-black)"; */
         context_aliases = {
           ".*vdp.*" = "vdp";
