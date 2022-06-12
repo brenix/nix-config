@@ -5,7 +5,7 @@ export NIX_HOST ?=
 export SSH_OPTIONS ?= -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 switch:
-	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --recreate-lock-file --no-write-lock-file -L -v --flake ".#$(NIX_CONFIG)" --upgrade
+	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --recreate-lock-file --no-write-lock-file -L -v --impure --flake ".#$(NIX_CONFIG)" --upgrade
 
 gc:
 	@sudo nix-collect-garbage -d

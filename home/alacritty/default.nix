@@ -6,19 +6,19 @@
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal = {
-        family = "Terminus";
+        family = "JetBrainsMono Nerd Font";
         style = "Regular";
       };
       font.bold = {
-        family = "Terminus";
+        family = "JetBrainsMono Nerd Font";
         style = "Regular";
       };
       font.italic = {
-        family = "Terminus";
+        family = "JetBrainsMono Nerd Font";
         style = "Italic";
       };
-      font.size = lib.mkDefault 10;
-      font.offset.y = -1;
+      font.size = lib.mkDefault 10.5;
+      font.offset.y = -2;
       font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{

@@ -56,7 +56,7 @@
         "findbar.highlightAll" = true;
         "findbar.modalHighlight" = true;
         "font.default.x-western" = "sans-serif";
-        "font.name.monospace.x-western" = "Terminus";
+        "font.name.monospace.x-western" = "Hack";
         "font.name.sans-serif.x-western" = "Verdana";
         "font.name.serif.x-western" = "Verdana";
         "full-screen-api.warning.timeout" = 0;

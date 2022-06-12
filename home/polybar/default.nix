@@ -46,7 +46,7 @@ in
           border-bottom-size = 1;
           border-top-color = "\${colors.bg}";
           border-top-size = 1;
-          font-0 = "Terminus:size=7;2";
+          font-0 = "Verdana:size=8;2";
           font-1 = ''"Material Icons:size=8;3"'';
           font-2 = ''"JetBrainsMono Nerd Font Mono:size=12;3"'';
           module-margin-left = 1;
