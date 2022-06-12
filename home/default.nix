@@ -256,9 +256,9 @@
         blur = true;
         backend = "glx";
         opacityRule = [
-          "75:class_i ?= 'alacritty'"
-          "75:class_i ?= 'floating'"
-          "75:class_i ?= 'polybar'"
+          "80:class_i ?= 'alacritty'"
+          "80:class_i ?= 'floating'"
+          "80:class_i ?= 'polybar'"
         ];
       };
 
