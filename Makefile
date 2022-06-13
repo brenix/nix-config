@@ -11,7 +11,7 @@ gc:
 	@sudo nix-collect-garbage -d
 
 test:
-	@unset NIX_CONFIG; nix --extra-experimental-features 'nix-command flakes' flake check
+	@unset NIX_CONFIG; nix --extra-experimental-features 'nix-command flakes' --impure flake check
 
 install:
 	@ssh $(SSH_OPTIONS) root@$(NIX_HOST) " \
