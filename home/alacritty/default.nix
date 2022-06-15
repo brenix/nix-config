@@ -6,15 +6,15 @@
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal = {
-        family = "JetBrainsMono Nerd Font";
+        family = "Hack";
         style = "Regular";
       };
       font.bold = {
-        family = "JetBrainsMono Nerd Font";
+        family = "Hack";
         style = "Regular";
       };
       font.italic = {
-        family = "JetBrainsMono Nerd Font";
+        family = "Hack";
         style = "Italic";
       };
       font.size = lib.mkDefault 9;
