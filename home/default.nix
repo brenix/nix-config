@@ -206,6 +206,7 @@
         [DEFAULT]
         jobs = 5
         git_update = git pull --prune --tags "$@"
+        git_fetch = git fetch --prune --prune-tags
         git_gc = git gc --aggressive "$@"
         git_tags = git tag -l
         git_branches = git branch
