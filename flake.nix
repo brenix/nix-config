@@ -7,7 +7,7 @@
     nur.url = "github:nix-community/NUR";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-    nix-colors.url = "github:misterio77/nix-colors?ref=2.0.0";
+    nix-colors.url = "github:misterio77/nix-colors";
     pre-commit-hooks = { url = "github:cachix/pre-commit-hooks.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
