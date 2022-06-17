@@ -26,8 +26,8 @@
         action = "PasteSelection";
       }];
       selection.save_to_clipboard = true;
-      window.padding.x = 5;
-      window.padding.y = 5;
+      window.padding.x = 8;
+      window.padding.y = 6;
       window.dimensions.columns = 140;
       window.dimensions.lines = 50;
       decorations = "none";
