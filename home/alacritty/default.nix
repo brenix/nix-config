@@ -6,19 +6,19 @@
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal = {
-        family = "GohuFont";
+        family = "Hack";
         style = "Regular";
       };
       font.bold = {
-        family = "GohuFont";
+        family = "Hack";
         style = "Regular";
       };
       font.italic = {
-        family = "GohuFont";
+        family = "Hack";
         style = "Italic";
       };
-      font.size = lib.mkDefault 11;
-      font.offset.y = -1;
+      font.size = lib.mkDefault 9;
+      font.offset.y = -3;
       font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
