@@ -2,19 +2,24 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     nur.url = "github:nix-community/NUR";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nix-colors.url = "github:misterio77/nix-colors";
     pre-commit-hooks = { url = "github:cachix/pre-commit-hooks.nix"; inputs.nixpkgs.follows = "nixpkgs"; };
+    firefox-nightly = { url = "github:colemickens/flake-firefox-nightly"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
-  outputs = { self, flake-utils, ... }@inputs:
+  outputs = { self, flake-utils, firefox-nightly, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = inputs.nixpkgs.legacyPackages.${system};
+
+      firefox-nightly-overlay = final: prev: {
+        firefox-nightly-bin = firefox-nightly.packages.${prev.system}.firefox-nightly-bin;
+      };
     in
 
     flake-utils.lib.mkFlake {
@@ -32,7 +37,7 @@
       };
 
       sharedOverlays =
-        [ self.overlays.default inputs.nur.overlay inputs.neovim-nightly.overlay ];
+        [ self.overlays.default inputs.nur.overlay inputs.neovim-nightly.overlay firefox-nightly-overlay ];
 
       channelsConfig.allowUnfree = true;
 
