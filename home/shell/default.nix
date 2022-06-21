@@ -16,7 +16,7 @@
       autoload -Uz bashcompinit && bashcompinit
     '';
 
-    history.path = ".cache/zsh_history";
+    history.path = "$HOME/.cache/zsh_history";
 
     shellAliases = {
       ave = "aws-vault exec";

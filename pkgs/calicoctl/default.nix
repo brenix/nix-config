@@ -2,16 +2,16 @@
 
 buildGoModule rec {
   pname = "calicoctl";
-  version = "3.22.1";
+  version = "3.23.1";
 
   src = fetchFromGitHub {
     owner = "projectcalico";
     repo = "calico";
     rev = "v${version}";
-    sha256 = "sha256-Ed+ddWlk30SWysGUx0JiJDNlwLe7GUPxoBVcezpALDs=";
+    sha256 = "sha256-h6dUKRKuiHcgN/ql1MGpQ+N1PTSki2OdIbS0j8DaQqQ=";
   };
 
-  vendorSha256 = "sha256-hsn7RCcqm8imLT+PhyPPkN/bi1h//h1OnENAgyHalAs=";
+  vendorSha256 = "sha256-zjqbH4VIkGXjquKin52+twOxHzRH3RATcwZaQJYwCa0=";
 
   doCheck = false;
 
