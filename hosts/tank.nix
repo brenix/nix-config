@@ -20,7 +20,7 @@
   home-manager.users.brenix = {
     xsession.windowManager.bspwm.monitors = { Virtual-1 = [ "1" "2" "3" "4" ]; };
 
-    programs.alacritty.settings.font.size = 16;
+    programs.alacritty.settings.font.size = 9.5;
   };
 
 }
