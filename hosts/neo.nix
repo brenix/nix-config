@@ -138,6 +138,10 @@ in
     amdvlk
   ];
 
+  services.xserver.deviceSection = ''
+    Option "TearFree" "true"
+  '';
+
   # I2C devices
   hardware.i2c.enable = true;
 
