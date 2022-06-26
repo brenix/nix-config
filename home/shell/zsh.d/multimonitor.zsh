@@ -1,6 +1,6 @@
 # Display single
 ds() {
-  xrandr --output HDMI-0 --off
+  xrandr --output HDMI-A-0 --off
 }
 
 # Display extend
