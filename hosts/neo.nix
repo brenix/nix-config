@@ -158,6 +158,7 @@ in
       "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-if01-event-kbd",
       "/dev/input/by-id/usb-Logitech_PRO_X_Wireless_DE1A8313-mouse",
       "/dev/input/by-id/usb-Topre_REALFORCE_87_US-event-kbd",
+      "/dev/input/by-id/usb-04d9_USB_Keyboard-event-kbd",
     ]
   '';
 
