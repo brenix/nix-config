@@ -183,8 +183,8 @@ in
   # Pass settings to home-manager
   home-manager.users.brenix = {
     xsession.windowManager.bspwm.monitors = {
-      DP-4 = [ "1" "2" ];
-      HDMI-0 = [ "3" "4" ];
+      DisplayPort-0 = [ "1" "2" ];
+      HDMI-A-0 = [ "3" "4" ];
     };
 
   };
