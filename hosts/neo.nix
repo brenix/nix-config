@@ -73,6 +73,7 @@ in
     blacklistedKernelModules = [ "nouveau" ];
 
     kernelModules = [
+      "amdgpu"
       "dm-snapshot"
       "i2c-dev"
       "i2c-piix4"
@@ -130,11 +131,12 @@ in
     }
   ];
 
-  # NVIDIA
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl = {
-    enable = true;
-  };
+  # GPU
+  services.xserver.videoDrivers = [ "amdgpu" ];
+  hardware.opengl.driSupport = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
 
   # I2C devices
   hardware.i2c.enable = true;

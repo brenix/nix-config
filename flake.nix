@@ -58,7 +58,7 @@
         tank.modules = [
           ./config/openconnect.nix
           ./config/podman.nix
-          ./config/xorg.nix
+          ./config/xserver.nix
           ./hosts/tank.nix
         ];
         neo.modules = [
@@ -70,7 +70,7 @@
           ./config/pipewire.nix
           ./config/podman.nix
           ./config/ratbagd.nix
-          ./config/xorg.nix
+          ./config/xserver.nix
           ./hosts/neo.nix
         ];
         trinity.modules = [
