@@ -195,11 +195,11 @@
         fade = false;
         blur = true;
         backend = "glx";
-        /* opacityRule = [ */
-        /*   "80:class_i ?= 'alacritty'" */
-        /*   "80:class_i ?= 'floating'" */
-        /*   "80:class_i ?= 'polybar'" */
-        /* ]; */
+        opacityRule = [
+          "90:class_i ?= 'alacritty'"
+          "90:class_i ?= 'floating'"
+          "90:class_i ?= 'polybar'"
+        ];
       };
 
       # myrepos
