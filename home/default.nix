@@ -67,7 +67,6 @@
         #openrgb
         #pcmanfm
         #protonup
-        #velero
         age
         asdf-vm
         authy
@@ -125,6 +124,7 @@
         unrar
         unzip
         vault-bin
+        velero
         vendir
         xclip
         yq-go
