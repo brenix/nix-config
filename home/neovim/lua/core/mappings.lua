@@ -1,10 +1,10 @@
 -- Helper to create mappings with noremap set by default
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	local options = { noremap = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Map leader to <space>
@@ -31,6 +31,7 @@ map("n", "<Leader>h", ":nohlsearch<cr>", { silent = true })
 
 -- formatting
 map("n", "<Leader>fm", "<cmd>Format()<CR>", { silent = true })
+map("n", "<Leader>d", ":FormatDisable<CR>", { silent = true })
 
 -- bufferline
 map("n", "<Tab>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })
