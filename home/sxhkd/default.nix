@@ -131,12 +131,22 @@
       "super + v" = "pavucontrol";
 
       # volume up/down
-      "{XF86AudioRaiseVolume, XF86AudioLowerVolume}" =
-        "pulseaudio-ctl {up, down} 2";
+      "{XF86AudioRaiseVolume, XF86AudioLowerVolume}" = "pamixer -{i,d} 2";
 
       # mute
-      "XF86AudioMute" = "pulseaudio-ctl mute";
+      "XF86AudioMute" = "pamixer -t";
 
+      # next
+      "XF86AudioNext" = "playerctl next";
+
+      # prev
+      "XF86AudioPrev" = "playerctl previous";
+
+      # play/pause
+      "XF86AudioPlay" = "playerctl play-pause";
+
+      # stop
+      "XF86AudioStop" = "playerctl stop";
     };
 
   };

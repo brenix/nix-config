@@ -103,6 +103,7 @@
         nodePackages.npm
         nodejs
         packer
+        pamixer
         pavucontrol
         pgcli
         pipenv
