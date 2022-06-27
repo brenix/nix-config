@@ -140,6 +140,8 @@ in
 
   services.xserver.deviceSection = ''
     Option "TearFree" "true"
+    Option "DRI" "3"
+    Option "VariableRefresh" "true"
   '';
 
   # I2C devices

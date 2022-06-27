@@ -13,13 +13,4 @@ final: prev: {
     version = "1.2.3";
     sha256 = "sha256-cotvvLKIrRt7ZZBYVBCpjTt+Be/kYB73dsN+FemoOpY=";
   };
-
-  # Add `--no-sandbox` flag to authy due to issues identifying GPU
-  authy = prev.authy.overrideAttrs (oldAttrs: rec {
-    postFixup = ''
-      makeWrapper ${prev.electron_9}/bin/electron $out/bin/authy \
-        --add-flags $out/resources/app.asar \
-        --add-flags "--no-sandbox"
-    '';
-  });
 }
