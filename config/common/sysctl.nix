@@ -12,12 +12,17 @@ _: {
         /* "net.core.somaxconn" = 8192; */
         /* "net.core.wmem_default" = 1048576; */
         /* "net.core.wmem_max" = 16777216; */
+        "net.ipv4.tcp_adv_win_scale" = -2;
+        "net.ipv4.tcp_collapse_max_bytes" = 6291456;
         "net.ipv4.tcp_congestion_control" = "bbr";
         "net.ipv4.tcp_fastopen" = 3;
+        "net.ipv4.tcp_notsent_lowat" = 131072;
         /* "net.ipv4.tcp_rmem" = "4096 1048576 2097152"; */
+        "net.ipv4.tcp_rmem" = "8192 262144 536870912";
         "net.ipv4.tcp_slow_start_after_idle" = 0;
         "net.ipv4.tcp_timestamps" = 0;
         /* "net.ipv4.tcp_wmem" = "4096 65536 16777216"; */
+        "net.ipv4.tcp_wmem" = "4096 16384 536870912";
         /* "net.ipv4.udp_rmem_min" = 8192; */
         /* "net.ipv4.udp_wmem_min" = 8192; */
         "vm.dirty_background_ratio" = 20;
