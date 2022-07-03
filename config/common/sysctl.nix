@@ -13,7 +13,6 @@ _: {
         /* "net.core.wmem_default" = 1048576; */
         /* "net.core.wmem_max" = 16777216; */
         "net.ipv4.tcp_adv_win_scale" = -2;
-        "net.ipv4.tcp_collapse_max_bytes" = 6291456;
         "net.ipv4.tcp_congestion_control" = "bbr";
         "net.ipv4.tcp_fastopen" = 3;
         "net.ipv4.tcp_notsent_lowat" = 131072;
