@@ -118,6 +118,13 @@
       zstyle ':completion::complete:*' use-cache 1
       zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
+      # Disable pasted text highlighting
+      zle_highlight+=(paste:none)
+
+      # Quote pasted URLs
+      autoload -U url-quote-magic
+      zle -N self-insert url-quote-magic
+
       complete -C ${pkgs.awscli}/bin/aws_completer aws
 
       # -- PATHS
