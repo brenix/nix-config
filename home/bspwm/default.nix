@@ -51,6 +51,9 @@
         desktop = "^2";
         focus = true;
       };
+      "Alacritty" = {
+        state = "floating";
+      };
       "Alacritty:floating" = {
         state = "floating";
       };
