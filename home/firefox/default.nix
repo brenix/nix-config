@@ -2,7 +2,7 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-nightly-bin;
+    /* package = pkgs.firefox-nightly-bin; */
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       bitwarden
       decentraleyes
