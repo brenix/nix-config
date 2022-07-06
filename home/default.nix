@@ -87,6 +87,7 @@
         gopls
         goreleaser
         gotools
+        google-chrome-dev
         grc
         helmfile
         hugo
