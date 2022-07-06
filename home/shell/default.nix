@@ -90,8 +90,6 @@
       setopt histignorespace     # ignore recording commands prefixed with a space
       setopt incappendhistory    # write to history file immediately, not when shell exits
       setopt interactivecomments # enable comments on the command line
-      setopt menucomplete        # show menu completions
-      setopt noautomenu          # bash-like completion
       setopt nobeep              # avoid beeping
       setopt noflowcontrol       # no c-s/c-q output freezing
       setopt nohup               # dont send SIGHUP to background processes when exiting
@@ -104,10 +102,7 @@
     initExtra = ''
       # -- COMPLETION
 
-      # HACK: Added because oh-my-zsh doesnt seem to run compinit properly
-      autoload -Uz compinit && compinit
-      autoload -Uz bashcompinit && bashcompinit
-
+      # Completion configuration
       zstyle ':completion::complete:*' gain-privileges 1
       zstyle ':completion:*' rehash true
       zstyle ':completion:*:approximate:' max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )'
@@ -125,6 +120,7 @@
       autoload -U url-quote-magic
       zle -N self-insert url-quote-magic
 
+      # Complete aws cli
       complete -C ${pkgs.awscli}/bin/aws_completer aws
 
       # -- PATHS
@@ -133,52 +129,31 @@
         $fpath[@]
       )
 
-      # -- KEYBINDINGS
-      bindkey "^A" beginning-of-line    # ctrl+a
-      bindkey "^E" end-of-line          # ctrl+e
-      bindkey "^F" vi-change-whole-line # ctrl+f
-      bindkey "^[OF" end-of-line        # end key
-      bindkey "^[[4~" end-of-line       # end key (st)
-      bindkey "^[OH" beginning-of-line  # home key
-      bindkey "^[[H" beginning-of-line  # home key (st)
-      bindkey "^[[2~" overwrite-mode    # insert key
-      bindkey "^[[4h" overwrite-mode    # insert key (st)
-      bindkey "^[[3~" delete-char       # del key
-      bindkey "^[[P" delete-char        # del key (st)
-
-      # ctrl+arrows
-      bindkey "\e[1;5C" forward-word
-      bindkey "\e[1;5D" backward-word
-      bindkey "\eOc" forward-word
-      bindkey "\eOd" backward-word
-
-      # ctrl+delete
-      bindkey "\e[3;5~" kill-word
-      bindkey "\e[3^" kill-word
-
-      # ctrl+backspace
-      bindkey '^H' backward-kill-word
-
-      # ctrl+shift+delete
-      bindkey "\e[3;6~" kill-line
-      bindkey "\e[3@" kill-line
-
-      # clear screen
-      bindkey "^[d" clear-screen
-
       # -- SOURCE ADDITIONAL FILES
+
+      # Load grc
       source ${pkgs.grc}/etc/grc.zsh
+
+      # Load asdf
       source /etc/profiles/per-user/$USER/etc/profile.d/asdf-prepare.sh
 
+      # Source local files
       for f in $HOME/.zsh.d/*.zsh $HOME/.zsh.local.d/*.zsh; do
         source $f
       done
+
+      # -- MISC
+      # Disable auto menu after sourcing plugins etc
+      setopt noautomenu
     '';
 
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "kubectl" "ssh-agent" "zoxide" ];
       extraConfig = ''
+        # Fix case insensitive completion bug from oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh/issues/10972#issuecomment-1146806099)
+        export CASE_SENSITIVE=true
+
         identities=()
         for i in $HOME/.ssh/id_(*~*pub); do
           identities+=''${i##*/}
