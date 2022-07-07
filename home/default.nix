@@ -23,7 +23,8 @@
       # Colorscheme
       /* colorscheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard; */
       /* colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile ./colorschemes/nord-dark.yaml); */
-      colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "gruvbox-material" (builtins.readFile ./colorschemes/gruvbox-material-dark-hard.yaml);
+      /* colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "gruvbox-material" (builtins.readFile ./colorschemes/gruvbox-material-dark-hard.yaml); */
+      colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "unknown" (builtins.readFile ./colorschemes/unknown.yaml);
 
       # Enable home-manager
       programs.home-manager.enable = true;
