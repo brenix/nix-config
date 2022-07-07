@@ -197,9 +197,4 @@ in
     source = ./lua;
     recursive = true;
   };
-
-  xdg.configFile."nvim/colors" = {
-    source = ./colors;
-    recursive = true;
-  };
 }
