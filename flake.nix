@@ -12,13 +12,13 @@
     firefox-nightly = { url = "github:colemickens/flake-firefox-nightly"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
-  outputs = { self, flake-utils, firefox-nightly, ... }@inputs:
+  outputs = { self, flake-utils, firefox-nightly, nix-colors, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = inputs.nixpkgs.legacyPackages.${system};
 
       firefox-nightly-overlay = final: prev: {
-        firefox-nightly-bin = firefox-nightly.packages.${prev.system}.firefox-nightly-bin;
+        inherit (firefox-nightly.packages.${prev.system}.firefox-nightly-bin) firefox-nightly-bin;
       };
     in
 
@@ -52,6 +52,9 @@
           ./home
           ./config/common
         ];
+        specialArgs = {
+          inherit nix-colors;
+        };
       };
 
       hosts = {

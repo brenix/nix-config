@@ -1,5 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nix-colors, ... }:
+
 let
+  inherit (nix-colors.lib-contrib { inherit pkgs; }) vimThemeFromScheme;
+
   # installs a vim plugin from git with a given tag / branch
   pluginGit = ref: repo:
     pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -45,6 +48,10 @@ in
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
+      {
+        plugin = vimThemeFromScheme { scheme = config.colorscheme; };
+        config = "colorscheme nix-${config.colorscheme.slug}";
+      }
       (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       /* nvim-treesitter */
       Navigator-nvim
@@ -179,7 +186,7 @@ in
         vim.g.nord_italic = true
         vim.g.nord_bold = false
         vim.g.gruvbox_material_background = "hard"
-        vim.cmd[[colorscheme gruvbox-material]]
+        vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
 
       EOF
     '';

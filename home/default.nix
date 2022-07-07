@@ -1,9 +1,10 @@
-{ config, pkgs, inputs, lib, ... }: {
+{ config, pkgs, inputs, lib, nix-colors, ... }: {
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     sharedModules = [ inputs.nix-colors.homeManagerModule ];
+    extraSpecialArgs = { inherit nix-colors; };
     users.brenix = {
       imports = [
         ./alacritty
