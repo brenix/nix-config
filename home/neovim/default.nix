@@ -190,6 +190,7 @@ in
       EOF
 
       hi LineNr guifg=#${config.colorscheme.colors.base02}
+      hi NvimTreeNormal guibg=#${config.colorscheme.colors.base00}
     '';
 
   };

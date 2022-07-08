@@ -3,9 +3,10 @@
 let
   inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) gtkThemeFromScheme;
   colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile ./colorschemes/zenbox.yaml);
-  /* colorscheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard; */
+  /* colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "hacker" (builtins.readFile ./colorschemes/hacker.yaml); */
   /* colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile ./colorschemes/nord-dark.yaml); */
   /* colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "gruvbox-material" (builtins.readFile ./colorschemes/gruvbox-material-dark-hard.yaml); */
+  /* colorscheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard; */
 in
 {
   home-manager = {
