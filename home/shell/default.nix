@@ -28,7 +28,7 @@
       gl = "git pull --prune --tags";
       l = "ls -lhv";
       la = "ls -lAvh";
-      ls = "ls -v --color=always --group-directories-first";
+      ls = "grc ls -v --color=always --group-directories-first";
       mkdir = "mkdir -vp";
       mv = "mv -iv";
       mc = "mullvad connect";
