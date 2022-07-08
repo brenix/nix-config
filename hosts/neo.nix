@@ -121,14 +121,14 @@ in
       options = "rw,noatime,barrier=0";
       wantedBy = [ "multi-user.target" ];
     }
-    {
-      what = "/dev/mapper/data-steam";
-      where = "/home/brenix/.local/share/Steam/steamapps";
-      type = "ext4";
-      options = "rw,noatime,barrier=0";
-      wantedBy = [ "multi-user.target" ];
-
-    }
+    /* { */
+    /*   what = "/dev/mapper/data-steam"; */
+    /*   where = "/home/brenix/.local/share/Steam/steamapps"; */
+    /*   type = "ext4"; */
+    /*   options = "rw,noatime,barrier=0"; */
+    /*   wantedBy = [ "multi-user.target" ]; */
+    /*  */
+    /* } */
   ];
 
   # GPU

@@ -169,6 +169,7 @@ in
           };
           theme = {
             /* package = pkgs.arc-theme; */
+            /* name = "Arc"; */
             package = gtkThemeFromScheme {
               scheme = colorscheme;
             };
