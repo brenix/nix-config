@@ -52,8 +52,8 @@ in
         plugin = vimThemeFromScheme { scheme = config.colorscheme; };
         config = "colorscheme nix-${config.colorscheme.slug}";
       }
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
-      /* nvim-treesitter */
+      /* (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars)) */
+      nvim-treesitter
       Navigator-nvim
       better-escape-nvim
       bufferline-nvim
@@ -189,6 +189,7 @@ in
       hi NvimTreeNormal guibg=#${config.colorscheme.colors.base00}
       hi NvimTreeFolderIcon guifg=#${config.colorscheme.colors.base0A}
       hi NvimTreeFolderName guifg=#${config.colorscheme.colors.base05}
+      hi NvimTreeOpenedFolderName guifg=#${config.colorscheme.colors.base05}
     '';
 
   };
