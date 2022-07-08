@@ -189,7 +189,7 @@ in
         vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
       EOF
 
-      hi LineNr guifg=#${config.colorscheme.colors.base01}
+      hi LineNr guifg=#${config.colorscheme.colors.base02}
     '';
 
   };
