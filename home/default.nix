@@ -162,7 +162,7 @@ in
           font = {
             package = pkgs.corefonts;
             name = "Verdana";
-            size = 9;
+            size = 8;
           };
           iconTheme = {
             package = pkgs.nordzy-icon-theme;
