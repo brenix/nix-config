@@ -2,7 +2,6 @@
 
 final: prev: {
   calicoctl = prev.callPackage ./calicoctl { };
-  dash-font = prev.callPackage ./dash-font { };
   packer = prev.callPackage (import ./hashicorp/generic.nix) {
     name = "packer";
     version = "1.8.2";

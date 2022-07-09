@@ -81,11 +81,6 @@ in
           label-charging = "%percentage%%";
           label-discharging = "%percentage%%";
           label-full = "%percentage%%";
-          # ramp-capacity-0 = "";
-          # ramp-capacity-1 = "";
-          # ramp-capacity-2 = "";
-          # ramp-capacity-3 = "";
-          # ramp-capacity-4 = "";
           poll-interval = 10;
         };
 

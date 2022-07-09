@@ -95,6 +95,4 @@
       #set -g status-right "#(/usr/bin/env bash $HOME/.config/tmux/kube.tmux black white)"
     '';
   };
-
-  /* xdg.configFile = { "tmux/kube.tmux".source = ./kube.tmux; }; */
 }

@@ -40,8 +40,6 @@ _: {
         disabled = false;
         format = "[\\[$context:$namespace\\]]($style) ";
         style = "bright-black";
-        /* style = "fg:#6f717b"; */
-        /* format = "[\\[](bright-black)[$context](yellow)[:](bright-black)[$namespace](white)[\\]](bright-black)"; */
         context_aliases = {
           ".*vdp.*" = "vdp";
           "(?P<var_cell>[\\\\w-]+)-aws-\\\\w+-(?P<var_cluster>[\\\\w-]+)-.*" = "$var_cell-$var_cluster";

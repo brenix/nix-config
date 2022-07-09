@@ -69,14 +69,6 @@ in
 
         # Packages to be installed
         home.packages = with pkgs; [
-          #awless
-          #buildah
-          #chamber
-          #handlr
-          #lxappearance
-          #openrgb
-          #pcmanfm
-          #protonup
           age
           asdf-vm
           authy
@@ -84,7 +76,6 @@ in
           awscli2
           calicoctl
           certigo
-          dash-font
           discord
           feh
           fluxcd

@@ -43,11 +43,8 @@
         shadow-exclude = [
           "name = 'Notification'"
           "class_g ?= 'Dunst'"
-          # disable shadows for hidden windows:
-          "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
-          #  "_GTK_FRAME_EXTENTS@:c",
-          # disables shadows on sticky windows:
-          "_NET_WM_STATE@:32a *= '_NET_WM_STATE_STICKY'"
+          "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'" # disable shadows for hidden windows
+          "_NET_WM_STATE@:32a *= '_NET_WM_STATE_STICKY'" # disables shadows on sticky windows
         ];
       };
 
