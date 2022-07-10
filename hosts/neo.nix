@@ -22,6 +22,7 @@ in
   # Hostname
   networking.hostName = "neo";
 
+  # Resolved
   services.resolved.domains = [ "localdomain" ];
 
   # Enable DHCP
@@ -133,10 +134,14 @@ in
 
   # GPU
   services.xserver.videoDrivers = [ "amdgpu" ];
-  hardware.opengl.driSupport = true;
-  hardware.opengl.extraPackages = with pkgs; [
-    amdvlk
-  ];
+
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    extraPackages = with pkgs; [
+      amdvlk
+    ];
+  };
 
   services.xserver.deviceSection = ''
     Option "TearFree" "true"
