@@ -1,3 +1,4 @@
+export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM = 1
 export NIX_REPO ?= https://github.com/brenix/nixos-config
 export NIX_CONFIG ?= $(shell hostname)
 export NIX_DISK ?=
@@ -5,7 +6,7 @@ export NIX_HOST ?=
 export SSH_OPTIONS ?= -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 switch:
-	@sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --recreate-lock-file --no-write-lock-file -L -v --impure --flake ".#$(NIX_CONFIG)" --upgrade
+	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --flake ".#$(NIX_CONFIG)"
 
 gc:
 	@sudo nix-collect-garbage -d
