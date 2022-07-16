@@ -1,7 +1,7 @@
 { pkgs, config, inputs, wallpaper, colorscheme, ... }:
 
 let
-  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) schemeFromYAML colorschemeFromPicture nixWallpaperFromScheme;
+  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) colorschemeFromPicture nixWallpaperFromScheme;
   inherit (builtins) pathExists readFile;
 in
 {
@@ -10,7 +10,7 @@ in
   colorscheme =
     if colorscheme != null then
       if pathExists (./colorschemes + "/${colorscheme}.yaml") then
-        schemeFromYAML colorscheme (readFile (./colorschemes + "/${colorscheme}.yaml"))
+        inputs.nix-colors.lib-core.schemeFromYAML colorscheme (readFile (./colorschemes + "/${colorscheme}.yaml"))
       else
         inputs.nix-colors.colorSchemes.${colorscheme}
     else
