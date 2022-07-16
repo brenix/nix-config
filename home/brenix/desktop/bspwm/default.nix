@@ -5,12 +5,12 @@ let
     if primaryDisplay != null then
       if secondaryDisplay != null then
         {
-          primaryDisplay = [ "1" "2" ];
-          secondaryDisplay = [ "3" "4" ];
+          ${primaryDisplay} = [ "1" "2" ];
+          ${secondaryDisplay} = [ "3" "4" ];
         }
       else
         {
-          primaryDisplay = [ "1" "2" "3" "4" ];
+          ${primaryDisplay} = [ "1" "2" "3" "4" ];
         }
     else
       { };
