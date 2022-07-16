@@ -1,0 +1,19 @@
+keys:
+  # Users
+  - &users: # Generated with age-keygen - private key stored outside of repo
+    - &brenix age1kky7jzc2x626xp4sfvpz7acytczqgdn7h2jxjqkjxzfd4kndcdxs8zr6ka
+  # Hosts
+  - &hosts:
+    - &neo age13aug9ksxkwksqjl4ghd8u3cf5c9tseaxtw75s7mpksdes9edfp7qa47044
+    - &trinity age1g6hk6frqedn4dlz2l3s06f6jl6f95eqfwk96qvtdws4ctgv60fdqesv664
+    - &tank age1nztjx7seuzdyz94h00kf7lq4xarj804mj4e0psaz30la0dkf4s9qgkw7yv
+    - &dozer
+
+creation_rules:
+  - path_regex: hosts/common/secrets.ya?ml$
+    key_groups:
+      - age:
+          - *brenix
+          - *neo
+          - *trinity
+          - *tank

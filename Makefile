@@ -1,34 +1,49 @@
-export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM = 1
-export NIX_REPO ?= https://github.com/brenix/nixos-config
-export NIX_CONFIG ?= $(shell hostname)
-export NIX_DISK ?=
-export NIX_HOST ?=
-export SSH_OPTIONS ?= -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM = 1
+DISK ?=
+USER ?= brenix
+HOSTNAME ?= $(shell hostname)
 
-switch:
-	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --flake ".#$(NIX_CONFIG)"
+# Ensures that a variable is defined and non-empty
+define assert-set
+	@$(if $($(1)),,$(error $(1) not defined in $(@)))
+endef
 
+## Rebuild NixOS and home-manager configurations
+switch: nixos home
+
+## Rebuild NixOS configuration
+nixos:
+	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --flake ".#$(HOSTNAME)"
+
+## Rebuild home-manager configuration
+home:
+	@home-manager --flake ".#$(USER)@$(HOSTNAME)" switch
+
+## Run garbage collection
 gc:
 	@sudo nix-collect-garbage -d
 
-test:
-	@unset NIX_CONFIG; nix --extra-experimental-features 'nix-command flakes' --impure flake check
+## Partition and format btrfs volumes for install
+volumes:
+	$(call assert-set,DISK)
+	@{ \
+	umount -R /mnt 2>/dev/null; \
+	parted -s $(DISK) -- mklabel gpt; \
+	parted -s $(DISK) -- mkpart ESP fat32 1MiB 512MiB; \
+	parted -s $(DISK) -- mkpart primary 512MiB 100%; \
+	parted -s $(DISK) -- set 1 esp on; \
+	parted -s $(DISK) -- name 1 ESP; \
+	parted -s $(DISK) -- name 2 $(HOSTNAME); \
+	mkfs.fat -F32 -n ESP $(DISK)1; \
+	mkfs.btrfs -f -L $(HOSTNAME) $(DISK)2; \
+	sleep 5; \
+	mount /dev/disk/by-label/$(HOSTNAME) /mnt; \
+	mkdir -p /mnt/boot; \
+	mount /dev/disk/by-label/ESP /mnt/boot; \
+	btrfs subvolume create /mnt/root; \
+	btrfs subvolume create /mnt/persist; \
+	btrfs subvolume create /mnt/nix; \
+	btrfs subvolume snapshot -r /mnt/root /mnt/root-blank; \
+	}
 
-install:
-	@ssh $(SSH_OPTIONS) root@$(NIX_HOST) " \
-		umount -R /mnt 2>/dev/null; \
-		parted -s /dev/$(NIX_DISK) -- mklabel gpt; \
-		parted -s /dev/$(NIX_DISK) -- mkpart ESP fat32 1MiB 512MiB; \
-		parted -s /dev/$(NIX_DISK) -- mkpart primary 512MiB 100%; \
-		parted -s /dev/$(NIX_DISK) -- set 1 esp on; \
-		parted -s /dev/$(NIX_DISK) -- name 1 boot; \
-		parted -s /dev/$(NIX_DISK) -- name 2 nixos; \
-		mkfs.fat -F32 -n boot /dev/$(NIX_DISK)1; \
-		mkfs.ext4 -m0 -F -L nixos /dev/$(NIX_DISK)2; \
-		sleep 5; \
-		mount /dev/disk/by-label/nixos /mnt; \
-		mkdir -p /mnt/boot; \
-		mount /dev/disk/by-label/boot /mnt/boot; \
-		nix-shell -p git --run 'git clone $(NIX_REPO) /mnt/etc/nixos'; \
-		nix-shell -p git nixFlakes --run 'nixos-install --impure --no-root-passwd --root /mnt --flake /mnt/etc/nixos#$(NIX_CONFIG)'; \
-	"
+.PHONY: switch nixos home gc test volumes
