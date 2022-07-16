@@ -15,7 +15,6 @@
     ../common/optional/passwordless-sudo.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
-    ../common/optional/quietboot.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/xserver.nix
   ];
