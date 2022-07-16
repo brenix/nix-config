@@ -11,6 +11,21 @@
 
   xdg.mimeApps.enable = true;
 
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      documents = "$XDG_RUNTIME_DIR/documents/";
+      download = "$XDG_RUNTIME_DIR/downloads";
+      videos = "$XDG_RUNTIME_DIR/videos/";
+      music = "$XDG_RUNTIME_DIR/music/";
+      pictures = "$XDG_RUNTIME_DIR/pictures/";
+      desktop = "$XDG_RUNTIME_DIR/desktop/";
+      publicShare = "$XDG_RUNTIME_DIR/public/";
+      templates = "$XDG_RUNTIME_DIR/templates/";
+    };
+  };
+
   programs.mpv.enable = true;
 
   home.packages = with pkgs; [
