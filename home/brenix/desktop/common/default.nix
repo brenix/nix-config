@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, persistence, ... }:
 {
   imports = [
     ./alacritty.nix
@@ -41,4 +41,10 @@
     sxiv
     zoom-us
   ];
+
+  home.persistence = lib.mkIf persistence {
+    "/persist/home/brenix".directories = [
+      ".config/Authy Desktop"
+    ];
+  };
 }
