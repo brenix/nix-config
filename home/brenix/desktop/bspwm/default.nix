@@ -1,5 +1,21 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, primaryDisplay, secondaryDisplay, ... }:
 
+let
+  monitors =
+    if primaryDisplay != null then
+      if secondaryDisplay != null then
+        {
+          primaryDisplay = [ "1" "2" ];
+          secondaryDisplay = [ "3" "4" ];
+        }
+      else
+        {
+          primaryDisplay = [ "1" "2" "3" "4" ];
+        }
+    else
+      { };
+in
+{
   imports = [
     ../common
     ../common/xorg-wm
@@ -8,6 +24,8 @@
 
   xsession.windowManager.bspwm = {
     enable = true;
+
+    inherit monitors;
 
     settings = {
       remove_disabled_monitors = true;
