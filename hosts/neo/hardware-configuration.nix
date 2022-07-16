@@ -115,6 +115,7 @@ in
     }];
   };
 
+  nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
