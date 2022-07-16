@@ -69,7 +69,7 @@
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
         "gfx.webrender.all" = true;
         "gfx.webrender.enabled" = true;
-        "identity.fxaccounts.enabled" = false;
+        "identity.fxaccounts.enabled" = true;
         "javascript.options.warp" = true;
         "layers.acceleration.force-enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
