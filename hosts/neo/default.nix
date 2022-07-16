@@ -30,10 +30,7 @@
 
   services.ratbagd.enable = true;
 
-  /* xdg.portal = { */
-  /*   enable = true; */
-  /*   wlr.enable = true; */
-  /* }; */
+  services.xserver.dpi = 109;
 
   hardware = {
     opengl.enable = true;
