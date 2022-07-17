@@ -19,7 +19,7 @@
     ../common/optional/xserver.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   programs = {
     adb.enable = true;
@@ -31,6 +31,12 @@
   services.ratbagd.enable = true;
 
   services.xserver.dpi = 109;
+
+  services.xserver.deviceSection = ''
+    Option "TearFree" "true"
+    Option "DRI" "3"
+    Option "VariableRefresh" "true"
+  '';
 
   hardware = {
     opengl.enable = true;

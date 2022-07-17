@@ -12,7 +12,7 @@
     ../common/optional/xserver.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   programs = {
     dconf.enable = true;
