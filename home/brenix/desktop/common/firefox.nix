@@ -77,6 +77,7 @@
         "layout.css.devPixelsPerpx" = 1;
         "layout.spellcheckDefault" = 2;
         "layout.word_select.eat_space_to_next_word" = false;
+        "layout.frame_rate" = 144;
         "loop.enabled" = false;
         "media.mediasource.webm.enabled" = true;
         "media.navigator.enabled" = false;
