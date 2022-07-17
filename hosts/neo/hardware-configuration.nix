@@ -39,7 +39,6 @@ in
     ];
 
     kernelModules = [
-      "amdgpu"
       "dm-snapshot"
       "i2c-dev"
       "i2c-piix4"
