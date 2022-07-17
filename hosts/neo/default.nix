@@ -19,7 +19,7 @@
     ../common/optional/xserver.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_latest;
 
   programs = {
     adb.enable = true;
