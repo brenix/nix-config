@@ -14,8 +14,8 @@ rec {
       package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
     iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
+      name = "Nordzy";
+      package = pkgs.nordzy-icon-theme;
     };
   };
 
