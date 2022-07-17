@@ -48,6 +48,10 @@
     MaxRetentionSec=1week
   '';
 
+  # tmp on tmpfs
+  boot.tmpOnTmpfs = true;
+  boot.tmpOnTmpfsSize = "75%";
+
   # Add each flake input as a registry
   nix.registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
 
