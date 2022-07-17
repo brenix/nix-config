@@ -22,6 +22,7 @@
     awscli2
     calicoctl
     certigo
+    comma
     fluxcd
     git-ignore
     glab
