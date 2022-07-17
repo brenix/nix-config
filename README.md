@@ -1,13 +1,17 @@
 # ❄️ NixOS Configuration
 
-My NixOS and home-manager configuration files. Requires Nix flakes.
+My NixOS and home-manager configuration files
 
 **Features**:
 
-- **Opt-in persistence** through impermanence + blank snapshotting or tmpfs root
+- **Opt-in persistence** through impermanence wth blank snapshotting
 - Deployment **secrets** using **sops-nix**
 - Flexible **Home Manager** Configs through **feature flags**
 - **Declarative** **themes** and **wallpapers** with **nix-colors**
+
+My configuration is heavily inspired by
+[misterio77/nix-config](https://github.com/misterio77/nix-config). Much thanks to
+his contributions!
 
 ## Screenshot
 
