@@ -45,6 +45,7 @@
   home.persistence = lib.mkIf persistence {
     "/persist/home/brenix".directories = [
       ".config/Authy Desktop"
+      ".config/Slack"
       ".zoom"
     ];
     "/persist/home/brenix".files = [
