@@ -44,6 +44,7 @@
 
   environment.persistence = lib.mkIf persistence {
     "/persist".directories = [
+      "/var/openebs"
       "/var/lib/cfssl"
       "/var/lib/cni"
       "/var/lib/containerd"
