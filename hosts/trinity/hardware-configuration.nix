@@ -47,6 +47,7 @@
     }
   ];
 
+  nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
