@@ -104,7 +104,8 @@
         "brenix@trinity" = mkHome {
           username = "brenix";
           hostname = "trinity";
-          colorscheme = "nord";
+          colorscheme = "zenbox";
+          persistence = true;
         };
         "brenix@tank" = mkHome {
           username = "brenix";
