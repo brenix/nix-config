@@ -56,6 +56,7 @@
     vault-bin
     velero
     vendir
+    wireguard-tools
     yq-go
     zoxide
   ];

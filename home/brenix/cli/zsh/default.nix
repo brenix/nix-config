@@ -119,6 +119,12 @@
       # Complete aws cli
       complete -C ${pkgs.awscli}/bin/aws_completer aws
       # -- PATHS
+      path=(
+        $HOME/.krew/bin
+        $HOME/.local/bin
+        $HOME/go/bin
+        $path[@]
+      )
       fpath=(
         $HOME/.local/share/zsh/site-functions
         $fpath[@]
