@@ -14,6 +14,9 @@ in
         forwardAgent = true;
       };
     };
+    extraConfig = ''
+      AddressFamily inet
+    '';
   };
 
   home.persistence = lib.mkIf persistence {
