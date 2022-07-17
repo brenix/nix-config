@@ -21,7 +21,6 @@
   services.resolved = {
     enable = true;
     dnssec = "false";
-    domains = [ "localdomain" ];
   };
 
   # Packages

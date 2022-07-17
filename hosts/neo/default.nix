@@ -28,6 +28,8 @@
 
   services.udev.packages = [ pkgs.android-udev-rules ];
 
+  services.resolved.domains = [ "localdomain" ];
+
   services.ratbagd.enable = true;
 
   services.xserver.dpi = 109;
