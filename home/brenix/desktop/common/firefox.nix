@@ -1,4 +1,4 @@
-{ config, pkgs, lib, persistence, ... }:
+{ config, pkgs, lib, username, persistence, ... }:
 {
   programs.firefox = {
     enable = true;
@@ -23,6 +23,7 @@
         "browser.compactmode.show" = true;
         "browser.disableResetPrompt" = true;
         "browser.discovery.enabled" = false;
+        "browser.download.dir" = "/home/${username}/downloads";
         "browser.fixup.alternate.enabled" = false;
         "browser.formfill.enable" = false;
         "browser.library.activity-stream.enabled" = false;
