@@ -5,13 +5,6 @@
     ../common/wayland-wm
   ];
 
-  home.packages = with pkgs; [
-    hyprland
-    mako
-    waybar
-  ];
-
-
   wayland.windowManager.hyprland =
     let
       inherit (config.colorscheme) colors;
@@ -55,6 +48,8 @@
         dwindle {
           force_split=2
           preserve_split=1
+          col.group_border_active=0xff${colors.base0B}
+          col.group_border=0xff${colors.base04}
         }
 
         input {
@@ -71,7 +66,8 @@
         windowrule=float,pavucontrol
 
         exec-once=waybar
-        exec-once=mako
+        exec=${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill
+        exec-once=${pkgs.mako}/bin/mako
 
         # Program bindings
         bind=SUPER,Return,exec,alacritty
@@ -138,8 +134,7 @@
         bind=SUPERCONTROL,j,focusmonitor,d
 
         bind=SUPERCONTROL,1,focusmonitor,DP-1
-        bind=SUPERCONTROL,2,focusmonitor,DP-2
-        bind=SUPERCONTROL,3,focusmonitor,DP-3
+        bind=SUPERCONTROL,2,focusmonitor,HDMI-A-1
 
         bind=SUPERCONTROLSHIFT,left,movewindow,mon:l
         bind=SUPERCONTROLSHIFT,right,movewindow,mon:r
@@ -151,8 +146,7 @@
         bind=SUPERCONTROLSHIFT,j,movewindow,mon:d
 
         bind=SUPERCONTROLSHIFT,1,movewindow,mon:DP-1
-        bind=SUPERCONTROLSHIFT,2,movewindow,mon:DP-2
-        bind=SUPERCONTROLSHIFT,3,movewindow,mon:DP-3
+        bind=SUPERCONTROLSHIFT,2,movewindow,mon:HDMI-A-1
 
         bind=SUPERALT,left,movecurrentworkspacetomonitor,l
         bind=SUPERALT,right,movecurrentworkspacetomonitor,r

@@ -7,9 +7,9 @@ in
     enable = true;
     iconPath =
       if kind == "dark" then
-        "${config.gtk.iconTheme.package}/share/icons/Papirus-Dark"
+        "${config.gtk.iconTheme.package}/share/icons/Nordzy"
       else
-        "${config.gtk.iconTheme.package}/share/icons/Papirus-Light";
+        "${config.gtk.iconTheme.package}/share/icons/Nordzy";
     font = "${config.fontProfiles.regular.family} 12";
     padding = "10,20";
     anchor = "top-center";

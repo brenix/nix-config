@@ -10,7 +10,7 @@
     ../common/global
     ../common/optional/fonts.nix
     ../common/optional/freetype2-lcdfilter.nix
-    ../common/optional/node-exporter.nix
+    /* ../common/optional/node-exporter.nix */
     ../common/optional/openconnect.nix
     ../common/optional/passwordless-sudo.nix
     ../common/optional/pipewire.nix
@@ -37,6 +37,11 @@
     Option "DRI" "3"
     Option "VariableRefresh" "true"
   '';
+
+  /* xdg.portal = { */
+  /*   enable = true; */
+  /*   wlr.enable = true; */
+  /* }; */
 
   hardware = {
     opengl.enable = true;

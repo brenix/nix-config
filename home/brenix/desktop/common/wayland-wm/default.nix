@@ -3,6 +3,7 @@
   imports = [
     ./mako.nix
     ./qutebrowser.nix
+    ./waybar.nix
   ];
 
   home.packages = with pkgs; [
@@ -10,7 +11,6 @@
     slurp
     wf-recorder
     wl-clipboard
-    wl-mirror
     ydotool
   ];
 
