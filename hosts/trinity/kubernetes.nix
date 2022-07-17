@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, persistence, ... }:
 {
   environment.systemPackages = with pkgs; [ helm helmfile kubectl kubernetes ];
 
