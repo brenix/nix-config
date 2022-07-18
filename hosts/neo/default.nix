@@ -32,13 +32,20 @@
 
   services.ratbagd.enable = true;
 
-  services.xserver.dpi = 109;
-
-  services.xserver.deviceSection = ''
-    Option "TearFree" "true"
-    Option "DRI" "3"
-    Option "VariableRefresh" "true"
-  '';
+  services.xserver = {
+    dpi = 109;
+    displayManager = {
+      sessionCommands = ''
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --mode '2560x1440 --rate 180'
+        ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-0 --mode '2560x1440 --rate 144'
+      '';
+    };
+    deviceSection = ''
+      Option "TearFree" "true"
+      Option "DRI" "3"
+      Option "VariableRefresh" "true"
+    '';
+  };
 
   /* xdg.portal = { */
   /*   enable = true; */
