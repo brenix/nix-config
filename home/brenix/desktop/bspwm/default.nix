@@ -33,7 +33,7 @@ in
       merge_overlapping_monitors = true;
       focus_follows_pointer = true;
       border_width = 1;
-      window_gap = 50;
+      window_gap = 11;
       automatic_scheme = "floating";
       initial_polarity = "first_child";
       split_ratio = 0.52;
@@ -73,9 +73,6 @@ in
       "Slack" = {
         desktop = "^2";
         focus = true;
-      };
-      "Alacritty" = {
-        state = "floating";
       };
       "Alacritty:floating" = {
         state = "floating";
