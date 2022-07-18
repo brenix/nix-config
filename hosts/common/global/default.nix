@@ -31,6 +31,7 @@
     dig
     fd
     gcc
+    gettext
     gnumake
     lsof
     nmap

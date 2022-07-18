@@ -24,7 +24,6 @@
     calicoctl
     certigo
     comma
-    envsubst
     fluxcd
     git-ignore
     glab
