@@ -33,7 +33,7 @@ in
       merge_overlapping_monitors = true;
       focus_follows_pointer = true;
       border_width = 1;
-      window_gap = 11;
+      window_gap = 13;
       automatic_scheme = "floating";
       initial_polarity = "first_child";
       split_ratio = 0.52;
