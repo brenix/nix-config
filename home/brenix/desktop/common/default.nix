@@ -31,6 +31,7 @@
     "/persist/home/brenix".directories = [
       ".config/Authy Desktop"
       ".config/Slack"
+      ".config/spotify"
       ".zoom"
     ];
     "/persist/home/brenix".files = [
