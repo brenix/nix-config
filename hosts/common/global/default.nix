@@ -57,7 +57,7 @@
 
   # Activate home-manager environment, if not already
   environment.loginShellInit = ''
-    [ -d "$HOME/.nix-profile" ] || /nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null
+    [ -d "$HOME/.nix-profile" ] || (/nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null; sleep 2)
   '';
 
   hardware.enableRedistributableFirmware = true;
