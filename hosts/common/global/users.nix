@@ -1,7 +1,4 @@
-{ pkgs, config, lib, mylib, hostname, outputs, persistence, ... }:
-let
-  inherit (lib) optional;
-in
+{ pkgs, config, lib, persistence, ... }:
 {
   users.mutableUsers = false;
   users.users = {
@@ -15,11 +12,11 @@ in
         "wheel"
       ]
       # Add user to additional groups upon evaluating if they are enabled
-      ++ (optional config.hardware.i2c.enable "i2c")
-      ++ (optional config.virtualisation.docker.enable "docker")
-      ++ (optional config.virtualisation.podman.enable "podman")
-      ++ (optional config.virtualisation.libvirtd.enable "libvirtd")
-      ++ (optional config.virtualisation.libvirtd.enable "kvm");
+      ++ (lib.optional config.hardware.i2c.enable "i2c")
+      ++ (lib.optional config.virtualisation.docker.enable "docker")
+      ++ (lib.optional config.virtualisation.podman.enable "podman")
+      ++ (lib.optional config.virtualisation.libvirtd.enable "libvirtd")
+      ++ (lib.optional config.virtualisation.libvirtd.enable "kvm");
 
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG++dlRrheRZgVLtzadOWFJgHgEL27t70oUZyLwL1o0F (none)"

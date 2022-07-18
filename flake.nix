@@ -37,7 +37,6 @@
       };
 
       # -- PACKAGES
-
       legacyPackages = forAllSystems (system:
         import inputs.nixpkgs {
           inherit system;
@@ -98,8 +97,9 @@
           colorscheme = "zenbox";
           wallpaper = "island";
           persistence = true;
-          desktop = "bspwm";
-          /* features = [ ]; */
+          features = [
+            "desktop/bspwm"
+          ];
         };
         "brenix@trinity" = mkHome {
           username = "brenix";
@@ -114,9 +114,10 @@
           dpi = 220;
           colorscheme = "zenbox";
           persistence = true;
-          desktop = "bspwm";
           wallpaper = "island";
-          /* features = [ ]; */
+          features = [
+            "desktop/bspwm"
+          ];
         };
         "brenix@dozer" = mkHome {
           username = "brenix";
@@ -124,9 +125,10 @@
           primaryDisplay = "Virtual-1";
           colorscheme = "zenbox";
           persistence = true;
-          desktop = "bspwm";
           wallpaper = "island";
-          /* features = [ ]; */
+          features = [
+            "desktop/bspwm"
+          ];
         };
       };
 
