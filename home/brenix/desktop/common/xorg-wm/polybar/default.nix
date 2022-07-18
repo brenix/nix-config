@@ -1,4 +1,4 @@
-{ config, pkgs, dpi, ... }:
+{ config, pkgs, ... }:
 
 let
   mprisScript = pkgs.callPackage ./scripts/mpris.nix { };
@@ -33,27 +33,27 @@ in
       };
 
       "bar/main" = {
-        inherit dpi;
         top = true;
-        height = 16;
+        center = true;
+        height = 18;
         enable-ipc = true;
-        width = "100%";
+        width = "99%";
         foreground = "\${colors.fg}";
         background = "\${colors.bg}";
         border-bottom-color = "\${colors.bg}";
         border-bottom-size = 1;
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
-        font-0 = "${config.fontProfiles.regular.family}:size=8.5;2";
-        font-1 = ''"Material Icons:size=8;3"'';
-        font-2 = ''"JetBrainsMono Nerd Font Mono:size=12;3"'';
+        font-0 = "${config.fontProfiles.regular.family};2";
+        font-1 = ''"Material Icons;3"'';
+        font-2 = ''"JetBrainsMono Nerd Font Mono;3"'';
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "bspwm";
         modules-center = "now-playing";
         modules-right = "battery cpu temperature memory volume date time";
-        offset-x = 0;
-        offset-y = 0;
+        offset-x = 12;
+        offset-y = 5;
         padding-left = 1;
         padding-right = 1;
         tray-position = "right";
