@@ -56,7 +56,7 @@
   nix.registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
 
   # Activate home-manager environment, if not already
-  environment.loginShellInit = ''
+  environment.shellInit = ''
     [ -d "$HOME/.nix-profile" ] || /nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null
   '';
 
