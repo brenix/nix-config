@@ -26,12 +26,12 @@ if [[ $commands[kubectl] ]]; then
       kubectl config set-context $(kubectl config current-context) --namespace "$1"
       return 0
     fi
-    if [[ ! -x "$(which fzy 2>/dev/null)" ]]; then
-      echo "please install fzy: github.com/jhawthorn/fzy" >&2
+    if [[ ! -x "$(which fzf 2>/dev/null)" ]]; then
+      echo "please install fzf: github.com/junegunn/fzf" >&2
       return 1
     fi
     context=$(kubectl config current-context)
-    selected=$(kubectl get namespaces -o name | cut -d / -f2 | fzy -l 50)
+    selected=$(kubectl get namespaces -o name | cut -d / -f2 | fzf -0 -1 --reverse)
     if [[ ! -z "$selected" ]]; then
       kubectl config set-context "$context" "--namespace=$selected"
     fi
@@ -59,11 +59,11 @@ if [[ $commands[kubectl] ]]; then
       kubectl config use-context "$1"
       return 0
     fi
-    if [[ ! -x "$(which fzy 2>/dev/null)" ]]; then
-      echo "please install fzy: github.com/jhawthorn/fzy" >&2
+    if [[ ! -x "$(which fzf 2>/dev/null)" ]]; then
+      echo "please install fzf: github.com/junegunn/fzf" >&2
       return 1
     fi
-    selected=$(kubectl config get-contexts -o name | fzy -l 50)
+    selected=$(kubectl config get-contexts -o name | fzf -0 -1 --reverse)
     if [[ ! -z "$selected" ]]; then
       kubectl config use-context "$selected"
     fi
@@ -73,12 +73,12 @@ if [[ $commands[kubectl] ]]; then
   ktx() {
     local kubeconfig
     local selected
-    if [[ ! -x "$(which fzy 2>/dev/null)" ]]; then
-      echo "please install fzy: github.com/jhawthorn/fzy" >&2
+    if [[ ! -x "$(which fzf 2>/dev/null)" ]]; then
+      echo "please install fzf: github.com/junegunn/fzf" >&2
       return 1
     fi
 
-    selected=$(find ${HOME}/.kube -maxdepth 1 \( -type f -o -type l \) -exec basename {} \; | fzy -l 50)
+    selected=$(find ${HOME}/.kube -maxdepth 1 \( -type f -o -type l \) -exec basename {} \; | fzf -0 -1 --reverse)
     if [[ ! -z "$selected" ]]; then
       export KUBECONFIG="${HOME}/.kube/$selected"
     fi
