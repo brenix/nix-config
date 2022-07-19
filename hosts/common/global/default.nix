@@ -1,12 +1,12 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ pkgs, lib, inputs, hostname, ... }:
+{ pkgs, lib, inputs, hostname, persistence, ... }:
 {
   imports = [
+    inputs.impermanence.nixosModules.impermanence
     ./locale.nix
     ./nix.nix
     ./openssh.nix
     ./peerix.nix
-    ./persist.nix
     ./sops.nix
     ./sysctl.nix
     ./users.nix
@@ -56,13 +56,27 @@
   # Add each flake input as a registry
   nix.registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
 
-  # Activate home-manager environment, if not already
-  environment.shellInit = ''
-    [ -d "$HOME/.nix-profile" ] || /nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null
-  '';
+  environment = {
+    # Activate home-manager environment
+    shellInit = ''
+      [ -d "$HOME/.nix-profile" ] || /nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null
+    '';
 
+    # Persist logs, timers, etc
+    persistence = lib.mkIf persistence {
+      "/persist".directories = [ "/var/lib/systemd" "/var/log" ];
+    };
+
+    # Add terminfo files
+    enableAllTerminfo = true;
+  };
+
+  # Allows users to allow others on their bind
+  programs.fuse.userAllowOther = true;
+
+  # Enable firmware and allow unfree pkgs
   hardware.enableRedistributableFirmware = true;
-  # boot.initrd.systemd.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = lib.mkDefault "22.05";
 }
