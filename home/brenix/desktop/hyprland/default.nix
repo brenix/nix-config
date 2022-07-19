@@ -73,7 +73,7 @@
         bind=SUPER,Return,exec,alacritty
         bind=SUPER,v,exec,pavucontrol
         bind=SUPER,d,exec,firefox
-        bind=SUPERSHIFT,d,exec,discord
+        bind=SUPERSHIFT,d,exec,discocss
         bind=SUPERCONTROL,s,exec,spotify
         bind=SUPERSHIFT,s,exec,slack
         bind=SUPER,z,exec,zoom

@@ -109,7 +109,7 @@
       "super + n" = "alacritty -e ncmpcpp";
 
       # discord
-      "super + shift + d" = "discord";
+      "super + shift + d" = "discocss";
 
       # flameshot
       "Print" = "flameshot gui";

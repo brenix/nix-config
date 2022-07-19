@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./discord.nix
     ./firefox.nix
     ./fonts.nix
     ./gtk.nix
@@ -15,7 +16,6 @@
 
   home.packages = with pkgs; [
     authy
-    discord
     imv
     mupdf
     pamixer
