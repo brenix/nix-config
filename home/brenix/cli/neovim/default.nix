@@ -92,7 +92,7 @@ in
       quickfix-reflector-vim
       stabilize-nvim
       switch-vim
-      telescope-fzf-native-nvim
+      telescope-fzy-native-nvim
       telescope-nvim
       telescope-project-nvim
       todo-comments-nvim
