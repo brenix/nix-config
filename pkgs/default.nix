@@ -5,6 +5,8 @@
   # -- Packages with an upstream source
   calicoctl = pkgs.callPackage ./calicoctl { };
 
+  awless = pkgs.callPackage ./awless { };
+
   packer = pkgs.callPackage (import ./hashicorp/generic.nix) {
     name = "packer";
     version = "1.8.2";

@@ -19,6 +19,7 @@
 
   home.packages = with pkgs; [
     age
+    awless
     aws-vault
     awscli2
     calicoctl
