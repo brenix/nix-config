@@ -5,7 +5,6 @@
     ./zsh
     ./bat.nix
     ./dircolors.nix
-    ./fzf.nix
     ./git.nix
     ./gpg.nix
     ./go.nix
@@ -27,6 +26,7 @@
     certigo
     comma
     fluxcd
+    fzy
     git-ignore
     glab
     go-tools
