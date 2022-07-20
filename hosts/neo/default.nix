@@ -12,7 +12,6 @@
     ../common/optional/freetype2-lcdfilter.nix
     ../common/optional/node-exporter.nix
     ../common/optional/openconnect.nix
-    ../common/optional/passwordless-sudo.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
     ../common/optional/quietboot.nix

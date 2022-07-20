@@ -5,7 +5,6 @@
     ../common/global
     ../common/optional/fonts.nix
     ../common/optional/freetype2-lcdfilter.nix
-    ../common/optional/passwordless-sudo.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
     ../common/optional/systemd-boot.nix

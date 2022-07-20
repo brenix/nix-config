@@ -7,7 +7,6 @@
     ./hardware-configuration.nix
     ./kubernetes.nix
     ../common/global
-    ../common/optional/passwordless-sudo.nix
     ../common/optional/systemd-boot.nix
   ];
 

@@ -74,6 +74,9 @@
   # Allows users to allow others on their bind
   programs.fuse.userAllowOther = true;
 
+  # Allow sudo without password if in wheel group
+  security.sudo.wheelNeedsPassword = false;
+
   # Enable firmware and allow unfree pkgs
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
