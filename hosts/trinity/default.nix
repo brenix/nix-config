@@ -20,7 +20,7 @@
       lower = "03:00";
       upper = "06:00";
     };
-    flake = "github:brenix/nixos-config";
+    flake = "github:brenix/nix-config";
     flags = [
       "--recreate-lock-file"
       "--no-write-lock-file"

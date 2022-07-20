@@ -1,17 +1,6 @@
-# ❄️ NixOS Configuration
+# ❄️ Nix Configuration
 
 My NixOS and home-manager configuration files
-
-**Features**:
-
-- **Opt-in persistence** through impermanence wth blank snapshotting
-- Deployment **secrets** using **sops-nix**
-- Flexible **Home Manager** Configs through **feature flags**
-- **Declarative** **themes** and **wallpapers** with **nix-colors**
-
-My configuration is heavily inspired by
-[misterio77/nix-config](https://github.com/misterio77/nix-config). Much thanks to
-his contributions!
 
 ## Screenshot
 
@@ -50,7 +39,7 @@ Install git
 
 Clone this repo
 
-    git clone https://github.com/brenix/nixos-config
+    git clone https://github.com/brenix/nix-config
 
 Enter a development shell
 
@@ -79,16 +68,6 @@ Install the host configuration
 
 Reboot, then login as the user (may need to switch to another virtual console) and install the home configuration
 
-    git clone https://github.com/brenix/nixos-config && cd nixos-config
+    git clone https://github.com/brenix/nix-config && cd nix-config
     nix --extra-experimental-features "nix-command flakes" develop
     make home
-
-## Helpful Commands
-
-`nixos-rebuild --flake .` To build system configurations
-
-`home-manager --flake .#` To build user configurations
-
-`nix build` (or shell or run) To build and use packages
-
-`sops` To manage secrets

@@ -39,7 +39,7 @@ in
         ".local/share/direnv"
         ".local/share/helm"
         "downloads"
-        "nixos-config"
+        "nix-config"
         "work"
       ];
       "/persist/home/brenix".files = [
