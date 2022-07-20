@@ -7,6 +7,7 @@
     ./dircolors.nix
     ./fzf.nix
     ./git.nix
+    ./gpg.nix
     ./go.nix
     ./myrepos.nix
     ./nix-index.nix
