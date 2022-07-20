@@ -46,7 +46,7 @@
         "browser.urlbar.trimURLs" = false;
         "browser.urlbar.update1" = false;
         "browser.xul.error_pages.enabled" = false;
-        "dom.security.https_only_mode" = true;
+        "dom.security.https_only_mode" = false; # Disabled for now until some sites can move to https
         "dom.webgpu.enabled" = true;
         "extensions.autoDisableScopes" = 0;
         "extensions.formautofill.addresses.enabled" = false;
