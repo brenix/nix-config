@@ -12,7 +12,7 @@
       vimium
     ];
     profiles.brenix = {
-      bookmarks = { };
+      /* bookmarks = { }; */
       settings = {
         "app.normandy.enabled" = false;
         "app.shield.optoutstudies.enabled" = false;
