@@ -35,7 +35,6 @@ in
         ".krew"
         ".kube"
         ".local/bin"
-        ".local/share/containers"
         ".local/share/direnv"
         ".local/share/helm"
         "downloads"
