@@ -3,7 +3,7 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "Hack";
+      family = "Terminus";
       package = pkgs.hack-font;
     };
     regular = {

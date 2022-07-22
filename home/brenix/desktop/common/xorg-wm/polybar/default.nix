@@ -44,7 +44,7 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
-        font-0 = "${config.fontProfiles.regular.family}:size=9;2";
+        font-0 = "${config.fontProfiles.monospace.family}:size=9;2";
         font-1 = ''"Material Icons:size=9;3"'';
         font-2 = ''"JetBrainsMono Nerd Font Mono:size=12;3"'';
         module-margin-left = 1;
