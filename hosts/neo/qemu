@@ -77,7 +77,7 @@ if [[ $VM_NAME == "win11" ]]; then
       echo 1 >/proc/sys/vm/compact_memory
 
       # Allocate hugepages
-      # echo 20 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
+      echo 20 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
 
       # Disable transparent hugepages
       echo never >/sys/kernel/mm/transparent_hugepage/enabled
@@ -120,7 +120,7 @@ if [[ $VM_NAME == "win11" ]]; then
       echo 1 >/proc/sys/vm/stat_interval
 
       # Restore hugepages
-      # echo 0 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
+      echo 0 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
 
       # Restore scheduler
       echo 980000 >/proc/sys/kernel/sched_rt_runtime_us
