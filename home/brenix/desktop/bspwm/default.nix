@@ -62,11 +62,11 @@ in
         follow = true;
         focus = true;
       };
-      "Firefox" = {
+      "firefox" = {
         desktop = "^3";
         focus = true;
       };
-      "Spotify" = {
+      "spotify" = {
         desktop = "^4";
         focus = true;
       };
@@ -83,11 +83,9 @@ in
       };
       ".zoom " = {
         state = "floating";
-        sticky = true;
       };
       "join*" = {
         state = "floating";
-        sticky = true;
       };
       "mpv" = {
         state = "floating";
