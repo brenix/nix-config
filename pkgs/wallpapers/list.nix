@@ -1,4 +1,5 @@
 [
+  /* PERSONAL ALBUM */
   {
     name = "forest-stairs";
     ext = "jpeg";
@@ -28,5 +29,20 @@
     ext = "jpeg";
     id = "KS0KUGw";
     sha256 = "1ngihzkj3i4wn0fc43f1yyv8kcg4dqrhzjb0jrc3bbbs3j379lik";
+  }
+
+
+  /* SINGLE IMAGES  */
+  {
+    name = "graphite";
+    ext = "png";
+    id = "3kUVDuo";
+    sha256 = "0jydk8n55bzy970raa9rvzmrs2z0xg11wjjwnk738h6n5bcmlmqb";
+  }
+  {
+    name = "space-1";
+    ext = "jpeg";
+    id = "wEVCOc3";
+    sha256 = "1wi7izc14fv40b5zj03acp7fkhzl8x4c3vbgkg93lnbh6fy3x8jd";
   }
 ]
