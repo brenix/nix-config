@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostname, ... }:
 
 let
   mprisScript = pkgs.callPackage ./scripts/mpris.nix { };
@@ -35,7 +35,7 @@ in
       "bar/main" = {
         top = true;
         center = true;
-        height = 18;
+        height = if (hostname == "tank") then 24 else 18;
         enable-ipc = true;
         width = "99%";
         foreground = "\${colors.fg}";
@@ -44,9 +44,9 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
-        font-0 = "${config.fontProfiles.monospace.family}:size=9;2";
-        font-1 = ''"Material Icons:size=9;3"'';
-        font-2 = ''"JetBrainsMono Nerd Font Mono:size=12;3"'';
+        font-0 = if (hostname == "tank") then "${config.fontProfiles.monospace.family}:size=16;2" else "${config.fontProfiles.monospace.family}:size=9;2";
+        font-1 = if (hostname == "tank") then ''"Material Icons:size=16;2"'' else ''"Material Icons:size=9;2"'';
+        font-2 = if (hostname == "tank") then ''"JetBrainsMono Nerd Font Mono:size=16;2"'' else ''"JetBrainsMono Nerd Font Mono:size=9;2"'';
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "bspwm";
