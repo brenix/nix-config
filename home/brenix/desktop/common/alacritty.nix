@@ -22,7 +22,7 @@ in
         family = config.fontProfiles.monospace.family;
         style = "Italic";
       };
-      font.size = if dpi < 150 then 10.5 else 16;
+      font.size = if dpi < 150 then 9 else 14;
       font.offset.y = -3;
       font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;
@@ -40,7 +40,7 @@ in
       colors =
         {
           primary.background = "#${colors.base00}";
-          primary.foreground = "#${colors.base04}";
+          primary.foreground = "#${colors.base05}";
           cursor.text = "#${colors.base00}";
           cursor.cursor = "#${colors.base04}";
           selection.text = "CellForeground";
