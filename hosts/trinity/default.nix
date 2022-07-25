@@ -22,8 +22,9 @@
     };
     flake = "github:brenix/nix-config";
     flags = [
-      "--recreate-lock-file"
-      "--no-write-lock-file"
+      # NOTE(brenix): disabled so that it tracks the flake lock instead
+      #"--recreate-lock-file"
+      #"--no-write-lock-file"
       "--impure"
     ];
   };
