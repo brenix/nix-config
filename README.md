@@ -1,3 +1,5 @@
+[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
+
 # ❄️ Nix Configuration
 
 My NixOS and home-manager configuration files
