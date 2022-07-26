@@ -40,7 +40,6 @@
           paths = with pkgs; [
             bash
             config.boot.kernelPackages.cpupower
-            ddcutil
             killall
             libvirt
             procps

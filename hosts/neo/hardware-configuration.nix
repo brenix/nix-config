@@ -54,7 +54,7 @@ in
       "boot.shell_on_fail"
       "default_hugepagesz=1G"
       "hugepagesz=1G"
-      #"hugepages=20"
+      /* "hugepages=16" */
       "intremap=no_x2apic_optout"
       "iommu=pt"
       "mitigations=off"
