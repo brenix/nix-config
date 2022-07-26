@@ -53,7 +53,8 @@
     preStart = ''
       mkdir -p /var/lib/libvirt/hooks
       chmod 755 /var/lib/libvirt/hooks
-      ln -sf ${./qemu} /var/lib/libvirt/hooks/qemu
+      cp -f ${./qemu} /var/lib/libvirt/hooks/qemu
+      chmod 755 /var/lib/libvirt/hooks/qemu
     '';
   };
 
