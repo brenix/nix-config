@@ -65,6 +65,7 @@
     # Persist logs, timers, etc
     persistence = lib.mkIf persistence {
       "/persist".directories = [ "/var/lib/systemd" "/var/log" ];
+      "/persist".files = [ "/etc/machine-id" ];
     };
 
     # Add terminfo files
