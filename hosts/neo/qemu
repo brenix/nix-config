@@ -77,7 +77,7 @@ if [[ $VM_NAME == "win11" ]]; then
       echo 1 >/proc/sys/vm/compact_memory
 
       # Allocate hugepages
-      echo 20 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
+      echo 16 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
 
       # Disable transparent hugepages
       echo never >/sys/kernel/mm/transparent_hugepage/enabled
