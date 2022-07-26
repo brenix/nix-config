@@ -52,14 +52,6 @@ unset_cpu() {
   systemctl set-property --runtime -- init.scope AllowedCPUs=${TOTAL_CORES}
 }
 
-# Set display input source
-set_display_input() {
-  local display="$1"
-  local input="$2"
-
-  sudo ddcutil -d ${display} setvcp 60 ${input}
-}
-
 # Load libvirt args
 VM_NAME=$1
 VM_ACTION=$2
@@ -67,63 +59,41 @@ VM_ACTION=$2
 if [[ $VM_NAME == "win11" ]]; then
   case "$VM_ACTION" in
     "prepare")
-      # Switch display input
-      # set_display_input ${DISPLAY_NUMBER} ${DISPLAY_INPUT_VM}
-
-      # Memory preparation
+      log "Optimizing memory utilization"
       sync
       echo 3 >/proc/sys/vm/drop_caches
       sync
       echo 1 >/proc/sys/vm/compact_memory
 
-      # Allocate hugepages
-      echo 16 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
-
-      # Disable transparent hugepages
+      log "Allocating hugepages"
+      echo 17 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
       echo never >/sys/kernel/mm/transparent_hugepage/enabled
 
-      # Create cpusets and isolate cores
+      log "Allocating CPUs"
       set_cpu
-
-      # Update CPU governor to performance
       echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
-      # Increase stat interval
+      log "Performing optimizations"
       echo 300 >/proc/sys/vm/stat_interval
-
-      # Tune the scheduler to allow full utilization
       echo -1 >/proc/sys/kernel/sched_rt_runtime_us
       ;;
     "started")
-      # Set priority level and execution policy for qemu process
+      log "Prioritizing qemu process"
       chrt -a -f -p 1 $(pidof qemu-system-x86_64)
       chrt -p $(pidof qemu-system-x86_64)
-
       sleep 10
-
-      # Assign guest cores/threads to vfio interrupts
-      # for i in $(awk -F ':' '/vfio/ { print $1 }' /proc/interrupts); do
-      # 		echo ${VIRT_CORES_MASK} > /proc/irq/${i}/smp_affinity
-      # done
       ;;
     "release")
-      # Switch display input
-      # set_display_input ${DISPLAY_NUMBER} ${DISPLAY_INPUT_HOST}
-
-      # Restore cpusets
+      log "Restoring CPUs"
       unset_cpu
-
-      # Restore CPU governor to schedutil
       echo schedutil | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
-      # Restore stat interval
+      log "Restoring optimizations"
       echo 1 >/proc/sys/vm/stat_interval
+      echo 950000 >/proc/sys/kernel/sched_rt_runtime_us
 
-      # Restore hugepages
+      log "Disabling hugepages"
       echo 0 >/sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
-
-      # Restore scheduler
-      echo 980000 >/proc/sys/kernel/sched_rt_runtime_us
       ;;
   esac
 fi
