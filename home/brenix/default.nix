@@ -37,7 +37,7 @@ in
         ".local/bin"
         ".local/share/direnv"
         ".local/share/helm"
-        "downloads"
+        "Downloads"
         "nix-config"
         "work"
       ];
