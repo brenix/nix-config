@@ -1,4 +1,4 @@
-{ config, pkgs, lib, username, persistence, ... }:
+{ config, pkgs, lib, username, persistence, hostname, ... }:
 {
   programs.firefox = {
     enable = true;
@@ -47,7 +47,7 @@
         "browser.urlbar.update1" = false;
         "browser.xul.error_pages.enabled" = false;
         "dom.security.https_only_mode" = false; # Disabled for now until some sites can move to https
-        "dom.webgpu.enabled" = true;
+        "dom.webgpu.enabled" = if hostname == "tank" then false else true;
         "extensions.autoDisableScopes" = 0;
         "extensions.formautofill.addresses.enabled" = false;
         "extensions.formautofill.available" = "off";
@@ -68,8 +68,8 @@
         "full-screen-api.warning.timeout" = 0;
         "gfx.canvas.azure.accelerated" = true;
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
-        "gfx.webrender.all" = true;
-        "gfx.webrender.enabled" = true;
+        "gfx.webrender.all" = if hostname == "tank" then false else true;
+        "gfx.webrender.enabled" = if hostname == "tank" then false else true;
         "identity.fxaccounts.enabled" = true;
         "javascript.options.warp" = true;
         "layers.acceleration.force-enabled" = true;
