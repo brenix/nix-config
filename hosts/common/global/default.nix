@@ -1,5 +1,5 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ pkgs, lib, inputs, hostname, persistence, ... }:
+{ pkgs, lib, inputs, hostname, persistence, config, ... }:
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence
@@ -53,8 +53,15 @@
   boot.tmpOnTmpfs = true;
   boot.tmpOnTmpfsSize = "75%";
 
-  # Add each flake input as a registry
-  nix.registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+  nix = {
+    # Add each flake input as a registry
+    # To make nix3 commands consistent with your flake
+    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+
+    # Map registries to channels
+    # Very useful when using legacy commands
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+  };
 
   environment = {
     # Activate home-manager environment
