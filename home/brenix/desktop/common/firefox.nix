@@ -79,11 +79,11 @@
         "layout.frame_rate" = 144;
         "loop.enabled" = false;
         "media.mediasource.webm.enabled" = true;
-        "media.navigator.enabled" = false;
-        "media.navigator.video.enabled" = false;
-        "media.peerconnection.enabled" = false;
-        "media.peerconnection.identity.enabled" = false;
-        "media.peerconnection.video.enabled" = false;
+        /* "media.navigator.enabled" = false; */
+        /* "media.navigator.video.enabled" = false; */
+        /* "media.peerconnection.enabled" = false; */
+        /* "media.peerconnection.identity.enabled" = false; */
+        /* "media.peerconnection.video.enabled" = false; */
         "network.IDN_show_punycode" = true;
         "network.dns.disableIPv6" = true;
         "network.dnsCacheEntries" = 10000;
