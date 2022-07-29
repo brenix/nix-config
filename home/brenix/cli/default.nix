@@ -47,7 +47,7 @@
     nodePackages.npm
     nodejs
     packer
-    pgcli
+    #pgcli
     pipenv
     python310
     reftools
