@@ -53,7 +53,7 @@ in
         modules-center = "now-playing";
         modules-right = "battery cpu temperature memory volume date time";
         offset-x = 12;
-        offset-y = 5;
+        offset-y = 8;
         padding-left = 1;
         padding-right = 1;
         tray-position = "right";
