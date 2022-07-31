@@ -7,8 +7,8 @@
       package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
     };
     regular = {
-      family = "Verdana";
-      package = pkgs.corefonts;
+      family = "Noto Sans UI";
+      package = pkgs.noto-fonts;
     };
   };
 }
