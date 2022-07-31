@@ -1,10 +1,21 @@
 [
-  /* PERSONAL ALBUM */
+  {
+    name = "space-1";
+    ext = "jpeg";
+    id = "4b6QhFV";
+    sha256 = "090mvi3bivb3msqjb1355i709xbw1cka19k77ygzblirr8zixirc";
+  }
   {
     name = "forest-stairs";
     ext = "jpeg";
     id = "ezv6oap";
     sha256 = "0w7f6dc0svcvg69g5wfl0rl2zl80cb3jxvdgbnvfrisrff0m4px2";
+  }
+  {
+    name = "misc-1";
+    ext = "jpeg";
+    id = "U5hPLJB";
+    sha256 = "0msq06x2bp3yhrgpylgwxm204abdiahgyc4h6vfhssmdhgf81x40";
   }
   {
     name = "island";
@@ -19,10 +30,10 @@
     sha256 = "1xwg806aikivbll7clkhz5iq77jrxj1cvdk13ic8mxb4ajnpmwl6";
   }
   {
-    name = "mountain-1";
-    ext = "png";
-    id = "CBmr6fK";
-    sha256 = "0w922kskwp6gjjaslzixih405pjr8h8cxg1cg9dgcl2jhm5sg0zn";
+    name = "yosemite-1";
+    ext = "jpeg";
+    id = "lh3FzCS";
+    sha256 = "0wf9zmqagvhmblpsfln1kp7anx4xx0bwm48hv7xhflvf9dbz4ia5";
   }
   {
     name = "forest-dark";
@@ -30,19 +41,10 @@
     id = "KS0KUGw";
     sha256 = "1ngihzkj3i4wn0fc43f1yyv8kcg4dqrhzjb0jrc3bbbs3j379lik";
   }
-
-
-  /* SINGLE IMAGES  */
   {
-    name = "graphite";
+    name = "mountain-1";
     ext = "png";
-    id = "3kUVDuo";
-    sha256 = "0jydk8n55bzy970raa9rvzmrs2z0xg11wjjwnk738h6n5bcmlmqb";
-  }
-  {
-    name = "space-1";
-    ext = "jpeg";
-    id = "wEVCOc3";
-    sha256 = "1wi7izc14fv40b5zj03acp7fkhzl8x4c3vbgkg93lnbh6fy3x8jd";
+    id = "CBmr6fK";
+    sha256 = "0w922kskwp6gjjaslzixih405pjr8h8cxg1cg9dgcl2jhm5sg0zn";
   }
 ]

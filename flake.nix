@@ -95,7 +95,7 @@
           secondaryDisplay = "HDMI-A-0";
           dpi = 109;
           colorscheme = "tokyo-city-terminal-light";
-          wallpaper = "mountain-1";
+          wallpaper = "space-1";
           persistence = true;
           features = [
             "desktop/bspwm"
