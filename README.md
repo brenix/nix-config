@@ -1,6 +1,6 @@
-[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
-
 # ❄️ Nix Configuration
+
+[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
 My NixOS and home-manager configuration files
 
@@ -31,45 +31,68 @@ activated on every boot with `loginShellInit`.
 
 ## My install process
 
-This may not be the most optimal way to install, but it is what I have found which works.
+This may not be the most optimal way to install, but it is what I have found
+which works.
 
-First, download and boot the official [NixOS ISO](https://nixos.org/download.html#nixos-iso) or [Netboot.xyz](https://netboot.xyz/downloads/)
+First, download and boot the official [NixOS
+ISO](https://nixos.org/download.html#nixos-iso) or
+[Netboot.xyz](https://netboot.xyz/downloads/)
 
 Install git
 
-    nix-env -i git
+```sh
+nix-env -i git
+```
 
 Clone this repo
 
-    git clone https://github.com/brenix/nix-config
+```sh
+git clone https://github.com/brenix/nix-config
+```
 
 Enter a development shell
 
-    nix --extra-experimental-features "nix-command flakes" develop
+```sh
+nix --extra-experimental-features "nix-command flakes" develop
+```
 
 Format and mount the partitions
 
-    sudo make volumes HOSTNAME=<hostname> DISK=/dev/<disk>
+```sh
+sudo make volumes HOSTNAME=<hostname> DISK=/dev/<disk>
+```
 
 Copy the livecd host keys to the persistence dir
 
-    sudo make host-keys
-    sudo mkdir -p /mnt/persist/etc/ssh && cp /etc/ssh/ssh_host\* /mnt/persist/etc/ssh
+```sh
+sudo make host-keys
+sudo mkdir -p /mnt/persist/etc/ssh && cp /etc/ssh/ssh_host\* /mnt/persist/etc/ssh
+```
 
-Update the `.sops.yaml` with the age pubkey obtained using the following command on another nix host
+Update the `.sops.yaml` with the age pubkey obtained using the following
+command on another nix host
 
-    nix-shell -p ssh-to-age --run 'ssh-keyscan <ip/hostname> | ssh-to-age'
+```sh
+nix-shell -p ssh-to-age --run 'ssh-keyscan <ip/hostname> | ssh-to-age'
+```
 
 Re-encrypt with the new keys
 
-    sops updatekeys -y path/to/secrets.yaml
+```sh
+sops updatekeys -y path/to/secrets.yaml
+```
 
 Install the host configuration
 
-    sudo -E nixos-install --impure --no-root-passwd --flake .#<hostname>
+```sh
+sudo -E nixos-install --impure --no-root-passwd --flake .#<hostname>
+```
 
-Reboot, then login as the user (may need to switch to another virtual console) and install the home configuration
+Reboot, then login as the user (may need to switch to another virtual console)
+and install the home configuration
 
-    git clone https://github.com/brenix/nix-config && cd nix-config
-    nix --extra-experimental-features "nix-command flakes" develop
-    make home
+```sh
+git clone https://github.com/brenix/nix-config && cd nix-config
+nix --extra-experimental-features "nix-command flakes" develop
+make home
+```

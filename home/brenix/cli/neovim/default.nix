@@ -113,6 +113,7 @@ in
       gopls
       nodePackages.bash-language-server
       nodePackages.dockerfile-language-server-nodejs
+      nodePackages.markdownlint-cli
       nodePackages.pyright
       nodePackages.vscode-css-languageserver-bin
       nodePackages.vscode-html-languageserver-bin
@@ -125,6 +126,7 @@ in
       # formatters
       nixpkgs-fmt
       nodePackages.prettier
+      python310Packages.mdformat
       shellharden
       shfmt
       stylua
