@@ -6,8 +6,12 @@
     replacement = pkgs.lib.overrideDerivation freetype (oldAttrs: {
       patches = oldAttrs.patches ++ [
         (fetchurl {
-          url = "https://gist.githubusercontent.com/brenix/bf63a85755391a52b8c885d0bf77fb10/raw/a9914cb653efce1e6ce2c0b7cb288c97de547cfc/freetype2-cleartype.patch";
-          sha256 = "151lwwjjbkndf28l19849md6gzaxrbmjgcxgj8h7mryk0b78zsdv";
+          url = "https://aur.archlinux.org/cgit/aur.git/plain/like-ultimate5.patch?h=freetype2-ultimate5";
+          sha256 = "sha256-lVTTojYZpGz0jlEuW2M2r9CAL0L9r5suR7oMcYFD8d0=";
+        })
+        (fetchurl {
+          url = "https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/freetype2/trunk/0003-Enable-infinality-subpixel-hinting.patch";
+          sha256 = "sha256-yqC8fT36O0xrm+7NphQUBdr+VA+ZplXcg9FwT6IyrCA=";
         })
       ];
     });
