@@ -29,7 +29,6 @@
         "browser.newtab.preload" = false;
         "browser.newtabpage.activity-stream.enabled" = false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-        "browser.newtabpage.activity-stream.telemetry" = false;
         "browser.onboarding.enabled" = false;
         "browser.pagethumbnails.capturing_disabled" = true;
         "browser.pocket.enabled" = false;
@@ -108,6 +107,24 @@
         "svg.context-properties.content.enabled" = true;
         "toolkit.cosmeticAnimations.enabled" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        # telemetry
+        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+        "browser.newtabpage.activity-stream.telemetry" = false;
+        "browser.ping-centre.telemetry" = false;
+        "datareporting.healthreport.uploadEnabled" = false;
+        "datareporting.policy.dataSubmissionEnabled" = false;
+        "datareporting.sessions.current.clean" = true;
+        "devtools.onboarding.telemetry.logged" = false;
+        "toolkit.telemetry.archive.enabled" = false;
+        "toolkit.telemetry.bhrPing.enabled" = false;
+        "toolkit.telemetry.enabled" = false;
+        "toolkit.telemetry.firstShutdownPing.enabled" = false;
+        "toolkit.telemetry.hybridContent.enabled" = false;
+        "toolkit.telemetry.newProfilePing.enabled" = false;
+        "toolkit.telemetry.reportingpolicy.firstRun" = false;
+        "toolkit.telemetry.shutdownPingSender.enabled" = false;
+        "toolkit.telemetry.unified" = false;
+        "toolkit.telemetry.updatePing.enabled" = false;
       };
       userChrome = ''
         /* Hide extra icons in address bar */
