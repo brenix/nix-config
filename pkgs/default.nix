@@ -9,13 +9,13 @@
 
   packer = pkgs.callPackage (import ./hashicorp/generic.nix) {
     name = "packer";
-    version = "1.8.2";
-    sha256 = "sha256-Z1vYJWGi5J+JdH4JIUHHznnC4qkQXmouvUmibfhJpGg=";
+    version = "1.8.3";
+    sha256 = "sha256-BYf3gV7XlYnNnCt1TIIRVzHI0Lj9O3Rv5ABV2Wn6y6U=";
   };
 
   terraform = pkgs.callPackage (import ./hashicorp/generic.nix) {
     name = "terraform";
-    version = "1.2.4";
-    sha256 = "sha256-cF6mKkSgCBWU2taysJPu/vsS1U+logpmVi+eCCsAQUw=";
+    version = "1.2.6";
+    sha256 = "sha256-n9RF56GRMX3PyZ0BKrYy8swB8SrxSkTfurqC4PloA2U=";
   };
 }
