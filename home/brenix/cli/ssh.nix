@@ -11,6 +11,7 @@ in
     matchBlocks = {
       home = {
         host = concatStringsSep " " hostnames;
+        hostname = "%h.localdomain";
         forwardAgent = true;
       };
     };
