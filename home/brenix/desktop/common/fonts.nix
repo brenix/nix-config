@@ -3,8 +3,8 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "Hack Nerd Font";
-      package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
+      family = "Terminus";
+      package = pkgs.terminus_font;
     };
     regular = {
       family = "Noto Sans UI";
