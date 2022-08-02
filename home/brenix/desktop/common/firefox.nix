@@ -44,6 +44,8 @@
         "browser.urlbar.trimURLs" = false;
         "browser.urlbar.update1" = false;
         "browser.xul.error_pages.enabled" = false;
+        "browser.zoom.full" = false;
+        "toolkit.zoomManager.zoomValues" = ".3,.5,.67,.8,.9,1,1.05,1.1,1.2,1.33,1.5,1.7,2,2.4,3,4,5";
         "dom.security.https_only_mode" = false; # Disabled for now until some sites can move to https
         "dom.webgpu.enabled" = if hostname == "tank" then false else true;
         "extensions.autoDisableScopes" = 0;
