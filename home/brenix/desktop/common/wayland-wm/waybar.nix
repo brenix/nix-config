@@ -95,7 +95,7 @@ in
           tooltip = false;
           min-length = 5;
           exec = "curl -s 'https://wttr.in/Sacramento?u&format='%f'' | tr -d '+'";
-          interval = 3600;
+          interval = 1800;
           format = "  {}";
         };
 
