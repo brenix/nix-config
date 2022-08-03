@@ -10,6 +10,7 @@
       inherit (config.colorscheme) colors;
       mako = "${pkgs.mako}/bin/mako";
       swaybg = "${pkgs.swaybg}/bin/swaybg";
+      grimblast = "${pkgs.grimblast}/bin/grimblast";
     in
     {
       enable = true;
@@ -89,7 +90,12 @@
           bind=SUPER,v,exec,pavucontrol
           bind=SUPERCONTROL,s,exec,spotify
           bind=SUPERSHIFT,d,exec,discocss
-          bind=,Print,exec,flameshot
+
+          # Screenshots
+          bind=,Print,exec,${grimblast} --notify copy area
+          bind=SHIFT,Print,exec,${grimblast} --notify copy active
+          bind=CONTROL,Print,exec,${grimblast} --notify copy screen
+          bind=SUPER,Print,exec,${grimblast} --notify copy window
 
           # Audio
           bind=,XF86AudioNext,exec,playerctl next

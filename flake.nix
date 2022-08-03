@@ -8,6 +8,7 @@
 
     deploy-rs = { url = "github:serokell/deploy-rs"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "github:hyprwm/hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
     impermanence = { url = "github:misterio77/impermanence"; }; # TODO: change to upstream after https://github.com/nix-community/impermanence/pull/99 is merged
     neovim-nightly = { url = "github:nix-community/neovim-nightly-overlay"; };
     nix-colors = { url = "github:misterio77/nix-colors"; };
@@ -31,6 +32,7 @@
         nur = inputs.nur.overlay;
         sops-nix = inputs.sops-nix.overlay;
         hyprland = inputs.hyprland.overlays.default;
+        hyprwm-contrib = inputs.hyprwm-contrib.overlays.default;
         neovim = inputs.neovim-nightly.overlay;
         peerix = inputs.peerix.overlay;
         deploy-rs = inputs.deploy-rs.overlay;
