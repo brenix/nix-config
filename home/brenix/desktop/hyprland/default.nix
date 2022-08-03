@@ -73,6 +73,12 @@
           exec=${swaybg} -i ${config.wallpaper} --mode fill
           exec-once=${mako}
 
+          # Rules
+          windowrule=workspace 2,slack
+          windowrule=workspace 3,firefox
+          windowrule=float,^(zoom)$
+          windowrule=float,^(mpv)$
+
           # Program bindings
           bind=SUPER,Return,exec,foot
           bind=SUPERSHIFT,Return,exec,foot -a foot:floating

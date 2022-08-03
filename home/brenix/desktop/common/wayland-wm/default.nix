@@ -11,7 +11,6 @@
     mimeo
     wf-recorder
     wl-clipboard
-    wlr-randr
   ];
 
   home.sessionVariables = {

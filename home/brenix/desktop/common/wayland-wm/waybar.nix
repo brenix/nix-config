@@ -32,9 +32,9 @@ in
         margin = "6";
         position = "top";
 
-        /* output = */
-        /*   (optional (hostname == "neo") "DP-1") ++ */
-        /*   (optional (hostname == "tank") "Virtual-1"); */
+        output =
+          (optional (hostname == "neo") "DP-1") ++
+          (optional (hostname == "tank") "Virtual-1");
 
         modules-left = [
           "wlr/workspaces"
