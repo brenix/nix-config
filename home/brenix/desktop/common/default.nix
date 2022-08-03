@@ -21,9 +21,9 @@
     pamixer
     pavucontrol
     piper
-    /* slack */
+    slack
     spotify
-    /* zoom-us */
+    zoom-us
   ];
 
   home.persistence = lib.mkIf persistence {
