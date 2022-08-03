@@ -21,9 +21,8 @@
     pamixer
     pavucontrol
     piper
-    slack
+    /* slack */
     spotify
-    sxiv
     /* zoom-us */
   ];
 
