@@ -37,7 +37,7 @@ in
           (optional (hostname == "tank") "Virtual-1");
 
         modules-left = [
-          "workspaces"
+          "wlr/workspaces"
         ];
 
         modules-center = [
@@ -55,7 +55,7 @@ in
           "tray"
         ];
 
-        workspaces = {
+        "wlr/workspaces" = {
           on-click = "activate";
         };
 
