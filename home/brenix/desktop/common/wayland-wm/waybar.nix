@@ -110,7 +110,7 @@ in
         };
 
         "custom/currentplayer" = {
-          interval = 2;
+          interval = 3;
           return-type = "json";
           exec = jsonOutput {
             pre = ''player="$(${playerctl} status -f "{{playerName}}" || echo "No players found" | cut -d '.' -f1)"'';
@@ -132,7 +132,7 @@ in
           exec = ''${playerctl} metadata --format '{"text": "{{artist}} - {{title}}", "alt": "{{status}}", "tooltip": "{{title}} ({{artist}} - {{album}})"}' '';
           return-type = "json";
           interval = 3;
-          max-length = 30;
+          max-length = 90;
           format = "{icon} {}";
           format-icons = {
             "Playing" = "契";
