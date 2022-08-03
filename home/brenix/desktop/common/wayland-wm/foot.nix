@@ -39,11 +39,16 @@ in
       };
 
       scrollback = {
-        lines = 100000;
+        lines = 10000;
       };
 
       mouse = {
         hide-when-typing = "yes";
+      };
+
+      mouse-bindings = {
+        select-extend = "BTN_MIDDLE";
+        primary-paste = "BTN_RIGHT";
       };
     };
   };
