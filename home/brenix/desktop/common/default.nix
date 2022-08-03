@@ -23,6 +23,7 @@
     piper
     slack
     spotify
+    xdg-utils
     zoom-us
   ];
 
