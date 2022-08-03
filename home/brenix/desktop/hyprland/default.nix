@@ -17,11 +17,7 @@
       extraConfig =
         (lib.optionalString (hostname == "neo") ''
           monitor=DP-1,2560x1440@165,0x0,1
-          workspace=DP-1,1
-          workspace=DP-1,2
           monitor=HDMI-A-1,2560x1440@144,2560x0,1
-          workspace=HDMI-A-1,3
-          workspace=HDMI-A-1,4
         '') +
         ''
           general {

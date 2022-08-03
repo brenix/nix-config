@@ -28,13 +28,13 @@ in
     settings = {
       primary = {
         mode = "dock";
-        height = 21;
+        height = 24;
         margin = "6";
         position = "top";
 
-        output =
-          (optional (hostname == "neo") "DP-1") ++
-          (optional (hostname == "tank") "Virtual-1");
+        /* output = */
+        /*   (optional (hostname == "neo") "DP-1") ++ */
+        /*   (optional (hostname == "tank") "Virtual-1"); */
 
         modules-left = [
           "wlr/workspaces"
@@ -155,7 +155,7 @@ in
       ''
         * {
           font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
-          font-size: 12px;
+          font-size: 14px;
           padding: 0 8px;
         }
         .modules-right {
@@ -170,19 +170,18 @@ in
           background-color: #${colors.base00};
           border: 2px solid #${colors.base03};
           padding: 0;
-          border-radius: 10px;
+          /* border-radius: 10px; */
         }
         window#waybar.bottom {
           color: #${colors.base05};
           background-color: #${colors.base00};
           border: 2px solid #${colors.base03};
           opacity: 1.0;
-          border-radius: 10px;
+          /* border-radius: 10px; */
         }
         #workspaces button {
           background-color: #${colors.base01};
           color: #${colors.base05};
-          margin: 4px;
         }
         #workspaces button.hidden {
           background-color: #${colors.base00};
