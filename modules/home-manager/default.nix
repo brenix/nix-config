@@ -1,5 +1,5 @@
 {
   fonts = ./fonts.nix;
-  hyprland = ./hyprland.nix;
+  /* hyprland = ./hyprland.nix; */
   wallpaper = ./wallpaper.nix;
 }

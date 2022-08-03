@@ -98,7 +98,7 @@
           wallpaper = "island";
           persistence = true;
           features = [
-            "desktop/bspwm"
+            "desktop/hyprland"
           ];
         };
         "brenix@trinity" = mkHome {

@@ -1,17 +1,17 @@
 { pkgs, ... }:
 {
   imports = [
+    ./foot.nix
     ./mako.nix
-    ./qutebrowser.nix
     ./waybar.nix
+    ./wofi.nix
   ];
 
   home.packages = with pkgs; [
     mimeo
-    slurp
     wf-recorder
     wl-clipboard
-    ydotool
+    wlr-randr
   ];
 
   home.sessionVariables = {

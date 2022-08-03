@@ -3,8 +3,8 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "Terminus";
-      package = pkgs.terminus_font;
+      family = "JetBrainsMono Nerd Font";
+      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
     };
     regular = {
       family = "Noto Sans UI";

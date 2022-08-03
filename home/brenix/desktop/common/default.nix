@@ -1,7 +1,7 @@
 { lib, pkgs, persistence, ... }:
 {
   imports = [
-    ./alacritty.nix
+    #./alacritty.nix
     ./discord.nix
     ./firefox.nix
     ./fonts.nix
@@ -24,7 +24,7 @@
     slack
     spotify
     sxiv
-    zoom-us
+    /* zoom-us */
   ];
 
   home.persistence = lib.mkIf persistence {

@@ -42,6 +42,7 @@ in
       "dm-snapshot"
       "i2c-dev"
       "i2c-piix4"
+      "k10temp"
       "kvm-amd"
       "vfio"
       "vfio_iommu_type1"

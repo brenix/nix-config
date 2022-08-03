@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  inherit (config.colorscheme) colors kind;
+in
 {
   programs.git = {
     enable = true;
@@ -18,11 +21,11 @@
       enable = true;
       options = {
         color-only = true;
-        light = false;
-        minus-style = "black #9f7777";
-        minus-emph-style = "black #f7b9b9";
-        plus-style = "black #98ad9c";
-        plus-emph-style = "black #e1ffe6";
+        light = if kind == "light" then true else false;
+        minus-style = if kind == "dark" then "black #9f7777" else null;
+        minus-emph-style = if kind == "dark" then "black #f7b9b9" else null;
+        plus-style = if kind == "dark" then "black #98ad9c" else null;
+        plus-emph-style = if kind == "dark" then "black #e1ffe6" else null;
         syntax-theme = "none";
       };
     };
