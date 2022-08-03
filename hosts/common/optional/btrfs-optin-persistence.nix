@@ -41,7 +41,7 @@
     "/persist" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=persist" "nodatacow" "autodefrag" ];
+      options = [ "subvol=persist" "noatime" "nodatacow" "autodefrag" ];
       neededForBoot = true;
     };
 
