@@ -44,10 +44,10 @@
     kustomize
     lefthook
     mr
+    multi-gitter
     nodePackages.npm
     nodejs
     packer
-    #pgcli
     pipenv
     python310
     reftools
