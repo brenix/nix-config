@@ -23,7 +23,7 @@
     "/" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=root" "noatime" "nodatacow" ];
+      options = [ "subvol=root" "noatime" "nodatacow" "nobarrier" ];
     };
 
     #"/" = {
@@ -35,13 +35,13 @@
     "/nix" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=nix" "noatime" "nodatacow" "autodefrag" ];
+      options = [ "subvol=nix" "noatime" "nodatacow" "commit=120" "flushoncommit" ];
     };
 
     "/persist" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=persist" "noatime" "nodatacow" "autodefrag" ];
+      options = [ "subvol=persist" "noatime" "nodatacow" "commit=120" "flushoncommit" ];
       neededForBoot = true;
     };
 
