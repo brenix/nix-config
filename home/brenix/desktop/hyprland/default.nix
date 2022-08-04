@@ -77,7 +77,7 @@
           # Rules
           windowrule=workspace 2,slack
           windowrule=workspace 3,firefox
-          windowrule=float,^(zoom)$
+          windowrule=float,^(Zoom.*)$
           windowrule=float,^(mpv)$
 
           # Program bindings
