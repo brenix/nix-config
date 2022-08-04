@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./libvirt.nix
     ../common/global
+    ../common/optional/autologin-console.nix
     ../common/optional/fonts.nix
     ../common/optional/freetype2-lcdfilter.nix
     /* ../common/optional/node-exporter.nix */

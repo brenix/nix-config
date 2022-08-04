@@ -17,6 +17,11 @@ rec {
       name = "Nordzy";
       package = pkgs.nordzy-icon-theme;
     };
+    cursorTheme = {
+      name = "OpenZone Black";
+      package = pkgs.openzone-cursors;
+      size = 16;
+    };
   };
 
   services.xsettingsd = {
