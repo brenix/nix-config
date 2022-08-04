@@ -6,9 +6,9 @@
     dockerSocket.enable = true;
   };
 
-  environment.persistence = lib.mkIf persistence {
-    "/persist".directories = [
-      "/var/lib/containers"
-    ];
-  };
+  #environment.persistence = lib.mkIf persistence {
+  #  "/persist".directories = [
+  #    "/var/lib/containers"
+  #  ];
+  #};
 }
