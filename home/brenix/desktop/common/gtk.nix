@@ -14,8 +14,10 @@ rec {
       package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
     iconTheme = {
-      name = "Nordzy";
-      package = pkgs.nordzy-icon-theme;
+      /* name = "Nordzy"; */
+      /* package = pkgs.nordzy-icon-theme; */
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
     };
     cursorTheme = {
       name = "OpenZone Black";
