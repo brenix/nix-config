@@ -77,8 +77,8 @@ in
 
         temperature = {
           format = " {temperatureC}°C";
-          tooltip = "CPU Temperature";
           hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
+          critical-threshold = 70;
         };
 
         memory = {
@@ -95,6 +95,7 @@ in
             portable = "";
             default = [ "" "" "" ];
           };
+          on-click = "pamixer -t";
         };
 
         "custom/weather" = {
@@ -103,6 +104,7 @@ in
           exec = "curl -s 'https://wttr.in/Sacramento?u&format='%f'' | tr -d '+'";
           interval = 1800;
           format = "  {}";
+          on-click = "xdg-open 'https://www.google.com/search?q=weather'";
         };
 
         "custom/gpu" = {
