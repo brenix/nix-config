@@ -154,7 +154,7 @@ in
       let inherit (config.colorscheme) colors; in
       ''
         * {
-          font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
+          font-family: ${config.fontProfiles.regular.family}, Terminus, ${config.fontProfiles.monospace.family};
           font-size: 14px;
           padding: 0 8px;
         }
