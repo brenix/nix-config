@@ -47,6 +47,7 @@ in
 
         modules-right = [
           "cpu"
+          "temperature"
           "custom/gpu"
           "memory"
           "pulseaudio"
@@ -77,6 +78,7 @@ in
         temperature = {
           format = " {temperatureC}°C";
           tooltip = "CPU Temperature";
+          hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
         };
 
         memory = {
@@ -163,10 +165,10 @@ in
           padding: 0 8px;
         }
         .modules-right {
-          margin-right: -15;
+          margin-right: -15px;
         }
         .modules-left {
-          margin-left: -15;
+          margin-left: -15px;
         }
         window#waybar.top {
           color: #${colors.base05};
