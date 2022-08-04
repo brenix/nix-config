@@ -44,7 +44,6 @@
     kustomize
     lefthook
     mr
-    multi-gitter
     nodePackages.npm
     nodejs
     packer

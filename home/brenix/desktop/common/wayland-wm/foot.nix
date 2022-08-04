@@ -5,7 +5,7 @@ in
 {
   programs.foot = {
     enable = true;
-    server.enable = false;
+    server.enable = true;
     settings = {
       main = {
         term = "xterm-256color";

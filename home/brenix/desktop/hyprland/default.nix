@@ -75,14 +75,16 @@
           exec-once=${mako}
 
           # Rules
-          windowrule=workspace 2,slack
+          windowrule=workspace 2,Slack
           windowrule=workspace 3,firefox
-          windowrule=float,^(Zoom.*)$
-          windowrule=float,^(mpv)$
+          windowrule=workspace 4,Spotify
+          windowrule=float,title:.*Zoom.*
+          windowrule=float,title:.*\.zoom.*
+          windowrule=float,foot:floating
 
           # Program bindings
-          bind=SUPER,Return,exec,foot
-          bind=SUPERSHIFT,Return,exec,foot -a foot:floating
+          bind=SUPER,Return,exec,footclient
+          bind=SUPERSHIFT,Return,exec,footclient -a foot:floating
           bind=SUPER,Space,exec,wofi -S run
           bind=SUPER,d,exec,firefox
           bind=SUPER,s,exec,spotify
