@@ -59,6 +59,10 @@ in
           on-click = "activate";
         };
 
+        tray = {
+          spacing = 5;
+        };
+
         clock = {
           format = " {:%a %b %d %I:%M %p}";
           tooltip-format = ''
