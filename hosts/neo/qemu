@@ -68,7 +68,7 @@ if [[ $VM_NAME == "win11" ]]; then
       echo 1 >/proc/sys/vm/compact_memory
 
       log "Allocating hugepages"
-      echo 16 >/sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
+      echo 20 >/sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
       echo never >/sys/kernel/mm/transparent_hugepage/enabled
 
       log "Allocating CPUs"
