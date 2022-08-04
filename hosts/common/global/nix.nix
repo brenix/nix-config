@@ -24,7 +24,7 @@ in
     '';
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "daily";
     };
     # Map flake inputs to system registries
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
