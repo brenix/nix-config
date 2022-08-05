@@ -20,17 +20,17 @@
   };
 
   fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/${hostname}";
-      fsType = "btrfs";
-      options = [ "subvol=root" "noatime" "nodatacow" "nobarrier" ];
-    };
-
     #"/" = {
-    #  device = "none";
-    #  fsType = "tmpfs";
-    #  options = [ "defaults" "size=3G" "mode=755" ];
+    #  device = "/dev/disk/by-label/${hostname}";
+    #  fsType = "btrfs";
+    #  options = [ "subvol=root" "noatime" "nodatacow" "nobarrier" ];
     #};
+
+    "/" = {
+      device = "none";
+      fsType = "tmpfs";
+      options = [ "defaults" "size=3G" "mode=755" ];
+    };
 
     "/nix" = {
       device = "/dev/disk/by-label/${hostname}";
