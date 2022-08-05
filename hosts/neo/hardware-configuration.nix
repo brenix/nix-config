@@ -101,6 +101,13 @@ in
       options = "rw,noatime,barrier=0";
       wantedBy = [ "multi-user.target" ];
     }
+    {
+      what = "/dev/mapper/data-containers";
+      where = "/home/brenix/.local/share/containers";
+      type = "btrfs";
+      options = "noatime,nobarrier,commit=120";
+      wantedBy = [ "multi-user.target" ];
+    }
   ];
 
   services.resolved.domains = [ "localdomain" ];
