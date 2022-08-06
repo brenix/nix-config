@@ -140,7 +140,7 @@
       path=(
         $HOME/.krew/bin
         $HOME/.local/bin
-        $HOME/go/bin
+        $HOME/.cache/go/bin
         $path[@]
       )
       fpath=(
