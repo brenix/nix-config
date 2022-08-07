@@ -41,6 +41,7 @@
     krew
     kubectl
     kubernetes-helm
+    kubesess
     kustomize
     lefthook
     mr

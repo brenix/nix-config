@@ -8,6 +8,7 @@
   # -- Packages with an upstream source
   calicoctl = pkgs.callPackage ./calicoctl { };
   awless = pkgs.callPackage ./awless { };
+  kubesess = pkgs.callPackage ./kubesess { };
 
   # -- Hashicorp packages
   packer = pkgs.callPackage (import ./hashicorp/generic.nix) {
