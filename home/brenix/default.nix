@@ -1,9 +1,4 @@
 { inputs, lib, username, persistence, features, ... }:
-
-let
-  inherit (lib) optional mkIf;
-  inherit (builtins) map pathExists filter;
-in
 {
   imports = [
     ./cli
@@ -11,7 +6,7 @@ in
     inputs.impermanence.nixosModules.home-manager.impermanence
   ]
   # Import features that have modules
-  ++ filter pathExists (map (feature: ./${feature}) features);
+  ++ builtins.filter builtins.pathExists (map (feature: ./${feature}) features);
 
   systemd.user.startServices = "sd-switch";
 
@@ -25,7 +20,7 @@ in
     inherit username;
     stateVersion = "22.05";
     homeDirectory = "/home/${username}";
-    persistence = mkIf persistence {
+    persistence = lib.mkIf persistence {
       "/persist/home/brenix".directories = [
         ".asdf"
         ".aws"
