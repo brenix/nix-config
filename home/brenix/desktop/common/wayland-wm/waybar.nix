@@ -65,7 +65,7 @@ in
         };
 
         clock = {
-          format = " {:%a %b %d %I:%M %p}";
+          format = "  {:%a %b %d %I:%M %p}";
           tooltip-format = ''
             <big>{:%Y %B}</big>
             <tt><small>{calendar}</small></tt>'';
@@ -103,7 +103,7 @@ in
           min-length = 5;
           exec = "curl -s 'https://wttr.in/Sacramento?u&format='%f'' | tr -d '+'";
           interval = 1800;
-          format = "  {}";
+          format = "   {}";
           on-click = "xdg-open 'https://www.google.com/search?q=weather'";
         };
 
@@ -163,7 +163,7 @@ in
       ''
         * {
           font-family: ${config.fontProfiles.regular.family}, Terminus, ${config.fontProfiles.monospace.family};
-          font-size: 14px;
+          font-size: 16px;
           padding: 0 8px;
         }
         .modules-right {

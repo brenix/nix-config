@@ -3,12 +3,12 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "JetBrainsMono Nerd Font";
-      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      family = "RobotoMono Nerd Font";
+      package = pkgs.nerdfonts.override { fonts = [ "RobotoMono" ]; };
     };
     regular = {
-      family = "Noto Sans UI";
-      package = pkgs.noto-fonts;
+      family = "Roboto";
+      package = pkgs.roboto;
     };
   };
 }
