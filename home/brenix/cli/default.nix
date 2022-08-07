@@ -8,6 +8,7 @@
     ./git.nix
     ./gpg.nix
     ./go.nix
+    ./kubernetes.nix
     ./myrepos.nix
     ./nix-index.nix
     ./pfetch.nix
@@ -25,7 +26,6 @@
     calicoctl
     certigo
     comma
-    fluxcd
     fzy
     git-ignore
     glab
@@ -36,13 +36,7 @@
     goreleaser
     gotools
     grc
-    helmfile
     hugo
-    krew
-    kubectl
-    kubernetes-helm
-    kubesess
-    kustomize
     lefthook
     mr
     nodePackages.npm
@@ -54,7 +48,6 @@
     sd
     shfmt
     sops
-    stern
     unrar
     unzip
     vault-bin
