@@ -4,7 +4,6 @@
     fluxcd
     helmfile
     krew
-    kubesess
     kubectl
     kubernetes-helm
     kustomize
