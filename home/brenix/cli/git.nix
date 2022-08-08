@@ -101,6 +101,7 @@ in
       protocol = { version = 2; };
       pull = { rebase = true; };
       push = { default = "simple"; };
+      fetch = { pruneTags = true; };
     };
   };
 }
