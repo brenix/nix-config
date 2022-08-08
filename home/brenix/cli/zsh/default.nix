@@ -24,9 +24,7 @@
       cd = "z";
       cdu = "cd-gitroot";
       cp = "cp -riv";
-      define = "googler -n 2 define";
       grep = "grep --color=auto";
-      gl = "git pull --prune --tags";
       l = "ls -lhv";
       la = "ls -lAvh";
       ls = "grc ls -v --color=always --group-directories-first";
@@ -35,7 +33,6 @@
       mc = "mullvad connect";
       md = "mullvad disconnect";
       ms = "mullvad status";
-      q = "googler";
       rm = "rm -I";
       s = "doas systemctl";
       svim = "doas nvim";
