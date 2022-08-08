@@ -93,6 +93,7 @@
           bind=SUPER,v,exec,pavucontrol
           bind=SUPERCONTROL,s,exec,spotify
           bind=SUPERSHIFT,d,exec,discocss
+          bind=SUPER,e,exec,xdg-open 'slack://channel?team=T024JFTN4&id=GHMTDF91B'
 
           # Screenshots
           bind=,Print,exec,${grimblast} --notify copy area
