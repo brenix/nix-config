@@ -79,7 +79,7 @@
           windowrule=workspace 3,firefox
           windowrule=workspace 4,Spotify
           windowrule=float,title:.*Zoom.*
-          windowrule=float,title:.*\.zoom.*
+          windowrule=float,title:.*zoom.*
           windowrule=float,title:Chat
           windowrule=float,foot:floating
 
