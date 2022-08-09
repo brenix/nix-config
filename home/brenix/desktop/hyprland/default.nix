@@ -85,8 +85,8 @@
           windowrule=float,pavucontrol
 
           # Program bindings
-          bind=SUPER,Return,exec,footclient
-          bind=SUPERSHIFT,Return,exec,footclient -a foot:floating
+          bind=SUPER,Return,exec,foot
+          bind=SUPERSHIFT,Return,exec,foot -a foot:floating
           bind=SUPER,Space,exec,wofi -S run
           bind=SUPER,d,exec,firefox
           bind=SUPER,s,exec,spotify
