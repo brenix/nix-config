@@ -16,6 +16,7 @@
 
   home.packages = with pkgs; [
     authy
+    easyeffects
     imv
     mupdf
     pamixer

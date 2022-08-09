@@ -82,6 +82,7 @@
           windowrule=float,title:.*zoom.*
           windowrule=float,title:Chat
           windowrule=float,foot:floating
+          windowrule=float,pavucontrol
 
           # Program bindings
           bind=SUPER,Return,exec,footclient
