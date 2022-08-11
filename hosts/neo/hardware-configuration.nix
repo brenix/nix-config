@@ -126,4 +126,5 @@ in
     SUBSYSTEM=="drm", KERNEL=="card0", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
   '';
 
+  nixpkgs.hostPlatform.system = "x86_64-linux";
 }

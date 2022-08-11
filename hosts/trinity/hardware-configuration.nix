@@ -50,4 +50,5 @@
   hardware.enableAllFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
 
+  nixpkgs.hostPlatform.system = "x86_64-linux";
 }

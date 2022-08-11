@@ -21,7 +21,7 @@
     let
       # Bring some functions into scope (from builtins and other flakes)
       lib = import ./lib { inherit inputs; };
-      inherit (lib) mkSystem mkHome mkDeploys importAttrset forAllSystems;
+      inherit (lib) mkSystem mkHome mkDeploys forAllSystems;
     in
     rec {
       inherit lib;
@@ -61,29 +61,29 @@
       });
 
       # -- MODULES
-      nixosModules = importAttrset ./modules/nixos;
-      homeManagerModules = importAttrset ./modules/home-manager;
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
 
       # -- SYSTEM CONFIGURATIONS (accessible via 'nixos-rebuild')
       nixosConfigurations = {
         neo = mkSystem {
           hostname = "neo";
-          system = "x86_64-linux";
+          pkgs = legacyPackages."x86_64-linux";
           persistence = true;
         };
         trinity = mkSystem {
           hostname = "trinity";
-          system = "x86_64-linux";
+          pkgs = legacyPackages."x86_64-linux";
           persistence = true;
         };
         tank = mkSystem {
           hostname = "tank";
-          system = "x86_64-linux";
+          pkgs = legacyPackages."x86_64-linux";
           persistence = true;
         };
         dozer = mkSystem {
           hostname = "dozer";
-          system = "x86_64-linux";
+          pkgs = legacyPackages."x86_64-linux";
           persistence = true;
         };
       };
