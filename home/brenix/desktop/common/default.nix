@@ -1,7 +1,7 @@
 { lib, pkgs, persistence, ... }:
 {
   imports = [
-    #./alacritty.nix
+    ./alacritty.nix
     ./discord.nix
     ./firefox.nix
     ./fonts.nix
