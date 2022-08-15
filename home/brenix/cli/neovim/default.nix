@@ -50,7 +50,6 @@ in
     plugins = with pkgs.vimPlugins; [
       {
         plugin = vimThemeFromScheme { scheme = config.colorscheme; };
-        config = "colorscheme nix-${config.colorscheme.slug}";
       }
       (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
       /* nvim-treesitter */

@@ -33,7 +33,7 @@
         sops-nix = inputs.sops-nix.overlay;
         hyprland = inputs.hyprland.overlays.default;
         hyprwm-contrib = inputs.hyprwm-contrib.overlays.default;
-        neovim = inputs.neovim-nightly.overlay;
+        /* neovim = inputs.neovim-nightly.overlay; */
         peerix = inputs.peerix.overlay;
         deploy-rs = inputs.deploy-rs.overlay;
       };
