@@ -70,15 +70,6 @@
           sha256 = "PaR4TFnN8j7QqxpgIYP58ZCmztNoYGzHiAsJUO6zeHg=";
         };
       }
-      {
-        name = "zsh-fzy";
-        src = pkgs.fetchFromGitHub {
-          owner = "aperezdc";
-          repo = "zsh-fzy";
-          rev = "519327d9990fbea50f71649e378e650f594bb39b";
-          sha256 = "C5cflRJqi+T53izr2PBJsFW6X3CVgIlY+hGT3ODC9lI=";
-        };
-      }
     ];
 
     initExtraFirst = ''
@@ -107,14 +98,6 @@
     '';
 
     initExtra = ''
-      # -- KEYBINDINGS
-      # zsh-fzy
-      bindkey '\ec' fzy-cd-widget
-      bindkey '^T'  fzy-file-widget
-      bindkey '^R'  fzy-history-widget
-      bindkey '^P'  fzy-proc-widget
-      zstyle :fzy:file command rg --files
-
       # -- COMPLETION
       # Completion configuration
       zstyle ':completion::complete:*' gain-privileges 1
