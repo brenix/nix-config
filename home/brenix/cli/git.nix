@@ -22,10 +22,10 @@ in
       options = {
         color-only = true;
         light = if kind == "light" then true else false;
-        minus-style = if kind == "dark" then "black #9f7777" else null;
-        minus-emph-style = if kind == "dark" then "black #f7b9b9" else null;
-        plus-style = if kind == "dark" then "black #98ad9c" else null;
-        plus-emph-style = if kind == "dark" then "black #e1ffe6" else null;
+        minus-style = if kind == "dark" then "black #9f7777" else "";
+        minus-emph-style = if kind == "dark" then "black #f7b9b9" else "";
+        plus-style = if kind == "dark" then "black #98ad9c" else "";
+        plus-emph-style = if kind == "dark" then "black #e1ffe6" else "";
         syntax-theme = "none";
       };
     };
