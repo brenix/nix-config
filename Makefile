@@ -13,7 +13,7 @@ switch: nixos home
 
 ## Rebuild NixOS configuration
 nixos:
-	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --flake ".#$(HOSTNAME)"
+	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --recreate-lock-file --flake ".#$(HOSTNAME)"
 
 ## Rebuild home-manager configuration
 home:
