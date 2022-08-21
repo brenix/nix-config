@@ -163,7 +163,7 @@ in
       ''
         * {
           font-family: ${config.fontProfiles.regular.family}, Terminus, ${config.fontProfiles.monospace.family};
-          font-size: 16px;
+          font-size: 14px;
           padding: 0 8px;
         }
         .modules-right {
@@ -178,26 +178,29 @@ in
           background-color: #${colors.base00};
           border: 2px solid #${colors.base03};
           padding: 0;
-          /* border-radius: 10px; */
         }
         window#waybar.bottom {
           color: #${colors.base05};
           background-color: #${colors.base00};
           border: 2px solid #${colors.base03};
           opacity: 1.0;
-          /* border-radius: 10px; */
         }
         #workspaces button {
+          border-radius: 0px;
+          /*
           background-color: #${colors.base01};
           color: #${colors.base05};
+          */
         }
+        /*
         #workspaces button.hidden {
           background-color: #${colors.base00};
-          color: #${colors.base04};
+          color: #${colors.base05};
         }
+        */
         #workspaces button.focused,
         #workspaces button.active {
-          background-color: #${colors.base0A};
+          background-color: #${colors.base0D};
           color: #${colors.base00};
         }
       '';

@@ -1,5 +1,11 @@
 [
   {
+    name = "trees-fog";
+    ext = "jpeg";
+    id = "NXqRHjy";
+    sha256 = "0mz9zsz90xlgn9bixwidhid873hhmfbd65s9kwfx6b0ns0n53b8l";
+  }
+  {
     name = "null";
     ext = "png";
     id = "54NssAd";
@@ -12,28 +18,22 @@
     sha256 = "090mvi3bivb3msqjb1355i709xbw1cka19k77ygzblirr8zixirc";
   }
   {
-    name = "trees-fog";
-    ext = "jpeg";
-    id = "NXqRHjy";
-    sha256 = "0mz9zsz90xlgn9bixwidhid873hhmfbd65s9kwfx6b0ns0n53b8l";
-  }
-  {
     name = "island";
     ext = "jpeg";
     id = "z6FlcOo";
     sha256 = "1anw8qf0q1sws4rgibyqbvrwrc2mzwayli2nnnfpcgb46v4wxxbq";
   }
   {
-    name = "yosemite-1";
+    name = "forest-stairs";
     ext = "jpeg";
-    id = "lh3FzCS";
-    sha256 = "0wf9zmqagvhmblpsfln1kp7anx4xx0bwm48hv7xhflvf9dbz4ia5";
+    id = "ezv6oap";
+    sha256 = "0w7f6dc0svcvg69g5wfl0rl2zl80cb3jxvdgbnvfrisrff0m4px2";
   }
   {
-    name = "misc-1";
+    name = "fantasy";
     ext = "jpeg";
-    id = "U5hPLJB";
-    sha256 = "0msq06x2bp3yhrgpylgwxm204abdiahgyc4h6vfhssmdhgf81x40";
+    id = "18IsY4g";
+    sha256 = "1j6h4fy6ciwz9nla9qkykq4xxny1rg23z4f1iq1x6q4p8qls19y0";
   }
   {
     name = "tech-room";
@@ -48,16 +48,28 @@
     sha256 = "1xwg806aikivbll7clkhz5iq77jrxj1cvdk13ic8mxb4ajnpmwl6";
   }
   {
+    name = "yosemite-1";
+    ext = "jpeg";
+    id = "lh3FzCS";
+    sha256 = "0wf9zmqagvhmblpsfln1kp7anx4xx0bwm48hv7xhflvf9dbz4ia5";
+  }
+  {
+    name = "misc-1";
+    ext = "jpeg";
+    id = "U5hPLJB";
+    sha256 = "0msq06x2bp3yhrgpylgwxm204abdiahgyc4h6vfhssmdhgf81x40";
+  }
+  {
     name = "forest-dark";
     ext = "jpeg";
     id = "KS0KUGw";
     sha256 = "1ngihzkj3i4wn0fc43f1yyv8kcg4dqrhzjb0jrc3bbbs3j379lik";
   }
   {
-    name = "forest-stairs";
-    ext = "jpeg";
-    id = "ezv6oap";
-    sha256 = "0w7f6dc0svcvg69g5wfl0rl2zl80cb3jxvdgbnvfrisrff0m4px2";
+    name = "onedark-cubes";
+    ext = "png";
+    id = "oXGDAgN";
+    sha256 = "09mvhg3bac7v5khjhzq55v90m9i10ml0yi30qii559hf3jk33f9b";
   }
   {
     name = "mountain-1";

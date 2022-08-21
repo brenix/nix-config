@@ -96,8 +96,8 @@
           primaryDisplay = "DisplayPort-0";
           secondaryDisplay = "HDMI-A-0";
           dpi = 109;
-          colorscheme = "zenbox";
-          wallpaper = "island";
+          colorscheme = "tokyo-city-terminal-light";
+          wallpaper = "mountain-1";
           persistence = true;
           features = [
             "desktop/hyprland"

@@ -10,18 +10,18 @@ rec {
       size = 12;
     };
     theme = {
-      name = "${config.colorscheme.slug}";
-      package = gtkThemeFromScheme { scheme = config.colorscheme; };
+      name = "WhiteSur-light";
+      package = pkgs.whitesur-gtk-theme;
+      /* name = "${config.colorscheme.slug}"; */
+      /* package = gtkThemeFromScheme { scheme = config.colorscheme; }; */
     };
     iconTheme = {
-      /* name = "Nordzy"; */
-      /* package = pkgs.nordzy-icon-theme; */
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
+      name = "Nordzy";
+      package = pkgs.nordzy-icon-theme;
     };
     cursorTheme = {
-      name = "OpenZone Black";
-      package = pkgs.openzone-cursors;
+      name = "capitaine-cursors-white";
+      package = pkgs.capitaine-cursors;
       size = 16;
     };
   };

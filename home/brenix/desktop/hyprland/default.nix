@@ -85,7 +85,7 @@
           windowrule=float,pavucontrol
 
           # Program bindings
-          bind=SUPER,Return,exec,foot
+          bind=SUPER,Return,exec,foot -a foot:floating
           bind=SUPERSHIFT,Return,exec,foot -a foot:floating
           bind=SUPER,Space,exec,wofi -S run
           bind=SUPER,d,exec,firefox
