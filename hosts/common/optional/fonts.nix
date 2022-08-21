@@ -2,6 +2,7 @@
 {
   fonts.fonts = with pkgs; [
     corefonts
+    dejavu_fonts
     hack-font
     material-icons
     noto-fonts
