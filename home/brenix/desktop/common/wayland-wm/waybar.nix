@@ -163,7 +163,7 @@ in
       ''
         * {
           font-family: ${config.fontProfiles.regular.family}, Terminus, ${config.fontProfiles.monospace.family};
-          font-size: 14px;
+          font-size: 16px;
           padding: 0 8px;
         }
         .modules-right {

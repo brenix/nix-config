@@ -2,9 +2,6 @@
   # -- Wallpaper collection
   wallpapers = pkgs.callPackage ./wallpapers { };
 
-  # -- SFMono Font
-  sfmono-nerd-font-ligaturized = pkgs.callPackage ./sfmono-nerd-font-ligaturized { };
-
   # -- Packages with an upstream source
   calicoctl = pkgs.callPackage ./calicoctl { };
   awless = pkgs.callPackage ./awless { };

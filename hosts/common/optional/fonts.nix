@@ -5,7 +5,9 @@
     hack-font
     material-icons
     noto-fonts
+    noto-fonts-emoji
     roboto
+    roboto-mono
     terminus_font
     uw-ttyp0
     weather-icons
@@ -22,5 +24,11 @@
 
   fonts.fontconfig = {
     hinting.style = "hintfull";
+    defaultFonts = {
+      serif = [ "Roboto" ];
+      sansSerif = [ "Roboto" ];
+      emoji = [ "Noto Color Emoji" ];
+      monospace = [ "JetBrainsMono Nerd Font" "Roboto Mono" ];
+    };
   };
 }
