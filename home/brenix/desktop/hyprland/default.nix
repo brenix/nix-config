@@ -195,16 +195,16 @@
           bind=SUPER,9,workspace,9
           bind=SUPER,0,workspace,10
 
-          bind=SUPERSHIFT,exclam,movetoworkspacesilent,1
-          bind=SUPERSHIFT,at,movetoworkspacesilent,2
-          bind=SUPERSHIFT,numbersign,movetoworkspacesilent,3
-          bind=SUPERSHIFT,dollar,movetoworkspacesilent,4
-          bind=SUPERSHIFT,percent,movetoworkspacesilent,5
-          bind=SUPERSHIFT,asciicircum,movetoworkspacesilent,6
-          bind=SUPERSHIFT,ampersand,movetoworkspacesilent,7
-          bind=SUPERSHIFT,asterisk,movetoworkspacesilent,8
-          bind=SUPERSHIFT,parenleft,movetoworkspacesilent,9
-          bind=SUPERSHIFT,parenright,movetoworkspacesilent,10
+          #bind=SUPERSHIFT,exclam,movetoworkspacesilent,1
+          #bind=SUPERSHIFT,at,movetoworkspacesilent,2
+          #bind=SUPERSHIFT,numbersign,movetoworkspacesilent,3
+          #bind=SUPERSHIFT,dollar,movetoworkspacesilent,4
+          #bind=SUPERSHIFT,percent,movetoworkspacesilent,5
+          #bind=SUPERSHIFT,asciicircum,movetoworkspacesilent,6
+          #bind=SUPERSHIFT,ampersand,movetoworkspacesilent,7
+          #bind=SUPERSHIFT,asterisk,movetoworkspacesilent,8
+          #bind=SUPERSHIFT,parenleft,movetoworkspacesilent,9
+          #bind=SUPERSHIFT,parenright,movetoworkspacesilent,10
 
           blurls=waybar
         '';
