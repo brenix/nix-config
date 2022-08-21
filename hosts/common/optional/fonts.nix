@@ -24,7 +24,6 @@
   };
 
   fonts.fontconfig = {
-    hinting.style = "hintfull";
     defaultFonts = {
       serif = [ "Roboto" ];
       sansSerif = [ "Roboto" ];
