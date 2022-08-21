@@ -187,17 +187,15 @@ in
         }
         #workspaces button {
           border-radius: 0px;
-          /*
           background-color: #${colors.base01};
+          border-top: 2px solid #${colors.base03};
+          border-bottom: 2px solid #${colors.base03};
           color: #${colors.base05};
-          */
         }
-        /*
         #workspaces button.hidden {
           background-color: #${colors.base00};
           color: #${colors.base05};
         }
-        */
         #workspaces button.focused,
         #workspaces button.active {
           background-color: #${colors.base0D};

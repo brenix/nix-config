@@ -26,7 +26,7 @@
             gaps_in=15
             gaps_out=15
             border_size=2
-            col.active_border=0xff${colors.base0C}
+            col.active_border=0xff${colors.base03}
             col.inactive_border=0xff${colors.base02}
             cursor_inactive_timeout=4
           }
@@ -195,16 +195,10 @@
           bind=SUPER,9,workspace,9
           bind=SUPER,0,workspace,10
 
-          #bind=SUPERSHIFT,exclam,movetoworkspacesilent,1
-          #bind=SUPERSHIFT,at,movetoworkspacesilent,2
-          #bind=SUPERSHIFT,numbersign,movetoworkspacesilent,3
-          #bind=SUPERSHIFT,dollar,movetoworkspacesilent,4
-          #bind=SUPERSHIFT,percent,movetoworkspacesilent,5
-          #bind=SUPERSHIFT,asciicircum,movetoworkspacesilent,6
-          #bind=SUPERSHIFT,ampersand,movetoworkspacesilent,7
-          #bind=SUPERSHIFT,asterisk,movetoworkspacesilent,8
-          #bind=SUPERSHIFT,parenleft,movetoworkspacesilent,9
-          #bind=SUPERSHIFT,parenright,movetoworkspacesilent,10
+          bind=SUPERSHIFT,1,movetoworkspacesilent,1
+          bind=SUPERSHIFT,2,movetoworkspacesilent,2
+          bind=SUPERSHIFT,3,movetoworkspacesilent,3
+          bind=SUPERSHIFT,4,movetoworkspacesilent,4
 
           blurls=waybar
         '';
