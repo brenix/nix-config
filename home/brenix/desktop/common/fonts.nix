@@ -3,8 +3,8 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "JetBrainsMono Nerd Font";
-      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      family = "Hack Nerd Font Mono";
+      package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
     };
     regular = {
       family = "Roboto";
