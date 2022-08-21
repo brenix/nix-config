@@ -96,8 +96,8 @@
           primaryDisplay = "DisplayPort-0";
           secondaryDisplay = "HDMI-A-0";
           dpi = 109;
-          colorscheme = "tokyo-city-terminal-light";
-          wallpaper = "mountain-1";
+          colorscheme = "grayscale-dark";
+          wallpaper = "trees-fog";
           persistence = true;
           features = [
             "desktop/hyprland"
@@ -106,7 +106,7 @@
         "brenix@trinity" = mkHome {
           username = "brenix";
           hostname = "trinity";
-          colorscheme = "zenbox";
+          colorscheme = "grayscale-dark";
           persistence = true;
         };
         "brenix@tank" = mkHome {
@@ -114,9 +114,9 @@
           hostname = "tank";
           primaryDisplay = "Virtual-1";
           dpi = 220;
-          colorscheme = "zenbox";
+          colorscheme = "grayscale-dark";
           persistence = true;
-          wallpaper = "island";
+          wallpaper = "trees-fog";
           features = [
             "desktop/bspwm"
           ];
@@ -125,9 +125,9 @@
           username = "brenix";
           hostname = "dozer";
           primaryDisplay = "Virtual-1";
-          colorscheme = "zenbox";
+          colorscheme = "grayscale-dark";
           persistence = true;
-          wallpaper = "island";
+          wallpaper = "trees-fog";
           features = [
             "desktop/bspwm"
           ];
