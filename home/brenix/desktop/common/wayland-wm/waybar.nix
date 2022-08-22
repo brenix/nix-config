@@ -6,7 +6,7 @@ let
   inherit (config.home.preferredApps) menu terminal;
 
   # Dependencies
-  jq = "${pkgs.jq}/bin/jq";
+  jq = "${pkgs.gojq}/bin/gojq";
   systemctl = "${pkgs.systemd}/bin/systemctl";
   journalctl = "${pkgs.systemd}/bin/journalctl";
   playerctl = "${pkgs.playerctl}/bin/playerctl";

@@ -25,6 +25,7 @@
       cdu = "cd-gitroot";
       cp = "cp -riv";
       grep = "grep --color=auto";
+      jq = "gojq";
       l = "ls -lhv";
       la = "ls -lAvh";
       ls = "grc ls -v --color=always --group-directories-first";
