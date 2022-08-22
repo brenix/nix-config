@@ -12,7 +12,7 @@ in
         font = "${config.fontProfiles.monospace.family}:pixelsize=14";
         font-bold = "${config.fontProfiles.monospace.family}:pixelsize=14";
         dpi-aware = "auto";
-        line-height = "14px";
+        line-height = "15px";
         vertical-letter-offset = "-2";
       };
 
