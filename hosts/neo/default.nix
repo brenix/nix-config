@@ -34,6 +34,8 @@
 
   services.ratbagd.enable = true;
 
+  services.irqbalance.enable = true;
+
   /* services.xserver = { */
   /*   dpi = 109; */
   /*   displayManager = { */

@@ -29,5 +29,7 @@
     ];
   };
 
+  services.irqbalance.enable = true;
+
   system.stateVersion = "22.05";
 }
