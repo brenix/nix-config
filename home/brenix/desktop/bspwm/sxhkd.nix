@@ -131,10 +131,10 @@
       "super + v" = "pavucontrol";
 
       # volume up/down
-      "{XF86AudioRaiseVolume, XF86AudioLowerVolume}" = "pamixer -{i,d} 2";
+      "{XF86AudioRaiseVolume, XF86AudioLowerVolume}" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%{+,-}";
 
       # mute
-      "XF86AudioMute" = "pamixer -t";
+      "XF86AudioMute" = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
       # next
       "XF86AudioNext" = "playerctl next";

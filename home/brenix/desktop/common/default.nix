@@ -19,7 +19,6 @@
     easyeffects
     imv
     mupdf
-    pamixer
     pavucontrol
     piper
     slack

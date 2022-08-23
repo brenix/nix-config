@@ -107,9 +107,9 @@
           bind=,XF86AudioPrev,exec,playerctl previous
           bind=,XF86AudioPlay,exec,playerctl play-pause
           bind=,XF86AudioStop,exec,playerctl stop
-          bind=,XF86AudioRaiseVolume,exec,pamixer -i 5
-          bind=,XF86AudioLowerVolume,exec,pamixer -d 5
-          bind=,XF86AudioMute,exec,pamixer -t
+          bind=,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+          bind=,XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+          bind=,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
           # Window manager controls
           bind=SUPER,w,killactive

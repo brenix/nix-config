@@ -32,6 +32,7 @@
         ".local/bin"
         ".local/share/direnv"
         ".local/share/helm"
+        ".local/state"
         "Downloads"
         "nix-config"
         "work"

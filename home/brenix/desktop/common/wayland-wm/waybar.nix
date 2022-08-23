@@ -95,7 +95,7 @@ in
             portable = "";
             default = [ "" "" "" ];
           };
-          on-click = "pamixer -t";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
 
         "custom/weather" = {
