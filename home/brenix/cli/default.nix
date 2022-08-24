@@ -30,6 +30,7 @@
     fluxcd
     git-ignore
     glab
+    go-task
     go-tools
     gojq
     golangci-lint
