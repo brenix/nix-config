@@ -31,6 +31,7 @@
     git-ignore
     glab
     go-tools
+    gojq
     golangci-lint
     gomplate
     gopls
@@ -61,7 +62,6 @@
 
   programs.jq = {
     enable = true;
-    package = pkgs.gojq;
   };
 
 
