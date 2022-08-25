@@ -27,6 +27,7 @@
         ".awsvault"
         ".config/helm"
         ".config/infractl"
+        ".config/sops"
         ".krew"
         ".kube"
         ".local/bin"
