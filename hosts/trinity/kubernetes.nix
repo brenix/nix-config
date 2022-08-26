@@ -33,7 +33,7 @@
 
     # CoreDNS
     addons.dns = {
-      enabled = true;
+      enable = true;
       replicas = 1;
       corefile = ''
         .:53 {
