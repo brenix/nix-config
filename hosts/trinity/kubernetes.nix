@@ -30,6 +30,36 @@
     # Kubelet
     kubelet.extraOpts =
       "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false";
+
+    # CoreDNS
+    addons.dns = {
+      enabled = true;
+      replicas = 1;
+      corefile = ''
+        .:53 {
+            errors
+            health {
+                lameduck 5s
+            }
+            ready
+            kubernetes cluster.local in-addr.arpa {
+                pods insecure
+                fallthrough in-addr.arpa
+                ttl 30
+            }
+            prometheus 0.0.0.0:9153
+            forward . 192.168.1.1:53
+            cache {
+                success 9984 30
+                denial 9984 5
+                prefetch 3 60s 15%
+            }
+            loop
+            reload
+            loadbalance
+        }
+      '';
+    };
   };
 
   # Create k8s@home user/group
