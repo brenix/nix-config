@@ -62,16 +62,6 @@
     };
   };
 
-  # Create k8s@home user/group
-  users.users.kah = {
-    uid = 568;
-    group = "kah";
-    isNormalUser = true;
-    createHome = false;
-  };
-
-  users.groups.kah = { gid = 568; };
-
   environment.persistence = lib.mkIf persistence {
     "/persist".directories = [
       "/var/openebs"
