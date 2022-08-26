@@ -22,7 +22,7 @@
       "--permit-port-sharing=true --permit-address-sharing=true";
 
     # Disable addon manager
-    addonManager.enable = false;
+    addonManager.enable = true;
 
     # Use cloudflare certmgr to manage all certs
     easyCerts = true;
@@ -36,9 +36,9 @@
       enable = true;
       replicas = 1;
       corefile = ''
-        .:53 {
+        .:10053 {
             errors
-            health {
+            health :10054 {
                 lameduck 5s
             }
             ready
