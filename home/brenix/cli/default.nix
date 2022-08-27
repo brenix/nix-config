@@ -40,6 +40,7 @@
     gotools
     grc
     hugo
+    htop
     lefthook
     mr
     nodePackages.npm
