@@ -42,7 +42,7 @@ dnc() {
   local note="${NOTEDIR}/$category/daily/$year/$month/$day.md"
 
   case "$OSTYPE" in
-    linux*) bat --color=never --paging=never "${note}" | xclip ;;
+    linux*) bat --color=never --paging=never "${note}" | (test -z WAYLAND_DISPLAY && xclip || wl-copy) ;;
     darwin*) bat --color=never --paging=never "${note}" | pbcopy ;;
     *) echo "Unknown OS" ;;
   esac
