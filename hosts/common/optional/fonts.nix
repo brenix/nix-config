@@ -25,7 +25,7 @@
   };
 
   fonts.fontconfig = {
-    hinting.style = "hintnone";
+    /* hinting.style = "hintnone"; */
     defaultFonts = {
       serif = [ "Roboto" ];
       sansSerif = [ "Roboto" ];

@@ -10,7 +10,7 @@
 
     settings = {
       global = {
-        font = "${config.fontProfiles.regular.family} 10";
+        font = "${config.fontProfiles.regular.family} 12";
         markup = "full";
         format = ''
           <b>%s</b>

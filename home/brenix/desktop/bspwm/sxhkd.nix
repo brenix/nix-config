@@ -86,11 +86,13 @@
       "super + m" = "alacritty -e zsh -c 'ssh macbook'";
 
       # launcher
-      "{super,alt} + space" =
-        "rofi -show combi -kb-row-select 'Tab' -kb-row-tab ''";
+      "{super,alt} + space" = "rofi -show combi";
 
       # calculator
       "F1" = "rofi -show calc -modi calc --no-show-match --no-sort -lines 2";
+
+      # emoji
+      "F2" = "rofi -show emoji -modi emoji";
 
       # files
       "super + shift + p" = "pcmanfm";
