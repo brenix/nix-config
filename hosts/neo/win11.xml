@@ -162,7 +162,7 @@
       <source dev='/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse'/>
     </input>
     <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-04d9_USB_Keyboard-event-kbd' grab='all' repeat='on'/>
+      <source dev='/dev/input/by-id/usb-Topre_REALFORCE_87_US-event-kbd' grab='all' repeat='on'/>
     </input>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
