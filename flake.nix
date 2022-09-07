@@ -9,11 +9,11 @@
     deploy-rs = { url = "github:serokell/deploy-rs"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "github:hyprwm/hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
-    impermanence = { url = "github:misterio77/impermanence"; }; # TODO: change to upstream after https://github.com/nix-community/impermanence/pull/99 is merged
+    impermanence = { url = "github:nix-community/impermanence"; };
     neovim-nightly = { url = "github:nix-community/neovim-nightly-overlay"; };
     nix-colors = { url = "github:misterio77/nix-colors"; };
     nur = { url = "github:nix-community/NUR"; };
-    peerix = { url = "github:misterio77/peerix"; inputs.nixpkgs.follows = "nixpkgs"; }; # TODO change to upstream after #13 is merged
+    peerix = { url = "github:cid-chan/peerix"; inputs.nixpkgs.follows = "nixpkgs"; };
     sops-nix = { url = "github:mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
