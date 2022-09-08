@@ -12,6 +12,7 @@
       global = {
         font = "${config.fontProfiles.regular.family} 12";
         markup = "full";
+        follow = "keyboard";
         format = ''
           <b>%s</b>
           %b'';
