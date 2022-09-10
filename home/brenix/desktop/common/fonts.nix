@@ -12,8 +12,6 @@
           "FantasqueSansMono"
         ];
       };
-      /* family = "BlexMono Nerd Font"; */
-      /* package = pkgs.nerdfonts.override { fonts = [ "IBMPlexMono" ]; }; */
     };
     regular = {
       family = "Roboto";

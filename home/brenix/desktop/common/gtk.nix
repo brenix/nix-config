@@ -10,8 +10,8 @@ rec {
       size = 10;
     };
     theme = {
-      name = "WhiteSur-light";
-      package = pkgs.whitesur-gtk-theme;
+      name = "Arc";
+      package = pkgs.arc-theme;
       /* name = "${config.colorscheme.slug}"; */
       /* package = gtkThemeFromScheme { scheme = config.colorscheme; }; */
     };
