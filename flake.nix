@@ -97,7 +97,7 @@
           secondaryDisplay = "HDMI-A-0";
           dpi = 109;
           colorscheme = "nord-dark";
-          wallpaper = "space-3";
+          wallpaper = "mountain-1";
           persistence = true;
           features = [
             "desktop/bspwm"
@@ -106,7 +106,7 @@
         "brenix@trinity" = mkHome {
           username = "brenix";
           hostname = "trinity";
-          colorscheme = "nord";
+          colorscheme = "nord-dark";
           persistence = true;
         };
         "brenix@tank" = mkHome {
@@ -114,9 +114,9 @@
           hostname = "tank";
           primaryDisplay = "Virtual-1";
           dpi = 220;
-          colorscheme = "nord";
+          colorscheme = "nord-dark";
           persistence = true;
-          wallpaper = "mountain-jaws";
+          wallpaper = "mountain-1";
           features = [
             "desktop/bspwm"
           ];
@@ -125,9 +125,9 @@
           username = "brenix";
           hostname = "dozer";
           primaryDisplay = "Virtual-1";
-          colorscheme = "nord";
+          colorscheme = "nord-dark";
           persistence = true;
-          wallpaper = "mountain-jaws";
+          wallpaper = "mountain-1";
           features = [
             "desktop/bspwm"
           ];
