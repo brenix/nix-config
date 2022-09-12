@@ -7,9 +7,9 @@
     fade = false;
     backend = "glx";
     opacityRules = [
-      "95:class_i ?= 'alacritty'"
-      "95:class_i ?= 'floating'"
-      "95:class_i ?= 'polybar'"
+      "90:class_i ?= 'alacritty'"
+      "90:class_i ?= 'floating'"
+      "90:class_i ?= 'polybar'"
     ];
     settings = {
       blur =
