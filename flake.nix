@@ -96,7 +96,7 @@
           primaryDisplay = "DisplayPort-0";
           secondaryDisplay = "HDMI-A-0";
           dpi = 109;
-          colorscheme = "simple";
+          colorscheme = "nord-dark";
           wallpaper = "mountain-1";
           persistence = true;
           features = [

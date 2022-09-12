@@ -1,6 +1,7 @@
 scheme: "Nord Dark"
 slug: "nord-dark"
-base00: "161821"
+# base00: "161821"
+base00: "131313"
 base01: "2E3440"
 base02: "3B4252"
 base03: "4C566A"
