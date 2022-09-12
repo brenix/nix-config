@@ -26,6 +26,7 @@ images=$(echo $result | jq -r '.data.images[] | "\(.description)|\(.type)|\(.id)
 echo "["
 while read -r image; do
   fetch_image $image &
+  sleep 0.5
 done <<<"$images"
 wait
 echo "]"
