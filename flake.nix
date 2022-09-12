@@ -96,8 +96,8 @@
           primaryDisplay = "DisplayPort-0";
           secondaryDisplay = "HDMI-A-0";
           dpi = 109;
-          colorscheme = "nord";
-          wallpaper = "mountain-jaws";
+          colorscheme = "simple";
+          wallpaper = "mountain-1";
           persistence = true;
           features = [
             "desktop/bspwm"
