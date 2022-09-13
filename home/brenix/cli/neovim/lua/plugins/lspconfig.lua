@@ -178,6 +178,8 @@ local sources = {
 	b.diagnostics.markdownlint,
 	-- Lua
 	b.formatting.stylua,
+	-- JSON5
+	b.formatting.fixjson,
 }
 
 null_ls.setup({

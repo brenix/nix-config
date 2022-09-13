@@ -112,6 +112,7 @@ in
       gopls
       nodePackages.bash-language-server
       nodePackages.dockerfile-language-server-nodejs
+      nodePackages.fixjson
       nodePackages.markdownlint-cli
       nodePackages.pyright
       nodePackages.vscode-css-languageserver-bin
