@@ -54,6 +54,7 @@ in
       "amd_iommu=on"
       "boot.shell_on_fail"
       "default_hugepagesz=1G"
+      "fbcon=map:0"
       "hugepagesz=1G"
       /* "hugepages=16" */
       "intremap=no_x2apic_optout"
