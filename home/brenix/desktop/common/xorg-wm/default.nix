@@ -3,7 +3,7 @@
   imports = [
     ./dunst.nix
     ./flameshot.nix
-    /* ./picom.nix */
+    ./picom.nix
     ./polybar
     ./rofi.nix
   ];

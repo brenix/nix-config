@@ -1,0 +1,18 @@
+scheme: "example"
+slug: "example"
+base00: "131313" # black
+base01: "2E3440" # darker grey
+base02: "3B4252" # dark grey
+base03: "4C566A" # grey
+base04: "D8DEE9" # light grey
+base05: "E5E9F0" # bright grey
+base06: "ECEFF4" # mostly white
+base07: "8FBCBB" # white
+base08: "BF616A" # red
+base09: "D08770" # orange
+base0A: "EBCB8B" # yellow
+base0B: "A3BE8C" # green
+base0C: "88C0D0" # cyan
+base0D: "81A1C1" # blue
+base0E: "B48EAD" # magenta
+base0F: "5E81AC" # brown
