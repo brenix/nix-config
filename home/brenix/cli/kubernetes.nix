@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     fluxcd
+    grype
     helm-docs
     helmfile
     krew
