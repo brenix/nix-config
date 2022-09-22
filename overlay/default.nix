@@ -25,10 +25,5 @@
   # TODO: Remove once https://github.com/NixOS/nixpkgs/pull/187758 merged upstream
   piper = prev.callPackage ./piper { };
 
-  # Temporary fix for https://github.com/emersion/xdg-desktop-portal-wlr/issues/216
-  xdg-desktop-portal-wlr = prev.xdg-desktop-portal-wlr.overrideAttrs (oldAttrs: rec {
-    patches = (oldAttrs.patches or [ ]) ++ [ ./fix-xdpw-hyprland-crash.patch ];
-  });
-
   # Add our custom packages into the overlay
 } // import ../pkgs { pkgs = prev; }
