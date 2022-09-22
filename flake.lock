@@ -139,15 +139,15 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1663835995,
-        "narHash": "sha256-XNHQ+mdHbjNR1Oit00SFAEcrAZoCS08E7uAFcVMtwhM=",
-        "owner": "nix-community",
+        "lastModified": 1663882991,
+        "narHash": "sha256-Rg13q6y0obPLFinUN4t4vQrVbEn3e+ilRSfv5+k3Q8c=",
+        "owner": "ISnortPennies",
         "repo": "home-manager",
-        "rev": "bd83eab6220226085c82e637931a7ae3863d9893",
+        "rev": "0469bbee77a9ca91c26bf5a399003ee82731868f",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "ISnortPennies",
         "repo": "home-manager",
         "type": "github"
       }

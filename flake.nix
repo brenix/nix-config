@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     hardware = { url = "github:nixos/nixos-hardware"; };
-    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+    home-manager = { url = "github:ISnortPennies/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; }; # TODO: Revert to nix-community/home-manager after https://github.com/nix-community/home-manager/pull/3255 is merged
 
     deploy-rs = { url = "github:serokell/deploy-rs"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "github:hyprwm/hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };

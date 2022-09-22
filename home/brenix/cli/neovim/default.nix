@@ -46,6 +46,7 @@ in
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    luaInit = true;
 
     plugins = with pkgs.vimPlugins; [
       {
@@ -136,63 +137,61 @@ in
     ];
 
     extraConfig = ''
-      lua << EOF
-        -- DISABLE BUILTINS
-        local disabled_built_ins = {
-          "2html_plugin",
-          "getscript",
-          "getscriptPlugin",
-          "gzip",
-          "logipat",
-          "netrw",
-          "netrwPlugin",
-          "netrwSettings",
-          "netrwFileHandlers",
-          "matchit",
-          "tar",
-          "tarPlugin",
-          "rrhelper",
-          "spellfile_plugin",
-          "vimball",
-          "vimballPlugin",
-          "zip",
-          "zipPlugin",
-        }
-        for _, plugin in pairs(disabled_built_ins) do
-          vim.g["loaded_" .. plugin] = 1
+      -- DISABLE BUILTINS
+      local disabled_built_ins = {
+        "2html_plugin",
+        "getscript",
+        "getscriptPlugin",
+        "gzip",
+        "logipat",
+        "netrw",
+        "netrwPlugin",
+        "netrwSettings",
+        "netrwFileHandlers",
+        "matchit",
+        "tar",
+        "tarPlugin",
+        "rrhelper",
+        "spellfile_plugin",
+        "vimball",
+        "vimballPlugin",
+        "zip",
+        "zipPlugin",
+      }
+      for _, plugin in pairs(disabled_built_ins) do
+        vim.g["loaded_" .. plugin] = 1
+      end
+
+      -- MODULES
+      local modules = {
+        "core.utils",
+        "core.options",
+        "core.mappings",
+        "plugins"
+      }
+
+      for _, module in ipairs(modules) do
+        local ok, err = pcall(require, module)
+        if not ok then
+          error("Error loading " .. module .. "\n\n" .. err)
         end
+      end
 
-        -- MODULES
-        local modules = {
-          "core.utils",
-          "core.options",
-          "core.mappings",
-          "plugins"
-        }
+      -- COLORSCHEME
+      vim.g.nord_contrast = false
+      vim.g.nord_borders = true
+      vim.g.nord_disable_background = true
+      vim.g.nord_italic = true
+      vim.g.nord_bold = false
+      vim.g.gruvbox_material_background = "hard"
+      vim.cmd[[colorscheme nord]]
+      --vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
 
-        for _, module in ipairs(modules) do
-          local ok, err = pcall(require, module)
-          if not ok then
-            error("Error loading " .. module .. "\n\n" .. err)
-          end
-        end
-
-        -- COLORSCHEME
-        vim.g.nord_contrast = false
-        vim.g.nord_borders = true
-        vim.g.nord_disable_background = true
-        vim.g.nord_italic = true
-        vim.g.nord_bold = false
-        vim.g.gruvbox_material_background = "hard"
-        vim.cmd[[colorscheme nord]]
-        --vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
-      EOF
-
-      hi LineNr guifg=#${config.colorscheme.colors.base02}
-      hi NvimTreeNormal guibg=#${config.colorscheme.colors.base00}
-      hi NvimTreeFolderIcon guifg=#${config.colorscheme.colors.base0A}
-      hi NvimTreeFolderName guifg=#${config.colorscheme.colors.base05}
-      hi NvimTreeOpenedFolderName guifg=#${config.colorscheme.colors.base05}
+      vim.cmd[[hi LineNr guifg=#${config.colorscheme.colors.base02}]]
+      vim.cmd[[hi NvimTreeNormal guibg=#${config.colorscheme.colors.base00}]]
+      vim.cmd[[hi NvimTreeFolderIcon guifg=#${config.colorscheme.colors.base0A}]]
+      vim.cmd[[hi NvimTreeFolderName guifg=#${config.colorscheme.colors.base05}]]
+      vim.cmd[[hi NvimTreeOpenedFolderName guifg=#${config.colorscheme.colors.base05}]]
     '';
 
   };
