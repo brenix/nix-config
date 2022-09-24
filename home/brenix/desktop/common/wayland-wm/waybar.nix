@@ -82,7 +82,7 @@ in
         };
 
         memory = {
-          format = "  {}%";
+          format = "  {used:0.1f}G";
           interval = 5;
         };
 

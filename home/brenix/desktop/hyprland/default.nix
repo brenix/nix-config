@@ -22,7 +22,6 @@
         '') +
         ''
           general {
-            main_mod=SUPER
             gaps_in=15
             gaps_out=15
             border_size=2
@@ -67,6 +66,7 @@
             repeat_rate=50
             repeat_delay=195
             force_no_accel=1
+            sensitivity=0
           }
 
           # Startup
@@ -112,12 +112,12 @@
           bind=,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
           # Window manager controls
-          bind=SUPER,w,killactive
-          bind=SUPERSHIFT,q,exit
+          bind=SUPER,w,killactive,
+          bind=SUPERSHIFT,q,exit,
           bind=SUPERSHIFT,r,exec,hyprctl reload
 
-          bind=SUPER,r,togglesplit
-          bind=SUPER,f,togglefloating
+          bind=SUPER,r,togglesplit,
+          bind=SUPER,f,togglefloating,
           bind=SUPERSHIFT,f,fullscreen,0
 
           bind=SUPER,minus,splitratio,-0.25
@@ -126,7 +126,7 @@
           bind=SUPER,equal,splitratio,0.25
           bind=SUPERSHIFT,plus,splitratio,0.3333333
 
-          bind=SUPER,g,togglegroup
+          bind=SUPER,g,togglegroup,
           bind=SUPER,apostrophe,changegroupactive,f
           bind=SUPERSHIFT,quotedbl,changegroupactive,b
 
@@ -181,7 +181,7 @@
           bind=SUPERALT,k,movecurrentworkspacetomonitor,u
           bind=SUPERALT,j,movecurrentworkspacetomonitor,d
 
-          bind=SUPER,u,togglespecialworkspace
+          bind=SUPER,u,togglespecialworkspace,
           bind=SUPERSHIFT,u,movetoworkspace,special
 
           bind=SUPER,1,workspace,1
