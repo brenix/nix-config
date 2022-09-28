@@ -100,7 +100,7 @@
           wallpaper = "mountain-jaws";
           persistence = true;
           features = [
-            "desktop/hyprland"
+            "desktop/bspwm"
           ];
         };
         "brenix@trinity" = mkHome {

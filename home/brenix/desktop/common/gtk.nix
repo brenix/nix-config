@@ -7,7 +7,7 @@ rec {
     enable = true;
     font = {
       name = config.fontProfiles.regular.family;
-      size = 12;
+      size = 11;
     };
     theme = {
       name = "Arc";
