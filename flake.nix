@@ -96,8 +96,8 @@
           primaryDisplay = "DisplayPort-0";
           secondaryDisplay = "HDMI-A-0";
           dpi = 109;
-          colorscheme = "nord";
-          wallpaper = "mountain-jaws";
+          colorscheme = "zenbox";
+          wallpaper = "island";
           persistence = true;
           features = [
             "desktop/bspwm"
