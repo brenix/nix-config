@@ -28,6 +28,7 @@ in
     settings = {
       primary = {
         mode = "dock";
+        layer = "top";
         height = 24;
         margin = "6";
         position = "top";
