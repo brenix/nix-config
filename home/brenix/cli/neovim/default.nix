@@ -15,28 +15,6 @@ let
     };
   # always installs latest version
   plugin = pluginGit "HEAD";
-
-  # comment-box
-  comment-box-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "comment-box-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "LudoPinelli";
-      repo = "comment-box.nvim";
-      rev = "117d55108edf3758da52cf1117584b974f5e76da";
-      sha256 = "sha256-E+wQUtLJwqN42XYLu2OzAEKMMUyRKjcZHwgOOEG0XDM=";
-    };
-  };
-
-  lsp-format-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "lsp-format-nvim";
-    dontBuild = true;
-    src = pkgs.fetchFromGitHub {
-      owner = "lukas-reineke";
-      repo = "lsp-format.nvim";
-      rev = "a5a54eeb36d7001b4a6f0874dde6afd167319ac9";
-      sha256 = "sha256-xFA+9JO3Rnj/CAYXb+oOnbslH3jgEapHA67I6dMFRFI=";
-    };
-  };
 in
 {
   home.sessionVariables.EDITOR = "nvim";
@@ -52,11 +30,9 @@ in
         plugin = vimThemeFromScheme { scheme = config.colorscheme; };
       }
       (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
-      /* nvim-treesitter */
       Navigator-nvim
       better-escape-nvim
       bufferline-nvim
-      /* circles-nvim */
       cmp-buffer
       cmp-emoji
       cmp-nvim-lsp
@@ -64,7 +40,6 @@ in
       cmp-path
       cmp-treesitter
       cmp_luasnip
-      comment-box-nvim
       git-blame-nvim
       gitsigns-nvim
       gruvbox-material

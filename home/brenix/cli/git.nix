@@ -97,6 +97,7 @@ in
       };
       http = { postBuffer = 524288000; };
       init = { defaultBranch = "main"; };
+      feature = { manyFiles = "true"; };
       log = { date = "short"; };
       protocol = { version = 2; };
       pull = { rebase = true; };
