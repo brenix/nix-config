@@ -35,7 +35,7 @@
     gnumake
     lsof
     nmap
-    ugrep
+    ripgrep
     tcpdump
   ];
 

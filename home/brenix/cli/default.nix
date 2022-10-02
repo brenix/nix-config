@@ -12,7 +12,6 @@
     ./kubernetes.nix
     ./myrepos.nix
     ./nix-index.nix
-    ./pfetch.nix
     ./ssh.nix
     ./starship.nix
     ./terraform.nix
