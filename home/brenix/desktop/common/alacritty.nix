@@ -24,7 +24,6 @@ in
       };
       font.size = if dpi < 150 then 11.5 else 18;
       font.offset.y = -3;
-      font.use_thin_strokes = false;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
         mouse = "Right";
@@ -45,11 +44,13 @@ in
           cursor.cursor = "#${colors.base04}";
           selection.text = "CellForeground";
           selection.background = "#${colors.base03}";
+          footer_bar = {
+            background = "#${colors.base03}";
+            foreground = "#${colors.base04}";
+          };
           search = {
             matches.foreground = "CellBackground";
             matches.background = "#${colors.base0C}";
-            bar.background = "#${colors.base03}";
-            bar.foreground = "#${colors.base04}";
           };
           normal = {
             black = "#${colors.base02}";
