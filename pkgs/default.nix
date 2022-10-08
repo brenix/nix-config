@@ -6,6 +6,7 @@
   calicoctl = pkgs.callPackage ./calicoctl { };
   awless = pkgs.callPackage ./awless { };
   fragment-mono = pkgs.callPackage ./fragment-mono { };
+  tfenv = pkgs.callPackage ./tfenv { };
 
   # -- Hashicorp packages
   packer = pkgs.callPackage (import ./hashicorp/generic.nix) {

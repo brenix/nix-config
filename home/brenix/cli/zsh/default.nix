@@ -132,8 +132,6 @@
       # -- SOURCE ADDITIONAL FILES
       # Load grc
       source ${pkgs.grc}/etc/grc.zsh
-      # Load asdf
-      source ${pkgs.asdf-vm}/etc/profile.d/asdf-prepare.sh
       # Source local files
       for f in $HOME/.zsh.d/*.zsh $HOME/.zsh.local.d/*.zsh; do
         source $f

@@ -22,7 +22,6 @@
     homeDirectory = "/home/${username}";
     persistence = lib.mkIf persistence {
       "/persist/home/brenix".directories = [
-        ".asdf"
         ".aws"
         ".awsvault"
         ".config/helm"
@@ -30,6 +29,7 @@
         ".config/sops"
         ".krew"
         ".kube"
+        ".local/tfenv"
         ".local/bin"
         ".local/share/direnv"
         ".local/share/helm"

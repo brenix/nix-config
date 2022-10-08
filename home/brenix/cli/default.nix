@@ -51,6 +51,7 @@
     sd
     shfmt
     sops
+    tfenv
     unrar
     unzip
     vault-bin

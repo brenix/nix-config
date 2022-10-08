@@ -1,6 +1,6 @@
 { lib, pkgs, persistence, ... }:
 {
-  home.packages = with pkgs; [ terraform terraform-docs ];
+  home.packages = with pkgs; [ terraform-docs ];
 
   home.file.".terraformrc".text = ''
     plugin_cache_dir = "$HOME/.cache/terraform-plugin-cache"
