@@ -17,8 +17,10 @@
       /* }; */
     };
     regular = {
-      family = "Roboto";
-      package = pkgs.roboto;
+      /* family = "Roboto"; */
+      /* package = pkgs.roboto; */
+      family = "M PLUS 2";
+      package = pkgs.mplus-outline-fonts.githubRelease;
     };
   };
 }

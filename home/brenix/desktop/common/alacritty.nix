@@ -11,15 +11,15 @@ in
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal = {
-        family = config.fontProfiles.monospace.family;
+        inherit (config.fontProfiles.monospace.family);
         style = "Regular";
       };
       font.bold = {
-        family = config.fontProfiles.monospace.family;
+        inherit (config.fontProfiles.monospace.family);
         style = "Regular";
       };
       font.italic = {
-        family = config.fontProfiles.monospace.family;
+        inherit (config.fontProfiles.monospace.family);
         style = "Italic";
       };
       font.size = if dpi < 150 then 10.5 else 18;
