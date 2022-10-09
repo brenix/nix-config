@@ -19,7 +19,7 @@
     regular = {
       /* family = "Roboto"; */
       /* package = pkgs.roboto; */
-      family = "M PLUS 2";
+      family = "M PLUS 1";
       package = pkgs.mplus-outline-fonts.githubRelease;
     };
   };
