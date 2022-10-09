@@ -22,7 +22,7 @@ in
         inherit (config.fontProfiles.monospace.family);
         style = "Italic";
       };
-      font.size = if dpi < 150 then 10.5 else 18;
+      font.size = if dpi < 150 then 10 else 18;
       font.offset.y = -4;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
