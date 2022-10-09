@@ -22,6 +22,7 @@
         '') +
         ''
           general {
+            main_mod=SUPER
             gaps_in=15
             gaps_out=15
             border_size=2
@@ -36,8 +37,10 @@
             fullscreen_opacity=1.0
             rounding=3
             blur=false
-            blur_size=2
-            blur_passes=5
+            blur_size=6
+            blur_passes=3
+            blur_new_optimizations=true
+            blur_ignore_opacity=true
             drop_shadow=true
             shadow_range=12
             shadow_offset=3 3
@@ -58,6 +61,10 @@
             preserve_split=true
             col.group_border_active=0xff${colors.base0B}
             col.group_border=0xff${colors.base04}
+          }
+
+          misc {
+            no_vfr=false
           }
 
           input {
@@ -84,6 +91,10 @@
           windowrule=float,foot:floating
           windowrule=float,pavucontrol
 
+          # Mouse binding
+          bindm=SUPER,mouse:272,movewindow
+          bindm=SUPER,mouse:273,resizewindow
+
           # Program bindings
           bind=SUPER,Return,exec,foot
           bind=SUPERSHIFT,Return,exec,foot -a foot:floating
@@ -101,6 +112,7 @@
           bind=SHIFT,Print,exec,${grimblast} --notify copy active
           bind=CONTROL,Print,exec,${grimblast} --notify copy screen
           bind=SUPER,Print,exec,${grimblast} --notify copy window
+          bind=ALT,Print,exec,${grimblast} --notify copy output
 
           # Audio
           bind=,XF86AudioNext,exec,playerctl next
@@ -112,23 +124,22 @@
           bind=,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
           # Window manager controls
-          bind=SUPER,w,killactive,
-          bind=SUPERSHIFT,q,exit,
-          bind=SUPERSHIFT,r,exec,hyprctl reload
+          bind=SUPERSHIFT,q,killactive,
+          bind=SUPERSHIFT,e,exit,
 
           bind=SUPER,r,togglesplit,
           bind=SUPER,f,togglefloating,
           bind=SUPERSHIFT,f,fullscreen,0
 
           bind=SUPER,minus,splitratio,-0.25
-          bind=SUPERSHIFT,underscore,splitratio,-0.3333333
+          bind=SUPERSHIFT,minus,splitratio,-0.3333333
 
           bind=SUPER,equal,splitratio,0.25
-          bind=SUPERSHIFT,plus,splitratio,0.3333333
+          bind=SUPERSHIFT,equal,splitratio,0.3333333
 
-          bind=SUPER,g,togglegroup,
+          bind=SUPER,g,togglegroup
           bind=SUPER,apostrophe,changegroupactive,f
-          bind=SUPERSHIFT,quotedbl,changegroupactive,b
+          bind=SUPERSHIFT,apostrophe,changegroupactive,b
 
           bind=SUPER,left,movefocus,l
           bind=SUPER,right,movefocus,r
@@ -199,6 +210,12 @@
           bind=SUPERSHIFT,2,movetoworkspacesilent,2
           bind=SUPERSHIFT,3,movetoworkspacesilent,3
           bind=SUPERSHIFT,4,movetoworkspacesilent,4
+          bind=SUPERSHIFT,5,movetoworkspacesilent,5
+          bind=SUPERSHIFT,6,movetoworkspacesilent,6
+          bind=SUPERSHIFT,7,movetoworkspacesilent,7
+          bind=SUPERSHIFT,8,movetoworkspacesilent,8
+          bind=SUPERSHIFT,9,movetoworkspacesilent,9
+          bind=SUPERSHIFT,0,movetoworkspacesilent,10
 
           blurls=waybar
         '';

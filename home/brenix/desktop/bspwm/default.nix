@@ -32,7 +32,7 @@ in
       remove_unplugged_monitors = true;
       merge_overlapping_monitors = true;
       focus_follows_pointer = true;
-      border_width = 1;
+      border_width = 3;
       window_gap = 13;
       automatic_scheme = "floating";
       initial_polarity = "first_child";

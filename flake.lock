@@ -139,11 +139,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1665226338,
-        "narHash": "sha256-P+A9MEClkeZSaS4zZvrpfVfUUqU5mmdZgEz/FGDSgno=",
+        "lastModified": 1665271265,
+        "narHash": "sha256-4Nn0T5YoR3bBLFnPy6Tkc8zzmzMTBjSGZq05c5hKhEI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3b5a8d3dc79e05213d3c428a0b8777e21cb0c6b8",
+        "rev": "e1f1160284198a68ea8c7fffbbb1436f99e46ef9",
         "type": "github"
       },
       "original": {
@@ -160,16 +160,15 @@
         "wlroots": "wlroots"
       },
       "locked": {
-        "lastModified": 1662670949,
-        "narHash": "sha256-VB/34YMiW9mL6sdEAnYOqi1sjOiJcu8ZmQx3R8PI2iI=",
+        "lastModified": 1665248491,
+        "narHash": "sha256-RymWw9Q8XDpt3BLTeftb8mh5ioxEUZ77BSx1FSnd6OE=",
         "owner": "hyprwm",
         "repo": "hyprland",
-        "rev": "928158bbfb906bd871738d60610d85634d1f8c7e",
+        "rev": "90f2259f5e4b8d4c1c51db8d463a7a7e47624bce",
         "type": "github"
       },
       "original": {
         "owner": "hyprwm",
-        "ref": "v0.13.1beta",
         "repo": "hyprland",
         "type": "github"
       }
@@ -337,11 +336,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1665240972,
-        "narHash": "sha256-g8D/+byiwKD1pyFPUtVe9e3tmJtbnXXMh5b+jBLAokQ=",
+        "lastModified": 1665271246,
+        "narHash": "sha256-sV0pY+LjcSGZQM2bGF3tNb7f+MEdoaIiZq81usWMVH0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "216b4de2d1351cd1c09f1cd6b7345053dffdc50d",
+        "rev": "804f69c4de41412644a1eab20b9d5f2efdb0149d",
         "type": "github"
       },
       "original": {
@@ -443,11 +442,11 @@
       "flake": false,
       "locked": {
         "host": "gitlab.freedesktop.org",
-        "lastModified": 1661882030,
-        "narHash": "sha256-Kw0MG4rXdTnbndVLLCNwkXDmNszwdQZmm7pwI1R3Kds=",
+        "lastModified": 1665155573,
+        "narHash": "sha256-oAzkBNVm0N6JC4Jz9tfaF+l4K++zqDMOmxieemiyRnw=",
         "owner": "wlroots",
         "repo": "wlroots",
-        "rev": "fd0b0276c9ecc159549acff48b932b83ec3b4f12",
+        "rev": "ff9c52801f26eb85d2a51f12ad6d2819f97a66e6",
         "type": "gitlab"
       },
       "original": {

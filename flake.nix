@@ -7,7 +7,7 @@
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     deploy-rs = { url = "github:serokell/deploy-rs"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprland = { url = "github:hyprwm/hyprland/v0.13.1beta"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hyprland = { url = "github:hyprwm/hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
     impermanence = { url = "github:nix-community/impermanence"; };
     neovim-nightly = { url = "github:nix-community/neovim-nightly-overlay"; };
@@ -95,9 +95,9 @@
           hostname = "neo";
           primaryDisplay = "DisplayPort-0";
           secondaryDisplay = "HDMI-A-0";
-          dpi = 109;
-          colorscheme = "zenbox";
-          wallpaper = "island";
+          dpi = 108;
+          colorscheme = "nord";
+          wallpaper = "mountain-jaws";
           persistence = true;
           features = [
             "desktop/bspwm"
