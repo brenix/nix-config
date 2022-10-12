@@ -6,7 +6,6 @@
     ./locale.nix
     ./nix.nix
     ./openssh.nix
-    ./peerix.nix
     ./sops.nix
     ./sysctl.nix
     ./users.nix
