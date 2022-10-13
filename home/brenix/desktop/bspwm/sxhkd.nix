@@ -116,6 +116,9 @@
       # flameshot
       "Print" = "flameshot gui";
 
+      # obsidian
+      "super + o" = "obsidian";
+
       # Focus primary slack channel
       "super + e" = "xdg-open 'slack://channel?team=T024JFTN4&id=GHMTDF91B'";
 
