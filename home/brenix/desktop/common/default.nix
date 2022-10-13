@@ -19,6 +19,7 @@
     easyeffects
     imv
     mupdf
+    obsidian
     pavucontrol
     piper
     slack
