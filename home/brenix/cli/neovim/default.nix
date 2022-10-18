@@ -33,6 +33,7 @@ in
       Navigator-nvim
       better-escape-nvim
       bufferline-nvim
+      catppuccin-nvim
       cmp-buffer
       cmp-emoji
       cmp-nvim-lsp
@@ -159,7 +160,9 @@ in
         vim.g.nord_italic = true
         vim.g.nord_bold = false
         vim.g.gruvbox_material_background = "hard"
-        vim.cmd[[colorscheme nord]]
+        --vim.cmd[[colorscheme gruvbox-material]]
+        --vim.cmd[[colorscheme nord]]
+        vim.cmd[[colorscheme catppuccin]]
         --vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
       EOF
 

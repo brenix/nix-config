@@ -21,7 +21,7 @@ in
       "colors" = {
         bg = "#${colors.base00}";
         bg-alt = "#${colors.base00}";
-        fg = "#${colors.base06}";
+        fg = "#${colors.base05}";
         fg-alt = "#${colors.base05}";
         blue = "#${colors.base0D}";
         cyan = "#${colors.base0C}";
