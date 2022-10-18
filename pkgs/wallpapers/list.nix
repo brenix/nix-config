@@ -1,39 +1,21 @@
 [
   {
+    name = "evening-sky";
+    ext = "png";
+    id = "gDIy0Jc";
+    sha256 = "18793kgqmsp8bmapy407b8j9x4p2s0iw72di0icxzgys4qc2p0xq";
+  }
+  {
     name = "island";
     ext = "jpeg";
     id = "z6FlcOo";
     sha256 = "1anw8qf0q1sws4rgibyqbvrwrc2mzwayli2nnnfpcgb46v4wxxbq";
   }
   {
-    name = "null";
-    ext = "png";
-    id = "54NssAd";
-    sha256 = "0dc28lr0hbqkv0brlmdml94bccwzbq58hpd0z3xg45mnbhwm5fpj";
-  }
-  {
     name = "trees-fog";
     ext = "jpeg";
     id = "NXqRHjy";
     sha256 = "0mz9zsz90xlgn9bixwidhid873hhmfbd65s9kwfx6b0ns0n53b8l";
-  }
-  {
-    name = "onedark-cubes";
-    ext = "png";
-    id = "oXGDAgN";
-    sha256 = "09mvhg3bac7v5khjhzq55v90m9i10ml0yi30qii559hf3jk33f9b";
-  }
-  {
-    name = "fantasy";
-    ext = "jpeg";
-    id = "18IsY4g";
-    sha256 = "1j6h4fy6ciwz9nla9qkykq4xxny1rg23z4f1iq1x6q4p8qls19y0";
-  }
-  {
-    name = "data-breach";
-    ext = "png";
-    id = "CCKA2Fh";
-    sha256 = "0kb59f23a3bk6bywkhp32qy21yfr1sm3drl5rbg18nh0yiz3kl5v";
   }
   {
     name = "mountain-jaws";
@@ -46,12 +28,6 @@
     ext = "jpeg";
     id = "eeTKtmq";
     sha256 = "0x56qmix7jrfznr5ih3sixl604n22lnflp4f0mv34b2aqq7wd0bc";
-  }
-  {
-    name = "space-2";
-    ext = "png";
-    id = "FCxMzGu";
-    sha256 = "1s01dy2mndny45siipkybpj7lcy43lmc58szddi7kgxcm7xss6i7";
   }
   {
     name = "space-1";
@@ -94,17 +70,5 @@
     ext = "jpeg";
     id = "lh3FzCS";
     sha256 = "0wf9zmqagvhmblpsfln1kp7anx4xx0bwm48hv7xhflvf9dbz4ia5";
-  }
-  {
-    name = "tech-room";
-    ext = "jpeg";
-    id = "eVgcREu";
-    sha256 = "1n64527l85q0bmz2vm8xh6kmva7dm7pdhmzmbj7j0l24v0xhswjf";
-  }
-  {
-    name = "nord-lake";
-    ext = "png";
-    id = "mKdx2QR";
-    sha256 = "02wxyj5f470njvzdcz86vdjq3d3ynrdhajp40a1gb0nawgxpi565";
   }
 ]
