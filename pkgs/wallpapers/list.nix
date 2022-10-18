@@ -6,6 +6,12 @@
     sha256 = "18793kgqmsp8bmapy407b8j9x4p2s0iw72di0icxzgys4qc2p0xq";
   }
   {
+    name = "space-station";
+    ext = "jpeg";
+    id = "Ne3cbbD";
+    sha256 = "02x8irabpynwy4lr9423qdvlan8ib5y6rlx58ykjg7x2xh7i0yxg";
+  }
+  {
     name = "island";
     ext = "jpeg";
     id = "z6FlcOo";

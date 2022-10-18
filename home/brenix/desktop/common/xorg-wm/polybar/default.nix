@@ -44,7 +44,7 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
-        font-0 = if (hostname == "tank") then "${config.fontProfiles.regular.family}:size=16;2" else "${config.fontProfiles.regular.family}:size=10;2";
+        font-0 = if (hostname == "tank") then "${config.fontProfiles.regular.family}:size=16;2" else "${config.fontProfiles.regular.family}:size=10.5;2";
         font-1 = if (hostname == "tank") then ''"Material Icons:size=16;3"'' else ''"Material Icons:size=10;3"'';
         font-2 = if (hostname == "tank") then ''"JetBrainsMono Nerd Font Mono:size=16;2"'' else ''"JetBrainsMono Nerd Font Mono:size=14;2"'';
         module-margin-left = 1;
