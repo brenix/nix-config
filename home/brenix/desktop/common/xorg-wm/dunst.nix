@@ -57,19 +57,19 @@
 
       urgency_low = {
         background = "#${config.colorscheme.colors.base00}";
-        foreground = "#${config.colorscheme.colors.base04}";
+        foreground = "#${config.colorscheme.colors.base05}";
         timeout = 6;
       };
 
       urgency_normal = {
         background = "#${config.colorscheme.colors.base00}";
-        foreground = "#${config.colorscheme.colors.base04}";
+        foreground = "#${config.colorscheme.colors.base05}";
         timeout = 10;
       };
 
       urgency_critical = {
         background = "#${config.colorscheme.colors.base00}";
-        foreground = "#${config.colorscheme.colors.base04}";
+        foreground = "#${config.colorscheme.colors.base05}";
         frame_color = "#${config.colorscheme.colors.base08}";
         timeout = 0;
       };
