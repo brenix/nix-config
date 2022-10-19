@@ -161,9 +161,9 @@ in
         vim.g.nord_bold = false
         vim.g.gruvbox_material_background = "hard"
         --vim.cmd[[colorscheme gruvbox-material]]
-        --vim.cmd[[colorscheme nord]]
+        vim.cmd[[colorscheme nord]]
         --vim.cmd[[colorscheme catppuccin]]
-        vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
+        --vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
       EOF
 
       hi LineNr guifg=#${config.colorscheme.colors.base02}
