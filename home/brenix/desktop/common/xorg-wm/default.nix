@@ -5,7 +5,7 @@
     ./flameshot.nix
     /* ./picom.nix */
     ./polybar
-    ./rofi.nix
+    ./rofi
   ];
 
   services.unclutter.enable = true;
