@@ -77,4 +77,22 @@
     id = "lh3FzCS";
     sha256 = "0wf9zmqagvhmblpsfln1kp7anx4xx0bwm48hv7xhflvf9dbz4ia5";
   }
+  {
+    name = "catppuccin-retro";
+    ext = "png";
+    id = "FdZwaAr";
+    sha256 = "0nmjm28zr0n4ly4gixn8lccwqmlmqgcak383hwnq0xm6183x2x3n";
+  }
+  {
+    name = "catppuccin-nix";
+    ext = "png";
+    id = "xYaLPf8";
+    sha256 = "0yhxi7vx12ybjgwa24claxf7sz4qsvagcl6vcsg1yn56xcni5yns";
+  }
+  {
+    name = "catppuccin-lines";
+    ext = "png";
+    id = "hVe3XJX";
+    sha256 = "00fwx2ifxdjpjafrvdqyqw6b7sbijrkwvaqk5balbhrapdbf2sam";
+  }
 ]
