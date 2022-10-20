@@ -10,12 +10,8 @@ rec {
       size = 10;
     };
     theme = {
-      /* name = "Arc"; */
-      /* package = pkgs.arc-theme; */
-
-      name = "Catppuccin-Dark";
-      package = pkgs.catppuccin-gtk;
-
+      name = "Arc";
+      package = pkgs.arc-theme;
       /* name = "${config.colorscheme.slug}"; */
       /* package = gtkThemeFromScheme { scheme = config.colorscheme; }; */
     };
