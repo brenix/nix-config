@@ -161,10 +161,6 @@ local sources = {
 		command = "nixpkgs-fmt",
 	}),
 	b.diagnostics.statix,
-	-- YAML
-	b.formatting.prettier.with({
-		extra_args = { "--no-bracket-spacing" }, -- Remove bracket spacing for helm template support (https://github.com/prettier/prettier/issues/6517)
-	}),
 	-- Shell
 	b.formatting.shfmt.with({
 		extra_args = { "-i", "2", "-ci" },
@@ -174,12 +170,13 @@ local sources = {
 	b.formatting.terraform_fmt,
 	b.formatting.trim_whitespace,
 	-- Markdown
-	b.formatting.mdformat,
 	b.diagnostics.markdownlint,
 	-- Lua
 	b.formatting.stylua,
 	-- JSON5
 	b.formatting.fixjson,
+	-- Deno
+	b.formatting.deno_fmt,
 }
 
 null_ls.setup({

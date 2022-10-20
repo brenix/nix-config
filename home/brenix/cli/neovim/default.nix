@@ -101,7 +101,7 @@ in
 
       # formatters
       nixpkgs-fmt
-      nodePackages.prettier
+      deno
       python310Packages.mdformat
       shellharden
       shfmt
