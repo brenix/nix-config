@@ -80,7 +80,7 @@
       "super + Return" = "alacritty";
 
       # terminal (floating)
-      "super + shift + Return" = "alacritty --class floating";
+      "super + shift + Return" = "alacritty --class Alacritty,floating";
 
       # terminal (work)
       "super + m" = "alacritty -e zsh -c 'ssh macbook'";
