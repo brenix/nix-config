@@ -2,17 +2,19 @@
 {
   fonts.fonts = with pkgs; [
     corefonts
+    dejavu_fonts
     hack-font
     inter
     material-icons
     noto-fonts
     noto-fonts-emoji
     roboto
+    roboto-mono
     terminus_font
     uw-ttyp0
     weather-icons
     (nerdfonts.override {
-      fonts = [ "JetBrainsMono" "RobotoMono" ];
+      fonts = [ "JetBrainsMono" "RobotoMono" "UbuntuMono" ];
     })
   ];
 
