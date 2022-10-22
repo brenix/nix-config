@@ -2,19 +2,15 @@
 {
   fonts.fonts = with pkgs; [
     corefonts
-    dejavu_fonts
-    hack-font
     inter
     material-icons
     noto-fonts
     noto-fonts-emoji
-    roboto
-    roboto-mono
     terminus_font
     uw-ttyp0
     weather-icons
     (nerdfonts.override {
-      fonts = [ "JetBrainsMono" "RobotoMono" "UbuntuMono" ];
+      fonts = [ "JetBrainsMono" "RobotoMono" "Meslo" ];
     })
   ];
 
@@ -28,10 +24,10 @@
   fonts.fontconfig = {
     /* hinting.style = "hintnone"; */
     defaultFonts = {
-      serif = [ "Roboto" ];
-      sansSerif = [ "Roboto" ];
+      serif = [ "Inter" ];
+      sansSerif = [ "Inter" ];
       emoji = [ "Noto Color Emoji" ];
-      monospace = [ "JetBrainsMono Nerd Font" "Roboto Mono" ];
+      monospace = [ "MesloLGS Nerd Font Mono" "JetBrainsMono Nerd Font" "Roboto Mono" ];
     };
   };
 }
