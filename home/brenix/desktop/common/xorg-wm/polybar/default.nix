@@ -45,8 +45,7 @@ in
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
         font-0 = if (hostname == "tank") then "${config.fontProfiles.regular.family}:size=16;2" else "${config.fontProfiles.regular.family}:size=11.5;2";
-        font-1 = if (hostname == "tank") then ''"Material Icons:size=16;3"'' else ''"Material Icons:size=11;3"'';
-        font-2 = if (hostname == "tank") then ''"JetBrainsMono Nerd Font Mono:size=16;2"'' else ''"JetBrainsMono Nerd Font Mono:size=14.5;2"'';
+        font-1 = if (hostname == "tank") then "Material Icons:size=16;3" else "Material Icons:size=10;3";
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "bspwm";
@@ -112,20 +111,20 @@ in
         pin-workspaces = false;
         format = "<label-state>";
         format-padding = 0;
-        label-empty = "%icon%";
+        /* label-empty = "%icon%"; */
         label-empty-padding = 1;
-        label-focused = "%icon%";
+        /* label-focused = "%icon%"; */
         label-focused-foreground = "\${colors.blue}";
         label-focused-padding = 1;
-        label-occupied = "%icon%";
+        /* label-occupied = "%icon%"; */
         label-occupied-padding = 1;
-        label-urgent = "%icon%";
+        /* label-urgent = "%icon%"; */
         label-urgent-padding = 1;
-        ws-icon-0 = "1;";
-        ws-icon-1 = "2;";
-        ws-icon-2 = "3;";
-        ws-icon-3 = "4;";
-        ws-icon-default = "";
+        /* ws-icon-0 = "1;"; */
+        /* ws-icon-1 = "2;"; */
+        /* ws-icon-2 = "3;"; */
+        /* ws-icon-3 = "4;"; */
+        /* ws-icon-default = ""; */
       };
 
       "module/temperature" = {
@@ -149,7 +148,7 @@ in
         type = "internal/cpu";
         interval = 3;
         label = "%percentage:2%%";
-        format-prefix = " ";
+        format-prefix = "";
       };
 
       "module/memory" = {
@@ -165,10 +164,11 @@ in
         interval = 2;
         bar-volume-empty-foreground = "\${colors.fg-alt}";
         format-volume = "<ramp-volume> <label-volume>";
+        label-muted-font = 1;
         label-muted = " %{F#b77a76}MUTED";
         label-muted-foreground = "\${colors.fg-alt}";
-        label-volume =
-          "%{A3:${pkgs.pavucontrol}/bin/pavucontrol & disown:}%percentage%%%{A}";
+        label-volume-font = 1;
+        label-volume = "%{A3:${pkgs.pavucontrol}/bin/pavucontrol & disown:}%percentage%%%{A}";
         ramp-volume-0 = "";
         ramp-volume-1 = "";
         ramp-volume-2 = "";
