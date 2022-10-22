@@ -19,8 +19,10 @@
     regular = {
       /* family = "Roboto"; */
       /* package = pkgs.roboto; */
-      family = "M PLUS 1";
-      package = pkgs.mplus-outline-fonts.githubRelease;
+      /* family = "M PLUS 1"; */
+      /* package = pkgs.mplus-outline-fonts.githubRelease; */
+      family = "Inter";
+      package = pkgs.inter;
     };
   };
 }

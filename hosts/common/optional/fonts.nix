@@ -11,6 +11,9 @@
     terminus_font
     uw-ttyp0
     weather-icons
+    (nerdfonts.override {
+      fonts = [ "JetBrainsMono" "RobotoMono" ];
+    })
   ];
 
 
