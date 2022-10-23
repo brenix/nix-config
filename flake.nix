@@ -114,9 +114,9 @@
           hostname = "tank";
           primaryDisplay = "Virtual-1";
           dpi = 220;
-          colorscheme = "nord";
+          colorscheme = "catppuccin-mocha";
+          wallpaper = "evening-sky";
           persistence = true;
-          wallpaper = "mountain-jaws";
           features = [
             "desktop/bspwm"
           ];
