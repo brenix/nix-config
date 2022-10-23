@@ -22,13 +22,13 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   programs = {
-    adb.enable = true;
+    /* adb.enable = true; */
     dconf.enable = true;
   };
 
   networking.extraHosts = "192.168.1.10 api.kubernetes";
 
-  services.udev.packages = [ pkgs.android-udev-rules ];
+  /* services.udev.packages = [ pkgs.android-udev-rules ]; */
 
   services.resolved.domains = [ "localdomain" ];
 
