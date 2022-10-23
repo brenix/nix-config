@@ -3,6 +3,7 @@
   fonts.fonts = with pkgs; [
     corefonts
     inter
+    font-awesome
     material-icons
     noto-fonts
     noto-fonts-emoji

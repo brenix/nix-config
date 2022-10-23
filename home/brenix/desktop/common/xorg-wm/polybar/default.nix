@@ -46,6 +46,7 @@ in
         border-top-size = 1;
         font-0 = if (hostname == "tank") then "${config.fontProfiles.regular.family}:size=16;2" else "${config.fontProfiles.regular.family}:size=12;2";
         font-1 = if (hostname == "tank") then "Material Icons:size=16;3" else "Material Icons:size=11;3";
+        font-2 = if (hostname == "tank") then "Font Awesome 6 Free Solid:size=16;3" else "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "bspwm";
@@ -165,13 +166,13 @@ in
         bar-volume-empty-foreground = "\${colors.fg-alt}";
         format-volume = "<ramp-volume> <label-volume>";
         label-muted-font = 1;
-        label-muted = " %{F#b77a76}MUTED";
+        label-muted = " %{F#b77a76}MUTED";
         label-muted-foreground = "\${colors.fg-alt}";
         label-volume-font = 1;
         label-volume = "%{A3:${pkgs.pavucontrol}/bin/pavucontrol & disown:}%percentage%%%{A}";
-        ramp-volume-0 = "";
-        ramp-volume-1 = "";
-        ramp-volume-2 = "";
+        ramp-volume-0 = "";
+        ramp-volume-1 = "";
+        ramp-volume-2 = "";
       };
 
       "module/time" = {
