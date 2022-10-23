@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, dpi, ... }: {
 
   programs.rofi = {
     enable = true;
@@ -7,6 +7,7 @@
     plugins = with pkgs; [ rofi-calc rofi-emoji rofi-rbw ];
     extraConfig = {
       modi = "drun,run,emoji,calc,combi";
+      inherit dpi;
     };
     terminal = "\${pkgs.alacritty}/bin/alacritty";
   };

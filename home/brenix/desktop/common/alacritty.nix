@@ -1,4 +1,4 @@
-{ config, lib, dpi, ... }:
+{ config, lib, hostname, ... }:
 
 let
   inherit (config.colorscheme) colors;
@@ -7,7 +7,6 @@ in
   programs.alacritty = {
     enable = true;
     settings = {
-      inherit dpi;
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal = {
@@ -22,7 +21,7 @@ in
         family = config.fontProfiles.monospace.family;
         style = "Italic";
       };
-      font.size = if dpi < 150 then 11.5 else 18;
+      font.size = if (hostname == "tank") then 14 else 11.5;
       font.offset.y = -3;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{

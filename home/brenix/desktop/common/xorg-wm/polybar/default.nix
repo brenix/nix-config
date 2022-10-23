@@ -1,4 +1,4 @@
-{ config, pkgs, hostname, ... }:
+{ config, pkgs, hostname, dpi, ... }:
 
 let
   mprisScript = pkgs.callPackage ./scripts/mpris.nix { };
@@ -33,9 +33,10 @@ in
       };
 
       "bar/main" = {
+        inherit dpi;
         top = true;
         center = true;
-        height = if (hostname == "tank") then 26 else 20;
+        height = if (hostname == "tank") then 40 else 20;
         enable-ipc = true;
         width = "99%";
         foreground = "\${colors.fg}";
@@ -44,9 +45,9 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
-        font-0 = if (hostname == "tank") then "${config.fontProfiles.regular.family}:size=16;2" else "${config.fontProfiles.regular.family}:size=12;2";
-        font-1 = if (hostname == "tank") then "Material Icons:size=16;3" else "Material Icons:size=11;3";
-        font-2 = if (hostname == "tank") then "Font Awesome 6 Free Solid:size=16;3" else "Font Awesome 6 Free Solid:size=10;2";
+        font-0 = if (hostname == "tank") then "${config.fontProfiles.regular.family}:size=9;3" else "${config.fontProfiles.regular.family}:size=12;2";
+        font-1 = if (hostname == "tank") then "Material Icons:size=8;4" else "Material Icons:size=11;3";
+        font-2 = if (hostname == "tank") then "Font Awesome 6 Free Solid:size=8;4" else "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "bspwm";
