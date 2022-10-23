@@ -3,9 +3,10 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "MesloLGS Nerd Font Mono";
+      family = "Hack Nerd Font Mono";
       package = pkgs.nerdfonts.override {
         fonts = [
+          "Hack"
           "Meslo"
           "JetBrainsMono"
         ];
