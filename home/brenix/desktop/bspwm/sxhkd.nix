@@ -86,7 +86,7 @@
       "super + m" = "alacritty -e zsh -c 'ssh macbook'";
 
       # launcher
-      "{super,alt} + space" = "rofi -show combi";
+      "{super,alt} + space" = "rofi -show run";
 
       # calculator
       "F1" = "rofi -show calc -modi calc --no-show-match --no-sort -lines 2";
