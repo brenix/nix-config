@@ -38,10 +38,11 @@
     goreleaser
     gotools
     grc
-    hugo
     htop
+    hugo
     lefthook
     mr
+    multi-gitter
     nodePackages.npm
     nodejs
     packer
