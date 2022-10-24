@@ -2,7 +2,7 @@
 {
   imports = [
     ./alacritty.nix
-    ./discord.nix
+    /* ./discord.nix */
     ./firefox.nix
     ./fonts.nix
     ./gtk.nix
@@ -16,7 +16,6 @@
 
   home.packages = with pkgs; [
     authy
-    easyeffects
     imv
     mupdf
     obsidian
