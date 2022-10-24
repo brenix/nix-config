@@ -5,7 +5,6 @@
   # -- Packages with an upstream source
   calicoctl = pkgs.callPackage ./calicoctl { };
   awless = pkgs.callPackage ./awless { };
-  multi-gitter = pkgs.callPackage ./multi-gitter { };
   tfenv = pkgs.callPackage ./tfenv { };
 
   # -- Hashicorp binary packages

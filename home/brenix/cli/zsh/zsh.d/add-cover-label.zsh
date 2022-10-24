@@ -17,6 +17,7 @@ if [[ $commands[convert] ]]; then
       -geometry +0+87 \
       -fill black \
       -pointsize ${fontsize} \
+      -font Inter-Semi-Bold \
       -size 540x95 caption:"${label}\ \ " \
       "${image%.*}-resized.jpg" \
       +swap \
