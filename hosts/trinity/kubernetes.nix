@@ -1,6 +1,6 @@
 { pkgs, lib, persistence, ... }:
 {
-  environment.systemPackages = with pkgs; [ helm helmfile kubectl kubernetes ];
+  environment.systemPackages = with pkgs; [ helm helmfile kubectl kubernetes cri-tools ];
 
   networking.extraHosts = "192.168.1.10 api.kubernetes";
 
@@ -29,7 +29,7 @@
 
     # Kubelet
     kubelet.extraOpts =
-      "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false";
+      "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false --image-gc-high-threshold=50 --image-gc-low-threshold=30";
 
     # CoreDNS
     addons.dns = {
