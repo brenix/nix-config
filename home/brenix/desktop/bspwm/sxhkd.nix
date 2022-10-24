@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, dpi, ... }: {
 
   services.sxhkd = {
     enable = true;
@@ -102,10 +102,10 @@
         "${pkgs.xdotool}/bin/xdotool search Firefox windowactivate || firefox";
 
       # spotify
-      "super + s" = "LC_NUMERIC=en_US.utf8 spotify";
+      "super + s" = if dpi > 150 then "spotify --force-device-scale-factor=2" else "spotify";
 
       # slack
-      "super + shift + s" = "slack";
+      "super + shift + s" = if dpi > 150 then "slack --force-device-scale-factor=2" else "slack";
 
       # ncmpcpp
       "super + n" = "alacritty -e ncmpcpp";
