@@ -29,8 +29,8 @@ in
       primary = {
         mode = "dock";
         layer = "top";
-        height = 24;
-        margin = "6";
+        height = 20;
+        /* margin = "6"; */
         position = "top";
 
         output =
@@ -42,16 +42,20 @@ in
         ];
 
         modules-center = [
-          "custom/currentplayer"
           "custom/player"
         ];
 
         modules-right = [
           "cpu"
+          "custom/separator"
           "temperature"
+          "custom/separator"
           "custom/gpu"
+          "custom/separator"
           "memory"
+          "custom/separator"
           "pulseaudio"
+          "custom/separator"
           "clock"
           "tray"
         ];
@@ -65,36 +69,29 @@ in
         };
 
         clock = {
-          format = "  {:%a %b %d %I:%M %p}";
+          format = "{:%a %b %d %I:%M %p}";
           tooltip-format = ''
             <big>{:%Y %B}</big>
             <tt><small>{calendar}</small></tt>'';
         };
 
         cpu = {
-          format = "  {usage}%";
+          format = "CPU:  {usage}%";
         };
 
         temperature = {
-          format = " {temperatureC}°C";
+          format = "TEMP: {temperatureC}°C";
           hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
           critical-threshold = 70;
         };
 
         memory = {
-          format = "  {used:0.1f}G";
+          format = "MEM:  {used:0.1f}G";
           interval = 5;
         };
 
         pulseaudio = {
-          format = "{icon}  {volume}%";
-          format-muted = "   0%";
-          format-icons = {
-            headphone = "";
-            headset = "";
-            portable = "";
-            default = [ "" "" "" ];
-          };
+          format = "VOL: {volume}%";
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
 
@@ -105,25 +102,13 @@ in
             text = "$(cat /sys/class/drm/card0/device/gpu_busy_percent)";
             tooltip = "GPU Usage";
           };
-          format = "力  {}%";
+          format = "GPU: {}%";
         };
 
-        "custom/currentplayer" = {
-          interval = 3;
-          return-type = "json";
-          exec = jsonOutput {
-            pre = ''player="$(${playerctl} status -f "{{playerName}}" || echo "No players found" | cut -d '.' -f1)"'';
-            alt = "$player";
-            tooltip = "$player";
-          };
-          format = "{icon}";
-          format-icons = {
-            "No players found" = "ﱘ";
-            "spotify" = "阮";
-            "firefox" = "爵";
-            "discord" = "ﭮ";
-          };
-          on-click = "${systemctl} --user restart playerctld";
+        "custom/separator" = {
+          "format" = "|";
+          "interval" = "once";
+          "tooltip" = false;
         };
 
         "custom/player" = {
@@ -144,18 +129,13 @@ in
 
     };
 
-    # Cheatsheet:
-    # x -> all sides
-    # x y -> vertical, horizontal
-    # x y z -> top, horizontal, bottom
-    # w x y z -> top, right, bottom, left
     style =
       let inherit (config.colorscheme) colors; in
       ''
         * {
           font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
           font-size: 16px;
-          padding: 0 8px;
+          padding: 0 6px;
         }
         .modules-right {
           margin-right: -15px;
@@ -191,6 +171,13 @@ in
         #workspaces button.active {
           background-color: #${colors.base0D};
           color: #${colors.base00};
+        }
+        #clock {
+          margin-right: 0.5px;
+        }
+        #custom-separator {
+          color: #${colors.base04};
+          margin-left: 0.5px;
         }
       '';
   };

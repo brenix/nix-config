@@ -23,8 +23,8 @@
         ''
           general {
             main_mod=SUPER
-            gaps_in=12
-            gaps_out=12
+            gaps_in=10
+            gaps_out=10
             border_size=2
             col.active_border=0xff${colors.base03}
             col.inactive_border=0xff${colors.base02}
@@ -125,7 +125,7 @@
           bind=,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
           # Window manager controls
-          bind=SUPERSHIFT,q,killactive,
+          bind=SUPER,w,killactive,
           bind=SUPERSHIFT,e,exit,
 
           bind=SUPER,r,togglesplit,
