@@ -52,7 +52,6 @@ in
           "custom/gpu"
           "memory"
           "pulseaudio"
-          "custom/weather"
           "clock"
           "tray"
         ];
@@ -97,15 +96,6 @@ in
             default = [ "" "" "" ];
           };
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
-        };
-
-        "custom/weather" = {
-          tooltip = false;
-          min-length = 5;
-          exec = "curl -s 'https://wttr.in/Sacramento?u&format='%f'' | tr -d '+'";
-          interval = 1800;
-          format = "   {}";
-          on-click = "xdg-open 'https://www.google.com/search?q=weather'";
         };
 
         "custom/gpu" = {
