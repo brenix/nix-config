@@ -23,8 +23,8 @@
         ''
           general {
             main_mod=SUPER
-            gaps_in=15
-            gaps_out=15
+            gaps_in=12
+            gaps_out=12
             border_size=2
             col.active_border=0xff${colors.base03}
             col.inactive_border=0xff${colors.base02}
