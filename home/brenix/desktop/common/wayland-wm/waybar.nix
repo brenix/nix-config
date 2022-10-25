@@ -163,7 +163,7 @@ in
       let inherit (config.colorscheme) colors; in
       ''
         * {
-          font-family: ${config.fontProfiles.regular.family}, Terminus, ${config.fontProfiles.monospace.family};
+          font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family}, "Material Icons";
           font-size: 16px;
           padding: 0 8px;
         }
@@ -187,7 +187,7 @@ in
           opacity: 1.0;
         }
         #workspaces button {
-          border-radius: 0px;
+          border-radius: 4px;
           background-color: #${colors.base01};
           border-top: 2px solid #${colors.base03};
           border-bottom: 2px solid #${colors.base03};

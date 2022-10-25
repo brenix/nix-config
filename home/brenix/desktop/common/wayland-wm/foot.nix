@@ -9,11 +9,11 @@ in
     settings = {
       main = {
         term = "xterm-256color";
-        font = "${config.fontProfiles.monospace.family}:pixelsize=14";
-        font-bold = "${config.fontProfiles.monospace.family}:pixelsize=14";
+        font = "${config.fontProfiles.monospace.family}:pixelsize=15";
+        font-bold = "${config.fontProfiles.monospace.family}:pixelsize=15";
         dpi-aware = "auto";
-        line-height = "15px";
-        vertical-letter-offset = "-2";
+        line-height = "16px";
+        vertical-letter-offset = "-1";
       };
 
       colors = {

@@ -100,6 +100,7 @@
           bind=SUPERSHIFT,Return,exec,foot -a foot:floating
           bind=SUPER,Space,exec,wofi -S run
           bind=SUPER,d,exec,firefox
+          bind=SUPER,o,exec,obsidian
           bind=SUPER,s,exec,spotify
           bind=SUPERSHIFT,s,exec,slack
           bind=SUPER,v,exec,pavucontrol

@@ -7,7 +7,7 @@
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
 
     deploy-rs = { url = "github:serokell/deploy-rs"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hyprland = { url = "github:hyprwm/hyprland"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hyprland = { url = "github:hyprwm/hyprland/v0.15.3beta"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
     impermanence = { url = "github:nix-community/impermanence"; };
     neovim-nightly = { url = "github:nix-community/neovim-nightly-overlay"; };
@@ -100,7 +100,7 @@
           wallpaper = "mountain-1";
           persistence = true;
           features = [
-            "desktop/bspwm"
+            "desktop/hyprland"
           ];
         };
         "brenix@trinity" = mkHome {

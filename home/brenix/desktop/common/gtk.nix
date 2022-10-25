@@ -7,13 +7,13 @@ rec {
     enable = true;
     font = {
       name = config.fontProfiles.regular.family;
-      size = 10;
+      size = 12;
     };
     theme = {
-      name = "Arc";
-      package = pkgs.arc-theme;
-      /* name = "${config.colorscheme.slug}"; */
-      /* package = gtkThemeFromScheme { scheme = config.colorscheme; }; */
+      /* name = "Arc"; */
+      /* package = pkgs.arc-theme; */
+      name = "${config.colorscheme.slug}";
+      package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
     iconTheme = {
       name = "Nordzy";
