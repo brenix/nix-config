@@ -35,7 +35,7 @@
             active_opacity=1.0
             inactive_opacity=1.0
             fullscreen_opacity=1.0
-            rounding=3
+            rounding=0
             blur=false
             blur_size=6
             blur_passes=3
