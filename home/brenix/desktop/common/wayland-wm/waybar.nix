@@ -163,7 +163,7 @@ in
       let inherit (config.colorscheme) colors; in
       ''
         * {
-          font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family}, "Material Icons";
+          font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
           font-size: 16px;
           padding: 0 8px;
         }
