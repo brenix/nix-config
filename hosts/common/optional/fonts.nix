@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   fonts.fonts = with pkgs; [
-    corefonts
+    /* corefonts */
     inter
     font-awesome
     material-icons
@@ -11,7 +11,7 @@
     uw-ttyp0
     weather-icons
     (nerdfonts.override {
-      fonts = [ "JetBrainsMono" "RobotoMono" "Meslo" ];
+      fonts = [ "JetBrainsMono" "RobotoMono" "Meslo" "Hack" ];
     })
   ];
 
