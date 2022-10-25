@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   fonts.fonts = with pkgs; [
-    /* corefonts */
+    corefonts
     inter
     font-awesome
     material-icons
