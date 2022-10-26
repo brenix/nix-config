@@ -128,6 +128,7 @@ nvim_lsp["jsonls"].setup({
 -- yaml
 nvim_lsp["yamlls"].setup({
 	on_attach = on_attach,
+	capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 	settings = {
 		yaml = {
 			validate = false,
@@ -139,7 +140,7 @@ nvim_lsp["yamlls"].setup({
 				["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/master-standalone-strict/all.json"] = "*.yaml",
 				["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
 				["http://json.schemastore.org/helmfile"] = "helmfile.{yml,yaml}",
-				["http://json.schemastore.org/gitlab-ci"] = "/*lab-ci.{yml,yaml}",
+				["http://json.schemastore.org/gitlab-ci"] = { "/.gitlab/*.yml", "/.gitlab-ci.yml" },
 				["http://json.schemastore.org/ansible-role-2.9"] = "roles/tasks/*.{yml,yaml}",
 				["http://json.schemastore.org/ansible-playbook"] = "playbook.{yml,yaml}",
 			},
