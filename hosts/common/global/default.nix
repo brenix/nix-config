@@ -34,6 +34,7 @@
     gnumake
     lsof
     nmap
+    pciutils
     ripgrep
     tcpdump
   ];
