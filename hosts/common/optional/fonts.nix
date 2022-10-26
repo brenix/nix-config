@@ -2,8 +2,11 @@
 {
   fonts.fonts = with pkgs; [
     corefonts
-    inter
+    dejavu_fonts
     font-awesome
+    google-fonts
+    inter
+    liberation_ttf
     material-icons
     noto-fonts
     noto-fonts-emoji
