@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./helix
     ./neovim
     ./zsh
     ./bat.nix
