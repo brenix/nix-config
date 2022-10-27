@@ -14,6 +14,8 @@ in
       keys.normal = {
         space.space = "file_picker";
         space.w = ":w";
+        space.v = ":vsplit-new";
+        space.minus = ":hsplit-new";
         space.q = ":q";
       };
     };
