@@ -16,7 +16,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
     ../common/optional/systemd-boot.nix
-    /* ../common/optional/xserver.nix */
+    ../common/optional/xserver.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -49,20 +49,20 @@
       [ "${automount_opts}" ];
   };
 
-  /* services.xserver = { */
-  /*   dpi = 109; */
-  /*   displayManager = { */
-  /*     sessionCommands = '' */
-  /*       ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --mode '2560x1440 --rate 180' */
-  /*       ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-0 --mode '2560x1440 --rate 144' */
-  /*     ''; */
-  /*   }; */
-  /* }; */
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
+  services.xserver = {
+    dpi = 108;
+    displayManager = {
+      sessionCommands = ''
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --mode '2560x1440 --rate 180'
+        ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-0 --mode '2560x1440 --rate 144'
+      '';
+    };
   };
+
+  /* xdg.portal = { */
+  /*   enable = true; */
+  /*   wlr.enable = true; */
+  /* }; */
 
   hardware = {
     opengl.enable = true;

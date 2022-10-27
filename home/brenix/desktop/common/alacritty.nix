@@ -21,7 +21,7 @@ in
         family = config.fontProfiles.monospace.family;
         style = "Italic";
       };
-      font.size = if (hostname == "tank") then 14 else 11.5;
+      font.size = if (hostname == "tank") then 14 else 13;
       font.offset.y = -3;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{

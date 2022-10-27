@@ -36,7 +36,7 @@ in
         inherit dpi;
         top = true;
         center = true;
-        height = if (hostname == "tank") then 40 else 20;
+        height = if (hostname == "tank") then 40 else 25;
         enable-ipc = true;
         width = "99%";
         foreground = "\${colors.fg}";

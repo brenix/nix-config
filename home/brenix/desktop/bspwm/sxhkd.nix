@@ -122,13 +122,11 @@
       # Focus primary slack channel
       "super + e" = "xdg-open 'slack://channel?team=T024JFTN4&id=GHMTDF91B'";
 
+      # piper
       "super + p" = "piper";
 
       # zoom
       "super + z" = "zoom";
-
-      # blanket
-      "super + b" = "blanket";
 
       # -- volume control
 

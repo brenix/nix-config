@@ -45,8 +45,8 @@ in
       pointer_action1 = "move";
       pointer_action2 = "resize_side";
       pointer_motion_interval = 6;
-      normal_border_color = "#${config.colorscheme.colors.base00}";
-      active_border_color = "#${config.colorscheme.colors.base00}";
+      normal_border_color = "#${config.colorscheme.colors.base03}";
+      active_border_color = "#${config.colorscheme.colors.base04}";
       focused_border_color = "#${config.colorscheme.colors.base01}";
       presel_feedback_color = "#${config.colorscheme.colors.base01}";
     };
