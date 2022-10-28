@@ -63,7 +63,7 @@ map("n", "-", ":NvimTreeFindFile<CR>", { silent = true })
 
 -- telescope
 map("n", "<Leader>ff", [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], { silent = true })
-map("n", "<Leader>p", [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], { silent = true })
+map("n", "<Leader><space>", [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], { silent = true })
 map("n", "<C-p>", [[<Cmd>lua require('telescope').extensions.project.project{}<CR>]], { silent = true })
 map("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], { silent = true })
 map("n", "<Leader>fb", [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], { silent = true })
