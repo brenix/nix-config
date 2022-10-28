@@ -39,7 +39,7 @@
       s = "doas systemctl";
       svim = "doas nvim";
       sw = "git switch";
-      v = "hx";
+      v = "nvim";
       virsh = "virsh -c qemu:///system";
       vm = "virsh start win11";
     };
