@@ -14,6 +14,7 @@ in
         color-modes = true;
       };
       keys.normal = {
+        minus = "file_picker";
         space.space = "file_picker";
         space.w = ":w";
         space.v = ":vsplit-new";
