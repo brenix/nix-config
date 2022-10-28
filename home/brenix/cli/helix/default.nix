@@ -6,7 +6,8 @@ in
   programs.helix = {
     enable = true;
     settings = {
-      theme = "${colorscheme.slug}";
+      theme = "catppuccin_mocha";
+      /*theme = "${colorscheme.slug}";*/
       editor = {
         line-number = "absolute";
         indent-guides.render = true;
