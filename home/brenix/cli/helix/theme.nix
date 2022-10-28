@@ -48,7 +48,7 @@
     "ui.text.focus" = "base05";
     "ui.virtual.ruler" = { bg = "base01"; };
     "ui.virtual.whitespace" = { fg = "base03"; };
-    "ui.window" = { bg = "base01"; };
+    "ui.window" = { bg = "base01"; fg = "base03"; };
     "variable" = "base08";
     "variable.other.member" = "base0B";
     "warning" = "base09";
