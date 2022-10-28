@@ -10,6 +10,7 @@ in
       editor = {
         line-number = "absolute";
         indent-guides.render = true;
+        color-modes = true;
       };
       keys.normal = {
         space.space = "file_picker";
