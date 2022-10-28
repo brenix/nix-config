@@ -164,6 +164,10 @@ in
         --vim.cmd[[colorscheme nord]]
         vim.cmd[[colorscheme catppuccin]]
         --vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
+        
+        -- PERFORMANCE
+        vim.g.python_host_skip_check = 1
+        vim.g.python3_host_skip_check = 1
       EOF
 
       hi LineNr guifg=#${config.colorscheme.colors.base02}
