@@ -2,7 +2,6 @@
 {
   imports = [
     ./alacritty.nix
-    /* ./discord.nix */
     ./firefox.nix
     ./fonts.nix
     ./gtk.nix

@@ -7,8 +7,6 @@
     ./fzf.nix
     ./git.nix
     ./gpg.nix
-    ./go.nix
-    ./kubernetes.nix
     ./myrepos.nix
     ./nix-index.nix
     ./ssh.nix
@@ -25,17 +23,10 @@
     calicoctl
     certigo
     comma
-    fluxcd
-    git-ignore
     glab
     go-task
-    go-tools
     gojq
-    golangci-lint
     gomplate
-    gopls
-    goreleaser
-    gotools
     grc
     htop
     hugo
@@ -46,7 +37,6 @@
     packer
     pipenv
     python310
-    reftools
     sd
     shfmt
     sops

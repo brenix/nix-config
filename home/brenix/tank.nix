@@ -3,6 +3,8 @@
   imports = [
     ./global
     ./features/desktop/bspwm
+    ./features/golang
+    ./features/kubernetes
   ];
 
   dpi = 220;
