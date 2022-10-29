@@ -40,6 +40,7 @@
       packages = forAllSystems (system:
         import ./pkgs { pkgs = legacyPackages.${system}; }
       );
+
       devShells = forAllSystems (system: {
         default = import ./shell.nix { pkgs = legacyPackages.${system}; };
       });
