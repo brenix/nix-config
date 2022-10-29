@@ -29,7 +29,7 @@
       pointer_action2 = "resize_side";
       pointer_motion_interval = 6;
       normal_border_color = "#${config.colorscheme.colors.base02}";
-      active_border_color = "#${config.colorscheme.colors.base05}";
+      active_border_color = "#${config.colorscheme.colors.base02}";
       focused_border_color = "#${config.colorscheme.colors.base03}";
       presel_feedback_color = "#${config.colorscheme.colors.base02}";
     };
