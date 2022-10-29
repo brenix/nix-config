@@ -157,7 +157,7 @@ in
         type = "internal/memory";
         interval = 30;
         label = "%gb_used%";
-        format-prefix = " ";
+        format-prefix = " ";
       };
 
       "module/volume" = {
