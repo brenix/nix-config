@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-  environment.systemPackages = with pkgs; [ helm helmfile kubectl kubernetes cri-tools ];
+  environment.systemPackages = with pkgs; [ kubectl kubernetes cri-tools ];
 
   networking.extraHosts = "192.168.1.10 api.kubernetes";
 
