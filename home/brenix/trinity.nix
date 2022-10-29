@@ -1,7 +1,4 @@
 { inputs, pkgs, ... }:
-let
-  inherit (inputs.nix-colors.lib-core { inherit pkgs; }) schemeFromYAML;
-in
 {
   imports = [
     ./global
