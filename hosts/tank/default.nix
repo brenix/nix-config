@@ -28,7 +28,7 @@
 
   environment.variables.WINIT_X11_SCALE_FACTOR = "1.5";
   environment.variables.GDK_SCALE = "2";
-  environment.variables.GDK_DPI_SCALE = "0.5";
+  environment.variables.GDK_DPI_SCALE = "0.4";
 
   system.stateVersion = "22.05";
 }
