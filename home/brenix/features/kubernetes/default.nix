@@ -12,4 +12,15 @@
     skopeo
     stern
   ];
+
+  home.persistence = {
+    "/persist/home/brenix" = {
+      directories = [
+        ".config/helm"
+        ".krew"
+        ".kube"
+        ".local/share/helm"
+      ];
+    };
+  };
 }
