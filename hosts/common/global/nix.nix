@@ -1,8 +1,4 @@
 { config, pkgs, inputs, lib, ... }:
-let
-  inherit (lib) mapAttrs' nameValuePair;
-  toRegistry = mapAttrs' (n: v: nameValuePair n { flake = v; });
-in
 {
   nix = {
     settings = {
@@ -17,21 +13,22 @@ in
 
       trusted-users = [ "@wheel" ];
       allowed-users = [ "@wheel" ];
-      auto-optimise-store = true;
+      auto-optimise-store = lib.mkDefault true;
+      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      warn-dirty = false;
     };
     package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      warn-dirty = false
-    '';
     gc = {
       automatic = true;
       dates = "daily";
     };
-    # Map flake inputs to system registries
+
+    # Add each flake input as a registry
+    # To make nix3 commands consistent with the flake
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
 
     # Map registries to channels
+    # Very useful when using legacy commands
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
   };
 }

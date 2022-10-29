@@ -14,6 +14,8 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  networking.hostName = "tank";
+
   programs = {
     dconf.enable = true;
   };

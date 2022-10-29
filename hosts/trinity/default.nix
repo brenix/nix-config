@@ -12,6 +12,8 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  networking.hostName = "trinity";
+
   system.autoUpgrade = {
     enable = true;
     allowReboot = true;

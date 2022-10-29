@@ -1,5 +1,5 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ pkgs, lib, inputs, hostname, persistence, config, ... }:
+{ pkgs, lib, inputs, outputs, config, ... }:
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence
@@ -10,12 +10,11 @@
     ./sysctl.nix
     ./users.nix
     ./zsh.nix
-  ];
+  ] ++ (builtins.attrValues outputs.nixosModules);
 
   # Networking
   networking.dhcpcd.enable = false;
   networking.firewall.enable = false;
-  networking.hostName = hostname;
   systemd.network.enable = true;
   services.resolved = {
     enable = true;
@@ -60,9 +59,11 @@
     '';
 
     # Persist logs, timers, etc
-    persistence = lib.mkIf persistence {
-      "/persist".directories = [ "/var/lib/systemd" "/var/log" ];
-      "/persist".files = [ "/etc/machine-id" ];
+    persistence = {
+      "/persist" = {
+        directories = [ "/var/lib/systemd" "/var/log" ];
+        files = [ "/etc/machine-id" ];
+      };
     };
 
     # Add terminfo files

@@ -1,4 +1,4 @@
-{ pkgs, lib, persistence, ... }:
+{ pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [ helm helmfile kubectl kubernetes cri-tools ];
 
@@ -62,7 +62,7 @@
     };
   };
 
-  environment.persistence = lib.mkIf persistence {
+  environment.persistence = {
     "/persist".directories = [
       "/var/openebs"
       "/var/lib/cfssl"

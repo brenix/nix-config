@@ -1,30 +1,57 @@
-{ lib, hostname, ... }:
-{
-  boot.initrd = {
-    postDeviceCommands = lib.mkBefore ''
-      mkdir -p /mnt
-      mount -o subvol=/ /dev/disk/by-label/${hostname} /mnt
+{ lib, config, pkgs, ... }:
+let
+  hostname = config.networking.hostName;
+  systemdPhase1 = config.boot.initrd.systemd.enable;
+  wipeScript = ''
+    mkdir -p /btrfs
+    mount -o subvol=/ /dev/disk/by-label/${hostname} /btrfs
 
+    if [ -e "/btrfs/root/dontwipe" ]; then
+      echo "Not wiping root"
+    else
       echo "Cleaning subvolume"
-      btrfs subvolume list -o /mnt/root | cut -f9 -d ' ' |
+      btrfs subvolume list -o /btrfs/root | cut -f9 -d ' ' |
       while read subvolume; do
-        btrfs subvolume delete "/mnt/$subvolume"
-      done && btrfs subvolume delete /mnt/root
+        btrfs subvolume delete "/btrfs/$subvolume"
+      done && btrfs subvolume delete /btrfs/root
 
       echo "Restoring blank subvolume"
-      btrfs subvolume snapshot /mnt/root-blank /mnt/root
+      btrfs subvolume snapshot /btrfs/root-blank /btrfs/root
+    fi
 
-      umount /mnt
-    '';
-    supportedFilesystems = [ "btrfs" ];
+    umount /btrfs
+    rm /btrfs
+  '';
+in
+{
+  boot.initrd.supportedFilesystems = [ "btrfs" ];
+
+  boot.initrd = {
+    systemd = lib.mkIf systemdPhase1 {
+      emergencyAccess = true;
+      initrdBin = with pkgs; [ coreutils btrfs-progs ];
+      services.initrd-btrfs-root-wipe = {
+        description = "Wipe ephemeral btrfs root";
+        script = wipeScript;
+        serviceConfig.Type = "oneshot";
+        unitConfig.DefaultDependencies = "no";
+
+        # TODO: cycle dependencies are broken
+        requires = [ "initrd-root-device.target" ];
+        before = [ "sysroot.mount" ];
+        wantedBy = [ "initrd-root-fs.target" ];
+      };
+    };
+    # Use postDeviceCommands if on old phase 1
+    postDeviceCommands = lib.mkBefore (lib.optionalString (!systemdPhase1) wipeScript);
   };
 
   fileSystems = {
-    #"/" = {
-    #  device = "/dev/disk/by-label/${hostname}";
-    #  fsType = "btrfs";
-    #  options = [ "subvol=root" "noatime" "nodatacow" "nobarrier" ];
-    #};
+    /* "/" = { */
+    /*   device = "/dev/disk/by-label/${hostname}"; */
+    /*   fsType = "btrfs"; */
+    /*   options = [ "subvol=root" "compress=zstd" ]; */
+    /* }; */
 
     "/" = {
       device = "none";
@@ -45,16 +72,16 @@
       neededForBoot = true;
     };
 
-    #"/swap" = {
-    #  device = "/dev/disk/by-label/${hostname}";
-    #  fsType = "btrfs";
-    #  options = [ "subvol=swap" "noatime" ];
-    #};
+    /* "/swap" = { */
+    /*   device = "/dev/disk/by-label/${hostname}"; */
+    /*   fsType = "btrfs"; */
+    /*   options = [ "subvol=swap" "noatime" ]; */
+    /* }; */
   };
 
-  #swapDevices = [{
-  #  device = "/swap/swapfile";
-  #  size = 4096;
-  #}];
+  /* swapDevices = [{ */
+  /*   device = "/swap/swapfile"; */
+  /*   size = 8196; */
+  /* }]; */
 
 }

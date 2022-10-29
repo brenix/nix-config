@@ -1,4 +1,4 @@
-{ config, lib, pkgs, persistence, ... }:
+{ config, pkgs, ... }:
 {
   virtualisation.libvirtd = {
     enable = true;
@@ -58,10 +58,9 @@
     '';
   };
 
-  environment.persistence = lib.mkIf persistence {
+  environment.persistence = {
     "/persist".directories = [
       "/var/lib/libvirt"
     ];
   };
-
 }

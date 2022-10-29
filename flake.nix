@@ -2,141 +2,94 @@
   description = "My NixOS configuration";
 
   inputs = {
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    hardware = { url = "github:nixos/nixos-hardware"; };
+    firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hardware.url = "github:nixos/nixos-hardware";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
-
-    deploy-rs = { url = "github:serokell/deploy-rs"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprland = { url = "github:hyprwm/hyprland/v0.15.3beta"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
-    impermanence = { url = "github:nix-community/impermanence"; };
-    neovim-nightly = { url = "github:nix-community/neovim-nightly-overlay"; };
-    nix-colors = { url = "github:misterio77/nix-colors"; };
-    nur = { url = "github:nix-community/NUR"; };
-    peerix = { url = "github:cid-chan/peerix"; inputs.nixpkgs.follows = "nixpkgs"; };
+    impermanence.url = "github:nix-community/impermanence";
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    nix-colors.url = "github:misterio77/nix-colors";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
     sops-nix = { url = "github:mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
-  outputs = inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-      # Bring some functions into scope (from builtins and other flakes)
-      lib = import ./lib { inherit inputs; };
-      inherit (lib) mkSystem mkHome mkDeploys forAllSystems;
+      inherit (nixpkgs.lib) filterAttrs traceVal;
+      inherit (builtins) mapAttrs elem;
+      inherit (self) outputs;
+      notBroken = x: !(x.meta.broken or false);
+      supportedSystems = [ "x86_64-linux" ];
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
     rec {
-      inherit lib;
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
+      overlays = import ./overlays;
 
-      # -- OVERLAYS
-      overlays = {
-        default = import ./overlay { inherit inputs; }; # Local overlay
-        nur = inputs.nur.overlay;
-        sops-nix = inputs.sops-nix.overlay;
-        hyprland = inputs.hyprland.overlays.default;
-        hyprwm-contrib = inputs.hyprwm-contrib.overlays.default;
-        /* neovim = inputs.neovim-nightly.overlay; */
-        peerix = inputs.peerix.overlay;
-        deploy-rs = inputs.deploy-rs.overlay;
-      };
-
-
-      # -- PACKAGES
       legacyPackages = forAllSystems (system:
-        import inputs.nixpkgs {
+        import nixpkgs {
           inherit system;
-          overlays = builtins.attrValues overlays;
+          overlays = with overlays; [ additions wallpapers modifications ];
           config.allowUnfree = true;
         }
       );
 
-      apps = forAllSystems (system: rec {
-        deploy = {
-          type = "app";
-          program = "${legacyPackages.${system}.deploy-rs.deploy-rs}/bin/deploy";
-        };
-        default = deploy;
-      });
-
-      # -- DEV SHELLS (accessible via 'nix develop')
+      packages = forAllSystems (system:
+        import ./pkgs { pkgs = legacyPackages.${system}; }
+      );
       devShells = forAllSystems (system: {
-        default = legacyPackages.${system}.callPackage ./shell.nix { };
+        default = import ./shell.nix { pkgs = legacyPackages.${system}; };
       });
 
-      # -- MODULES
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
-
-      # -- SYSTEM CONFIGURATIONS (accessible via 'nixos-rebuild')
-      nixosConfigurations = {
-        neo = mkSystem {
-          hostname = "neo";
+      nixosConfigurations = rec {
+        # Desktop
+        neo = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages."x86_64-linux";
-          persistence = true;
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/neo ];
         };
-        trinity = mkSystem {
-          hostname = "trinity";
+        # Laptop
+        tank = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages."x86_64-linux";
-          persistence = true;
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/tank ];
         };
-        tank = mkSystem {
-          hostname = "tank";
+        # Server
+        trinity = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages."x86_64-linux";
-          persistence = true;
-        };
-        dozer = mkSystem {
-          hostname = "dozer";
-          pkgs = legacyPackages."x86_64-linux";
-          persistence = true;
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/trinity ];
         };
       };
 
-      # -- HOME CONFIGURATIONS (accessible via 'home-manager')
       homeConfigurations = {
-        "brenix@neo" = mkHome {
-          username = "brenix";
-          hostname = "neo";
-          primaryDisplay = "DisplayPort-0";
-          secondaryDisplay = "HDMI-A-0";
-          dpi = 108;
-          colorscheme = "catppuccin-mocha";
-          wallpaper = "mountain-1";
-          persistence = true;
-          features = [
-            "desktop/bspwm"
-          ];
+        # Desktop
+        "brenix@neo" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/brenix/neo.nix ];
         };
-        "brenix@trinity" = mkHome {
-          username = "brenix";
-          hostname = "trinity";
-          colorscheme = "nord";
-          persistence = true;
+        # Laptop
+        "brenix@tank" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/brenix/tank.nix ];
         };
-        "brenix@tank" = mkHome {
-          username = "brenix";
-          hostname = "tank";
-          primaryDisplay = "Virtual-1";
-          dpi = 220;
-          colorscheme = "catppuccin-mocha";
-          wallpaper = "evening-sky";
-          persistence = true;
-          features = [
-            "desktop/bspwm"
-          ];
+        # Server
+        "brenix@trinity" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/brenix/trinity.nix ];
         };
-        "brenix@dozer" = mkHome {
-          username = "brenix";
-          hostname = "dozer";
-          primaryDisplay = "Virtual-1";
-          colorscheme = "nord";
-          persistence = true;
-          wallpaper = "mountain-jaws";
-          features = [
-            "desktop/bspwm"
-          ];
+        # For easy bootstrapping from a nixos live usb
+        "nixos@nixos" = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/brenix/generic.nix ];
         };
       };
-
-      deploy.nodes = mkDeploys nixosConfigurations homeConfigurations;
-      deployChecks = { };
-
     };
 }
