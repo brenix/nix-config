@@ -31,12 +31,11 @@
     htop
     hugo
     lefthook
-    mr
     nodePackages.npm
     nodejs
     packer
     pipenv
-    python310
+    python311
     sd
     shfmt
     sops

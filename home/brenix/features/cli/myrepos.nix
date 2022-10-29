@@ -1,4 +1,9 @@
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    mr
+  ];
+
   home.file.".mrconfig".text = ''
     [DEFAULT]
     jobs = 5
