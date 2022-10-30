@@ -32,6 +32,9 @@
         "--iexclude crash"
         "--iexclude logs"
       ];
+      timerConfig = {
+        OnCalendar = "03:00";
+      };
     };
   };
 }
