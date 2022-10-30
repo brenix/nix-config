@@ -67,7 +67,6 @@
       "/var/openebs"
       "/var/lib/cfssl"
       "/var/lib/cni"
-      "/var/lib/containerd"
       "/var/lib/etcd"
       "/var/lib/kubelet"
       "/var/lib/kubernetes"

@@ -17,6 +17,11 @@
       device = "/dev/disk/by-label/ESP";
       fsType = "vfat";
     };
+    "/var/lib/containerd" = {
+      device = "/dev/disk/by-label/containerd";
+      fsType = "btrfs";
+      options = [ "noatime" "nodatacow" "commit=120" "flushoncommit" "discard=async" ];
+    };
   };
 
   systemd.network.networks.enp7s0 = {
