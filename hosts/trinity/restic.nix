@@ -1,5 +1,10 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    restic
+    rclone
+  ];
+
   sops.secrets.restic-password = {
     sopsFile = ./secrets.yaml;
   };
