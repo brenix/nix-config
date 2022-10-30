@@ -9,7 +9,7 @@ keys:
     - &tank age1nztjx7seuzdyz94h00kf7lq4xarj804mj4e0psaz30la0dkf4s9qgkw7yv
 
 creation_rules:
-  - path_regex: hosts/common/secrets.ya?ml$
+  - path_regex: secrets.ya?ml$
     key_groups:
       - age:
           - *brenix

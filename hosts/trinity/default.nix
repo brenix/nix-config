@@ -6,6 +6,7 @@
 
     ./hardware-configuration.nix
     ./kubernetes.nix
+    ./restic.nix
     ../common/global
     ../common/optional/systemd-boot.nix
   ];
