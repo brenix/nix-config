@@ -1,6 +1,8 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
+  neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system};
+
   inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) vimThemeFromScheme;
 
   # installs a vim plugin from git with a given tag / branch
@@ -21,6 +23,7 @@ in
 
   programs.neovim = {
     enable = true;
+    package = neovim-overlay.neovim;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
