@@ -1,7 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
-  neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system};
+  /* neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system}; */
   inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) vimThemeFromScheme;
 in
 {
@@ -9,7 +9,7 @@ in
 
   programs.neovim = {
     enable = true;
-    package = neovim-overlay.neovim;
+    /* package = neovim-overlay.neovim; */
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
