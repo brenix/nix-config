@@ -2,21 +2,7 @@
 
 let
   neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system};
-
   inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) vimThemeFromScheme;
-
-  # installs a vim plugin from git with a given tag / branch
-  pluginGit = ref: repo:
-    pkgs.vimUtils.buildVimPluginFrom2Nix {
-      pname = "${lib.strings.sanitizeDerivationName repo}";
-      version = ref;
-      src = builtins.fetchGit {
-        url = "https://github.com/${repo}.git";
-        inherit ref;
-      };
-    };
-  # always installs latest version
-  plugin = pluginGit "HEAD";
 in
 {
   home.sessionVariables.EDITOR = "nvim";
@@ -44,6 +30,7 @@ in
       cmp-path
       cmp-treesitter
       cmp_luasnip
+      comment-box-nvim
       git-blame-nvim
       gitsigns-nvim
       gruvbox-material
