@@ -17,6 +17,7 @@
 
   home.packages = with pkgs; [
     age
+    atmos
     awless
     aws-vault
     awscli2
