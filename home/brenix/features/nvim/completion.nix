@@ -44,12 +44,12 @@
             end,
           },
           sources = {
-            { name = "buffer", option = { get_bufnrs = vim.api.nvim_list_bufs } },
-            { name = "emoji" },
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
-            { name = "path" },
             { name = "treesitter" },
+            { name = "path" },
+            { name = "emoji" },
+            { name = "buffer", option = { get_bufnrs = vim.api.nvim_list_bufs } },
           }
         }
       '';
