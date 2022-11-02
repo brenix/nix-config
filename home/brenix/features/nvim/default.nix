@@ -75,6 +75,7 @@ in
         vim.opt.joinspaces = false
         vim.opt.linebreak = false
         vim.opt.mouse = "a"
+        vim.opt.foldenable = false
         vim.opt.number = true
         vim.opt.numberwidth = 2
         vim.opt.shiftround = true
@@ -117,7 +118,7 @@ in
         vim.keymap.set("v", "<Tab>", ">gv", { silent = true })
         vim.keymap.set("v", "<S-Tab>", "<gv", { silent = true })
         vim.keymap.set("n", "<Leader>h", ":nohlsearch<cr>", { silent = true })
-        vim.keymap.set("n", "<Leader>d", ":FormatDisable<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>d", ":FormatToggle<CR>", { silent = true })
         vim.keymap.set("n", "<Tab>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })
         vim.keymap.set("n", "<S-Tab>", [[<Cmd>BufferLineCyclePrev<CR>]], { silent = true })
         vim.keymap.set("n", "<Leader>'", ":CommentToggle<CR>", { silent = true })
