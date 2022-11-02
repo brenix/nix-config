@@ -11,7 +11,7 @@
     nodePackages.vscode-html-languageserver-bin
     nodePackages.vscode-json-languageserver-bin
     nodePackages.yaml-language-server
-    python-language-server
+    python3Packages.python-lsp-server
     rnix-lsp
     sumneko-lua-language-server
     terraform-ls
@@ -19,7 +19,7 @@
     # Formatters
     nixpkgs-fmt
     deno
-    python310Packages.mdformat
+    python3Packages.mdformat
     shellharden
     shfmt
     stylua
