@@ -45,9 +45,9 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
-        font-0 = if config.dpi > 150 then "${config.fontProfiles.regular.family}:size=9;2" else "${config.fontProfiles.regular.family}:size=12;2";
-        font-1 = if config.dpi > 150 then "Material Icons:size=8;3" else "Material Icons:size=11;3";
-        font-2 = if config.dpi > 150 then "Font Awesome 6 Free Solid:size=8;2" else "Font Awesome 6 Free Solid:size=10;2";
+        font-0 = if config.dpi > 150 then "${config.fontProfiles.regular.family}:size=9;2" else "${config.fontProfiles.regular.family}:size=11;2";
+        font-1 = if config.dpi > 150 then "Material Icons:size=8;3" else "Material Icons:size=10;3";
+        font-2 = if config.dpi > 150 then "Font Awesome 6 Free Solid:size=8;2" else "Font Awesome 6 Free Solid:size=9;2";
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "bspwm";
