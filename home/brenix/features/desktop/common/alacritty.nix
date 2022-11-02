@@ -21,7 +21,7 @@ in
         family = config.fontProfiles.monospace.family;
         style = "Italic";
       };
-      font.size = if config.dpi > 150 then 16 else 13;
+      font.size = if config.dpi > 150 then 16 else 10.5;
       font.offset.y = -3;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{

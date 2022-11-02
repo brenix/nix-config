@@ -1,109 +1,40 @@
 { config, pkgs, lib, inputs, ... }:
-
-let
-  /* neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system}; */
-  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) vimThemeFromScheme;
+let neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system};
 in
 {
+  imports = [
+    ./completion.nix
+    ./lsp.nix
+    ./misc.nix
+    ./treesitter.nix
+    ./ui.nix
+  ];
   home.sessionVariables.EDITOR = "nvim";
 
   programs.neovim = {
     enable = true;
-    /* package = neovim-overlay.neovim; */
+    package = neovim-overlay.neovim;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
 
-    plugins = with pkgs.vimPlugins; [
-      {
-        plugin = vimThemeFromScheme { scheme = config.colorscheme; };
-      }
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
-      Navigator-nvim
-      better-escape-nvim
-      bufferline-nvim
-      catppuccin-nvim
-      cmp-buffer
-      cmp-emoji
-      cmp-nvim-lsp
-      cmp-nvim-lua
-      cmp-path
-      cmp-treesitter
-      cmp_luasnip
-      comment-box-nvim
-      git-blame-nvim
-      gitsigns-nvim
-      gruvbox-material
-      gruvbox-nvim
-      lsp-format-nvim
-      lsp_signature-nvim
-      lspkind-nvim
-      lualine-lsp-progress
-      lualine-nvim
-      luasnip
-      mkdir-nvim
-      nginx-vim
-      nord-nvim
-      null-ls-nvim
-      nvim-autopairs
-      nvim-bufdel
-      nvim-cmp
-      nvim-colorizer-lua
-      nvim-comment
-      nvim-lspconfig
-      nvim-tree-lua
-      nvim-web-devicons
-      project-nvim
-      quickfix-reflector-vim
-      stabilize-nvim
-      switch-vim
-      telescope-fzf-native-nvim
-      telescope-nvim
-      telescope-project-nvim
-      todo-comments-nvim
-      tokyonight-nvim
-      trouble-nvim
-      vim-better-whitespace
-      vim-easy-align
-      vim-terraform
-      vim-terraform-completion
-    ];
+    extraRuntime = {
+      "colors/nix-${config.colorscheme.slug}.vim" = {
+        text = import ./theme.nix config.colorscheme;
+      };
+    };
 
-    extraPackages = with pkgs; [
-      # plugin deps
-      (python3.withPackages (ps: with ps; [ pynvim ueberzug ]))
-      tree-sitter
+    extraConfig = {
+      viml = /* vim */ ''
+        "Fix nvim size according to terminal
+        "(https://github.com/neovim/neovim/issues/11330)
+        augroup fix_size
+          autocmd VimEnter * silent exec "!kill -s SIGWINCH" getpid()
+        augroup END
 
-      # language servers
-      gopls
-      nodePackages.bash-language-server
-      nodePackages.dockerfile-language-server-nodejs
-      nodePackages.fixjson
-      nodePackages.markdownlint-cli
-      nodePackages.pyright
-      nodePackages.vscode-css-languageserver-bin
-      nodePackages.vscode-html-languageserver-bin
-      nodePackages.vscode-json-languageserver-bin
-      nodePackages.yaml-language-server
-      rnix-lsp
-      sumneko-lua-language-server
-      terraform-ls
-
-      # formatters
-      nixpkgs-fmt
-      deno
-      python310Packages.mdformat
-      shellharden
-      shfmt
-      stylua
-
-      # diagnostics
-      statix
-    ];
-
-    extraConfig = ''
-      lua << EOF
-        -- DISABLE BUILTINS
+      '';
+      lua = /* lua */ ''
+        -- Disable built-ins
         local disabled_built_ins = {
           "2html_plugin",
           "getscript",
@@ -128,51 +59,117 @@ in
           vim.g["loaded_" .. plugin] = 1
         end
 
-        -- MODULES
-        local modules = {
-          "core.utils",
-          "core.options",
-          "core.mappings",
-          "plugins"
-        }
+        -- Options
+        local indent = 2
+        vim.opt.autochdir = true
+        vim.opt.autoindent = true
+        vim.opt.autoread = true
+        vim.opt.backspace = "indent,eol,start"
+        vim.opt.backup = false
+        vim.opt.conceallevel = 0
+        vim.opt.copyindent = true
+        vim.opt.expandtab = true
+        vim.opt.fillchars = { eob = " " }
+        vim.opt.hidden = true
+        vim.opt.ignorecase = false
+        vim.opt.joinspaces = false
+        vim.opt.linebreak = false
+        vim.opt.mouse = "a"
+        vim.opt.number = true
+        vim.opt.numberwidth = 2
+        vim.opt.shiftround = true
+        vim.opt.shiftwidth = indent
+        vim.opt.shortmess = "sI"
+        vim.opt.signcolumn = "yes"
+        vim.opt.smartcase = true
+        vim.opt.smartindent = false
+        vim.opt.smarttab = true
+        vim.opt.softtabstop = indent
+        vim.opt.splitbelow = true
+        vim.opt.splitkeep = "screen";
+        vim.opt.splitright = true
+        vim.opt.swapfile = false
+        vim.opt.tabstop = indent
+        vim.opt.termguicolors = true
+        vim.opt.timeoutlen = 400
+        vim.opt.undofile = false
+        vim.opt.updatetime = 250
+        vim.opt.wildmenu = true
+        vim.opt.wildmode = "list:longest:full"
+        vim.opt.wrap = false
 
-        for _, module in ipairs(modules) do
-          local ok, err = pcall(require, module)
-          if not ok then
-            error("Error loading " .. module .. "\n\n" .. err)
-          end
+        -- Mappings
+        vim.g.mapleader = " "
+        vim.g.maplocalleader = " "
+        vim.keymap.set("n", "<Leader>w", ":w<CR>")
+        vim.keymap.set("n", "<Leader>W", ":wq<CR>")
+        vim.keymap.set("n", "<Leader>q", ":q<CR>")
+        vim.keymap.set("n", "<Leader>Q", ":q!<CR>")
+        vim.keymap.set("n", "<Leader>e", ':e <C-R>=expand("%:p:h") . "/"<CR>')
+        vim.keymap.set("n", "<Leader>x", ":BufDel<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>X", ":BufDel!<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>s", ":split<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>S", ":new<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>v", ":vsplit<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>V", ":vnew<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>l", ":set invnumber<CR>", { silent = true })
+        vim.keymap.set("i", "<S-Tab>", "<C-D>")
+        vim.keymap.set("v", "<Tab>", ">gv", { silent = true })
+        vim.keymap.set("v", "<S-Tab>", "<gv", { silent = true })
+        vim.keymap.set("n", "<Leader>h", ":nohlsearch<cr>", { silent = true })
+        vim.keymap.set("n", "<Leader>d", ":FormatDisable<CR>", { silent = true })
+        vim.keymap.set("n", "<Tab>", [[<Cmd>BufferLineCycleNext<CR>]], { silent = true })
+        vim.keymap.set("n", "<S-Tab>", [[<Cmd>BufferLineCyclePrev<CR>]], { silent = true })
+        vim.keymap.set("n", "<Leader>'", ":CommentToggle<CR>", { silent = true })
+        vim.keymap.set("v", "<Leader>'", ":CommentToggle<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>g", ":GitBlameToggle<CR>", { silent = true })
+        vim.keymap.set("n", "<A-h>", "<CMD>lua require('Navigator').left()<CR>", { silent = true })
+        vim.keymap.set("n", "<A-k>", "<CMD>lua require('Navigator').up()<CR>", { silent = true })
+        vim.keymap.set("n", "<A-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true })
+        vim.keymap.set("n", "<A-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
+        vim.keymap.set("n", "<C-h>", "<CMD>lua require('Navigator').left()<CR>", { silent = true })
+        vim.keymap.set("n", "<C-k>", "<CMD>lua require('Navigator').up()<CR>", { silent = true })
+        vim.keymap.set("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true })
+        vim.keymap.set("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader>n", ":NvimTreeToggle<CR>", { silent = true })
+        vim.keymap.set("n", "-", ":NvimTreeFindFile<CR>", { silent = true })
+        vim.keymap.set("n", "<Leader><space>", [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], { silent = true })
+        vim.keymap.set("n", "<C-p>", [[<Cmd>lua require('telescope').extensions.project.project{}<CR>]], { silent = true })
+        vim.keymap.set("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], { silent = true })
+        vim.keymap.set("n", "<Leader>t", ":TodoQuickFix<CR>", { silent = true })
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+        vim.keymap.set("n", "<space>f", vim.lsp.buf.format, { desc = "Format code" })
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
+
+        -- Diagnostics
+        function add_sign(name, text)
+          vim.fn.sign_define(name, { text = text, texthl = name, numhl = name})
         end
+        add_sign("DiagnosticSignError", " ")
+        add_sign("DiagnosticSignWarn", " ")
+        add_sign("DiagnosticSignHint", " ")
+        add_sign("DiagnosticSignInfo", " ")
 
-        -- COLORSCHEME
+        -- Colorscheme options
         vim.g.nord_contrast = false
         vim.g.nord_borders = true
         vim.g.nord_disable_background = true
         vim.g.nord_italic = true
         vim.g.nord_bold = false
         vim.g.gruvbox_material_background = "hard"
-        --vim.cmd[[colorscheme gruvbox-material]]
-        --vim.cmd[[colorscheme nord]]
         vim.cmd[[colorscheme catppuccin]]
         --vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
-
-        -- PERFORMANCE
-        vim.g.python_host_skip_check = 1
-        vim.g.python3_host_skip_check = 1
-      EOF
-
-      hi LineNr guifg=#${config.colorscheme.colors.base02}
-      hi NvimTreeNormal guibg=#${config.colorscheme.colors.base00}
-      hi NvimTreeFolderIcon guifg=#${config.colorscheme.colors.base0A}
-      hi NvimTreeFolderName guifg=#${config.colorscheme.colors.base05}
-      hi NvimTreeOpenedFolderName guifg=#${config.colorscheme.colors.base05}
-    '';
-
+      '';
+    };
   };
 
-  xdg.configFile."nvim/lua" = {
-    source = ./lua;
-    recursive = true;
-  };
+  xdg.configFile."nvim/init.lua".onChange = /* bash */ ''
+    for server in $XDG_RUNTIME_DIR/nvim.*; do
+      nvim --server $server --remote-send ':source $MYVIMRC<CR>' &
+    done
+  '';
 
   xdg.desktopEntries = {
     nvim = {
