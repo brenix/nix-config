@@ -2,7 +2,9 @@
 
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
-My NixOS and home-manager configuration files
+My NixOS and home-manager configuration files. Heavily based and inspired by
+[misterio77's nix-config](https://github.com/misterio77/nix-config). Many thanks
+for the work he has contributed.
 
 ## Screenshot
 
