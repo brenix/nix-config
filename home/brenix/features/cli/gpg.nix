@@ -28,7 +28,10 @@ in
   };
 
   home.persistence = {
-    "/persist/home/brenix".directories = [ ".gnupg" ];
+    "/persist/home/brenix" = {
+      directories = [ ".gnupg" ];
+      allowOther = true;
+    };
   };
 
   programs.gpg = {

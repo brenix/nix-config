@@ -19,6 +19,9 @@ in
   };
 
   home.persistence = {
-    "/persist/home/brenix".directories = [ ".ssh" ];
+    "/persist/home/brenix" = {
+      directories = [ ".ssh" ];
+      allowOther = true;
+    };
   };
 }

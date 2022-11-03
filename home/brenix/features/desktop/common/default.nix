@@ -38,6 +38,7 @@
       files = [
         ".config/zoomus.conf"
       ];
+      allowOther = true;
     };
   };
 }

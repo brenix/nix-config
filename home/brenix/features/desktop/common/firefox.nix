@@ -214,6 +214,9 @@ in
   };
 
   home.persistence = {
-    "/persist/home/brenix".directories = [ ".mozilla/firefox" ];
+    "/persist/home/brenix" = {
+      directories = [ ".mozilla/firefox" ];
+      allowOther = true;
+    };
   };
 }

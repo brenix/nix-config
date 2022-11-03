@@ -12,6 +12,9 @@
   ];
 
   home.persistence = {
-    "/persist/home/brenix".directories = [ ".terraform.d" ];
+    "/persist/home/brenix" = {
+      directories = [ ".terraform.d" ];
+      allowOther = true;
+    };
   };
 }

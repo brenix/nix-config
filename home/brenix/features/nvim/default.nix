@@ -203,11 +203,14 @@ in
   };
 
   home.persistence = {
-    "/persist/home/brenix".directories = [ ".local/share/nvim/project_nvim" ];
-    "/persist/home/brenix".files = [
-      ".local/share/nvim/telescope-projects.txt"
-      ".local/share/nvim/telescope-workspaces.txt"
-      ".local/share/nvim/telescope_history"
-    ];
+    "/persist/home/brenix" = {
+      directories = [ ".local/share/nvim/project_nvim" ];
+      files = [
+        ".local/share/nvim/telescope-projects.txt"
+        ".local/share/nvim/telescope-workspaces.txt"
+        ".local/share/nvim/telescope_history"
+      ];
+      allowOther = true;
+    };
   };
 }

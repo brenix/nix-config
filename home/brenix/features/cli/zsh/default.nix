@@ -172,6 +172,7 @@
         ".local/share/zoxide"
         ".zsh.local.d"
       ];
+      allowOther = true;
     };
   };
 }

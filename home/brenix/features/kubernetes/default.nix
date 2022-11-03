@@ -21,6 +21,7 @@
         ".kube"
         ".local/share/helm"
       ];
+      allowOther = true;
     };
   };
 }
