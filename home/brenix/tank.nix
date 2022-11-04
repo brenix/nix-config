@@ -25,7 +25,7 @@
   };
 
   /* colorscheme = inputs.nix-colors.colorSchemes.catppuccin; */
-  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "catppuccin-mocha" (builtins.readFile (./colorschemes/catppuccin-mocha.yaml));
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nordppuccin" (builtins.readFile (./colorschemes/nordppuccin.yaml));
 
-  wallpaper = pkgs.wallpapers.mountain-1;
+  wallpaper = pkgs.wallpapers.mountain-jaws;
 }
