@@ -96,7 +96,6 @@ in
         vim.opt.undofile = false
         vim.opt.updatetime = 250
         vim.opt.wildmenu = true
-        vim.opt.wildmode = "list:longest:full"
         vim.opt.wrap = false
 
         -- Mappings
