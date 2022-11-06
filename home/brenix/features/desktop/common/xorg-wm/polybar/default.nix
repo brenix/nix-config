@@ -36,7 +36,7 @@ in
         dpi = config.dpi;
         top = true;
         center = true;
-        height = 25;
+        height = if config.dpi > 150 then 35 else 25;
         enable-ipc = true;
         width = "99%";
         foreground = "\${colors.fg}";
