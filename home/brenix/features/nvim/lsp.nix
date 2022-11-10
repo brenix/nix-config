@@ -52,6 +52,13 @@
           require("lsp-format").on_attach(client)
           require("lsp_signature").on_attach(signature_setup, bufnr)
           vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+          if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+            vim.diagnostic.disable()
+            vim.defer_fn(function()
+              vim.diagnostic.reset(nil, bufnr)
+            end, 1000)
+          end
         end
 
         function add_lsp(binary, server, options)

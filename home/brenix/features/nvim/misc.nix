@@ -10,6 +10,7 @@
     quickfix-reflector-vim
     switch-vim
     vim-easy-align
+    vim-helm
     vim-markdown
     vim-nix
     vim-surround
