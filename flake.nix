@@ -13,6 +13,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     sops-nix = { url = "github:mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
+    devenv.url = "github:cachix/devenv";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
