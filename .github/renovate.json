@@ -1,6 +1,3 @@
 "nix": {
   "enabled": true
-},
-"lockFileMaintenance": {
-  "enabled": true
 }
