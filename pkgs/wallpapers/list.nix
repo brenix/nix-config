@@ -12,6 +12,12 @@
     sha256 = "11svh9cnqhm723nwmyhi94znw5wwqc7i682k1vf073hw3fqdm62j";
   }
   {
+    name = "murky-peaks";
+    ext = "jpeg";
+    id = "nP5KBv7";
+    sha256 = "0x4bi7m62ir79cdbz1kfl50b69gz5532g5hwzfdmv7i89zb9lyj6";
+  }
+  {
     name = "space-station";
     ext = "jpeg";
     id = "Ne3cbbD";

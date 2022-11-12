@@ -10,10 +10,10 @@ rec {
       size = 10;
     };
     theme = {
-      /* name = "Arc"; */
-      /* package = pkgs.arc-theme; */
-      name = "${config.colorscheme.slug}";
-      package = gtkThemeFromScheme { scheme = config.colorscheme; };
+      name = "Nordic-darker";
+      package = pkgs.nordic;
+      # name = "${config.colorscheme.slug}";
+      # package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
     iconTheme = {
       name = "Nordzy";
