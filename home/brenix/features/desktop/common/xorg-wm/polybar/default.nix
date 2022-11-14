@@ -150,7 +150,7 @@ in
         type = "internal/cpu";
         interval = 3;
         label = "%percentage:2%%";
-        format-prefix = "";
+        format-prefix = " ";
       };
 
       "module/memory" = {
