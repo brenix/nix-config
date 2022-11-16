@@ -17,14 +17,17 @@
     terraform-ls
 
     # Formatters
-    nixpkgs-fmt
     deno
+    gotools
+    nixpkgs-fmt
     python3Packages.mdformat
+    reftools
     shellharden
     shfmt
     stylua
 
     # Diagnostics
+    golangci-lint
     statix
 
   ];
@@ -104,6 +107,7 @@
         local b = null_ls.builtins
         local sources = {
           -- Go
+          b.diagnostics.golangci_lint,
           b.formatting.gofmt,
           b.formatting.goimports.with({
             extra_args = { "-local", "gitlab" }, -- Separate local gitlab imports from 3rd party ones
