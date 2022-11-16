@@ -109,9 +109,7 @@
           -- Go
           b.diagnostics.golangci_lint,
           b.formatting.gofmt,
-          b.formatting.goimports.with({
-            extra_args = { "-local", "gitlab" }, -- Separate local gitlab imports from 3rd party ones
-          }),
+          b.formatting.goimports,
           -- Nix
           b.formatting.nixfmt.with({
             command = "nixpkgs-fmt",
