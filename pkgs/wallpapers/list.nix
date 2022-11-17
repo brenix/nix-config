@@ -18,6 +18,12 @@
     sha256 = "0x4bi7m62ir79cdbz1kfl50b69gz5532g5hwzfdmv7i89zb9lyj6";
   }
   {
+    name = "mountain-4";
+    ext = "jpeg";
+    id = "CDmQsHd";
+    sha256 = "0iv13nqpknhmgk4igrf2al0csab0vpvx9fchii1fjaxyq3vl43wl";
+  }
+  {
     name = "space-station";
     ext = "jpeg";
     id = "Ne3cbbD";

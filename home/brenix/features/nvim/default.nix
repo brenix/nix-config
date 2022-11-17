@@ -159,7 +159,7 @@ in
         vim.g.nord_italic = true
         vim.g.nord_bold = false
         vim.g.gruvbox_material_background = "hard"
-        vim.cmd[[colorscheme nord]]
+        vim.cmd[[colorscheme catppuccin-mocha]]
         --vim.cmd[[colorscheme nix-${config.colorscheme.slug}]]
       '';
     };
