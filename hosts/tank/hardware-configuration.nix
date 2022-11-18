@@ -27,5 +27,15 @@
     }];
   };
 
+  systemd.mounts = [
+    {
+      what = "/dev/sdb1";
+      where = "/home/brenix/.cache";
+      type = "btrfs";
+      options = "rw,noatime,nodatacow,discard=async";
+      wantedBy = [ "multi-user.target" ];
+    }
+  ];
+
   nixpkgs.hostPlatform.system = "x86_64-linux";
 }
