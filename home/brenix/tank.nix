@@ -24,6 +24,8 @@
     Virtual-1 = [ "1" "2" "3" "4" "5" ];
   };
 
+  services.polybar.settings."bar/main".height = 45;
+
   /* colorscheme = inputs.nix-colors.colorSchemes.catppuccin; */
   colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "catppuccin-mocha" (builtins.readFile (./colorschemes/catppuccin-mocha.yaml));
   wallpaper = pkgs.wallpapers.evening-sky;

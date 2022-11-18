@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   mprisScript = pkgs.callPackage ./scripts/mpris.nix { };
@@ -36,7 +36,7 @@ in
         dpi = config.dpi;
         top = true;
         center = true;
-        height = if config.dpi > 150 then 35 else 25;
+        height = lib.mkDefault 25;
         enable-ipc = true;
         width = "99%";
         foreground = "\${colors.fg}";
