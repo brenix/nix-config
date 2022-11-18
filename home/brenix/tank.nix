@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 {
   imports = [
     ./global
@@ -24,7 +24,16 @@
     Virtual-1 = [ "1" "2" "3" "4" "5" ];
   };
 
-  services.polybar.settings."bar/main".height = 45;
+  services.polybar.settings."bar/main" = {
+    height = 45;
+    font-0 = "${config.fontProfiles.regular.family}:size=10;3";
+    font-1 = "Material Icons:size=9;4";
+    font-2 = "Font Awesome 6 Free Solid:size=9;3";
+  };
+
+  programs.alacritty.settings.font.size = 14;
+
+  programs.starship.settings.command_timeout = 1200;
 
   /* colorscheme = inputs.nix-colors.colorSchemes.catppuccin; */
   colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "catppuccin-mocha" (builtins.readFile (./colorschemes/catppuccin-mocha.yaml));
