@@ -6,7 +6,7 @@ keys:
   - &hosts:
     - &neo age13aug9ksxkwksqjl4ghd8u3cf5c9tseaxtw75s7mpksdes9edfp7qa47044
     - &trinity age1g6hk6frqedn4dlz2l3s06f6jl6f95eqfwk96qvtdws4ctgv60fdqesv664
-    - &tank age1nztjx7seuzdyz94h00kf7lq4xarj804mj4e0psaz30la0dkf4s9qgkw7yv
+    - &tank age1ss0uv9m47mu537esc0kyyd02qmcjpww668fhrjxfwzjf04chhe3qpvgjgk
 
 creation_rules:
   - path_regex: secrets.ya?ml$
