@@ -31,7 +31,7 @@
     font-2 = "Font Awesome 6 Free Solid:size=9;3";
   };
 
-  programs.alacritty.settings.font.size = 14;
+  programs.alacritty.settings.font.size = 16;
 
   programs.starship.settings.command_timeout = 1200;
 
