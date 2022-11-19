@@ -6,6 +6,7 @@
   };
 
   time.timeZone = lib.mkDefault "America/Los_Angeles";
+  time.hardwareClockInLocalTime = true;
 
   console = {
     useXkbConfig = true;
