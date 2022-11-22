@@ -85,6 +85,13 @@ in
       options vfio_iommu_type1 allow_unsafe_interrupts=1
       options vfio_iommu_type1 disable_hugepages=0
     '';
+
+    loader.systemd-boot.extraEntries = {
+      "windows.conf" = ''
+        title Winblowz 11
+        efi /EFI/Microsoft/Boot/bootmgfw.efi
+      '';
+    };
   };
 
   fileSystems = {
