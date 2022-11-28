@@ -36,7 +36,7 @@ in
         dpi = config.dpi;
         top = true;
         center = true;
-        height = lib.mkDefault 18;
+        height = lib.mkDefault 25;
         enable-ipc = true;
         width = "99%";
         foreground = "\${colors.fg}";
@@ -45,11 +45,11 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg}";
         border-top-size = 1;
-        font-0 = lib.mkDefault "${config.fontProfiles.monospace.family}:size=14;2";
-        font-1 = lib.mkDefault "Material Icons:size=9;3";
-        font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=8;2";
+        font-0 = lib.mkDefault "${config.fontProfiles.regular.family}:size=11;2";
+        font-1 = lib.mkDefault "Material Icons:size=11;3";
+        font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
-        module-margin-right = 0;
+        module-margin-right = 1;
         modules-left = "bspwm";
         modules-center = "now-playing";
         modules-right = "battery cpu temperature memory volume date time";
