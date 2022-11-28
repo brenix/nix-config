@@ -22,7 +22,7 @@ in
         style = "Italic";
       };
       font.size = lib.mkDefault 11.5;
-      font.offset.y = -3;
+      font.offset.y = -1;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
         mouse = "Right";
