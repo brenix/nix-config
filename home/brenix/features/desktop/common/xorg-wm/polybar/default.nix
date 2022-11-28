@@ -49,7 +49,7 @@ in
         font-1 = lib.mkDefault "Material Icons:size=9;3";
         font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=8;2";
         module-margin-left = 1;
-        module-margin-right = 1;
+        module-margin-right = 0;
         modules-left = "bspwm";
         modules-center = "now-playing";
         modules-right = "battery cpu temperature memory volume date time";
