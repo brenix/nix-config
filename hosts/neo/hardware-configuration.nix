@@ -54,9 +54,7 @@ in
       "amd_iommu=on"
       "boot.shell_on_fail"
       "default_hugepagesz=1G"
-      "fbcon=map:0"
       "hugepagesz=1G"
-      /* "hugepages=16" */
       "intremap=no_x2apic_optout"
       "iommu=pt"
       "mitigations=off"
@@ -88,7 +86,7 @@ in
 
     loader.systemd-boot.extraEntries = {
       "windows.conf" = ''
-        title Winblowz 11
+        title Windows 11
         efi /EFI/Microsoft/Boot/bootmgfw.efi
       '';
     };
