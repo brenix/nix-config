@@ -20,7 +20,7 @@ in
 
       "colors" = {
         bg = "#${colors.base00}";
-        bg-alt = "#${colors.base00}";
+        bg-alt = "#${colors.base01}";
         fg = "#${colors.base05}";
         fg-alt = "#${colors.base05}";
         blue = "#${colors.base0D}";
