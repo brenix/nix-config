@@ -11,7 +11,7 @@
     nodePackages.vscode-html-languageserver-bin
     nodePackages.vscode-json-languageserver-bin
     nodePackages.yaml-language-server
-    python3Packages.python-lsp-server
+    # python3Packages.python-lsp-server
     rnix-lsp
     sumneko-lua-language-server
     terraform-ls
