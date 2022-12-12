@@ -40,7 +40,7 @@ in /* vim */ ''
   hi Conceal       guifg=#${c.base0D} guibg=#${c.base00} gui=NONE guisp=NONE
   hi Cursor        guifg=#${c.base00} guibg=#${c.base05} gui=NONE guisp=NONE
   hi NonText       guifg=#${c.base03} guibg=NONE gui=NONE guisp=NONE
-  hi LineNr        guifg=#${c.base04} guibg=#${c.base00} gui=NONE guisp=NONE
+  hi LineNr        guifg=#${c.base02} guibg=#${c.base00} gui=NONE guisp=NONE
   hi SignColumn    guifg=#${c.base04} guibg=#${c.base00} gui=NONE guisp=NONE
   hi StatusLine    guifg=#${c.base0B} guibg=#${c.base02} gui=NONE guisp=NONE
   hi StatusLineNC  guifg=#${c.base04} guibg=#${c.base01} gui=NONE guisp=NONE

@@ -7,7 +7,7 @@ rec {
     enable = true;
     font = {
       name = config.fontProfiles.regular.family;
-      size = 11;
+      size = 10;
     };
     theme = {
       # name = "Nordic-darker";

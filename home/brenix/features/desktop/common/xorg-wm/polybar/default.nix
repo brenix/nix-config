@@ -20,9 +20,9 @@ in
 
       "colors" = {
         bg = "#${colors.base00}";
-        bg-alt = "#${colors.base01}";
+        bg-alt = "#${colors.base03}";
         fg = "#${colors.base05}";
-        fg-alt = "#${colors.base05}";
+        fg-alt = "#${colors.base07}";
         blue = "#${colors.base0D}";
         cyan = "#${colors.base0C}";
         green = "#${colors.base0B}";
@@ -36,28 +36,26 @@ in
         dpi = config.dpi;
         top = true;
         center = true;
-        height = lib.mkDefault 25;
+        height = lib.mkDefault 18;
         enable-ipc = true;
-        width = "99%";
         foreground = "\${colors.fg}";
         background = "\${colors.bg}";
-        border-bottom-color = "\${colors.bg}";
+        border-bottom-color = "\${colors.bg-alt}";
         border-bottom-size = 1;
-        border-top-color = "\${colors.bg}";
+        border-top-color = "\${colors.bg-alt}";
         border-top-size = 1;
-        font-0 = lib.mkDefault "${config.fontProfiles.regular.family}:size=11;2";
-        font-1 = lib.mkDefault "Material Icons:size=11;3";
-        font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=10;2";
+        font-0 = "Terminus:size=14;1";
+        # font-1 = lib.mkDefault "Material Icons:size=11;3";
+        # font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
         module-margin-right = 1;
         modules-left = "bspwm";
         modules-center = "now-playing";
         modules-right = "battery cpu temperature memory volume date time";
-        offset-x = 12;
-        offset-y = 8;
         padding-left = 1;
         padding-right = 1;
         tray-position = "right";
+        separator = "%{F#${colors.base02}}|%{F-}";
       };
 
       "module/now-playing" = {
@@ -66,7 +64,7 @@ in
         tail = true;
         label-maxlen = 800;
         interval = 2;
-        format = "  <label>";
+        format = "<label>";
         format-padding = 2;
       };
 
@@ -74,36 +72,13 @@ in
         type = "internal/battery";
         battery = "BAT1";
         adapter = "ACAD";
-        format-discharging = " <label-discharging>";
-        format-charging = " <label-charging>";
-        format-full = " <label-full>";
+        format-discharging = "<label-discharging>";
+        format-charging = "<label-charging>";
+        format-full = "<label-full>";
         label-charging = "%percentage%%";
         label-discharging = "%percentage%%";
         label-full = "%percentage%%";
         poll-interval = 10;
-      };
-
-      "module/workspaces" = {
-        type = "internal/xworkspaces";
-        enable-click = true;
-        enable-scroll = true;
-        pin-workspaces = false;
-        format = "<label-state>";
-        format-padding = 0;
-        label-empty = "%icon%";
-        label-empty-padding = 1;
-        label-active = "%icon%";
-        label-active-foreground = "\${colors.blue}";
-        label-active-padding = 1;
-        label-occupied = "%icon%";
-        label-occupied-padding = 1;
-        label-urgent = "%icon%";
-        label-urgent-padding = 1;
-        icon-0 = "1;";
-        icon-1 = "2;";
-        icon-2 = "3;";
-        icon-3 = "4;";
-        icon-default = "";
       };
 
       "module/bspwm" = {
@@ -112,21 +87,14 @@ in
         enable-scroll = true;
         pin-workspaces = false;
         format = "<label-state>";
-        format-padding = 0;
-        /* label-empty = "%icon%"; */
         label-empty-padding = 1;
-        /* label-focused = "%icon%"; */
-        label-focused-foreground = "\${colors.blue}";
         label-focused-padding = 1;
-        /* label-occupied = "%icon%"; */
         label-occupied-padding = 1;
-        /* label-urgent = "%icon%"; */
         label-urgent-padding = 1;
-        /* ws-icon-0 = "1;"; */
-        /* ws-icon-1 = "2;"; */
-        /* ws-icon-2 = "3;"; */
-        /* ws-icon-3 = "4;"; */
-        /* ws-icon-default = ""; */
+        label-focused-foreground = "\${colors.fg-alt}";
+        label-focused-background = "\${colors.bg-alt}";
+        label-occupied-foreground = "\${colors.bg-alt}";
+        label-empty-foreground = "\${colors.bg-alt}";
       };
 
       "module/temperature" = {
@@ -142,7 +110,6 @@ in
         label-warn = "%temperature-c%";
         label-warn-foreground = "\${colors.red}";
         format = "<label>";
-        format-prefix = " ";
         format-warn = "<label-warn>";
       };
 
@@ -150,14 +117,12 @@ in
         type = "internal/cpu";
         interval = 3;
         label = "%percentage:2%%";
-        format-prefix = " ";
       };
 
       "module/memory" = {
         type = "internal/memory";
         interval = 30;
         label = "%gb_used%";
-        format-prefix = " ";
       };
 
       "module/volume" = {
@@ -165,15 +130,11 @@ in
         use-ui-max = false;
         interval = 2;
         bar-volume-empty-foreground = "\${colors.fg-alt}";
-        format-volume = "<ramp-volume> <label-volume>";
+        format-volume = "<label-volume>";
         label-muted-font = 1;
-        label-muted = " %{F#b77a76}MUTED";
-        label-muted-foreground = "\${colors.fg-alt}";
+        label-muted = "%{F#b77a76}MUTED";
         label-volume-font = 1;
         label-volume = "%{A3:${pkgs.pavucontrol}/bin/pavucontrol & disown:}%percentage%%%{A}";
-        ramp-volume-0 = "";
-        ramp-volume-1 = "";
-        ramp-volume-2 = "";
       };
 
       "module/time" = {
@@ -181,7 +142,6 @@ in
         interval = 5;
         time = "%r";
         label = "%time%";
-        format-prefix = " ";
       };
 
       "module/date" = {
@@ -189,7 +149,7 @@ in
         interval = 3600;
         date = "%Y-%m-%d";
         label =
-          "%{A1:${pkgs.gsimplecal}/bin/gsimplecal & disown:}%{A3:${pkgs.gsimplecal}/bin/gsimplecal & disown:} %date%%{A}%{A}";
+          "%{A1:${pkgs.gsimplecal}/bin/gsimplecal & disown:}%{A3:${pkgs.gsimplecal}/bin/gsimplecal & disown:}%date%%{A}%{A}";
       };
     };
   };
