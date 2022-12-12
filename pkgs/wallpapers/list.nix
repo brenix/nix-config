@@ -24,6 +24,18 @@
     sha256 = "0iv13nqpknhmgk4igrf2al0csab0vpvx9fchii1fjaxyq3vl43wl";
   }
   {
+    name = "void";
+    ext = "png";
+    id = "tmKYjh4";
+    sha256 = "1xwz6cs0wzwdp4rhzw9qh0whi8d1m4xgf06kv74wlwrcgigb3ddm";
+  }
+  {
+    name = "nixos-dark";
+    ext = "png";
+    id = "c86LLz4";
+    sha256 = "03aclmx3yc0x54p3bnmgldrmnbrdkkzg8wzzpiapnjlx66m658kq";
+  }
+  {
     name = "space-station";
     ext = "jpeg";
     id = "Ne3cbbD";
