@@ -1,6 +1,7 @@
 scheme: "Zenbox"
 slug: "zenbox"
-base00: "262525"
+base00: "161515"
+# base00: "262525"
 base01: "383737"
 base02: "3e3d3d"
 base03: "494747"
