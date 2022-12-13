@@ -29,9 +29,11 @@
         ".config/Slack"
         ".config/spotify"
         ".zoom"
+        ".config/Unknown Organization" # Zoom
       ];
       files = [
         ".config/zoomus.conf"
+        ".config/zoom.conf"
       ];
       allowOther = true;
     };
