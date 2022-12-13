@@ -36,7 +36,6 @@
   programs.starship.settings.command_timeout = 1200;
 
   /* colorscheme = inputs.nix-colors.colorSchemes.catppuccin; */
-  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "catppuccin-mocha" (builtins.readFile (./colorschemes/catppuccin-mocha.yaml));
-  wallpaper = pkgs.wallpapers.evening-sky;
-
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
+  wallpaper = pkgs.wallpapers.nixos-dark;
 }
