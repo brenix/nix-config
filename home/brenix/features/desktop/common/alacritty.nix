@@ -11,17 +11,17 @@ in
       scrolling.multiplier = 3;
       font.normal = {
         # family = config.fontProfiles.monospace.family;
-        family = "Terminus";
+        family = lib.mkDefault "Terminus";
         style = "Regular";
       };
       font.bold = {
         # family = config.fontProfiles.monospace.family;
-        family = "Terminus";
+        family = lib.mkDefault "Terminus";
         style = "Regular";
       };
       font.italic = {
         # family = config.fontProfiles.monospace.family;
-        family = "Terminus";
+        family = lib.mkDefault "Terminus";
         style = "Italic";
       };
       font.size = lib.mkDefault 11;

@@ -25,13 +25,14 @@
   };
 
   services.polybar.settings."bar/main" = {
-    height = 45;
-    font-0 = "${config.fontProfiles.regular.family}:size=10;3";
-    font-1 = "Material Icons:size=9;4";
-    font-2 = "Font Awesome 6 Free Solid:size=9;3";
+    height = 25;
+    font-0 = "${config.fontProfiles.regular.family}:size=8;3";
   };
 
-  programs.alacritty.settings.font.size = 13;
+  programs.alacritty.settings.font.size = 12;
+  programs.alacritty.settings.font.normal.family = config.fontProfiles.monospace.family;
+  programs.alacritty.settings.font.bold.family = config.fontProfiles.monospace.family;
+  programs.alacritty.settings.font.italic.family = config.fontProfiles.monospace.family;
 
   programs.starship.settings.command_timeout = 1200;
 
