@@ -11,15 +11,10 @@
 
   xdg.mimeApps.enable = true;
 
-  programs.mpv.enable = true;
-
   home.packages = with pkgs; [
     authy
-    imv
-    mupdf
     obsidian
     pavucontrol
-    piper
     slack
     spotify
     xdg-utils
