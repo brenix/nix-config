@@ -16,6 +16,7 @@
   ];
 
   home.packages = with pkgs; [
+    aiac
     age
     atmos
     awless
