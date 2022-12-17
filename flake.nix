@@ -14,6 +14,7 @@
     nur.url = "github:nix-community/NUR";
     sops-nix = { url = "github:mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     devenv.url = "github:cachix/devenv";
+    st.url = "github:siduck/st";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

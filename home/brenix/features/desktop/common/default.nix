@@ -7,6 +7,8 @@
     ./gtk.nix
     ./playerctl.nix
     ./qt.nix
+    ./st.nix
+    ./xresources.nix
   ];
 
   xdg.mimeApps.enable = true;

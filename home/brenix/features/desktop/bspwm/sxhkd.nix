@@ -77,13 +77,10 @@
       # -- apps
 
       # terminal (tmux)
-      "super + Return" = "alacritty";
+      "super + Return" = "st";
 
       # terminal (floating)
-      "super + shift + Return" = "alacritty --class Alacritty,floating";
-
-      # terminal (work)
-      "super + m" = "alacritty -e zsh -c 'ssh macbook'";
+      "super + shift + Return" = "st -c st,floating";
 
       # launcher
       "{super,alt} + space" = "rofi -show run";

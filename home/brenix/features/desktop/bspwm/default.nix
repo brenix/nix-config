@@ -60,6 +60,9 @@
       "Alacritty:floating" = {
         state = "floating";
       };
+      "st:floating" = {
+        state = "floating";
+      };
       "zoom" = {
         state = "floating";
         sticky = true;
