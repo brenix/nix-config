@@ -96,5 +96,5 @@
     }
   ];
 
-  system.stateVersion = lib.mkDefault "22.05";
+  system.stateVersion = lib.mkDefault "22.11";
 }

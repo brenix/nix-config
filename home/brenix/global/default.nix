@@ -41,7 +41,7 @@ in
   home = {
     username = lib.mkDefault "brenix";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "22.05";
+    stateVersion = lib.mkDefault "22.11";
 
     persistence = {
       "/persist/home/brenix" = {
@@ -64,4 +64,12 @@ in
       };
     };
   };
+
+  # disable manuals as nmd fails to build often
+  manual = {
+    html.enable = false;
+    json.enable = false;
+    manpages.enable = false;
+  };
+
 }
