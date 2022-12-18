@@ -18,7 +18,6 @@
   home.packages = with pkgs; [
     aiac
     age
-    atmos
     awless
     aws-vault
     awscli2
@@ -33,8 +32,8 @@
     htop
     hugo
     lefthook
-    nodePackages.npm
-    nodejs
+    # nodePackages.npm
+    # nodejs
     packer
     pipenv
     python311

@@ -51,7 +51,7 @@ in
           ".config/infractl"
           ".config/sops"
           ".local/bin"
-          ".local/state"
+          ".local/state/wireplumber"
           ".local/tfenv"
           "Downloads"
           "nix-config"
