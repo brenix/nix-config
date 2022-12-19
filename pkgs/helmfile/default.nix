@@ -1,4 +1,4 @@
-{ lib, buildGoModule, fetchFromGitHub }:
+{ lib, buildGoModule, fetchFromGitHub, installShellFiles }:
 
 buildGoModule rec {
   pname = "helmfile";
@@ -18,6 +18,19 @@ buildGoModule rec {
   subPackages = [ "." ];
 
   ldflags = [ "-s" "-w" "-X github.com/helmfile/helmfile/pkg/app/version.Version=${version}" ];
+
+  nativeBuildInputs = [ installShellFiles ];
+
+  postInstall = ''
+    mkdir completions
+    $out/bin/helmfile completion bash > completions/helmfile || true
+    $out/bin/helmfile completion zsh > completions/_helmfile || true
+    $out/bin/helmfile completion fish > completions/helmfile.fish || true
+    installShellCompletion --cmd helmfile \
+      --bash completions/helmfile  \
+      --zsh completions/_helmfile \
+      --fish completions/helmfile.fish
+  '';
 
   meta = {
     description = "Deploy Kubernetes Helm charts";
