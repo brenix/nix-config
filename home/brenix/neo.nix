@@ -36,5 +36,5 @@
 
   colorscheme = inputs.nix-colors.colorSchemes.nord;
   # colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
-  wallpaper = pkgs.wallpapers.forest-dark;
+  wallpaper = pkgs.wallpapers.murky-peaks;
 }
