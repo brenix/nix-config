@@ -15,8 +15,8 @@
         style = "bg:#191c26";
       };
       character = {
-        success_symbol = "[▶](bold green)";
-        error_symbol = "[▶](bold red)";
+        success_symbol = "[\\$](bold green)";
+        error_symbol = "[\\$](bold red)";
       };
       directory = {
         format = "[$path ]($style)";

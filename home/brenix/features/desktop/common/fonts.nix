@@ -3,18 +3,19 @@
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "MesloLGS Nerd Font Mono";
+      family = "UbuntuMono Nerd Font Mono";
       package = pkgs.nerdfonts.override {
         fonts = [
           "Hack"
           "Meslo"
           "JetBrainsMono"
+          "UbuntuMono"
         ];
       };
     };
     regular = {
-      family = "Inter";
-      package = pkgs.inter;
+      family = "Ubuntu";
+      package = pkgs.ubuntu_font_family;
     };
   };
 }

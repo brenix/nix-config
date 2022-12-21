@@ -77,10 +77,10 @@
       # -- apps
 
       # terminal (tmux)
-      "super + Return" = "st";
+      "super + Return" = "alacritty";
 
       # terminal (floating)
-      "super + shift + Return" = "st -c st,floating";
+      "super + shift + Return" = "alacritty -c alacritty,floating";
 
       # launcher
       "{super,alt} + space" = "rofi -show run";

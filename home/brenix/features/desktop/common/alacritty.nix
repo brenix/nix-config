@@ -10,22 +10,19 @@ in
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal = {
-        # family = config.fontProfiles.monospace.family;
-        family = lib.mkDefault "Terminus";
+        family = config.fontProfiles.monospace.family;
         style = "Regular";
       };
       font.bold = {
-        # family = config.fontProfiles.monospace.family;
-        family = lib.mkDefault "Terminus";
+        family = config.fontProfiles.monospace.family;
         style = "Regular";
       };
       font.italic = {
-        # family = config.fontProfiles.monospace.family;
-        family = lib.mkDefault "Terminus";
+        family = config.fontProfiles.monospace.family;
         style = "Italic";
       };
-      font.size = lib.mkDefault 11;
-      font.offset.y = -1;
+      font.size = lib.mkDefault 9;
+      font.offset.y = -2;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
         mouse = "Right";
