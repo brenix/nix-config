@@ -80,7 +80,7 @@
       "super + Return" = "alacritty";
 
       # terminal (floating)
-      "super + shift + Return" = "alacritty -c alacritty,floating";
+      "super + shift + Return" = "alacritty --class Alacritty,floating";
 
       # launcher
       "{super,alt} + space" = "rofi -show run";
