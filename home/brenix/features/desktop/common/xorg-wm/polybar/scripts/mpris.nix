@@ -12,7 +12,7 @@ pkgs.writeShellScriptBin "mpris" ''
       "Playing") playpause="+" ;;
     esac
 
-    echo -e "%{A:${pctl} play-pause & disown:}$playing%{A} %{A:${pctl} previous & disown:}◄%{A} %{A:${pctl} next & disown:}►%{A}"
+    echo -e "%{A:${pctl} play-pause & disown:}$playing%{A} %{A:${pctl} previous & disown:}<%{A} %{A:${pctl} next & disown:}>%{A}"
   else
     echo ""
   fi
