@@ -36,6 +36,12 @@
     sha256 = "03aclmx3yc0x54p3bnmgldrmnbrdkkzg8wzzpiapnjlx66m658kq";
   }
   {
+    name = "nord-city";
+    ext = "jpeg";
+    id = "lNf56Eq";
+    sha256 = "0yjrjzikn3k05p5wn1lm4vzjvf55gh3cg5vjvym8dapf2k3jwlij";
+  }
+  {
     name = "space-station";
     ext = "jpeg";
     id = "Ne3cbbD";
