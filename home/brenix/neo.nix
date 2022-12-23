@@ -30,8 +30,8 @@
   ];
 
   xsession.windowManager.bspwm.monitors = {
-    HDMI-A-0 = [ "1" "2" ];
-    DisplayPort-0 = [ "3" "4" ];
+    DisplayPort-0 = [ "1" "2" ];
+    HDMI-A-0 = [ "3" "4" ];
   };
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
