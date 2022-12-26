@@ -14,8 +14,8 @@
       };
     };
     regular = {
-      family = "Ubuntu";
-      package = pkgs.ubuntu_font_family;
+      family = "Inter";
+      package = pkgs.inter;
     };
   };
 }
