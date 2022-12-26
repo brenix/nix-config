@@ -36,7 +36,7 @@ in
         dpi = config.dpi;
         top = true;
         center = true;
-        height = lib.mkDefault 18;
+        height = lib.mkDefault 14;
         enable-ipc = true;
         foreground = "\${colors.fg}";
         background = "\${colors.bg}";
@@ -44,7 +44,7 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg-alt}";
         border-top-size = 1;
-        font-0 = lib.mkDefault "Ubuntu:size=10;1";
+        font-0 = lib.mkDefault "Terminus:size=10;1";
         # font-1 = lib.mkDefault "Material Icons:size=11;3";
         # font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
