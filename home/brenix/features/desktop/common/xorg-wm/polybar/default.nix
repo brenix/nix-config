@@ -36,7 +36,7 @@ in
         dpi = config.dpi;
         top = true;
         center = true;
-        height = lib.mkDefault 16;
+        height = lib.mkDefault 18;
         enable-ipc = true;
         foreground = "\${colors.fg}";
         background = "\${colors.bg}";
