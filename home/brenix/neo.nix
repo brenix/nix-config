@@ -35,6 +35,6 @@
   };
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
-  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile (./colorschemes/nord-dark.yaml));
-  wallpaper = pkgs.wallpapers.murky-peaks;
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "simple" (builtins.readFile (./colorschemes/simple.yaml));
+  wallpaper = pkgs.wallpapers.nixos-dark;
 }
