@@ -2,15 +2,16 @@
 {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-gpu-amd
+    inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
-    # ./libvirt.nix
+    ./libvirt.nix
     ../common/global
     ../common/optional/autologin-console.nix
     ../common/optional/fonts.nix
     ../common/optional/freetype2-lcdfilter.nix
+    /* ../common/optional/node-exporter.nix */
     ../common/optional/openconnect.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
@@ -50,12 +51,11 @@
   };
 
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
     dpi = 108;
     displayManager = {
       sessionCommands = ''
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --mode 2560x1440 --rate 180 --left-of DP-2
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --mode 2560x1440 --rate 180 --right-of DP-4
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --mode 2560x1440 --rate 180
+        ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-0 --mode 2560x1440
       '';
     };
   };
@@ -67,7 +67,6 @@
 
   hardware = {
     opengl.enable = true;
-    opengl.extraPackages = [ pkgs.vaapiVdpau ];
   };
 
   system.stateVersion = "22.05";
