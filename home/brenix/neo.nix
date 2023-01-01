@@ -11,7 +11,7 @@
 
   monitors = [
     {
-      name = "DP-1";
+      name = "DP-4";
       width = 2560;
       height = 1440;
       x = 0;
@@ -19,7 +19,7 @@
       enabled = true;
     }
     {
-      name = "HDMI-A-1";
+      name = "DP-2";
       isSecondary = true;
       width = 2560;
       height = 1440;
@@ -30,8 +30,8 @@
   ];
 
   xsession.windowManager.bspwm.monitors = {
-    DisplayPort-0 = [ "1" "2" ];
-    HDMI-A-0 = [ "3" "4" ];
+    DP-4 = [ "1" "2" ];
+    DP-2 = [ "3" "4" ];
   };
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
