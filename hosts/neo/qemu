@@ -58,7 +58,7 @@ VM_ACTION=$2
 
 log "Hook initialized"
 
-if [[ $VM_NAME == "win11" ]]; then
+if [[ $VM_NAME == "windows" ]]; then
   case "$VM_ACTION" in
     "prepare")
       log "Optimizing memory utilization"
