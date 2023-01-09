@@ -13,7 +13,7 @@ in
 
   programs.neovim = {
     enable = true;
-    package = neovim-overlay.neovim;
+    # package = neovim-overlay.neovim;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
