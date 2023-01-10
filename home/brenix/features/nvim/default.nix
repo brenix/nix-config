@@ -13,7 +13,7 @@ in
 
   programs.neovim = {
     enable = true;
-    package = neovim-overlay.neovim;
+    #package = neovim-overlay.neovim;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -87,7 +87,7 @@ in
         vim.opt.smarttab = true
         vim.opt.softtabstop = indent
         vim.opt.splitbelow = true
-        vim.opt.splitkeep = "screen";
+        --vim.opt.splitkeep = "screen";
         vim.opt.splitright = true
         vim.opt.swapfile = false
         vim.opt.tabstop = indent
@@ -166,7 +166,8 @@ in
     };
   };
 
-  xdg.configFile."nvim/init.lua".onChange = /* bash */ ''
+  xdg.configFile."nvim/init.lua".onChange = ''
+    XDG_RUNTIME_DIR=''${XDG_RUNTIME_DIR:-/run/user/$(id -u)}
     for server in $XDG_RUNTIME_DIR/nvim.*; do
       nvim --server $server --remote-send ':source $MYVIMRC<CR>' &
     done

@@ -13,15 +13,6 @@
     # ...
     # });
 
-    dwm = prev.dwm.overrideAttrs (oldattrs: {
-      src = prev.fetchFromGitHub {
-        owner = "brenix";
-        repo = "dwm";
-        rev = "30fc429abea0990da20ebf1f24b1670d476e427c";
-        sha256 = "sha256-ybZFWye6QupOl8usYEeFY3GbDctXFUTDXCLn9UTNVMg=";
-      };
-    });
-
     # Additional vim plugins
     vimPlugins = prev.vimPlugins // { } // final.callPackage ../pkgs/vim-plugins { };
 

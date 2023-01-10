@@ -1,4 +1,4 @@
-{ pkgs ? null }: {
+{ pkgs ? import <nixpkgs> { } }: {
   aiac = pkgs.callPackage ./aiac { };
   awless = pkgs.callPackage ./awless { };
   calicoctl = pkgs.callPackage ./calicoctl { };
