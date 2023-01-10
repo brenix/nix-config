@@ -1,4 +1,4 @@
-<domain type='kvm'>
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
   <name>windows</name>
   <uuid>e5c83d25-eea4-4ec5-b1dd-716b5e3bfd9a</uuid>
   <metadata>
@@ -213,5 +213,9 @@
       <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </rng>
   </devices>
+  <qemu:commandline>
+    <qemu:arg value='-fw_cfg'/>
+    <qemu:arg value='opt/ovmf/X-PciMmio64Mb,string=65536'/>
+  </qemu:commandline>
 </domain>
 
