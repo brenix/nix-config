@@ -2,7 +2,7 @@
 
   programs.rofi = {
     enable = true;
-    font = "${config.fontProfiles.monospace.family} 12";
+    font = "Terminus 10";
     theme = "catppuccin-mocha";
     plugins = with pkgs; [ rofi-calc rofi-emoji rofi-rbw ];
     extraConfig = {
