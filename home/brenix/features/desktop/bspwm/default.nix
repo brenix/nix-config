@@ -40,6 +40,9 @@
     ];
 
     rules = {
+      "*" = {
+        state = "floating";
+      };
       "Authy" = {
         state = "floating";
         follow = true;
