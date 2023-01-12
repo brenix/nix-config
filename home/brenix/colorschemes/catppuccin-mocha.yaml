@@ -1,7 +1,7 @@
 scheme: "Catppuccin Mocha"
 author: "https://github.com/catppuccin/catppuccin"
-base00: "1e1e2e" # base
-base01: "181825" # mantle
+base00: "181825" # mantle
+base01: "1e1e2e" # base
 base02: "313244" # surface0
 base03: "45475a" # surface1
 base04: "585b70" # surface2
