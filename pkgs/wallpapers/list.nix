@@ -54,6 +54,12 @@
     sha256 = "185a5d904lw8fywk38axfcj0vz054qwlw1gqfgficwm443br9i3q";
   }
   {
+    name = "nix-catppuccin-mocha";
+    ext = "png";
+    id = "YBR3XCG";
+    sha256 = "0wyijpk3srxrzhi97d2rz6vn3gmp96vi29gipvip676n0bpv4s05";
+  }
+  {
     name = "space-station";
     ext = "jpeg";
     id = "Ne3cbbD";
@@ -70,6 +76,12 @@
     ext = "jpeg";
     id = "NXqRHjy";
     sha256 = "0mz9zsz90xlgn9bixwidhid873hhmfbd65s9kwfx6b0ns0n53b8l";
+  }
+  {
+    name = "mountain-jaws";
+    ext = "jpeg";
+    id = "ukA2DCg";
+    sha256 = "1x4nc547fy9abahvkxgpg5whm1www8w0whqfk2756fp3vz7l5nwb";
   }
   {
     name = "space-3";
@@ -120,6 +132,12 @@
     sha256 = "0wf9zmqagvhmblpsfln1kp7anx4xx0bwm48hv7xhflvf9dbz4ia5";
   }
   {
+    name = "catppuccin-retro";
+    ext = "png";
+    id = "FdZwaAr";
+    sha256 = "0nmjm28zr0n4ly4gixn8lccwqmlmqgcak383hwnq0xm6183x2x3n";
+  }
+  {
     name = "catppuccin-nix";
     ext = "png";
     id = "xYaLPf8";
@@ -130,17 +148,5 @@
     ext = "png";
     id = "hVe3XJX";
     sha256 = "00fwx2ifxdjpjafrvdqyqw6b7sbijrkwvaqk5balbhrapdbf2sam";
-  }
-  {
-    name = "catppuccin-retro";
-    ext = "png";
-    id = "FdZwaAr";
-    sha256 = "0nmjm28zr0n4ly4gixn8lccwqmlmqgcak383hwnq0xm6183x2x3n";
-  }
-  {
-    name = "mountain-jaws";
-    ext = "jpeg";
-    id = "ukA2DCg";
-    sha256 = "1x4nc547fy9abahvkxgpg5whm1www8w0whqfk2756fp3vz7l5nwb";
   }
 ]
