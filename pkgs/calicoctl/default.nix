@@ -1,7 +1,7 @@
 { stdenv, fetchurl, lib }:
 
 let
-  version = "3.24.5";
+  version = "3.25.0";
 in
 stdenv.mkDerivation {
   pname = "calicoctl";
@@ -9,7 +9,7 @@ stdenv.mkDerivation {
 
   src = fetchurl {
     url = "https://github.com/projectcalico/calico/releases/download/v${version}/calicoctl-linux-amd64";
-    sha256 = "sha256-AebIojcQUPnt0K3p3N6J2gVOhNjpa9S6jPgoBsjT6Oc=";
+    sha256 = "sha256-WkZAdcy6qHFYgt5rMv6CtBSI6QT6ZrGcSO5jiM9Isbg=";
   };
 
   phases = [ "installPhase" ];
