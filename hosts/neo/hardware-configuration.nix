@@ -70,12 +70,12 @@ in
     ];
 
     extraModprobeConfig = ''
-      options kvm halt_poll_ns=80000
+      options kvm halt_poll_ns=0
       options kvm ignore_msrs=1
       options kvm nx_huge_pages=off
       options kvm report_ignored_msrs=0
-      options kvm_amd avic=0
-      options kvm_amd nested=0
+      options kvm_amd avic=1
+      options kvm_amd nested=1
       options kvm_amd npt=1
       options usbhid kbpoll=1
       options usbhid mousepoll=1

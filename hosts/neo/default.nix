@@ -29,13 +29,11 @@
   networking.hostName = "neo";
   networking.extraHosts = "192.168.1.10 api.kubernetes";
 
-  /* services.udev.packages = [ pkgs.android-udev-rules ]; */
-
   services.resolved.domains = [ "localdomain" ];
 
-  services.ratbagd.enable = true;
+  # services.ratbagd.enable = true;
 
-  services.irqbalance.enable = true;
+  # services.irqbalance.enable = true;
 
   environment.systemPackages = [ pkgs.cifs-utils ];
   fileSystems."/mnt/share" = {
