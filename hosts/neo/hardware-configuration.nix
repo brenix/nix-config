@@ -52,6 +52,7 @@ in
 
     kernelParams = [
       "amd_iommu=on"
+      "preempt=voluntary"
       "boot.shell_on_fail"
       "default_hugepagesz=1G"
       "hugepagesz=1G"
@@ -75,7 +76,8 @@ in
       options kvm nx_huge_pages=off
       options kvm report_ignored_msrs=0
       options kvm_amd avic=1
-      options kvm_amd nested=1
+      options kvm_amd force_avic=1
+      options kvm_amd nested=0
       options kvm_amd npt=1
       options usbhid kbpoll=1
       options usbhid mousepoll=1

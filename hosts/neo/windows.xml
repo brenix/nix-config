@@ -59,11 +59,8 @@
       <stimer state='on'>
         <direct state='on'/>
       </stimer>
-      <reset state='on'/>
+      <vendor_id state='on' value='123456789123'/>
       <frequencies state='on'/>
-      <reenlightenment state='on'/>
-      <tlbflush state='on'/>
-      <ipi state='on'/>
       <evmcs state='off'/>
     </hyperv>
     <kvm>
@@ -71,20 +68,14 @@
     </kvm>
     <ioapic driver='kvm'/>
   </features>
-  <cpu mode='host-passthrough' check='none' migratable='off'>
-    <topology sockets='1' dies='1' cores='8' threads='2'/>
-    <cache mode='passthrough'/>
-    <feature policy='disable' name='monitor'/>
-    <feature policy='require' name='hypervisor'/>
-    <feature policy='require' name='invtsc'/>
-    <feature policy='require' name='topoext'/>
+  <cpu mode='custom' match='exact' check='none'>
+    <model fallback='forbid'>qemu64</model>
   </cpu>
-  <clock offset='localtime'>
+  <clock offset='utc'>
     <timer name='rtc' present='no' tickpolicy='catchup'/>
-    <timer name='pit' present='no' tickpolicy='discard'/>
+    <timer name='pit' tickpolicy='discard'/>
     <timer name='hpet' present='no'/>
     <timer name='hypervclock' present='yes'/>
-    <timer name='tsc' present='yes' mode='native'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
@@ -216,6 +207,10 @@
   <qemu:commandline>
     <qemu:arg value='-fw_cfg'/>
     <qemu:arg value='opt/ovmf/X-PciMmio64Mb,string=65536'/>
+    <qemu:arg value='-smp'/>
+    <qemu:arg value='16,sockets=1,dies=1,cores=8,threads=2'/>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='host,+invtsc,+topoext,-x2apic,migratable=off,host-cache-info=on,kvm-asyncpf-int,hv-time,hv-relaxed,hv-spinlocks=0x1fff,hv-vpindex,hv-runtime,hv-frequencies,kvm=off,kvm-hint-dedicated=on,hv-no-nonarch-coresharing=on,hv-vapic=on,hv-synic=on,hv-stimer=on,hv-stimer-direct=on,hv-avic=on'/>
   </qemu:commandline>
 </domain>
 
