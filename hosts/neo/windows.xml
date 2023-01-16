@@ -44,6 +44,7 @@
     <loader readonly='yes' type='pflash'>/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
     <nvram>/var/lib/libvirt/qemu/nvram/windows_VARS.fd</nvram>
     <bootmenu enable='no'/>
+    <smbios mode='host'/>
   </os>
   <features>
     <acpi/>
@@ -72,10 +73,11 @@
     <model fallback='forbid'>qemu64</model>
   </cpu>
   <clock offset='utc'>
-    <timer name='rtc' present='no' tickpolicy='catchup'/>
+    <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='discard'/>
     <timer name='hpet' present='no'/>
     <timer name='hypervclock' present='yes'/>
+    <timer name='tsc' present='yes' mode='native'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>

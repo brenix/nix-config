@@ -113,6 +113,9 @@ in
 
   services.resolved.domains = [ "localdomain" ];
 
+  services.udev.packages = [ pkgs.android-udev-rules ];
+  programs.adb.enable = true;
+
   systemd.network.networks.enp7s0 = {
     matchConfig = { Name = "enp7s0"; };
     DHCP = "yes";
