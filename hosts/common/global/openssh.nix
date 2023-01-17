@@ -1,12 +1,12 @@
 {
   services.openssh = {
     enable = true;
-    settings = {
-      passwordAuthentication = false;
-      permitRootLogin = "no";
-      # Automatically remove stale sockets
-      StreamLocalBindUnlink = "yes";
-    };
+    passwordAuthentication = false;
+    permitRootLogin = "no";
+    # Automatically remove stale sockets
+    extraConfig = ''
+      StreamLocalBindUnlink yes
+    '';
   };
 
   services.openssh.hostKeys = [
