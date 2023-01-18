@@ -54,6 +54,7 @@
       sessionCommands = ''
         ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --mode 2560x1440
         ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-0 --mode 2560x1440
+        ${pkgs.xorg.xset}/bin/xset s off -dpms
       '';
     };
   };

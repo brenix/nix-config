@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   fonts.fonts = with pkgs; [
-    corefonts
+    # corefonts
     dejavu_fonts
     font-awesome
-    google-fonts
+    # google-fonts
     inter
     liberation_ttf
     material-icons
