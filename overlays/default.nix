@@ -13,6 +13,11 @@
     # ...
     # });
 
+    kitty = prev.kitty.overrideAttrs (oldAttrs: rec {
+      doCheck = false;
+      doInstallCheck = false;
+    });
+
     # Additional vim plugins
     vimPlugins = prev.vimPlugins // { } // final.callPackage ../pkgs/vim-plugins { };
 
