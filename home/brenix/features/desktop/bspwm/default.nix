@@ -37,6 +37,7 @@
     startupPrograms = [
       "${pkgs.feh}/bin/feh --bg-scale ${config.wallpaper}"
       "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
+      "${pkgs.barrier}/bin/barriers -n nix --restart --no-tray --disable-crypto -c ~/.local/share/barrier/barrier.conf"
     ];
 
     rules = {

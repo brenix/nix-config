@@ -35,6 +35,7 @@
       files = [
         ".config/zoomus.conf"
         ".config/zoom.conf"
+        ".local/share/barrier/barrier.conf"
       ];
       allowOther = true;
     };
