@@ -129,6 +129,7 @@ in
 
   hardware.enableAllFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
+  hardware.bluetooth.enable = true;
 
   services.udev.extraRules = ''
     # Configure webcam parameters

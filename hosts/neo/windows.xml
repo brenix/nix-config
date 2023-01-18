@@ -212,7 +212,7 @@
     <qemu:arg value='-smp'/>
     <qemu:arg value='16,sockets=1,dies=1,cores=8,threads=2'/>
     <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,+invtsc,+topoext,-x2apic,migratable=off,host-cache-info=on,kvm-asyncpf-int,hv-time,hv-relaxed,hv-spinlocks=0x1fff,hv-vpindex,hv-runtime,hv-frequencies,kvm=off,kvm-hint-dedicated=on,hv-no-nonarch-coresharing=on,hv-vapic=on,hv-synic=on,hv-stimer=on,hv-stimer-direct=on,hv-avic=on'/>
+    <qemu:arg value='host,+invtsc,+topoext,-x2apic,migratable=off,host-cache-info=on,kvm-asyncpf-int,hv-passthrough,hv-time,hv-relaxed,hv-spinlocks=0x1fff,hv-vpindex,hv-runtime,hv-frequencies,kvm=off,kvm-hint-dedicated=on,hv-no-nonarch-coresharing=on,hv-vapic=on,hv-synic=on,hv-stimer=on,hv-stimer-direct=on,hv-avic=on'/>
   </qemu:commandline>
 </domain>
 
