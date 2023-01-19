@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     authy
+    google-chrome
     obsidian
     pavucontrol
     slack
