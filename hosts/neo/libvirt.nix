@@ -29,7 +29,7 @@
     onShutdown = "shutdown";
   };
 
-  environment.systemPackages = with pkgs; [ virt-manager win-virtio ];
+  environment.systemPackages = with pkgs; [ virt-manager ];
 
   systemd.services.libvirtd = {
     # Libvirt hooks use binaries from these packages
