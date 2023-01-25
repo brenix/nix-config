@@ -3,7 +3,7 @@
   programs.rofi = {
     enable = true;
     font = "Terminus 10";
-    theme = "catppuccin-mocha";
+    theme = "nord";
     plugins = with pkgs; [ rofi-calc rofi-emoji rofi-rbw ];
     extraConfig = {
       modi = "drun,run,emoji,calc,combi";

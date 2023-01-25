@@ -3,6 +3,7 @@
   awless = pkgs.callPackage ./awless { };
   calicoctl = pkgs.callPackage ./calicoctl { };
   helmfile = pkgs.callPackage ./helmfile { };
+  monaco = pkgs.callPackage ./monaco { };
   packer = pkgs.callPackage (import ./hashicorp/generic.nix) {
     name = "packer";
     version = "1.8.4";
