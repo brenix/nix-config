@@ -24,7 +24,7 @@
       cd = "z";
       cdu = "cd-gitroot";
       cp = "cp -riv";
-      gl = "git pull --prune --tags";
+      gl = "git pull --prune --tags --force";
       grep = "grep --color=auto";
       jq = "gojq";
       l = "ls --format=vertical";
