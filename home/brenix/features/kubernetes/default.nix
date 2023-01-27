@@ -2,13 +2,13 @@
 {
   home.packages = with pkgs; [
     fluxcd
-    grype
+    # grype
     helm-docs
     helmfile
     krew
     kubectl
     kubernetes-helm
-    #kustomize
+    # kustomize
     skopeo
     stern
   ];
