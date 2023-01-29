@@ -22,7 +22,7 @@ in
         "app.update.auto" = false;
         "browser.aboutConfig.showWarning" = false;
         "browser.backspace_action" = 0;
-        "browser.cache.disk.parent_directory" = "/run/user/1000/firefox";
+        # "browser.cache.disk.parent_directory" = "/run/user/1000/firefox";
         "browser.compactmode.show" = true;
         "browser.disableResetPrompt" = true;
         "browser.discovery.enabled" = false;
