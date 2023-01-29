@@ -16,7 +16,6 @@
   ];
 
   home.packages = with pkgs; [
-    # aiac
     age
     awless
     aws-vault
