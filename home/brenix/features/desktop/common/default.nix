@@ -12,10 +12,6 @@
 
   xdg.mimeApps.enable = true;
 
-  xsession.initExtra = ''
-    ${pkgs.barrier}/bin/barriers -n nix --restart --no-tray --disable-crypto -c /home/brenix/.local/share/barrier/barrier.conf
-  '';
-
   home.packages = with pkgs; [
     authy
     obsidian
@@ -39,7 +35,6 @@
       files = [
         ".config/zoomus.conf"
         ".config/zoom.conf"
-        ".local/share/barrier/barrier.conf"
       ];
       allowOther = true;
     };

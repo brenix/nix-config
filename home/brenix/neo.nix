@@ -2,6 +2,7 @@
 {
   imports = [
     ./global
+    ./features/barrier
     ./features/desktop/bspwm
     ./features/golang
     ./features/kubernetes
@@ -32,6 +33,33 @@
   xsession.windowManager.bspwm.monitors = {
     DisplayPort-0 = [ "1" "2" ];
     HDMI-A-0 = [ "3" "4" ];
+  };
+
+  xdg.configFile."barrier/barrier.conf" = {
+    enable = true;
+    text = ''
+      section: screens
+        neo:
+          halfDuplexCapsLock = false
+          halfDuplexNumLock = false
+          halfDuplexScrollLock = false
+        windows:
+          halfDuplexCapsLock = false
+          halfDuplexNumLock = false
+          halfDuplexScrollLock = false
+      end
+
+      section: links
+        neo:
+          right = windows
+        windows:
+          left = neo
+      end
+
+      section: options
+        relativeMouseMoves = true
+      end
+    '';
   };
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
