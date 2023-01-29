@@ -12,7 +12,7 @@
     nodePackages.vscode-json-languageserver-bin
     nodePackages.yaml-language-server
     # python3Packages.python-lsp-server
-    rnix-lsp
+    nil
     sumneko-lua-language-server
     terraform-ls
 
@@ -72,7 +72,7 @@
         add_lsp("docker-langserver", lspconfig.dockerls, {})
         add_lsp("gopls", lspconfig.gopls, {})
         add_lsp("pylsp", lspconfig.pylsp, {})
-        add_lsp("rnix-lsp", lspconfig.rnix, {})
+        add_lsp("nil", lspconfig.nil_ls, {})
         add_lsp("terraform-ls", lspconfig.terraformls, {})
         add_lsp("lua-lsp", lspconfig.sumneko_lua, {
           cmd = { "lua-lsp" }
