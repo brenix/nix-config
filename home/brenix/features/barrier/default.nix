@@ -3,7 +3,7 @@
   systemd.user.services.barrier = {
     Unit = {
       Description = "Barrier KVM";
-      After = [ "graphical-session=-pre.target" ];
+      After = [ "graphical-session-pre.target" ];
     };
     Service = {
       Type = "simple";
