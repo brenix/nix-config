@@ -9,7 +9,6 @@
     krew
     kubectl
     kubernetes-helm
-    kustomize
     skopeo
     stern
   ];
