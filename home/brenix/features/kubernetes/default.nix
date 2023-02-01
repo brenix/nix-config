@@ -5,10 +5,11 @@
     # grype
     helm-docs
     helmfile
+    ko
     krew
     kubectl
     kubernetes-helm
-    # kustomize
+    kustomize
     skopeo
     stern
   ];

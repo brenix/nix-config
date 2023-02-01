@@ -13,7 +13,7 @@
     # ...
     # });
 
-    kitty = prev.kitty.overrideAttrs (oldAttrs: {
+    kitty = prev.kitty.overrideAttrs (_: {
       doCheck = false;
       doInstallCheck = false;
     });
