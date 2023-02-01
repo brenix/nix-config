@@ -2,7 +2,7 @@
 {
   imports = [
     ./global
-    ./features/barrier
+    # ./features/barrier
     ./features/desktop/bspwm
     ./features/golang
     ./features/kubernetes
