@@ -17,6 +17,9 @@
     # Allow privileged pods
     apiserver.allowPrivileged = true;
 
+    # Always pull images
+    apiserver.enableAdmissionPlugins = [ "AlwaysPullImages" ];
+
     # Additional apiserver flags
     apiserver.extraOpts =
       "--permit-port-sharing=true --permit-address-sharing=true";
