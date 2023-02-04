@@ -13,10 +13,10 @@
     # ...
     # });
 
-    kitty = prev.kitty.overrideAttrs (_: {
-      doCheck = false;
-      doInstallCheck = false;
-    });
+    # kitty = prev.kitty.overrideAttrs (_: {
+    #   doCheck = false;
+    #   doInstallCheck = false;
+    # });
 
     # Additional vim plugins
     vimPlugins = prev.vimPlugins // { } // final.callPackage ../pkgs/vim-plugins { };
