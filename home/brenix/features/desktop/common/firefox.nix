@@ -5,16 +5,16 @@ in
 {
   programs.firefox = {
     enable = true;
-    extensions = with addons; [
-      bitwarden
-      decentraleyes
-      h264ify
-      i-dont-care-about-cookies
-      theme-nord-polar-night
-      ublock-origin
-      vimium
-    ];
     profiles.brenix = {
+      extensions = with addons; [
+        bitwarden
+        decentraleyes
+        h264ify
+        i-dont-care-about-cookies
+        theme-nord-polar-night
+        ublock-origin
+        vimium
+      ];
       /* bookmarks = { }; */
       settings = {
         "app.normandy.enabled" = false;
