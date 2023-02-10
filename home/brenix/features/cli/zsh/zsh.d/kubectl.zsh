@@ -9,7 +9,7 @@ if [[ $commands[kubectl] ]]; then
 
   # execute command against all contexts
   kall() {
-    local contexts=($(kubectl config get-contexts -o name))
+    local contexts=($(kubectl config get-contexts -o name | grep 'main\|data\|infra'))
     for context in ${contexts[@]}; do
       printf "\e[1;34m#### %-6s ####\e[m\n" ${context}
       bash -c "kubectl --context ${context} $*"
