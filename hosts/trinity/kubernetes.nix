@@ -24,15 +24,15 @@
     apiserver.extraOpts =
       "--permit-port-sharing=true --permit-address-sharing=true";
 
-    # Disable addon manager
-    addonManager.enable = true;
-
     # Use cloudflare certmgr to manage all certs
     easyCerts = true;
 
     # Kubelet
     kubelet.extraOpts =
       "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false --image-gc-high-threshold=50 --image-gc-low-threshold=30";
+
+    # Enable addon manager
+    addonManager.enable = true;
 
     # CoreDNS
     addons.dns = {
