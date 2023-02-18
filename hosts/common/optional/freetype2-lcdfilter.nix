@@ -11,7 +11,7 @@
         })
         (fetchurl {
           url = "https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/freetype2/trunk/0003-Enable-infinality-subpixel-hinting.patch";
-          sha256 = "sha256-yqC8fT36O0xrm+7NphQUBdr+VA+ZplXcg9FwT6IyrCA=";
+          sha256 = "sha256-jmHRLr27y3ZKONR5jucoB0usCqIJeNU4tucEWmOUmrg=";
         })
       ];
     });
