@@ -13,7 +13,6 @@
     nodePackages.yaml-language-server
     # python3Packages.python-lsp-server
     nil
-    sumneko-lua-language-server
     terraform-ls
 
     # Formatters
@@ -74,9 +73,6 @@
         add_lsp("pylsp", lspconfig.pylsp, {})
         add_lsp("nil", lspconfig.nil_ls, {})
         add_lsp("terraform-ls", lspconfig.terraformls, {})
-        add_lsp("lua-lsp", lspconfig.sumneko_lua, {
-          cmd = { "lua-lsp" }
-        })
         add_lsp("yaml-language-server", lspconfig.yamlls, {
           settings = {
             yaml = {
