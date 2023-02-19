@@ -18,6 +18,10 @@
     #   doInstallCheck = false;
     # });
 
+    qemu = prev.qemu.overrideAttrs (oldAttrs: {
+      patches = (oldAttrs.patches or [ ]) ++ [ ./evdev-fix.patch ];
+    });
+
     # Additional vim plugins
     vimPlugins = prev.vimPlugins // { } // final.callPackage ../pkgs/vim-plugins { };
 
