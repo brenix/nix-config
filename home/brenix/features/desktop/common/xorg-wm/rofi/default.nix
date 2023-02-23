@@ -3,7 +3,7 @@
   programs.rofi = {
     enable = true;
     font = "${config.fontProfiles.monospace.family} 10";
-    theme = "nord";
+    theme = "zenbox";
     plugins = with pkgs; [ rofi-calc rofi-emoji rofi-rbw ];
     extraConfig = {
       modi = "drun,run,emoji,calc,combi";
@@ -20,4 +20,7 @@
     source = ./catppuccin-mocha.rasi;
   };
 
+  home.file.".config/rofi/zenbox.rasi" = {
+    source = ./zenbox.rasi;
+  };
 }

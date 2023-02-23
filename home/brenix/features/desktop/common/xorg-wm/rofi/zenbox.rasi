@@ -1,0 +1,150 @@
+* {
+    color0: #161515;
+    color1: #383737;
+    color2: #3e3d3d;
+    color3: #494747;
+    color4: #a9a699;
+    color5: #c2beb0;
+    color6: #d4cfc0;
+    color7: #ebe6d5;
+    /* color8: #b76666; */
+    color8: #ebe6d5;
+    color9: #d59877;
+    color10: #dcbb8c;
+    color11: #98a686;
+    color12: #8da19e;
+    color13: #6f8798;
+    color14: #948692;
+    color15: #949289;
+
+    spacing: 2;
+    background-color: var(color1);
+
+    background: var(color1);
+    foreground: var(color4);
+
+    normal-background: var(background);
+    normal-foreground: var(foreground);
+    alternate-normal-background: var(background);
+    alternate-normal-foreground: var(foreground);
+    selected-normal-background: var(color8);
+    selected-normal-foreground: var(background);
+
+    active-background: var(background);
+    active-foreground: var(color10);
+    alternate-active-background: var(background);
+    alternate-active-foreground: var(color10);
+    selected-active-background: var(color10);
+    selected-active-foreground: var(background);
+
+    urgent-background: var(background);
+    urgent-foreground: var(color11);
+    alternate-urgent-background: var(background);
+    alternate-urgent-foreground: var(color11);
+    selected-urgent-background: var(color11);
+    selected-urgent-foreground: var(background);
+}
+element {
+    padding: 0px 0px 0px 7px;
+    spacing: 5px;
+    border:  0;
+    cursor:  pointer;
+}
+element normal.normal {
+    background-color: var(normal-background);
+    text-color: var(normal-foreground);
+}
+element normal.urgent {
+    background-color: var(urgent-background);
+    text-color: var(urgent-foreground);
+}
+element normal.active {
+    background-color: var(active-background);
+    text-color: var(active-foreground);
+}
+element selected.normal {
+    background-color: var(selected-normal-background);
+    text-color: var(selected-normal-foreground);
+}
+element selected.urgent {
+    background-color: var(selected-urgent-background);
+    text-color: var(selected-urgent-foreground);
+}
+element selected.active {
+    background-color: var(selected-active-background);
+    text-color: var(selected-active-foreground);
+}
+element alternate.normal {
+    background-color: var(alternate-normal-background);
+    text-color: var(alternate-normal-foreground);
+}
+element alternate.urgent {
+    background-color: var(alternate-urgent-background);
+    text-color: var(alternate-urgent-foreground);
+}
+element alternate.active {
+    background-color: var(alternate-active-background);
+    text-color: var(alternate-active-foreground);
+}
+element-text {
+    background-color: rgba(0, 0, 0, 0%);
+    text-color: inherit;
+    highlight: inherit;
+    cursor: inherit;
+}
+element-icon {
+    background-color: rgba(0, 0, 0, 0%);
+    size: 1.0000em;
+    text-color: inherit;
+    cursor: inherit;
+}
+window {
+    padding: 0;
+    border: 0;
+    background-color: var(background);
+}
+mainbox {
+    padding: 0;
+    border: 0;
+}
+message {
+    margin: 0px 7px;
+}
+textbox {
+    text-color: var(foreground);
+}
+listview {
+    margin: 0px 0px 5px;
+    scrollbar: false;
+    spacing: 2px;
+    fixed-height: 0;
+}
+scrollbar {
+    padding: 0;
+    handle-width: 14px;
+    border: 0;
+    handle-color: var(color3);
+}
+button {
+    spacing: 0;
+    text-color: var(normal-foreground);
+    cursor: pointer;
+}
+button selected {
+    background-color: var(selected-normal-background);
+    text-color: var(selected-normal-foreground);
+}
+inputbar {
+    padding: 3px;
+    margin: 3px;
+    spacing: 0;
+    text-color: var(normal-foreground);
+    background-color: var(color3);
+    children: [ entry ];
+}
+entry {
+    spacing: 0;
+    cursor: text;
+    text-color: var(normal-foreground);
+    background-color: var(color3);
+}
