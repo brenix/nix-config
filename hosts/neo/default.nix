@@ -64,12 +64,5 @@
   /*   wlr.enable = true; */
   /* }; */
 
-  hardware = {
-    opengl.enable = true;
-
-    # Temporarily disable amdvlk due to build failures
-    amdgpu.amdvlk = false;
-  };
-
   system.stateVersion = "22.05";
 }
