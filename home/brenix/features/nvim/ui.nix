@@ -1,7 +1,15 @@
 { pkgs, ... }:
 {
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    catppuccin-nvim
+    {
+      plugin = catppuccin-nvim;
+      type = "lua";
+      config = /* lua */ ''
+        require("catppuccin").setup({
+            compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
+        })
+      '';
+    }
     gruvbox-material
     gruvbox-nvim
     nord-nvim
