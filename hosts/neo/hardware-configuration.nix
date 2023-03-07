@@ -114,7 +114,7 @@ in
 
   services.resolved.domains = [ "localdomain" ];
 
-  services.udev.packages = [ pkgs.android-udev-rules ];
+  services.udev.packages = [ pkgs.android-udev-rules pkgs.wooting-udev-rules ];
   programs.adb.enable = true;
 
   systemd.network.networks.enp7s0 = {
@@ -141,32 +141,6 @@ in
 
     # Fix flickering issues
     SUBSYSTEM=="drm", KERNEL=="card0", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
-
-    # Wooting 60HE
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1300", MODE:="0660", GROUP="input"
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1300", MODE:="0660", GROUP="input"
-    # Wooting 60HE Alt-gamepad mode
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1301", MODE:="0660", GROUP="input"
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1301", MODE:="0660", GROUP="input"
-    # Wooting 60HE 2nd Alt-gamepad mode
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1302", MODE:="0660", GROUP="input"
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1302", MODE:="0660", GROUP="input"
-
-    # Wooting 60HE update mode
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="130f", MODE:="0660", GROUP="input"
-
-    # Wooting 60HE (ARM)
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1310", MODE:="0660", GROUP="input"
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1310", MODE:="0660", GROUP="input"
-    # Wooting 60HE (ARM) Alt-gamepad mode
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1311", MODE:="0660", GROUP="input"
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1311", MODE:="0660", GROUP="input"
-    # Wooting 60HE (ARM) 2nd Alt-gamepad mode
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1312", MODE:="0660", GROUP="input"
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="1312", MODE:="0660", GROUP="input"
-
-    # Wooting 60HE (ARM) update mode
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", ATTRS{idProduct}=="131f", MODE:="0660", GROUP="input"
   '';
 
   nixpkgs.hostPlatform.system = "x86_64-linux";

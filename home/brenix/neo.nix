@@ -31,8 +31,8 @@
   ];
 
   xsession.windowManager.bspwm.monitors = {
-    DisplayPort-0 = [ "1" "2" ];
-    HDMI-A-0 = [ "3" "4" ];
+    DP-1 = [ "1" "2" ];
+    HDMI-1 = [ "3" "4" ];
   };
 
   xdg.configFile."barrier/barrier.conf" = {

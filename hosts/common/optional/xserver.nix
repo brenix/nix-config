@@ -25,7 +25,7 @@
       };
     };
 
-    xkbOptions = "caps:escape";
+    # xkbOptions = "caps:escape";
   };
 
   environment.systemPackages = with pkgs; [

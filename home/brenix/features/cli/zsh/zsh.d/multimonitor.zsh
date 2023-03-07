@@ -3,7 +3,7 @@ ds() {
   if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
     hyprctl keyword monitor HDMI-A-1,disable
   else
-    xrandr --output HDMI-A-0 --off
+    xrandr --output HDMI-1 --off
   fi
 }
 
@@ -12,9 +12,9 @@ de() {
   if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
     hyprctl reload
   else
-    xrandr --output HDMI-A-0 --mode 2560x1440 --right-of DisplayPort-0
-    bspc desktop 3 -m HDMI-A-0
-    bspc desktop 4 -m HDMI-A-0
+    xrandr --output HDMI-1 --mode 2560x1440 --right-of DP-1
+    bspc desktop 3 -m HDMI-1
+    bspc desktop 4 -m HDMI-1
     bspc desktop Desktop -r
   fi
 }

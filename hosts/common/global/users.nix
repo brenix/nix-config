@@ -9,6 +9,7 @@ in
     shell = pkgs.zsh;
     extraGroups = [
       "audio"
+      "input"
       "video"
       "wheel"
     ] ++ ifTheyExist [
