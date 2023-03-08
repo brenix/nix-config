@@ -29,6 +29,7 @@
       directories = [
         ".config/Authy Desktop"
         ".config/obsidian"
+        ".config/google-chrome"
         ".config/Slack"
         ".config/spotify"
         ".zoom"
