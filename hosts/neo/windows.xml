@@ -156,7 +156,10 @@
       <source dev='/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse'/>
     </input>
     <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-Topre_REALFORCE_87_US-event-kbd' grab='all' repeat='on'/>
+      <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__WOOT_001_A02B2305W052H07682-if03-event-kbd' grab='all' repeat='on'/>
+    </input>
+    <input type='evdev'>
+      <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__WOOT_001_A02B2305W052H07682-event-joystick' grab='all' repeat='on'/>
     </input>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
@@ -180,13 +183,6 @@
       </source>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x0951'/>
-        <product id='0x16c4'/>
-      </source>
-      <address type='usb' bus='0' port='1'/>
-    </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
         <address domain='0x0000' bus='0x0e' slot='0x00' function='0x0'/>
@@ -199,6 +195,13 @@
       </source>
       <rom bar='off'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x0951'/>
+        <product id='0x16c4'/>
+      </source>
+      <address type='usb' bus='0' port='1'/>
     </hostdev>
     <memballoon model='none'/>
     <rng model='virtio'>
