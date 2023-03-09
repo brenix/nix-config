@@ -19,7 +19,7 @@
     pavucontrol
     slack
     spotify
-    wootility
+    wootility-lekker
     xdg-utils
     zoom-us
   ];

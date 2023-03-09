@@ -8,4 +8,5 @@
     sha256 = "sha256-uiW4TMTTVB6aHcwLjhx8aT8bOaXRKRSRlOtrYFCuVsM=";
   };
   tfenv = pkgs.callPackage ./tfenv { };
+  wootility-lekker = pkgs.callPackage ./wootility-lekker { };
 }
