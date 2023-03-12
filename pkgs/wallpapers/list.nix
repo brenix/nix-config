@@ -60,6 +60,12 @@
     sha256 = "0wyijpk3srxrzhi97d2rz6vn3gmp96vi29gipvip676n0bpv4s05";
   }
   {
+    name = "dark-sea";
+    ext = "jpeg";
+    id = "tO1AN0x";
+    sha256 = "07fsxqi9vd0b02n5skhgpmhiam0arrhbznv8if1d9bgbb9v35c0q";
+  }
+  {
     name = "space-station";
     ext = "jpeg";
     id = "Ne3cbbD";
