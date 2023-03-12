@@ -63,6 +63,6 @@
   };
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
-  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "catppuccin-mocha" (builtins.readFile (./colorschemes/catppuccin-mocha.yaml));
-  wallpaper = pkgs.wallpapers.evening-sky;
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile (./colorschemes/nord-dark.yaml));
+  wallpaper = pkgs.wallpapers.mountain-jaws;
 }
