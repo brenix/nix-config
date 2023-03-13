@@ -13,7 +13,7 @@ in
   ];
 
   xdg.configFile."openbox/autostart".text = ''
-    "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#2e3440'"
+    "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#262525'"
     "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
   '';
 

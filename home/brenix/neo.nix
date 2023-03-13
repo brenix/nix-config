@@ -63,6 +63,6 @@
   };
 
   # colorscheme = inputs.nix-colors.colorSchemes.grayscale-dark;
-  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile (./colorschemes/nord-dark.yaml));
-  wallpaper = pkgs.wallpapers.mountain-jaws;
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
+  # wallpaper = pkgs.wallpapers.mountain-jaws;
 }
