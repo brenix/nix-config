@@ -420,6 +420,8 @@ in
             <action name="if">
               <shaded>yes</shaded>
               <then>
+                <action name="Focus"/>
+                <action name="Raise"/>
                 <action name="Unshade"/>
               </then>
             </action>
