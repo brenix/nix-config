@@ -2,7 +2,7 @@
 {
   imports = [
     ./global
-    ./features/desktop/bspwm
+    ./features/desktop/openbox
     ./features/golang
     ./features/kubernetes
   ];
