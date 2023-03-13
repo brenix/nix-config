@@ -40,7 +40,7 @@ in
       </placement>
       <theme>
         <name>nix-openbox</name>
-        <titleLayout>NLIMC</titleLayout>
+        <titleLayout>LIMC</titleLayout>
         <!--
           available characters are NDSLIMC, each can occur at most once.
           N: window icon
