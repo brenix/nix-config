@@ -754,7 +754,7 @@ in
       #     Menu Settings
       #======================================
       menu.title.bg: raised
-      menu.title.bg.color: #${c.base00}
+      menu.title.bg.color: #${c.base01}
       menu.title.text.color: #${c.base05}
       menu.separator.color: #${c.base01}
       menu.items.bg: raised
