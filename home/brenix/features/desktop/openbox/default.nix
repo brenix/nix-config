@@ -693,6 +693,11 @@ in
           <command>spotify</command>
         </action>
       </item>
+      <item label="ZOOM">
+        <action name="Execute">
+          <command>zoom-us</command>
+        </action>
+      </item>
       <separator label="VIRTUALIZATION" />
       <item label="SINGLE-MONITOR">
         <action name="Execute">
