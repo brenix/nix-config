@@ -10,10 +10,10 @@ rec {
       size = 8;
     };
     theme = {
-      name = "Nordic-darker";
-      package = pkgs.nordic;
-      # name = "${config.colorscheme.slug}";
-      # package = gtkThemeFromScheme { scheme = config.colorscheme; };
+      # name = "Nordic-darker";
+      # package = pkgs.nordic;
+      name = "${config.colorscheme.slug}";
+      package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
     iconTheme = {
       name = "Nordzy";
