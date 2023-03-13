@@ -29,7 +29,7 @@
     font-0 = "${config.fontProfiles.regular.family}:size=8;3";
   };
 
-  programs.alacritty.settings.font.size = 12;
+  programs.alacritty.settings.font.size = 16;
   # programs.alacritty.settings.font.normal.family = config.fontProfiles.monospace.family;
   # programs.alacritty.settings.font.bold.family = config.fontProfiles.monospace.family;
   # programs.alacritty.settings.font.italic.family = config.fontProfiles.monospace.family;
