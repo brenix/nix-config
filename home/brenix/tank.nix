@@ -30,13 +30,13 @@
   };
 
   programs.alacritty.settings.font.size = 12;
-  programs.alacritty.settings.font.normal.family = config.fontProfiles.monospace.family;
-  programs.alacritty.settings.font.bold.family = config.fontProfiles.monospace.family;
-  programs.alacritty.settings.font.italic.family = config.fontProfiles.monospace.family;
+  # programs.alacritty.settings.font.normal.family = config.fontProfiles.monospace.family;
+  # programs.alacritty.settings.font.bold.family = config.fontProfiles.monospace.family;
+  # programs.alacritty.settings.font.italic.family = config.fontProfiles.monospace.family;
 
   programs.starship.settings.command_timeout = 1200;
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
-  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile (./colorschemes/nord-dark.yaml));
-  wallpaper = pkgs.wallpapers.mountain-jaws;
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
+  # wallpaper = pkgs.wallpapers.mountain-jaws;
 }
