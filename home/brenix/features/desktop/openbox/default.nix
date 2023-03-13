@@ -223,6 +223,13 @@ in
           </action>
         </keybind>
         <keybind key="W-z">
+          <action name="if">
+            <shaded>yes</shaded>
+            <then>
+              <action name="Focus"/>
+              <action name="Raise"/>
+            </then>
+          </action>
           <action name="ToggleShade"/>
         </keybind>
         <keybind key="W-f">
@@ -432,6 +439,13 @@ in
             <action name="Focus"/>
           </mousebind>
           <mousebind button="Right" action="Press">
+            <action name="if">
+              <shaded>yes</shaded>
+              <then>
+                <action name="Focus"/>
+                <action name="Raise"/>
+              </then>
+            </action>
             <action name="ToggleShade"/>
           </mousebind>
         </context>
@@ -523,6 +537,13 @@ in
             <action name="Raise"/>
           </mousebind>
           <mousebind button="Left" action="Click">
+            <action name="if">
+              <shaded>yes</shaded>
+              <then>
+                <action name="Focus"/>
+                <action name="Raise"/>
+              </then>
+            </action>
             <action name="ToggleShade"/>
           </mousebind>
         </context>
