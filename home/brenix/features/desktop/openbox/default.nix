@@ -40,7 +40,7 @@ in
       </placement>
       <theme>
         <name>nix-openbox</name>
-        <titleLayout>LIMC</titleLayout>
+        <titleLayout>LMC</titleLayout>
         <!--
           available characters are NDSLIMC, each can occur at most once.
           N: window icon
@@ -756,7 +756,7 @@ in
       menu.items.text.color: #${c.base05}
       menu.items.disabled.text.color: #${c.base03}
       menu.items.active.bg: flat border
-      menu.items.active.bg.color: #${c.base0D}
+      menu.items.active.bg.color: #${c.base01}
       menu.items.active.bg.border.color: #${c.base01}
       menu.items.active.text.color: #${c.base05}
 

@@ -13,8 +13,10 @@ de() {
     hyprctl reload
   else
     xrandr --output HDMI-1 --mode 2560x1440 --right-of DP-1
-    bspc desktop 3 -m HDMI-1
-    bspc desktop 4 -m HDMI-1
-    bspc desktop Desktop -r
+    if [[ $DESKOP_SESSION == "none+bspwm" ]]; then
+      bspc desktop 3 -m HDMI-1
+      bspc desktop 4 -m HDMI-1
+      bspc desktop Desktop -r
+    fi
   fi
 }

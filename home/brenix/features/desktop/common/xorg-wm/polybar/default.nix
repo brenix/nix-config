@@ -20,7 +20,7 @@ in
 
       "colors" = {
         bg = "#${colors.base00}";
-        bg-alt = "#${colors.base01}";
+        bg-alt = "#${colors.base00}";
         fg = "#${colors.base05}";
         fg-alt = "#${colors.base07}";
         blue = "#${colors.base0D}";
@@ -36,7 +36,7 @@ in
         dpi = config.dpi;
         top = true;
         center = true;
-        height = lib.mkDefault 18;
+        height = lib.mkDefault 14;
         enable-ipc = true;
         foreground = "\${colors.fg}";
         background = "\${colors.bg}";
