@@ -3,7 +3,7 @@
   imports = [
     ./global
     # ./features/barrier
-    ./features/desktop/bspwm
+    ./features/desktop/openbox
     ./features/golang
     ./features/kubernetes
   ];
@@ -62,7 +62,7 @@
     '';
   };
 
-  # colorscheme = inputs.nix-colors.colorSchemes.nord;
+  # colorscheme = inputs.nix-colors.colorSchemes.grayscale-dark;
   colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile (./colorschemes/nord-dark.yaml));
   wallpaper = pkgs.wallpapers.mountain-jaws;
 }

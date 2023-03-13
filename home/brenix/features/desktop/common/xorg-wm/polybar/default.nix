@@ -44,18 +44,26 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg-alt}";
         border-top-size = 1;
-        font-0 = lib.mkDefault "Monaco Nerd Font:size=9;1";
+        font-0 = lib.mkDefault "Terminus:size=7;1";
         # font-1 = lib.mkDefault "Material Icons:size=11;3";
         # font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
         module-margin-right = 1;
-        modules-left = "bspwm";
+        modules-left = "workspaces";
         modules-center = "now-playing";
         modules-right = "battery cpu temperature memory volume date time";
         padding-left = 1;
         padding-right = 1;
         tray-position = "right";
         separator = "%{F#${colors.base02}}|%{F-}";
+      };
+
+      "module/workspaces" = {
+        type = "internal/xworkspaces";
+        pin-workspaces = true;
+        enable-click = true;
+        enable-scroll = true;
+        reverse-scroll = true;
       };
 
       "module/now-playing" = {
