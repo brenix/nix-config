@@ -35,8 +35,8 @@
     };
 
     startupPrograms = [
-      "${pkgs.feh}/bin/feh --bg-scale ${config.wallpaper}"
-      "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
+      # "${pkgs.feh}/bin/feh --bg-scale ${config.wallpaper}"
+      "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#252424'"
     ];
 
     rules = {

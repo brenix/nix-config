@@ -10,7 +10,8 @@
 
     settings = {
       global = {
-        font = "${config.fontProfiles.regular.family} 12";
+        # font = "${config.fontProfiles.regular.family} 12";
+        font = "Terminus 8";
         markup = "full";
         follow = "keyboard";
         format = ''

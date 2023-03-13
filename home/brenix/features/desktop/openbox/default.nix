@@ -14,7 +14,6 @@ in
 
   xdg.configFile."openbox/autostart".text = ''
     "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#262525'"
-    "${pkgs.systemd}/bin/systemctl --user restart polybar.service"
   '';
 
   xdg.configFile."openbox/rc.xml".text = ''

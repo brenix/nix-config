@@ -166,4 +166,10 @@ in
     source = ./scripts;
     recursive = true;
   };
+
+  # Fix systemd startup issues
+  systemd.user.services.polybar = {
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
+
 }
