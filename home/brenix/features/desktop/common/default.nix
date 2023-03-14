@@ -32,6 +32,7 @@
         ".config/google-chrome"
         ".config/Slack"
         ".config/spotify"
+        ".config/wootility-lekker"
         ".zoom"
         ".config/Unknown Organization" # Zoom
       ];
