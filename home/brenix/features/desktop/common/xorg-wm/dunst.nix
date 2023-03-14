@@ -13,7 +13,7 @@
         # font = "${config.fontProfiles.regular.family} 12";
         font = "Terminus 8";
         markup = "full";
-        follow = "keyboard";
+        follow = "none";
         format = ''
           <b>%s</b>
           %b'';
