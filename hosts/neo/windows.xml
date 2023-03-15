@@ -203,6 +203,7 @@
       </source>
       <address type='usb' bus='0' port='1'/>
     </hostdev>
+    <watchdog model='itco' action='reset'/>
     <memballoon model='none'/>
     <rng model='virtio'>
       <backend model='random'>/dev/urandom</backend>
