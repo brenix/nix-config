@@ -20,6 +20,9 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.postBootCommands = ''
+    echo 1 >/sys/devices/pci0000:00/0000:00:03.2/0000:0e:00.0/reset
+  '';
 
   programs = {
     /* adb.enable = true; */

@@ -9,6 +9,8 @@
         security_driver = "none"
         security_default_confined = 0
         seccomp_sandbox = 0
+        user = "brenix"
+        group = "kvm"
         cgroup_device_acl = [
           "/dev/null", "/dev/full", "/dev/zero",
           "/dev/random", "/dev/urandom",

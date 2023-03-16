@@ -169,7 +169,15 @@
     <input type='keyboard' bus='virtio'>
       <address type='pci' domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
     </input>
-    <audio id='1' type='none'/>
+    <sound model='ich9'>
+      <codec type='micro'/>
+      <audio id='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
+    </sound>
+    <audio id='1' type='pulseaudio' serverName='/run/user/1000/pulse/native'>
+      <input mixingEngine='no'/>
+      <output mixingEngine='no'/>
+    </audio>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
         <address domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
@@ -195,13 +203,6 @@
       </source>
       <rom bar='off'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x0951'/>
-        <product id='0x16c4'/>
-      </source>
-      <address type='usb' bus='0' port='1'/>
     </hostdev>
     <watchdog model='itco' action='reset'/>
     <memballoon model='none'/>
