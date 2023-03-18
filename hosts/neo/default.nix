@@ -34,7 +34,7 @@
 
   services.resolved.domains = [ "localdomain" ];
 
-  # services.ratbagd.enable = true;
+  services.ratbagd.enable = true;
 
   # services.irqbalance.enable = true;
 
