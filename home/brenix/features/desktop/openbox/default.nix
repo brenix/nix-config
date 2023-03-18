@@ -323,6 +323,14 @@ in
             </startupnotify>
           </action>
         </keybind>
+        <keybind key="W-Shift-Return">
+          <action name="Execute">
+            <command>alacritty</command>
+            <startupnotify>
+              <enabled>yes</enabled>
+            </startupnotify>
+          </action>
+        </keybind>
         <keybind key="W-s">
           <action name="Execute">
             <command>spotify</command>
@@ -693,6 +701,14 @@ in
     <openbox_menu xmlns="http://openbox.org/3.4/menu">
     <menu id="root-menu" label="Openbox 3">
       <separator label="APPLICATIONS" />
+      <item label="ALACRITTY">
+        <action name="Execute">
+          <command>alacritty</command>
+          <startupnotify>
+            <enabled>yes</enabled>
+          </startupnotify>
+        </action>
+      </item>
       <item label="FIREFOX">
         <action name="Execute">
           <command>firefox</command>
