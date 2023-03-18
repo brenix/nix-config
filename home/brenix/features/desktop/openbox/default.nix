@@ -13,7 +13,7 @@ in
   ];
 
   xdg.configFile."openbox/autostart".text = ''
-    "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#262525'"
+    "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#252525'"
   '';
 
   xdg.configFile."openbox/rc.xml".text = ''
@@ -410,6 +410,8 @@ in
         </context>
         <context name="Titlebar">
           <mousebind button="Left" action="Drag">
+            <action name="Focus"/>
+            <action name="Raise"/>
             <action name="Move"/>
           </mousebind>
           <mousebind button="Left" action="DoubleClick">
