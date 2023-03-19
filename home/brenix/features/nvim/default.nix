@@ -132,7 +132,7 @@ in
         vim.keymap.set("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>", { silent = true })
         vim.keymap.set("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>", { silent = true })
         vim.keymap.set("n", "<Leader>n", ":NvimTreeToggle<CR>", { silent = true })
-        vim.keymap.set("n", "-", ":NvimTreeFindFile<CR>", { silent = true })
+        vim.keymap.set("n", "-", ":NvimTreeFindFileToggle<CR>", { silent = true })
         vim.keymap.set("n", "<Leader><space>", [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], { silent = true })
         vim.keymap.set("n", "<C-p>", [[<Cmd>lua require('telescope').extensions.project.project{}<CR>]], { silent = true })
         vim.keymap.set("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], { silent = true })

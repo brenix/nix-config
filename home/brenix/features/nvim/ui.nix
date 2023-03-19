@@ -110,7 +110,6 @@
         require("nvim-tree").setup({
           auto_reload_on_write = true,
           open_on_tab = false,
-          open_on_setup = false,
           update_cwd = false,
           respect_buf_cwd = true,
           reload_on_bufenter = true,
