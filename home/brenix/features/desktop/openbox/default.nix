@@ -14,6 +14,7 @@ in
 
   xdg.configFile."openbox/autostart".text = ''
     "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#252525'"
+    "${pkgs.xorg.xset}/bin/xset r rate 200 60"
   '';
 
   xdg.configFile."openbox/rc.xml".text = ''
