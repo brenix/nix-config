@@ -16,30 +16,38 @@
   ];
 
   home.packages = with pkgs; [
+    # nodePackages.npm
+    # nodejs
     age
     awless
     aws-vault
     awscli2
     calicoctl
     certigo
+    chamber
     comma
     glab
     go-task
     gojq
     gomplate
+    graphviz
     grc
     htop
+    httpie
     hugo
+    imagemagick
+    jwt-cli
+    kubebuilder
     lefthook
-    # nodePackages.npm
-    # nodejs
     packer
+    parallel
     pipenv
     python311
     sd
     shfmt
     sops
     tfenv
+    trivy
     unrar
     unzip
     vault-bin

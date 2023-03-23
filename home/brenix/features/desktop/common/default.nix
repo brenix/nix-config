@@ -17,6 +17,7 @@
     google-chrome
     obsidian
     pavucontrol
+    piper
     slack
     spotify
     wootility-lekker
