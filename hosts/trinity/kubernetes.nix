@@ -1,6 +1,23 @@
 { pkgs, lib, ... }:
 {
-  environment.systemPackages = with pkgs; [ kubectl kubernetes cri-tools ];
+  environment.systemPackages = with pkgs; [ kubectl kubernetes cri-tools nvidia-podman ];
+
+  virtualisation.containerd.settings = {
+    plugins."io.containerd.grpc.v1.cri".containerd = {
+      default_runtime_name = "nvidia";
+    };
+
+    plugins."io.containerd.grpc.v1.cri".containerd.runtimes.nvidia = {
+      privileged_without_host_devices = false;
+      runtime_engine = "";
+      runtime_root = "";
+      runtime_type = "io.containerd.runc.v2";
+    };
+
+    plugins."io.containerd.grpc.v1.cri".containerd.runtimes.nvidia.options = {
+      BinaryName = "${pkgs.nvidia-podman}/bin/nvidia-container-runtime";
+    };
+  };
 
   networking.extraHosts = "192.168.1.10 api.kubernetes";
 
