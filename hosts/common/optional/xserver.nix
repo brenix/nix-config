@@ -4,8 +4,8 @@
     enable = true;
     layout = "us";
 
-    autoRepeatDelay = 225;
-    autoRepeatInterval = 40;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 60;
 
     displayManager = {
       defaultSession = "none+openbox";
