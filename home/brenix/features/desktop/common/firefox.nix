@@ -10,7 +10,8 @@ in
         bitwarden
         decentraleyes
         h264ify
-        i-dont-care-about-cookies
+        # i-still-dont-care-about-cookies
+        # imagus
         theme-nord-polar-night
         ublock-origin
         vimium

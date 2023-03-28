@@ -2,7 +2,7 @@
 {
   imports = [
     ./alacritty.nix
-    ./chromium.nix
+    # ./chromium.nix
     ./firefox.nix
     ./fonts.nix
     ./gtk.nix
@@ -13,14 +13,14 @@
 
   xdg.mimeApps.enable = true;
   xdg.mimeApps.defaultApplications = {
-    "text/html" = "chromium-browser.desktop";
-    "x-scheme-handler/http" = "chromium-browser.desktop";
-    "x-scheme-handler/https" = "chromium-browser.desktop";
-    "x-scheme-handler/about" = "chromium-browser.desktop";
-    "x-scheme-handler/unknown" = "chromium-browser.desktop";
+    "text/html" = "firefox.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
+    "x-scheme-handler/about" = "firefox.desktop";
+    "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
-  home.sessionVariables.DEFAULT_BROWSER = "${pkgs.chromium}/bin/chromium";
+  home.sessionVariables.DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
 
   home.packages = with pkgs; [
     authy
