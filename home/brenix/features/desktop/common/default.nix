@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./chromium.nix
     ./firefox.nix
     ./fonts.nix
     ./gtk.nix
@@ -11,10 +12,18 @@
   ];
 
   xdg.mimeApps.enable = true;
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = "chromium-browser.desktop";
+    "x-scheme-handler/http" = "chromium-browser.desktop";
+    "x-scheme-handler/https" = "chromium-browser.desktop";
+    "x-scheme-handler/about" = "chromium-browser.desktop";
+    "x-scheme-handler/unknown" = "chromium-browser.desktop";
+  };
+
+  home.sessionVariables.DEFAULT_BROWSER = "${pkgs.chromium}/bin/chromium";
 
   home.packages = with pkgs; [
     authy
-    google-chrome
     obsidian
     pavucontrol
     piper
@@ -30,7 +39,6 @@
       directories = [
         ".config/Authy Desktop"
         ".config/obsidian"
-        ".config/google-chrome"
         ".config/Slack"
         ".config/spotify"
         ".config/wootility-lekker"
