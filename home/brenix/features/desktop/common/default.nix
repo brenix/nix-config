@@ -26,7 +26,7 @@
   };
 
   # home.sessionVariables.DEFAULT_BROWSER = "${pkgs.firefox}/bin/firefox";
-  home.sessionVariables.DEFAULT_BROWSER = "${pkgs.chroimium}/bin/chromium";
+  # home.sessionVariables.DEFAULT_BROWSER = "${pkgs.chroimium}/bin/chromium";
 
   home.packages = with pkgs; [
     authy
