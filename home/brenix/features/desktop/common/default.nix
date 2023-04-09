@@ -30,6 +30,7 @@
 
   home.packages = with pkgs; [
     authy
+    discord
     obsidian
     pavucontrol
     piper
@@ -44,6 +45,7 @@
     "/persist/home/brenix" = {
       directories = [
         ".config/Authy Desktop"
+        ".config/discord"
         ".config/obsidian"
         ".config/Slack"
         ".config/spotify"
