@@ -11,7 +11,7 @@
     ../common/optional/systemd-boot.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   networking.hostName = "trinity";
 
