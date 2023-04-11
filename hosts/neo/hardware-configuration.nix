@@ -130,7 +130,6 @@ in
 
   hardware.enableAllFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
-  hardware.bluetooth.enable = true;
   hardware.amdgpu.amdvlk = true;
   hardware.amdgpu.loadInInitrd = true;
   hardware.opengl.enable = true;
