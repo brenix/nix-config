@@ -42,6 +42,7 @@
     packer
     parallel
     pipenv
+    protonup-ng
     python311
     sd
     shfmt

@@ -45,13 +45,15 @@
     "/persist/home/brenix" = {
       directories = [
         ".config/Authy Desktop"
+        ".config/Slack"
+        ".config/Unknown Organization" # Zoom
         ".config/discord"
         ".config/obsidian"
-        ".config/Slack"
         ".config/spotify"
         ".config/wootility-lekker"
+        ".steam"
+        ".local/share/Steam"
         ".zoom"
-        ".config/Unknown Organization" # Zoom
       ];
       files = [
         ".config/zoomus.conf"

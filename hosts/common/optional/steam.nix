@@ -4,5 +4,5 @@
     remotePlay.openFirewall = true;
   };
 
-  hardware.steam-hardware.enable = true;
+  # hardware.steam-hardware.enable = true;
 }
