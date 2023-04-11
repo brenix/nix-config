@@ -16,7 +16,6 @@
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
     ../common/optional/systemd-boot.nix
-    ../common/optional/steam.nix
     ../common/optional/xserver.nix
   ];
 

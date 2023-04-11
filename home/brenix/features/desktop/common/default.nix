@@ -51,8 +51,6 @@
         ".config/obsidian"
         ".config/spotify"
         ".config/wootility-lekker"
-        ".steam"
-        ".local/share/Steam"
         ".zoom"
       ];
       files = [
