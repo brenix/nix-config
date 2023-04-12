@@ -17,6 +17,7 @@
     ../common/optional/podman.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/xserver.nix
+    ../common/optional/vagrant.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
