@@ -33,7 +33,6 @@
     graphviz
     grc
     htop
-    httpie
     hugo
     imagemagick
     jwt-cli
