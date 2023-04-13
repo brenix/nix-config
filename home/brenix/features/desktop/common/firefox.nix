@@ -33,8 +33,11 @@ in
         "browser.newtab.preload" = false;
         "browser.newtabpage.activity-stream.enabled" = false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+        "browser.newtabpage.activity-stream.telemetry" = false;
         "browser.onboarding.enabled" = false;
         "browser.pagethumbnails.capturing_disabled" = true;
+        "browser.ping-centre.telemetry" = false;
         "browser.pocket.enabled" = false;
         "browser.search.widget.inNavBar" = false;
         "browser.sessionstore.interval" = 60000;
@@ -49,7 +52,10 @@ in
         "browser.urlbar.update1" = false;
         "browser.xul.error_pages.enabled" = false;
         "browser.zoom.full" = false;
-        "toolkit.zoomManager.zoomValues" = ".3,.5,.67,.8,.9,1,1.05,1.1,1.2,1.33,1.5,1.7,2,2.4,3,4,5";
+        "datareporting.healthreport.uploadEnabled" = false;
+        "datareporting.policy.dataSubmissionEnabled" = false;
+        "datareporting.sessions.current.clean" = true;
+        "devtools.onboarding.telemetry.logged" = false;
         "dom.webgpu.enabled" = true;
         "extensions.autoDisableScopes" = 0;
         "extensions.formautofill.addresses.enabled" = false;
@@ -78,16 +84,11 @@ in
         "layers.acceleration.force-enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
         "layout.css.devPixelsPerpx" = 1;
+        "layout.frame_rate" = 144;
         "layout.spellcheckDefault" = 2;
         "layout.word_select.eat_space_to_next_word" = false;
-        "layout.frame_rate" = 144;
         "loop.enabled" = false;
         "media.mediasource.webm.enabled" = true;
-        /* "media.navigator.enabled" = false; */
-        /* "media.navigator.video.enabled" = false; */
-        /* "media.peerconnection.enabled" = false; */
-        /* "media.peerconnection.identity.enabled" = false; */
-        /* "media.peerconnection.video.enabled" = false; */
         "network.IDN_show_punycode" = true;
         "network.dns.disableIPv6" = true;
         "network.dnsCacheEntries" = 10000;
@@ -112,14 +113,6 @@ in
         "svg.context-properties.content.enabled" = true;
         "toolkit.cosmeticAnimations.enabled" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        # telemetry
-        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
-        "browser.newtabpage.activity-stream.telemetry" = false;
-        "browser.ping-centre.telemetry" = false;
-        "datareporting.healthreport.uploadEnabled" = false;
-        "datareporting.policy.dataSubmissionEnabled" = false;
-        "datareporting.sessions.current.clean" = true;
-        "devtools.onboarding.telemetry.logged" = false;
         "toolkit.telemetry.archive.enabled" = false;
         "toolkit.telemetry.bhrPing.enabled" = false;
         "toolkit.telemetry.enabled" = false;
@@ -130,6 +123,7 @@ in
         "toolkit.telemetry.shutdownPingSender.enabled" = false;
         "toolkit.telemetry.unified" = false;
         "toolkit.telemetry.updatePing.enabled" = false;
+        "toolkit.zoomManager.zoomValues" = ".3,.5,.67,.8,.9,1,1.05,1.1,1.2,1.33,1.5,1.7,2,2.4,3,4,5";
       };
       userChrome = ''
         /* Hide extra icons in address bar */
