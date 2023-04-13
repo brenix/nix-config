@@ -301,7 +301,7 @@ in
         </keybind>
         <keybind key="W-d">
           <action name="Execute">
-            <command>chromium</command>
+            <command>firefox</command>
             <startupnotify>
               <enabled>yes</enabled>
             </startupnotify>
