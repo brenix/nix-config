@@ -42,6 +42,7 @@ in
     username = lib.mkDefault "brenix";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     stateVersion = lib.mkDefault "22.11";
+    sessionPath = [ "$HOME/.local/bin" ];
 
     persistence = {
       "/persist/home/brenix" = {

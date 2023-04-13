@@ -23,6 +23,7 @@ in
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG++dlRrheRZgVLtzadOWFJgHgEL27t70oUZyLwL1o0F (none)"
     ];
+    packages = [ pkgs.home-manager ];
   };
 
   sops.secrets.brenix-password = {

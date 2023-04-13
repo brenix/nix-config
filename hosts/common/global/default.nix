@@ -1,7 +1,8 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ pkgs, lib, inputs, outputs, config, ... }:
+{ pkgs, lib, inputs, outputs, ... }:
 {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     inputs.impermanence.nixosModules.impermanence
     ./locale.nix
     ./nix.nix
@@ -11,6 +12,11 @@
     ./users.nix
     ./zsh.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
+
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+  };
 
   # Networking
   networking.dhcpcd.enable = false;
@@ -55,9 +61,9 @@
 
   environment = {
     # Activate home-manager environment
-    shellInit = ''
-      [ -d "$HOME/.nix-profile" ] || /nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null
-    '';
+    # shellInit = ''
+    #   [ -d "$HOME/.nix-profile" ] || /nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null
+    # '';
 
     # Persist logs, timers, etc
     persistence = {
@@ -79,7 +85,10 @@
 
   # Enable firmware and allow unfree pkgs
   hardware.enableRedistributableFirmware = true;
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = builtins.attrValues outputs.overlays;
+  };
 
   # Increase open file limit for sudoers
   security.pam.loginLimits = [
