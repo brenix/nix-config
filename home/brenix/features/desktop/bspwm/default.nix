@@ -35,7 +35,6 @@
     };
 
     startupPrograms = [
-      # "${pkgs.feh}/bin/feh --bg-scale ${config.wallpaper}"
       "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#252424'"
     ];
 

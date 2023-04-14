@@ -77,7 +77,6 @@
 
         # Startup
         exec-once=waybar
-        exec=${swaybg} -i ${config.wallpaper} --mode fill
         exec-once=${mako}
 
         # Rules

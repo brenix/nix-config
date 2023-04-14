@@ -30,13 +30,8 @@
   };
 
   programs.alacritty.settings.font.size = 16;
-  # programs.alacritty.settings.font.normal.family = config.fontProfiles.monospace.family;
-  # programs.alacritty.settings.font.bold.family = config.fontProfiles.monospace.family;
-  # programs.alacritty.settings.font.italic.family = config.fontProfiles.monospace.family;
 
   programs.starship.settings.command_timeout = 1200;
 
-  # colorscheme = inputs.nix-colors.colorSchemes.nord;
   colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
-  # wallpaper = pkgs.wallpapers.mountain-jaws;
 }

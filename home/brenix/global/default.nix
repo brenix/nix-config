@@ -1,8 +1,6 @@
 { inputs, lib, pkgs, config, outputs, ... }:
 let
   inherit (inputs.nix-colors) colorSchemes;
-  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) colorschemeFromPicture nixWallpaperFromScheme;
-  inherit (builtins) pathExists readFile;
 in
 {
   imports = [
@@ -13,13 +11,6 @@ in
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   colorscheme = lib.mkDefault colorSchemes.nord;
-
-  wallpaper = lib.mkDefault (nixWallpaperFromScheme {
-    scheme = config.colorscheme;
-    width = 2560;
-    height = 1440;
-    logoScale = 4.5;
-  });
 
   home.file.".colorscheme".text = config.colorscheme.slug;
 

@@ -17,10 +17,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-      inherit (nixpkgs.lib) filterAttrs traceVal;
-      inherit (builtins) mapAttrs elem;
       inherit (self) outputs;
-      notBroken = x: !(x.meta.broken or false);
       supportedSystems = [ "x86_64-linux" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
@@ -32,7 +29,7 @@
       legacyPackages = forAllSystems (system:
         import nixpkgs {
           inherit system;
-          overlays = with overlays; [ additions wallpapers modifications ];
+          overlays = with overlays; [ additions modifications ];
           config.allowUnfree = true;
         }
       );
@@ -45,7 +42,7 @@
         default = import ./shell.nix { pkgs = legacyPackages.${system}; };
       });
 
-      nixosConfigurations = rec {
+      nixosConfigurations = {
         # Desktop
         neo = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages."x86_64-linux";
