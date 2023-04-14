@@ -59,6 +59,7 @@
         ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --mode 2560x1440
         ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode 2560x1440
         ${pkgs.xorg.xset}/bin/xset s off -dpms
+        /nix/var/nix/profiles/per-user/brenix/home-manager/activate
       '';
     };
   };
