@@ -17,7 +17,7 @@
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       warn-dirty = false;
     };
-    package = pkgs.nixUnstable;
+    package = lib.mkDefault pkgs.nix;
     gc = {
       automatic = true;
       dates = "daily";

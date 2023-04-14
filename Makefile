@@ -8,9 +8,6 @@ define assert-set
 	@$(if $($(1)),,$(error $(1) not defined in $(@)))
 endef
 
-## Rebuild NixOS and home-manager configurations
-switch: nixos home
-
 ## Rebuild NixOS configuration
 nixos:
 	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --recreate-lock-file --flake ".#$(HOSTNAME)"
