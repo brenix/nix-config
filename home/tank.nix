@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, ... }:
 {
   imports = [
     ./cli/common
@@ -11,6 +11,7 @@
     ./desktop/common
     ./desktop/dunst
     ./desktop/firefox
+    ./desktop/polybar
     ./desktop/rofi
   ];
 
