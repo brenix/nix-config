@@ -15,6 +15,7 @@
 
   home-manager = {
     useUserPackages = true;
+    useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs outputs; };
   };
 
@@ -57,14 +58,9 @@
 
   # tmp on tmpfs
   boot.tmp.useTmpfs = true;
-  boot.tmp.tmpofsSize = "75%";
+  boot.tmp.tmpfsSize = "75%";
 
   environment = {
-    # Activate home-manager environment
-    # shellInit = ''
-    #   [ -d "$HOME/.nix-profile" ] || /nix/var/nix/profiles/per-user/$USER/home-manager/activate &> /dev/null
-    # '';
-
     # Persist logs, timers, etc
     persistence = {
       "/persist" = {
