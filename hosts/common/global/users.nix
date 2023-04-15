@@ -35,4 +35,6 @@ in
   services.logind.extraConfig = lib.mkDefault ''
     RuntimeDirectorySize=50%
   '';
+
+  home-manager.users.brenix = import home/${config.networking.hostName}.nix;
 }

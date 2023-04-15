@@ -13,6 +13,7 @@
     ./desktop/dunst
     ./desktop/firefox
     ./desktop/flameshot
+    ./desktop/openbox
     ./desktop/polybar
     ./desktop/rofi
     ./desktop/unclutter

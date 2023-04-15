@@ -11,6 +11,7 @@
     ./desktop/common
     ./desktop/dunst
     ./desktop/firefox
+    ./desktop/openbox
     ./desktop/polybar
     ./desktop/rofi
   ];
