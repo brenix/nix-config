@@ -56,8 +56,8 @@
   '';
 
   # tmp on tmpfs
-  boot.tmpOnTmpfs = true;
-  boot.tmpOnTmpfsSize = "75%";
+  boot.tmp.useTmpfs = true;
+  boot.tmp.tmpofsSize = "75%";
 
   environment = {
     # Activate home-manager environment
