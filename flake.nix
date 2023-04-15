@@ -68,25 +68,25 @@
         "brenix@neo" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/brenix/neo.nix ];
+          modules = [ ./home/neo.nix ];
         };
         # Laptop
         "brenix@tank" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/brenix/tank.nix ];
+          modules = [ ./home/tank.nix ];
         };
         # Server
         "brenix@trinity" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/brenix/trinity.nix ];
+          modules = [ ./home/trinity.nix ];
         };
         # For easy bootstrapping from a nixos live usb
         "nixos@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/brenix/generic.nix ];
+          modules = [ ./home/generic.nix ];
         };
       };
     };
