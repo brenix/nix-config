@@ -2,7 +2,6 @@
 {
   imports = [
     ./cli/common
-    ./cli/kubernetes-tools
   ];
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
