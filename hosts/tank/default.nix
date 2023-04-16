@@ -12,7 +12,7 @@
     ../common/optional/xserver.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   networking.hostName = "tank";
 
@@ -23,8 +23,6 @@
   services.xserver = {
     dpi = 220;
   };
-
-  hardware.video.hidpi.enable = true;
 
   environment.variables.WINIT_X11_SCALE_FACTOR = "1.5";
   environment.variables.GDK_SCALE = "2";
