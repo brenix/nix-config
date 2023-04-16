@@ -108,6 +108,7 @@ in
         "reader.parse-on-load.enabled" = false;
         "reader.parse-on-load.force-enabled" = false;
         "security.enterprise_roots.enabled" = true;
+        "security.webauthn.ctap2" = true;
         "signon.autofillForms" = false;
         "signon.rememberSignons" = false;
         "svg.context-properties.content.enabled" = true;
