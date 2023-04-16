@@ -3,10 +3,10 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    inputs.impermanence.nixosModules.impermanence
     ./locale.nix
     ./nix.nix
     ./openssh.nix
+    ./optin-persistence.nix
     ./sops.nix
     ./sysctl.nix
     ./users.nix
@@ -60,21 +60,7 @@
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "75%";
 
-  environment = {
-    # Persist logs, timers, etc
-    persistence = {
-      "/persist" = {
-        directories = [ "/var/lib/systemd" "/var/log" ];
-        files = [ "/etc/machine-id" ];
-      };
-    };
-
-    # Add terminfo files
-    enableAllTerminfo = true;
-  };
-
-  # Allows users to allow others on their bind
-  programs.fuse.userAllowOther = true;
+  environment.enableAllTerminfo = true;
 
   # Allow sudo without password if in wheel group
   security.sudo.wheelNeedsPassword = false;
