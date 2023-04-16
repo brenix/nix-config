@@ -1,7 +1,7 @@
 {
   description = "My NixOS configuration";
 
-  inputs = {
+  inputs = rec {
     firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
     hardware.url = "github:nixos/nixos-hardware";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
@@ -18,76 +18,35 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
-      supportedSystems = [ "x86_64-linux" ];
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+      forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+
+      mkNixos = modules: nixpkgs.lib.nixosSystem {
+        inherit modules;
+        specialArgs = { inherit inputs outputs; };
+      };
+      mkHome = modules: pkgs: home-manager.lib.homeManagerConfiguration {
+        inherit modules pkgs;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
     in
     rec {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
-      overlays = import ./overlays;
-
-      legacyPackages = forAllSystems (system:
-        import nixpkgs {
-          inherit system;
-          overlays = with overlays; [ additions modifications ];
-          config.allowUnfree = true;
-        }
-      );
-
-      packages = forAllSystems (system:
-        import ./pkgs { pkgs = legacyPackages.${system}; }
-      );
-
-      devShells = forAllSystems (system: {
-        default = import ./shell.nix { pkgs = legacyPackages.${system}; };
-      });
+      overlays = import ./overlays { inherit inputs outputs; };
+      packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; }));
+      devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
-        # Desktop
-        neo = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages."x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/neo ];
-        };
-        # Laptop
-        tank = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages."x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/tank ];
-        };
-        # Server
-        trinity = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages."x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/trinity ];
-        };
+        neo = mkNixos [ ./hosts/neo ];
+        trinity = mkNixos [ ./hosts/trinity ];
+        tank = mkNixos [ ./hosts/tank ];
       };
 
       homeConfigurations = {
-        # Desktop
-        "brenix@neo" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/neo.nix ];
-        };
-        # Laptop
-        "brenix@tank" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/tank.nix ];
-        };
-        # Server
-        "brenix@trinity" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/trinity.nix ];
-        };
-        # For easy bootstrapping from a nixos live usb
-        "nixos@nixos" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/generic.nix ];
-        };
+        "brenix@neo" = mkHome [ ./home/neo.nix ] nixpkgs.legacyPackages."x86_64-linux";
+        "brenix@trinity" = mkHome [ ./home/trinity.nix ] nixpkgs.legacyPackages."x86_64-linux";
+        "brenix@tank" = mkHome [ ./home/tank.nix ] nixpkgs.legacyPackages."x86_64-linux";
       };
     };
 }
