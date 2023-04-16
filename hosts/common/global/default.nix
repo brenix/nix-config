@@ -9,6 +9,7 @@
     ./optin-persistence.nix
     ./sops.nix
     ./sysctl.nix
+    ./systemd-initrd.nix
     ./users.nix
     ./zsh.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
