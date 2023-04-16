@@ -26,7 +26,6 @@
         ".config/Unknown Organization" # Zoom
         ".config/discord"
         ".config/obsidian"
-        ".config/spotify"
         ".zoom"
       ];
       files = [

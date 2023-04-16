@@ -12,10 +12,6 @@ endef
 nixos:
 	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --recreate-lock-file --flake ".#$(HOSTNAME)"
 
-## Rebuild home-manager configuration
-home:
-	@home-manager --flake ".#$(USER)@$(HOSTNAME)" switch
-
 ## Run garbage collection
 gc:
 	@sudo nix-collect-garbage -d
