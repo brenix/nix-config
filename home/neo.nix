@@ -1,22 +1,17 @@
 { inputs, ... }:
 {
   imports = [
-    ./cli/common
-    ./cli/golang
-    ./cli/gpg
-    ./cli/kubernetes-tools
-    ./cli/nvim
-    ./cli/playerctl
-    ./cli/terraform
-    ./desktop/alacritty
-    ./desktop/common
-    ./desktop/dunst
-    ./desktop/firefox
-    ./desktop/flameshot
-    ./desktop/openbox
-    ./desktop/polybar
-    ./desktop/rofi
-    ./desktop/unclutter
+    ./common/global
+    ./common/optional/desktop-common
+    ./common/optional/development
+    ./common/optional/firefox
+    ./common/optional/gpg
+    ./common/optional/kubernetes-tools
+    ./common/optional/music
+    ./common/optional/openbox
+    ./common/optional/sre-tools
+    ./common/optional/wootility
+    ./common/optional/xorg-common
   ];
 
   dpi = 108;

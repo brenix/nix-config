@@ -1,19 +1,15 @@
 { config, inputs, ... }:
 {
   imports = [
-    ./cli/common
-    ./cli/golang
-    ./cli/gpg
-    ./cli/kubernetes-tools
-    ./cli/nvim
-    ./cli/terraform
-    ./desktop/alacritty
-    ./desktop/common
-    ./desktop/dunst
-    ./desktop/firefox
-    ./desktop/openbox
-    ./desktop/polybar
-    ./desktop/rofi
+    ./common/global
+    ./common/optional/desktop-common
+    ./common/optional/development
+    ./common/optional/firefox
+    ./common/optional/gpg
+    ./common/optional/kubernetes-tools
+    ./common/optional/openbox
+    ./common/optional/sre-tools
+    ./common/optional/xorg-common
   ];
 
   dpi = 220;

@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   imports = [
-    ./cli/common
+    ./common/global
   ];
 
   # colorscheme = inputs.nix-colors.colorSchemes.nord;
