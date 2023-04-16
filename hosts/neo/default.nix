@@ -10,14 +10,11 @@
     ../common/global
     ../common/optional/autologin-console.nix
     ../common/optional/fonts.nix
-    ../common/optional/freetype2-lcdfilter.nix
-    /* ../common/optional/node-exporter.nix */
     ../common/optional/openconnect.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/xserver.nix
-    ../common/optional/vagrant.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
