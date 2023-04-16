@@ -31,18 +31,15 @@
   # Packages
   environment.systemPackages = with pkgs; [
     bash-completion
-    bat
     curlie
     dig
     fd
     gcc
     gettext
     gnumake
-    lsof
     nmap
     pciutils
     ripgrep
-    tcpdump
     usbutils
   ];
 
@@ -60,6 +57,7 @@
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "75%";
 
+  # Enable all terms
   environment.enableAllTerminfo = true;
 
   # Allow sudo without password if in wheel group

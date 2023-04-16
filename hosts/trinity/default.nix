@@ -9,28 +9,12 @@
     ./restic.nix
     ../common/global
     ../common/optional/systemd-boot.nix
+    ../common/optional/auto-upgrade.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   networking.hostName = "trinity";
-
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-    randomizedDelaySec = "120";
-    rebootWindow = {
-      lower = "03:00";
-      upper = "06:00";
-    };
-    flake = "github:brenix/nix-config";
-    flags = [
-      # NOTE(brenix): disabled so that it tracks the flake lock instead
-      #"--recreate-lock-file"
-      #"--no-write-lock-file"
-      "--impure"
-    ];
-  };
 
   services.irqbalance.enable = true;
 
