@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ./sxhkd.nix
-  ];
-
   xsession.windowManager.bspwm = {
     enable = true;
 

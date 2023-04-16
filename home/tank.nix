@@ -3,11 +3,11 @@
   imports = [
     ./common/global
     ./common/optional/desktop
-    ./common/optional/development
-    ./common/optional/firefox
-    ./common/optional/gpg
-    ./common/optional/kubernetes-tools
-    ./common/optional/openbox
+    ./common/optional/development.nix
+    ./common/optional/firefox.nix
+    ./common/optional/gpg.nix
+    ./common/optional/kubernetes-tools.nix
+    ./common/optional/openbox.nix
     ./common/optional/sre-tools
     ./common/optional/xorg-common
   ];
