@@ -27,9 +27,6 @@ All systems use a single btrfs partition, with subvolumes for `/nix`, a
 `/persist` directory (which is opt-in using `impermanence`), and a root
 subvolume (cleared on every boot).
 
-Home-manager is used in a standalone way, and because of opt-in persistence is
-activated on every boot with `loginShellInit`.
-
 ## My install process
 
 This may not be the most optimal way to install, but it is what I have found
