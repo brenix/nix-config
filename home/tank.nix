@@ -8,6 +8,7 @@
     ./common/optional/gpg.nix
     ./common/optional/kubernetes-tools.nix
     ./common/optional/openbox.nix
+    ./common/optional/slack.nix
     ./common/optional/sre-tools
     ./common/optional/xorg-common
   ];

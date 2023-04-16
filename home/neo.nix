@@ -4,14 +4,17 @@
     ./common/global
     ./common/optional/desktop
     ./common/optional/development.nix
+    ./common/optional/discord.nix
     ./common/optional/firefox.nix
     ./common/optional/gpg.nix
     ./common/optional/kubernetes-tools.nix
     ./common/optional/music.nix
     ./common/optional/openbox.nix
+    ./common/optional/slack.nix
     ./common/optional/sre-tools
     ./common/optional/wootility.nix
     ./common/optional/xorg-common
+    ./common/optional/zoom.nix
   ];
 
   dpi = 108;
