@@ -27,7 +27,6 @@
         ".aws"
         ".awsvault"
         ".config/infractl"
-        ".config/sops"
       ];
       allowOther = true;
     };

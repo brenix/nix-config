@@ -42,6 +42,7 @@
   home.persistence = {
     "/persist/home/brenix" = {
       directories = [
+        ".config/sops"
         ".local/bin"
         ".local/state/wireplumber"
         ".local/share/zoxide"
