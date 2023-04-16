@@ -16,6 +16,7 @@
     ./ssh.nix
     ./starship.nix
     ./tmux.nix
+    ./xdg.nix
     ./xresources.nix
     ./zsh
   ];
@@ -46,7 +47,6 @@
         ".local/bin"
         ".local/state/wireplumber"
         ".local/share/zoxide"
-        "Downloads"
         "nix-config"
         "work"
       ];

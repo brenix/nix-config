@@ -4,7 +4,6 @@
     ./alacritty.nix
     ./fonts.nix
     ./gtk.nix
-    ./mimeapps.nix
     ./qt.nix
   ];
 
