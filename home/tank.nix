@@ -2,7 +2,7 @@
 {
   imports = [
     ./common/global
-    ./common/optional/desktop-common
+    ./common/optional/desktop
     ./common/optional/development
     ./common/optional/firefox
     ./common/optional/gpg
