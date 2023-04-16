@@ -9,18 +9,18 @@ in
       scrolling.history = 10000;
       scrolling.multiplier = 3;
       font.normal = {
-        # family = config.fontProfiles.monospace.family;
-        family = "Terminus";
+        family = config.fontProfiles.monospace.family;
+        # family = "Terminus";
         style = "Regular";
       };
       font.bold = {
-        # family = config.fontProfiles.monospace.family;
-        family = "Terminus";
+        family = config.fontProfiles.monospace.family;
+        # family = "Terminus";
         style = "Regular";
       };
       font.italic = {
-        # family = config.fontProfiles.monospace.family;
-        family = "Terminus";
+        family = config.fontProfiles.monospace.family;
+        # family = "Terminus";
         style = "Italic";
       };
       font.size = lib.mkDefault 8;
