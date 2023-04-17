@@ -69,6 +69,7 @@
   nixpkgs = {
     config.allowUnfree = true;
     overlays = builtins.attrValues outputs.overlays;
+    config.permittedInsecurePackages = [ "electron-21.4.0" ];
   };
 
   # Increase open file limit for sudoers

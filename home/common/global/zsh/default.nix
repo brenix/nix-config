@@ -26,7 +26,6 @@
       cp = "cp -riv";
       gl = "git pull --prune --tags --force";
       grep = "grep --color=auto";
-      jq = "gojq";
       l = "ls --format=vertical";
       la = "ls -A --format=vertical";
       ls = "grc ls -hpv --color=always --group-directories-first";
