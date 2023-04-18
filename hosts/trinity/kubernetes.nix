@@ -1,8 +1,12 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [ kubectl kubernetes cri-tools ];
 
   networking.extraHosts = "192.168.1.10 api.kubernetes";
+
+  services.logind.extraConfig = ''
+    InhibitDelayMaxSec=60s
+  '';
 
   services.kubernetes = {
     roles = [ "master" "node" ];
@@ -62,6 +66,32 @@
             loadbalance
         }
       '';
+    };
+  };
+
+  systemd.services = {
+    taint-node = {
+      description = "Node tainter";
+      after = [ "multi-user.target" "kube-apiserver.service" ];
+      environment = {
+        KUBECONFIG = "/etc/static/kubernetes/cluster-admin.kubeconfig";
+      };
+      script = ''
+        taint() {
+          trap - SIGINT SIGTERM
+          echo "Tainting node"
+          ${pkgs.kubectl}/bin/kubectl taint node trinity node.kubernetes.io/shutdown:NoExecute
+          sleep 45
+          echo "Done"
+        }
+
+        trap taint SIGINT SIGTERM
+        echo "Untainting node"
+        ${pkgs.kubectl}/bin/kubectl taint node trinity node.kubernetes.io/shutdown:NoExecute- || true
+        echo "Awaiting signals"
+        sleep infinity & wait $!
+      '';
+      serviceConfig.Type = "simple";
     };
   };
 
