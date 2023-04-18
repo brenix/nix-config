@@ -80,7 +80,7 @@ in
   systemd.services = {
     taint-node = {
       description = "Node tainter";
-      after = [ "multi-user.target" "kube-apiserver.service" ];
+      after = [ "multi-user.target" "kube-apiserver.service" "kubelet.service" ];
       environment = {
         KUBECONFIG = "/etc/static/kubernetes/cluster-admin.kubeconfig";
       };
