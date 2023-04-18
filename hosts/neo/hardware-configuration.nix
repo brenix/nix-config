@@ -50,6 +50,13 @@ in
       "vfio_virqfd"
     ];
 
+    blacklistedKernelModules = [
+      "sp5100_tco"
+      "nouveau"
+      "iwlwifi"
+      "mac80211"
+    ];
+
     kernelParams = [
       "amd_iommu=on"
       "preempt=voluntary"
