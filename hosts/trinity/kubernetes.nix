@@ -1,4 +1,12 @@
 { pkgs, ... }:
+let
+  kubeletConfig = pkgs.writeText "kubelet-config.yaml" ''
+    apiVersion: kubelet.config.k8s.io/v1beta1
+    kind: KubeletConfiguration
+    shutdownGracePeriod: 60s
+    shutdownGracePeriodCriticalPods: 45s
+  '';
+in
 {
   environment.systemPackages = with pkgs; [ kubectl kubernetes cri-tools ];
 
@@ -33,7 +41,7 @@
 
     # Kubelet
     kubelet.extraOpts =
-      "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false --image-gc-high-threshold=50 --image-gc-low-threshold=30";
+      "--resolv-conf=/run/systemd/resolve/resolv.conf --fail-swap-on=false --image-gc-high-threshold=50 --image-gc-low-threshold=30 --config ${kubeletConfig}";
 
     # Enable addon manager
     addonManager.enable = true;
