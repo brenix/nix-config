@@ -1,5 +1,3 @@
-# This file contains an ephemeral btrfs root configuration
-# TODO: perhaps partition using disko in the future
 { lib, config, ... }:
 let
   hostname = config.networking.hostName;
@@ -41,17 +39,17 @@ in
   };
 
   fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/${hostname}";
-      fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" ];
-    };
-
     # "/" = {
-    #   device = "none";
-    #   fsType = "tmpfs";
-    #   options = [ "defaults" "size=3G" "mode=755" ];
+    #   device = "/dev/disk/by-label/${hostname}";
+    #   fsType = "btrfs";
+    #   options = [ "subvol=root" "compress=zstd" ];
     # };
+
+    "/" = {
+      device = "none";
+      fsType = "tmpfs";
+      options = [ "defaults" "size=3G" "mode=755" ];
+    };
 
     "/nix" = {
       device = "/dev/disk/by-label/${hostname}";
