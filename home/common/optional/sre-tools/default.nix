@@ -14,6 +14,7 @@
     gomplate
     graphviz
     jwt-cli
+    openssl
     packer
     parallel
     vault-bin
