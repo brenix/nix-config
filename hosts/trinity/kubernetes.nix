@@ -80,7 +80,9 @@ in
   systemd.services = {
     taint-node = {
       description = "Node tainter";
-      after = [ "multi-user.target" "kube-apiserver.service" "kubelet.service" ];
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network-online.target" "kube-apiserver.service" "kubelet.service" ];
+      restartIfChanged = false;
       environment = {
         KUBECONFIG = "/etc/static/kubernetes/cluster-admin.kubeconfig";
       };
@@ -100,6 +102,7 @@ in
         sleep infinity & wait $!
       '';
       serviceConfig.Type = "simple";
+      serviceConfig.User = "root";
     };
   };
 
