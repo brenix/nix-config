@@ -80,17 +80,8 @@ Re-encrypt with the new keys
 sops updatekeys -y path/to/secrets.yaml
 ```
 
-Install the host configuration
+Install
 
 ```sh
 sudo -E nixos-install --impure --no-root-passwd --flake .#<hostname>
-```
-
-Reboot, then login as the user (may need to switch to another virtual console)
-and install the home configuration
-
-```sh
-git clone https://github.com/brenix/nix-config && cd nix-config
-nix --extra-experimental-features "nix-command flakes" develop
-make home
 ```
