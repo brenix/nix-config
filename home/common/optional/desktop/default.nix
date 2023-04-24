@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./autocutsel.nix
     ./fonts.nix
     ./gtk.nix
     ./qt.nix
