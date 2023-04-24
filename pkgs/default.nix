@@ -8,5 +8,6 @@
     sha256 = "sha256-uiW4TMTTVB6aHcwLjhx8aT8bOaXRKRSRlOtrYFCuVsM=";
   };
   tfenv = pkgs.callPackage ./tfenv { };
+  spotify = pkgs.callPackage ./spotify { };
   wootility-lekker = pkgs.callPackage ./wootility-lekker { };
 }
