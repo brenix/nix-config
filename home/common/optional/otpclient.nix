@@ -1,23 +1,16 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./alacritty.nix
-    ./fonts.nix
-    ./gtk.nix
-    ./qt.nix
-  ];
-
   home.packages = with pkgs; [
-    obsidian
-    pavucontrol
-    piper
-    xdg-utils
+    otpclient
   ];
 
   home.persistence = {
     "/persist/home/brenix" = {
       directories = [
-        ".config/obsidian"
+        ".config/otpclient"
+      ];
+      files = [
+        ".config/otpclient.cfg"
       ];
       allowOther = true;
     };
