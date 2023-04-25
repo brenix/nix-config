@@ -284,6 +284,11 @@ in
             <command>rofi -show run</command>
           </action>
         </keybind>
+        <keybind key="W-t">
+          <action name="Execute">
+            <command>otpclient</command>
+          </action>
+        </keybind>
         <keybind key="F1">
           <action name="Execute">
             <command>rofi -show calc -modi calc -no-show-match -no-sort -lines 2</command>
