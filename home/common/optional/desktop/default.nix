@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    bitwarden
     obsidian
     pavucontrol
     piper
@@ -19,6 +20,7 @@
     "/persist/home/brenix" = {
       directories = [
         ".config/obsidian"
+        ".config/Bitwarden"
       ];
       allowOther = true;
     };

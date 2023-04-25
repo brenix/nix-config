@@ -10,7 +10,6 @@
     ./common/optional/kubernetes-tools.nix
     ./common/optional/music.nix
     ./common/optional/openbox.nix
-    ./common/optional/otpclient.nix
     ./common/optional/slack.nix
     ./common/optional/sre-tools
     ./common/optional/wootility.nix

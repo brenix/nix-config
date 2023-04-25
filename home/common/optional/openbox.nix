@@ -284,11 +284,6 @@ in
             <command>rofi -show run</command>
           </action>
         </keybind>
-        <keybind key="W-t">
-          <action name="Execute">
-            <command>otpclient</command>
-          </action>
-        </keybind>
         <keybind key="F1">
           <action name="Execute">
             <command>rofi -show calc -modi calc -no-show-match -no-sort -lines 2</command>
@@ -297,6 +292,11 @@ in
         <keybind key="F2">
           <action name="Execute">
             <command>rofi -show emoji -modi emoji</command>
+          </action>
+        </keybind>
+        <keybind key="W-b">
+          <action name="Execute">
+            <command>bitwarden</command>
           </action>
         </keybind>
         <keybind key="W-d">

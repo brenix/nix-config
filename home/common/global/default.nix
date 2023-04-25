@@ -12,6 +12,7 @@
     ./nix-index.nix
     ./nix.nix
     ./nvim
+    ./rbw.nix
     ./services.nix
     ./ssh.nix
     ./starship.nix
