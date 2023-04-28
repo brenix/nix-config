@@ -20,6 +20,7 @@
 
     shellAliases = {
       ave = "aws-vault exec";
+      bw = "rbw";
       cat = "bat --paging=never --style=plain --decorations=never";
       cd = "z";
       cdu = "cd-gitroot";
