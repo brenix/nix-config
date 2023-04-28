@@ -36,6 +36,9 @@ in
     apiserver.extraOpts =
       "--permit-port-sharing=true --permit-address-sharing=true";
 
+    # Additional controller-manager flags
+    controllerManager.extraOpts = "--terminated-pod-gc-threshold=1";
+
     # Use cloudflare certmgr to manage all certs
     easyCerts = true;
 
