@@ -10,9 +10,12 @@
 
   home.packages = with pkgs; [
     bitwarden
+    mpv
+    mupdf
     obsidian
     pavucontrol
     piper
+    sxiv
     xdg-utils
   ];
 
