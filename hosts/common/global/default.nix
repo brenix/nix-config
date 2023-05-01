@@ -54,6 +54,19 @@
     MaxRetentionSec=1week
   '';
 
+  # Optimize interrupt frequency
+  systemd.services."optimize-rtc-interrupt" = {
+    description = "Increase the highest requested RTC interrupt frequency";
+    serviceConfig = {
+      type = "oneshot";
+    };
+    script = ''
+      ${pkgs.bash}/bin/bash -c 'echo 3072 > /sys/class/rtc/rtc0/max_user_freq'
+      ${pkgs.bash}/bin/bash -c 'echo 3072 > /proc/sys/dev/hpet/max-user-freq'
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
+
   # tmp on tmpfs
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "75%";

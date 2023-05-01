@@ -55,6 +55,7 @@ in
       "nouveau"
       "iwlwifi"
       "mac80211"
+      "iTCO_wdt"
     ];
 
     kernelParams = [
@@ -92,6 +93,8 @@ in
       options vfio-pci disable_vga=1
       options vfio_iommu_type1 allow_unsafe_interrupts=1
       options vfio_iommu_type1 disable_hugepages=0
+      options nvidia NVreg_UsePageAttributeTable=1 NVreg_InitializeSystemMemoryAllocations=0 NVreg_DynamicPowerManagement=0x02
+      options nvidia_drm modeset=1
     '';
   };
 
