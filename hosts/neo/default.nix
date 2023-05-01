@@ -17,7 +17,7 @@
     ../common/optional/xserver.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.postBootCommands = ''
     echo 1 >/sys/devices/pci0000:00/0000:00:03.2/0000:0e:00.0/reset
   '';
