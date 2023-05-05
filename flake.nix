@@ -2,9 +2,7 @@
   description = "My NixOS configuration";
 
   inputs = rec {
-    # FIXME: pinned to cachyos 6.2.x due to build failures in 6.3.x
-    chaotic.url = "github:chaotic-cx/nyx/01962a3969bbc99e70f085c8bb2915bf6f95df3e";
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
     hardware.url = "github:nixos/nixos-hardware";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
