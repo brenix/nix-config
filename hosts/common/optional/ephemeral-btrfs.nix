@@ -54,13 +54,13 @@ in
     "/nix" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=nix" "noatime" "commit=120" "flushoncommit" "discard=async" ];
+      options = [ "subvol=nix" "noatime" "compress=zstd" ];
     };
 
     "/persist" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=persist" "noatime" "commit=120" "flushoncommit" "discard=async" ];
+      options = [ "subvol=persist" "noatime" "compress=zstd" ];
       neededForBoot = true;
     };
 
