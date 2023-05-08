@@ -143,7 +143,6 @@ in
   hardware.amdgpu.amdvlk = true;
   hardware.amdgpu.loadInInitrd = true;
   hardware.opengl.enable = true;
-  hardware.opengl.driSupport32Bit = false;
 
   services.udev.extraRules = ''
     # Configure webcam parameters

@@ -27,7 +27,7 @@
         style = "cyan";
       };
       git_status = {
-        disabled = true;
+        disabled = false;
         format = "([\\[$all_status$ahead_behind\\] ]($style))";
         style = "bold red";
       };
