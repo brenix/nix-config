@@ -20,7 +20,7 @@
     "/var/lib/containerd" = {
       device = "/dev/disk/by-label/containerd";
       fsType = "btrfs";
-      options = [ "noatime" "nodatacow" "commit=120" "flushoncommit" "discard=async" ];
+      options = [ "noatime" "nodatacow" "commit=120" "autodefrag" "compress=zstd" ];
     };
   };
 
@@ -46,6 +46,13 @@
     {
       what = "/dev/mapper/data-downloads";
       where = "/downloads";
+      type = "ext4";
+      options = "rw,noatime,barrier=0";
+      wantedBy = [ "multi-user.target" ];
+    }
+    {
+      what = "/dev/mapper/data-media";
+      where = "/media";
       type = "ext4";
       options = "rw,noatime,barrier=0";
       wantedBy = [ "multi-user.target" ];
