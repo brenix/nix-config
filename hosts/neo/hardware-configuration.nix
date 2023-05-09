@@ -110,14 +110,14 @@ in
       what = "/dev/mapper/data-cache";
       where = "/home/brenix/.cache";
       type = "btrfs";
-      options = "rw,noatime,nodatacow,compress=zstd,autodefrag";
+      options = "rw,noatime,nodatacow,autodefrag";
       wantedBy = [ "multi-user.target" ];
     }
     {
       what = "/dev/mapper/data-containers";
       where = "/home/brenix/.containers";
       type = "btrfs";
-      options = "rw,noatime,nodatacow,compress=zstd,autodefrag";
+      options = "rw,noatime,nodatacow,autodefrag";
       wantedBy = [ "multi-user.target" ];
     }
   ];
