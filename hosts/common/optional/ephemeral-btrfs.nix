@@ -54,13 +54,13 @@ in
     "/nix" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=nix" "noatime" "compress=zstd" ];
+      options = [ "subvol=nix" "noatime" "compress=zstd" "autodefrag" ];
     };
 
     "/persist" = {
       device = "/dev/disk/by-label/${hostname}";
       fsType = "btrfs";
-      options = [ "subvol=persist" "noatime" "compress=zstd" ];
+      options = [ "subvol=persist" "noatime" "compress=zstd" "autodefrag" ];
       neededForBoot = true;
     };
 
