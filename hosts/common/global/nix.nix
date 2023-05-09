@@ -1,5 +1,10 @@
 { config, pkgs, inputs, lib, ... }:
 {
+  sops.secrets.nixAccessTokens = {
+    mode = "0440";
+    sopsFile = ../secrets.yaml;
+  };
+
   nix = {
     settings = {
       substituters = [
@@ -17,6 +22,9 @@
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       warn-dirty = false;
     };
+    extraOptions = ''
+      !include ${config.sops.secrets.nixAccessTokens.path}
+    '';
     package = lib.mkDefault pkgs.nix;
     gc = {
       automatic = true;
