@@ -2,7 +2,7 @@
   description = "My NixOS configuration";
 
   inputs = {
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # hyprland = { url = "github:hyprwm/hyprland/v0.15.3beta"; inputs.nixpkgs.follows = "nixpkgs"; };
     # hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
     firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
@@ -16,15 +16,15 @@
     sops-nix = { url = "github:mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, chaotic, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
 
       mkNixos = modules: nixpkgs.lib.nixosSystem {
-        inherit modules;
-        # modules = modules ++ [ chaotic.nixosModules.default ];
+        # inherit modules;
+        modules = modules ++ [ chaotic.nixosModules.default ];
         specialArgs = { inherit inputs outputs; };
       };
       mkHome = modules: pkgs: home-manager.lib.homeManagerConfiguration {
