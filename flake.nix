@@ -1,7 +1,7 @@
 {
   description = "My NixOS configuration";
 
-  inputs = rec {
+  inputs = {
     # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # hyprland = { url = "github:hyprwm/hyprland/v0.15.3beta"; inputs.nixpkgs.follows = "nixpkgs"; };
     # hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
@@ -32,7 +32,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
       };
     in
-    rec {
+    {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
       overlays = import ./overlays { inherit inputs outputs; };
