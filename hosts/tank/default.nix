@@ -1,8 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ../common/global
+    ../common/optional/ananicy.nix
     ../common/optional/fonts.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix

@@ -8,6 +8,7 @@
     ./kubernetes.nix
     ./restic.nix
     ../common/global
+    ../common/optional/ananicy.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/auto-upgrade.nix
   ];
