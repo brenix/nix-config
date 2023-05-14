@@ -97,6 +97,12 @@
         "net.ipv4.tcp_notsent_lowat" = 131072;
         "net.ipv4.udp_rmem_min" = 8192;
         "net.ipv4.udp_wmem_min" = 8192;
+
+        # Change PELT multiplier to 16 ms instead of 32ms
+        # 1 = 32ms
+        # 2 = 16ms
+        # 4 = 8ms
+        "kernel.sched_pelt_multiplier" = "2";
       };
     };
   };
