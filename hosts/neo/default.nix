@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./libvirt.nix
     ../common/global
+    ../common/optional/ananicy.nix
     ../common/optional/autologin-console.nix
     ../common/optional/fonts.nix
     ../common/optional/openconnect.nix
