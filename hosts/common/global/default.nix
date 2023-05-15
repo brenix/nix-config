@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    ./fish.nix
     ./locale.nix
     ./nix.nix
     ./openssh.nix
@@ -11,7 +12,7 @@
     ./sysctl.nix
     ./systemd-initrd.nix
     ./users.nix
-    ./zsh.nix
+    # ./zsh.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager = {

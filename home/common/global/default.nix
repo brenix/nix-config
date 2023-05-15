@@ -5,6 +5,7 @@
     ./colorscheme.nix
     ./containers.nix
     ./dircolors.nix
+    ./fish.nix
     ./fzf.nix
     ./git.nix
     ./home-manager.nix
@@ -19,7 +20,7 @@
     ./tmux.nix
     ./xdg.nix
     ./xresources.nix
-    ./zsh
+    # ./zsh
   ];
 
   home.packages = with pkgs; [

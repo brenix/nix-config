@@ -6,7 +6,7 @@ in
   users.users.brenix = {
     passwordFile = config.sops.secrets.brenix-password.path;
     isNormalUser = true;
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     extraGroups = [
       "audio"
       "input"
