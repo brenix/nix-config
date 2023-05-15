@@ -46,6 +46,7 @@
       cdu = "cd-gitroot";
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       cp = "cp -riv";
+      docker = "podman";
       gl = "git pull --prune --tags --force";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
@@ -243,6 +244,10 @@
 
     };
     interactiveShellInit =
+      # Include local dirs
+      ''
+        set -gx fish_user_paths ~/.config/fish/conf.local.d
+      '' +
       # Use zoxide
       ''
         zoxide init fish | source
@@ -285,6 +290,20 @@
         set -U fish_pager_color_description   yellow
         set -U fish_pager_color_prefix        'white' '--bold' '--underline'
         set -U fish_pager_color_progress      'brwhite' '--background=cyan'
+      '' +
+      # Source private files
+      ''
+        for file in ~/.config/fish/conf.local.d/*.fish
+          source $file
+        end
       '';
+  };
+  home.persistence = {
+    "/persist/home/brenix" = {
+      directories = [
+        ".config/fish/conf.local.d"
+      ];
+      allowOther = true;
+    };
   };
 }
