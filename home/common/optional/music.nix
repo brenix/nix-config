@@ -2,9 +2,7 @@
 {
   home.packages = with pkgs; [
     playerctl
-    (spotify.override {
-      callPackage = p: attrs: pkgs.callPackage p (attrs // { nss = nss_latest; });
-    })
+    spotify
   ];
 
   services.playerctld = {
