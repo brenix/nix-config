@@ -93,6 +93,7 @@
         else
           echo "zoxide not installed"
         end
+        alias cd 'z'
       '' +
       # Completions
       ''
@@ -108,9 +109,9 @@
       '' +
       # Setup grc colorizer since upstream plugin doesnt work properly
       ''
-        set -U grc_plugin_execs cat cvs df diff dig gcc g++ ls ifconfig \
+        set -U grc_plugin_execs cat cvs df diff dig gcc ifconfig \
               make mount mtr netstat ping ps tail traceroute \
-              wdiff blkid du dnf docker docker-compose docker-machine env id ip iostat journalctl kubectl \
+              wdiff blkid du dnf docker env id ip iostat journalctl kubectl \
               last lsattr lsblk lspci lsmod lsof getfacl getsebool ulimit uptime nmap \
               fdisk findmnt free semanage sar ss sysctl systemctl stat showmount \
               tcpdump tune2fs vmstat w who sockstat
