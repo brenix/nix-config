@@ -39,10 +39,10 @@
           sha256 = "sha256-tsw+npcOga8NBM1F8hnsT69k33FS5nK1zaPB1ohasPk=";
         };
       }
-      {
-        name = "grc";
-        inherit (pkgs.fishPlugins.grc) src;
-      }
+      # {
+      #   name = "grc";
+      #   inherit (pkgs.fishPlugins.grc) src;
+      # }
       {
         name = "kubectl";
         src = pkgs.fetchFromGitHub {
@@ -103,6 +103,27 @@
         if command -sq kubectl
           for line in (find $HOME/.kube -maxdepth 1 \( -type f -o -type l \) -print)
             set -x KUBECONFIG "$KUBECONFIG:$line"
+          end
+        end
+      '' +
+      # Setup grc colorizer since upstream plugin doesnt work properly
+      ''
+        set -U grc_plugin_execs cat cvs df diff dig gcc g++ ls ifconfig \
+              make mount mtr netstat ping ps tail traceroute \
+              wdiff blkid du dnf docker docker-compose docker-machine env id ip iostat journalctl kubectl \
+              last lsattr lsblk lspci lsmod lsof getfacl getsebool ulimit uptime nmap \
+              fdisk findmnt free semanage sar ss sysctl systemctl stat showmount \
+              tcpdump tune2fs vmstat w who sockstat
+
+        for executable in $grc_plugin_execs
+          if type -q $executable
+            function $executable --inherit-variable executable --wraps=$executable
+              if isatty 1
+                grc $executable $argv
+              else
+                eval command $executable $argv
+              end
+            end
           end
         end
       '' +
