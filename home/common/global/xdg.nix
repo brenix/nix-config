@@ -31,13 +31,4 @@
     templates = "${config.home.homeDirectory}/templates";
     videos = "${config.home.homeDirectory}/videos";
   };
-
-  home.persistence = {
-    "/persist/home/brenix" = {
-      directories = [
-        "downloads"
-      ];
-      allowOther = true;
-    };
-  };
 }

@@ -51,11 +51,6 @@
         ".local/state/wireplumber"
         ".local/share/zoxide"
         "nix-config"
-        # TODO: Go back to using standard fuse mount. This was needed due to high latency via fuse
-        {
-          directory = "work";
-          method = "symlink";
-        }
       ];
       allowOther = true;
     };

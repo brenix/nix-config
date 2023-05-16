@@ -43,6 +43,7 @@
     pciutils
     ripgrep
     usbutils
+    xfsprogs
   ];
 
   # https://discourse.nixos.org/t/boot-faster-by-disabling-udev-settle-and-nm-wait-online/6339

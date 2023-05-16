@@ -109,8 +109,22 @@ in
     {
       what = "/dev/mapper/data-cache";
       where = "/home/brenix/.cache";
-      type = "btrfs";
-      options = "rw,noatime,nodatacow,autodefrag";
+      type = "xfs";
+      options = "rw,noatime,lazytime";
+      wantedBy = [ "multi-user.target" ];
+    }
+    {
+      what = "/dev/mapper/data-work";
+      where = "/home/brenix/work";
+      type = "xfs";
+      options = "rw,noatime,lazytime";
+      wantedBy = [ "multi-user.target" ];
+    }
+    {
+      what = "/dev/mapper/data-downloads";
+      where = "/home/brenix/downloads";
+      type = "xfs";
+      options = "rw,noatime,lazytime";
       wantedBy = [ "multi-user.target" ];
     }
     {
