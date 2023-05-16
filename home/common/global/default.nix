@@ -5,7 +5,7 @@
     ./colorscheme.nix
     ./containers.nix
     ./dircolors.nix
-    ./fish.nix
+    ./fish
     ./fzf.nix
     ./git.nix
     ./home-manager.nix
