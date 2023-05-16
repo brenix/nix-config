@@ -152,6 +152,9 @@
       directories = [
         ".config/fish/conf.local.d"
       ];
+      files = [
+        ".local/share/fish/fish_history"
+      ];
       allowOther = true;
     };
   };

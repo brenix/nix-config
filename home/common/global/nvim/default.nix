@@ -1,6 +1,6 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 let
-  neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system};
+  # neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system};
   color = pkgs.writeText "color.vim" (import ./theme.nix config.colorscheme);
 in
 {
