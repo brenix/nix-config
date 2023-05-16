@@ -170,31 +170,31 @@
     end
   '';
 
-  # FIXME: NOT WORKING
-  #   ssh-multi = ''
-  #     set -l hostnames $argv
-  #
-  #     if test -t 0; or not test -p /dev/stdin
-  #         # Hostnames not provided through /dev/stdin, use command-line arguments
-  #         set -l hostnames $argv
-  #     else
-  #         # Hostnames provided through /dev/stdin, read them into the hostnames list
-  #         set -l hostnames (cat /dev/stdin)
-  #     end
-  #
-  #     tmux new-window "ssh $hosts[1]"
-  #     for i in $hostnames[2..-1]
-  #       tmux split-window -v "ssh $i"
-  #     end
-  #
-  #     tmux select-layout even-vertical
-  #     tmux select-pane -t 0
-  #     tmux setw synchronize-panes on
-  #   '';
-  #
-  #   ssh-nodes = ''
-  #     set -l hosts
-  #     set hosts (kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' "$argv")
-  #     ssh-multi $hosts
-  #   '';
+  ssh-multi = ''
+    set -l hosts
+    if test -t 0
+      set hosts $argv
+    else
+      while read -l line
+        set --append hosts (string split " " $line)
+      end
+    end
+
+    set -l target ssh-multi
+
+    tmux new-window -n "$target" "ssh $hosts[1]"
+
+    for host in $hosts[2..-1]
+      tmux split-window -t :"$target" -v "ssh $host"
+      tmux select-layout -t :"$target" even-vertical >/dev/null
+    end
+
+    tmux select-pane -t 0
+    tmux set-window-option synchronize-panes on
+  '';
+
+  ssh-nodes = ''
+    set -l hosts (string split " " (kubectl get nodes -o jsonpath=(string escape '{.items[*].status.addresses[?(@.type=="InternalIP")].address}') "$argv"))
+    ssh-multi $hosts
+  '';
 }
