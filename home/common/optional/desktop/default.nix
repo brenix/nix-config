@@ -9,7 +9,6 @@
   ];
 
   home.packages = with pkgs; [
-    bitwarden
     mpv
     mupdf
     obsidian
@@ -23,7 +22,6 @@
     "/persist/home/brenix" = {
       directories = [
         ".config/obsidian"
-        ".config/Bitwarden"
       ];
       allowOther = true;
     };

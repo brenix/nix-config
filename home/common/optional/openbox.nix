@@ -294,11 +294,6 @@ in
             <command>rofi -show emoji -modi emoji</command>
           </action>
         </keybind>
-        <keybind key="W-b">
-          <action name="Execute">
-            <command>bitwarden</command>
-          </action>
-        </keybind>
         <keybind key="W-d">
           <action name="Execute">
             <command>firefox</command>
