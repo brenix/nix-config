@@ -18,15 +18,6 @@
         };
       }
       {
-        name = "cd-gitroot";
-        src = pkgs.fetchFromGitHub {
-          owner = "mollifier";
-          repo = "fish-cd-gitroot";
-          rev = "9b5c3732655ee99aefae04739242d6a1bab47be1";
-          sha256 = "sha256-oc51I50LgsiL5NW1Quf990d8YQgcAmRqgVfPQcIOU1s=";
-        };
-      }
-      {
         name = "fzf-fish";
         inherit (pkgs.fishPlugins.fzf-fish) src;
       }
@@ -64,7 +55,6 @@
     shellAliases = {
       ave = "aws-vault exec";
       cat = "bat --paging=never --style=plain --decorations=never";
-      cdu = "cd-gitroot";
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       cp = "cp -riv";
       docker = "podman";

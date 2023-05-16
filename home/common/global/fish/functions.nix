@@ -2,6 +2,11 @@
   # Disable greeting
   fish_greeting = "";
 
+  cdu = ''
+    set -l root_path (git rev-parse --show-toplevel)
+    builtin cd $root_path
+  '';
+
   # bash export command
   export = ''
     set var1 (echo $argv | cut -f1 -d=)
