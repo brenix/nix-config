@@ -97,7 +97,7 @@
       '' +
       # Completions
       ''
-        complete -c ssh-multi -s ssh
+        complete -c ssh-multi -w ssh
       '' +
       # Set kubeconfig var
       ''
