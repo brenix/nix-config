@@ -59,6 +59,7 @@
       cp = "cp -riv";
       docker = "podman";
       gl = "git pull --prune --tags --force";
+      gpf = "git push --force-with-lease";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
       la = "ls -A --format=vertical";
