@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     tfenv
+    tfsort
     terraform-docs
   ];
 
