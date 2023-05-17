@@ -51,14 +51,16 @@ git clone https://github.com/brenix/nix-config
 Enter a development shell
 
 ```sh
-nix --extra-experimental-features "nix-command flakes" develop
+nix-shell
 ```
 
-Format and mount the partitions
+Format and mount the partitions (btrfs)
 
 ```sh
 sudo make volumes HOSTNAME=<hostname> DISK=/dev/<disk>
 ```
+
+Alternatively, format the filesystems and mount to `/mnt/nix` and `/mnt/persist`
 
 Copy the livecd host keys to the persistence dir
 
