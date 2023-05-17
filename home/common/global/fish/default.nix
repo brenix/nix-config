@@ -164,9 +164,10 @@
       directories = [
         ".config/fish/conf.local.d"
       ];
-      files = [
-        ".local/share/fish/fish_history"
-      ];
+      # TODO: Re-enable or find alternative solution due to frequent errors
+      # files = [
+      #   ".local/share/fish/fish_history"
+      # ];
       allowOther = true;
     };
   };
