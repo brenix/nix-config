@@ -48,7 +48,7 @@ in
     "/" = {
       device = "none";
       fsType = "tmpfs";
-      options = [ "defaults" "size=3G" "mode=755" ];
+      options = [ "defaults" "noatime" "size=3G" "mode=755" ];
     };
 
     "/nix" = {
