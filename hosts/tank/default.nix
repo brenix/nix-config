@@ -28,5 +28,5 @@
   environment.variables.GDK_SCALE = "2";
   environment.variables.GDK_DPI_SCALE = "0.4";
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "22.11";
 }
