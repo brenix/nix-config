@@ -39,22 +39,15 @@
     {
       what = "/dev/mapper/data-config";
       where = "/config";
-      type = "ext4";
-      options = "rw,noatime,barrier=0";
-      wantedBy = [ "multi-user.target" ];
-    }
-    {
-      what = "/dev/mapper/data-downloads";
-      where = "/downloads";
-      type = "ext4";
-      options = "rw,noatime,barrier=0";
+      type = "xfs";
+      options = "rw,noatime";
       wantedBy = [ "multi-user.target" ];
     }
     {
       what = "/dev/mapper/data-media";
       where = "/media";
-      type = "ext4";
-      options = "rw,noatime,barrier=0";
+      type = "xfs";
+      options = "rw,noatime";
       wantedBy = [ "multi-user.target" ];
     }
   ];
