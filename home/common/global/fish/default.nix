@@ -58,7 +58,6 @@
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       cp = "cp -riv";
       docker = "podman";
-      gl = "git pull --prune --tags --force";
       gpf = "git push --force-with-lease";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
