@@ -21,15 +21,6 @@
         name = "fzf-fish";
         inherit (pkgs.fishPlugins.fzf-fish) src;
       }
-      {
-        name = "git";
-        src = pkgs.fetchFromGitHub {
-          owner = "jhillyerd";
-          repo = "plugin-git";
-          rev = "1697adf8861a15178f4794de566d14d295c79b39";
-          sha256 = "sha256-tsw+npcOga8NBM1F8hnsT69k33FS5nK1zaPB1ohasPk=";
-        };
-      }
       # {
       #   name = "grc";
       #   inherit (pkgs.fishPlugins.grc) src;
@@ -58,7 +49,20 @@
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       cp = "cp -riv";
       docker = "podman";
+      ga = "git add";
+      gaa = "git add --all";
+      gb = "git branch";
+      gba = "git branch --all";
+      gc = "git commit --verbose";
+      gca = "git commit --verbose --all";
+      gcl = "git clone --recurse-submodules";
+      gd = "git diff";
+      gdc = "git diff --cached";
+      gl = "git pull --prune";
+      glo = "git log --oneline --decorate";
+      gp = "git push";
       gpf = "git push --force-with-lease";
+      "gpf!" = "git push --force";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
       la = "ls -A --format=vertical";
