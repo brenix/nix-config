@@ -7,8 +7,8 @@
     # Needed to install bootloader
     loader.systemd-boot.graceful = true;
     initrd = {
-      availableKernelModules = [ "ahci" "xhci_pci" "ehci_pci" "usbhid" "usb_storage" "sd_mod" ];
-      kernelModules = [ "dm-snapshot" ];
+      availableKernelModules = [ "ahci" "xhci_pci" "ehci_pci" "usbhid" "usb_storage" "sd_mod" "dm_mod" ];
+      kernelModules = [ "dm_mod" ];
     };
   };
 
