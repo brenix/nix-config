@@ -1,6 +1,6 @@
 {
   imports = [
-    ../common/optional/ephemeral-btrfs.nix
+    ../common/optional/ephemeral-xfs.nix
   ];
 
   boot = {
@@ -19,8 +19,8 @@
     };
     "/var/lib/containerd" = {
       device = "/dev/disk/by-label/containerd";
-      fsType = "btrfs";
-      options = [ "noatime" "nodatacow" "commit=120" "autodefrag" "compress=zstd" ];
+      fsType = "xfs";
+      options = [ "noatime" ];
     };
   };
 
