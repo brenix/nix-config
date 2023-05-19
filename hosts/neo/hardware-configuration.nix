@@ -130,8 +130,8 @@ in
     {
       what = "/dev/mapper/data-containers";
       where = "/home/brenix/.containers";
-      type = "btrfs";
-      options = "rw,noatime,nodatacow,autodefrag";
+      type = "xfs";
+      options = "rw,noatime,lazytime";
       wantedBy = [ "multi-user.target" ];
     }
   ];

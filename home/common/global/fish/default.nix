@@ -163,6 +163,7 @@
     "/persist/home/brenix" = {
       directories = [
         ".config/fish/conf.local.d"
+        ".local/share/fish"
       ];
       # TODO: Re-enable or find alternative solution due to frequent errors
       # files = [
