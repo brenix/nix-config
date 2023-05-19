@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.fish = {
     enable = true;
@@ -7,6 +6,7 @@
       ave = "aws-vault exec";
       bw = "rbw";
       docker = "podman";
+      g = "git";
       k = "kubectl";
       kdd = "kubectl describe deployment";
       kdno = "kubectl describe node";
@@ -165,10 +165,6 @@
         ".config/fish/conf.local.d"
         ".local/share/fish"
       ];
-      # TODO: Re-enable or find alternative solution due to frequent errors
-      # files = [
-      #   ".local/share/fish/fish_history"
-      # ];
       allowOther = true;
     };
   };
