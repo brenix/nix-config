@@ -11,13 +11,13 @@ in
     };
 
     "/nix" = {
-      device = "/dev/disk/by-label/${hostname}-nix";
+      device = "/dev/disk/by-label/nix";
       fsType = "xfs";
       options = [ "noatime" "lazytime" ];
     };
 
     "/persist" = {
-      device = "/dev/disk/by-label/${hostname}-persist";
+      device = "/dev/disk/by-label/persist";
       fsType = "xfs";
       options = [ "noatime" "lazytime" ];
       neededForBoot = true;
