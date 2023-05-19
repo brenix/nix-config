@@ -76,6 +76,10 @@
         end
         alias cd 'z'
       '' +
+      # Paths
+      ''
+        set -gx PATH $PATH $HOME/.krew/bin
+      '' +
       # Completions
       ''
         complete -c ssh-multi -w ssh
