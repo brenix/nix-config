@@ -159,6 +159,11 @@
       '';
   };
 
+  # Needed to avoid error on login
+  systemd.user.tmpfiles.rules = [
+    "d %h/.kube 0700"
+  ];
+
   home.persistence = {
     "/persist/home/brenix" = {
       directories = [
