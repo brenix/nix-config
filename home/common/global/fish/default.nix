@@ -3,52 +3,37 @@
   programs.fish = {
     enable = true;
 
-    plugins = [
-      {
-        name = "autopair-fish";
-        inherit (pkgs.fishPlugins.autopair-fish) src;
-      }
-      {
-        name = "aws";
-        src = pkgs.fetchFromGitHub {
-          owner = "oh-my-fish";
-          repo = "plugin-aws";
-          rev = "df2ab7f8def99bfcef8c80961d6c9ac0a3108938";
-          sha256 = "sha256-9eurNL1cQIIHk9+SmiB8914d2s9RLYGA75fYpbQiBEo=";
-        };
-      }
-      {
-        name = "fzf-fish";
-        inherit (pkgs.fishPlugins.fzf-fish) src;
-      }
-      # {
-      #   name = "grc";
-      #   inherit (pkgs.fishPlugins.grc) src;
-      # }
-      {
-        name = "kubectl";
-        src = pkgs.fetchFromGitHub {
-          owner = "blackjid";
-          repo = "plugin-kubectl";
-          rev = "f3cc9003077a3e2b5f45e3988817a78e959d4131";
-          sha256 = "sha256-ABzVSzM135UeAJ97CUBb9rhK9Pc6ItLSmJQOacq09gQ=";
-        };
-      }
-    ];
-
     shellAbbrs = {
+      ave = "aws-vault exec";
       bw = "rbw";
+      docker = "podman";
+      k = "kubectl";
+      kdd = "kubectl describe deployment";
+      kdno = "kubectl describe node";
+      kdp = "kubectl describe pod";
+      kgcm = "kubectl get configmap";
+      kgd = "kubectl get deployment";
+      kgds = "kubectl get daemonset";
+      kge = "kubectl get events";
+      kgno = "kubectl get node";
+      kgns = "kubectl get namespace";
+      kgp = "kubectl get pods";
+      kgpa = "kubectl get pod -A";
+      kgs = "kubectl get service";
+      kgsa = "kubectl get serviceaccount";
+      kgsec = "kubectl get secret";
+      kgss = "kubectl get statefulset";
       kk = "kubectl get pod";
+      kl = "kubectl logs";
       kvs = "kubectl view-secret";
+      kvsec = "kubectl view-secret";
       v = "nvim";
     };
 
     shellAliases = {
-      ave = "aws-vault exec";
       cat = "bat --paging=never --style=plain --decorations=never";
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       cp = "cp -riv";
-      docker = "podman";
       ga = "git add";
       gaa = "git add --all";
       gb = "git branch";
@@ -61,13 +46,14 @@
       gl = "git pull --prune";
       glo = "git log --oneline --decorate";
       gp = "git push";
+      gpv = "git push --verbose";
       gpf = "git push --force-with-lease";
       "gpf!" = "git push --force";
+      gst = "git status";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
       la = "ls -A --format=vertical";
       mkdir = "mkdir -vp";
-      ms = "mullvad status";
       mv = "mv -iv";
       rm = "rm -I";
       s = "doas systemctl";
