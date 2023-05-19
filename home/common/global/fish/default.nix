@@ -50,6 +50,7 @@
       gpf = "git push --force-with-lease";
       "gpf!" = "git push --force";
       gst = "git status";
+      grhh = "git reset --hard HEAD";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
       la = "ls -A --format=vertical";
