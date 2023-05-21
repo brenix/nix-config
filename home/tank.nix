@@ -39,5 +39,11 @@
 
   programs.starship.settings.command_timeout = 1200;
 
+  programs.firefox.profiles.brenix.settings = {
+    "dom.webgpu.enabled" = false;
+    "gfx.webrender.all" = false;
+    "gfx.webrender.enabled" = false;
+  };
+
   colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
 }

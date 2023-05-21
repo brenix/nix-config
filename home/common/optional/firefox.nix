@@ -23,7 +23,7 @@ in
         "app.update.auto" = false;
         "browser.aboutConfig.showWarning" = false;
         "browser.backspace_action" = 0;
-        # "browser.cache.disk.parent_directory" = "/run/user/1000/firefox";
+        "browser.cache.disk.parent_directory" = "/run/user/1000/firefox";
         "browser.compactmode.show" = true;
         "browser.disableResetPrompt" = true;
         "browser.discovery.enabled" = false;
@@ -56,7 +56,7 @@ in
         "datareporting.policy.dataSubmissionEnabled" = false;
         "datareporting.sessions.current.clean" = true;
         "devtools.onboarding.telemetry.logged" = false;
-        "dom.webgpu.enabled" = true;
+        "dom.webgpu.enabled" = lib.mkDefault true;
         "extensions.autoDisableScopes" = 0;
         "extensions.formautofill.addresses.enabled" = false;
         "extensions.formautofill.available" = "off";
@@ -77,8 +77,8 @@ in
         "full-screen-api.warning.timeout" = 0;
         "gfx.canvas.azure.accelerated" = true;
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
-        "gfx.webrender.all" = true;
-        "gfx.webrender.enabled" = true;
+        "gfx.webrender.all" = lib.mkDefault true;
+        "gfx.webrender.enabled" = lib.mkDefault true;
         "identity.fxaccounts.enabled" = true;
         "javascript.options.warp" = true;
         "layers.acceleration.force-enabled" = true;
