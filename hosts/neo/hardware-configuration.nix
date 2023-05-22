@@ -34,7 +34,6 @@ in
       "vfio"
       "vfio_iommu_type1"
       "vfio_pci"
-      # "vfio_virqfd"
       "xhci_pci"
     ];
 
@@ -47,7 +46,6 @@ in
       "vfio"
       "vfio_iommu_type1"
       "vfio_pci"
-      "vfio_virqfd"
     ];
 
     blacklistedKernelModules = [
