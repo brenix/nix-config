@@ -40,6 +40,7 @@
       gba = "git branch --all";
       gc = "git commit --verbose";
       gca = "git commit --verbose --all";
+      gco = "git checkout";
       gcl = "git clone --recurse-submodules";
       gd = "git diff";
       gdc = "git diff --cached";

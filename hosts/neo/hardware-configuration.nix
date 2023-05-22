@@ -51,6 +51,8 @@ in
     ];
 
     blacklistedKernelModules = [
+      "bluetooth"
+      "btusb"
       "sp5100_tco"
       "nouveau"
       "iwlwifi"
