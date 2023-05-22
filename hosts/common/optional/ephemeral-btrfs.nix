@@ -30,7 +30,13 @@ in
     systemd.services.restore-root = lib.mkIf phase1Systemd {
       description = "Rollback btrfs rootfs";
       wantedBy = [ "initrd.target" ];
-      # after = [ "systemd-cryptsetup@${hostname}.service" ];
+      requires = [
+        "dev-disk-by\\x2dlabel-${hostname}.device"
+      ];
+      after = [
+        "dev-disk-by\\x2dlabel-${hostname}.device"
+        # "systemd-cryptsetup@${hostname}.service"
+      ];
       before = [ "sysroot.mount" ];
       unitConfig.DefaultDependencies = "no";
       serviceConfig.Type = "oneshot";
@@ -39,17 +45,17 @@ in
   };
 
   fileSystems = {
-    # "/" = {
-    #   device = "/dev/disk/by-label/${hostname}";
-    #   fsType = "btrfs";
-    #   options = [ "subvol=root" "compress=zstd" ];
-    # };
-
     "/" = {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "defaults" "noatime" "size=3G" "mode=755" ];
+      device = "/dev/disk/by-label/${hostname}";
+      fsType = "btrfs";
+      options = [ "subvol=root" "noatime" "compress=zstd" ];
     };
+
+    # "/" = {
+    #   device = "none";
+    #   fsType = "tmpfs";
+    #   options = [ "defaults" "noatime" "size=3G" "mode=755" ];
+    # };
 
     "/nix" = {
       device = "/dev/disk/by-label/${hostname}";

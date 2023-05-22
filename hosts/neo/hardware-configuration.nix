@@ -138,8 +138,7 @@ in
 
   services.resolved.domains = [ "localdomain" ];
 
-  services.udev.packages = [ pkgs.android-udev-rules pkgs.wooting-udev-rules ];
-  programs.adb.enable = true;
+  services.udev.packages = [ pkgs.wooting-udev-rules ];
 
   systemd.network.networks.enp7s0 = {
     matchConfig = { Name = "enp7s0"; };
@@ -154,17 +153,5 @@ in
 
   hardware.enableAllFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
-  hardware.amdgpu.amdvlk = true;
-  hardware.amdgpu.loadInInitrd = true;
-  hardware.opengl.enable = true;
-
-  services.udev.extraRules = ''
-    # Configure webcam parameters
-    SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTRS{product}=="HD Pro Webcam C920",RUN+="${pkgs.v4l-utils}/bin/v4l2-ctl -d $devnode --set-ctrl brightness=128,contrast=128,saturation=110,white_balance_automatic=0,gain=30,white_balance_temperature=3700,auto_exposure=1,exposure_time_absolute=777,focus_automatic_continuous=0,pan_absolute=0,zoom_absolute=120"
-
-    # Fix flickering issues
-    SUBSYSTEM=="drm", KERNEL=="card0", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
-  '';
-
   nixpkgs.hostPlatform.system = "x86_64-linux";
 }
