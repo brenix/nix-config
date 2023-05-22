@@ -98,7 +98,7 @@
         # 1 = 32ms
         # 2 = 16ms
         # 4 = 8ms
-        "kernel.sched_pelt_multiplier" = "2";
+        # "kernel.sched_pelt_multiplier" = "2";
 
         # Increase writeback interval for xfs
         "fs.xfs.xfssyncd_centisecs" = 10000;
