@@ -117,7 +117,7 @@
       '' +
       # Bindings
       ''
-        bind \ce forward-char
+        bind \ce end-of-line
       '' +
       # Use terminal colors
       ''
