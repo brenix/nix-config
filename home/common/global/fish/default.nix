@@ -45,12 +45,13 @@
       gd = "git diff";
       gdc = "git diff --cached";
       gl = "git pull --prune";
-      glo = "git log --oneline --decorate";
+      glo = "git log --oneline --decorate --pretty=format:'%C(auto)%h %s (%an)'";
       gp = "git push";
       gpv = "git push --verbose";
       gpf = "git push --force-with-lease";
       "gpf!" = "git push --force";
       gst = "git status";
+      gsh = "git show --format=raw -m";
       grhh = "git reset --hard HEAD";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
