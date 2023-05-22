@@ -47,10 +47,6 @@
         # Value is higher set to fix games like DayZ, Hogwarts Legacy, Counter Strike 2
         "vm.max_map_count" = 2147483642;
 
-        # This action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and lowers power consumption
-        # Disable NMI watchdog
-        "kernel.nmi_watchdog" = 0;
-
         # Enable the sysctl setting kernel.unprivileged_userns_clone to allow normal users to run unprivileged containers.
         "kernel.unprivileged_userns_clone" = 1;
 
