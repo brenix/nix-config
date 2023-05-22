@@ -80,10 +80,10 @@ if [[ $VM_NAME == "windows" ]]; then
       echo -1 >/proc/sys/kernel/sched_rt_runtime_us
       ;;
     "started")
-      log "Prioritizing qemu process"
-      ls /proc/$(pgrep -f $VM_NAME)/task | xargs -n 1 chrt -f -p 99
-      ls /proc/$(pgrep -f $VM_NAME)/task | xargs renice -n -20
-      sleep 10
+      # log "Prioritizing qemu process"
+      # ls /proc/$(pgrep -f $VM_NAME)/task | xargs -n 1 chrt -f -p 99
+      # ls /proc/$(pgrep -f $VM_NAME)/task | xargs renice -n -20
+      # sleep 10
       ;;
     "release")
       log "Restoring CPUs"
@@ -92,7 +92,7 @@ if [[ $VM_NAME == "windows" ]]; then
 
       log "Restoring optimizations"
       echo 1 >/proc/sys/vm/stat_interval
-      echo 950000 >/proc/sys/kernel/sched_rt_runtime_us
+      echo 980000 >/proc/sys/kernel/sched_rt_runtime_us
 
       log "Disabling hugepages"
       echo 0 >/sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages

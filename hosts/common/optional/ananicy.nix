@@ -28,6 +28,7 @@
       { "type": "LowLatency_RT", "nice": -9, "ioclass": "best-effort", "latency_nice": -9 }
       { "type": "BG_CPUIO", "nice": 16, "ioclass": "idle", "sched": "idle", "latency_nice": 11 }
       { "type": "Heavy_CPU", "nice": 9, "ioclass": "best-effort", "ionice": 7, "latency_nice": 9 }
+      { "type": "VFIO", "nice": -10, "latency_nice": -20 }
       { "type": "Chat", "nice": -3, "ioclass": "best-effort", "ionice": 7 , "latency_nice": -3 }
       { "type":"compiler", "nice": 9, "latency_nice": 9 }
       { "type": "Service", "nice": 10, "ioclass": "best-effort", "ionice": 6 , "latency_nice": 10 }
@@ -418,8 +419,8 @@
       { "name": "pulseaudio", "type": "LowLatency_RT", "nice": -11, "sched": "rr", "latency_nice": -11 }
       { "name": "qbittorrent", "type": "BG_CPUIO" }
       { "name": "qbittorrent-nox", "type": "BG_CPUIO" }
-      { "name": "qemu-system-x86", "type": "Heavy_CPU" }
-      { "name": "qemu-system-x86_64", "type": "Heavy_CPU" }
+      { "name": "qemu-system-x86", "type": "VFIO" }
+      { "name": "qemu-system-x86_64", "type": "VFIO" }
       { "name": "qimgv", "type": "Image-View" }
       { "name": "qmmp", "type": "Player-Audio" }
       { "name": "qtox", "type": "Chat" }
