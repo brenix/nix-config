@@ -15,7 +15,6 @@
           "/dev/null", "/dev/full", "/dev/zero",
           "/dev/random", "/dev/urandom",
           "/dev/ptmx", "/dev/kvm",
-          "/dev/vfio/vfio", "/dev/vfio/26", "/dev/vfio/28",
           "/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse",
           "/dev/input/by-id/usb-Logitech_USB_Receiver-if01-event-kbd",
           "/dev/input/by-id/usb-Logitech_USB_Receiver-mouse",
@@ -45,7 +44,6 @@
           name = "qemu-hook-env";
           paths = with pkgs; [
             bash
-            config.boot.kernelPackages.cpupower
             killall
             libvirt
             procps

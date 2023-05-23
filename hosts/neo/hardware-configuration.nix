@@ -61,7 +61,6 @@ in
     kernelParams = [
       "amd_iommu=on"
       "preempt=voluntary"
-      "boot.shell_on_fail"
       "default_hugepagesz=1G"
       "hugepagesz=1G"
       "intremap=no_x2apic_optout"
