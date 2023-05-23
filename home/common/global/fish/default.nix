@@ -45,7 +45,7 @@
       gd = "git diff";
       gdc = "git diff --cached";
       gl = "git pull --prune";
-      glo = "git log --oneline --decorate --pretty=format:'%C(auto)%h %s (%an)'";
+      glo = "git log --oneline --decorate --pretty=format:'%C(auto)%h %s (%Cgreen%an%C(auto))'";
       gp = "git push";
       gpv = "git push --verbose";
       gpf = "git push --force-with-lease";
