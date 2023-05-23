@@ -36,7 +36,7 @@
       gcl = "git clone --recurse-submodules";
       gd = "git diff";
       gdc = "git diff --cached";
-      gl = "git pull --prune --tags --force";
+      gl = "git pull --prune";
       glo = "git log --oneline --decorate --pretty=format:'%C(auto)%h %s (%an)'";
       gp = "git push";
       gpv = "git push --verbose";
