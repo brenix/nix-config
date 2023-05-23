@@ -44,7 +44,7 @@
       gcl = "git clone --recurse-submodules";
       gd = "git diff";
       gdc = "git diff --cached";
-      gl = "git pull --prune";
+      gl = "git pull --prune --tags ---force";
       glo = "git log --oneline --decorate --pretty=format:'%C(auto)%h %s (%an)'";
       gp = "git push";
       gpv = "git push --verbose";
@@ -156,7 +156,7 @@
       '';
   };
 
-  # Needed to avoid error on login
+  # Create dirs required by shell
   systemd.user.tmpfiles.rules = [
     "d %h/.kube 0700"
   ];

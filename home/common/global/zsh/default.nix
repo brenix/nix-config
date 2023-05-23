@@ -21,20 +21,35 @@
     shellAliases = {
       ave = "aws-vault exec";
       bw = "rbw";
+      docker = "podman";
       cat = "bat --paging=never --style=plain --decorations=never";
       cd = "z";
       cdu = "cd-gitroot";
       cp = "cp -riv";
+      ga = "git add";
+      gaa = "git add --all";
+      gb = "git branch";
+      gba = "git branch --all";
+      gc = "git commit --verbose";
+      gca = "git commit --verbose --all";
+      gco = "git checkout";
+      gcl = "git clone --recurse-submodules";
+      gd = "git diff";
+      gdc = "git diff --cached";
       gl = "git pull --prune --tags --force";
+      glo = "git log --oneline --decorate --pretty=format:'%C(auto)%h %s (%an)'";
+      gp = "git push";
+      gpv = "git push --verbose";
+      gpf = "git push --force-with-lease";
+      "gpf!" = "git push --force";
+      gst = "git status";
+      gsh = "git show --format=raw -m";
+      grhh = "git reset --hard HEAD";
       grep = "grep --color=auto";
       l = "ls --format=vertical";
       la = "ls -A --format=vertical";
-      ls = "grc ls -hpv --color=always --group-directories-first";
       mkdir = "mkdir -vp";
       mv = "mv -iv";
-      mc = "mullvad connect";
-      md = "mullvad disconnect";
-      ms = "mullvad status";
       rm = "rm -I";
       s = "doas systemctl";
       svim = "doas nvim";
@@ -74,8 +89,24 @@
       }
     ];
 
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "kubectl" "ssh-agent" "zoxide" ];
+      extraConfig = ''
+        # Fix case insensitive completion bug from oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh/issues/10972#issuecomment-1146806099)
+        export CASE_SENSITIVE=true
+        identities=()
+        for i in $HOME/.ssh/id_(*~*pub); do
+          identities+=''${i##*/}
+        done
+        zstyle :omz:plugins:ssh-agent identities ''${identities[@]}
+      '';
+
+      custom = "$HOME/.oh-my-zsh";
+    };
+
+
     initExtraFirst = ''
-      # -- OPTIONS
       setopt alwaystoend         # Move cursor to end of word if completed in-word
       setopt appendhistory       # allow multiple sessions to append to history
       setopt autocd              # if a command cant be executed, cd into the dir
@@ -99,63 +130,52 @@
       setopt unset               # dont error out when unset parameters are used
     '';
 
-    initExtra = ''
-      # -- COMPLETION
-      # Completion configuration
-      zstyle ':completion::complete:*' gain-privileges 1
-      zstyle ':completion:*' rehash true
-      zstyle ':completion:*:approximate:' max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )'
-      zstyle ':completion:*:default' list-colors ''${(s.:.)LS_COLORS}
-      zstyle ":completion:*" completer _expand _complete _ignored _approximate
-      zstyle ":completion:*" insert-unambiguous true
-      zstyle ":completion:::*:default" menu no select
-      zstyle ':completion::complete:*' use-cache 1
-      zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+    initExtra =
+      # Completion
+      ''
+        zstyle ':completion::complete:*' gain-privileges 1
+        zstyle ':completion:*' rehash true
+        zstyle ':completion:*:approximate:' max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )'
+        zstyle ':completion:*:default' list-colors ''${(s.:.)LS_COLORS}
+        zstyle ":completion:*" completer _expand _complete _ignored _approximate
+        zstyle ":completion:*" insert-unambiguous true
+        zstyle ":completion:::*:default" menu no select
+        zstyle ':completion::complete:*' use-cache 1
+        zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+      '' +
       # Disable pasted text highlighting
-      zle_highlight+=(paste:none)
-      # Quote pasted URLs
-      autoload -U url-quote-magic
-      zle -N self-insert url-quote-magic
-      # Complete aws cli
-      complete -C ${pkgs.awscli}/bin/aws_completer aws
-      # -- PATHS
-      path=(
-        $HOME/.krew/bin
-        $HOME/.local/bin
-        $HOME/.cache/go/bin
-        $path[@]
-      )
-      fpath=(
-        $HOME/.local/share/zsh/site-functions
-        $fpath[@]
-      )
-      # -- SOURCE ADDITIONAL FILES
-      # Load grc
-      source ${pkgs.grc}/etc/grc.zsh
-      # Source local files
-      for f in $HOME/.zsh.d/*.zsh $HOME/.zsh.local.d/*.zsh; do
-        source $f
-      done
-      # -- MISC
-      # Disable auto menu after sourcing plugins etc
-      setopt noautomenu
-    '';
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "kubectl" "ssh-agent" "zoxide" ];
-      extraConfig = ''
-        # Fix case insensitive completion bug from oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh/issues/10972#issuecomment-1146806099)
-        export CASE_SENSITIVE=true
-        identities=()
-        for i in $HOME/.ssh/id_(*~*pub); do
-          identities+=''${i##*/}
+      ''
+        zle_highlight+=(paste:none)
+      '' +
+      ''
+        # Quote pasted URLs
+        autoload -U url-quote-magic
+        zle -N self-insert url-quote-magic
+      '' +
+      # Paths
+      ''
+        path=(
+          $HOME/.krew/bin
+          $HOME/.local/bin
+          $HOME/.cache/go/bin
+          $path[@]
+        )
+        fpath=(
+          $HOME/.local/share/zsh/site-functions
+          $fpath[@]
+        )
+      '' +
+      # Source additional files
+      ''
+        source ${pkgs.grc}/etc/grc.zsh
+        for f in $HOME/.zsh.d/*.zsh $HOME/.zsh.local.d/*.zsh; do
+          source $f
         done
-        zstyle :omz:plugins:ssh-agent identities ''${identities[@]}
+      '' +
+      # Misc
+      ''
+        setopt noautomenu
       '';
-
-      custom = "$HOME/.oh-my-zsh";
-    };
 
   };
 
@@ -164,6 +184,11 @@
     ".zsh.d".source = ./zsh.d;
     ".zsh.d".recursive = true;
   };
+
+  # Create dirs required by shell
+  systemd.user.tmpfiles.rules = [
+    "d %h/.kube 0700"
+  ];
 
   home.persistence = {
     "/persist/home/brenix" = {
