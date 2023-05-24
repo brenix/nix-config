@@ -6,8 +6,8 @@ vimUtils.buildVimPlugin {
   src = fetchFromGitHub {
     owner = "LudoPinelli";
     repo = "comment-box.nvim";
-    rev = "117d55108edf3758da52cf1117584b974f5e76da";
-    sha256 = "sha256-E+wQUtLJwqN42XYLu2OzAEKMMUyRKjcZHwgOOEG0XDM=";
+    rev = "6672213bd5d2625a666a297b66307967effa50bc";
+    sha256 = "sha256-hD9eCcrDsispi+Nvwjy/MlNW0UmFfSbh8arQpCjeneM=";
   };
   meta.homepage = "https://github.org/LudoPinelli/comment-box.nvim";
 }
