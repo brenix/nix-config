@@ -23,6 +23,12 @@
     end
   '';
 
+  # planapply
+  bind_planapply = ''
+    commandline -t -- (string replace -a 'plan' 'apply' $history[1])
+    commandline -f repaint
+  '';
+
   # cd to root of git dir
   cdu = ''
     set -l root_path (git rev-parse --show-toplevel)

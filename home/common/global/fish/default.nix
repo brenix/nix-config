@@ -120,6 +120,7 @@
         bind \ce end-of-line
         bind ! bind_bang
         bind '$' bind_dollar
+        bind \er bind_planapply
       '' +
       # Use terminal colors
       ''
