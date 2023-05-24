@@ -1,7 +1,6 @@
 { pkgs ? import <nixpkgs> { } }: {
   awless = pkgs.callPackage ./awless { };
   calicoctl = pkgs.callPackage ./calicoctl { };
-  fluxcd = pkgs.callPackage ./fluxcd { };
   monaco = pkgs.callPackage ./monaco { };
   tfenv = pkgs.callPackage ./tfenv { };
   tfsort = pkgs.callPackage ./tfsort { };
