@@ -118,6 +118,8 @@
       # Bindings
       ''
         bind \ce end-of-line
+        bind ! bind_bang
+        bind '$' bind_dollar
       '' +
       # Use terminal colors
       ''

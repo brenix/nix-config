@@ -1,7 +1,29 @@
 {
-  # Disable greeting
+  # disable greeting
   fish_greeting = "";
 
+  # emulate !!
+  bind_bang = ''
+    switch (commandline -t)[-1]
+      case "!"
+        commandline -t -- $history[1]
+        commandline -f repaint
+      case "*"
+        commandline -i !
+    end
+  '';
+
+  # emulate $!
+  bind_dollar = ''
+    switch (commandline -t)[-1]
+      case "!"
+        commandline -f backward-delete-char history-token-search-backward
+      case "*"
+        commandline -i '$'
+    end
+  '';
+
+  # cd to root of git dir
   cdu = ''
     set -l root_path (git rev-parse --show-toplevel)
     builtin cd $root_path
@@ -17,7 +39,7 @@
   # replace a given string across files matching a pattern
   replace = "rg -l $argv[1] | xargs sd $argv[1] $argv[2]";
 
-  # Take a screenshot and concatenate the images into one (assumes dual-monitor)
+  # take a screenshot and concatenate the images into one (assumes dual-monitor)
   screenshot = ''
     set -l output (count $argv > /dev/null && echo $argv[1] || echo $HOME/screenshot.png)
     set -l screen1 /tmp/screen1.png
@@ -175,6 +197,7 @@
     end
   '';
 
+  # ssh to multiple hosts in tmux panes
   ssh-multi = ''
     set -l hosts
     if test -t 0
@@ -198,6 +221,7 @@
     tmux set-window-option synchronize-panes on
   '';
 
+  # ssh to multiple k8s nodes in tmux panes
   ssh-nodes = ''
     set -l hosts (string split " " (kubectl get nodes -o jsonpath=(string escape '{.items[*].status.addresses[?(@.type=="InternalIP")].address}') "$argv"))
     ssh-multi $hosts
