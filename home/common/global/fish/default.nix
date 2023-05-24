@@ -1,6 +1,14 @@
+{ pkgs, ... }:
 {
   programs.fish = {
     enable = true;
+
+    plugins = [
+      {
+        name = "autopair-fish";
+        inherit (pkgs.fishPlugins.autopair-fish) src;
+      }
+    ];
 
     shellAbbrs = {
       ave = "aws-vault exec";
