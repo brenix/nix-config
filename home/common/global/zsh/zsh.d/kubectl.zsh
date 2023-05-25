@@ -88,10 +88,4 @@ if [[ $commands[kubectl] ]]; then
   ssh-nodes() {
     ssh-multi $(kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' $@)
   }
-
-  # use grc to colorize output from kubectl
-  kubectl() {
-    grc kubectl "$@"
-  }
-
 fi

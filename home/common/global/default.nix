@@ -28,7 +28,6 @@
     comma
     go-task
     gojq
-    grc
     htop
     hugo
     imagemagick

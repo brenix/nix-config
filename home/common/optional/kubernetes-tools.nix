@@ -4,7 +4,6 @@
     fluxcd
     helm-docs
     helmfile
-    ko
     krew
     kubebuilder
     kubectl

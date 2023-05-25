@@ -137,9 +137,8 @@ in
       vim.keymap.set("n", "<C-p>", [[<Cmd>lua require('telescope').extensions.project.project{}<CR>]], { silent = true })
       vim.keymap.set("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], { silent = true })
       vim.keymap.set("n", "<Leader>t", ":TodoQuickFix<CR>", { silent = true })
-      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
       vim.keymap.set("n", "<space>f", vim.lsp.buf.format, { desc = "Format code" })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 
