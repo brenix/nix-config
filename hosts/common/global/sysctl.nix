@@ -18,12 +18,12 @@
         # Contains, as a percentage of total available memory that contains free pages and reclaimable
         # pages, the number of pages at which the background kernel flusher threads will start writing out
         # dirty data (Default is 10).
-        "vm.dirty_background_ratio" = 5;
+        "vm.dirty_background_ratio" = 4;
 
         # Contains, as a percentage of total available memory that contains free pages and reclaimable
         # pages, the number of pages at which a process which is generating disk writes will itself start
         # writing out dirty data (Default is 20).
-        "vm.dirty_ratio" = 3;
+        "vm.dirty_ratio" = 8;
 
         # page-cluster controls the number of pages up to which consecutive pages are read in from swap in a single attempt.
         # This is the swap counterpart to page cache readahead. The mentioned consecutivity is not in terms of virtual/physical addresses,

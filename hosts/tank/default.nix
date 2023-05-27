@@ -12,7 +12,7 @@
     ../common/optional/xserver.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   networking.hostName = "tank";
 
