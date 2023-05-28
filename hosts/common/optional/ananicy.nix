@@ -40,108 +40,29 @@
       { "cgroup": "cpu85", "CPUQuota": 85 }
       { "cgroup": "cpu80", "CPUQuota": 80 }
 
-      { "name": "0ad", "type": "Game" }
       { "name": "7z", "type": "BG_CPUIO"}
-      { "name": "AnotherWorld-amd64", "type": "Game"}
-      { "name": "ArchiSteamFarm", "type": "BG_CPUIO" }
-      { "name": "BaldursGate", "type": "Game"}
-      { "name": "BaldursGateII", "type": "Game"}
-      { "name": "BeyondTwoSouls_", "type": "Game"}
-      { "name": "BitwigStudioEngine", "type": "LowLatency_RT" }
-      { "name": "Borderlands2", "type": "Game"}
-      { "name": "BorderlandsPreSequel", "type": "Game"}
-      { "name": "Butcher", "type": "Game"}
-      { "name": "CaveStory+", "type": "Game"}
-      { "name": "ChildrenOfMorta", "type": "Game"}
-      { "name": "CoherentUI_Host", "type": "Game" }
-      { "name": "CoherentUI_Host", "type": "Game"}
-      { "name": "CrossCode", "type": "Game"}
       { "name": "DesktopEditors", "type": "Doc-View" }
-      { "name": "DetroitBecomeHu", "type": "Game"}
       { "name": "Discord", "type": "Chat" }
       { "name": "DiscordCanary", "type": "Chat" }
-      { "name": "DiscordDevelopment", "type": "chat" }
+      { "name": "DiscordDevelopment", "type": "Chat" }
       { "name": "DiscordPTB", "type": "Chat" }
-      { "name": "Disgaea2SteamOS", "type": "Game"}
       { "name": "DisplayLinkManager", "type": "LowLatency_RT" }
-      { "name": "Dragonfall", "type": "Game"}
-      { "name": "EoCApp", "type": "Game"}
       { "name": "FAHClient", "type": "Heavy_CPU" }
-      { "name": "Fahrenheit", "type": "Game"}
-      { "name": "ForsakenEx", "type": "Game"}
       { "name": "FoxitReader", "type": "Doc-View" }
-      { "name": "GOTHIC.EXE", "type": "Game"}
-      { "name": "GoatGame", "type": "Game"}
-      { "name": "GrimFandango", "type": "Game"}
-      { "name": "HWR", "type": "Game"}
-      { "name": "Hatred-Linux-Shipping", "type": "Game"}
-      { "name": "Hitman.Exe", "type": "Game"}
-      { "name": "HitmanPro", "type": "Game"}
-      { "name": "Hotline", "type": "Game"}
-      { "name": "HotlineMiami2", "type": "Game"}
-      { "name": "HyperLightDrifter", "type": "Game"}
       { "name": "Hyprland", "type": "LowLatency_RT" }
-      { "name": "IcewindDale", "type": "Game"}
-      { "name": "LOF", "type": "Game"}
-      { "name": "McEngine", "type": "Game"}
-      { "name": "NecroDancer", "type": "Game"}
-      { "name": "OxygenNotIncluded", "type": "Game"}
-      { "name": "PA", "type": "Game"}
-      { "name": "PKHDGame-Win32-Shipping.ex", "type": "Game"}
-      { "name": "PPSSPPHeadless", "type": "Game"}
-      { "name": "PPSSPPQt", "type": "Game"}
-      { "name": "PPSSPPSDL", "type": "Game"}
-      { "name": "PapersPlease", "type": "Game"}
-      { "name": "PillarsOfEternity", "type": "Game"}
-      { "name": "PillarsOfEternityII", "type": "Game"}
-      { "name": "PortalWars-Linux-Shipping", "type": "Game"}
-      { "name": "PostalREDUX-Linux-Shipping", "type": "Game"}
       { "name": "QtWebEngineProcess", "type": "Player-Video" }
       { "name": "R", "type": "BG_CPUIO" }
-      { "name": "Rakuen.amd64", "type": "Game"}
-      { "name": "Redprelauncher", "type": "game-launcher"}
-      { "name": "RimWorldLinux", "type": "Game" }
       { "name": "RocketLeague", "type": "Game"}
       { "name": "SABnzbd.py", "type": "BG_CPUIO" }
-      { "name": "SRHK", "type": "Game"}
       { "name": "SVPManager", "type": "Player-Video" }
-      { "name": "SaintsRow4.i386", "type": "Game"}
-      { "name": "Sam2017", "type": "Game"}
-      { "name": "Sam3", "type": "Game"}
       { "name": "ShaderCompileWorker", "type": "BG_CPUIO" }
-      { "name": "ShadowOfTheTombRaider", "type": "Game"}
-      { "name": "ShovelKnight", "type": "Game"}
-      { "name": "Skyborn.amd64", "type": "Game"}
-      { "name": "StarConflict", "type": "Game"}
-      { "name": "Stardew Valley", "type": "Game"}
-      { "name": "TAE.EXE", "type": "Game"}
-      { "name": "THIEF.EXE", "type": "Game"}
-      { "name": "THIEF_no_ddfix.EXE", "type": "Game"}
       { "name": "Telegram", "type": "Chat" }
-      { "name": "TheAquaticAdventureOfTheLastHuman", "type": "Game"}
-      { "name": "TheEternalCastle", "type": "Game"}
-      { "name": "TidesOfNumenera", "type": "Game"}
-      { "name": "Timespinner", "type": "Game"}
-      { "name": "TombRaider", "type": "Game"}
-      { "name": "Torment", "type": "Game"}
-      { "name": "Turok2Ex", "type": "Game"}
-      { "name": "TurokEx", "type": "Game"}
       { "name": "UE4Editor", "type": "BG_CPUIO" }
-      { "name": "UbisoftGameLaun", "type": "BG_CPUIO"}
-      { "name": "Universe", "type": "Game"}
       { "name": "UnrealLightmass", "type": "BG_CPUIO" }
       { "name": "UnrealLinux.bin", "type": "Game"}
       { "name": "UnrealPak", "type": "BG_CPUIO" }
-      { "name": "UplayWebCore.ex", "type": "BG_CPUIO"}
-      { "name": "VVVVVV", "type": "Game"}
-      { "name": "WL2", "type": "Game"}
-      { "name": "XCOM2", "type": "Game"}
       { "name": "Xorg", "nice" : -12, "ionice" : 1, "latency_nice" : -10 }
       { "name": "Xwayland", "type": "LowLatency_RT"}
-      { "name": "aces", "type": "Game"}
-      { "name": "acestream-launcher", "type": "Player-Video" }
-      { "name": "acestream-player",   "type": "Player-Video" }
-      { "name": "acestreamengine",    "type": "Player-Video" }
       { "name": "alacritty", "type": "Doc-View" }
       { "name": "alarm-clock", "type": "BG_CPUIO" }
       { "name": "alephone", "type": "Game"}
@@ -158,13 +79,10 @@
       { "name": "awesome", "type": "LowLatency_RT" }
       { "name": "baloo_file", "type": "BG_CPUIO" }
       { "name": "bees", "type": "BG_CPUIO", "oom_score_adj": 1000 }
-      { "name": "bitwig-studio",      "type": "LowLatency_RT" }
-      { "name": "blackplague", "type": "Game"}
-      { "name": "blastem", "type": "Game"}
+      { "name": "bitwig-studio", "type": "LowLatency_RT" }
       { "name": "blender", "type": "LowLatency_RT", "nice": -10, "ioclass": "realtime" }
       { "name": "blueberry-tray", "type": "BG_CPUIO" }
       { "name": "blueman-applet", "type": "BG_CPUIO" }
-      { "name": "bms_linux", "type": "Game"}
       { "name": "boinc", "type": "Heavy_CPU" }
       { "name": "borg", "type": "BG_CPUIO"
       { "name": "brave", "type": "Doc-View" }
@@ -178,9 +96,6 @@
       { "name": "caprine", "type": "Chat" }
       { "name": "cargo", "type": "compiler" }
       { "name": "celluloid", "type": "Player-Video" }
-      { "name": "cen64", "type": "Game"}
-      { "name": "cen64-qt", "type": "Game"}
-      { "name": "chocolate-doom", "type": "Game"}
       { "name": "chrome", "type": "Doc-View" }
       { "name": "chrome-sandbox", "type": "Doc-View" }
       { "name": "chrome-sandbox", "type": "Doc-View" }
@@ -303,11 +218,7 @@
       { "name": "insurgency_linux", "type": "Game"}
       { "name": "insync", "type": "BG_CPUIO" }
       { "name": "ioquake3", "type": "Game"}
-      { "name": "iortcw-mp", "type": "Game"}
-      { "name": "iortcw-sp", "type": "Game"}
-      { "name": "isaac.i386", "type": "Game"}
       { "name": "jellyfin", "type": "Heavy_CPU" }
-      { "name": "jng_gold", "type": "Game"}
       { "name": "kak", "type": "Doc-View" }
       { "name": "kate", "type": "Doc-View" }
       { "name": "kbfsfuse", "type": "BG_CPUIO"}
@@ -556,6 +467,14 @@
       { "name": "wlsunset", "type": "BG_CPUIO" }
       { "name": "worldofwarships", "type": "Game" }
       { "name": "xarchiver", "type": "BG_CPUIO"}
+      { "name": "xfce4-appfinder", "type":"LowLatency_RT"}
+      { "name": "xfce4-notifyd", "type":"LowLatency_RT"}
+      { "name": "xfce4-panel", "type":"LowLatency_RT"}
+      { "name": "xfce4-session", "type":"LowLatency_RT"}
+      { "name": "xfconfd", "type":"LowLatency_RT"}
+      { "name": "xfdesktop", "type":"LowLatency_RT"}
+      { "name": "xfsettingsd", "type":"LowLatency_RT"}
+      { "name": "xfwm4", "type":"LowLatency_RT"}
       { "name": "xmobar", "type": "LowLatency_RT" }
       { "name": "xmobar", "type": "LowLatency_RT" }
       { "name": "xmonad-x86_64-linux", "type": "LowLatency_RT" }
@@ -570,14 +489,6 @@
       { "name": "yuzu", "type": "Game"}
       { "name": "zdoom", "type": "Game"}
       { "name": "zoom", "type": "Chat" }
-      { "name":"xfce4-appfinder", "type":"LowLatency_RT"}
-      { "name":"xfce4-notifyd", "type":"LowLatency_RT"}
-      { "name":"xfce4-panel", "type":"LowLatency_RT"}
-      { "name":"xfce4-session", "type":"LowLatency_RT"}
-      { "name":"xfconfd", "type":"LowLatency_RT"}
-      { "name":"xfdesktop", "type":"LowLatency_RT"}
-      { "name":"xfsettingsd", "type":"LowLatency_RT"}
-      { "name":"xfwm4", "type":"LowLatency_RT"}
     '';
   };
 }
