@@ -13,7 +13,7 @@
     ../common/optional/auto-upgrade.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.xanmod;
 
   networking.hostName = "trinity";
 
