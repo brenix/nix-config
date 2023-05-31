@@ -334,6 +334,14 @@ in
             </startupnotify>
           </action>
         </keybind>
+        <keybind key="W-o">
+          <action name="Execute">
+            <command>obsidian</command>
+            <startupnotify>
+              <enabled>yes</enabled>
+            </startupnotify>
+          </action>
+        </keybind>
         <keybind key="W-S-s">
           <action name="Execute">
             <command>slack</command>
