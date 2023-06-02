@@ -10,6 +10,10 @@ endef
 
 ## Rebuild NixOS configuration
 nixos:
+	@sudo nixos-rebuild switch --verbose --impure --flake ".#$(HOSTNAME)"
+
+## Rebuild and upgrade NixOS configuration
+upgrade:
 	@sudo nixos-rebuild switch --verbose --impure --upgrade-all --recreate-lock-file --flake ".#$(HOSTNAME)"
 
 ## Run garbage collection
