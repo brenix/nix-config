@@ -11,7 +11,6 @@
     nodePackages.vscode-html-languageserver-bin
     nodePackages.vscode-json-languageserver-bin
     nodePackages.yaml-language-server
-    # python3Packages.python-lsp-server
     nil
     terraform-ls
 
@@ -64,7 +63,8 @@
         end
 
         function add_lsp(binary, server, options)
-          if vim.fn.executable(binary) == 1 then server.setup({on_attach = on_attach, options}) end
+          options["cmd"] = { binary }
+          if vim.fn.executable(binary) == 1 then server.setup(options) end
         end
 
         add_lsp("bash-language-server", lspconfig.bashls, {})
@@ -73,26 +73,6 @@
         add_lsp("pylsp", lspconfig.pylsp, {})
         add_lsp("nil", lspconfig.nil_ls, {})
         add_lsp("terraform-ls", lspconfig.terraformls, {})
-        --add_lsp("yaml-language-server", lspconfig.yamlls, {
-        --  settings = {
-        --    yaml = {
-        --      validate = false,
-        --      schemaStore = {
-        --        url = "https://json.schemastore.org/schema-catalog.json",
-        --        enable = true,
-        --      },
-        --      schemas = {
-        --        ["https://json.schemastore.org/kustomization"] = "/kustomization.{yml,yaml}",
-        --        ["https://json.schemastore.org/helmfile"] = "/helmfile.{yml,yaml}",
-        --        ["https://json.schemastore.org/gitlab-ci"] = "/.gitlab*.yml",
-        --        ["https://json.schemastore.org/ansible-role-2.9"] = "roles/tasks/*.{yml,yaml}",
-        --        ["https://json.schemastore.org/ansible-playbook"] = "/playbook.{yml,yaml}",
-        --        ["https://json.schemastore.org/taskfile.json"] = "/Taskfile*.yml",
-        --        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.20.13/all.json"] = "/*.yaml",
-        --      },
-        --    },
-        --  },
-        --})
       '';
     }
     {
