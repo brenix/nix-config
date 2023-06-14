@@ -17,5 +17,6 @@
     lefthook
     pipenv
     python311
+    yamlfmt
   ];
 }
