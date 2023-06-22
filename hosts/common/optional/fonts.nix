@@ -1,15 +1,14 @@
 { pkgs, ... }:
 {
   fonts.fonts = with pkgs; [
-    # corefonts
     dejavu_fonts
     font-awesome
-    # google-fonts
+    google-fonts
     inter
-    liberation_ttf
     material-icons
     noto-fonts
     noto-fonts-emoji
+    open-sans
     terminus_font
     uw-ttyp0
     weather-icons

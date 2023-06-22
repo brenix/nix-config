@@ -17,36 +17,52 @@
   outputs = { self, nixpkgs, home-manager, chaotic, ... }@inputs:
     let
       inherit (self) outputs;
-      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
-      forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
-
-      mkNixos = modules: nixpkgs.lib.nixosSystem {
-        #inherit modules;
-        modules = modules ++ [ chaotic.nixosModules.default ];
-        specialArgs = { inherit inputs outputs; };
-      };
-      mkHome = modules: pkgs: home-manager.lib.homeManagerConfiguration {
-        inherit modules pkgs;
-        extraSpecialArgs = { inherit inputs outputs; };
-      };
+      lib = nixpkgs.lib // home-manager.lib;
+      systems = [ "x86_64-linux" ];
+      forEachSystem = f: lib.genAttrs systems (sys: f pkgsFor.${sys});
+      pkgsFor = nixpkgs.legacyPackages;
     in
     {
+      inherit lib;
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
+
       overlays = import ./overlays { inherit inputs outputs; };
-      packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; }));
-      devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
+
+      packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
+      devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
-        neo = mkNixos [ ./hosts/neo ];
-        trinity = mkNixos [ ./hosts/trinity ];
-        tank = mkNixos [ ./hosts/tank ];
+        neo = lib.nixosSystem {
+          modules = [ ./hosts/neo chaotic.nixosModules.default ];
+          specialArgs = { inherit inputs outputs; };
+        };
+        trinity = lib.nixosSystem {
+          modules = [ ./hosts/trinity chaotic.nixosModules.default ];
+          specialArgs = { inherit inputs outputs; };
+        };
+        tank = lib.nixosSystem {
+          modules = [ ./hosts/tank chaotic.nixosModules.default ];
+          specialArgs = { inherit inputs outputs; };
+        };
       };
 
       homeConfigurations = {
-        "brenix@neo" = mkHome [ ./home/neo.nix ] nixpkgs.legacyPackages."x86_64-linux";
-        "brenix@trinity" = mkHome [ ./home/trinity.nix ] nixpkgs.legacyPackages."x86_64-linux";
-        "brenix@tank" = mkHome [ ./home/tank.nix ] nixpkgs.legacyPackages."x86_64-linux";
+        "brenix@neo" = lib.homeManagerConfiguration {
+          modules = [ ./home/brenix/neo.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "brenix@trinity" = lib.homeManagerConfiguration {
+          modules = [ ./home/brenix/trinity.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "brenix@tank" = lib.homeManagerConfiguration {
+          modules = [ ./home/brenix/tank.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
       };
     };
 }
