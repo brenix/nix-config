@@ -27,7 +27,6 @@
     age
     comma
     go-task
-    # gojq
     jq
     htop
     hugo
@@ -40,7 +39,6 @@
     wireguard-tools
     yq-go
     zoxide
-    # (writeShellScriptBin "jq" "exec -a $0 ${gojq}/bin/gojq $@")
   ];
 
   home.persistence = {
