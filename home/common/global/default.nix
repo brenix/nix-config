@@ -47,6 +47,7 @@
         ".config/sops"
         ".local/bin"
         ".local/state/wireplumber"
+        ".local/state/nix"
         ".local/share/zoxide"
         "nix-config"
       ];

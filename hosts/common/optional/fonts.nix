@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
   fonts.fonts = with pkgs; [
-    dejavu_fonts
     font-awesome
-    google-fonts
+    # google-fonts
     inter
     material-icons
     noto-fonts
