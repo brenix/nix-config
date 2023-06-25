@@ -17,6 +17,7 @@
     openssl
     packer
     parallel
+    shfmt
     vault-bin
     velero
     vendir

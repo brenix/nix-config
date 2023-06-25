@@ -2,12 +2,9 @@
 {
   fonts.fonts = with pkgs; [
     font-awesome
-    # google-fonts
     inter
     material-icons
-    noto-fonts
     noto-fonts-emoji
-    open-sans
     terminus_font
     uw-ttyp0
     weather-icons
