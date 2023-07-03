@@ -20,10 +20,10 @@
 
   fonts.fontconfig = {
     defaultFonts = {
-      serif = [ "Inter" ];
-      sansSerif = [ "Inter" ];
+      serif = [ "Inter Regular" ];
+      sansSerif = [ "Inter Regular" ];
       emoji = [ "Noto Color Emoji" ];
-      monospace = [ "Hack Nerd Font Mono" "MesloLGS Nerd Font Mono" "JetBrainsMono Nerd Font" "Roboto Mono" ];
+      monospace = [ "Monaco Nerd Font" "Hack Nerd Font Mono" "MesloLGS Nerd Font Mono" "JetBrainsMono Nerd Font" "Roboto Mono" ];
     };
   };
 

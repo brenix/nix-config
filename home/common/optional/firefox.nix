@@ -5,6 +5,7 @@ in
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-beta;
     profiles.brenix = {
       extensions = with addons; [
         bitwarden
@@ -56,7 +57,6 @@ in
         "datareporting.policy.dataSubmissionEnabled" = false;
         "datareporting.sessions.current.clean" = true;
         "devtools.onboarding.telemetry.logged" = false;
-        "dom.webgpu.enabled" = lib.mkDefault true;
         "extensions.autoDisableScopes" = 0;
         "extensions.formautofill.addresses.enabled" = false;
         "extensions.formautofill.available" = "off";
@@ -75,13 +75,8 @@ in
         "font.name.sans-serif.x-western" = config.fontProfiles.regular.family;
         "font.name.serif.x-western" = config.fontProfiles.regular.family;
         "full-screen-api.warning.timeout" = 0;
-        "gfx.canvas.azure.accelerated" = true;
         "gfx.font_rendering.fontconfig.max_generic_substitutions" = 127;
-        "gfx.webrender.all" = lib.mkDefault true;
-        "gfx.webrender.enabled" = lib.mkDefault true;
         "identity.fxaccounts.enabled" = true;
-        "javascript.options.warp" = true;
-        "layers.acceleration.force-enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
         "layout.css.devPixelsPerpx" = 1;
         "layout.frame_rate" = 144;
