@@ -69,7 +69,7 @@
         state = "floating";
         sticky = true;
       };
-      "sxiv" = { state = "floating"; };
+      "nsxiv" = { state = "floating"; };
       "Pavucontrol" = { state = "floating"; };
     };
   };

@@ -14,7 +14,7 @@
     obsidian
     pavucontrol
     piper
-    sxiv
+    nsxiv
     xdg-utils
   ];
 
