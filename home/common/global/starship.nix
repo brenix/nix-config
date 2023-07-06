@@ -42,7 +42,7 @@
         style = "bright-black";
         context_aliases = {
           ".*vdp.*" = "vdp";
-          "(?P<var_cell>[\\\\w-]+)-aws-\\\\w+-(?P<var_cluster>[\\\\w-]+)-.*" = "$var_cell-$var_cluster";
+          "(?P<var_cell>[\\w-]+)-aws-\\w+-(?P<var_cluster>[\\w-]+)-.*" = "$var_cell-$var_cluster";
         };
       };
       python = {
