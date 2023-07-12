@@ -1,6 +1,5 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 let
-  # neovim-overlay = inputs.neovim-nightly-overlay.packages.${pkgs.system};
   color = pkgs.writeText "color.vim" (import ./theme.nix config.colorscheme);
 in
 {
@@ -11,7 +10,7 @@ in
     ./treesitter.nix
     ./ui.nix
   ];
-  home.sessionVariables.EDITOR = "nvim";
+  # home.sessionVariables.EDITOR = "nvim";
 
   programs.neovim = {
     enable = true;

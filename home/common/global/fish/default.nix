@@ -35,7 +35,7 @@
       kl = "kubectl logs";
       kvs = "kubectl view-secret";
       kvsec = "kubectl view-secret";
-      v = "nvim";
+      v = "hx";
     };
 
     shellAliases = {
