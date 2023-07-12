@@ -45,14 +45,26 @@ in
       };
 
       keys.normal = {
+        "$" = "goto_line_end";
+        "^" = "goto_first_nonwhitespace";
+        "%" = "match_brackets";
+        C = ["extend_to_line_end" "delete_selection" "insert_mode"];
+        d.d = ["extend_to_line_bounds" "delete_selection"];
+        D = ["extend_to_line_end" "delete_selection"];
+        G = "goto_file_end";
         minus = "file_picker";
         space.f = ":format";
-        space.w = ":w";
         space.minus = ":hsplit-new";
         space.q = ":q";
         space.space = "file_picker";
-        space.v = ":vsplit-new";
         space."/" = "toggle_comments";
+        space.v = ":vsplit-new";
+        space.w = ":w";
+        x = "delete_selection";
+      };
+
+      keys.insert = {
+        esc = ["collapse_selection" "normal_mode"];
       };
     };
 
