@@ -7,6 +7,37 @@ in
 
   home.sessionVariables.COLORTERM = "truecolor";
 
+  home.packages = with pkgs; [
+    # Language servers
+    gopls
+    nodePackages.bash-language-server
+    nodePackages.dockerfile-language-server-nodejs
+    nodePackages.fixjson
+    nodePackages.markdownlint-cli
+    nodePackages.vscode-css-languageserver-bin
+    nodePackages.vscode-html-languageserver-bin
+    nodePackages.vscode-json-languageserver-bin
+    nodePackages.yaml-language-server
+    nil
+    terraform-ls
+    lua-language-server
+    marksman
+
+    # Formatters
+    deno
+    gotools
+    nixpkgs-fmt
+    python3Packages.mdformat
+    reftools
+    shellharden
+    shfmt
+    stylua
+
+    # Diagnostics
+    golangci-lint
+    statix
+  ];
+
   programs.helix = {
     enable = true;
 
