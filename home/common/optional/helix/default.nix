@@ -46,16 +46,14 @@ in
 
       keys.normal = {
         "$" = "goto_line_end";
-        "%" = "match_brackets";
         "^" = "goto_first_nonwhitespace";
         C = [ "extend_to_line_end" "delete_selection" "insert_mode" ];
         D = [ "extend_to_line_end" "delete_selection" ];
         G = "goto_file_end";
         P = [ "paste_clipboard_before" "collapse_selection" ];
         d.d = [ "extend_to_line_bounds" "delete_selection" ];
-        d.s = [ "surround_delete" ];
-        d.t = [ "extend_till_char" ];
-        d.w = [ "move_next_word_start" "yank_main_selection_to_clipboard" "delete_selection" ];
+        d.t = [ "extend_till_char" "delete_selection" ];
+        d.w = [ "move_next_word_start" "delete_selection" ];
         minus = "file_picker";
         p = [ "paste_clipboard_after" "collapse_selection" ];
         space."/" = "toggle_comments";
@@ -79,17 +77,17 @@ in
     themes = import ./theme.nix { inherit colorscheme; };
 
     languages = with pkgs; {
-
-      # language-server = {
-      #   vscode-json-language-server = {
-      #     command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
-      #     args = [ "--stdio" ];
-      #   };
-      # };
-
       language = [
         {
+          name = "nix";
+          auto-format = true;
+          formatter = {
+            command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
+          };
+        }
+        {
           name = "json";
+          auto-format = true;
           language-server = {
             command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
             args = [ "--stdio" ];
