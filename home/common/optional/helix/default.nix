@@ -46,25 +46,33 @@ in
 
       keys.normal = {
         "$" = "goto_line_end";
-        "^" = "goto_first_nonwhitespace";
         "%" = "match_brackets";
-        C = ["extend_to_line_end" "delete_selection" "insert_mode"];
-        d.d = ["extend_to_line_bounds" "delete_selection"];
-        D = ["extend_to_line_end" "delete_selection"];
+        "^" = "goto_first_nonwhitespace";
+        C = [ "extend_to_line_end" "delete_selection" "insert_mode" ];
+        D = [ "extend_to_line_end" "delete_selection" ];
         G = "goto_file_end";
+        P = [ "paste_clipboard_before" "collapse_selection" ];
+        d.d = [ "extend_to_line_bounds" "delete_selection" ];
+        d.s = [ "surround_delete" ];
+        d.t = [ "extend_till_char" ];
+        d.w = [ "move_next_word_start" "yank_main_selection_to_clipboard" "delete_selection" ];
         minus = "file_picker";
+        p = [ "paste_clipboard_after" "collapse_selection" ];
+        space."/" = "toggle_comments";
+        space.Q = ":q!";
+        space.W = ":w!";
         space.f = ":format";
         space.minus = ":hsplit-new";
         space.q = ":q";
         space.space = "file_picker";
-        space."/" = "toggle_comments";
         space.v = ":vsplit-new";
         space.w = ":w";
         x = "delete_selection";
+        y.y = [ "extend_to_line_bounds" "yank_main_selection_to_clipboard" "normal_mode" "collapse_selection" ];
       };
 
       keys.insert = {
-        esc = ["collapse_selection" "normal_mode"];
+        esc = [ "collapse_selection" "normal_mode" ];
       };
     };
 
