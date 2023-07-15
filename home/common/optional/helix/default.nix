@@ -52,7 +52,8 @@ in
         soft-wrap = { enable = false; };
         cursor-shape = {
           normal = "block";
-          insert = "bar";
+          # insert = "bar";
+          insert = "block";
           select = "underline";
         };
         lsp = {

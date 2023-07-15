@@ -56,7 +56,7 @@
       RESET                 0
 
       FILE                  00
-      DIR                   01;34
+      DIR                   01;36
       LINK                  36
       MULTIHARDLINK         04;36
 

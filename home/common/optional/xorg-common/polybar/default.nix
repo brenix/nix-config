@@ -18,18 +18,32 @@ in
       };
 
       "colors" = {
-        bg = "#${colors.base00}";
-        bg-alt = "#${colors.base00}";
-        fg = "#${colors.base05}";
-        fg-alt = "#${colors.base07}";
-        blue = "#${colors.base0D}";
-        cyan = "#${colors.base0C}";
-        green = "#${colors.base0B}";
-        orange = "#${colors.base09}";
-        purple = "#${colors.base0F}";
-        red = "#${colors.base08}";
-        yellow = "#${colors.base0A}";
+        bg = "#0f0f0f";
+        bg-alt = "#0f0f0f";
+        fg = "#c2c2c2";
+        fg-alt = "#ebe6d5";
+        blue = "#6f8798";
+        cyan = "#8da19e";
+        green = "#98a686";
+        orange = "#d59877";
+        purple = "#949289";
+        red = "#b76666";
+        yellow = "#dcbb8c";
       };
+
+      # "colors" = {
+      #   bg = "#${colors.base00}";
+      #   bg-alt = "#${colors.base00}";
+      #   fg = "#${colors.base05}";
+      #   fg-alt = "#${colors.base07}";
+      #   blue = "#${colors.base0D}";
+      #   cyan = "#${colors.base0C}";
+      #   green = "#${colors.base0B}";
+      #   orange = "#${colors.base09}";
+      #   purple = "#${colors.base0F}";
+      #   red = "#${colors.base08}";
+      #   yellow = "#${colors.base0A}";
+      # };
 
       "bar/main" = {
         dpi = config.dpi;
