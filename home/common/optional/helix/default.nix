@@ -42,7 +42,8 @@ in
     enable = true;
 
     settings = {
-      theme = colorscheme.slug;
+      # theme = colorscheme.slug;
+      theme = "github_light";
 
       editor = {
         color-modes = true;
