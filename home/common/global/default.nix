@@ -39,6 +39,7 @@
     wireguard-tools
     yq-go
     zoxide
+    (pkgs.uutils-coreutils.override { prefix = ""; })
   ];
 
   home.persistence = {

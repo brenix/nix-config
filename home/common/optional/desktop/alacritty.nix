@@ -60,17 +60,17 @@ in
             yellow = "#b2b2b2";
             blue = "#5e81ac";
             magenta = "#b48ead";
-            cyan = "#949494";
+            cyan = "#555555";
             white = "#adadad";
           };
           bright = {
             black = "#464646";
             red = "#bf616a";
-            green = "#868686";
+            green = "#333333";
             yellow = "#b2b2b2";
             blue = "#767676";
             magenta = "#b48ead";
-            cyan = "#949494";
+            cyan = "#555555";
             white = "#ececec";
           };
         };
