@@ -23,7 +23,7 @@ in
         # family = "Terminus";
         style = "Italic";
       };
-      font.size = lib.mkDefault 9;
+      font.size = lib.mkDefault 10;
       font.offset.y = -4;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
