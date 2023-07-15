@@ -796,45 +796,45 @@ in
       #     Menu Settings
       #======================================
       menu.title.bg: raised
-      menu.title.bg.color: #${c.base01}
-      menu.title.text.color: #${c.base05}
-      menu.separator.color: #${c.base01}
+      menu.title.bg.color: #0f0f0f
+      menu.title.text.color: #c2c2c2
+      menu.separator.color: #383737
       menu.items.bg: raised
-      menu.items.bg.color: #${c.base00}
-      menu.items.text.color: #${c.base05}
-      menu.items.disabled.text.color: #${c.base03}
+      menu.items.bg.color: #0f0f0f
+      menu.items.text.color: #c2c2c2
+      menu.items.disabled.text.color: #494747
       menu.items.active.bg: flat border
-      menu.items.active.bg.color: #${c.base01}
-      menu.items.active.bg.border.color: #${c.base01}
-      menu.items.active.text.color: #${c.base05}
+      menu.items.active.bg.color: #383737
+      menu.items.active.bg.border.color: #383737
+      menu.items.active.text.color: #c2c2c2
 
       #======================================
       #     Focused Window Settings
       #======================================
       window.active.title.bg: raised
-      window.active.title.bg.color: #${c.base00}
+      window.active.title.bg.color: #0f0f0f
       window.active.handle.bg: raised
-      window.active.handle.bg.color: #${c.base00}
+      window.active.handle.bg.color: #0f0f0f
       window.active.grip.bg: parentrelative
       window.active.label.bg: parentrelative
-      window.active.label.text.color: #${c.base05}
+      window.active.label.text.color: #c2c2c2
       window.*.button.*.bg: parentrelative
-      window.active.button.*.image.color: #${c.base05}
-      window.active.button.*.pressed.image.color: #${c.base00}
-      window.active.button.disabled.image.color: #${c.base05}
+      window.active.button.*.image.color: #c2c2c2
+      window.active.button.*.pressed.image.color: #0f0f0f
+      window.active.button.disabled.image.color: #c2c2c2
 
       #======================================
       #     Unfocused Window Settings
       #======================================
 
       window.inactive.title.bg: raised
-      window.inactive.title.bg.color: #${c.base00}
+      window.inactive.title.bg.color: #0f0f0f
       window.inactive.handle.bg: raised
-      window.inactive.handle.bg.color: #${c.base00}
+      window.inactive.handle.bg.color: #0f0f0f
       window.inactive.grip.bg: parentrelative
       window.inactive.label.bg: parentrelative
-      window.inactive.label.text.color: #${c.base03}
-      window.inactive.button.*.image.color: #${c.base05}
+      window.inactive.label.text.color: #494747
+      window.inactive.button.*.image.color: #c2c2c2
 
       #======================================
       #     Global Width Settings
@@ -851,16 +851,16 @@ in
       #     Miscellaneous Settings
       #======================================
 
-      border.color: #${c.base00}
-      menu.border.color: #${c.base00}
+      border.color: #0f0f0f
+      menu.border.color: #0f0f0f
 
       #======================================
       #     Osd
       #======================================
 
       osd.hilight.bg: flat border
-      osd.hilight.bg.color: #${c.base0D}
-      osd.hilight.bg.border.color: #${c.base09}
+      osd.hilight.bg.color: #6f8798
+      osd.hilight.bg.border.color: #d59877
 
       #======================================
       #     Title Justification
@@ -869,6 +869,86 @@ in
       menu.title.text.justify: center
       window.label.text.justify: center
     '';
+
+    # ".themes/nix-openbox/openbox-3/themerc".text = ''
+    #   #======================================
+    #   #     Menu Settings
+    #   #======================================
+    #   menu.title.bg: raised
+    #   menu.title.bg.color: #${c.base01}
+    #   menu.title.text.color: #${c.base05}
+    #   menu.separator.color: #${c.base01}
+    #   menu.items.bg: raised
+    #   menu.items.bg.color: #${c.base00}
+    #   menu.items.text.color: #${c.base05}
+    #   menu.items.disabled.text.color: #${c.base03}
+    #   menu.items.active.bg: flat border
+    #   menu.items.active.bg.color: #${c.base01}
+    #   menu.items.active.bg.border.color: #${c.base01}
+    #   menu.items.active.text.color: #${c.base05}
+
+    #   #======================================
+    #   #     Focused Window Settings
+    #   #======================================
+    #   window.active.title.bg: raised
+    #   window.active.title.bg.color: #${c.base00}
+    #   window.active.handle.bg: raised
+    #   window.active.handle.bg.color: #${c.base00}
+    #   window.active.grip.bg: parentrelative
+    #   window.active.label.bg: parentrelative
+    #   window.active.label.text.color: #${c.base05}
+    #   window.*.button.*.bg: parentrelative
+    #   window.active.button.*.image.color: #${c.base05}
+    #   window.active.button.*.pressed.image.color: #${c.base00}
+    #   window.active.button.disabled.image.color: #${c.base05}
+
+    #   #======================================
+    #   #     Unfocused Window Settings
+    #   #======================================
+
+    #   window.inactive.title.bg: raised
+    #   window.inactive.title.bg.color: #${c.base00}
+    #   window.inactive.handle.bg: raised
+    #   window.inactive.handle.bg.color: #${c.base00}
+    #   window.inactive.grip.bg: parentrelative
+    #   window.inactive.label.bg: parentrelative
+    #   window.inactive.label.text.color: #${c.base03}
+    #   window.inactive.button.*.image.color: #${c.base05}
+
+    #   #======================================
+    #   #     Global Width Settings
+    #   #======================================
+
+    #   padding.width: 1
+    #   padding.height: 1
+    #   border.width: 1
+    #   window.handle.width: 3
+    #   window.client.padding.width: 0
+    #   menu.overlap.x: -5
+
+    #   #======================================
+    #   #     Miscellaneous Settings
+    #   #======================================
+
+    #   border.color: #${c.base00}
+    #   menu.border.color: #${c.base00}
+
+    #   #======================================
+    #   #     Osd
+    #   #======================================
+
+    #   osd.hilight.bg: flat border
+    #   osd.hilight.bg.color: #${c.base0D}
+    #   osd.hilight.bg.border.color: #${c.base09}
+
+    #   #======================================
+    #   #     Title Justification
+    #   #======================================
+
+    #   menu.title.text.justify: center
+    #   window.label.text.justify: center
+    # '';
+
 
     ".themes/nix-openbox/openbox-3/bullet.xbm".text = ''
       #define bullet_width 5
