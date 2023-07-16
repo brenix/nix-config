@@ -8,7 +8,6 @@ in
   home.sessionVariables.COLORTERM = "truecolor";
 
   home.packages = with pkgs; [
-    # Language servers
     gopls
     lua-language-server
     marksman
@@ -21,10 +20,6 @@ in
     nodePackages.yaml-language-server
     python3Packages.python-lsp-server
     terraform-ls
-
-    # Formatters
-    gotools
-    nixpkgs-fmt
   ];
 
   programs.helix = {
@@ -104,6 +99,7 @@ in
           auto-format = true;
           formatter = {
             command = "${gotools}/bin/goimports";
+            args = [ "-local" "gitlab.eng" ];
           };
         }
         {
