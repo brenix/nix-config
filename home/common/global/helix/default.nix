@@ -10,32 +10,21 @@ in
   home.packages = with pkgs; [
     # Language servers
     gopls
+    lua-language-server
+    marksman
+    nil
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
-    nodePackages.fixjson
-    nodePackages.markdownlint-cli
     nodePackages.vscode-css-languageserver-bin
     nodePackages.vscode-html-languageserver-bin
     nodePackages.vscode-json-languageserver-bin
     nodePackages.yaml-language-server
-    nil
+    python3Packages.python-lsp-server
     terraform-ls
-    lua-language-server
-    marksman
 
     # Formatters
-    deno
     gotools
     nixpkgs-fmt
-    python3Packages.mdformat
-    reftools
-    shellharden
-    shfmt
-    stylua
-
-    # Diagnostics
-    golangci-lint
-    statix
   ];
 
   programs.helix = {
@@ -59,7 +48,7 @@ in
         lsp = {
           enable = true;
           display-messages = true;
-          display-inlay-hints = true;
+          display-inlay-hints = false;
           snippets = true;
         };
         statusline = {
@@ -103,18 +92,18 @@ in
     languages = with pkgs; {
       language = [
         {
-          name = "nix";
-          auto-format = true;
-          formatter = {
-            command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
-          };
-        }
-        {
           name = "bash";
           auto-format = true;
           formatter = {
             command = "${shfmt}/bin/shfmt";
             args = [ "-i" "2" "-ci" ];
+          };
+        }
+        {
+          name = "go";
+          auto-format = true;
+          formatter = {
+            command = "${gotools}/bin/goimports";
           };
         }
         {
@@ -126,6 +115,13 @@ in
           };
           formatter = {
             command = "${nodePackages.fixjson}/bin/fixjson";
+          };
+        }
+        {
+          name = "nix";
+          auto-format = true;
+          formatter = {
+            command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
           };
         }
       ];
