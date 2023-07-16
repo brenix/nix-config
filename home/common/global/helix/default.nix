@@ -110,6 +110,14 @@ in
           };
         }
         {
+          name = "bash";
+          auto-format = true;
+          formatter = {
+            command = "${shfmt}/bin/shfmt";
+            args = [ "-i" "2" "-ci" ];
+          };
+        }
+        {
           name = "json";
           auto-format = true;
           language-server = {

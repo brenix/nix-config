@@ -7,7 +7,6 @@
     ./common/optional/discord.nix
     ./common/optional/firefox.nix
     ./common/optional/gpg.nix
-    ./common/optional/helix
     ./common/optional/kubernetes-tools.nix
     ./common/optional/music.nix
     ./common/optional/openbox.nix
