@@ -26,8 +26,7 @@ in
     enable = true;
 
     settings = {
-      # theme = colorscheme.slug;
-      theme = "github_light";
+      theme = colorscheme.slug;
 
       editor = {
         color-modes = true;
@@ -36,8 +35,7 @@ in
         soft-wrap = { enable = false; };
         cursor-shape = {
           normal = "block";
-          # insert = "bar";
-          insert = "block";
+          insert = "bar";
           select = "underline";
         };
         lsp = {

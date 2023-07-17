@@ -71,6 +71,6 @@
     '';
   };
 
-  colorscheme = inputs.nix-colors.colorSchemes.github;
-  #colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
+  # colorscheme = inputs.nix-colors.colorSchemes.github;
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
 }
