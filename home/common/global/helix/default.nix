@@ -38,6 +38,11 @@ in
           insert = "bar";
           select = "underline";
         };
+        file-picker = {
+          hidden = false;
+          parents = false;
+          git-ignore = false;
+        };
         lsp = {
           enable = true;
           display-messages = true;
@@ -73,6 +78,8 @@ in
         space.space = "file_picker";
         space.v = ":vsplit-new";
         space.w = ":w";
+        y = "yank_main_selection_to_clipboard";
+        p = "paste_clipboard_before";
       };
 
       keys.insert = {
