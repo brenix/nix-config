@@ -119,6 +119,14 @@ in
           };
         }
         {
+          name = "markdown";
+          auto-format = true;
+          formatter = {
+            command = "${deno}/bin/deno";
+            args = [ "fmt" "-" "--ext" "md" ];
+          };
+        }
+        {
           name = "nix";
           auto-format = true;
           formatter = {
