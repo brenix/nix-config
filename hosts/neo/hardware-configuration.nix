@@ -133,7 +133,7 @@ in
     }
   ];
 
-  services.resolved.domains = [ "localdomain" ];
+  services.resolved.domains = [ "lan" ];
 
   services.udev.packages = [ pkgs.wooting-udev-rules ];
 

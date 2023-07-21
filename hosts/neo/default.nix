@@ -30,7 +30,7 @@
 
   networking.hostName = "neo";
 
-  services.resolved.domains = [ "localdomain" ];
+  services.resolved.domains = [ "lan" ];
 
   services.ratbagd.enable = true;
 

@@ -9,7 +9,7 @@ in
     matchBlocks = {
       home = {
         host = builtins.concatStringsSep " " hostnames;
-        hostname = "%h.localdomain";
+        hostname = "%h.lan";
         forwardAgent = true;
       };
     };
