@@ -29,6 +29,7 @@ in
       theme = colorscheme.slug;
 
       editor = {
+        bufferline = "always";
         color-modes = true;
         line-number = "absolute";
         indent-guides.render = true;
@@ -69,17 +70,19 @@ in
         "^" = "goto_first_nonwhitespace";
         D = [ "extend_to_line_end" "delete_selection" ];
         G = "goto_file_end";
+        esc = [ "collapse_selection" "keep_primary_selection" ];
         minus = "file_picker";
+        p = "paste_clipboard_before";
         space.Q = ":q!";
         space.W = ":w!";
         space.f = ":format";
+        space.l = ":toggle lsp.display-inlay-hints";
         space.minus = ":hsplit-new";
         space.q = ":q";
         space.space = "file_picker";
         space.v = ":vsplit-new";
         space.w = ":w";
         y = "yank_main_selection_to_clipboard";
-        p = "paste_clipboard_before";
       };
 
       keys.insert = {
