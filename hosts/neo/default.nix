@@ -15,7 +15,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
     ../common/optional/systemd-boot.nix
-    ../common/optional/xserver.nix
+    # ../common/optional/xserver.nix
     ../common/optional/bpftune.nix
   ];
 
@@ -47,21 +47,21 @@
   #     [ "${automount_opts}" ];
   # };
 
-  services.xserver = {
-    dpi = 108;
-    displayManager = {
-      sessionCommands = ''
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --mode 2560x1440
-        ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode 2560x1440
-        ${pkgs.xorg.xset}/bin/xset s off -dpms
-      '';
-    };
-  };
+  # services.xserver = {
+  #   dpi = 108;
+  #   displayManager = {
+  #     sessionCommands = ''
+  #       ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --mode 2560x1440
+  #       ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode 2560x1440
+  #       ${pkgs.xorg.xset}/bin/xset s off -dpms
+  #     '';
+  #   };
+  # };
 
-  /* xdg.portal = { */
-  /*   enable = true; */
-  /*   wlr.enable = true; */
-  /* }; */
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
 
   system.stateVersion = "22.05";
 }

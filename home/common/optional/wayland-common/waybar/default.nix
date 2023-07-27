@@ -76,7 +76,7 @@ in
 
         temperature = {
           format = "TEMP: {temperatureC}°C";
-          hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input";
+          hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input";
           critical-threshold = 70;
         };
 
@@ -129,7 +129,7 @@ in
       ''
         * {
           font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
-          font-size: 16px;
+          font-size: 12px;
           padding: 0 6px;
         }
         .modules-right {

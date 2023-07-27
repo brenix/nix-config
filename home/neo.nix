@@ -9,11 +9,11 @@
     ./common/optional/gpg.nix
     ./common/optional/kubernetes-tools.nix
     ./common/optional/music.nix
-    ./common/optional/openbox.nix
+    ./common/optional/hyprland.nix
     ./common/optional/slack.nix
     ./common/optional/sre-tools
     ./common/optional/wootility.nix
-    ./common/optional/xorg-common
+    ./common/optional/wayland-common
     ./common/optional/zoom.nix
   ];
 
@@ -24,6 +24,7 @@
       name = "DP-1";
       width = 2560;
       height = 1440;
+      refreshRate = 165;
       x = 0;
       workspace = "1";
       enabled = true;
@@ -33,6 +34,7 @@
       isSecondary = true;
       width = 2560;
       height = 1440;
+      refreshRate = 144;
       x = 2560;
       workspace = "2";
       enabled = true;

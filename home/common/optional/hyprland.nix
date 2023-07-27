@@ -1,14 +1,8 @@
-{ inputs, lib, config, pkgs, ... }: {
-  imports = [
-    inputs.hyprland.homeManagerModules.default
-  ];
-
+{ lib, config, pkgs, ... }: {
   wayland.windowManager.hyprland =
     let
       inherit (config.colorscheme) colors;
       mako = "${pkgs.mako}/bin/mako";
-      swaybg = "${pkgs.swaybg}/bin/swaybg";
-      grimblast = "${pkgs.grimblast}/bin/grimblast";
     in
     {
       enable = true;
@@ -18,13 +12,16 @@
         ${lib.optionalString (m.workspace != null)"workspace=${m.name},${m.workspace}"}
       ''))) +
       ''
+        env = WLR_DRM_DEVICES,/dev/dri/card0
+      
         general {
-          main_mod=SUPER
           gaps_in=10
           gaps_out=10
           border_size=2
           col.active_border=0xff${colors.base03}
           col.inactive_border=0xff${colors.base02}
+          col.group_border_active=0xff${colors.base0B}
+          col.group_border=0xff${colors.base04}
           cursor_inactive_timeout=4
         }
 
@@ -46,27 +43,36 @@
         }
 
         animations {
-          enabled=true
-          animation=windows,1,4,default,slide
-          animation=border,1,5,default
-          animation=fade,1,7,default
-          animation=workspaces,1,2,default
+          enabled=false
+
+          bezier=easein,0.11, 0, 0.5, 0
+          bezier=easeout,0.5, 1, 0.89, 1
+          bezier=easeinout,0.45, 0, 0.55, 1
+
+          animation=windowsIn,1,3,easeout,slide
+          animation=windowsOut,1,3,easein,slide
+          animation=windowsMove,1,3,easeout
+
+          animation=fadeIn,1,3,easeout
+          animation=fadeOut,1,3,easein
+          animation=fadeSwitch,1,3,easeout
+          animation=fadeShadow,1,3,easeout
+          animation=fadeDim,1,3,easeout
+          animation=border,1,3,easeout
+
+          animation=workspaces,1,2,easeout,slide
         }
 
         dwindle {
-          force_split=2
-          preserve_split=true
-          col.group_border_active=0xff${colors.base0B}
-          col.group_border=0xff${colors.base04}
+          split_width_multiplier=1.35
         }
 
         misc {
-          no_vfr=false
+          vfr=on
         }
 
         input {
           kb_layout=us
-          kb_options=caps:escape
           repeat_rate=50
           repeat_delay=195
           force_no_accel=1
@@ -78,12 +84,13 @@
         exec-once=${mako}
 
         # Rules
-        windowrule=workspace 2,Slack
-        windowrule=workspace 3,firefox
-        windowrule=workspace 4,Spotify
+        windowrule=float,workspace 2,Slack
+        windowrule=float,workspace 3,firefox
+        windowrule=float,workspace 4,Spotify
         windowrule=float,title:.*Zoom.*
         windowrule=float,title:.*zoom.*
         windowrule=float,title:Chat
+        windowrule=float,foot
         windowrule=float,foot:floating
         windowrule=float,pavucontrol
 
@@ -105,11 +112,11 @@
         bind=SUPER,e,exec,xdg-open 'slack://channel?team=T024JFTN4&id=GHMTDF91B'
 
         # Screenshots
-        bind=,Print,exec,${grimblast} --notify copy area
-        bind=SHIFT,Print,exec,${grimblast} --notify copy active
-        bind=CONTROL,Print,exec,${grimblast} --notify copy screen
-        bind=SUPER,Print,exec,${grimblast} --notify copy window
-        bind=ALT,Print,exec,${grimblast} --notify copy output
+        bind=,Print,exec,grimblast --notify copy area
+        bind=SHIFT,Print,exec,grimblast --notify copy active
+        bind=CONTROL,Print,exec,grimblast --notify copy screen
+        bind=SUPER,Print,exec,grimblast --notify copy window
+        bind=ALT,Print,exec,grimblast --notify copy output
 
         # Audio
         bind=,XF86AudioNext,exec,playerctl next

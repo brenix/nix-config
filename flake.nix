@@ -6,6 +6,7 @@
     firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
     hardware.url = "github:nixos/nixos-hardware";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
     impermanence.url = "github:nix-community/impermanence";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-colors.url = "github:misterio77/nix-colors";
