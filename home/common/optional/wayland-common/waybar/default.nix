@@ -63,6 +63,7 @@ in
 
         clock = {
           format = "{:%a %b %d %I:%M %p}";
+          on-click = "xdg-open https://calendar.google.com";
           tooltip = false;
         };
 
@@ -131,7 +132,8 @@ in
         * {
           border: none;
           border-radius: 0;
-          font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
+          /* font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family}; */
+          font-family: Terminus;
           font-size: 12px;
           min-height: 0;
         }

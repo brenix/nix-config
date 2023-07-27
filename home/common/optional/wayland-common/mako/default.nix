@@ -10,7 +10,8 @@ in
         "${config.gtk.iconTheme.package}/share/icons/Nordzy-dark"
       else
         "${config.gtk.iconTheme.package}/share/icons/Nordzy";
-    font = "${config.fontProfiles.regular.family} 12";
+    font = "Terminus 9";
+    # font = "${config.fontProfiles.regular.family} 12";
     padding = "10,20";
     anchor = "top-center";
     width = 400;

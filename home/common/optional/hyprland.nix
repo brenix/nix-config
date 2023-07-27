@@ -2,13 +2,13 @@
 
   home.packages = with pkgs; [
     inputs.hyprwm-contrib.packages.${system}.grimblast
-    swaybg
   ];
 
   wayland.windowManager.hyprland =
     let
       inherit (config.colorscheme) colors;
       mako = "${pkgs.mako}/bin/mako";
+      swaybg = "${pkgs.swaybg}/bin/swaybg";
     in
     {
       enable = true;
@@ -88,7 +88,7 @@
         # Startup
         exec-once=waybar
         exec-once=${mako}
-        exec=swaybg -c '#333333'
+        exec=${swaybg} -c '#333333'
 
         # Rules
         windowrule=float,title:.*Zoom.*
