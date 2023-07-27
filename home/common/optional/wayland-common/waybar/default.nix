@@ -1,15 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
-  inherit (pkgs.lib) optionals optional;
-
   # Dependencies
   jq = "${pkgs.gojq}/bin/gojq";
-  systemctl = "${pkgs.systemd}/bin/systemctl";
-  journalctl = "${pkgs.systemd}/bin/journalctl";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
 
   jsonOutput = { pre ? "", text ? "", tooltip ? "", alt ? "", class ? "", percentage ? "" }: "${pkgs.writeShellScriptBin "waybar-output" ''
+    set -euo pipefail
     ${pre}
     ${jq} -cn \
       --arg text "${text}" \
@@ -23,12 +20,13 @@ in
 {
   programs.waybar = {
     enable = true;
+    package = pkgs.waybar.overrideAttrs (oa: {
+      mesonFlags = (oa.mesonFlags or [ ]) ++ [ "-Dexperimental=true" ];
+    });
     settings = {
       primary = {
         mode = "dock";
-        layer = "top";
-        height = 20;
-        /* margin = "6"; */
+        height = 18;
         position = "top";
         output = builtins.map (m: m.name) (builtins.filter (m: m.isSecondary == false) config.monitors);
 
@@ -60,34 +58,36 @@ in
         };
 
         tray = {
-          spacing = 5;
+          spacing = 2;
         };
 
         clock = {
           format = "{:%a %b %d %I:%M %p}";
-          tooltip-format = ''
-            <big>{:%Y %B}</big>
-            <tt><small>{calendar}</small></tt>'';
+          tooltip = false;
         };
 
         cpu = {
           format = "CPU:  {usage}%";
+          tooltip = false;
         };
 
         temperature = {
           format = "TEMP: {temperatureC}°C";
           hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input";
           critical-threshold = 70;
+          tooltip = false;
         };
 
         memory = {
           format = "MEM:  {used:0.1f}G";
           interval = 5;
+          tooltip = false;
         };
 
         pulseaudio = {
           format = "VOL: {volume}%";
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          tooltip = false;
         };
 
         "custom/gpu" = {
@@ -95,15 +95,15 @@ in
           return-type = "json";
           exec = jsonOutput {
             text = "$(cat /sys/class/drm/card0/device/gpu_busy_percent)";
-            tooltip = "GPU Usage";
           };
           format = "GPU: {}%";
+          tooltip = false;
         };
 
         "custom/separator" = {
-          "format" = "|";
-          "interval" = "once";
-          "tooltip" = false;
+          format = "|";
+          interval = "once";
+          tooltip = false;
         };
 
         "custom/player" = {
@@ -114,11 +114,12 @@ in
           max-length = 90;
           format = "{icon} {}";
           format-icons = {
-            "Playing" = "契";
-            "Paused" = " ";
-            "Stopped" = "栗";
+            "Playing" = "󰐊";
+            "Paused" = "󰏤";
+            "Stopped" = "󰓛";
           };
           on-click = "${playerctl} play-pause";
+          tooltip = false;
         };
       };
 
@@ -128,51 +129,48 @@ in
       let inherit (config.colorscheme) colors; in
       ''
         * {
+          border: none;
+          border-radius: 0;
           font-family: ${config.fontProfiles.regular.family}, ${config.fontProfiles.monospace.family};
           font-size: 12px;
-          padding: 0 6px;
+          min-height: 0;
         }
-        .modules-right {
-          margin-right: -15px;
-        }
-        .modules-left {
-          margin-left: -15px;
-        }
-        window#waybar.top {
-          color: #${colors.base05};
-          opacity: 1.0;
-          background-color: #${colors.base00};
-          border: 2px solid #${colors.base03};
-          padding: 0;
-        }
-        window#waybar.bottom {
+
+        window#waybar {
           color: #${colors.base05};
           background-color: #${colors.base00};
-          border: 2px solid #${colors.base03};
-          opacity: 1.0;
+          border-bottom: 1px solid #${colors.base03};
         }
+
+        tooltip {
+          background: #${colors.base00};
+          border: 1px solid #${colors.base03}; 
+        }
+
         #workspaces button {
-          border-radius: 4px;
+          padding: 0 5px;
           background-color: #${colors.base01};
-          border-top: 2px solid #${colors.base03};
-          border-bottom: 2px solid #${colors.base03};
           color: #${colors.base05};
         }
+
         #workspaces button.hidden {
           background-color: #${colors.base00};
           color: #${colors.base05};
         }
+
         #workspaces button.focused,
         #workspaces button.active {
           background-color: #${colors.base0D};
           color: #${colors.base00};
         }
-        #clock {
-          margin-right: 0.5px;
-        }
+
         #custom-separator {
-          color: #${colors.base04};
-          margin-left: 0.5px;
+          color: #${colors.base03};
+          padding: 0 5px;
+        }
+
+        #tray {
+          padding: 0 5px;
         }
       '';
   };

@@ -1,4 +1,10 @@
-{ lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, ... }: {
+
+  home.packages = with pkgs; [
+    inputs.hyprwm-contrib.packages.${system}.grimblast
+    swaybg
+  ];
+
   wayland.windowManager.hyprland =
     let
       inherit (config.colorscheme) colors;
@@ -82,15 +88,12 @@
         # Startup
         exec-once=waybar
         exec-once=${mako}
+        exec=swaybg -c '#333333'
 
         # Rules
-        windowrule=float,workspace 2,Slack
-        windowrule=float,workspace 3,firefox
-        windowrule=float,workspace 4,Spotify
         windowrule=float,title:.*Zoom.*
         windowrule=float,title:.*zoom.*
         windowrule=float,title:Chat
-        windowrule=float,foot
         windowrule=float,foot:floating
         windowrule=float,pavucontrol
 
@@ -99,8 +102,8 @@
         bindm=SUPER,mouse:273,resizewindow
 
         # Program bindings
-        bind=SUPER,Return,exec,foot
-        bind=SUPERSHIFT,Return,exec,foot -a foot:floating
+        bind=SUPER,Return,exec,footclient
+        bind=SUPERSHIFT,Return,exec,footclient -a foot:floating
         bind=SUPER,Space,exec,wofi -S run
         bind=SUPER,d,exec,firefox
         bind=SUPER,o,exec,obsidian
@@ -108,7 +111,7 @@
         bind=SUPERSHIFT,s,exec,slack
         bind=SUPER,v,exec,pavucontrol
         bind=SUPERCONTROL,s,exec,spotify
-        bind=SUPERSHIFT,d,exec,discocss
+        bind=SUPERSHIFT,d,exec,discord
         bind=SUPER,e,exec,xdg-open 'slack://channel?team=T024JFTN4&id=GHMTDF91B'
 
         # Screenshots
