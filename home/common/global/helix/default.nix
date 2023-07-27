@@ -30,6 +30,7 @@ in
 
       editor = {
         bufferline = "always";
+        undercurl = true;
         color-modes = true;
         line-number = "absolute";
         indent-guides.render = true;
