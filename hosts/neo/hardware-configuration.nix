@@ -150,6 +150,7 @@ in
 
   hardware.enableAllFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
+  hardware.opengl.enable = true;
   nixpkgs.hostPlatform.system = "x86_64-linux";
 
   # Bluetooth
