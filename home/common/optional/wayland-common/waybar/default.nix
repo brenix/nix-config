@@ -141,7 +141,7 @@ in
         window#waybar {
           color: #${colors.base05};
           background-color: #${colors.base00};
-          border-bottom: 1px solid #${colors.base03};
+          /* border-bottom: 1px solid #${colors.base03}; */
         }
 
         tooltip {
@@ -168,7 +168,7 @@ in
 
         #custom-separator {
           color: #${colors.base03};
-          padding: 0 5px;
+          padding: 0 10px;
         }
 
         #tray {

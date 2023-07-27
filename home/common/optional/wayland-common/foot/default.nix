@@ -5,7 +5,7 @@ in
 {
   programs.foot = {
     enable = true;
-    server.enable = true;
+    server.enable = false;
     settings = {
       main = {
         term = "xterm-256color";
@@ -13,7 +13,7 @@ in
         # font-bold = "${config.fontProfiles.monospace.family}:pixelsize=15";
         font = "Terminus:pixelsize=14";
         font-bold = "Terminus:pixelsize=14";
-        # dpi-aware = "auto";
+        dpi-aware = "yes";
         line-height = "14px";
         # vertical-letter-offset = "-1";
       };
