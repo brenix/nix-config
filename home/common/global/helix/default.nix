@@ -112,6 +112,14 @@ in
           };
         }
         {
+          # TODO: Disable terraform LSP but keep formatting until performance issues are resolved
+          name = "hcl";
+          auto-format = true;
+          language-server = {
+            command = "";
+          };
+        }
+        {
           name = "json";
           auto-format = true;
           language-server = {

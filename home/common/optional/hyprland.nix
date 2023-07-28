@@ -88,7 +88,7 @@
         # Startup
         exec-once=waybar
         exec-once=${mako}
-        exec=${swaybg} -c '#333333'
+        exec=${swaybg} -c "#333333"
 
         # Rules
         windowrule=float,title:.*Zoom.*
