@@ -8,7 +8,6 @@
     let
       inherit (config.colorscheme) colors;
       mako = "${pkgs.mako}/bin/mako";
-      swaybg = "${pkgs.swaybg}/bin/swaybg";
     in
     {
       enable = true;
@@ -75,6 +74,7 @@
 
         misc {
           vfr=on
+          disable_hyprland_logo=true
         }
 
         input {
@@ -88,7 +88,6 @@
         # Startup
         exec-once=waybar
         exec-once=${mako}
-        exec=${swaybg} -c "#333333"
 
         # Rules
         windowrule=float,title:.*Zoom.*
