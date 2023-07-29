@@ -16,7 +16,6 @@
     ../common/optional/podman.nix
     ../common/optional/systemd-boot.nix
     # ../common/optional/xserver.nix
-    ../common/optional/bpftune.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;

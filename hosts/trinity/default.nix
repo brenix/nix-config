@@ -11,7 +11,6 @@
     ../common/optional/ananicy.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/auto-upgrade.nix
-    ../common/optional/bpftune.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;

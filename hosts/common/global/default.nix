@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    ./bpftune.nix
     ./fish.nix
     ./locale.nix
     ./nix.nix
