@@ -76,6 +76,7 @@ in
         p = "paste_clipboard_before";
         space.Q = ":q!";
         space.W = ":w!";
+        space.e = "file_picker_in_current_buffer_directory";
         space.f = ":format";
         space.l = ":toggle lsp.display-inlay-hints";
         space.minus = ":hsplit-new";
