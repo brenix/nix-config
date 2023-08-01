@@ -72,7 +72,7 @@ in
         D = [ "extend_to_line_end" "delete_selection" ];
         G = "goto_file_end";
         esc = [ "collapse_selection" "keep_primary_selection" ];
-        minus = "file_picker";
+        minus = "file_picker_in_current_buffer_directory";
         p = "paste_clipboard_before";
         space.Q = ":q!";
         space.W = ":w!";
@@ -112,14 +112,14 @@ in
             args = [ "-local" "gitlab.eng" ];
           };
         }
-        {
-          # TODO: Disable terraform LSP but keep formatting until performance issues are resolved
-          name = "hcl";
-          auto-format = true;
-          language-server = {
-            command = "";
-          };
-        }
+        # {
+        #   # TODO: Disable terraform LSP but keep formatting until performance issues are resolved
+        #   name = "hcl";
+        #   auto-format = true;
+        #   language-server = {
+        #     command = "";
+        #   };
+        # }
         {
           name = "json";
           auto-format = true;

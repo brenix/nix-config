@@ -9,12 +9,12 @@ in
     settings = {
       main = {
         term = "xterm-256color";
-        # font = "${config.fontProfiles.monospace.family}:pixelsize=15";
-        # font-bold = "${config.fontProfiles.monospace.family}:pixelsize=15";
-        font = "Terminus:pixelsize=14";
-        font-bold = "Terminus:pixelsize=14";
+        font = "${config.fontProfiles.monospace.family}:pixelsize=15";
+        font-bold = "${config.fontProfiles.monospace.family}:pixelsize=15";
+        # font = "Terminus:pixelsize=14";
+        # font-bold = "Terminus:pixelsize=14";
         dpi-aware = "yes";
-        line-height = "14px";
+        line-height = "15px";
         # vertical-letter-offset = "-1";
       };
 
