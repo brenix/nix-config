@@ -11,11 +11,12 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-colors.url = "github:misterio77/nix-colors";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixvim.url = "github:nix-community/nixvim";
     nur.url = "github:nix-community/NUR";
     sops-nix = { url = "github:mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
 
-  outputs = { self, nixpkgs, home-manager, chaotic, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, chaotic, nixvim, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;

@@ -3,6 +3,7 @@
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
     inputs.nix-colors.homeManagerModule
+    inputs.nixvim.homeManagerModules.nixvim
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   programs.home-manager.enable = true;
