@@ -101,7 +101,6 @@
 
       luasnip = {
         enable = true;
-
         fromVscode = [
           {
             lazyLoad = true;
@@ -219,6 +218,7 @@
       nvim-autopairs = { enable = true; };
       comment-nvim = { enable = true; };
       lualine = { enable = true; };
+      nvim-colorizer.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins;  [
