@@ -37,8 +37,8 @@
     "string" = "base0B";
     "type" = "base0A";
     "ui.background" = { bg = "base00"; };
-    "ui.bufferline" = { fg = "base04"; bg = "base00"; };
-    "ui.bufferline.active" = { fg = "base00"; bg = "base03"; modifiers = [ "bold" ]; };
+    "ui.bufferline" = { fg = "base03"; bg = "base00"; };
+    "ui.bufferline.active" = { fg = "base05"; bg = "base02"; modifiers = [ "bold" ]; };
     "ui.cursor" = { fg = "base04"; modifiers = [ "reversed" ]; };
     "ui.cursor.insert" = { fg = "base0A"; modifiers = [ "underlined" ]; };
     "ui.cursor.match" = { fg = "base0A"; modifiers = [ "underlined" ]; };
@@ -54,10 +54,10 @@
     "ui.popup" = { bg = "base01"; };
     "ui.selection" = { bg = "base02"; };
     "ui.selection.primary" = { bg = "base02"; };
-    "ui.statusline" = { fg = "base0B"; bg = "base02"; };
+    "ui.statusline" = { fg = "base04"; bg = "base01"; };
     "ui.statusline.inactive" = { bg = "base01"; fg = "base02"; };
     "ui.statusline.insert" = { fg = "base00"; bg = "base0B"; };
-    "ui.statusline.normal" = { fg = "base00"; bg = "base04"; };
+    "ui.statusline.normal" = { fg = "base00"; bg = "base0D"; };
     "ui.statusline.select" = { fg = "base00"; bg = "base0E"; };
     "ui.text" = "base05";
     "ui.text.focus" = "base05";

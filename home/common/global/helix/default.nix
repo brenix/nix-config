@@ -52,17 +52,21 @@ in
           snippets = true;
         };
         statusline = {
-          left = [ "mode" "spinner" ];
+          left = [ "mode" "version-control" "spinner" ];
           center = [ "file-name" ];
           right = [
             "diagnostics"
-            "selections"
+            "separator"
             "position"
-            "file-encoding"
-            "file-line-ending"
+            "separator"
             "file-type"
           ];
           separator = "│";
+          mode = {
+            "normal" = "NORMAL";
+            "insert" = "INSERT";
+            "select" = "SELECT";
+          };
         };
       };
 
