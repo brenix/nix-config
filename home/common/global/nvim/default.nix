@@ -45,7 +45,6 @@
 
     extraFiles = {
       "colors/nix-${config.colorscheme.slug}.vim" = import ./theme.nix config.colorscheme;
-      
     };
 
     # -- COLORSCHEME -- #
@@ -101,6 +100,7 @@
     plugins = {
       nvim-cmp = {
         enable = true;
+        autoEnableSources = true;
         performance = {
           debounce = 150;
         };
@@ -114,15 +114,15 @@
             action = ''
               function(fallback)
                 if cmp.visible() then
-                cmp.select_next_item()
-              elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              elseif has_words_before() then
-                cmp.complete()
-              else
-                fallback()
+                  cmp.select_next_item()
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+                elseif has_words_before() then
+                  cmp.complete()
+                else
+                  fallback()
+                end
               end
-            end
             '';
           };
           "<S-Tab>" = {
@@ -140,12 +140,6 @@
             '';
           };
         };
-        sources = [
-          { name = "nvim_lsp"; }
-          { name = "path"; }
-          { name = "emoji"; }
-          { name = "buffer"; }
-        ];
       };
       cmp-buffer.enable = true;
       cmp-emoji.enable = true;
@@ -187,6 +181,7 @@
       lsp = {
         enable = true;
         keymaps = {
+          silent = true;
           lspBuf = {
             gr = "references";
             gd = "definition";
@@ -195,12 +190,14 @@
 
         servers = {
           bashls.enable = true;
-          gopls.enable = true;
+          html.enable = true;
+          cssls.enable = true;
           jsonls.enable = true;
           nil_ls.enable = true;
           pylsp.enable = true;
           terraformls.enable = true;
           yamlls.enable = true;
+          gopls.enable = true;
         };
       };
 
