@@ -64,7 +64,7 @@
 
     maps = {
       normal = {
-        "-" = { silent = true; action = ":NvimTreeFindFileToggle<CR>"; };
+        "-" = { silent = true; action = ":NvimTreeFindFile<CR>"; };
         "<C-p>" = { silent = true; action = "[[<CMD>lua require('telescope').extensions.project.project{}<CR>]]"; };
         "<S-Tab>" = { silent = true; action = "[[<CMD>BufferLineCyclePrev<CR>]]"; };
         "<Tab>" = { silent = true; action = "[[<CMD>BufferLineCycleNext<CR>]]"; };
@@ -104,7 +104,7 @@
           debounce = 150;
         };
         preselect = "None";
-        mappingPresets = [ "insert" "cmdline" ];
+        mappingPresets = [ "insert" ];
         mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
           "<CR>" = "cmp.mapping.confirm({ select = false })";
@@ -137,7 +137,6 @@
         };
         sources = [
           { name = "nvim_lsp"; }
-          { name = "luasnip"; }
           { name = "path"; }
           { name = "emoji"; }
           { name = "buffer"; }
@@ -209,7 +208,12 @@
       };
       nvim-tree = {
         enable = true;
-
+        reloadOnBufenter = true;
+        renderer = {
+          highlightGit = true;
+          specialFiles = [ "" ];
+          rootFolderLabel = ":~";
+        };
       };
       project-nvim = { enable = true; };
       trouble = { enable = true; };
