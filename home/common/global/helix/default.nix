@@ -88,6 +88,7 @@ in
         space.space = "file_picker";
         space.v = ":vsplit-new";
         space.w = ":w";
+        tab = "goto_next_buffer";
         y = "yank_main_selection_to_clipboard";
       };
 
