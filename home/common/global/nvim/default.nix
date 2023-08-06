@@ -98,29 +98,12 @@
 
     # -- PLUGINS -- #
     plugins = {
-
-      luasnip = {
-        enable = true;
-        fromVscode = [
-          {
-            lazyLoad = true;
-          }
-          {
-            lazyLoad = true;
-            paths = [
-              ./snippets
-            ];
-          }
-        ];
-      };
-
       nvim-cmp = {
         enable = true;
         performance = {
           debounce = 150;
         };
         preselect = "None";
-        snippet.expand = "luasnip";
         mappingPresets = [ "insert" "cmdline" ];
         mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
@@ -128,11 +111,9 @@
           "<Tab>" = {
             modes = [ "i" "s" ];
             action = ''
-                function(fallback)
-                  if cmp.visible() then
+              function(fallback)
+                if cmp.visible() then
                   cmp.select_next_item()
-                elseif luasnip.expand_or_jumpable() then
-                  luasnip.expand_or_jump()
                 elseif has_words_before() then
                   cmp.complete()
                 else
@@ -146,9 +127,7 @@
             action = ''
               function(fallback)
                 if cmp.visible() then
-                cmp.select_prev_item()
-                elseif luasnip.jumpable(-1) then
-                  luasnip.jump(-1)
+                  cmp.select_prev_item()
                 else
                   fallback()
                 end
@@ -176,8 +155,23 @@
 
       lspkind = { enable = true; cmp.enable = true; };
       indent-blankline.enable = true;
-      lightline = { enable = true; };
+      lualine = {
+        enable = true;
+        sectionSeparators = { left = ""; right = ""; };
+        componentSeparators = { left = ""; right = ""; };
+        sections = {
+          lualine_a = [ "mode" ];
+          lualine_b = [ "branch" ];
+          lualine_c = [ "diagnostics" "filename" ];
+          lualine_x = [ "encoding" "fileformat" "filetype" ];
+          lualine_y = [ "progress" ];
+          lualine_z = [ "location" ];
+        };
+        extensions = [ "nvim-tree" "quickfix" ];
+      };
+
       gitsigns = { enable = true; };
+
       telescope = {
         enable = true;
         extensions = {
@@ -210,14 +204,18 @@
 
       bufferline = {
         enable = true;
+        tabSize = 25;
+        enforceRegularTabs = true;
       };
-      nvim-tree = { enable = true; };
+      nvim-tree = {
+        enable = true;
+
+      };
       project-nvim = { enable = true; };
       trouble = { enable = true; };
       todo-comments = { enable = true; };
       nvim-autopairs = { enable = true; };
       comment-nvim = { enable = true; };
-      lualine = { enable = true; };
       nvim-colorizer.enable = true;
     };
 
