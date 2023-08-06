@@ -52,7 +52,7 @@ in
           snippets = true;
         };
         statusline = {
-          left = [ "mode" "version-control" "spinner" ];
+          left = [ "mode" "spacer" "version-control" "spacer" "spinner" ];
           center = [ "file-name" ];
           right = [
             "diagnostics"
@@ -114,6 +114,10 @@ in
           formatter = {
             command = "${gotools}/bin/goimports";
             args = [ "-local" "gitlab.eng" ];
+          };
+          indent = {
+            tab-width = 2;
+            unit = "\t";
           };
         }
         # {
