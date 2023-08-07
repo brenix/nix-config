@@ -5,7 +5,7 @@
       sysctl = {
         # The BBR congestion control algorithm can help achieve higher bandwidths and lower latencies for internet traffic
         "net.core.default_qdisc" = "cake";
-        "net.ipv4.tcp_congestion_control" = "bbr2";
+        "net.ipv4.tcp_congestion_control" = "bbr";
 
         # TCP Fast Open is an extension to the transmission control protocol (TCP) that helps reduce network latency
         # by enabling data to be exchanged during the sender’s initial TCP SYN [3].
