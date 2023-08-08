@@ -52,16 +52,21 @@ in
           snippets = true;
         };
         statusline = {
-          left = [ "mode" "spacer" "version-control" "spacer" "spinner" ];
-          center = [ "file-name" ];
+          left = [
+            "mode"
+            "spacer"
+            "version-control"
+            "spacer"
+            "spinner"
+          ];
+          center = [
+            "file-name"
+          ];
           right = [
             "diagnostics"
-            "separator"
             "position"
-            "separator"
             "file-type"
           ];
-          separator = "│";
           mode = {
             "normal" = "NORMAL";
             "insert" = "INSERT";
@@ -77,7 +82,7 @@ in
         G = "goto_file_end";
         esc = [ "collapse_selection" "keep_primary_selection" ];
         minus = "file_picker_in_current_buffer_directory";
-        p = "paste_clipboard_before";
+        p = "paste_clipboard_after";
         space.Q = ":q!";
         space.W = ":w!";
         space.e = "file_picker_in_current_buffer_directory";
