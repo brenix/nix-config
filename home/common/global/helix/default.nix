@@ -98,7 +98,11 @@ in
         space.x = ":buffer-close";
         tab = "goto_next_buffer";
         "S-tab" = "goto_previous_buffer";
-        # y = "yank_main_selection_to_clipboard";
+        "C-h" = "jump_view_left";
+        "C-j" = "jump_view_down";
+        "C-k" = "jump_view_up";
+        "C-l" = "jump_view_right";
+        y = "yank_main_selection_to_clipboard";
       };
 
       keys.insert = {
