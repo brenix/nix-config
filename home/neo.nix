@@ -9,11 +9,11 @@
     ./common/optional/gpg.nix
     ./common/optional/kubernetes-tools.nix
     ./common/optional/music.nix
-    ./common/optional/hyprland.nix
+    ./common/optional/openbox.nix
     ./common/optional/slack.nix
     ./common/optional/sre-tools
     ./common/optional/wootility.nix
-    ./common/optional/wayland-common
+    ./common/optional/xorg-common
     ./common/optional/zoom.nix
   ];
 
