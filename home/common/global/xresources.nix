@@ -4,10 +4,10 @@ let
   inherit (config.colorscheme) colors;
 in
 {
-  xresources.properties."*.font" = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*";
-  xresources.properties."*.boldFont" = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*";
-  xresources.properties."*.lineSpace" = 0;
-  xresources.properties."*.letterSpace" = 0;
+  # xresources.properties."*.font" = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*";
+  # xresources.properties."*.boldFont" = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*";
+  xresources.properties."*.font" = "xft:${config.fontProfiles.monospace.family}:size=10:antialias=true:hinting=true";
+  xresources.properties."*.boldFont" = "xft:${config.fontProfiles.monospace.family}:size=10:antialias=true:hinting=true";
   xresources.properties."*.background" = "#${colors.base00}";
   xresources.properties."*.base00" = "#${colors.base00}";
   xresources.properties."*.base01" = "#${colors.base01}";
