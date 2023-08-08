@@ -91,6 +91,7 @@ in
         space.minus = ":hsplit-new";
         space.q = ":q";
         space.space = "file_picker";
+        space.t = ":toggle-option auto-format";
         space.v = ":vsplit-new";
         space.w = ":w";
         space.x = ":buffer-close";
