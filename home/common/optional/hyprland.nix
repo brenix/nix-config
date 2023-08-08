@@ -2,6 +2,7 @@
 
   home.packages = with pkgs; [
     inputs.hyprwm-contrib.packages.${system}.grimblast
+    swaybg
   ];
 
   wayland.windowManager.hyprland =
@@ -88,12 +89,14 @@
         # Startup
         exec-once=waybar
         exec-once=${mako}
+        exec-once=swaybg -i ~/downloads/wallpaper.jpg
 
         # Rules
         windowrule=float,title:.*Zoom.*
         windowrule=float,title:.*zoom.*
         windowrule=float,title:Chat
         windowrule=float,foot:floating
+        windowrule=opacity 0.95 0.85,foot
         windowrule=float,pavucontrol
 
         # Mouse binding
