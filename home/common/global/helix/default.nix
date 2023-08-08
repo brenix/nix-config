@@ -89,6 +89,7 @@ in
         space.f = ":format";
         space.l = ":toggle lsp.display-inlay-hints";
         space.minus = ":hsplit-new";
+        space.n = ":new";
         space.q = ":q";
         space.space = "file_picker";
         space.t = ":toggle-option auto-format";
@@ -97,11 +98,12 @@ in
         space.x = ":buffer-close";
         tab = "goto_next_buffer";
         "S-tab" = "goto_previous_buffer";
-        y = "yank_main_selection_to_clipboard";
+        # y = "yank_main_selection_to_clipboard";
       };
 
       keys.insert = {
         esc = [ "collapse_selection" "normal_mode" ];
+        "C-space" = "completion";
       };
     };
 
@@ -129,14 +131,6 @@ in
             unit = "\t";
           };
         }
-        # {
-        #   # TODO: Disable terraform LSP but keep formatting until performance issues are resolved
-        #   name = "hcl";
-        #   auto-format = true;
-        #   language-server = {
-        #     command = "";
-        #   };
-        # }
         {
           name = "json";
           auto-format = true;
