@@ -13,7 +13,7 @@
     ./man-pages.nix
     ./nix-index.nix
     ./nix.nix
-    ./nvim
+    # ./nvim
     ./rbw.nix
     ./services.nix
     ./ssh.nix
