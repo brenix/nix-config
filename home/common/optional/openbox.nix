@@ -8,7 +8,7 @@ in
   ];
 
   xdg.configFile."openbox/autostart".text = ''
-    "${pkgs.feh}/bin/feh --bg-scale ~/downloads/wallpaper.jpg"
+    ${pkgs.feh}/bin/feh --bg-scale ~/downloads/wallpaper.jpg
   '';
 
   xdg.configFile."openbox/rc.xml".text = ''
