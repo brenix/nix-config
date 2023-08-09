@@ -7,12 +7,4 @@
     ./rofi
     ./unclutter.nix
   ];
-
-  programs.urxvt = {
-    enable = true;
-    extraConfig = {
-      scrollBar = false;
-      urlLauncher = "firefox";
-    };
-  };
 }
