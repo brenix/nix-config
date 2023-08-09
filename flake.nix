@@ -5,6 +5,7 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
     hardware.url = "github:nixos/nixos-hardware";
+    helix-master.url = "github:helix-editor/helix";
     home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
     impermanence.url = "github:nix-community/impermanence";
