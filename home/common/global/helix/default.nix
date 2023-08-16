@@ -24,7 +24,7 @@ in
 
   programs.helix = {
     enable = true;
-    package = inputs.helix-master.packages.${pkgs.system}.default;
+    # package = inputs.helix-master.packages.${pkgs.system}.default;
 
     settings = {
       theme = colorscheme.slug;
@@ -115,13 +115,63 @@ in
     themes = import ./theme.nix { inherit colorscheme; };
 
     # -- HELIX (master)
+    # languages = with pkgs; {
+    #   lanaguage-server = {
+    #     vscode-json-language-server = {
+    #       command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
+    #       args = [ "--stdio" ];
+    #     };
+    #   };
+    #   language = [
+    #     {
+    #       name = "bash";
+    #       auto-format = true;
+    #       formatter = {
+    #         command = "${shfmt}/bin/shfmt";
+    #         args = [ "-i" "2" "-ci" ];
+    #       };
+    #     }
+    #     {
+    #       name = "go";
+    #       auto-format = true;
+    #       formatter = {
+    #         command = "${gotools}/bin/goimports";
+    #         args = [ "-local" "gitlab.eng" ];
+    #       };
+    #       indent = {
+    #         tab-width = 2;
+    #         unit = "\t";
+    #       };
+    #     }
+    #     {
+    #       name = "json";
+    #       auto-format = true;
+    #       formatter = {
+    #         command = "${nodePackages.fixjson}/bin/fixjson";
+    #       };
+    #     }
+    #     {
+    #       name = "markdown";
+    #       auto-format = true;
+    #       formatter = {
+    #         command = "${deno}/bin/deno";
+    #         args = [ "fmt" "-" "--ext" "md" ];
+    #       };
+    #     }
+    #     {
+    #       name = "nix";
+    #       auto-format = true;
+    #       formatter = {
+    #         command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
+    #       };
+    #     }
+    #   ];
+    # };
+
+
+    # -- HELIX 23.05
+
     languages = with pkgs; {
-      lanaguage-server = {
-        vscode-json-language-server = {
-          command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
-          args = [ "--stdio" ];
-        };
-      };
       language = [
         {
           name = "bash";
@@ -146,6 +196,10 @@ in
         {
           name = "json";
           auto-format = true;
+          language-server = {
+            command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
+            args = [ "--stdio" ];
+          };
           formatter = {
             command = "${nodePackages.fixjson}/bin/fixjson";
           };
@@ -167,59 +221,5 @@ in
         }
       ];
     };
-
-
-    # -- HELIX 23.05
-
-    #   languages = with pkgs; {
-    #     language = [
-    #       {
-    #         name = "bash";
-    #         auto-format = true;
-    #         formatter = {
-    #           command = "${shfmt}/bin/shfmt";
-    #           args = [ "-i" "2" "-ci" ];
-    #         };
-    #       }
-    #       {
-    #         name = "go";
-    #         auto-format = true;
-    #         formatter = {
-    #           command = "${gotools}/bin/goimports";
-    #           args = [ "-local" "gitlab.eng" ];
-    #         };
-    #         indent = {
-    #           tab-width = 2;
-    #           unit = "\t";
-    #         };
-    #       }
-    #       {
-    #         name = "json";
-    #         auto-format = true;
-    #         language-server = {
-    #           command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
-    #           args = [ "--stdio" ];
-    #         };
-    #         formatter = {
-    #           command = "${nodePackages.fixjson}/bin/fixjson";
-    #         };
-    #       }
-    #       {
-    #         name = "markdown";
-    #         auto-format = true;
-    #         formatter = {
-    #           command = "${deno}/bin/deno";
-    #           args = [ "fmt" "-" "--ext" "md" ];
-    #         };
-    #       }
-    #       {
-    #         name = "nix";
-    #         auto-format = true;
-    #         formatter = {
-    #           command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
-    #         };
-    #       }
-    #     ];
-    #   };
   };
 }
