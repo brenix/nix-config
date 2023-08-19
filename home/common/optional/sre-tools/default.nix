@@ -14,6 +14,7 @@
     gomplate
     graphviz
     jwt-cli
+    markdownlint-cli
     openssl
     packer
     parallel
