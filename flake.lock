@@ -111,11 +111,11 @@
         "yuzu-ea-git-src": "yuzu-ea-git-src"
       },
       "locked": {
-        "lastModified": 1692878962,
-        "narHash": "sha256-lp8EwsrYZ8IDitIqiGuaGKUCwLKA7P9G0sLWYMVoIww=",
+        "lastModified": 1692961598,
+        "narHash": "sha256-rdnJ9DIgXBzWBgqM3NuO/5QTXjuvN6xMj9EN4W6hXPI=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "e4002b6866536c0096b00e2c0eca3f371ad919a7",
+        "rev": "b7acd1a7430e437d509740c0993b8ad97c450988",
         "type": "github"
       },
       "original": {
@@ -383,11 +383,11 @@
     },
     "hardware": {
       "locked": {
-        "lastModified": 1692373088,
-        "narHash": "sha256-EPgCecdc9I8aTdmDNoO1l7R72r2WPhZRcesV4nzxBj8=",
+        "lastModified": 1692952286,
+        "narHash": "sha256-TsrtPv3+Q1KR0avZxpiJH+b6fX/R/hEQVHbjl1ebotY=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "7f1836531b126cfcf584e7d7d71bf8758bb58969",
+        "rev": "817e297fc3352fadc15f2c5306909aa9192d7d97",
         "type": "github"
       },
       "original": {
@@ -567,11 +567,11 @@
     "mesa-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1692869934,
-        "narHash": "sha256-muLFeEnQkfst2JONd36a/TSRQPyCT8iDOgH/Ny/2MFQ=",
+        "lastModified": 1692955377,
+        "narHash": "sha256-dFs/mm2LOl5Mv3VQyqPsRTdBLqhuDwx53Kpe1LXjHJA=",
         "owner": "chaotic-cx",
         "repo": "mesa-mirror",
-        "rev": "5ceba97c2e18c848beb23016a7b4c190f0f5178b",
+        "rev": "d693027a00fe5f2cf2b9548b69b50078ec0113be",
         "type": "github"
       },
       "original": {
@@ -761,11 +761,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1692810601,
-        "narHash": "sha256-vUO8VDpe/cSZvuTYsnvYRo1lK9DAY+lvwzEeF3EbMVk=",
+        "lastModified": 1692894136,
+        "narHash": "sha256-hV5i7SaHnx3WDouQpubzwM38ahLofd85EibwCOYuRuI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ff67dad5711efe6daf0b1a0038b17093617ae502",
+        "rev": "7dd4b0ab51123c9c11880199c5c1b6fba8bd194d",
         "type": "github"
       },
       "original": {
@@ -799,11 +799,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1692876635,
-        "narHash": "sha256-P8kHKXD7rpKdPJ7phGkLjhmG/pzbxOwLyL1Dpu50vBA=",
+        "lastModified": 1692970495,
+        "narHash": "sha256-mn1/ZodLyINFOZEbSR7A2CH3RBzEQOGX8kx01PddKM0=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "1cc77f425218a0250582ab2798799909dd36b123",
+        "rev": "b8c3385599e90f1252eb3318dd00dd763dcc56f6",
         "type": "github"
       },
       "original": {
@@ -814,11 +814,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1692881861,
-        "narHash": "sha256-8yWfUWEHpbshP0UWC0pExQgaQwP02lUQlxPVJDLw3uQ=",
+        "lastModified": 1692974449,
+        "narHash": "sha256-R2DKGdOtcse8Ck+lJq0EHsKrOcQ60Krbn7ai0KttL4k=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8009360e1aea4d302ec22f9149bc5687dd938f25",
+        "rev": "1dc48cf3da10cd19767a1133239b6937627c1d60",
         "type": "github"
       },
       "original": {
@@ -937,11 +937,11 @@
     "sway-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1692814693,
-        "narHash": "sha256-KqIda5fjjg/V+ihRCXdD+kWownvDxtJZ1nGw9RwKpGY=",
+        "lastModified": 1692894442,
+        "narHash": "sha256-CZ4BkQ5JfrpTu+nyFmZygYYd69182uSPH2Q2M5YSLY8=",
         "owner": "swaywm",
         "repo": "sway",
-        "rev": "d84b3832f4616ee2a18f3ad4c0cd9cd996458d2c",
+        "rev": "4a2210577c7c4f84a99ca03386b8910d2f419ab6",
         "type": "github"
       },
       "original": {
@@ -1065,11 +1065,11 @@
     "yt-dlp-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1692552349,
-        "narHash": "sha256-G99hu33ymasgJwJL4xTD8Esnx89ckopxaXxLxhVTJKk=",
+        "lastModified": 1692947444,
+        "narHash": "sha256-ousX1Jq5WUKiY6m7i2by487ldKHabH/rfDKS16YiPLs=",
         "owner": "yt-dlp",
         "repo": "yt-dlp",
-        "rev": "7cccab79e7d00ed965b48b8cefce1da8a0513409",
+        "rev": "fcd6a76adc49d5cd8783985c7ce35384b72e545f",
         "type": "github"
       },
       "original": {
@@ -1082,11 +1082,11 @@
     "yuzu-ea-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1692738074,
-        "narHash": "sha256-5gJIi1dk72CrlevAEu81DVao/wmRcEiQe153nrZaiqM=",
+        "lastModified": 1692907886,
+        "narHash": "sha256-coCTOfKyB86kQRgA4I0dFEk5zxE/mQ94Cyy3eM9shrE=",
         "owner": "pineappleEA",
         "repo": "pineapple-src",
-        "rev": "e62fb0263cdcbd2995a3422fde69881552a93a92",
+        "rev": "979f3570e99959e510b55523c6789be8dc769102",
         "type": "github"
       },
       "original": {
