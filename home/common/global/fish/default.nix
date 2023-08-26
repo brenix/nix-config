@@ -13,6 +13,7 @@
     shellAbbrs = {
       ave = "aws-vault exec";
       bw = "rbw";
+      cm = "cellmate";
       docker = "podman";
       g = "git";
       k = "kubectl";
