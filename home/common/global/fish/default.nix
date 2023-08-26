@@ -14,6 +14,10 @@
       ave = "aws-vault exec";
       bw = "rbw";
       cm = "cellmate";
+      cmtp = "cellmate terraform plan";
+      cmta = "cellmate terraform apply";
+      cmtd = "cellmate terraform deploy";
+      cmsr = "cellmate sequence run";
       docker = "podman";
       g = "git";
       k = "kubectl";
