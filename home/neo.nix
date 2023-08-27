@@ -2,6 +2,7 @@
 {
   imports = [
     ./common/global
+    ./common/optional/bspwm.nix
     ./common/optional/desktop
     ./common/optional/development.nix
     ./common/optional/discord.nix
@@ -9,9 +10,9 @@
     ./common/optional/gpg.nix
     ./common/optional/kubernetes-tools.nix
     ./common/optional/music.nix
-    ./common/optional/openbox.nix
     ./common/optional/slack.nix
     ./common/optional/sre-tools
+    ./common/optional/sxhkd.nix
     ./common/optional/wootility.nix
     ./common/optional/xorg-common
     ./common/optional/zoom.nix
@@ -30,7 +31,7 @@
       enabled = true;
     }
     {
-      name = "HDMI-A-1";
+      name = "HDMI-1";
       isSecondary = true;
       width = 2560;
       height = 1440;

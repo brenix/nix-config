@@ -2,14 +2,15 @@
 {
   imports = [
     ./common/global
+    ./common/optional/bspwm.nix
     ./common/optional/desktop
     ./common/optional/development.nix
     ./common/optional/firefox.nix
     ./common/optional/gpg.nix
     ./common/optional/kubernetes-tools.nix
-    ./common/optional/openbox.nix
     ./common/optional/slack.nix
     ./common/optional/sre-tools
+    ./common/optional/sxhkd.nix
     ./common/optional/xorg-common
   ];
 

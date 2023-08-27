@@ -8,15 +8,15 @@
     autoRepeatInterval = 30;
 
     displayManager = {
-      defaultSession = "none+openbox";
+      defaultSession = "none+bspwm";
       autoLogin.enable = true;
       autoLogin.user = "brenix";
     };
 
     desktopManager.xterm.enable = false;
 
-    # windowManager = { bspwm.enable = true; };
-    windowManager = { openbox.enable = true; };
+    windowManager = { bspwm.enable = true; };
+    # windowManager = { openbox.enable = true; };
 
     libinput = {
       enable = true;
