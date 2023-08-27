@@ -1,13 +1,12 @@
 * {
-    color0: #161515;
+    color0: #0f0f0f;
     color1: #383737;
     color2: #3e3d3d;
     color3: #494747;
     color4: #a9a699;
-    color5: #c2beb0;
+    color5: #c2c2c2;
     color6: #d4cfc0;
     color7: #ebe6d5;
-    /* color8: #b76666; */
     color8: #ebe6d5;
     color9: #d59877;
     color10: #dcbb8c;
