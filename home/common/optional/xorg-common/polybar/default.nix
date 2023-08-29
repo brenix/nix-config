@@ -112,8 +112,8 @@ in
         label-focused-padding = 1;
         label-occupied-padding = 1;
         label-urgent-padding = 1;
-        label-focused-foreground = "\${colors.blue}";
-        # label-focused-background = "\${colors.bg-alt}";
+        label-focused-foreground = "\${colors.bg}";
+        label-focused-background = "\${colors.blue}";
         label-occupied-foreground = "\${colors.fg}";
         label-empty-foreground = "\${colors.fg}";
       };
