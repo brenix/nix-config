@@ -11,7 +11,7 @@
     ];
 
     shellAbbrs = {
-      ave = "aws-vault exec";
+      # ave = "aws-vault exec";
       bw = "rbw";
       cm = "cellmate";
       cmtp = "cellmate terraform plan";

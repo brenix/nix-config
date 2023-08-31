@@ -6,7 +6,7 @@
 
   home.packages = with pkgs; [
     awless
-    aws-vault
+    # aws-vault
     awscli2
     certigo
     chamber
