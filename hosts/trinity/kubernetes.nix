@@ -24,7 +24,7 @@ in
     masterAddress = "api.kubernetes";
 
     # Enable feature gates
-    featureGates = [ "MixedProtocolLBService" ];
+    # featureGates = [ "MixedProtocolLBService" ];
 
     # Allow privileged pods
     apiserver.allowPrivileged = true;
