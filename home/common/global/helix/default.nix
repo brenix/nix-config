@@ -28,7 +28,7 @@ in
 
     settings = {
       # theme = "nix-${colorscheme.slug}";
-      theme = "sonokai";
+      theme = "catppuccin_mocha";
 
       editor = {
         bufferline = "always";

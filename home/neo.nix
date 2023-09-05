@@ -74,6 +74,6 @@
     '';
   };
 
-  # colorscheme = inputs.nix-colors.colorSchemes.github;
-  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "sonokai" (builtins.readFile (./colorschemes/sonokai.yaml));
+  colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  # colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "catppuccin-mocha" (builtins.readFile (./colorschemes/catppuccin-mocha.yaml));
 }
