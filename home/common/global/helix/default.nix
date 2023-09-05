@@ -27,7 +27,8 @@ in
     # package = inputs.helix-master.packages.${pkgs.system}.default;
 
     settings = {
-      theme = colorscheme.slug;
+      # theme = "nix-${colorscheme.slug}";
+      theme = "sonokai";
 
       editor = {
         bufferline = "always";

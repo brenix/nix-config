@@ -24,7 +24,7 @@
       };
       git_branch = {
         format = "[\\[$branch\\] ]($style)";
-        style = "cyan";
+        style = "yellow";
       };
       git_status = {
         disabled = false;

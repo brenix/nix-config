@@ -1,5 +1,5 @@
 { colorscheme }: {
-  "${colorscheme.slug}" = {
+  "nix-${colorscheme.slug}" = {
     palette = builtins.mapAttrs (name: value: "#${value}") colorscheme.colors; # Add leading '#'
     "attributes" = "base09";
     "comment" = { fg = "base03"; modifiers = [ "italic" ]; };
