@@ -27,8 +27,8 @@ in
     # package = inputs.helix-master.packages.${pkgs.system}.default;
 
     settings = {
-      # theme = "nix-${colorscheme.slug}";
-      theme = "catppuccin_mocha";
+      theme = "nix-${colorscheme.slug}";
+      # theme = "catppuccin_mocha";
 
       editor = {
         bufferline = "always";

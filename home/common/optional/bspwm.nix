@@ -28,7 +28,7 @@
     };
 
     startupPrograms = [
-      "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#181825'"
+      "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#181818'"
     ];
 
     rules = {

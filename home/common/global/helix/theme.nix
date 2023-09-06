@@ -65,7 +65,8 @@
     "ui.virtual.ruler" = { bg = "base01"; };
     "ui.virtual.whitespace" = { fg = "base01"; };
     "ui.window" = { bg = "base01"; };
-    "variable" = "base08";
+    # "variable" = "base08";
+    "variable" = "base05";
     "variable.other.member" = "base08";
     "warning" = "base09";
   };

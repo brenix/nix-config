@@ -1,18 +1,18 @@
 scheme: "sonokai"
 slug: "sonokai"
-base00: "282c34" # black
-base01: "3b3e48" # darker grey
-base02: "414550" # dark grey
-base03: "595f6f" # grey
+base00: "0e0e0f" # black
+base01: "222327" # darker grey
+base02: "33353f" # dark grey
+base03: "414550" # grey
 base04: "7f8490" # light grey
-base05: "abb2bf" # bright grey
+base05: "acacad" # bright grey
 base06: "e2e2e3" # mostly white
-base07: "eeeeef" # white
+base07: "efefff" # white
 base08: "fc5d7c" # red
 base09: "f39660" # orange
 base0A: "e7c664" # yellow
 base0B: "9ed072" # green
-base0C: "f39660" # cyan
+base0C: "9ed072" # cyan
 base0D: "76cce0" # blue
 base0E: "b39df3" # magenta
 base0F: "4e432f" # brown

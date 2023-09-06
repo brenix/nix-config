@@ -74,6 +74,6 @@
     '';
   };
 
-  colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-  # colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "catppuccin-mocha" (builtins.readFile (./colorschemes/catppuccin-mocha.yaml));
+  # colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
 }

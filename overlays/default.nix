@@ -8,6 +8,12 @@
     # ...
     # });
 
+    # Enable pipewire in qemu until can be fixed upstream
+    # qemu = prev.qemu.overrideAttrs (oldAttrs: {
+    #   buildInputs = (oldAttrs.buildInputs or [ ]) ++ [ prev.pipewire ];
+    #   configureFlags = (oldAttrs.configureFlags or [ ]) ++ [ "--enable-pipewire" ];
+    # });
+
     # kitty = prev.kitty.overrideAttrs (_: {
     #   doCheck = false;
     #   doInstallCheck = false;
