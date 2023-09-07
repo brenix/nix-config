@@ -5,7 +5,6 @@
     ./common/optional/bspwm.nix
     ./common/optional/desktop
     ./common/optional/development.nix
-    ./common/optional/discord.nix
     ./common/optional/firefox.nix
     ./common/optional/gpg.nix
     ./common/optional/kubernetes-tools.nix
