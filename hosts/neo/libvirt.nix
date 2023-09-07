@@ -35,11 +35,12 @@
       ovmf.enable = true;
       runAsRoot = true;
       verbatimConfig = ''
-        security_driver = "none"
-        security_default_confined = 0
-        seccomp_sandbox = 0
         user = "brenix"
         group = "kvm"
+        namespaces = []
+        security_driver = []
+        security_default_confined = 0
+        seccomp_sandbox = 0
         cgroup_device_acl = [
           "/dev/null", "/dev/full", "/dev/zero",
           "/dev/random", "/dev/urandom",
