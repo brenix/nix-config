@@ -6,7 +6,6 @@
 
   home.packages = with pkgs; [
     awless
-    # aws-vault
     awscli2
     certigo
     chamber
@@ -27,9 +26,8 @@
   home.persistence = {
     "/persist/home/brenix" = {
       directories = [
-        ".aws"
-        ".awsvault"
         ".config/infractl"
+        ".vdp"
       ];
       allowOther = true;
     };
