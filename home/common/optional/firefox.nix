@@ -7,14 +7,20 @@ in
     enable = true;
     package = pkgs.firefox-beta;
     profiles.brenix = {
+      # https://github.com/nix-community/nur-combined/blob/master/repos/rycee/pkgs/firefox-addons/generated-firefox-addons.nix
       extensions = with addons; [
         bitwarden
         decentraleyes
         h264ify
+        refined-github
+        ublock-origin-lite
+        vimium
+
+        ## Not available yet:
         # i-still-dont-care-about-cookies
         # imagus
-        ublock-origin
-        vimium
+        # nzb-unity
+        # stylebot
       ];
       /* bookmarks = { }; */
       settings = {
