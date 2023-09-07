@@ -166,15 +166,7 @@
     <input type='keyboard' bus='virtio'>
       <address type='pci' domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
     </input>
-    <sound model='ich9'>
-      <codec type='micro'/>
-      <audio id='1'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
-    </sound>
-    <audio id='1' type='pulseaudio' serverName='/run/user/1000/pulse/native'>
-      <input mixingEngine='no'/>
-      <output mixingEngine='no'/>
-    </audio>
+    <audio id='1' type='none'/>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
         <address domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
@@ -215,6 +207,15 @@
     <qemu:arg value='16,sockets=1,dies=1,cores=8,threads=2'/>
     <qemu:arg value='-cpu'/>
     <qemu:arg value='host,+invtsc,+topoext,-x2apic,migratable=off,host-cache-info=on,kvm-asyncpf-int,hv-passthrough,hv-time,hv-relaxed,hv-spinlocks=0x1fff,hv-vpindex,hv-runtime,hv-frequencies,kvm=off,kvm-hint-dedicated=on,hv-no-nonarch-coresharing=on,hv-vapic=on,hv-synic=on,hv-stimer=on,hv-stimer-direct=on,hv-avic=on'/>
+    <qemu:arg value='-audiodev'/>
+    <qemu:arg value='pipewire,id=audio0'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='intel-hda,addr=0x1b'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='hda-duplex,audiodev=audio0'/>
+    <qemu:env name='PIPEWIRE_RUNTIME_DIR' value='/run/user/1000'/>
+    <qemu:env name='PIPEWIRE_LATENCY' value='512/48000'/>
+    <qemu:env name='LD_LIBRARY_PATH' value='$LD_LIBRARY_PATH:/run/current-system/sw/lib/pipewire'/>
   </qemu:commandline>
 </domain>
 
