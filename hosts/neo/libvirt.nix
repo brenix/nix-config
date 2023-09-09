@@ -3,7 +3,7 @@
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
-      #don't hook evdev at vm start
+      # Don't hook evdev at vm start
       package = pkgs.qemu_kvm.overrideAttrs (old: {
         patches =
           old.patches
@@ -28,9 +28,8 @@
                    return;
             '')
           ];
-        # TODO: remove after https://github.com/NixOS/nixpkgs/pull/253660 lands in unstable
-        buildInputs = old.buildInputs ++ [ pkgs.pipewire ];
-        configureFlags = old.configureFlags ++ [ "--enable-pipewire" ];
+        # buildInputs = old.buildInputs ++ [ pkgs.pipewire ];
+        # configureFlags = old.configureFlags ++ [ "--enable-pipewire" ];
       });
       ovmf.enable = true;
       runAsRoot = true;
