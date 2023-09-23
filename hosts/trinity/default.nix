@@ -13,7 +13,7 @@
     ../common/optional/auto-upgrade.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   networking.hostName = "trinity";
 
