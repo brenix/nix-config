@@ -27,6 +27,6 @@ in
     ];
   };
 
-  # Passwordless sudo when SSH'ing with keys
-  security.pam.enableSSHAgentAuth = true;
+  # FIXME: Passwordless sudo when SSH'ing with keys
+  # security.pam.enableSSHAgentAuth = true;
 }

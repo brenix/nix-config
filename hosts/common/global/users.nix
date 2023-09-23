@@ -4,7 +4,7 @@ in
 {
   users.mutableUsers = false;
   users.users.brenix = {
-    passwordFile = config.sops.secrets.brenix-password.path;
+    hashedPasswordFile = config.sops.secrets.brenix-password.path;
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = [
