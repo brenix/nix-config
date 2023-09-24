@@ -10,7 +10,6 @@ in
     settings = {
       PermitRootLogin = "yes";
       PasswordAuthentication = false;
-      # Automatically remove stale sockets
       StreamLocalBindUnlink = "yes";
     };
 
@@ -26,7 +25,4 @@ in
       }
     ];
   };
-
-  # FIXME: Passwordless sudo when SSH'ing with keys
-  # security.pam.enableSSHAgentAuth = true;
 }

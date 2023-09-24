@@ -108,7 +108,6 @@
 
   chaotic.mesa-git.enable = false;
   chaotic.appmenu-gtk3-module.enable = false;
-  # chaotic.nyx.overlay.onTopOf = "user-pkgs"; # FIXME: This defaults to `user-pkgs`, but causes nix to fail evaluation
   chaotic.nyx.overlay.enable = true;
 
   system.stateVersion = lib.mkDefault "22.11";
