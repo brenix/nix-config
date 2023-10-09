@@ -126,8 +126,8 @@ in
         hwmon-path =
           "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input";
         thermal-zone = 0;
-        base-temperature = 20;
-        warn-temperature = 60;
+        base-temperature = 40;
+        warn-temperature = 85;
         label = "%temperature-c%";
         label-warn = "%temperature-c%";
         label-warn-foreground = "\${colors.red}";
