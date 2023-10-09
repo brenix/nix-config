@@ -51,6 +51,8 @@
         ".local/bin"
         ".local/state/wireplumber"
         ".local/share/zoxide"
+        # ".steam"
+        # ".local/share/Steam"
         "nix-config"
       ];
       allowOther = true;

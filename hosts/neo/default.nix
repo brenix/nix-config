@@ -4,6 +4,7 @@
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
+    # inputs.hardware.nixosModules.common-gpu-nvidia
 
     ./hardware-configuration.nix
     ./libvirt.nix
@@ -14,6 +15,7 @@
     ../common/optional/openconnect.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
+    ../common/optional/steam.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/xserver.nix
   ];
@@ -33,6 +35,22 @@
 
   services.ratbagd.enable = true;
 
+  # hardware.nvidia = {
+  #   modesetting.enable = true;
+  #   powerManagement = {
+  #     enable = true;
+  #     finegrained = true;
+  #   };
+  #   prime = {
+  #     amdgpuBusId = "PCI:13:0:0";
+  #     nvidiaBusId = "PCI:14:0:0";
+  #     offload = {
+  #       enable = true;
+  #       enableOffloadCmd = true;
+  #     };
+  #   };
+  # };
+
   # environment.systemPackages = [ pkgs.cifs-utils ];
   # fileSystems."/mnt/share" = {
   #   device = "//192.168.1.10/downloads";
@@ -48,6 +66,7 @@
 
   services.xserver = {
     dpi = 108;
+    # videoDrivers = [ "amdgpu" "nvidia" ];
     displayManager = {
       sessionCommands = ''
         ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --mode 2560x1440

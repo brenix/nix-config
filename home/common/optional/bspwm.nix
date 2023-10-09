@@ -51,6 +51,12 @@
         desktop = "^2";
         focus = true;
       };
+      "Steam" = {
+        state = "floating";
+      };
+      "steam" = {
+        state = "floating";
+      };
       "Alacritty:floating" = {
         state = "floating";
       };
