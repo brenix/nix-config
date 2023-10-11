@@ -14,7 +14,7 @@ in
       publish = "!git push -u origin $(git branch-name)";
       unpublish = "!git push origin :$(git branch-name)";
       da =
-        "!git checkout main && git branch --no-color | grep -v 'main' | xargs -n 1 git branch -d";
+        "!git checkout main && git branch --no-color | grep -v 'main' | xargs -n 1 git branch -D";
     };
 
     delta = {
