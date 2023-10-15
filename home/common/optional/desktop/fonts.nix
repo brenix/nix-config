@@ -6,13 +6,13 @@
       # family = "Monaco Nerd Font";
       # package = pkgs.monaco;
 
-      # family = "MesloLGS Nerd Font Mono";
-      # package = pkgs.nerdfonts.override {
-      #   fonts = [ "Meslo" ];
-      # };
+      family = "JetBrainsMono Nerd Font Mono";
+      package = pkgs.nerdfonts.override {
+        fonts = [ "JetBrainsMono" ];
+      };
 
-      family = "Terminus";
-      package = pkgs.terminus_font;
+      # family = "Terminus";
+      # package = pkgs.terminus_font;
 
     };
     regular = {
