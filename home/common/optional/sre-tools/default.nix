@@ -10,7 +10,7 @@
     certigo
     chamber
     glab
-    gomplate
+    # gomplate
     graphviz
     jwt-cli
     markdownlint-cli
