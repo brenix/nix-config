@@ -156,7 +156,7 @@
       <source dev='/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse'/>
     </input>
     <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__WOOT_002_A02B2305W052H07682-if03-event-kbd' grab='all' repeat='on'/>
+      <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__A02B2305W052H07682-if03-event-kbd' grab='all' repeat='on'/>
     </input>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
