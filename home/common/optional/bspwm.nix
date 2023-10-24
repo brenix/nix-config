@@ -29,6 +29,7 @@
 
     startupPrograms = [
       "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#181818'"
+      "${pkgs.flameshot}/bin/flameshot"
       # "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#313244'"
       # "${pkgs.jamesdsp}/bin/jamesdsp -t -s"
     ];
