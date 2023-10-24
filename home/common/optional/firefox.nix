@@ -29,6 +29,7 @@
         "browser.zoom.full" = false;
         "datareporting.sessions.current.clean" = true;
         "devtools.onboarding.telemetry.logged" = false;
+        "dom.iframe_lazy_loading.enabled" = true;
         "extensions.autoDisableScopes" = 0;
         "extensions.formautofill.available" = "off";
         "extensions.getAddons.discovery.api_url" = "";
