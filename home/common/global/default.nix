@@ -47,7 +47,7 @@
     "/persist/home/brenix" = {
       directories = [
         ".config/sops"
-        ".config/jamesdsp"
+        # ".config/jamesdsp"
         ".local/bin"
         ".local/state/wireplumber"
         ".local/share/zoxide"
