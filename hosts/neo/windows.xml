@@ -153,7 +153,7 @@
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
     </controller>
     <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse'/>
+      <source dev='/dev/input/by-id/usb-Logitech_USB_Receiver-if02-event-mouse'/>
     </input>
     <input type='evdev'>
       <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__A02B2305W052H07682-if03-event-kbd' grab='all' repeat='on'/>
