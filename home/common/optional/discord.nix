@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    discord
+    discord-krisp # chaotic-nyx
   ];
 
   home.persistence = {
