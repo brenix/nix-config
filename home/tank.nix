@@ -32,11 +32,11 @@
   };
 
   services.polybar.settings."bar/main" = {
-    height = 25;
+    height = 28;
     font-0 = "${config.fontProfiles.regular.family}:size=8;3";
   };
 
-  programs.alacritty.settings.font.size = 16;
+  programs.alacritty.settings.font.size = 11.5;
 
   programs.starship.settings.command_timeout = 1200;
 

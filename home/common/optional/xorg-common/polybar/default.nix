@@ -58,7 +58,7 @@ in
         border-top-color = "\${colors.bg-alt}";
         border-top-size = 1;
         # font-0 = lib.mkDefault "Terminus:size=7;1";
-        font-0 = "${config.fontProfiles.monospace.family}:size=10;2";
+        font-0 = lib.mkDefault "${config.fontProfiles.monospace.family}:size=10;2";
         # font-1 = lib.mkDefault "Material Icons:size=11;3";
         # font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
