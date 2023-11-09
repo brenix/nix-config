@@ -13,6 +13,7 @@
     calicoctl
     stern
     trivy
+    ytt
   ];
 
   home.persistence = {
