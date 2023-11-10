@@ -23,8 +23,8 @@ in
         # family = "Terminus";
         style = "Italic";
       };
-      font.size = lib.mkDefault 10.5;
-      font.offset.y = -4;
+      font.size = lib.mkDefault 11;
+      font.offset.y = -2;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
         mouse = "Right";
