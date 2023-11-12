@@ -20,6 +20,7 @@ in
     nodePackages.yaml-language-server
     python3Packages.python-lsp-server
     terraform-ls
+    golangci-lint-langserver
   ];
 
   programs.helix = {
