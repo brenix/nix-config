@@ -16,7 +16,7 @@
 
   services.restic.backups = {
     gdrive = {
-      repository = "rclone:gdrive:20-29 - software/21 - backups/21.05 - trinity";
+      repository = "rclone:gdrive:backups/trinity";
       passwordFile = config.sops.secrets.restic-password.path;
       paths = [
         "/config"
