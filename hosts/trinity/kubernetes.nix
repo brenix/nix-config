@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   kubeletConfig = pkgs.writeText "kubelet-config.yaml" ''
     apiVersion: kubelet.config.k8s.io/v1beta1
@@ -15,6 +15,9 @@ in
   services.logind.extraConfig = ''
     InhibitDelayMaxSec=60s
   '';
+
+  # FIXME: remove once merged upstream: https://github.com/NixOS/nixpkgs/pull/268975
+  services.certmgr.package = lib.mkForce pkgs.certmgr;
 
   services.kubernetes = {
     roles = [ "master" "node" ];
