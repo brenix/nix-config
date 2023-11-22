@@ -43,7 +43,7 @@
       t = "todoist";
       ta = "todoist add";
       to = "todoist list -f '(today | overdue) & p1'";
-      tf = "todoist list -f 'today & !p4'";
+      tl = "todoist list -f 'today & !p4'";
       v = "hx";
     };
 
