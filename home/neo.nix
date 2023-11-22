@@ -13,6 +13,7 @@
     ./common/optional/slack.nix
     ./common/optional/sre-tools
     ./common/optional/sxhkd.nix
+    ./common/optional/todoist.nix
     ./common/optional/wootility.nix
     ./common/optional/xorg-common
     ./common/optional/zoom.nix

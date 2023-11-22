@@ -40,6 +40,10 @@
       kl = "kubectl logs";
       kvs = "kubectl view-secret";
       kvsec = "kubectl view-secret";
+      t = "todoist";
+      ta = "todoist add";
+      to = "todoist list -f '(today | overdue) & p1'";
+      tf = "todoist list -f 'today & !p4'";
       v = "hx";
     };
 
