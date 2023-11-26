@@ -42,8 +42,10 @@
       kvsec = "kubectl view-secret";
       t = "todoist";
       ta = "todoist add";
-      to = "todoist list -f '(today | overdue) & p1'";
+      td = "todoist close";
       tl = "todoist list -f 'today & !p4'";
+      to = "todoist list -f '(today | overdue) & p1'";
+      tq = "todoist quick";
       v = "hx";
     };
 
