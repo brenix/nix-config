@@ -28,7 +28,7 @@
     age
     comma
     go-task
-    jaq
+    jq
     htop
     hugo
     imagemagick

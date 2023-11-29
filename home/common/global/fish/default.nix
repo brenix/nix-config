@@ -53,7 +53,6 @@
       cat = "bat --paging=never --style=plain --decorations=never";
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       cp = "cp -riv";
-      jq = "jaq";
       ga = "git add";
       gaa = "git add --all";
       gb = "git branch";
