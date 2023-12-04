@@ -1,6 +1,5 @@
 { pkgs ? import <nixpkgs> { } }: {
   awless = pkgs.callPackage ./awless { };
-  awscli2 = pkgs.callPackage ./awscli2 { }; # FIXME: remove once fixed upstream: https://github.com/NixOS/nixpkgs/pull/267878
   calicoctl = pkgs.callPackage ./calicoctl { };
   certmgr = pkgs.callPackage ./certmgr { }; # FIXME: remove once merged upstream: https://github.com/NixOS/nixpkgs/pull/268975
   monaco = pkgs.callPackage ./monaco { };

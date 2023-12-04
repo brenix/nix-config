@@ -16,7 +16,7 @@
     reftools
     lefthook
     pipenv
-    python311
+    python3
     yamlfmt
   ];
 }
