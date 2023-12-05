@@ -8,19 +8,20 @@ in
   home.sessionVariables.COLORTERM = "truecolor";
 
   home.packages = with pkgs; [
+    # python3Packages.python-lsp-server
+    golangci-lint-langserver
     gopls
     lua-language-server
     marksman
     nil
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
+    nodePackages.pyright
     nodePackages.vscode-css-languageserver-bin
     nodePackages.vscode-html-languageserver-bin
     nodePackages.vscode-json-languageserver-bin
     nodePackages.yaml-language-server
-    python3Packages.python-lsp-server
     terraform-ls
-    golangci-lint-langserver
   ];
 
   programs.helix = {
@@ -164,6 +165,15 @@ in
           auto-format = true;
           formatter = {
             command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
+          };
+        }
+        {
+          name = "python";
+          language-servers = [ "pyright" ];
+          auto-format = true;
+          formatter = {
+            command = "${black}/bin/black";
+            args = [ "--quiet" "-" ];
           };
         }
       ];
