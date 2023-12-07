@@ -16,9 +16,6 @@ in
     InhibitDelayMaxSec=60s
   '';
 
-  # FIXME: remove once merged upstream: https://github.com/NixOS/nixpkgs/pull/268975
-  services.certmgr.package = lib.mkForce pkgs.certmgr;
-
   services.kubernetes = {
     roles = [ "master" "node" ];
 
