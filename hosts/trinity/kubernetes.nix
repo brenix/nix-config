@@ -6,6 +6,7 @@ let
     shutdownGracePeriod: 60s
     shutdownGracePeriodCriticalPods: 45s
   '';
+
 in
 {
   environment.systemPackages = with pkgs; [ kubectl kubernetes cri-tools ];

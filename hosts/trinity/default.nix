@@ -5,7 +5,8 @@
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
-    ./kubernetes.nix
+    # ./kubernetes.nix
+    ./k3s.nix
     ./restic.nix
     ../common/global
     ../common/optional/ananicy.nix
