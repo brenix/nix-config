@@ -21,6 +21,7 @@
       paths = [
         "/config"
         "/var/openebs/local"
+        "/var/lib/rancher/k3s/server/db"
       ];
       pruneOpts = [
         "--keep-daily 7"
