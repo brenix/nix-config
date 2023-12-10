@@ -28,6 +28,39 @@ in
   services.k3s.configPath = "${k3sConfig}";
   services.k3s.package = pkgs.k3s_1_28;
 
+  services.logind.extraConfig = ''
+    InhibitDelayMaxSec=60s
+  '';
+
+  systemd.services = {
+    taint-node = {
+      description = "Node tainter";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network-online.target" "k3s.service" ];
+      restartIfChanged = false;
+      environment = {
+        KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
+      };
+      script = ''
+        taint() {
+          trap - SIGINT SIGTERM
+          echo "Tainting node"
+          ${pkgs.kubectl}/bin/kubectl taint node trinity node.kubernetes.io/shutdown:NoExecute
+          sleep 45
+          echo "Done"
+        }
+
+        trap taint SIGINT SIGTERM
+        echo "Untainting node"
+        ${pkgs.kubectl}/bin/kubectl taint node trinity node.kubernetes.io/shutdown:NoExecute- || true
+        echo "Awaiting signals"
+        sleep infinity & wait $!
+      '';
+      serviceConfig.Type = "simple";
+      serviceConfig.User = "root";
+    };
+  };
+
   environment.persistence = {
     "/persist".directories = [
       "/var/openebs"
