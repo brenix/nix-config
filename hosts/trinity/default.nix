@@ -1,11 +1,11 @@
 # System configuration for my Raspberry Pi 4
-{ inputs, pkgs, ... }: {
+{ inputs, ... }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
-    ./k0s.nix
+    ./k3s.nix
     ./restic.nix
     ../common/global
     ../common/optional/ananicy.nix
