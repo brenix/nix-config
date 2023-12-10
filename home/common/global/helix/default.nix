@@ -33,6 +33,7 @@ in
       # theme = "catppuccin_mocha";
 
       editor = {
+        auto-pairs = false;
         bufferline = "always";
         undercurl = true;
         color-modes = true;

@@ -26,6 +26,7 @@
 
   home.packages = with pkgs; [
     age
+    calc
     comma
     go-task
     jq
