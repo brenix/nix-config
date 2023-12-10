@@ -13,6 +13,7 @@
     ../common/optional/autologin-console.nix
     ../common/optional/clipcat.nix
     ../common/optional/fonts.nix
+    ../common/optional/k0s.nix
     ../common/optional/openconnect.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
