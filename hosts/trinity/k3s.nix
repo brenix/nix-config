@@ -12,6 +12,7 @@ let
     kube-apiserver-arg:
       - permit-port-sharing=true
       - permit-address-sharing=true
+      - enable-admission-plugins=AlwaysPullImages
 
     disable:
       - traefik
