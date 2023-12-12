@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./gammastep.nix
     ./fonts.nix
     ./gtk.nix
     ./qt.nix

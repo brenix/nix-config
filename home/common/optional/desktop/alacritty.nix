@@ -24,7 +24,7 @@ in
         style = "Italic";
       };
       font.size = lib.mkDefault 8;
-      font.offset.y = -2;
+      font.offset.y = -3;
       draw_bold_text_with_bright_colors = false;
       mouse_bindings = [{
         mouse = "Right";
@@ -37,43 +37,43 @@ in
       window.dimensions.lines = 50;
       decorations = "none";
       dynamic_padding = false;
-      colors =
-        {
-          primary.background = "#${colors.base00}";
-          primary.foreground = "#${colors.base05}";
-          cursor.text = "#${colors.base00}";
-          cursor.cursor = "#${colors.base04}";
-          selection.text = "CellForeground";
-          selection.background = "#${colors.base03}";
-          footer_bar = {
-            background = "#${colors.base03}";
-            foreground = "#${colors.base04}";
-          };
-          search = {
-            matches.foreground = "CellBackground";
-            matches.background = "#${colors.base0C}";
-          };
-          normal = {
-            black = "#${colors.base02}";
-            red = "#${colors.base08}";
-            green = "#${colors.base0B}";
-            yellow = "#${colors.base0A}";
-            blue = "#${colors.base0D}";
-            magenta = "#${colors.base0E}";
-            cyan = "#${colors.base0C}";
-            white = "#${colors.base05}";
-          };
-          bright = {
-            black = "#${colors.base03}";
-            red = "#${colors.base08}";
-            green = "#${colors.base0B}";
-            yellow = "#${colors.base0A}";
-            blue = "#${colors.base0D}";
-            magenta = "#${colors.base0E}";
-            cyan = "#${colors.base0C}";
-            white = "#${colors.base06}";
-          };
+
+      colors = {
+        primary.background = "#${colors.base00}";
+        primary.foreground = "#${colors.base05}";
+        cursor.text = "#${colors.base00}";
+        cursor.cursor = "#${colors.base04}";
+        selection.text = "CellForeground";
+        selection.background = "#${colors.base03}";
+        footer_bar = {
+          background = "#${colors.base03}";
+          foreground = "#${colors.base04}";
         };
+        search = {
+          matches.foreground = "CellBackground";
+          matches.background = "#${colors.base0C}";
+        };
+        normal = {
+          black = "#${colors.base02}";
+          red = "#${colors.base08}";
+          green = "#${colors.base0B}";
+          yellow = "#${colors.base0A}";
+          blue = "#${colors.base0D}";
+          magenta = "#${colors.base0E}";
+          cyan = "#${colors.base0C}";
+          white = "#${colors.base05}";
+        };
+        bright = {
+          black = "#${colors.base03}";
+          red = "#${colors.base08}";
+          green = "#${colors.base0B}";
+          yellow = "#${colors.base0A}";
+          blue = "#${colors.base0D}";
+          magenta = "#${colors.base0E}";
+          cyan = "#${colors.base0C}";
+          white = "#${colors.base06}";
+        };
+      };
     };
   };
 }

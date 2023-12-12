@@ -37,6 +37,8 @@
 
   services.ratbagd.enable = true;
 
+  services.geoclue2.enable = true;
+
   # hardware.nvidia = {
   #   modesetting.enable = true;
   #   powerManagement = {
