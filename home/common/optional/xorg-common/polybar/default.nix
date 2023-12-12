@@ -17,33 +17,33 @@ in
         format-padding = 0.5;
       };
 
-      # "colors" = {
-      #   bg = "#0f0f0f";
-      #   bg-alt = "#0f0f0f";
-      #   fg = "#c2c2c2";
-      #   fg-alt = "#ebe6d5";
-      #   blue = "#6f8798";
-      #   cyan = "#8da19e";
-      #   green = "#98a686";
-      #   orange = "#d59877";
-      #   purple = "#949289";
-      #   red = "#b76666";
-      #   yellow = "#dcbb8c";
-      # };
-
       "colors" = {
-        bg = "#${colors.base00}";
-        bg-alt = "#${colors.base00}";
-        fg = "#${colors.base05}";
-        fg-alt = "#${colors.base07}";
-        blue = "#${colors.base0D}";
-        cyan = "#${colors.base0C}";
-        green = "#${colors.base0B}";
-        orange = "#${colors.base09}";
-        purple = "#${colors.base0F}";
-        red = "#${colors.base08}";
-        yellow = "#${colors.base0A}";
+        bg = "#131313";
+        bg-alt = "#000000";
+        fg = "#ffffff";
+        fg-alt = "#ffffff";
+        blue = "#81a1c1";
+        cyan = "#8fbcbb";
+        green = "#a3be8c";
+        orange = "#d08770";
+        purple = "#b48ead";
+        red = "#bf616a";
+        yellow = "#ebcb8b";
       };
+
+      # "colors" = {
+      #   bg = "#${colors.base00}";
+      #   bg-alt = "#${colors.base00}";
+      #   fg = "#${colors.base05}";
+      #   fg-alt = "#${colors.base07}";
+      #   blue = "#${colors.base0D}";
+      #   cyan = "#${colors.base0C}";
+      #   green = "#${colors.base0B}";
+      #   orange = "#${colors.base09}";
+      #   purple = "#${colors.base0F}";
+      #   red = "#${colors.base08}";
+      #   yellow = "#${colors.base0A}";
+      # };
 
       "bar/main" = {
         dpi = config.dpi;
@@ -57,8 +57,8 @@ in
         border-bottom-size = 1;
         border-top-color = "\${colors.bg-alt}";
         border-top-size = 1;
-        # font-0 = lib.mkDefault "Terminus:size=7;1";
-        font-0 = lib.mkDefault "${config.fontProfiles.monospace.family}:size=8;2";
+        # font-0 = lib.mkDefault "Terminus:size=7;2";
+        font-0 = lib.mkDefault "${config.fontProfiles.regular.family}:size=10;2";
         # font-1 = lib.mkDefault "Material Icons:size=11;3";
         # font-2 = lib.mkDefault "Font Awesome 6 Free Solid:size=10;2";
         module-margin-left = 1;
@@ -114,7 +114,7 @@ in
         label-occupied-padding = 1;
         label-urgent-padding = 1;
         label-focused-foreground = "\${colors.bg}";
-        label-focused-background = "\${colors.blue}";
+        label-focused-background = "\${colors.fg}";
         label-occupied-foreground = "\${colors.fg}";
         label-empty-foreground = "\${colors.fg}";
       };

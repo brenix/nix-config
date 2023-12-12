@@ -12,10 +12,10 @@ rec {
     theme = {
       # name = "Nordic-darker";
       # package = pkgs.nordic;
-      name = "${config.colorscheme.slug}";
-      package = gtkThemeFromScheme { scheme = config.colorscheme; };
-      # name = "Whitesur";
-      # package = pkgs.whitesur-gtk-theme;
+      # name = "${config.colorscheme.slug}";
+      # package = gtkThemeFromScheme { scheme = config.colorscheme; };
+      name = "Whitesur";
+      package = pkgs.whitesur-gtk-theme;
     };
     iconTheme = {
       name = "Nordzy";

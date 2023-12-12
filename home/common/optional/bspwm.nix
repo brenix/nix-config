@@ -22,13 +22,13 @@
       pointer_action2 = "resize_side";
       pointer_motion_interval = 5;
       normal_border_color = "#${config.colorscheme.colors.base01}";
-      active_border_color = "#${config.colorscheme.colors.base02}";
-      focused_border_color = "#${config.colorscheme.colors.base02}";
+      active_border_color = "#${config.colorscheme.colors.base04}";
+      focused_border_color = "#${config.colorscheme.colors.base05}";
       presel_feedback_color = "#${config.colorscheme.colors.base01}";
     };
 
     startupPrograms = [
-      # "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#181818'"
+      # "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#606060'"
       "${pkgs.feh}/bin/feh --bg-scale ~/downloads/wallpaper.jpg"
       "${pkgs.flameshot}/bin/flameshot"
       # "${pkgs.xorg.xsetroot}/bin/xsetroot -solid '#313244'"
@@ -57,6 +57,9 @@
         state = "floating";
       };
       "steam" = {
+        state = "floating";
+      };
+      "Alacritty" = {
         state = "floating";
       };
       "Alacritty:floating" = {

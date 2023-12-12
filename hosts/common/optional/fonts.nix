@@ -4,6 +4,7 @@
     font-awesome
     inter
     material-icons
+    monaspace
     noto-fonts-emoji
     terminus_font
     uw-ttyp0
