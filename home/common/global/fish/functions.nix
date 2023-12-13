@@ -189,7 +189,7 @@
     for asg in $asgs
       set name (echo $asg | awk -F= '{print $1}')
       set count (echo $asg | awk -F= '{print $2}')
-      awless list scalinggroups --no-headers --format tsv --columns name --filter name=$name | xargs -I % awless --no-sync update scalinggroup -f name=% desired-capacity=$count
+      echo "TODO"
     end
   '';
 
@@ -199,7 +199,7 @@
     if test -z "$AWS_VAULT"
       echo "aws-vault environment not found"
     else
-      awless list scalinggroups --filter name=$pattern --columns name,desiredcapacity
+      echo "TODO"
     end
   '';
 

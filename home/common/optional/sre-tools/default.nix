@@ -5,7 +5,6 @@
   ];
 
   home.packages = with pkgs; [
-    awless
     awscli2
     certigo
     chamber
