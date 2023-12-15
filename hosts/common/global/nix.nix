@@ -19,6 +19,7 @@
       auto-optimise-store = lib.mkDefault true;
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       warn-dirty = false;
+      flake-registry = ""; # Disable global flake registry
     };
     extraOptions = ''
       !include ${config.sops.secrets.nixAccessTokens.path}

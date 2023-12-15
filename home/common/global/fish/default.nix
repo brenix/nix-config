@@ -148,6 +148,9 @@
         set -U fish_pager_color_description   yellow
         set -U fish_pager_color_prefix        'white' '--bold' '--underline'
         set -U fish_pager_color_progress      'brwhite' '--background=cyan'
+
+        # AWS CLI completions (https://github.com/aws/aws-cli/issues/1079)
+        complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
       '' +
       # Source private files
       ''
@@ -155,6 +158,8 @@
           source $file
         end
       '';
+
+
   };
 
   # Create dirs required by shell
