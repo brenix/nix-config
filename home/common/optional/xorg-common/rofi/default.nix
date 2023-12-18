@@ -3,7 +3,7 @@
     enable = true;
     # font = "${config.fontProfiles.monospace.family} 10";
     font = "Terminus 8";
-    theme = "zenbox";
+    theme = "Arc";
     plugins = with pkgs; [ rofi-calc rofi-emoji rofi-rbw ];
     extraConfig = {
       modi = "drun,run,emoji,calc,combi";
