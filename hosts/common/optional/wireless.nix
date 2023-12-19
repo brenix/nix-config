@@ -10,7 +10,7 @@
     fallbackToWPA2 = true;
     networks = {
       "ciphernet" = {
-        psk = config.sops.secrets.home_wireless_password.path;
+        psk = config.sops.secrets.home-wireless-password.path;
       };
     };
 
