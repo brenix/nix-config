@@ -40,10 +40,15 @@
 
   services.geoclue2.enable = true;
 
+  programs = {
+    dconf.enable = true;
+  };
+
   # Fix suspend/wake - https://github.com/NixOS/nixos-hardware/tree/master/framework/13-inch/7040-amd#suspendwake-workaround
   hardware.framework.amd-7040.preventWakeOnAC = true;
 
-  services.xserver.dpi = 208;
+  services.xserver.dpi = 123;
+  services.xserver.xkbOptions = "caps:escape";
 
   # xdg.portal = {
   #   enable = true;

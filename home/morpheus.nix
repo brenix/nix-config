@@ -17,7 +17,7 @@
     ./common/optional/zoom.nix
   ];
 
-  dpi = 208;
+  dpi = 123;
 
   monitors = [
     {

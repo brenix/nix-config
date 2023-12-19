@@ -166,7 +166,7 @@
 
         "browser.safebrowsing.downloads.remote.enabled" = false;
 
-        "identity.fxaccounts.enabled" = false;
+        "identity.fxaccounts.enabled" = true;
         "browser.tabs.firefox-view" = false;
         "permissions.default.desktop-notification" = 2;
         "permissions.default.geo" = 0;
