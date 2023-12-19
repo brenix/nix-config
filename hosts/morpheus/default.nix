@@ -28,7 +28,7 @@
     ];
 
     blacklistedKernelModules = [ "hid-sensor-hub" ];
-    resumeDevice = "/dev/disk/by-label/nixos";
+    resumeDevice = "/dev/disk/by-label/morpheus";
   };
 
   networking.hostName = "morpheus";
