@@ -41,7 +41,9 @@
   home.persistence = {
     "/persist/home/brenix" = {
       directories = [
+        ".cache"
         "downloads"
+        "work"
       ];
       allowOther = true;
     };
