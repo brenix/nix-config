@@ -23,10 +23,7 @@
   };
 
   # Networking
-  networking.useDHCP = false;
-  networking.dhcpcd.enable = false;
   networking.firewall.enable = false;
-  systemd.network.enable = true;
   services.resolved = {
     enable = true;
     dnssec = "false";

@@ -15,6 +15,7 @@
 
   # boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
+  systemd.network.enable = true;
   networking.hostName = "trinity";
 
   services.irqbalance.enable = true;

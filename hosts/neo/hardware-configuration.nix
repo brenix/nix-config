@@ -92,8 +92,6 @@
     # }
   ];
 
-  services.resolved.domains = [ "lan" ];
-
   services.udev.packages = [ pkgs.wooting-udev-rules ];
 
   systemd.network.networks.enp7s0 = {

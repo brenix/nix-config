@@ -20,20 +20,19 @@
   dpi = 208;
 
   monitors = [
-    # {
-    #   name = "DP-1";
-    #   width = 2560;
-    #   height = 1440;
-    #   refreshRate = 165;
-    #   x = 0;
-    #   workspace = "1";
-    #   enabled = true;
-    # }
+    {
+      name = "eDP-1";
+      width = 2256;
+      height = 1504;
+      refreshRate = 60;
+      x = 0;
+      workspace = "1";
+      enabled = true;
+    }
   ];
 
   xsession.windowManager.bspwm.monitors = {
-    # DP-1 = [ "1" "2" ];
-    # HDMI-1 = [ "3" "4" ];
+    eDP-1 = [ "1" "2" "3" "4" ];
   };
 
   colorscheme = inputs.nix-colors.colorSchemes.github;

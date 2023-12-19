@@ -14,6 +14,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  systemd.network.enable = true;
   networking.hostName = "tank";
 
   programs = {

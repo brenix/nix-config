@@ -26,11 +26,10 @@
     };
   };
 
-  services.resolved.domains = [ "lan" ];
-
   hardware.enableAllFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
   nixpkgs.hostPlatform.system = "x86_64-linux";
+
 
   # Bluetooth
   # hardware.bluetooth.enable = true;

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   imports = [
     inputs.hardware.nixosModules.framework-13-7040-amd
@@ -32,6 +32,7 @@
   };
 
   networking.hostName = "morpheus";
+  networking.useDHCP = lib.mkDefault true;
 
   services.fwupd.enable = true;
 

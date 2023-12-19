@@ -31,6 +31,7 @@
     dconf.enable = true;
   };
 
+  systemd.network.enable = true;
   networking.hostName = "neo";
 
   services.resolved.domains = [ "lan" ];
