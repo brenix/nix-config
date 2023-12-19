@@ -18,6 +18,7 @@ in
       "podman"
       "libvirtd"
       "kvm"
+      "network"
     ];
 
     openssh.authorizedKeys.keys = [
