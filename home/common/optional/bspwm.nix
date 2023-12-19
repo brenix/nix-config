@@ -21,10 +21,10 @@
       pointer_action1 = "move";
       pointer_action2 = "resize_side";
       pointer_motion_interval = 5;
-      normal_border_color = "#${config.colorscheme.colors.base01}";
-      active_border_color = "#${config.colorscheme.colors.base04}";
-      focused_border_color = "#${config.colorscheme.colors.base05}";
-      presel_feedback_color = "#${config.colorscheme.colors.base01}";
+      normal_border_color = "#333333";
+      active_border_color = "#333333";
+      focused_border_color = "#000000";
+      presel_feedback_color = "#131313";
     };
 
     startupPrograms = [

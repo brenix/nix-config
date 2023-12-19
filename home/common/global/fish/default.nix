@@ -50,8 +50,8 @@
     };
 
     shellAliases = {
-      bu = "sudo ddcutil setvcp 10 + 10";
-      bd = "sudo ddcutil setvcp 10 - 10";
+      bu = "sudo ddcutil --display 1 setvcp 10 + 10; sudo ddcutil --display 2 setvcp 10 + 10";
+      bd = "sudo ddcutil --display 1 setvcp 10 - 10; sudo ddcutil --display 2 setvcp 10 - 10";
       cat = "bat --paging=never --style=plain --decorations=never";
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       cp = "cp -riv";
