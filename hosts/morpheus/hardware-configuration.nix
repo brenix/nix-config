@@ -30,6 +30,9 @@
   hardware.cpu.amd.updateMicrocode = true;
   nixpkgs.hostPlatform.system = "x86_64-linux";
 
+  # Fix suspend/wake - https://github.com/NixOS/nixos-hardware/tree/master/framework/13-inch/7040-amd#suspendwake-workaround
+  hardware.framework.amd-7040.preventWakeOnAC = true;
+
 
   # Bluetooth
   # hardware.bluetooth.enable = true;
