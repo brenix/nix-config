@@ -37,4 +37,14 @@
 
   colorscheme = inputs.nix-colors.colorSchemes.github;
   # colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
+
+  home.persistence = {
+    "/persist/home/brenix" = {
+      directories = [
+        "downloads"
+      ];
+      allowOther = true;
+    };
+  };
+
 }
