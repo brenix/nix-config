@@ -39,6 +39,8 @@
 
   services.geoclue2.enable = true;
 
+  environment.systemPackages = [ pkgs.ddcutil ];
+
   # hardware.nvidia = {
   #   modesetting.enable = true;
   #   powerManagement = {
