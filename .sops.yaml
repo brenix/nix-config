@@ -7,6 +7,7 @@ keys:
     - &neo age13aug9ksxkwksqjl4ghd8u3cf5c9tseaxtw75s7mpksdes9edfp7qa47044
     - &trinity age1g6hk6frqedn4dlz2l3s06f6jl6f95eqfwk96qvtdws4ctgv60fdqesv664
     - &tank age1xytwhy44hr7z8yr0h7w8hzp4n4z8p596w37qwcptcz0ew0a5h9uqrzkf5y
+    - &morpheus age1gtrc8je32y3nfqe8c84ww6s996c0zzsv72vfxwe28wktnjuqhqzqq7entr
 
 creation_rules:
   - path_regex: secrets.ya?ml$
@@ -16,3 +17,4 @@ creation_rules:
           - *neo
           - *trinity
           - *tank
+          - *morpheus
