@@ -1,16 +1,18 @@
-{ config, ... }:
-{
-  sops.secrets.home-wireless-password = {
+{ config, ... }: {
+  # Wireless secrets stored through sops
+  sops.secrets.wireless = {
     sopsFile = ../secrets.yaml;
     neededForUsers = true;
   };
 
   networking.wireless = {
     enable = true;
-    fallbackToWPA2 = true;
+    fallbackToWPA2 = false;
+    # Declarative
+    environmentFile = config.sops.secrets.wireless.path;
     networks = {
       "ciphernet" = {
-        psk = config.sops.secrets.home-wireless-password.path;
+        psk = "@CIPHERNET@";
       };
     };
 
@@ -27,4 +29,6 @@
 
   # Ensure group exists
   users.groups.network = { };
+
+  systemd.services.wpa_supplicant.preStart = "touch /etc/wpa_supplicant.conf";
 }
