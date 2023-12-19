@@ -17,33 +17,33 @@ in
         format-padding = 0.5;
       };
 
-      "colors" = {
-        bg = "#131313";
-        bg-alt = "#000000";
-        fg = "#ffffff";
-        fg-alt = "#ffffff";
-        blue = "#81a1c1";
-        cyan = "#8fbcbb";
-        green = "#a3be8c";
-        orange = "#d08770";
-        purple = "#b48ead";
-        red = "#bf616a";
-        yellow = "#ebcb8b";
-      };
-
       # "colors" = {
-      #   bg = "#${colors.base00}";
-      #   bg-alt = "#${colors.base00}";
-      #   fg = "#${colors.base05}";
-      #   fg-alt = "#${colors.base07}";
-      #   blue = "#${colors.base0D}";
-      #   cyan = "#${colors.base0C}";
-      #   green = "#${colors.base0B}";
-      #   orange = "#${colors.base09}";
-      #   purple = "#${colors.base0F}";
-      #   red = "#${colors.base08}";
-      #   yellow = "#${colors.base0A}";
+      #   bg = "#131313";
+      #   bg-alt = "#000000";
+      #   fg = "#ffffff";
+      #   fg-alt = "#ffffff";
+      #   blue = "#81a1c1";
+      #   cyan = "#8fbcbb";
+      #   green = "#a3be8c";
+      #   orange = "#d08770";
+      #   purple = "#b48ead";
+      #   red = "#bf616a";
+      #   yellow = "#ebcb8b";
       # };
+
+      "colors" = {
+        bg = "#${colors.base00}";
+        bg-alt = "#${colors.base00}";
+        fg = "#${colors.base05}";
+        fg-alt = "#${colors.base07}";
+        blue = "#${colors.base0D}";
+        cyan = "#${colors.base0C}";
+        green = "#${colors.base0B}";
+        orange = "#${colors.base09}";
+        purple = "#${colors.base0F}";
+        red = "#${colors.base08}";
+        yellow = "#${colors.base0A}";
+      };
 
       "bar/main" = {
         dpi = config.dpi;

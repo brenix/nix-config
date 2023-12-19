@@ -35,8 +35,8 @@
     eDP-1 = [ "1" "2" "3" "4" ];
   };
 
-  colorscheme = inputs.nix-colors.colorSchemes.github;
-  # colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
+  # colorscheme = inputs.nix-colors.colorSchemes.github;
+  colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (./colorschemes/zenbox.yaml));
 
   home.persistence = {
     "/persist/home/brenix" = {

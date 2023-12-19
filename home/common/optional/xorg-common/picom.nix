@@ -6,11 +6,9 @@
     shadow = true;
     fade = false;
     backend = "glx";
-    # opacityRules = [
-    #   "90:class_i ?= 'alacritty'"
-    #   "90:class_i ?= 'floating'"
-    #   "90:class_i ?= 'polybar'"
-    # ];
+    opacityRules = [
+      "80:class_i ?= 'alacritty'"
+    ];
     settings = {
       blur =
         {

@@ -29,8 +29,8 @@ in
     # package = inputs.helix-master.packages.${pkgs.system}.default;
 
     settings = {
-      # theme = "nix-${colorscheme.slug}";
-      theme = "github_light_tritanopia";
+      theme = "nix-${colorscheme.slug}";
+      # theme = "github_light_tritanopia";
 
       editor = {
         auto-pairs = false;

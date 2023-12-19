@@ -10,7 +10,7 @@
       focus_follows_pointer = true;
       border_width = 2;
       window_gap = 10;
-      automatic_scheme = "floating";
+      automatic_scheme = "tiling";
       initial_polarity = "first_child";
       split_ratio = 0.52;
       borderless_monocle = true;
@@ -57,9 +57,6 @@
         state = "floating";
       };
       "steam" = {
-        state = "floating";
-      };
-      "Alacritty" = {
         state = "floating";
       };
       "Alacritty:floating" = {
