@@ -51,6 +51,10 @@
           modules = [ ./hosts/tank chaotic.nixosModules.default ];
           specialArgs = { inherit inputs outputs; };
         };
+        morpheus = lib.nixosSystem {
+          modules = [ ./hosts/morpheus chaotic.nixosModules.default ];
+          specialArgs = { inherit inputs outputs; };
+        };
       };
 
       homeConfigurations = {
@@ -66,6 +70,11 @@
         };
         "brenix@tank" = lib.homeManagerConfiguration {
           modules = [ ./home/brenix/tank.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "brenix@morpheus" = lib.homeManagerConfiguration {
+          modules = [ ./home/brenix/morpheus.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
