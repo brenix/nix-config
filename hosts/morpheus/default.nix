@@ -19,10 +19,9 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
-      "mem_sleep_default=deep"
-      "nvme.noacpi=1"
-      "btusb.enable_autosuspend=n"
-      "i915.enable_psr=0"
+      # "mem_sleep_default=deep"
+      # "nvme.noacpi=1"
+      # "btusb.enable_autosuspend=n"
       # "resume_offset=533760"
     ];
 
