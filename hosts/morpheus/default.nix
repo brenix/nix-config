@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ../common/global
     ../common/optional/ananicy.nix
-    ../common/optional/autologin-console.nix
     ../common/optional/auto-hibernate.nix
     ../common/optional/clipcat.nix
     ../common/optional/fonts.nix

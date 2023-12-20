@@ -21,9 +21,9 @@
       pointer_action1 = "move";
       pointer_action2 = "resize_side";
       pointer_motion_interval = 5;
-      normal_border_color = "#333333";
-      active_border_color = "#333333";
-      focused_border_color = "#000000";
+      normal_border_color = "#000000";
+      active_border_color = "#000000";
+      focused_border_color = "#555555";
       presel_feedback_color = "#131313";
     };
 
