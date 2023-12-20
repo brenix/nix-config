@@ -20,7 +20,7 @@
     kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       # "mem_sleep_default=deep"
-      # "nvme.noacpi=1"
+      "nvme.noacpi=1"
       # "btusb.enable_autosuspend=n"
       # "resume_offset=11019520" # btrfs inspect-internal map-swapfile -r /swap/swapfile
     ];
@@ -33,10 +33,12 @@
   networking.useDHCP = lib.mkDefault true;
 
   services.fwupd.enable = true;
-
   services.resolved.domains = [ "lan" ];
-
   services.geoclue2.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    framework-tool
+  ];
 
   powerManagement.enable = true;
   powerManagement.cpuFreqGovernor = "powersave";
@@ -48,6 +50,9 @@
 
   services.xserver.dpi = 123;
   services.xserver.xkbOptions = "caps:escape";
+  services.xserver.libinput.touchpad.clickMethod = "clickfinger";
+  services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.xserver.libinput.touchpad.accelSpeed = "1.1";
 
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
