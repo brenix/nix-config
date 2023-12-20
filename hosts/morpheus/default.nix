@@ -22,7 +22,7 @@
       # "mem_sleep_default=deep"
       # "nvme.noacpi=1"
       # "btusb.enable_autosuspend=n"
-      # "resume_offset=533760"
+      # "resume_offset=11019520" # btrfs inspect-internal map-swapfile -r /swap/swapfile
     ];
 
     blacklistedKernelModules = [ "hid-sensor-hub" ];
