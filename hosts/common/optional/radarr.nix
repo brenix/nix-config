@@ -1,5 +1,0 @@
-{
-  services.radarr = {
-    enable = true;
-  };
-}

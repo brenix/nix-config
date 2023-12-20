@@ -1,22 +1,33 @@
-# Shell for bootstrapping flake-enabled nix and other tooling
-{ pkgs ? # If pkgs is not defined, instantiate nixpkgs from locked commit
-  let
-    lock = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked;
-    nixpkgs = fetchTarball {
-      url = "https://github.com/nixos/nixpkgs/archive/${lock.rev}.tar.gz";
-      sha256 = lock.narHash;
-    };
-  in
-  import nixpkgs { overlays = [ ]; }
-, ...
-}: pkgs.mkShell {
-  NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
-  nativeBuildInputs = with pkgs; [
-    nix
-    home-manager
-    git
+{ pkgs, ... }:
+let
+  json2nix = pkgs.writeScriptBin "json2nix" ''
+    ${pkgs.python3}/bin/python ${pkgs.fetchurl {
+      url = "https://gitlab.com/-/snippets/3613708/raw/main/json2nix.py";
+      hash = "sha256-zZeL3JwwD8gmrf+fG/SPP51vOOUuhsfcQuMj6HNfppU=";
+    }} $@
+  '';
 
-    sops
-    age
-  ];
+  yaml2nix = pkgs.writeScriptBin "yaml2nix" ''
+    nix run github:euank/yaml2nix '.args'
+  '';
+in
+{
+  default = pkgs.mkShell {
+    NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
+
+    packages = [
+      (yaml2nix)
+      (json2nix)
+      pkgs.statix
+      pkgs.deadnix
+      pkgs.nixpkgs-fmt
+      pkgs.update-nix-fetchgit
+      pkgs.home-manager
+      pkgs.git
+      pkgs.sops
+      pkgs.ssh-to-age
+      pkgs.gnupg
+      pkgs.age
+    ];
+  };
 }

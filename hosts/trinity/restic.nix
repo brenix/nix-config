@@ -5,7 +5,7 @@
     rclone
   ];
 
-  sops.secrets.restic-password = {
+  sops.secrets.resticPassword = {
     sopsFile = ./secrets.yaml;
   };
 
@@ -17,7 +17,7 @@
   services.restic.backups = {
     gdrive = {
       repository = "rclone:gdrive:backups/trinity";
-      passwordFile = config.sops.secrets.restic-password.path;
+      passwordFile = config.sops.secrets.resticPassword.path;
       paths = [
         "/config"
         "/var/openebs/local"

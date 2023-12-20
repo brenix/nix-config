@@ -1,5 +1,0 @@
-{
-  services.bazarr = {
-    enable = true;
-  };
-}

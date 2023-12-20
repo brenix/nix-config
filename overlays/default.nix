@@ -1,48 +1,14 @@
-{ outputs, inputs }: {
-  # Adds my custom packages
-  additions = final: _prev: import ../pkgs { pkgs = final; };
+# This file defines overlays
+{ inputs, ... }: {
+  # This one brings our custom packages from the 'pkgs' directory
+  additions = final: prev: import ../pkgs { pkgs = final; };
 
-  # Modifies existing packages
+  # This one contains whatever you want to overlay
+  # You can change versions, add patches, set compilation flags, anything really.
+  # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-
-    # Enable pipewire in qemu until can be fixed upstream
-    # qemu = prev.qemu.overrideAttrs (oldAttrs: {
-    #   buildInputs = (oldAttrs.buildInputs or [ ]) ++ [ prev.pipewire ];
-    #   configureFlags = (oldAttrs.configureFlags or [ ]) ++ [ "--enable-pipewire" ];
-    # });
-
-    # kitty = prev.kitty.overrideAttrs (_: {
-    #   doCheck = false;
-    #   doInstallCheck = false;
-    # });
-
-    # qemu = prev.qemu.overrideAttrs (oldAttrs: {
-    #   patches = (oldAttrs.patches or [ ]) ++ [ ./evdev-fix.patch ];
-    # });
-
-    # Custom xanmod kernel
-    # xanmod =
-    #   let
-    #     version = "6.3.5";
-    #     suffix = "xanmod1";
-    #     hash = "sha256-2+8WDj1VdmIdC0DjmKyY/fMi5zoiXDAWy7EAmkImvXk=";
-    #   in
-    #   prev.linuxPackagesFor (prev.linux_xanmod_latest.override (_: {
-    #     inherit version;
-    #     inherit suffix;
-    #     modDirVersion = prev.lib.versions.pad 3 "${version}-${suffix}";
-    #     src = prev.fetchFromGitHub {
-    #       owner = "xanmod";
-    #       repo = "linux";
-    #       rev = prev.lib.versions.pad 3 "${version}-${suffix}";
-    #       inherit hash;
-    #     };
-    #   }));
-
-    # Additional vim plugins
-    vimPlugins = prev.vimPlugins // { } // final.callPackage ../pkgs/vim-plugins { };
   };
 }

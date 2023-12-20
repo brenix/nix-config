@@ -1,5 +1,0 @@
-{
-  services.prowlarr = {
-    enable = true;
-  };
-}

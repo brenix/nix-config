@@ -1,5 +1,0 @@
-{
-  services.sonarr = {
-    enable = true;
-  };
-}

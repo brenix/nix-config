@@ -1,0 +1,35 @@
+{ pkgs, ... }:
+{
+  services.xserver = {
+    enable = true;
+    layout = "us";
+
+    autoRepeatDelay = 195;
+    autoRepeatInterval = 30;
+
+    displayManager = {
+      defaultSession = "none+bspwm";
+      autoLogin.enable = true;
+      autoLogin.user = "brenix";
+    };
+
+    desktopManager.xterm.enable = false;
+
+    windowManager = { bspwm.enable = true; };
+    # windowManager = { openbox.enable = true; };
+
+    libinput = {
+      enable = true;
+      mouse = {
+        accelProfile = "flat";
+        middleEmulation = false;
+      };
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    xorg.xdpyinfo
+    xorg.xinit
+    xclip
+  ];
+}

@@ -1,5 +1,4 @@
 { pkgs ? import <nixpkgs> { } }: {
-  calicoctl = pkgs.callPackage ./calicoctl { };
   monaco = pkgs.callPackage ./monaco { };
   tfenv = pkgs.callPackage ./tfenv { };
   tfsort = pkgs.callPackage ./tfsort { };

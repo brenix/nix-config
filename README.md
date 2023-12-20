@@ -1,89 +1,87 @@
-# ❄️ Nix Configuration
+## Usage
 
-[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
+<details>
+  <summary>Install</summary>
+To install nixos on any of my devices I create my own ISO live media image. You can build the ISO by doing the following:
 
-My NixOS and home-manager configuration files. Heavily based and inspired by
-[misterio77's nix-config](https://github.com/misterio77/nix-config). Many thanks
-for the work he has contributed.
+### Step 1 - Populate host configuration
 
-## Screenshot
+1. Create a new directory under `hosts/`
+1. Copy from an existing host or create the `configuration.nix`, `disks.nix`,
+   `home.nix`, and any other necessary files to the new host directory
+1. Edit the `flake.nix` and add a new entry under the nixosConfigurations and
+   homeConfigurations
 
-![Screenshot](screenshot.png)
-
-## Organization
-
-| Dir/File  | Description                                                 |
-| --------- | ----------------------------------------------------------- |
-| home      | Application-specific components (aka dotfiles)              |
-| hosts     | NixOS configurations                                        |
-| modules   | Various modules to make life easier when configuring things |
-| overlay   | Patches and version overrides for some packages             |
-| pkgs      | Nix packages                                                |
-| flake.nix | Flake configuration which ties everything together          |
-
-## About the installation
-
-All systems use a single btrfs partition, with subvolumes for `/nix`, a
-`/persist` directory (which is opt-in using `impermanence`), and a root
-subvolume (cleared on every boot).
-
-## My install process
-
-This may not be the most optimal way to install, but it is what I have found
-which works.
-
-First, download and boot the official
-[NixOS ISO](https://nixos.org/download.html#nixos-iso) or
-[Netboot.xyz](https://netboot.xyz/downloads/)
-
-Install git
+### Step 2 - Build ISO
 
 ```sh
-nix-env -i git
+make iso
 ```
 
-Clone this repo
+### Step 3 - Boot the ISO
 
-```sh
-git clone https://github.com/brenix/nix-config
-```
+Boot the ISO via USB or directly (if using qemu)
 
-Enter a development shell
+### Step 4 - Update SOPS keys
 
-```sh
-nix-shell
-```
+In order to decrypt the secrets, an age publickey needs to be added to the sops
+configuration
 
-Format and mount the partitions (btrfs)
-
-```sh
-sudo make volumes HOSTNAME=<hostname> DISK=/dev/<disk>
-```
-
-Alternatively, format the filesystems and mount to `/mnt`, `/mnt/boot`,
-`/mnt/swap`
-
-Copy the livecd host keys to the persistence dir
-
-```sh
-sudo mkdir -p /mnt/persist/etc/ssh && cp /etc/ssh/ssh_host\* /mnt/persist/etc/ssh
-```
-
-Update the `.sops.yaml` with the age pubkey obtained using the following command
-on another nix host
+Remotely:
 
 ```sh
 nix-shell -p ssh-to-age --run 'ssh-keyscan <ip/hostname> | ssh-to-age'
 ```
 
-Re-encrypt with the new keys
+Locally:
 
 ```sh
-sops updatekeys -y path/to/secrets.yaml
+nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age'
 ```
 
-Install
+Add this to the `.sops.yaml` file for the host, following the existing pattern.
+
+Then, update all of the sops secret files:
 
 ```sh
-sudo -E nixos-install --impure --no-root-passwd --flake .#<hostname>
+fd secrets.yaml -x sops updatekeys -y
 ```
+
+### Step 5 - Install
+
+Call the installer script from the booted ISO
+
+```sh
+nix-installer
+```
+
+</details>
+
+## Features
+
+Some features of my nix-config:
+
+- Structured to allow multiple **NixOS configurations**, such as desktop or
+  headless hosts
+- **Declarative** config including **themes**, **wallpapers** and **nix-colors**
+- **Opt-in persistance** through impermanence + blank snapshot
+- **sops-nix** for secrets management
+- Different desktops/wms like **hyprland**, **bspwm** or **openbox**
+- Custom live media **ISO**, with an **"automated" install** script
+
+## Structure
+
+- `flake.nix`: Entrypoint for hosts and home configurations
+- `nixos`:
+  - `global`: Configurations that are globally applied to all my machines
+  - `optional`: Configurations that some of my machines use
+- `hosts`: NixOS Configurations, accessible via `nixos-rebuild --flake`.
+  - `neo`: Primary desktop
+  - `morpheus`: Primary laptop
+  - `trinity`: Kubernetes host
+- `home-manager`: Most of my nix-config configuration, home-manager modules
+
+## Inspired By
+
+- https://github.com/Misterio77/nix-config
+- https://github.com/hmajid2301/dotfiles

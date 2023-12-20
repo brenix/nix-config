@@ -2,22 +2,33 @@
   description = "My NixOS configuration";
 
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    hardware.url = "github:nixos/nixos-hardware";
+    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+    impermanence.url = "github:nix-community/impermanence";
+
+    disko.url = "github:nix-community/disko";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     firefox-addons = { url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons"; inputs.nixpkgs.follows = "nixpkgs"; };
-    hardware.url = "github:nixos/nixos-hardware";
-    # helix-master.url = "github:helix-editor/helix";
-    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
+    hyprland.url = "github:hyprwm/Hyprland";
     hyprwm-contrib = { url = "github:hyprwm/contrib"; inputs.nixpkgs.follows = "nixpkgs"; };
-    impermanence.url = "github:nix-community/impermanence";
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-colors.url = "github:misterio77/nix-colors";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
     nur.url = "github:nix-community/NUR";
     sops-nix = { url = "github:mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
+
+    # helix-master.url = "github:helix-editor/helix";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, chaotic, nixvim, ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , chaotic
+    , nixvim
+    , ...
+    }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
@@ -32,49 +43,70 @@
       inherit lib;
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
-
       overlays = import ./overlays { inherit inputs outputs; };
-
       packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
+        # ISO
+        iso = lib.nixosSystem {
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+            ./hosts/iso/configuration.nix
+            chaotic.nixosModules.default
+          ];
+          specialArgs = { inherit inputs outputs; };
+        };
+
+        # Desktops
         neo = lib.nixosSystem {
-          modules = [ ./hosts/neo chaotic.nixosModules.default ];
+          modules = [ ./hosts/neo/configuration.nix chaotic.nixosModules.default ];
           specialArgs = { inherit inputs outputs; };
         };
+
         trinity = lib.nixosSystem {
-          modules = [ ./hosts/trinity chaotic.nixosModules.default ];
+          modules = [ ./hosts/trinity/configuration.nix chaotic.nixosModules.default ];
           specialArgs = { inherit inputs outputs; };
         };
-        tank = lib.nixosSystem {
-          modules = [ ./hosts/tank chaotic.nixosModules.default ];
-          specialArgs = { inherit inputs outputs; };
-        };
+
+        # Laptops
         morpheus = lib.nixosSystem {
-          modules = [ ./hosts/morpheus chaotic.nixosModules.default ];
+          modules = [ ./hosts/morpheus/configuration.nix chaotic.nixosModules.default ];
+          specialArgs = { inherit inputs outputs; };
+        };
+
+        # VMs
+        tank = lib.nixosSystem {
+          modules = [ ./hosts/tank/configuration.nix chaotic.nixosModules.default ];
           specialArgs = { inherit inputs outputs; };
         };
       };
 
       homeConfigurations = {
+        # Desktops
         "brenix@neo" = lib.homeManagerConfiguration {
-          modules = [ ./home/brenix/neo.nix ];
+          modules = [ ./hosts/neo/home.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
+
         "brenix@trinity" = lib.homeManagerConfiguration {
-          modules = [ ./home/brenix/trinity.nix ];
+          modules = [ ./hosts/trinity/home.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
-        "brenix@tank" = lib.homeManagerConfiguration {
-          modules = [ ./home/brenix/tank.nix ];
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
+
+        # Laptops
         "brenix@morpheus" = lib.homeManagerConfiguration {
-          modules = [ ./home/brenix/morpheus.nix ];
+          modules = [ ./hosts/morpheus/home.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+
+        # VMs
+        "brenix@tank" = lib.homeManagerConfiguration {
+          modules = [ ./hosts/tank/home.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };

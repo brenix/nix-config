@@ -1,5 +1,0 @@
-{
-  services.unifi = {
-    enable = true;
-  };
-}
