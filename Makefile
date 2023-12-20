@@ -40,6 +40,7 @@ volumes:
 	btrfs subvolume create /mnt/root; \
 	btrfs subvolume create /mnt/persist; \
 	btrfs subvolume create /mnt/nix; \
+	btrfs subvolume create /mnt/swap; \
 	btrfs subvolume snapshot -r /mnt/root /mnt/root-blank; \
 	}
 

@@ -16,6 +16,11 @@
     };
   };
 
+  swapDevices = [{
+    device = "/swap/swapfile";
+    size = 8196;
+  }];
+
   systemd.network.networks.ens33 = {
     matchConfig = { Name = "ens33"; };
     DHCP = "yes";

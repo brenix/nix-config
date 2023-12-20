@@ -60,12 +60,12 @@ Format and mount the partitions (btrfs)
 sudo make volumes HOSTNAME=<hostname> DISK=/dev/<disk>
 ```
 
-Alternatively, format the filesystems and mount to `/mnt/nix` and `/mnt/persist`
+Alternatively, format the filesystems and mount to `/mnt`, `/mnt/boot`,
+`/mnt/swap`
 
 Copy the livecd host keys to the persistence dir
 
 ```sh
-sudo make host-keys
 sudo mkdir -p /mnt/persist/etc/ssh && cp /etc/ssh/ssh_host\* /mnt/persist/etc/ssh
 ```
 

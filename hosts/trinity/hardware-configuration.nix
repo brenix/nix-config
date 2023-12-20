@@ -51,6 +51,11 @@
     }
   ];
 
+  swapDevices = [{
+    device = "/swap/swapfile";
+    size = 8196;
+  }];
+
   hardware.enableAllFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
 

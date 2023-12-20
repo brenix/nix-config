@@ -70,11 +70,11 @@ in
       neededForBoot = true;
     };
 
-    # "/swap" = {
-    #   device = "/dev/disk/by-label/${hostname}";
-    #   fsType = "btrfs";
-    #   options = [ "subvol=swap" "noatime" ];
-    # };
+    "/swap" = {
+      device = "/dev/disk/by-label/${hostname}";
+      fsType = "btrfs";
+      options = [ "subvol=swap" "noatime" ];
+    };
   };
 
   services.btrfs.autoScrub.enable = true;

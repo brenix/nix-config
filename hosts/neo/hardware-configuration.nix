@@ -54,6 +54,11 @@
     };
   };
 
+  swapDevices = [{
+    device = "/swap/swapfile";
+    size = 8196;
+  }];
+
   systemd.mounts = [
     {
       what = "/dev/mapper/data-cache";
