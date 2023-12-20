@@ -39,8 +39,8 @@
   services.geoclue2.enable = true;
 
   powerManagement.enable = true;
-  powerManagement.powertop.enable = true;
   powerManagement.cpuFreqGovernor = "powersave";
+  services.power-profiles-daemon.enable = true;
 
   programs = {
     dconf.enable = true;
