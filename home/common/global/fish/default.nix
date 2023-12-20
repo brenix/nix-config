@@ -19,6 +19,7 @@
       cmtd = "cellmate terraform deploy";
       cmsr = "cellmate sequence run";
       docker = "podman";
+      fw = "sudo framework_tool --driver=portio";
       g = "git";
       k = "kubectl";
       kdd = "kubectl describe deployment";
