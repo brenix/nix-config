@@ -16,7 +16,7 @@
       device = "/dev/disk/by-label/ESP";
       fsType = "vfat";
     };
-    "/var/lib/containerd" = {
+    "/var/lib/rancher/k3s/agent/containerd" = {
       device = "/dev/disk/by-label/containerd";
       fsType = "xfs";
       options = [ "noatime" ];
