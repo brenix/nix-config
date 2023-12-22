@@ -26,10 +26,10 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
-      # "mem_sleep_default=deep"
+      "mem_sleep_default=deep"
       "nvme.noacpi=1"
-      # "btusb.enable_autosuspend=n"
-      # "resume_offset=11019520" # btrfs inspect-internal map-swapfile -r /swap/swapfile
+      "btusb.enable_autosuspend=n"
+      "resume_offset=533760" # btrfs inspect-internal map-swapfile -r /swap/swapfile
     ];
     initrd.availableKernelModules = [
       "nvme"
