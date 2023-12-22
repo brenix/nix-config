@@ -7,7 +7,6 @@
     ../../nixos/global
     ../../nixos/users/brenix.nix
 
-    ../../nixos/optional/auto-hibernate.nix
     ../../nixos/optional/auto-login.nix
     ../../nixos/optional/clipcat.nix
     ../../nixos/optional/ephemeral.nix
@@ -27,7 +26,7 @@
     kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       "mem_sleep_default=deep"
-      "nvme.noacpi=1"
+      # "nvme.noacpi=1"
       "btusb.enable_autosuspend=n"
       "resume_offset=533760" # btrfs inspect-internal map-swapfile -r /swap/swapfile
     ];
@@ -39,7 +38,7 @@
     initrd.kernelModules = [ ];
     kernelModules = [ ];
     blacklistedKernelModules = [
-      "hid-sensor-hub"
+      # "hid-sensor-hub"
     ];
     extraModprobeConfig = ''
     '';
@@ -59,6 +58,7 @@
   environment.systemPackages = with pkgs; [
     framework-tool
   ];
+  hardware.framework.amd-7040.preventWakeOnAC = true; # https://www.phoronix.com/news/Framework-13-AMD-Lid-Suspend
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
     SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="amdgpu_bl0", ATTR{brightness}="55"
@@ -67,7 +67,6 @@
   # Power management
   powerManagement.enable = true;
   powerManagement.cpuFreqGovernor = "powersave";
-  services.power-profiles-daemon.enable = true;
 
   # Programs
   programs = {
