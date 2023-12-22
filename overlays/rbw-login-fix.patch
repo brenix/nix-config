@@ -1,0 +1,26 @@
+From 40a33eca2837a0a11bedab7b1eb4a8b830058807 Mon Sep 17 00:00:00 2001
+From: Maksim Karelov <max.karelov@gmail.com>
+Date: Wed, 20 Dec 2023 21:03:44 +0700
+Subject: [PATCH] Pass `User-Agent` header to prevent login from returning 400
+
+Fixes #145
+---
+ src/api.rs | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/api.rs b/src/api.rs
+index bee0606..2e0ed64 100644
+--- a/src/api.rs
++++ b/src/api.rs
+@@ -831,6 +831,10 @@ impl Client {
+                 "auth-email",
+                 crate::base64::encode_url_safe_no_pad(email),
+             )
++            .header(
++                "user-agent",
++                format!("rbw/{}", env!("CARGO_PKG_VERSION")),
++            )
+             .send()
+             .await
+             .map_err(|source| Error::Reqwest { source })?;
+

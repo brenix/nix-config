@@ -10,5 +10,8 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    rbw = prev.rbw.overrideAttrs (oldAttrs: rec {
+      patches = (oldAttrs.patches or [ ]) ++ [ ./rbw-login-fix.patch ];
+    });
   };
 }
