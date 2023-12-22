@@ -15,6 +15,8 @@ in
 {
   programs.nix-index.enable = true;
 
+  home.sessionVariables.NIX_INDEX_DATABASE = "$HOME/.cache/nix-index/";
+
   systemd.user.services.nix-index-database-sync = {
     Unit = { Description = "fetch mic92/nix-index-database"; };
     Service = {
