@@ -1,9 +1,13 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   sops.secrets.wifiNetworks = {
     sopsFile = ../secrets.yaml;
     neededForUsers = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    wpa_supplicant_gui
+  ];
 
   networking.wireless = {
     enable = true;
