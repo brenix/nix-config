@@ -81,7 +81,6 @@ in
         kvs = "kubectl view-secret";
         kvsec = "kubectl view-secret";
         ping = "gping";
-        rm = "trash";
         t = "todoist";
         ta = "todoist add";
         td = "todoist close";
