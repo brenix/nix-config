@@ -2,6 +2,7 @@
   imports = [
     inputs.hardware.nixosModules.framework-13-7040-amd
     ./disks.nix
+    ./wireguard.nix
 
     ../../nixos/global
     ../../nixos/users/brenix.nix

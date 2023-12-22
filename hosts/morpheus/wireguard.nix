@@ -1,27 +1,26 @@
 { config, ... }:
 {
-  sops.secrets.wireguardEndpoint = {
+  sops.secrets.wireguardConfig = {
     sopsFile = ./secrets.yaml;
   };
 
-  sops.secrets.wireguardPrivateKey = {
-    sopsFile = ./secrets.yaml;
-  };
+  environment.etc."wireguard/wg0.conf".source = config.sops.secrets.wireguardConfig.path;
 
-  networking.wg-quick.interfaces = {
-    wg0 = {
-      address = [ "10.10.10.5/32" ];
-      dns = [ "10.10.10.1" ];
-      privateKeyFile = config.sops.secrets.wireguardPrivateKey.path;
+  # NOTE: Use the followng to automatically maintain the wireguard connection
+  # networking.wg-quick.interfaces = {
+  #   wg0 = {
+  #     address = [ ];
+  #     dns = [ ];
+  #     privateKeyFile = config.sops.secrets.wireguardPrivateKey.path;
 
-      peers = [
-        {
-          publicKey = "8TFMhl1fXoOgV6qqUkKwS28T3uMTgQxURMktrtSCOis=";
-          allowedIPs = [ "0.0.0.0/0" ];
-          endpoint = config.sops.secrets.wireguardEndpoint;
-          persistentKeepalive = 25;
-        }
-      ];
-    };
-  };
+  #     peers = [
+  #       {
+  #         publicKey = "";
+  #         allowedIPs = [ "0.0.0.0/0" ];
+  #         endpoint = "";
+  #         persistentKeepalive = 25;
+  #       }
+  #     ];
+  #   };
+  # };
 }
