@@ -70,13 +70,13 @@
                 vg = "data";
               };
             };
-            primary = {
-              label = "windows";
-              size = "100%";
-              content = {
-                type = "ntfs";
-              };
-            };
+            # primary = {
+            #   label = "windows";
+            #   size = "100%";
+            #   content = {
+            #     type = "ntfs";
+            #   };
+            # };
           };
         };
       };
