@@ -200,7 +200,7 @@ in
         "super + shift + d" = "discocss";
 
         # flameshot
-        "Print" = "flameshot gui";
+        "Print" = "${pkgs.flameshot}/bin/flameshot gui";
 
         # obsidian
         "super + o" = "obsidian";
