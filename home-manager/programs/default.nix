@@ -4,6 +4,7 @@
     ./fzf.nix
     ./git.nix
     ./gpg.nix
+    ./nix-index.nix
     ./rbw.nix
     ./ssh.nix
     ./starship.nix

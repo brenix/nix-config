@@ -258,6 +258,81 @@ in
           "browser.menu.showViewImageInfo" = true;
           "findbar.highlightAll" = true;
         };
+
+        userChrome = ''
+          /* Hide extra icons in address bar */
+          #page-action-buttons > *:not(#star-button-box),
+          .urlbar-history-dropmarker {
+            opacity: 0 !important;
+          }
+
+          /* Hide the microphone indicator */
+          #webrtcIndicator {
+            display: none;
+          }
+
+          /* START Firefox Ultra Compact Mode
+          *
+          * Copyright (c) Danny Colin
+          *
+          * This Source Code Form is subject to the terms of the Mozilla Public
+          * License, v. 2.0. If a copy of the MPL was not distributed with this
+          * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+          */
+
+          :root {
+            /* Appmenu: Reduce item padding */
+            --arrowpanel-menuitem-padding-block: 4px 8px !important;
+            /* Tabbar: reduce tab margin */
+            --tab-block-margin: 4px 3px !important;
+          }
+
+          /* Tab: Reduce height */
+          .tabbrowser-tab {
+            min-height: 24px !important;
+          }
+
+          /* Tab: Ensure tab height doesn't augment when arrowscrollbox is visible  */
+          #tabbrowser-arrowscrollbox {
+            --tab-min-height: 31px !important;
+            max-height: var(--tab-min-height);
+          }
+
+          /* URLBar: Fix vertical alignment */
+          #urlbar[breakout=true]:not([open="true"]) {
+            --urlbar-height: 20px !important;
+            --urlbar-toolbar-height: 24px !important;
+          }
+
+          /* URLBar: Fix URL address vertical aligment when megabar is open */
+          #urlbar[breakout=true][open="true"] {
+            --urlbar-toolbar-height: 30px !important;
+          }
+
+          /* Searchbar: Ensure toolbar height doesn't augment when searchbar is visible */
+          #urlbar-container,
+          #search-container {
+            padding-block: 0 !important;
+          }
+
+          /* Searchbar: Make sure the min-height of the input is the same as the popup */
+          #search-container {
+            min-width: 192px !important;
+          }
+
+          /* Toolbar: Reduce spacing */
+          #urlbar-container {
+            --urlbar-container-height: 30px !important;
+            margin-top: 0 !important;
+          }
+
+          /* Reload Button: Fix vertical alignment */
+          #reload-button {
+            margin-block-start: -2px !important;
+          }
+
+          /* END Firefox Ultra Compact Mode */
+        '';
       };
     };
 
