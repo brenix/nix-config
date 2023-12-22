@@ -67,6 +67,8 @@
       eDP-1 = [ "1" "2" "3" "4" ];
     };
 
+    programs.alacritty.settings.font.size = 7;
+
     home.persistence = {
       "/persist/home/brenix" = {
         directories = [
