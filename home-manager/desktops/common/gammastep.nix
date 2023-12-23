@@ -1,5 +1,6 @@
+{ config, lib, ... }:
 {
-  services.gammastep = {
+  services.gammastep = lib.mkIf (!config.my.settings.headless) {
     enable = true;
     provider = "geoclue2";
     temperature = {

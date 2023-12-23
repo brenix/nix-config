@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   imports = [
     ./dunst.nix
@@ -14,7 +14,7 @@
     ./xdg.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs; lib.mkIf (!config.my.settings.headless) [
     mpv
     mupdf
     nsxiv
@@ -24,6 +24,6 @@
   ];
 
   services.playerctld = {
-    enable = true;
+    enable = lib.mkIf (!config.my.settings.headless) true;
   };
 }

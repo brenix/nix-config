@@ -1,11 +1,11 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   browser = config.my.settings.default.browser;
 in
 {
   home.sessionVariables.DEFAULT_BROWSER = browser;
 
-  xdg = {
+  xdg = lib.mkIf (!config.my.settings.headless) {
     enable = true;
     cacheHome = config.home.homeDirectory + "/.local/cache";
 

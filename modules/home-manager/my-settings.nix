@@ -36,6 +36,11 @@ in
       default = 96;
     };
 
+    headless = mkOption {
+      type = types.bool;
+      default = false;
+    };
+
     wallpaper = mkOption {
       type = types.str;
       default = "";

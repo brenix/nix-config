@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
-  gtk = {
+  gtk = lib.mkIf (!config.my.settings.headless) {
     enable = true;
     font = {
       name = config.my.settings.fonts.regular;
@@ -36,14 +36,14 @@
     };
   };
 
-  qt = {
+  qt = lib.mkIf (!config.my.settings.headless) {
     enable = true;
     platformTheme = "gtk";
     style.name = "Adwaita-dark";
   };
 
   home.sessionVariables.GTK_THEME = "Adwaita-dark";
-  home.pointerCursor = {
+  home.pointerCursor = lib.mkIf (!config.my.settings.headless) {
     name = "capitaine-cursors-white";
     package = pkgs.capitaine-cursors;
     size = 24;

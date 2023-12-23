@@ -33,6 +33,7 @@
 
     my.settings = {
       host = "trinity";
+      headless = true;
       default = {
         shell = "${pkgs.fish}/bin/fish";
         terminal = "${pkgs.alacritty}/bin/alacritty";
