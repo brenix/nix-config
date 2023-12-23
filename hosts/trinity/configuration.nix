@@ -60,9 +60,6 @@
   # Nix
   nixpkgs.hostPlatform.system = "x86_64-linux";
 
-  # Programs
-  services.irqbalance.enable = true;
-
   # Swap
   swapDevices = [{ device = "/swap/swapfile"; }];
 
