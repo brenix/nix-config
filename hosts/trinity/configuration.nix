@@ -1,13 +1,13 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
-    ./disks.nix
+    # ./disks.nix # TODO: uncomment during reinstall
     ./k3s.nix
     # ./k0s.nix
     # ./kubernetes.nix
-    ./libvirt.nix
     ./restic.nix
+    ./mounts.nix # TODO: remove during reinstall
 
     ../../nixos/global
     ../../nixos/users/brenix.nix
@@ -42,6 +42,8 @@
   networking = {
     hostName = "trinity";
   };
+  networking.useDHCP = pkgs.lib.mkForce false;
+  networking.useNetworkd = false;
 
   systemd.network.enable = true;
   systemd.network.networks.enp7s0 = {

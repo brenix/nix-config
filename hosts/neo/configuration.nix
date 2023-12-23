@@ -3,8 +3,9 @@
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
-    ./disks.nix
+    # ./disks.nix # TODO: uncomment during reinstall
     ./libvirt.nix
+    ./mounts.nix # TODO: remove during reinstall
 
     ../../nixos/global
     ../../nixos/users/brenix.nix
@@ -69,6 +70,8 @@
   networking = {
     hostName = "neo";
   };
+  networking.useDHCP = pkgs.lib.mkForce false;
+  networking.useNetworkd = false;
 
   systemd.network.enable = true;
   systemd.network.networks.enp7s0 = {
@@ -95,7 +98,7 @@
   services.ratbagd.enable = true;
 
   # Xorg settings
-  services.xserver.dpi = 123;
+  services.xserver.dpi = 108;
   services.xserver.displayManager.sessionCommands = ''
     ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --mode 2560x1440
     ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode 2560x1440

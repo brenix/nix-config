@@ -29,7 +29,7 @@
       };
       subpixel = {
         rgba = "rgb"; # "rgb", "bgr", "vrgb", "vbgr", "none" (default)
-        lcdfilter = "light"; # "none", "default" (default) , "light", "legacy"
+        lcdfilter = "default"; # "none", "default" (default) , "light", "legacy"
       };
     };
   };
