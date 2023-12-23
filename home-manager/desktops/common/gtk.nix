@@ -10,10 +10,12 @@
     theme = {
       # name = "Nordic-darker";
       # package = pkgs.nordic;
-      # name = "Whitesur";
-      # package = pkgs.whitesur-gtk-theme;
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
+
+      name = "Whitesur";
+      package = pkgs.whitesur-gtk-theme;
+
+      # name = "adw-gtk3-dark";
+      # package = pkgs.adw-gtk3;
     };
 
     iconTheme = {
@@ -26,6 +28,7 @@
       gtk-xft-hinting = 1;
       gtk-xft-hintstyle = "hintslight";
       gtk-xft-rgba = "rgb";
+      gtk-decoration-layout = "menu:";
     };
 
     gtk4.extraConfig = {
@@ -33,6 +36,7 @@
       gtk-xft-hinting = 1;
       gtk-xft-hintstyle = "hintslight";
       gtk-xft-rgba = "rgb";
+      gtk-decoration-layout = "menu:";
     };
   };
 
@@ -42,7 +46,7 @@
     style.name = "Adwaita-dark";
   };
 
-  home.sessionVariables.GTK_THEME = "Adwaita-dark";
+  home.sessionVariables.GTK_THEME = "WhiteSur-Light";
   home.pointerCursor = lib.mkIf (!config.my.settings.headless) {
     name = "capitaine-cursors-white";
     package = pkgs.capitaine-cursors;
