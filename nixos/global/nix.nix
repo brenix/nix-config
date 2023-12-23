@@ -9,6 +9,7 @@
     package = lib.mkDefault pkgs.nix;
     settings = {
       substituters = [
+        "http://192.168.1.10"
         "https://nix-community.cachix.org"
       ];
       trusted-public-keys = [

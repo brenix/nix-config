@@ -54,6 +54,7 @@
     package = lib.mkDefault pkgs.nix;
     settings = {
       substituters = [
+        "http://192.168.1.10"
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"
       ];

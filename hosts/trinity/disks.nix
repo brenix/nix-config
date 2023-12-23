@@ -144,6 +144,19 @@
               ];
             };
           };
+          nix-cache = {
+            size = "30G";
+            extraArgs = "--stripes 2 --stripesize 256k";
+            content = {
+              type = "filesystem";
+              format = "xfs";
+              mountpoint = "/var/cache/nginx";
+              mountOptions = [
+                "defaults"
+                "noatime"
+              ];
+            };
+          };
         };
       };
     };

@@ -8,6 +8,7 @@
     # ./kubernetes.nix
     ./restic.nix
     ./mounts.nix # TODO: remove during reinstall
+    ./nix-cache.nix
 
     ../../nixos/global
     ../../nixos/users/brenix.nix
