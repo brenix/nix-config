@@ -63,7 +63,7 @@ in
             inherit (config.my.settings.fonts) monospace;
             style = "Italic";
           };
-          size = lib.mkDefault 10.5;
+          size = lib.mkDefault 11.5;
           offset.y = -3;
         };
 
