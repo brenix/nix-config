@@ -43,7 +43,8 @@
   qt = lib.mkIf (!config.my.settings.headless) {
     enable = true;
     platformTheme = "gtk";
-    style.name = "Adwaita-dark";
+    style.name = "WhiteSur-Light";
+    style.package = pkgs.whitesur-gtk-theme;
   };
 
   home.sessionVariables.GTK_THEME = "WhiteSur-Light";

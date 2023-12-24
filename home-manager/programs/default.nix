@@ -12,11 +12,6 @@
     ./zoxide.nix
   ];
 
-  programs.nix-index = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
   home.packages = with pkgs; [
     (pkgs.uutils-coreutils.override { prefix = ""; })
     age
