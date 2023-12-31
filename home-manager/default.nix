@@ -6,6 +6,7 @@
       inputs.nixvim.homeManagerModules.nixvim
       inputs.nur.hmModules.nur
       inputs.impermanence.nixosModules.home-manager.impermanence
+      inputs.chaotic.homeManagerModules.default
 
       ./programs
 

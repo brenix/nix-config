@@ -4,6 +4,7 @@
     [
       inputs.home-manager.nixosModules.home-manager
       inputs.disko.nixosModules.disko
+      inputs.chaotic.nixosModules.default
 
       ./ananicy.nix
       ./locale.nix

@@ -54,31 +54,30 @@
             "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
             "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
             ./hosts/iso/configuration.nix
-            chaotic.nixosModules.default
           ];
           specialArgs = { inherit inputs outputs; };
         };
 
         # Desktops
         neo = lib.nixosSystem {
-          modules = [ ./hosts/neo/configuration.nix chaotic.nixosModules.default ];
+          modules = [ ./hosts/neo/configuration.nix ];
           specialArgs = { inherit inputs outputs; };
         };
 
         trinity = lib.nixosSystem {
-          modules = [ ./hosts/trinity/configuration.nix chaotic.nixosModules.default ];
+          modules = [ ./hosts/trinity/configuration.nix ];
           specialArgs = { inherit inputs outputs; };
         };
 
         # Laptops
         morpheus = lib.nixosSystem {
-          modules = [ ./hosts/morpheus/configuration.nix chaotic.nixosModules.default ];
+          modules = [ ./hosts/morpheus/configuration.nix ];
           specialArgs = { inherit inputs outputs; };
         };
 
         # VMs
         tank = lib.nixosSystem {
-          modules = [ ./hosts/tank/configuration.nix chaotic.nixosModules.default ];
+          modules = [ ./hosts/tank/configuration.nix ];
           specialArgs = { inherit inputs outputs; };
         };
       };
