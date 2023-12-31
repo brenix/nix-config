@@ -3,7 +3,7 @@
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
-    rulesProvider = pkgs.ananicy-rules-cachyos;
+    rulesProvider = pkgs.ananicy-cpp-rules;
     settings = {
       check_freq = 15;
       cgroup_load = true;
