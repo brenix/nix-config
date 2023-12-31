@@ -13,7 +13,8 @@
   ];
 
   home.packages = with pkgs; [
-    (pkgs.uutils-coreutils.override { prefix = ""; })
+    # Disabled for now since Chaotic-nyx includes a x86_64_v3 optimized versions
+    # (pkgs.uutils-coreutils.override { prefix = ""; })
     age
     calc
     comma
