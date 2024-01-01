@@ -10,6 +10,7 @@
     kustomize
     skopeo
     stern
+    talosctl
     trivy
   ];
 
