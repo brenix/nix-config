@@ -104,7 +104,7 @@ in
         '' +
         # Paths
         ''
-          set -gx PATH $PATH $HOME/.krew/bin $GOPATH/bin
+          set -gx PATH $PATH $HOME/.local/bin $HOME/.krew/bin $GOPATH/bin
         '' +
         # Completions
         ''
