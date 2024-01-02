@@ -22,9 +22,9 @@
       enable = true;
       antialias = true;
       defaultFonts = {
-        serif = [ "Inter Regular" ];
-        sansSerif = [ "Inter Regular" "Fira Sans" "FiraGO" ];
-        monospace = [ "Monaco Nerd Font" "FiraCode Nerd Font Mono" "Hack Nerd Font Mono" ];
+        serif = [ "Fira Sans" ];
+        sansSerif = [ "Fira Sans" "FiraGO" "Inter" ];
+        monospace = [ "FiraCode Nerd Font Mono" "Monaco Nerd Font" "Hack Nerd Font Mono" ];
         emoji = [ "Joypixels" "Noto Color Emoji" ];
       };
       subpixel = {

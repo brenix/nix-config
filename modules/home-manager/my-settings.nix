@@ -53,7 +53,8 @@ in
       regular = mkOption {
         type = types.str;
         description = "The font for regular text";
-        default = "Inter";
+        # default = "Inter";
+        default = "Fira Sans";
       };
 
       monospace = mkOption {
