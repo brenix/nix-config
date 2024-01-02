@@ -7,7 +7,7 @@ in
 
   xdg = lib.mkIf (!config.my.settings.headless) {
     enable = true;
-    cacheHome = config.home.homeDirectory + "/.local/cache";
+    cacheHome = config.home.homeDirectory + "/.cache";
 
     mimeApps = {
       enable = true;

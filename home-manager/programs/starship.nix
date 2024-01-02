@@ -41,10 +41,16 @@
         disabled = false;
         format = "[\\[$context:$namespace\\]]($style) ";
         style = "bright-black";
-        context_aliases = {
-          ".*vdp.*" = "vdp";
-          "(?P<var_cell>[\\w-]+)-aws-\\w+-(?P<var_cluster>[\\w-]+)-.*" = "$var_cell-$var_cluster";
-        };
+        contexts = [
+          {
+            context_pattern = ".*vdp.*";
+            context_alias = "vdp";
+          }
+          {
+            context_pattern = "(?P<var_cell>[\\w-]+)-aws-\\w+-(?P<var_cluster>[\\w-]+)-.*";
+            context_alias = "$var_cell-$var_cluster";
+          }
+        ];
       };
       python = {
         format = "[(($virtualenv)) ]($style)";
