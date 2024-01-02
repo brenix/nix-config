@@ -54,14 +54,14 @@ in
         type = types.str;
         description = "The font for regular text";
         # default = "Inter";
-        default = "Fira Sans";
+        default = "Route 159";
       };
 
       monospace = mkOption {
         type = types.str;
         description = "The font for monospace text";
-        # default = "Monaco Nerd Font Mono";
-        default = "FiraCode Nerd Font Mono";
+        default = "Monaco Nerd Font Mono";
+        # default = "FiraCode Nerd Font Mono";
       };
     };
 

@@ -57,7 +57,7 @@ in
           };
           bold = {
             inherit (config.my.settings.fonts) monospace;
-            style = "Bold";
+            style = "Regular";
           };
           italic = {
             inherit (config.my.settings.fonts) monospace;
