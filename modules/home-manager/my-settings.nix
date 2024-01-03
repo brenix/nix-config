@@ -53,15 +53,13 @@ in
       regular = mkOption {
         type = types.str;
         description = "The font for regular text";
-        # default = "Inter";
-        default = "Route 159";
+        default = "Inter";
       };
 
       monospace = mkOption {
         type = types.str;
         description = "The font for monospace text";
         default = "Monaco Nerd Font Mono";
-        # default = "FiraCode Nerd Font Mono";
       };
     };
 

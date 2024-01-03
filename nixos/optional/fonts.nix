@@ -4,28 +4,25 @@
     enableDefaultPackages = false;
     fontDir.enable = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" "Ubuntu" ]; })
+      # (nerdfonts.override { fonts = [ "FiraCode" "Ubuntu" ]; })
       fira
-      fira-go
       inter
       joypixels
       monaco
       noto-fonts-emoji
       terminus_font
-      ubuntu_font_family
-      route159
+      # ubuntu_font_family
       uw-ttyp0
       weather-icons
-      work-sans
     ];
 
     fontconfig = {
       enable = true;
       antialias = true;
       defaultFonts = {
-        serif = [ "Route 159" ];
-        sansSerif = [ "Route 159" "Inter" "Ubuntu" ];
-        monospace = [ "Monaco Nerd Font Mono" "FiraCode Nerd Font Mono" "Ubuntu Nerd Font Mono" ];
+        serif = [ "Inter" ];
+        sansSerif = [ "Inter" ];
+        monospace = [ "Monaco Nerd Font Mono" ];
         emoji = [ "Joypixels" "Noto Color Emoji" ];
       };
       subpixel = {
