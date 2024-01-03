@@ -20,6 +20,7 @@ in
 
       shellAliases = {
         bat = "bat --paging=never --style=plain --decorations=never";
+        g = "git";
         ga = "git add";
         gaa = "git add --all";
         gb = "git branch";
