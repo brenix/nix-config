@@ -267,11 +267,6 @@ in
             opacity: 0 !important;
           }
 
-          /* Hide the microphone indicator */
-          #webrtcIndicator {
-            display: none;
-          }
-
           /* START Firefox Ultra Compact Mode
           *
           * Copyright (c) Danny Colin
