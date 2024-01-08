@@ -185,7 +185,7 @@ in
 
         # browser
         "super + d" =
-          "${pkgs.xdotool}/bin/xdotool search Firefox windowactivate || firefox";
+          "${pkgs.xdotool}/bin/xdotool search Firefox windowactivate || firefox-beta";
 
         # spotify
         "super + s" = if config.my.settings.dpi > 150 then "spotify --force-device-scale-factor=2" else "spotify";
