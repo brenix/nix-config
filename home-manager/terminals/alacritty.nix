@@ -33,18 +33,18 @@ in
           decorations = "none";
         };
 
-        dynamic_padding = false;
-
         selection = {
           save_to_clipboard = true;
         };
 
-        mouse_bindings = [
-          {
-            mouse = "Right";
-            action = "PasteSelection";
-          }
-        ];
+        mouse = {
+          bindings = [
+            {
+              mouse = "Right";
+              action = "PasteSelection";
+            }
+          ];
+        };
 
         env = {
           TERM = "xterm-256color";
@@ -52,23 +52,23 @@ in
 
         font = {
           normal = {
-            inherit (config.my.settings.fonts) monospace;
+            family = config.my.settings.fonts.monospace;
             style = "Regular";
           };
           bold = {
-            inherit (config.my.settings.fonts) monospace;
+            family = config.my.settings.fonts.monospace;
             style = "Regular";
           };
           italic = {
-            inherit (config.my.settings.fonts) monospace;
+            family = config.my.settings.fonts.monospace;
             style = "Italic";
           };
           size = lib.mkDefault 11.5;
           offset.y = -3;
         };
 
-        draw_bold_text_with_bright_colors = false;
         colors = {
+          draw_bold_text_with_bright_colors = false;
           primary = {
             background = "#${colors.base00}";
             foreground = "#${colors.base05}";
@@ -91,10 +91,6 @@ in
             focused_match = {
               foreground = "#${colors.base00}";
               background = "#${colors.base0B}";
-            };
-            footer_bar = {
-              foreground = "#${colors.base00}";
-              background = "#${colors.base0C}";
             };
           };
           hints = {
