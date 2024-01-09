@@ -11,6 +11,7 @@ in
   config = mkIf cfg.enable {
     programs.tmux = {
       enable = true;
+      prefix = "C-x";
       shell = "${config.my.settings.default.shell}";
       terminal = "tmux-256color";
       historyLimit = 100000;
