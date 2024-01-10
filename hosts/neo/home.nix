@@ -19,7 +19,7 @@
     modules = {
       browsers = {
         firefox.enable = true;
-        chromium.enable = true;
+        chromium.enable = false;
       };
 
       editors = {
