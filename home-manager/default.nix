@@ -39,18 +39,6 @@
 
   home.sessionVariables.EDITOR = config.my.settings.default.editor;
 
-  # NOTE: disabled when home-manager.useGlobalPkgs is enabled
-  # nixpkgs = {
-  #   overlays = builtins.attrValues outputs.overlays ++ [
-  #     inputs.nur.overlay
-  #   ];
-
-  #   config = {
-  #     allowUnfree = true;
-  #     allowUnfreePredicate = _: true;
-  #   };
-  # };
-
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {

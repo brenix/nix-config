@@ -30,5 +30,5 @@ in
   };
 
   # Passwordless sudo when SSH'ing with keys
-  security.pam.enableSSHAgentAuth = true;
+  security.pam.sshAgentAuth.enable = true;
 }
