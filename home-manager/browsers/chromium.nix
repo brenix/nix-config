@@ -11,8 +11,21 @@ in
   config = mkIf cfg.enable {
     programs.chromium = {
       enable = true;
-      commandLineArgs = [ ];
-      extensions = { };
+      commandLineArgs = [
+        "--custom-ntp=about:blank"
+        "--disable-search-engine-collection"
+        "--enable-quic"
+        "--max-connections-per-host=32"
+        "--no-pings"
+        "--enable-features=AsyncDns,BackForwardCache,SetIpv6ProbeFalse"
+      ];
+    };
+
+    home.persistence = {
+      "/persist/home/brenix" = {
+        directories = [ ".config/chromium" ];
+        allowOther = true;
+      };
     };
   };
 }

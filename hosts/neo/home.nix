@@ -19,6 +19,7 @@
     modules = {
       browsers = {
         firefox.enable = true;
+        chromium.enable = true;
       };
 
       editors = {
@@ -53,7 +54,7 @@
       default = {
         shell = "${pkgs.fish}/bin/fish";
         terminal = "${pkgs.alacritty}/bin/alacritty";
-        browser = "firefox";
+        browser = "chromium";
         editor = "hx";
       };
     };
