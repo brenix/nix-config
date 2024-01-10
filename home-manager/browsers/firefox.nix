@@ -121,27 +121,7 @@ in
           "network.predictor.enable-prefetch" = false;
 
           # SECUREFOX
-          "browser.contentblocking.category" = "strict";
-          "urlclassifier.trackingSkipURLs" = "*.reddit.com, *.twitter.com, *.twimg.com, *.tiktok.com";
-          "urlclassifier.features.socialtracking.skipURLs" = "*.instagram.com, *.twitter.com, *.twimg.com";
-          "privacy.partition.bloburl_per_partition_key" = true;
           "browser.uitour.enabled" = false;
-          "privacy.globalprivacycontrol.enabled" = true;
-          "privacy.globalprivacycontrol.functionality.enabled" = true;
-
-          "security.OCSP.enabled" = 0;
-          "security.remote_settings.crlite_filters.enabled" = true;
-          "security.pki.crlite_mode" = 2;
-          "security.cert_pinning.enforcement_level" = 2;
-
-          "security.ssl.treat_unsafe_negotiation_as_broken" = true;
-          "browser.xul.error_pages.expert_bad_cert" = true;
-          "security.tls.enable_0rtt_data" = false;
-
-          "browser.privatebrowsing.forceMediaMemoryCache" = true;
-          "browser.sessionstore.interval" = 60000;
-
-          "privacy.history.custom" = true;
 
           "browser.search.separatePrivateDefault.ui.enabled" = true;
           "browser.urlbar.update2.engineAliasRefresh" = true;
@@ -149,39 +129,15 @@ in
           "browser.urlbar.suggest.quicksuggest.sponsored" = false;
           "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
           "browser.formfill.enable" = false;
-          "security.insecure_connection_text.enabled" = true;
-          "security.insecure_connection_text.pbmode.enabled" = true;
-          "network.IDN_show_punycode" = true;
 
           "dom.security.https_first" = true;
-
-          "signon.rememberSignons" = false;
-          "editor.truncate_user_pastes" = false;
 
           "extensions.formautofill.addresses.enabled" = false;
           "extensions.formautofill.creditCards.enabled" = false;
 
           "network.auth.subresource-http-auth-allow" = 1;
-          "security.mixed_content.block_display_content" = true;
-          "pdfjs.enableScripting" = false;
-          "extensions.postDownloadThirdPartyPrompt" = false;
-
-          "network.http.referer.XOriginTrimmingPolicy" = 2;
-
-          "privacy.userContext.ui.enabled" = true;
-
-          "media.peerconnection.ice.proxy_only_if_behind_proxy" = true;
-          "media.peerconnection.ice.default_address_only" = true;
-
-          "browser.safebrowsing.downloads.remote.enabled" = false;
 
           "identity.fxaccounts.enabled" = true;
-          "browser.tabs.firefox-view" = false;
-          "permissions.default.desktop-notification" = 2;
-          "permissions.default.geo" = 0;
-          "geo.provider.network.url" = "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
-          "permissions.manager.defaultsUrl" = "";
-          "webchannel.allowObject.urlWhitelist" = "";
 
           "toolkit.telemetry.unified" = false;
           "toolkit.telemetry.enabled" = false;

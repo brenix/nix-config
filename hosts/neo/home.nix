@@ -54,7 +54,7 @@
       default = {
         shell = "${pkgs.fish}/bin/fish";
         terminal = "${pkgs.alacritty}/bin/alacritty";
-        browser = "chromium";
+        browser = "firefox";
         editor = "hx";
       };
     };
