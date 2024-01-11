@@ -19,7 +19,6 @@
     ../../nixos/optional/opengl.nix
     ../../nixos/optional/pipewire.nix
     ../../nixos/optional/podman.nix
-    ../../nixos/optional/syncthing.nix
     ../../nixos/optional/systemd-boot.nix
     ../../nixos/optional/xorg.nix
   ];
