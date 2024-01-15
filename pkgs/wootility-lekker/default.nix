@@ -7,14 +7,14 @@
 }:
 let
   pname = "wootility-lekker";
-  version = "4.6.10";
+  version = "4.6.11";
 in
 appimageTools.wrapType2 rec {
   name = "${pname}-${version}";
 
   src = fetchurl {
     url = "https://s3.eu-west-2.amazonaws.com/wooting-update/wootility-lekker-linux-latest/wootility-lekker-${version}.AppImage";
-    sha256 = "sha256-ZzByK950jCga4EiTiGSc8aO2qn4wYCz0OWh5odUPT20=";
+    sha256 = "sha256-AlM/TMyBQILOFQyoFHJfJYAf/10/x9WC8iYMMcytIu0=";
   };
 
   profile = ''

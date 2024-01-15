@@ -89,6 +89,10 @@
 
   # Hardware-specific stuff
   services.udev.packages = [ pkgs.wooting-udev-rules ];
+  environment.systemPackages = with pkgs; [
+    aircrack-ng
+    wordlists
+  ];
 
   # Programs
   programs = {
