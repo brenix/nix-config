@@ -32,7 +32,7 @@
       automatic = true;
       dates = "daily";
       # Delete older generations too
-      options = "--delete-older-than +3";
+      options = "--delete-older-than 3d";
     };
 
     # Add each flake input as a registry
