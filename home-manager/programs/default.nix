@@ -19,7 +19,6 @@
     comma
     curlie
     delta
-    dogdns
     fd
     go-task
     htop

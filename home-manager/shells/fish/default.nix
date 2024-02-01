@@ -59,7 +59,6 @@ in
         cm = "cellmate";
         cp = "xcp";
         curl = "curlie";
-        dig = "dog";
         fw = "sudo framework_tool --driver=portio";
         grep = "rg";
         k = "kubectl";
