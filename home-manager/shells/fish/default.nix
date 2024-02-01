@@ -55,6 +55,7 @@ in
         # ave = "aws-vault exec";
         bw = "rbw";
         cat = "bat";
+        calc = "qalc";
         cm = "cellmate";
         cp = "xcp";
         curl = "curlie";

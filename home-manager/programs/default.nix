@@ -16,7 +16,6 @@
     # Disabled for now since Chaotic-nyx includes a x86_64_v3 optimized versions
     # (pkgs.uutils-coreutils.override { prefix = ""; })
     age
-    calc
     comma
     curlie
     delta
@@ -27,6 +26,7 @@
     hugo
     imagemagick
     jq
+    libqalculate
     ripgrep
     sd
     shfmt
