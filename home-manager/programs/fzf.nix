@@ -1,15 +1,15 @@
 { config, ... }:
 let
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
 in
 {
   programs.fzf = {
     enable = true;
     defaultOptions = [
-      "--color=fg:#${colors.base05},bg:#${colors.base01},hl:#${colors.base0B}"
-      "--color=fg+:#${colors.base05},bg+:#${colors.base01},hl+:#${colors.base0B}"
-      "--color=info:#${colors.base0A},prompt:#${colors.base08},pointer:#${colors.base0E}"
-      "--color=marker:#${colors.base0D},spinner:#${colors.base0E},header:#${colors.base0D}"
+      "--color=fg:#${palette.base05},bg:#${palette.base01},hl:#${palette.base0B}"
+      "--color=fg+:#${palette.base05},bg+:#${palette.base01},hl+:#${palette.base0B}"
+      "--color=info:#${palette.base0A},prompt:#${palette.base08},pointer:#${palette.base0E}"
+      "--color=marker:#${palette.base0D},spinner:#${palette.base0E},header:#${palette.base0D}"
     ];
   };
 }

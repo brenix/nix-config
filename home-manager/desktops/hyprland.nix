@@ -83,8 +83,8 @@ in
         	gaps_in = 3
         	gaps_out = 5
         	border_size = 3
-        	col.active_border=0xff${config.colorscheme.colors.base07}
-        	col.inactive_border=0xff${config.colorscheme.colors.base02}
+        	col.active_border=0xff${config.colorscheme.palette.base07}
+        	col.inactive_border=0xff${config.colorscheme.palette.base02}
          }
 
          decoration {

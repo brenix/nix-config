@@ -27,6 +27,12 @@ in
         type = "rsa";
       }
     ];
+
+    # Fix deprecation warning. Something else is adding "%h/.ssh/authorized_keys"
+    # which is not needed since the below configuration includes the users pubkey
+    authorizedKeysFiles = lib.mkForce [
+      "/etc/ssh/authorized_keys.d/%u"
+    ];
   };
 
   # Passwordless sudo when SSH'ing with keys

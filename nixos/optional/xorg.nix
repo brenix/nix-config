@@ -2,7 +2,7 @@
 {
   services.xserver = {
     enable = true;
-    layout = "us";
+    xkb.layout = "us";
 
     autoRepeatDelay = 195;
     autoRepeatInterval = 30;

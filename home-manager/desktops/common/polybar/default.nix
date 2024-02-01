@@ -3,7 +3,7 @@ with lib;
 let
   cfg = config.modules.wms.bars.polybar;
   mprisScript = pkgs.callPackage ./scripts/mpris.nix { };
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
 in
 {
   options.modules.wms.bars.polybar = {
@@ -39,17 +39,17 @@ in
         # };
 
         "colors" = {
-          bg = "#${colors.base00}";
-          bg-alt = "#${colors.base00}";
-          fg = "#${colors.base05}";
-          fg-alt = "#${colors.base07}";
-          blue = "#${colors.base0D}";
-          cyan = "#${colors.base0C}";
-          green = "#${colors.base0B}";
-          orange = "#${colors.base09}";
-          purple = "#${colors.base0F}";
-          red = "#${colors.base08}";
-          yellow = "#${colors.base0A}";
+          bg = "#${palette.base00}";
+          bg-alt = "#${palette.base00}";
+          fg = "#${palette.base05}";
+          fg-alt = "#${palette.base07}";
+          blue = "#${palette.base0D}";
+          cyan = "#${palette.base0C}";
+          green = "#${palette.base0B}";
+          orange = "#${palette.base09}";
+          purple = "#${palette.base0F}";
+          red = "#${palette.base08}";
+          yellow = "#${palette.base0A}";
         };
 
         "bar/main" = {
@@ -58,11 +58,11 @@ in
           center = true;
           height = lib.mkDefault 20;
           enable-ipc = true;
-          foreground = "\${colors.fg}";
-          background = "\${colors.bg}";
-          border-bottom-color = "\${colors.bg-alt}";
+          foreground = "\${palette.fg}";
+          background = "\${palette.bg}";
+          border-bottom-color = "\${palette.bg-alt}";
           border-bottom-size = 1;
-          border-top-color = "\${colors.bg-alt}";
+          border-top-color = "\${palette.bg-alt}";
           border-top-size = 1;
           font-0 = lib.mkDefault "${config.my.settings.fonts.regular}:size=10;2";
           module-margin-left = 1;
@@ -73,7 +73,7 @@ in
           padding-left = 1;
           padding-right = 1;
           tray-position = "right";
-          separator = "%{F#${colors.base02}}|%{F-}";
+          separator = "%{F#${palette.base02}}|%{F-}";
         };
 
         "module/workspaces" = {

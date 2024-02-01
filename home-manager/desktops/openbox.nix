@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.modules.wms.openbox;
-  colors = config.colorscheme.colors;
+  colors = config.colorscheme.palette;
 in
 {
   options.modules.wms.openbox = {

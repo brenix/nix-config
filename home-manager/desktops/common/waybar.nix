@@ -281,16 +281,16 @@ in
       style =
         # css
         ''
-          @define-color base      #${colorscheme.colors.base00};
-          @define-color blue      #${colorscheme.colors.base0D};
-          @define-color rosewater #${colorscheme.colors.base06};
-          @define-color lavender  #${colorscheme.colors.base07};
-          @define-color teal      #${colorscheme.colors.base0C};
-          @define-color yellow    #${colorscheme.colors.base0A};
-          @define-color green     #${colorscheme.colors.base0B};
-          @define-color red       #${colorscheme.colors.base08};
-          @define-color mauve     #${colorscheme.colors.base0E};
-          @define-color flamingo  #${colorscheme.colors.base0F};
+          @define-color base      #${colorscheme.palette.base00};
+          @define-color blue      #${colorscheme.palette.base0D};
+          @define-color rosewater #${colorscheme.palette.base06};
+          @define-color lavender  #${colorscheme.palette.base07};
+          @define-color teal      #${colorscheme.palette.base0C};
+          @define-color yellow    #${colorscheme.palette.base0A};
+          @define-color green     #${colorscheme.palette.base0B};
+          @define-color red       #${colorscheme.palette.base08};
+          @define-color mauve     #${colorscheme.palette.base0E};
+          @define-color flamingo  #${colorscheme.palette.base0F};
 
           * { 
            color: @lavender;

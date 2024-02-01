@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.modules.terminals.foot;
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
 in
 {
   options.modules.terminals.foot = {
@@ -26,26 +26,26 @@ in
         };
 
         colors = {
-          foreground = colors.base05;
-          background = colors.base00;
+          foreground = palette.base05;
+          background = palette.base00;
 
-          regular0 = colors.base02;
-          regular1 = colors.base08;
-          regular2 = colors.base0B;
-          regular3 = colors.base0A;
-          regular4 = colors.base0D;
-          regular5 = colors.base0E;
-          regular6 = colors.base0C;
-          regular7 = colors.base05;
+          regular0 = palette.base02;
+          regular1 = palette.base08;
+          regular2 = palette.base0B;
+          regular3 = palette.base0A;
+          regular4 = palette.base0D;
+          regular5 = palette.base0E;
+          regular6 = palette.base0C;
+          regular7 = palette.base05;
 
-          bright0 = colors.base03;
-          bright1 = colors.base08;
-          bright2 = colors.base0B;
-          bright3 = colors.base0A;
-          bright4 = colors.base0D;
-          bright5 = colors.base0E;
-          bright6 = colors.base0C;
-          bright7 = colors.base06;
+          bright0 = palette.base03;
+          bright1 = palette.base08;
+          bright2 = palette.base0B;
+          bright3 = palette.base0A;
+          bright4 = palette.base0D;
+          bright5 = palette.base0E;
+          bright6 = palette.base0C;
+          bright7 = palette.base06;
         };
 
         scrollback = {
