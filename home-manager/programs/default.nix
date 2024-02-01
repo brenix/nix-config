@@ -23,7 +23,6 @@
     dogdns
     fd
     go-task
-    gping
     htop
     hugo
     imagemagick
