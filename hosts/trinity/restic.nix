@@ -33,6 +33,10 @@
         "--iexclude cache"
         "--iexclude crash"
         "--iexclude logs"
+        "--exclude cs2"
+        "--exclude Pal"
+        "--exclude steamapps"
+        "--exclude linux64"
       ];
       timerConfig = {
         OnCalendar = "03:00";
