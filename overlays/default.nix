@@ -1,5 +1,10 @@
-# This file defines overlays
-{ inputs, ... }: {
+{ outputs, inputs, ... }:
+let
+  addPatches = pkg: patches: pkg.overrideAttrs (oldAttrs: {
+    patches = (oldAttrs.patches or [ ]) ++ patches;
+  });
+in
+{
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: prev: import ../pkgs { pkgs = final; };
 
@@ -13,10 +18,6 @@
 
     # Patch libvirt until fixed upstream
     # https://github.com/NixOS/nixpkgs/issues/285929
-    libvirt = prev.libvirt.overrideAttrs (oldAttrs: rec {
-      postPatch = oldAttrs.postPatch + ''
-        substituteInPlace src/util/virpci.c --replace '/lib/modules' '/run/current-system/kernel-modules/lib/modules'
-      '';
-    });
+    libvirt = addPatches prev.libvirt [ ./libvirt-modules-path.patch ];
   };
 }
