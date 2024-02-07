@@ -14,6 +14,7 @@
       ./browsers/chromium.nix
 
       ./editors/helix
+      ./editors/vscode.nix
 
       ./multiplexers/tmux.nix
 
