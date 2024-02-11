@@ -34,7 +34,7 @@
         notifications.dunst.enable = true;
         bars.polybar.enable = true;
         launchers.rofi.enable = true;
-        compositor.picom.enable = true;
+        compositor.picom.enable = false;
       };
 
       terminals = {
