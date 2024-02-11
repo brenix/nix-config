@@ -27,7 +27,7 @@ in
 {
   services.k3s.enable = true;
   services.k3s.configPath = "${k3sConfig}";
-  services.k3s.package = pkgs.k3s_1_28;
+  services.k3s.package = pkgs.k3s_1_29;
 
   services.logind.extraConfig = ''
     InhibitDelayMaxSec=60s
@@ -38,6 +38,7 @@ in
       description = "Node tainter";
       wantedBy = [ "multi-user.target" ];
       after = [ "network-online.target" "k3s.service" ];
+      requires = [ "network-online.target" ];
       restartIfChanged = false;
       environment = {
         KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
