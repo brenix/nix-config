@@ -15,9 +15,5 @@ in
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-
-    # Patch libvirt until fixed upstream
-    # https://github.com/NixOS/nixpkgs/issues/285929
-    libvirt = addPatches prev.libvirt [ ./libvirt-modules-path.patch ];
   };
 }
