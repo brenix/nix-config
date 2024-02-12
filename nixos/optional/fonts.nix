@@ -14,6 +14,7 @@
       # ubuntu_font_family
       uw-ttyp0
       weather-icons
+      tamzen
     ];
 
     fontconfig = {
@@ -22,7 +23,7 @@
       defaultFonts = {
         serif = [ "Inter" ];
         sansSerif = [ "Inter" ];
-        monospace = [ "Monaco Nerd Font Mono" ];
+        monospace = [ "Tamzen" ];
         emoji = [ "Joypixels" "Noto Color Emoji" ];
       };
       subpixel = {

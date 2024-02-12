@@ -51,13 +51,16 @@
 
     my.settings = {
       dpi = 108;
-      wallpaper = "~/nix-config/home-manager/wallpapers/stone.jpg";
+      wallpaper = "~/nix-config/home-manager/wallpapers/wallhaven-85pej2.png";
       host = "neo";
       default = {
         shell = "${pkgs.fish}/bin/fish";
         terminal = "${pkgs.alacritty}/bin/alacritty";
         browser = "firefox";
         editor = "hx";
+      };
+      fonts = {
+        monospace = "tamzen";
       };
     };
 

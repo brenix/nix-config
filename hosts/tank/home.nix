@@ -37,7 +37,7 @@
     };
 
     my.settings = {
-      wallpaper = "~/nix-config/home-manager/wallpapers/stone.jpg";
+      wallpaper = "~/nix-config/home-manager/wallpapers/wallhaven-85pej2.png";
       host = "tank";
       default = {
         shell = "${pkgs.fish}/bin/fish";

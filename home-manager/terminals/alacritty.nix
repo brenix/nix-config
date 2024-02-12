@@ -63,8 +63,8 @@ in
             family = config.my.settings.fonts.monospace;
             style = "Italic";
           };
-          size = lib.mkDefault 11.5;
-          offset.y = -3;
+          size = lib.mkDefault 9;
+          offset.y = -2;
         };
 
         colors = {

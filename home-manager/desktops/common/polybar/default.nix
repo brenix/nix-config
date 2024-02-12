@@ -56,7 +56,7 @@ in
           dpi = config.my.settings.dpi;
           top = true;
           center = true;
-          height = lib.mkDefault 20;
+          height = lib.mkDefault 15;
           enable-ipc = true;
           foreground = "\${palette.fg}";
           background = "\${palette.bg}";
@@ -64,7 +64,7 @@ in
           border-bottom-size = 1;
           border-top-color = "\${palette.bg-alt}";
           border-top-size = 1;
-          font-0 = lib.mkDefault "${config.my.settings.fonts.regular}:size=10;2";
+          font-0 = lib.mkDefault "${config.my.settings.fonts.regular}:size=8;2";
           module-margin-left = 1;
           module-margin-right = 1;
           modules-left = "bspwm";

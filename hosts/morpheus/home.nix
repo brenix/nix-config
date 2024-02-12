@@ -44,7 +44,7 @@
 
     my.settings = {
       dpi = 123;
-      wallpaper = "~/nix-config/home-manager/wallpapers/stone.jpg";
+      wallpaper = "~/nix-config/home-manager/wallpapers/wallhaven-85pej2.png";
       host = "morpheus";
       default = {
         shell = "${pkgs.fish}/bin/fish";
