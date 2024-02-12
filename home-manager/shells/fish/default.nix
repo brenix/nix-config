@@ -40,6 +40,7 @@ in
         gst = "git status";
         gsh = "git show --format=raw -m";
         grhh = "git reset --hard HEAD";
+        kubectl = "kubecolor";
         l = "ls --format=vertical";
         la = "ls -A --format=vertical";
         mv = "mv -iv";

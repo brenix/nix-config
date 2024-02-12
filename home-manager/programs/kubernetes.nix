@@ -5,6 +5,7 @@
     helm-docs
     helmfile
     krew
+    kubecolor
     kubectl
     kubernetes-helm
     kustomize
