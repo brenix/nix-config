@@ -23,7 +23,7 @@
       defaultFonts = {
         serif = [ "Inter" ];
         sansSerif = [ "Inter" ];
-        monospace = [ "Tamzen" ];
+        monospace = [ "Monaco Nerd Font Mono" ];
         emoji = [ "Joypixels" "Noto Color Emoji" ];
       };
       subpixel = {

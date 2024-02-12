@@ -64,7 +64,8 @@ in
           border-bottom-size = 1;
           border-top-color = "\${palette.bg-alt}";
           border-top-size = 1;
-          font-0 = lib.mkDefault "${config.my.settings.fonts.regular}:size=8;2";
+          font-0 = lib.mkDefault "Terminus:size=8;2";
+          # font-0 = lib.mkDefault "${config.my.settings.fonts.regular}:size=6;2";
           module-margin-left = 1;
           module-margin-right = 1;
           modules-left = "bspwm";
