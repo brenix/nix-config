@@ -2,7 +2,7 @@
 {
   programs.go = {
     enable = true;
-    package = pkgs.go_1_21;
+    package = pkgs.go_1_22;
     goPath = ".cache/go";
     goBin = ".cache/go/bin";
   };
