@@ -64,7 +64,7 @@ in
             style = "Italic";
           };
           size = lib.mkDefault 11.5;
-          offset.y = -2;
+          offset.y = -1;
         };
 
         colors = {
