@@ -16,7 +16,7 @@
     reftools
     lefthook
     # pipenv
-    # poetry
+    poetry
     python3
     yamlfmt
   ];
