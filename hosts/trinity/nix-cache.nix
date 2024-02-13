@@ -1,6 +1,12 @@
 {
+  services.logrotate.settings.nginx = {
+    files = "/var/log/nginx/*.log";
+    rotate = 2;
+    frequency = "daily";
+  };
   services.nginx = {
     enable = true;
+    resolver.ipv6 = false;
     appendHttpConfig = ''
       proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=cachecache:100m max_size=25g inactive=365d use_temp_path=off;
       
