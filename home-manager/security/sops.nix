@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, lib, ... }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
   ];
@@ -16,6 +16,13 @@
   home.packages = with pkgs; [
     sops
   ];
+
+  # Fix issue where service is not started
+  systemd.user.services.sops-nix = {
+    Install = {
+      WantedBy = lib.mkForce [ "basic.target" ];
+    };
+  };
 
   home.persistence = {
     "/persist/home/brenix" = {
