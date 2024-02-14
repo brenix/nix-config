@@ -90,7 +90,7 @@
 
   # Xorg settings
   services.xserver.dpi = 123;
-  services.xserver.xkbOptions = "caps:escape";
+  services.xserver.xkb.options = "caps:escape";
   services.xserver.libinput.touchpad.clickMethod = "clickfinger";
   services.xserver.libinput.touchpad.naturalScrolling = true;
   services.xserver.libinput.touchpad.accelSpeed = "1.1";
