@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./atuin.nix
     ./bat.nix
     ./dircolors.nix
     ./epr.nix

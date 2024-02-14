@@ -125,6 +125,8 @@ in
           bind ! bind_bang
           bind '$' bind_dollar
           bind \er bind_planapply
+          bind \cr _atuin_search
+          bind -M insert \cr _atuin_search
         '' +
         # Use terminal colors
         ''

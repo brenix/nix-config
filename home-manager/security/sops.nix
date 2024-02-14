@@ -1,8 +1,4 @@
-{ inputs, pkgs, config, ... }:
-let
-  key = builtins.elemAt (builtins.filter (k: k.type == "ed25519") config.services.openssh.hostKeys) 0;
-in
-{
+{ inputs, pkgs, ... }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
   ];
@@ -13,7 +9,6 @@ in
       sshKeyPaths = [ ];
     };
 
-    age.sshKeyPaths = [ key.path ];
     defaultSymlinkPath = "/run/user/1000/secrets";
     defaultSecretsMountPoint = "/run/user/1000/secrets.d";
   };
