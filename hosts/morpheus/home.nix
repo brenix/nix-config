@@ -67,11 +67,6 @@
       eDP-1 = [ "1" "2" "3" "4" ];
     };
 
-    programs.alacritty.settings.font.normal.family = "tamzen";
-    programs.alacritty.settings.font.bold.family = "tamzen";
-    programs.alacritty.settings.font.italic.family = "tamzen";
-    programs.alacritty.settings.font.size = 4;
-
     home.persistence = {
       "/persist/home/brenix" = {
         directories = [
