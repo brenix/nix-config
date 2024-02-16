@@ -51,7 +51,7 @@
 
     my.settings = {
       dpi = 108;
-      wallpaper = "~/nix-config/home-manager/wallpapers/wallhaven-85pej2.png";
+      wallpaper = "~/nix-config/home-manager/wallpapers/forest-dark.jpg";
       host = "neo";
       default = {
         shell = "${pkgs.fish}/bin/fish";
