@@ -15,16 +15,6 @@
         # Disable TCP slow start on idle connections
         "net.ipv4.tcp_slow_start_after_idle" = 0;
 
-        # Contains, as a percentage of total available memory that contains free pages and reclaimable
-        # pages, the number of pages at which the background kernel flusher threads will start writing out
-        # dirty data (Default is 10).
-        "vm.dirty_background_ratio" = 4;
-
-        # Contains, as a percentage of total available memory that contains free pages and reclaimable
-        # pages, the number of pages at which a process which is generating disk writes will itself start
-        # writing out dirty data (Default is 20).
-        "vm.dirty_ratio" = 8;
-
         # page-cluster controls the number of pages up to which consecutive pages are read in from swap in a single attempt.
         # This is the swap counterpart to page cache readahead. The mentioned consecutivity is not in terms of virtual/physical addresses,
         # but consecutive on swap space - that means they were swapped out together. (Default is 3)
@@ -65,6 +55,12 @@
         # Increase min_free_kbytes to avoid lag spikes due to low memory situations
         "vm.min_free_kbytes" = 524288;
 
+        # Contains, as a bytes of total available memory that contains free pages and reclaimable
+        # pages, the number of pages at which a process which is generating disk writes will itself start
+        # writing out dirty data
+        "vm.dirty_bytes" = 268435456;
+        "vm.dirty_background_bytes" = 134217728;
+
         # Disable swappiness
         # The sysctl swappiness parameter determines the kernel's preference for pushing anonymous pages or page cache to disk in memory-starved situations.
         # A low value causes the kernel to prefer freeing up open files (page cache), a high value causes the kernel to try to use swap space,
@@ -78,6 +74,12 @@
         # TCP SYN cookie protection
         # Helps protect against SYN flood attacks. Only kicks in when net.ipv4.tcp_max_syn_backlog is reached:
         "net.ipv4.tcp_syncookies" = 1;
+
+        # TCP Enable ECN Negotiation by default
+        "net.ipv4.tcp_ecn" = 1;
+
+        # TCP reduce performance spikes
+        "net.ipv4.tcp_timestamps" = 0;
 
         # Increase the memory dedicated to the network interfaces
         # https://blog.cloudflare.com/optimizing-tcp-for-high-throughput-and-low-latency/
@@ -94,14 +96,20 @@
         "net.ipv4.udp_rmem_min" = 8192;
         "net.ipv4.udp_wmem_min" = 8192;
 
-        # Change PELT multiplier to 16 ms instead of 32ms
-        # 1 = 32ms
-        # 2 = 16ms
-        # 4 = 8ms
-        # "kernel.sched_pelt_multiplier" = "2";
-
         # Increase writeback interval for xfs
         "fs.xfs.xfssyncd_centisecs" = 10000;
+
+        # Disable split lock mitigate - known to cause performance issues in applications and games
+        "kernel.split_lock_mitigate" = 0;
+
+        # Disable the NMI watchdog
+        "kernel.nmi_watchdog" = 0;
+
+        # Set the maximum watches on files
+        "fs.inotify.max_user_watches" = 524288;
+
+        # Set size of file handles and inode cache
+        "fs.file-max" = 2097152;
       };
     };
   };

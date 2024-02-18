@@ -7,7 +7,6 @@
     ../../home-manager/programs/development-tools.nix
     ../../home-manager/programs/discord.nix
     ../../home-manager/programs/kubernetes.nix
-    # ../../home-manager/programs/obsidian.nix
     ../../home-manager/programs/slack.nix
     ../../home-manager/programs/spotify.nix
     ../../home-manager/programs/sre-tools

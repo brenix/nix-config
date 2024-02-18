@@ -86,7 +86,6 @@
     config = {
       allowUnfree = true;
       joypixels.acceptLicense = true;
-      permittedInsecurePackages = [ "electron-25.9.0" ];
     };
   };
 
