@@ -2,6 +2,8 @@
 {
   imports = [
     ../../home-manager
+    ../../home-manager/programs
+    ../../home-manager/programs/kubernetes.nix
   ];
 
   config = {
