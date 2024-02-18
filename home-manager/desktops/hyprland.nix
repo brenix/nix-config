@@ -1,13 +1,14 @@
 { inputs, config, lib, pkgs, ... }:
 with lib;
+let
+  cfg = config.modules.wms.hyprland;
+in
 {
   options.modules.wms.hyprland = {
     enable = mkEnableOption "enable hyprland window manager";
   };
 
   config = mkIf cfg.enable {
-
-
     home.sessionVariables = {
       MOZ_ENABLE_WAYLAND = 1;
       QT_QPA_PLATFORM = "wayland";
