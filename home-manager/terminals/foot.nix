@@ -14,8 +14,11 @@ in
       settings = {
         main = {
           term = "foot";
-          font = "${config.my.settings.fonts.monospace}:size=10.5, JoyPixels:size=10.5";
-          line-height = "11px";
+          # font = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
+          font = "Terminus:size=14, JoyPixels:size=14";
+          font-bold = "Terminus:size=14, JoyPixels:size=14";
+          font-italic = "Terminus:size=14, JoyPixels:size=14";
+          line-height = "16px";
           shell = "${config.my.settings.default.shell}";
           selection-target = "clipboard";
           dpi-aware = "yes";

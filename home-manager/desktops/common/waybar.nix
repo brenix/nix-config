@@ -19,23 +19,16 @@ in
         {
           layer = "top";
           position = "top";
-          height = 60;
+          height = 16;
           margin = "0 0 0 0";
           modules-left = [
-            "custom/launcher"
             "hyprland/workspaces"
-            "custom/currentplayer"
-            "custom/player"
-            "custom/audio_idle_inhibitor"
           ];
           modules-center = [
-            "clock"
+            "custom/currentplayer"
+            "custom/player"
           ];
           modules-right = [
-            "gamemode"
-            "tray"
-            "custom/notification"
-            "idle_inhibitor"
             "pulseaudio"
             "temperature"
             "cpu"
@@ -43,87 +36,33 @@ in
             "backlight"
             "battery"
             "network"
-            "custom/power"
+            "clock"
+            "tray"
           ];
-          "sway/workspaces" = {
-            format = "{icon}";
-            sort-by-number = true;
-            active-only = false;
-            format-icons = {
-              "1" = "  ";
-              "2" = "  ";
-              "3" = " 󰎞 ";
-              "4" = " 󰒱 ";
-              "5" = "  ";
-              "6" = "  ";
-              # urgent = "  ";
-              # focused = "  ";
-              # default = "  ";
-            };
-            on-click = "activate";
-          };
           "hyprland/workspaces" = {
             format = "{icon}";
             sort-by-number = true;
             active-only = false;
             format-icons = {
               "1" = "  ";
-              "2" = "  ";
-              "3" = " 󰎞 ";
-              "4" = " 󰌌 ";
-              "5" = "  ";
-              "6" = " 󱎓 ";
-              "7" = "  ";
+              "2" = "  ";
+              "3" = "  ";
+              "4" = "  ";
               urgent = "  ";
               focused = "  ";
               default = "  ";
             };
             on-click = "activate";
           };
-          "idle_inhibitor" = {
-            format = "{icon}";
-            format-icons = {
-              activated = "  ";
-              deactivated = "  ";
-            };
-          };
-          "custom/audio_idle_inhibitor" = {
-            format = "{icon}";
-            exec = "${pkgs.nur.repos."999eagle".swayaudioidleinhibit}/bin/sway-audio-idle-inhibit --dry-print-both-waybar";
-            exec-if = "which sway-audio-idle-inhibit";
-            return-type = "json";
-            format-icons = {
-              output = "  ";
-              input = "  ";
-              output-input = "  ";
-            };
-          };
           "custom/currentplayer" = {
             interval = 2;
             return-type = "json";
-            #exec = jsonOutput "currentplayer" {
-            #  pre = ''
-            #    player="$(playerctl status -f "{{playerName}}" 2>/dev/null || echo "No player active" | cut -d '.' -f1)"
-            #    count="$(playerctl -l | wc -l)"
-            #    if ((count > 1)); then
-            #      more=" +$((count - 1))"
-            #    else
-            #      more=""
-            #    fi
-            #  '';
-            #  alt = "$player";
-            #  tooltip = "$player ($count available)";
-            #  text = "$more";
-            #};
             format = "{icon}{}";
             format-icons = {
               "No player active" = " ";
-              "Celluloid" = " ";
               "spotify" = " 󰓇";
-              "qutebrowser" = "爵";
               "firefox" = " ";
               "discord" = " 󰙯";
-              "kdeconnect" = " ";
             };
             on-click = "playerctld shift";
             on-click-right = "playerctld unshift";
@@ -201,7 +140,6 @@ in
               headset = "";
               default = [ "" "" ];
             };
-            "on-click" = "pypr toggle pavucontrol && hyprctl dispatch bringactivetotop";
           };
           clock = {
             format = "  {:%a %d %b  %I:%M %p}";
@@ -231,49 +169,8 @@ in
             };
           };
           tray = {
-            icon-size = 16;
+            icon-size = 14;
             spacing = 8;
-          };
-          gamemode = {
-            format = "{glyph}";
-            "format-alt" = "{glyph} {count}";
-            glyph = "\uf7b3";
-            "hide-not-running" = true;
-            "use-icon" = true;
-            "icon-name" = "input-gaming-symbolic";
-            "icon-spacing" = 4;
-            "icon-size" = 20;
-            tooltip = true;
-            "tooltip-format" = "Games running: {count}";
-          };
-          "custom/notification" = {
-            tooltip = false;
-            format = "{} {icon}";
-            "format-icons" = {
-              notification = " <span foreground='red'><sup> </sup></span>";
-              none = "";
-              "dnd-notification" = "  <span foreground='red'><sup> </sup></span>";
-              "dnd-none" = " ";
-              "inhibited-notification" = " <span foreground='red'><sup> </sup></span>";
-              "inhibited-none" = "";
-              "dnd-inhibited-notification" = " <span foreground='red'><sup> </sup></span>";
-              "dnd-inhibited-none" = " ";
-            };
-            "return-type" = "json";
-            "exec-if" = "which swaync-client";
-            exec = "swaync-client -swb";
-            "on-click" = "swaync-client -t -sw";
-            "on-click-right" = "swaync-client -d -sw";
-            escape = true;
-          };
-          "custom/power" = {
-            format = " ⏻ ";
-            on-click = "${pkgs.rofi}/bin/rofi -show p -modi p:rofi-power-menu";
-            tooltip = false;
-          };
-          "custom/launcher" = {
-            format = "   ";
-            on-click = "${pkgs.rofi}/bin/rofi -show drun -modi drun";
           };
         }
       ];
@@ -296,9 +193,8 @@ in
            color: @lavender;
            border: 0;
            padding: 0 0;
-           font-family: ${config.my.settings.fonts.monospace};
-           font-size: 18px;
-           font-weight: bold;
+           font-family: Terminus, ${config.my.settings.fonts.monospace};
+           font-size: 14px;
           }
 
           window#waybar {
@@ -314,33 +210,28 @@ in
            border-style: solid;
            background-color: @base;
            opacity: 1;
-           border-radius: 10px;
            margin: 8px 8px 8px 8px;
           }
 
           #workspaces button {
            color: @base;
-           border-radius: 20px;
            padding: 2px;
            margin: 2px 4px 0px 4px;
           }
 
           #workspaces button:hover {
            color: @mauve;
-           border-radius: 20px;
           }
 
 
           #workspaces button.active * {
            color: @base;
            background-color: @mauve;
-           border-radius: 20px;
           }
 
           #workspaces button.visible {
            color: white;
            background-color: @mauve;
-           border-radius: 20px;
           }
 
           #workspaces button.visible * {
@@ -362,10 +253,6 @@ in
           #pulseaudio,
           #mode,
           #tray,
-          #idle_inhibitor,
-          #custom-power,
-          #custom-launcher,
-          #custom-notification,
           #mpd {
            padding: 5px 8px;
            border-style: solid;
@@ -378,26 +265,22 @@ in
           * Module styles
           * -------------------------------------------------------------------------- */
           #mpd {
-           border-radius: 10px;
            color: @mauve;
            margin-left: 5px;
            background-color: rgba(0, 0, 0, 0);
           }
 
           #mpd.2 {
-           border-radius: 10px 0px 0px 10px;
            margin: 8px 0px 8px 6px;
            padding: 4px 12px 4px 10px;
           }
 
           #mpd.3 {
-           border-radius: 0px 0px 0px 0px;
            margin: 8px 0px 8px 0px;
            padding: 4px;
           }
 
           #mpd.4 {
-           border-radius: 0px 10px 10px 0px;
            margin: 8px 0px 8px 0px;
            padding: 4px 10px 4px 14px;
           }
@@ -411,20 +294,17 @@ in
 
           #clock {
            color: @mauve;
-           border-radius: 10px;
            margin: 8px 10px;
           }
 
 
           #backlight {
            color: @yellow;
-           border-radius: 10px 0 0 10px;
            margin-left: 10px;
           }
 
           #battery {
            color: @yellow;
-           border-radius: 0 10px 10px 0;
            margin-right: 10px;
           }
 
@@ -448,7 +328,6 @@ in
           }
 
           #custom-notification {
-          	border-radius: 10px 0 0 10px;
           	margin-left: 10px;
           	color: @lavender;
           	background: @base;
@@ -456,7 +335,6 @@ in
 
           #tray {
           	 margin: 8px 10px;
-          	 border-radius: 10px;
           }
 
           #idle_inhibitor.deactivated {
@@ -478,7 +356,6 @@ in
 
           #pulseaudio {
           	 color: @flamingo;
-          	 border-radius: 0 10px 10px 0;
           	 margin-right: 10px;
           }
 
@@ -488,7 +365,6 @@ in
 
           #temperature {
           	 color: @teal;
-          	 border-radius: 10px 0 0 10px;
           }
 
           #temperature.critical {
@@ -505,13 +381,11 @@ in
 
           #memory {
           	 color: @flamingo;
-          	 border-radius: 0 10px 10px 0;
           	 margin-right: 5px;
           }
 
           #network {
           	 color: @lavender;
-          	 border-radius: 10px;
           	 margin-right: 5px;
           }
 
@@ -522,7 +396,6 @@ in
           #custom-launcher {
           	 background-color: @mauve;
           	 color: @base;
-          	 border-radius: 10px;
           	 padding: 5px 10px;
           	 margin-left: 15px;
           	 font-size: 24px;
@@ -531,7 +404,6 @@ in
           #custom-power {
           	 margin: 8px;
           	 padding: 5px;
-          	 border-radius: 10px;
           	 transition: none;
           	 color: @red;
           	 background: @base;

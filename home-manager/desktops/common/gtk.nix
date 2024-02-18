@@ -4,7 +4,7 @@
     enable = true;
     font = {
       name = config.my.settings.fonts.regular;
-      size = 10;
+      size = 11;
     };
 
     theme = {

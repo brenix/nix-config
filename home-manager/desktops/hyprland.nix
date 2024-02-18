@@ -16,7 +16,7 @@ in
     };
 
     home.packages = [
-      inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+      inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast
       inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
       pkgs.wl-clipboard
     ];
@@ -30,7 +30,7 @@ in
       enable = true;
       extraConfig = ''
         input {
-          kb_options = caps:swapescape
+          # kb_options = caps:swapescape
           repeat_rate = 45
           repeat_delay = 280
           accel_profile = flat
@@ -43,14 +43,22 @@ in
 
         general {
           gaps_in = 5
-          gaps_out = 10
-          border_size = 13
-          col.active_border = 0xff${config.colorscheme.palette.base07}
-          col.inactive_border = 0xff${config.colorscheme.palette.base02}
+          gaps_out = 5
+          border_size = 1
+          col.active_border = 0xff${config.colorscheme.palette.base05}
+          col.inactive_border = 0xff${config.colorscheme.palette.base01}
         }
 
         decoration {
           rounding = 0
+          blur {
+            enabled = false
+          }
+          drop_shadow = false
+        }
+
+        animations {
+          enabled = false
         }
 
         misc {
@@ -70,9 +78,11 @@ in
         windowrulev2 = float,class:^(pavucontrol)$
 
         bind = SUPER,Return,exec,${config.my.settings.default.terminal}
+        bind = SUPER,Space,exec,${pkgs.rofi}/bin/rofi -show run
         bind = SUPER,d,exec,${config.my.settings.default.browser}
-        bind = SUPER,Space,exec,${pkgs.rofi}/bin/rofi -show drun -mode drun
-        bind = SUPER,Tab,exec,${pkgs.rofi}/bin/rofi -show window
+        bind = SUPER,v,exec,${pkgs.pavucontrol}/bin/pavucontrol
+        bind = SUPER,z,exec,${pkgs.zoom}/bin/zoom
+
         bind = ,Print,exec,grimblast --notify copysave area
         bind = SHIFT,Print,exec,grimblast --notify copy active
         bind = CONTROL,Print,exec,grimblast --notify copy screen
@@ -85,8 +95,8 @@ in
         bind = ,XF86MonBrightnessDown,exec,brightness --dec
         bind = ,XF86AudioRaiseVolume,exec,volume --inc
         bind = ,XF86AudioLowerVolume,exec,volume --dec
-        bind = ,XF86AudioMute,exec,volume --toggle
-        bind = ,XF86AudioMicMute,exec,volume --toggle-mic
+        bind = ,XF86AudioMute,exec,wpctl set-mute @DEFAULT AUDIO SOURCE@ toggle
+        bind = ,XF86AudioMicMute,exec,wpctl set-mute @DEFAULT INPUT SOURCE@ toggle
         bind = ,XF86AudioNext,exec,playerctl next
         bind = ,XF86AudioPrev,exec,playerctl previous
         bind = ,XF86AudioPlay,exec,playerctl play-pause

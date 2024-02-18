@@ -35,15 +35,18 @@
       };
 
       wms = {
-        bspwm.enable = true;
-        notifications.dunst.enable = true;
-        bars.polybar.enable = true;
+        bspwm.enable = false;
+        hyprland.enable = true;
+        notifications.dunst.enable = false;
+        bars.polybar.enable = false;
+        bars.waybar.enable = true;
         launchers.rofi.enable = true;
         compositor.picom.enable = false;
       };
 
       terminals = {
-        alacritty.enable = true;
+        alacritty.enable = false;
+        foot.enable = true;
       };
     };
 
@@ -53,7 +56,7 @@
       host = "neo";
       default = {
         shell = "${pkgs.fish}/bin/fish";
-        terminal = "${pkgs.alacritty}/bin/alacritty";
+        terminal = "${pkgs.foot}/bin/foot";
         browser = "firefox";
         editor = "hx";
       };

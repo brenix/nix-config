@@ -13,19 +13,20 @@
 
   modules.nixos = {
     avahi.enable = true;
-    auto-login.enable = true;
+    auto-login.enable = false;
     auto-upgrade.enable = false;
     clipcat.enable = true;
     ephemeral.enable = true;
     fonts.enable = true;
     gaming.enable = false;
+    login.enable = true;
     openconnect.enable = true;
     opengl.enable = true;
     pipewire.enable = true;
     podman.enable = true;
     systemd-boot.enable = true;
     wireless.enable = false;
-    xorg.enable = true;
+    xorg.enable = false;
   };
 
   # Boot
@@ -101,12 +102,12 @@
   };
 
   # Xorg settings
-  services.xserver.dpi = 108;
-  services.xserver.displayManager.sessionCommands = ''
-    ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --mode 2560x1440
-    ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode 2560x1440
-    ${pkgs.xorg.xset}/bin/xset s off -dpms
-  '';
+  # services.xserver.dpi = 108;
+  # services.xserver.displayManager.sessionCommands = ''
+  #   ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --mode 2560x1440
+  #   ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --mode 2560x1440
+  #   ${pkgs.xorg.xset}/bin/xset s off -dpms
+  # '';
 
   # Swap
   swapDevices = [{ device = "/swap/swapfile"; }];

@@ -23,6 +23,7 @@
       ./optional/ephemeral.nix
       ./optional/fonts.nix
       ./optional/gaming.nix
+      ./optional/greetd.nix
       ./optional/node-exporter.nix
       ./optional/openconnect.nix
       ./optional/opengl.nix

@@ -13,9 +13,9 @@ in
       enable = true;
       font = "${config.my.settings.fonts.regular} 10";
       theme = "Arc";
-      plugins = with pkgs; [ rofi-calc rofi-emoji rofi-rbw ];
+      # plugins = with pkgs; [ rofi-calc rofi-rbw ];
       extraConfig = {
-        modi = "drun,run,emoji,calc,combi";
+        modi = "drun,run,combi";
         dpi = config.my.settings.dpi;
       };
       terminal = config.my.settings.default.terminal;
