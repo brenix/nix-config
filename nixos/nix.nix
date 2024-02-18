@@ -22,6 +22,9 @@
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       warn-dirty = false;
       flake-registry = ""; # Disable global flake registry
+
+      # Allows building v3/v4 packages
+      system-features = [ "gccarch-x86-64-v3" "gccarch-x86-64-v4" ];
     };
 
     extraOptions = ''
