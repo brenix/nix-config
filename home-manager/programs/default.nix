@@ -15,8 +15,6 @@
   ];
 
   home.packages = with pkgs; [
-    # Disabled for now since Chaotic-nyx includes a x86_64_v3 optimized versions
-    # (pkgs.uutils-coreutils.override { prefix = ""; })
     age
     comma
     curlie
@@ -34,7 +32,6 @@
     unrar
     unzip
     wireguard-tools
-    xcp
     yq-go
   ];
 

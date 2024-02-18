@@ -45,22 +45,16 @@ in
         la = "ls -A --format=vertical";
         mv = "mv -iv";
         rm = "rm -I";
-        s = "doas systemctl";
-        svim = "doas nvim";
         sw = "git switch";
         virsh = "virsh -c qemu:///system";
         vm = "virsh start windows";
       };
 
       shellAbbrs = {
-        # ave = "aws-vault exec";
         bw = "rbw";
         cat = "bat";
         calc = "qalc";
-        cm = "cellmate";
-        cp = "xcp";
         curl = "curlie";
-        fw = "sudo framework_tool --driver=portio";
         grep = "rg";
         k = "kubectl";
         kdd = "kubectl describe deployment";
@@ -82,12 +76,6 @@ in
         kl = "kubectl logs";
         kvs = "kubectl view-secret";
         kvsec = "kubectl view-secret";
-        t = "todoist";
-        ta = "todoist add";
-        td = "todoist close";
-        tl = "todoist list -f 'today & !p4'";
-        to = "todoist list -f '(today | overdue) & p1'";
-        tq = "todoist quick";
         v = "hx";
       };
 
@@ -168,11 +156,6 @@ in
           end
         '';
     };
-
-    # Create dirs required by shell
-    systemd.user.tmpfiles.rules = [
-      "d %h/.kube 0700"
-    ];
 
     home.persistence = {
       "/persist/home/brenix" = {

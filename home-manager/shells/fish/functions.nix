@@ -178,31 +178,6 @@
     rm -f (basename $image .jpg)-labeled-1.jpg
   '';
 
-  # scale multiple aws asgs
-  scale-asg = ''
-    set asgs $argv
-    if test -z "$AWS_VAULT"
-      echo "aws-vault environment not found"
-      return 1
-    end
-
-    for asg in $asgs
-      set name (echo $asg | awk -F= '{print $1}')
-      set count (echo $asg | awk -F= '{print $2}')
-      echo "TODO"
-    end
-  '';
-
-  # list all aws asgs using a filter
-  list-asg = ''
-    set pattern $argv[1]
-    if test -z "$AWS_VAULT"
-      echo "aws-vault environment not found"
-    else
-      echo "TODO"
-    end
-  '';
-
   # ssh to multiple hosts in tmux panes
   ssh-multi = ''
     set -l hosts

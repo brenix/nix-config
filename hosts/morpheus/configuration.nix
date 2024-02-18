@@ -4,22 +4,26 @@
     ./disks.nix
     ./wireguard.nix
 
-    ../../nixos/global
+    ../../nixos
     ../../nixos/users/brenix.nix
-
-    ../../nixos/optional/auto-login.nix
-    ../../nixos/optional/clipcat.nix
-    ../../nixos/optional/ephemeral.nix
-    # ../../nixos/optional/fingerprint.nix
-    ../../nixos/optional/fonts.nix
-    ../../nixos/optional/openconnect.nix
-    ../../nixos/optional/opengl.nix
-    ../../nixos/optional/pipewire.nix
-    ../../nixos/optional/podman.nix
-    ../../nixos/optional/systemd-boot.nix
-    ../../nixos/optional/wireless.nix
-    ../../nixos/optional/xorg.nix
   ];
+
+  modules.nixos = {
+    avahi.enable = true;
+    auto-login.enable = true;
+    auto-upgrade.enable = false;
+    clipcat.enable = true;
+    ephemeral.enable = true;
+    fonts.enable = true;
+    gaming.enable = false;
+    openconnect.enable = true;
+    opengl.enable = true;
+    pipewire.enable = true;
+    podman.enable = true;
+    systemd-boot.enable = true;
+    wireless.enable = true;
+    xorg.enable = true;
+  };
 
   # Boot
   boot = {

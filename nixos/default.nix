@@ -15,6 +15,25 @@
       ./persistence.nix
       ./sops.nix
       ./sysctl.nix
+
+      ./optional/auto-login.nix
+      ./optional/auto-upgrade.nix
+      ./optional/avahi.nix
+      ./optional/clipcat.nix
+      ./optional/ephemeral.nix
+      ./optional/fonts.nix
+      ./optional/gaming.nix
+      ./optional/node-exporter.nix
+      ./optional/openconnect.nix
+      ./optional/opengl.nix
+      ./optional/pipewire.nix
+      ./optional/podman.nix
+      ./optional/qemu-guest.nix
+      ./optional/syncthing.nix
+      ./optional/systemd-boot.nix
+      ./optional/vmware-guest.nix
+      ./optional/wireless.nix
+      ./optional/xorg.nix
     ]
     ++ (builtins.attrValues outputs.nixosModules);
 

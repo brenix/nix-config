@@ -1,9 +1,18 @@
-{ pkgs, ... }:
+{ config, lib, ... }:
+with lib; let
+  cfg = config.modules.nixos.qemu-guest;
+in
 {
-  services = {
-    qemuGuest.enable = true;
-    spice-vdagentd.enable = true;
+  options.modules.nixos.qemu-guest = {
+    enable = mkEnableOption "Enable qemu-guest";
   };
 
-  environment.systemPackages = [ pkgs.xorg.xf86videoqxl ];
+  config = mkIf cfg.enable {
+    services = {
+      qemuGuest.enable = true;
+      spice-vdagentd.enable = true;
+    };
+
+    environment.systemPackages = [ pkgs.xorg.xf86videoqxl ];
+  };
 }

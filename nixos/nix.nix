@@ -2,7 +2,7 @@
 {
   sops.secrets.nixAccessTokens = {
     mode = "0440";
-    sopsFile = ../secrets.yaml;
+    sopsFile = ./secrets.yaml;
   };
 
   nix = {
@@ -31,8 +31,7 @@
     gc = {
       automatic = true;
       dates = "daily";
-      # Delete older generations too
-      options = "--delete-older-than 3d";
+      options = "--delete-older-than 2d";
     };
 
     # Add each flake input as a registry

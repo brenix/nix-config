@@ -8,7 +8,7 @@ in
   ];
 
   sops = {
-    defaultSopsFile = ../secrets.yaml;
+    defaultSopsFile = ./secrets.yaml;
     age.sshKeyPaths = [ key.path ];
     gnupg.sshKeyPaths = [ ];
   };

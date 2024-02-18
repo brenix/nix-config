@@ -1,37 +1,46 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+with lib; let
+  cfg = config.modules.nixos.wireless;
+in
 {
-  sops.secrets.wifiNetworks = {
-    sopsFile = ../secrets.yaml;
-    neededForUsers = true;
+  options.modules.nixos.wireless = {
+    enable = mkEnableOption "Enable wireless";
   };
 
-  environment.systemPackages = with pkgs; [
-    wpa_supplicant_gui
-  ];
-
-  networking.wireless = {
-    enable = true;
-    fallbackToWPA2 = true;
-    environmentFile = config.sops.secrets.wifiNetworks.path;
-    networks = {
-      "ciphernet" = {
-        psk = "@CIPHERNET@";
-      };
+  config = mkIf cfg.enable {
+    sops.secrets.wifiNetworks = {
+      sopsFile = ../secrets.yaml;
+      neededForUsers = true;
     };
 
-    allowAuxiliaryImperativeNetworks = true;
-    userControlled = {
+    environment.systemPackages = with pkgs; [
+      wpa_supplicant_gui
+    ];
+
+    networking.wireless = {
       enable = true;
-      group = "network";
+      fallbackToWPA2 = true;
+      environmentFile = config.sops.secrets.wifiNetworks.path;
+      networks = {
+        "ciphernet" = {
+          psk = "@CIPHERNET@";
+        };
+      };
+
+      allowAuxiliaryImperativeNetworks = true;
+      userControlled = {
+        enable = true;
+        group = "network";
+      };
+      extraConfig = ''
+        update_config=1
+      '';
     };
-    extraConfig = ''
-      update_config=1
-    '';
+
+    # Ensure group exists
+    users.groups.network = { };
+
+    # Fix issue where wpa_supplicant expects a config file
+    systemd.services.wpa_supplicant.preStart = "touch /etc/wpa_supplicant.conf";
   };
-
-  # Ensure group exists
-  users.groups.network = { };
-
-  # Fix issue where wpa_supplicant expects a config file
-  systemd.services.wpa_supplicant.preStart = "touch /etc/wpa_supplicant.conf";
 }

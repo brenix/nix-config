@@ -3,7 +3,6 @@
   imports =
     [
       inputs.nix-colors.homeManagerModule
-      inputs.nixvim.homeManagerModules.nixvim
       inputs.nur.hmModules.nur
       inputs.impermanence.nixosModules.home-manager.impermanence
       inputs.chaotic.homeManagerModules.default
@@ -26,6 +25,7 @@
       ./security/sops.nix
 
       ./shells/fish
+      ./shells/zsh
 
       ./terminals/alacritty.nix
       ./terminals/foot.nix

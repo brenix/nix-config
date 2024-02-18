@@ -20,7 +20,8 @@ in
       baseIndex = 1;
       extraConfig = ''
         # -- options
-
+        set -ag terminal-overrides ",xterm-256color:RGB"
+        
         # screen mode
         set -g default-terminal "tmux-256color"
         set -ga terminal-overrides ",xterm*:Tc"

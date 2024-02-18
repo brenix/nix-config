@@ -4,20 +4,30 @@
     inputs.hardware.nixosModules.common-pc-ssd
     # ./disks.nix # TODO: uncomment during reinstall
     ./k3s.nix
-    # ./k0s.nix
-    # ./kubernetes.nix
     ./restic.nix
     ./mounts.nix # TODO: remove during reinstall
     ./nix-cache.nix
 
-    ../../nixos/global
+    ../../nixos
     ../../nixos/users/brenix.nix
-
-    ../../nixos/optional/auto-login.nix
-    ../../nixos/optional/auto-upgrade.nix
-    ../../nixos/optional/ephemeral.nix
-    ../../nixos/optional/systemd-boot.nix
   ];
+
+  modules.nixos = {
+    avahi.enable = true;
+    auto-login.enable = true;
+    auto-upgrade.enable = true;
+    clipcat.enable = false;
+    ephemeral.enable = true;
+    fonts.enable = false;
+    gaming.enable = false;
+    openconnect.enable = false;
+    opengl.enable = false;
+    pipewire.enable = false;
+    podman.enable = false;
+    systemd-boot.enable = true;
+    wireless.enable = false;
+    xorg.enable = false;
+  };
 
   # Boot
   boot = {
