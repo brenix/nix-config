@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 with lib;
 let
   cfg = config.modules.wms.bars.waybar;
@@ -155,9 +155,9 @@ in
               "on-click-right" = "mode";
               format = {
                 months = "<span color='#ffead3'><b>{}</b></span>";
-                days = "<span color='#ecc6d9'><b>{}</b></span>";
-                weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-                weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+                days = "<span color='#999999'><b>{}</b></span>";
+                weeks = "<span color='#cccccc'><b>W{}</b></span>";
+                weekdays = "<span color='#aaaaaa'><b>{}</b></span>";
                 today = "<span color='#ff6699'><b><u>{}</u></b></span>";
               };
             };

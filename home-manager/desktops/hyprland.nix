@@ -48,7 +48,7 @@ in
 
         general {
           gaps_in = 5
-          gaps_out = 5
+          gaps_out = 10
           border_size = 1
           col.active_border = 0xff${config.colorscheme.palette.base03}
           col.inactive_border = 0xff${config.colorscheme.palette.base01}
