@@ -10,12 +10,13 @@
 
   modules.nixos = {
     avahi.enable = true;
-    auto-login.enable = true;
+    auto-login.enable = false;
     auto-upgrade.enable = false;
     clipcat.enable = true;
     ephemeral.enable = true;
     fonts.enable = true;
     gaming.enable = false;
+    login.enable = true;
     openconnect.enable = true;
     opengl.enable = true;
     pipewire.enable = true;
