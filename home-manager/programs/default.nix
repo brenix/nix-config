@@ -3,7 +3,6 @@
     ./atuin.nix
     ./bat.nix
     ./dircolors.nix
-    ./epr.nix
     ./fzf.nix
     ./git.nix
     ./gpg.nix
