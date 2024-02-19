@@ -15,9 +15,13 @@ in
       LIBSEAT_BACKEND = "logind";
     };
 
+    xdg.portal = {
+      extraPortals = [ pkgs.system.hyprland.xdg-desktop-portal-hyprland ];
+      configPackages = [ pkgs.system.hyprland.hyprland ];
+    };
+
     home.packages = [
       inputs.hyprwm-contrib.packages.${pkgs.system}.grimblast
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
       pkgs.wl-clipboard
     ];
 
@@ -29,8 +33,9 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
+        monitor = ,highres,auto,1
         input {
-          # kb_options = caps:swapescape
+          kb_options = caps:swapescape
           repeat_rate = 45
           repeat_delay = 280
           accel_profile = flat
@@ -62,7 +67,8 @@ in
         }
 
         misc {
-          disable_hyprland_logo = 1;
+          disable_hyprland_logo = 1
+          force_default_wallpaper = 0
         }
 
         env = QT_QPA_PLATFORM,wayland
@@ -81,6 +87,7 @@ in
         bind = SUPER,d,exec,${config.my.settings.default.browser}
         bind = SUPER,v,exec,${pkgs.pavucontrol}/bin/pavucontrol
         bind = SUPER,z,exec,${pkgs.zoom}/bin/zoom
+        bind = SUPERSHIFT,q,exit
 
         bind = ,Print,exec,grimblast --notify copysave area
         bind = SHIFT,Print,exec,grimblast --notify copy active
