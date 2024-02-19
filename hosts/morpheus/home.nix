@@ -51,7 +51,7 @@
       host = "morpheus";
       default = {
         shell = "${pkgs.fish}/bin/fish";
-        terminal = "${pkgs.alacritty}/bin/alacritty";
+        terminal = "${pkgs.foot}/bin/foot";
         browser = "firefox";
         editor = "hx";
       };
