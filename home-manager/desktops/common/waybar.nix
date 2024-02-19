@@ -96,6 +96,7 @@ in
           };
           temperature = {
             interval = 1;
+            hwmon-path = [ "/sys/class/hwmon/hwmon1/temp1_input" ];
             tooltip = false;
             thermal-zone = 1;
             critical-threshold = 80;

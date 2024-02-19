@@ -83,6 +83,9 @@ in
         windowrulev2 = idleinhibit focus,class:^(mpv)$
         windowrulev2 = idleinhibit fullscreen,class:^(firefox)$
         windowrulev2 = float,class:^(pavucontrol)$
+        windowrulev2 = float,class:^(zoom)$
+        windowrulev2 = float,class:^(bitwarden)$
+        windowrulev2 = float,class:^(steam)$
 
         bind = SUPER,Return,exec,${config.my.settings.default.terminal}
         bind = SUPER,Space,exec,${pkgs.rofi}/bin/rofi -show run
