@@ -19,7 +19,7 @@ in
         {
           layer = "top";
           position = "top";
-          height = 14;
+          height = 13;
           margin = "0 0 0 0";
           modules-left = [
             "hyprland/workspaces"
@@ -35,12 +35,13 @@ in
             "memory"
             "backlight"
             "battery"
-            "network"
+            # "network"
             "clock"
             "tray"
           ];
           "hyprland/workspaces" = {
-            format = "{icon}";
+            # format = "{icon}";
+            format = "{name}";
             sort-by-number = true;
             active-only = false;
             format-icons = {
@@ -60,9 +61,8 @@ in
             format = "{icon}{}";
             format-icons = {
               "No player active" = " ";
-              "spotify" = " 󰓇";
+              "spotify" = " ";
               "firefox" = " ";
-              "discord" = " 󰙯";
             };
             on-click = "playerctld shift";
             on-click-right = "playerctld unshift";
@@ -76,8 +76,8 @@ in
             format = "{icon} {}";
             format-icons = {
               "Playing" = "";
-              "Paused" = "󰏤 ";
-              "Stopped" = "󰓛";
+              "Paused" = "";
+              "Stopped" = "";
             };
             on-click = "playerctl play-pause";
           };
@@ -87,12 +87,12 @@ in
               warning = 50;
               critical = 15;
             };
-            format = "{icon}  {capacity}%";
+            format = "{icon} {capacity}%";
             format-alt = "{time}";
             format-full = "";
-            format-charging = "  {capacity}%";
-            format-plugged = "  {capacity}%";
-            format-icons = [ " " " " " " " " " " ];
+            format-charging = " {capacity}%";
+            format-plugged = " {capacity}%";
+            format-icons = [ "" "" "" "" "" ];
           };
           temperature = {
             interval = 1;
@@ -110,14 +110,15 @@ in
           };
           memory = {
             interval = 30;
-            format = "󰍛 {used:0.1f}GiB";
-            tooltip-format = "{used = 0.1f}GiB/{avail = 0.1f}GiB";
+            format = " {used:0.1f}GiB";
+            tooltip-format = "{used:0.1f}GiB/{total:0.1f}GiB";
           };
           network = {
             interval = 1;
-            format-wifi = "  {essid} {signalStrength}%";
+            format-wifi = " {essid}";
+            # format-wifi = " {essid} {signalStrength}%";
             tooltip-format-wifi = "IP = {ipaddr}\nSSID = {essid}";
-            format-ethernet = "󰈀";
+            format-ethernet = "󰈀 Ethernet";
             tooltip-format-ethernet = "IP = {ipaddr}";
             format-disconnected = "Disconnected ⚠";
             tooltip-format = ''
@@ -142,8 +143,8 @@ in
             };
           };
           clock = {
-            format = "  {:%a %d %b  %I:%M %p}";
-            format-alt = "  {:%d/%m/%Y  %H:%M:%S}";
+            format = " {:%Y-%m-%d %I:%M %p}";
+            format-alt = " {:%d/%m/%Y %H:%M:%S}";
             interval = 1;
             tooltip-format = "<tt><small>{calendar}</small></tt>";
             calendar = {
@@ -169,8 +170,8 @@ in
             };
           };
           tray = {
-            icon-size = 14;
-            spacing = 8;
+            icon-size = 12;
+            spacing = 2;
           };
         }
       ];
@@ -195,22 +196,18 @@ in
           @define-color magenta     #${colorscheme.palette.base0E};
           @define-color brown       #${colorscheme.palette.base0F};
 
-          @define-color rosewater #${colorscheme.palette.base06};
-          @define-color lavender  #${colorscheme.palette.base07};
-          @define-color mauve     #${colorscheme.palette.base0E};
-          @define-color flamingo  #${colorscheme.palette.base0F};
-
           * { 
-            color: @lavender;
+            color: @white;
             border: 0;
             padding: 0 0;
             font-family: Terminus, ${config.my.settings.fonts.monospace};
-            font-size: 12px;
+            font-size: 14px;
           }
 
           window#waybar {
             border: 0px solid rgba(0, 0, 0, 0);
-            background-color: rgba(0, 0, 0, 0);
+            /* background-color: rgba(0, 0, 0, 0); */
+            background-color: @black;
           }
 
           #workspaces * {
@@ -219,38 +216,31 @@ in
 
           #workspaces {
             border-style: solid;
+            margin: 0 4px;
             background-color: @black;
-            opacity: 1;
-            margin: 8px 8px 8px 8px;
           }
 
           #workspaces button {
             color: @black;
-            padding: 2px;
-            margin: 2px 4px 0px 4px;
           }
 
           #workspaces button:hover {
-            color: @mauve;
+            color: @black;
+            background-color: @blue;
           }
 
           #workspaces button.active * {
-            color: @black;
-            background-color: @mauve;
+            color: @white;
+            background-color: @blue;
           }
 
           #workspaces button.visible {
             color: white;
-            background-color: @mauve;
+            background-color: @blue;
           }
 
           #workspaces button.visible * {
-            color: white;
             color: @black;
-          }
-
-          #mode {
-            color: @yellow;
           }
 
           #clock,
@@ -262,60 +252,26 @@ in
           #network,
           #pulseaudio,
           #mode,
-          #tray,
-          #mpd {
-            padding: 5px 8px;
+          #tray {
+            padding: 1px 8px;
             border-style: solid;
-            background-color: shade(@black, 1);
+            background-color: @black;
             opacity: 1;
-            margin: 8px 0;
           }
 
           /* -----------------------------------------------------------------------------
           * Module styles
           * -------------------------------------------------------------------------- */
-          #mpd {
-            color: @mauve;
-            margin-left: 5px;
-            background-color: rgba(0, 0, 0, 0);
-          }
-
-          #mpd.2 {
-            margin: 8px 0px 8px 6px;
-            padding: 4px 12px 4px 10px;
-          }
-
-          #mpd.3 {
-            margin: 8px 0px 8px 0px;
-            padding: 4px;
-          }
-
-          #mpd.4 {
-            margin: 8px 0px 8px 0px;
-            padding: 4px 10px 4px 14px;
-          }
-
-          #mpd.2,
-          #mpd.3,
-          #mpd.4 {
-            background-color: @black;
-            font-size: 14px;
-          }
-
           #clock {
-            color: @mauve;
-            margin: 8px 10px;
+            color: @mostlywhite;
           }
-
 
           #backlight {
             color: @yellow;
-            margin-left: 10px;
           }
 
           #battery {
-            color: @yellow;
-            margin-right: 10px;
+            color: @green;
           }
 
           #battery.critical:not(.charging) {
@@ -337,29 +293,14 @@ in
            }
           }
 
-          #custom-notification {
-            margin-left: 10px;
-            color: @lavender;
-            background: @black;
-          }
-
+          /*
           #tray {
             margin: 8px 10px;
           }
-
-          #idle_inhibitor.deactivated {
-            background-color: shade(@black, 1);
-            color: @lavender;
-          }
-
-          #idle_inhibitor.activated {
-            background-color: shade(@black, 1);
-            color: @green;
-          }
+          */
 
           #pulseaudio {
-            color: @flamingo;
-            margin-right: 10px;
+            color: @brown;
           }
 
           #pulseaudio.muted {
@@ -383,30 +324,20 @@ in
           }
 
           #memory {
-            color: @flamingo;
-            margin-right: 5px;
+            color: @brown;
           }
 
           #network {
-            color: @lavender;
-            margin-right: 5px;
+            color: @magenta;
           }
 
           #network.disconnected {
             color: @red;
           }
 
-          #custom-launcher {
-            background-color: @mauve;
-            color: @black;
-            padding: 5px 10px;
-            margin-left: 15px;
-            font-size: 24px;
-          }
-
           #custom-power {
-            margin: 8px;
-            padding: 5px;
+            /* margin: 8px; */
+            padding: 1px;
             transition: none;
             color: @red;
             background: @black;
@@ -414,11 +345,6 @@ in
 
           #window {
             border-style: hidden;
-            margin-left: 10px;
-          }
-
-          #mode {
-            margin-bottom: 3px;
           }
         '';
     };
