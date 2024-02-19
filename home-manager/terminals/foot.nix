@@ -15,10 +15,12 @@ in
         main = {
           term = "foot";
           # font = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
-          font = "Terminus:size=14, JoyPixels:size=14";
-          font-bold = "Terminus:size=14, JoyPixels:size=14";
-          font-italic = "Terminus:size=14, JoyPixels:size=14";
-          line-height = "16px";
+          font = "Terminus:size=11.5, JoyPixels:size=11.5";
+          font-bold = "Terminus:size=11.5, JoyPixels:size=11.5";
+          font-italic = "Terminus:size=11.5, JoyPixels:size=11.5";
+          # line-height = "14px";
+          # vertical-letter-offset = "1px";
+          box-drawings-uses-font-glyphs = "yes";
           shell = "${config.my.settings.default.shell}";
           selection-target = "clipboard";
           dpi-aware = "yes";

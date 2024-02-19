@@ -19,7 +19,7 @@ in
         {
           layer = "top";
           position = "top";
-          height = 16;
+          height = 14;
           margin = "0 0 0 0";
           modules-left = [
             "hyprland/workspaces"
@@ -178,69 +178,79 @@ in
       style =
         # css
         ''
-          @define-color base      #${colorscheme.palette.base00};
-          @define-color blue      #${colorscheme.palette.base0D};
+          @define-color black       #${colorscheme.palette.base00};
+          @define-color darkergrey  #${colorscheme.palette.base01};
+          @define-color darkgrey    #${colorscheme.palette.base02};
+          @define-color grey        #${colorscheme.palette.base03};
+          @define-color lightgrey   #${colorscheme.palette.base04};
+          @define-color brightgrey  #${colorscheme.palette.base05};
+          @define-color mostlywhite #${colorscheme.palette.base06};
+          @define-color white       #${colorscheme.palette.base07};
+          @define-color red         #${colorscheme.palette.base08};
+          @define-color orange      #${colorscheme.palette.base09};
+          @define-color yellow      #${colorscheme.palette.base0A};
+          @define-color green       #${colorscheme.palette.base0B};
+          @define-color cyan        #${colorscheme.palette.base0C};
+          @define-color blue        #${colorscheme.palette.base0D};
+          @define-color magenta     #${colorscheme.palette.base0E};
+          @define-color brown       #${colorscheme.palette.base0F};
+
           @define-color rosewater #${colorscheme.palette.base06};
           @define-color lavender  #${colorscheme.palette.base07};
-          @define-color teal      #${colorscheme.palette.base0C};
-          @define-color yellow    #${colorscheme.palette.base0A};
-          @define-color green     #${colorscheme.palette.base0B};
-          @define-color red       #${colorscheme.palette.base08};
           @define-color mauve     #${colorscheme.palette.base0E};
           @define-color flamingo  #${colorscheme.palette.base0F};
 
           * { 
-           color: @lavender;
-           border: 0;
-           padding: 0 0;
-           font-family: Terminus, ${config.my.settings.fonts.monospace};
-           font-size: 14px;
+            color: @lavender;
+            border: 0;
+            padding: 0 0;
+            font-family: Terminus, ${config.my.settings.fonts.monospace};
+            font-size: 12px;
           }
 
           window#waybar {
-           border: 0px solid rgba(0, 0, 0, 0);
-           background-color: rgba(0, 0, 0, 0);
+            border: 0px solid rgba(0, 0, 0, 0);
+            background-color: rgba(0, 0, 0, 0);
           }
 
           #workspaces * {
-           color: white;
+            color: white;
           }
 
           #workspaces {
-           border-style: solid;
-           background-color: @base;
-           opacity: 1;
-           margin: 8px 8px 8px 8px;
+            border-style: solid;
+            background-color: @black;
+            opacity: 1;
+            margin: 8px 8px 8px 8px;
           }
 
           #workspaces button {
-           color: @base;
-           padding: 2px;
-           margin: 2px 4px 0px 4px;
+            color: @black;
+            padding: 2px;
+            margin: 2px 4px 0px 4px;
           }
 
           #workspaces button:hover {
-           color: @mauve;
+            color: @mauve;
           }
 
-
           #workspaces button.active * {
-           color: @base;
-           background-color: @mauve;
+            color: @black;
+            background-color: @mauve;
           }
 
           #workspaces button.visible {
-           color: white;
-           background-color: @mauve;
+            color: white;
+            background-color: @mauve;
           }
 
           #workspaces button.visible * {
-           color: white;
-           color: @base;
+            color: white;
+            color: @black;
           }
 
           #mode {
-           color: @yellow;
+            color: @yellow;
           }
 
           #clock,
@@ -254,168 +264,161 @@ in
           #mode,
           #tray,
           #mpd {
-           padding: 5px 8px;
-           border-style: solid;
-           background-color: shade(@base, 1);
-           opacity: 1;
-           margin: 8px 0;
+            padding: 5px 8px;
+            border-style: solid;
+            background-color: shade(@black, 1);
+            opacity: 1;
+            margin: 8px 0;
           }
 
           /* -----------------------------------------------------------------------------
           * Module styles
           * -------------------------------------------------------------------------- */
           #mpd {
-           color: @mauve;
-           margin-left: 5px;
-           background-color: rgba(0, 0, 0, 0);
+            color: @mauve;
+            margin-left: 5px;
+            background-color: rgba(0, 0, 0, 0);
           }
 
           #mpd.2 {
-           margin: 8px 0px 8px 6px;
-           padding: 4px 12px 4px 10px;
+            margin: 8px 0px 8px 6px;
+            padding: 4px 12px 4px 10px;
           }
 
           #mpd.3 {
-           margin: 8px 0px 8px 0px;
-           padding: 4px;
+            margin: 8px 0px 8px 0px;
+            padding: 4px;
           }
 
           #mpd.4 {
-           margin: 8px 0px 8px 0px;
-           padding: 4px 10px 4px 14px;
+            margin: 8px 0px 8px 0px;
+            padding: 4px 10px 4px 14px;
           }
 
           #mpd.2,
           #mpd.3,
           #mpd.4 {
-           background-color: @base;
-           font-size: 14px;
+            background-color: @black;
+            font-size: 14px;
           }
 
           #clock {
-           color: @mauve;
-           margin: 8px 10px;
+            color: @mauve;
+            margin: 8px 10px;
           }
 
 
           #backlight {
-           color: @yellow;
-           margin-left: 10px;
+            color: @yellow;
+            margin-left: 10px;
           }
 
           #battery {
-           color: @yellow;
-           margin-right: 10px;
+            color: @yellow;
+            margin-right: 10px;
           }
 
           #battery.critical:not(.charging) {
-          color: @red;
-          animation-name: blink;
-          animation-duration: 0.5s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
+            color: @red;
+            animation-name: blink;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
           }
 
           #battery.charging {
-           color: @green;
+            color: @green;
           }
 
           @keyframes blink {
            to {
-          		 color: @red;
+             color: @red;
            }
           }
 
           #custom-notification {
-          	margin-left: 10px;
-          	color: @lavender;
-          	background: @base;
+            margin-left: 10px;
+            color: @lavender;
+            background: @black;
           }
 
           #tray {
-          	 margin: 8px 10px;
+            margin: 8px 10px;
           }
 
           #idle_inhibitor.deactivated {
-          	background-color: shade(@base, 1);
-          	color: @lavender;
+            background-color: shade(@black, 1);
+            color: @lavender;
           }
 
           #idle_inhibitor.activated {
-          	 background-color: shade(@base, 1);
-          	 color: @green;
+            background-color: shade(@black, 1);
+            color: @green;
           }
-
-          #idle_inhibitor {
-          	 background-color: @yellow;
-          	 color: @base;
-          }
-
-
 
           #pulseaudio {
-          	 color: @flamingo;
-          	 margin-right: 10px;
+            color: @flamingo;
+            margin-right: 10px;
           }
 
           #pulseaudio.muted {
-          	 color: #3b4252;
+            color: #3b4252;
           }
 
           #temperature {
-          	 color: @teal;
+            color: @cyan;
           }
 
           #temperature.critical {
-          	 color: @red;
+            color: @red;
           }
 
           #cpu {
-          	 color: @blue;
+            color: @blue;
           }
 
           #cpu #cpu-icon {
-          	 color: @blue;
+            color: @blue;
           }
 
           #memory {
-          	 color: @flamingo;
-          	 margin-right: 5px;
+            color: @flamingo;
+            margin-right: 5px;
           }
 
           #network {
-          	 color: @lavender;
-          	 margin-right: 5px;
+            color: @lavender;
+            margin-right: 5px;
           }
 
           #network.disconnected {
-          	 color: @red;
+            color: @red;
           }
 
           #custom-launcher {
-          	 background-color: @mauve;
-          	 color: @base;
-          	 padding: 5px 10px;
-          	 margin-left: 15px;
-          	 font-size: 24px;
+            background-color: @mauve;
+            color: @black;
+            padding: 5px 10px;
+            margin-left: 15px;
+            font-size: 24px;
           }
 
           #custom-power {
-          	 margin: 8px;
-          	 padding: 5px;
-          	 transition: none;
-          	 color: @red;
-          	 background: @base;
+            margin: 8px;
+            padding: 5px;
+            transition: none;
+            color: @red;
+            background: @black;
           }
 
           #window {
-          	 border-style: hidden;
-          	 margin-left: 10px;
+            border-style: hidden;
+            margin-left: 10px;
           }
 
           #mode {
-          	 margin-bottom: 3px;
+            margin-bottom: 3px;
           }
         '';
     };

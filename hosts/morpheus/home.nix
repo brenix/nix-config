@@ -31,14 +31,17 @@
 
       wms = {
         bspwm.enable = true;
-        notifications.dunst.enable = true;
-        bars.polybar.enable = true;
+        hyprland.enable = true;
+        notifications.dunst.enable = false;
+        bars.polybar.enable = false;
+        bars.waybar.enable = true;
         launchers.rofi.enable = true;
         compositor.picom.enable = false;
       };
 
       terminals = {
-        alacritty.enable = true;
+        foot.enable = true;
+        alacritty.enable = false;
       };
     };
 
@@ -63,9 +66,9 @@
       stateVersion = lib.mkDefault "23.11";
     };
 
-    xsession.windowManager.bspwm.monitors = {
-      eDP-1 = [ "1" "2" "3" "4" ];
-    };
+    # xsession.windowManager.bspwm.monitors = {
+    #   eDP-1 = [ "1" "2" "3" "4" ];
+    # };
 
     home.persistence = {
       "/persist/home/brenix" = {

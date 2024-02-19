@@ -22,7 +22,7 @@
     podman.enable = true;
     systemd-boot.enable = true;
     wireless.enable = true;
-    xorg.enable = true;
+    xorg.enable = false;
   };
 
   # Boot
@@ -93,11 +93,11 @@
   };
 
   # Xorg settings
-  services.xserver.dpi = 123;
-  services.xserver.xkb.options = "caps:escape";
-  services.xserver.libinput.touchpad.clickMethod = "clickfinger";
-  services.xserver.libinput.touchpad.naturalScrolling = true;
-  services.xserver.libinput.touchpad.accelSpeed = "1.1";
+  # services.xserver.dpi = 123;
+  # services.xserver.xkb.options = "caps:escape";
+  # services.xserver.libinput.touchpad.clickMethod = "clickfinger";
+  # services.xserver.libinput.touchpad.naturalScrolling = true;
+  # services.xserver.libinput.touchpad.accelSpeed = "1.1";
 
   # Swap
   swapDevices = [{ device = "/swap/swapfile"; }];

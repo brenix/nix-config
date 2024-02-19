@@ -62,7 +62,6 @@ in
         }
 
         misc {
-          vrr = 2
           disable_hyprland_logo = 1;
         }
 
@@ -93,10 +92,10 @@ in
 
         bind = ,XF86MonBrightnessUp,exec,brightness --inc
         bind = ,XF86MonBrightnessDown,exec,brightness --dec
-        bind = ,XF86AudioRaiseVolume,exec,volume --inc
-        bind = ,XF86AudioLowerVolume,exec,volume --dec
-        bind = ,XF86AudioMute,exec,wpctl set-mute @DEFAULT AUDIO SOURCE@ toggle
-        bind = ,XF86AudioMicMute,exec,wpctl set-mute @DEFAULT INPUT SOURCE@ toggle
+        bind = ,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+        bind = ,XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+        bind = ,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+        bind = ,XF86AudioMicMute,exec,wpctl set-mute @DEFAULT_INPUT_SOURCE@ toggle
         bind = ,XF86AudioNext,exec,playerctl next
         bind = ,XF86AudioPrev,exec,playerctl previous
         bind = ,XF86AudioPlay,exec,playerctl play-pause
