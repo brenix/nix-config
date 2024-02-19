@@ -62,11 +62,11 @@
 
   # Hardware-specific stuff
   environment.systemPackages = with pkgs; [
-    framework-tool
+    # framework-tool
 
     # Wifi security testing
     aircrack-ng
-    wordlists
+    # wordlists
   ];
   hardware.framework.amd-7040.preventWakeOnAC = true; # https://www.phoronix.com/news/Framework-13-AMD-Lid-Suspend
   services.udev.extraRules = ''
