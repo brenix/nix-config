@@ -86,6 +86,7 @@ in
         bind = SUPER,Space,exec,${pkgs.rofi}/bin/rofi -show run
         bind = SUPER,d,exec,${config.my.settings.default.browser}
         bind = SUPER,s,exec,${pkgs.spotify}/bin/spotify
+        bind = SUPERSHIFT,s,exec,${pkgs.slack}/bin/slack
         bind = SUPER,v,exec,${pkgs.pavucontrol}/bin/pavucontrol
         bind = SUPER,z,exec,${pkgs.zoom}/bin/zoom
         bind = SUPERSHIFT,q,exit
