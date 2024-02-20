@@ -27,7 +27,7 @@
   };
 
   # Create clipcat config
-  home.file = lib.mkIf (!config.my.settings.headless) {
+  xdg.configFile = lib.mkIf (!config.my.settings.headless) {
     "clipcat/clipcatd.toml".text = ''
       daemonize = false
       max_history = 50
