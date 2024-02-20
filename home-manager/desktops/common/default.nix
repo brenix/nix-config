@@ -37,7 +37,7 @@
       [monitor]
       load_current = true
       enable_clipboard = true
-      enable_primary = false
+      enable_primary = true
 
       [grpc]
       host = '127.0.0.1'
