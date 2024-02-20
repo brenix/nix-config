@@ -12,9 +12,10 @@ in
     services.mako = {
       enable = true;
       defaultTimeout = 5000;
+      font = "Terminus 12";
       backgroundColor = "#${config.colorscheme.palette.base00}";
       textColor = "#${config.colorscheme.palette.base05}";
-      borderColor = "#${config.colorscheme.palette.base0D}";
+      borderColor = "#${config.colorscheme.palette.base01}";
       progressColor = "over #${config.colorscheme.palette.base02}";
       extraConfig = ''
         [urgency=high]
