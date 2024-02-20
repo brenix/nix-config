@@ -18,7 +18,7 @@ in
           font = "${config.my.settings.fonts.monospace}:size=11, JoyPixels:size=11";
           font-bold = "${config.my.settings.fonts.monospace}:size=11, JoyPixels:size=11";
           font-italic = "${config.my.settings.fonts.monospace}:size=11, JoyPixels:size=11";
-          # line-height = "14px";
+          line-height = "16px";
           # vertical-letter-offset = "1px";
           box-drawings-uses-font-glyphs = "yes";
           shell = "${config.my.settings.default.shell}";
