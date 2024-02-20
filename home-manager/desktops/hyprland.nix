@@ -37,7 +37,7 @@ in
         monitor = DP-1,highrr,auto,1
         monitor = HDMI-A-1,highrr,auto,1
         input {
-          kb_options = caps:swapescape
+          # kb_options = caps:swapescape
           repeat_rate = 45
           repeat_delay = 280
           accel_profile = flat
