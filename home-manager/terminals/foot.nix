@@ -22,7 +22,7 @@ in
           # vertical-letter-offset = "1px";
           box-drawings-uses-font-glyphs = "yes";
           shell = "${config.my.settings.default.shell}";
-          selection-target = "clipboard";
+          selection-target = "primary";
         };
 
         colors = {
@@ -57,7 +57,7 @@ in
         };
 
         mouse-bindings = {
-          select-extend = "BTN_MIDDLE";
+          select-extend = "none";
           primary-paste = "BTN_RIGHT";
         };
       };

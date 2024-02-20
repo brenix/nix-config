@@ -15,7 +15,7 @@
     avahi.enable = true;
     auto-login.enable = false;
     auto-upgrade.enable = false;
-    clipcat.enable = true;
+    clipcat.enable = false;
     ephemeral.enable = true;
     fonts.enable = true;
     gaming.enable = false;
