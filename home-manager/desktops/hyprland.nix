@@ -33,7 +33,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
-        monitor = e-DP1,highres,auto,1
+        monitor = eDP-1,highres,auto,1
         monitor = DP-1,highrr,auto,1
         monitor = HDMI-A-1,highrr,auto,1
         input {
