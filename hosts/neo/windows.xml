@@ -209,8 +209,6 @@
     </rng>
   </devices>
   <qemu:commandline>
-    <qemu:arg value='--overcommit'/>
-    <qemu:arg value='cpu-pm=on'/>
     <qemu:arg value='-fw_cfg'/>
     <qemu:arg value='opt/ovmf/X-PciMmio64Mb,string=65536'/>
     <qemu:arg value='-audiodev'/>
