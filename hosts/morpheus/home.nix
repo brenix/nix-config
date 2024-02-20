@@ -33,6 +33,7 @@
         bspwm.enable = true;
         hyprland.enable = true;
         notifications.dunst.enable = false;
+        notifications.mako.enable = true;
         bars.polybar.enable = false;
         bars.waybar.enable = true;
         launchers.rofi.enable = true;
