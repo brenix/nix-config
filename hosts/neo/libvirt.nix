@@ -51,8 +51,8 @@ in
       options kvm ignore_msrs=1
       options kvm nx_huge_pages=off
       options kvm report_ignored_msrs=0
-      options kvm_amd avic=1
-      options kvm_amd force_avic=1
+      # options kvm_amd avic=1
+      # options kvm_amd force_avic=1
       options kvm_amd nested=0
       options kvm_amd npt=1
       options vfio-pci disable_vga=1

@@ -33,7 +33,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-server;
     kernelParams = [
-      "tsc=reliable"
+      # "tsc=reliable"
       "usbcore.autosuspend=-1"
     ];
     initrd.availableKernelModules = [

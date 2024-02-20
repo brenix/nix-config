@@ -49,7 +49,6 @@
   <features>
     <acpi/>
     <apic eoi='on'/>
-    <hap state='on'/>
     <hyperv mode='custom'>
       <relaxed state='on'/>
       <vapic state='on'/>
@@ -60,24 +59,33 @@
       <stimer state='on'>
         <direct state='on'/>
       </stimer>
-      <vendor_id state='on' value='123456789123'/>
+      <reset state='on'/>
+      <vendor_id state='on' value='AuthenticAMD'/>
       <frequencies state='on'/>
+      <reenlightenment state='on'/>
+      <tlbflush state='on'/>
+      <ipi state='on'/>
       <evmcs state='off'/>
+      <avic state='off'/>
     </hyperv>
     <kvm>
       <hidden state='on'/>
     </kvm>
+    <vmport state='off'/>
+    <smm state='on'/>
     <ioapic driver='kvm'/>
   </features>
-  <cpu mode='custom' match='exact' check='none'>
-    <model fallback='forbid'>qemu64</model>
+  <cpu mode='host-passthrough' check='none' migratable='off'>
+    <topology sockets='1' dies='1' cores='8' threads='2'/>
+    <cache mode='passthrough'/>
+    <feature policy='require' name='topoext'/>
+    <feature policy='disable' name='svm'/>
   </cpu>
-  <clock offset='utc'>
+  <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='discard'/>
     <timer name='hpet' present='no'/>
     <timer name='hypervclock' present='yes'/>
-    <timer name='tsc' present='yes' mode='native'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
@@ -201,12 +209,10 @@
     </rng>
   </devices>
   <qemu:commandline>
+    <qemu:arg value='--overcommit'/>
+    <qemu:arg value='cpu-pm=on'/>
     <qemu:arg value='-fw_cfg'/>
     <qemu:arg value='opt/ovmf/X-PciMmio64Mb,string=65536'/>
-    <qemu:arg value='-smp'/>
-    <qemu:arg value='16,sockets=1,dies=1,cores=8,threads=2'/>
-    <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,+invtsc,+topoext,-x2apic,migratable=off,host-cache-info=on,kvm-asyncpf-int,hv-passthrough,hv-time,hv-relaxed,hv-spinlocks=0x1fff,hv-vpindex,hv-runtime,hv-frequencies,kvm=off,kvm-hint-dedicated=on,hv-no-nonarch-coresharing=on,hv-vapic=on,hv-synic=on,hv-stimer=on,hv-stimer-direct=on,hv-avic=on'/>
     <qemu:arg value='-audiodev'/>
     <qemu:arg value='pipewire,id=audio0'/>
     <qemu:arg value='-device'/>
