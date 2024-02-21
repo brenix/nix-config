@@ -25,4 +25,6 @@
   services.playerctld = {
     enable = lib.mkIf (!config.my.settings.headless) true;
   };
+
+  xdg.portal.enable = true;
 }
