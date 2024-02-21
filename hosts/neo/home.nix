@@ -11,7 +11,6 @@
     ../../home-manager/programs/spotify.nix
     ../../home-manager/programs/sre-tools
     ../../home-manager/programs/wootility.nix
-    ../../home-manager/programs/zoom.nix
   ];
 
   config = {

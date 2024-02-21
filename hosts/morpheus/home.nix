@@ -8,7 +8,6 @@
     ../../home-manager/programs/slack.nix
     ../../home-manager/programs/spotify.nix
     ../../home-manager/programs/sre-tools
-    ../../home-manager/programs/zoom.nix
   ];
 
   config = {
