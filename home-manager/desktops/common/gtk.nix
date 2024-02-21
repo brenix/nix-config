@@ -55,6 +55,4 @@
     gtk.enable = true;
     x11.enable = true;
   };
-
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }

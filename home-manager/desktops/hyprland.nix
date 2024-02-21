@@ -11,14 +11,12 @@ in
   config = mkIf cfg.enable {
 
     home.sessionVariables = {
-      MOZ_ENABLE_WAYLAND = 1;
-      QT_QPA_PLATFORM = "wayland";
       LIBSEAT_BACKEND = "logind";
-    };
-
-    xdg.portal = {
-      extraPortals = [ pkgs.system.hyprland.xdg-desktop-portal-hyprland ];
-      configPackages = [ pkgs.system.hyprland.hyprland ];
+      MOZ_ENABLE_WAYLAND = "1";
+      NIXOS_OZONE_WL = "1";
+      QT_QPA_PLATFORM = "wayland;xcb";
+      WLR_BACKEND = "vulkan";
+      WLR_RENDERER = "vulkan";
     };
 
     home.packages = [
