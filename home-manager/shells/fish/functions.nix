@@ -29,6 +29,12 @@
     commandline -f repaint
   '';
 
+  # wl-paste
+  bind_wlpaste = ''
+    commandline -t -- (wl-paste -p -n)
+    commandline -f repaint
+  '';
+
   # cd to root of git dir
   cdu = ''
     set -l root_path (git rev-parse --show-toplevel)

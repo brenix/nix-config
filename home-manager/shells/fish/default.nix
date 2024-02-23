@@ -115,6 +115,7 @@ in
           bind \er bind_planapply
           bind \cr _atuin_search
           bind -M insert \cr _atuin_search
+          bind \cv bind_wlpaste
         '' +
         # Use terminal colors
         ''
