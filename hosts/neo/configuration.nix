@@ -63,7 +63,7 @@
     ];
     extraModprobeConfig = ''
       options usbhid kbpoll=1
-      options usbhid mousepoll=1
+      options usbhid mousepoll=2
     '';
     postBootCommands = ''
       # Reset GPU due to bug with monitor
