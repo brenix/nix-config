@@ -64,33 +64,33 @@ in
     enable = true;
     qemu = {
       # Don't hook evdev at vm start
-      package = pkgs.qemu_kvm.overrideAttrs (old: {
-        patches =
-          old.patches
-          ++ [
-            (pkgs.writeText "qemu.diff" ''
-              diff --git a/ui/input-linux.c b/ui/input-linux.c
-              index e572a2e..a9d76ba 100644
-              --- a/ui/input-linux.c
-              +++ b/ui/input-linux.c
-              @@ -397,12 +397,6 @@ static void input_linux_complete(UserCreatable *uc, Error **errp)
-                   }
+      # package = pkgs.qemu_kvm.overrideAttrs (old: {
+      #   patches =
+      #     old.patches
+      #     ++ [
+      #       (pkgs.writeText "qemu.diff" ''
+      #         diff --git a/ui/input-linux.c b/ui/input-linux.c
+      #         index e572a2e..a9d76ba 100644
+      #         --- a/ui/input-linux.c
+      #         +++ b/ui/input-linux.c
+      #         @@ -397,12 +397,6 @@ static void input_linux_complete(UserCreatable *uc, Error **errp)
+      #              }
 
-                   qemu_set_fd_handler(il->fd, input_linux_event, NULL, il);
-              -    if (il->keycount) {
-              -        /* delay grab until all keys are released */
-              -        il->grab_request = true;
-              -    } else {
-              -        input_linux_toggle_grab(il);
-              -    }
-                   QTAILQ_INSERT_TAIL(&inputs, il, next);
-                   il->initialized = true;
-                   return;
-            '')
-          ];
-        # buildInputs = old.buildInputs ++ [ pkgs.pipewire ];
-        # configureFlags = old.configureFlags ++ [ "--enable-pipewire" ];
-      });
+      #              qemu_set_fd_handler(il->fd, input_linux_event, NULL, il);
+      #         -    if (il->keycount) {
+      #         -        /* delay grab until all keys are released */
+      #         -        il->grab_request = true;
+      #         -    } else {
+      #         -        input_linux_toggle_grab(il);
+      #         -    }
+      #              QTAILQ_INSERT_TAIL(&inputs, il, next);
+      #              il->initialized = true;
+      #              return;
+      #       '')
+      #     ];
+      #   # buildInputs = old.buildInputs ++ [ pkgs.pipewire ];
+      #   # configureFlags = old.configureFlags ++ [ "--enable-pipewire" ];
+      # });
       ovmf.enable = true;
       runAsRoot = true;
       verbatimConfig = ''
