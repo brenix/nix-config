@@ -15,9 +15,9 @@ in
         main = {
           term = "foot";
           # font = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
-          font = "${config.my.settings.fonts.monospace}:size=11, JoyPixels:size=11";
-          font-bold = "${config.my.settings.fonts.monospace}:size=11, JoyPixels:size=11";
-          font-italic = "${config.my.settings.fonts.monospace}:size=11, JoyPixels:size=11";
+          font = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
+          font-bold = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
+          font-italic = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
           line-height = "16px";
           # vertical-letter-offset = "1px";
           box-drawings-uses-font-glyphs = "yes";
