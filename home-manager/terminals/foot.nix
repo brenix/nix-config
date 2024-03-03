@@ -20,7 +20,7 @@ in
           font = "Terminus:size=10, JoyPixels:size=10";
           font-bold = "Terminus:size=10, JoyPixels:size=10";
           font-italic = "Terminus:size=10, JoyPixels:size=10";
-          line-height = "12px";
+          line-height = "14px";
           # vertical-letter-offset = "1px";
           box-drawings-uses-font-glyphs = "yes";
           shell = "${config.my.settings.default.shell}";
