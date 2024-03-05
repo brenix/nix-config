@@ -5,6 +5,7 @@
   ];
 
   home.packages = with pkgs; [
+    apko
     awscli2
     certigo
     chamber
