@@ -87,6 +87,7 @@ in
         windowrulev2 = float,class:^(steam)$
 
         bind = SUPER,Return,exec,${config.my.settings.default.terminal}
+        bind = SUPERSHIFT,Return,exec,[floating] ${config.my.settings.default.terminal}
         bind = SUPER,Space,exec,${pkgs.rofi}/bin/rofi -show run
         bind = SUPER,d,exec,${config.my.settings.default.browser}
         bind = SUPER,s,exec,${pkgs.spotify}/bin/spotify
