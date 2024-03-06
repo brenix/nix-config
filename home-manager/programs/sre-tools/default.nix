@@ -14,6 +14,7 @@
     graphviz
     jwt-cli
     markdownlint-cli
+    melange
     openssl
     packer
     parallel
