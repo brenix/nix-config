@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./atuin.nix
+    # ./atuin.nix
     ./bat.nix
     ./dircolors.nix
     ./fzf.nix
