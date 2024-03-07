@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     apko
     awscli2
+    bubblewrap
     certigo
     chamber
     glab
