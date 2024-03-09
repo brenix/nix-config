@@ -85,6 +85,7 @@ in
         windowrulev2 = float,class:^(zoom)$
         windowrulev2 = float,class:^(Bitwarden)$,title:^(Bitwarden)$
         windowrulev2 = float,class:^(steam)$
+        windowrulev2 = float,class:^(.*)$
 
         bind = SUPER,Return,exec,${config.my.settings.default.terminal}
         bind = SUPERSHIFT,Return,exec,[floating] ${config.my.settings.default.terminal}

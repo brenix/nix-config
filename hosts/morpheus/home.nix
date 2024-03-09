@@ -47,7 +47,7 @@
 
     my.settings = {
       dpi = 123;
-      wallpaper = "~/nix-config/home-manager/wallpapers/nixos-dark.png";
+      wallpaper = "~/nix-config/home-manager/wallpapers/nord-island.png";
       host = "morpheus";
       default = {
         shell = "${pkgs.fish}/bin/fish";
@@ -57,8 +57,8 @@
       };
     };
 
-    # colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-    colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (../../home-manager/colorschemes/zenbox.yaml));
+    colorscheme = inputs.nix-colors.colorSchemes.nord;
+    # colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "zenbox" (builtins.readFile (../../home-manager/colorschemes/zenbox.yaml));
 
     home = {
       username = lib.mkDefault "brenix";

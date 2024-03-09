@@ -8,11 +8,11 @@
     };
 
     theme = {
-      # name = "Nordic-darker";
-      # package = pkgs.nordic;
+      name = "Nordic-darker";
+      package = pkgs.nordic;
 
-      name = "Whitesur";
-      package = pkgs.whitesur-gtk-theme;
+      # name = "Whitesur";
+      # package = pkgs.whitesur-gtk-theme;
 
       # name = "adw-gtk3-dark";
       # package = pkgs.adw-gtk3;

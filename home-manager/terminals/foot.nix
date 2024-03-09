@@ -14,13 +14,13 @@ in
       settings = {
         main = {
           term = "foot";
-          # font = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
-          # font-bold = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
-          # font-italic = "${config.my.settings.fonts.monospace}:size=11.5, JoyPixels:size=11.5";
-          font = "Terminus:size=10, JoyPixels:size=10";
-          font-bold = "Terminus:size=10, JoyPixels:size=10";
-          font-italic = "Terminus:size=10, JoyPixels:size=10";
-          line-height = "14px";
+          font = "${config.my.settings.fonts.monospace}:size=10.5, JoyPixels:size=10.5";
+          font-bold = "${config.my.settings.fonts.monospace}:size=10.5, JoyPixels:size=10.5";
+          font-italic = "${config.my.settings.fonts.monospace}:size=10.5, JoyPixels:size=10.5";
+          # font = "Terminus:size=10, JoyPixels:size=10";
+          # font-bold = "Terminus:size=10, JoyPixels:size=10";
+          # font-italic = "Terminus:size=10, JoyPixels:size=10";
+          line-height = "16px";
           # vertical-letter-offset = "1px";
           box-drawings-uses-font-glyphs = "yes";
           shell = "${config.my.settings.default.shell}";

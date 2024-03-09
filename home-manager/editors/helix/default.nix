@@ -31,7 +31,8 @@ in
     programs.helix = {
       enable = true;
       settings = {
-        theme = "nix-${colorscheme.slug}";
+        # theme = "nix-${colorscheme.slug}";
+        theme = "nord";
         editor = {
           auto-pairs = false;
           bufferline = "always";

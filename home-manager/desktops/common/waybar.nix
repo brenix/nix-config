@@ -264,15 +264,15 @@ in
           * Module styles
           * -------------------------------------------------------------------------- */
           #clock {
-            color: @mostlywhite;
+            color: @brightgrey;
           }
 
           #backlight {
-            color: @yellow;
+            color: @brightgrey;
           }
 
           #battery {
-            color: @green;
+            color: @brightgrey;
           }
 
           #battery.critical:not(.charging) {
@@ -301,7 +301,7 @@ in
           */
 
           #pulseaudio {
-            color: @brown;
+            color: @brightgrey;
           }
 
           #pulseaudio.muted {
@@ -309,7 +309,7 @@ in
           }
 
           #temperature {
-            color: @cyan;
+            color: @brightgrey;
           }
 
           #temperature.critical {
@@ -317,19 +317,27 @@ in
           }
 
           #cpu {
-            color: @blue;
+            color: @brightgrey;
           }
 
           #cpu #cpu-icon {
-            color: @blue;
+            color: @brightgrey;
           }
 
           #memory {
-            color: @brown;
+            color: @brightgrey;
           }
 
           #network {
-            color: @magenta;
+            color: @brightgrey;
+          }
+
+          #custom-player{
+            color: @brightgrey;
+          }
+
+          #custom-currentplayer{
+            color: @brightgrey;
           }
 
           #network.disconnected {
