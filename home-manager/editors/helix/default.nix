@@ -120,7 +120,7 @@ in
       themes = import ./theme.nix { inherit colorscheme; };
 
       languages = with pkgs; {
-        lanaguage-server = {
+        language-server = {
           vscode-json-language-server = {
             command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
             args = [ "--stdio" ];
