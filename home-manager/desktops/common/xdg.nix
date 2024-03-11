@@ -37,16 +37,13 @@ in
     userDirs = {
       enable = true;
       createDirectories = false;
-      desktop = "${config.home.homeDirectory}/desktop";
-      documents = "${config.home.homeDirectory}/documents";
+      desktop = "${config.home.homeDirectory}/";
+      documents = "${config.home.homeDirectory}/";
       download = "${config.home.homeDirectory}/downloads";
-      music = "${config.home.homeDirectory}/music";
-      pictures = "${config.home.homeDirectory}/pictures";
-      templates = "${config.home.homeDirectory}/templates";
-      videos = "${config.home.homeDirectory}/videos";
-      extraConfig = {
-        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/screenshots";
-      };
+      music = "${config.home.homeDirectory}/";
+      pictures = "${config.home.homeDirectory}/";
+      templates = "${config.home.homeDirectory}/";
+      videos = "${config.home.homeDirectory}/";
     };
   };
 }
