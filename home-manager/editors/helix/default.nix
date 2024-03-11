@@ -22,7 +22,6 @@ in
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.pyright
       nodePackages.vscode-css-languageserver-bin
-      nodePackages.vscode-html-languageserver-bin
       nodePackages.vscode-json-languageserver-bin
       nodePackages.yaml-language-server
       terraform-ls
