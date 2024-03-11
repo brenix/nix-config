@@ -43,11 +43,11 @@
   qt = lib.mkIf (!config.my.settings.headless) {
     enable = true;
     platformTheme = "gtk";
-    style.name = "WhiteSur-Light";
+    style.name = "Nordic-darker";
     style.package = pkgs.whitesur-gtk-theme;
   };
 
-  home.sessionVariables.GTK_THEME = "WhiteSur-Light";
+  home.sessionVariables.GTK_THEME = "Nordic-darker";
   home.pointerCursor = lib.mkIf (!config.my.settings.headless) {
     name = "capitaine-cursors-white";
     package = pkgs.capitaine-cursors;
