@@ -88,12 +88,11 @@ in
 
         bind = SUPER,Return,exec,${config.my.settings.default.terminal}
         bind = SUPERSHIFT,Return,exec,[floating] ${config.my.settings.default.terminal}
-        bind = SUPER,Space,exec,${pkgs.rofi}/bin/rofi -show run
+        bind = SUPER,Space,exec,rofi -show run
         bind = SUPER,d,exec,${config.my.settings.default.browser}
-        bind = SUPER,s,exec,${pkgs.spotify}/bin/spotify
-        bind = SUPERSHIFT,s,exec,${pkgs.slack}/bin/slack
-        bind = SUPER,v,exec,${pkgs.pavucontrol}/bin/pavucontrol
-        bind = SUPER,z,exec,${pkgs.zoom}/bin/zoom
+        bind = SUPER,s,exec,spotify
+        bind = SUPERSHIFT,s,exec,slack
+        bind = SUPER,v,exec,pavucontrol
         bind = SUPERSHIFT,q,exit
 
         bind = ,Print,exec,grimblast --notify copysave area
@@ -102,10 +101,9 @@ in
         bind = SUPER,Print,exec,grimblast --notify copy window
         bind = ALT,Print,exec,grimblast --notify copy area
         bind = SUPER,bracketleft,exec,grimblast --notify --cursor copysave area ~/$(date "+%Y-%m-%d"T"%H:%M:%S_no_watermark").png
-        bind = SUPER,bracketright,exec, grimblast --notify --cursor copy area
-
-        bind = ,XF86MonBrightnessUp,exec,brightness --inc
-        bind = ,XF86MonBrightnessDown,exec,brightness --dec
+        bind = SUPER,bracketright,exec,grimblast --notify --cursor copy area
+        bind = ,XF86MonBrightnessUp,exec,brightnessctl set 5%+
+        bind = ,XF86MonBrightnessDown,exec,brightnessctl set 5%-
         bind = ,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
         bind = ,XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
         bind = ,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
