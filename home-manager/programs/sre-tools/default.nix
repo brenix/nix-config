@@ -6,6 +6,7 @@
 
   home.packages = with pkgs; [
     apko
+    atmos
     awscli2
     bubblewrap
     certigo
