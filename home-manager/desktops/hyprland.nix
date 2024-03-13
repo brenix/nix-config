@@ -74,6 +74,8 @@ in
 
         env = QT_QPA_PLATFORM,wayland
         env = QT_QPA_PLATFORMTHEME,qt6ct
+        env = HYPRCURSOR_SIZE,32
+
 
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = ${pkgs.waybar}/bin/waybar &

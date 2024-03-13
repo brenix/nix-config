@@ -52,7 +52,7 @@
 
     my.settings = {
       dpi = 108;
-      wallpaper = "~/nix-config/home-manager/wallpapers/nord-island.png";
+      wallpaper = "~/nix-config/home-manager/wallpapers/yosemite.png";
       host = "neo";
       default = {
         shell = "${pkgs.fish}/bin/fish";
@@ -62,7 +62,7 @@
       };
     };
 
-    colorscheme = inputs.nix-colors.colorSchemes.nord;
+    colorscheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
     # colorscheme = inputs.nix-colors.lib-core.schemeFromYAML "nord-dark" (builtins.readFile (../../home-manager/colorschemes/nord-dark.yaml));
 
     home = {

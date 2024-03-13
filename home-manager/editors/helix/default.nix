@@ -31,7 +31,7 @@ in
       enable = true;
       settings = {
         # theme = "nix-${colorscheme.slug}";
-        theme = "nord";
+        theme = "catppuccin_mocha";
         editor = {
           auto-pairs = false;
           bufferline = "always";

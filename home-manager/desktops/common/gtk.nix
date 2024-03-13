@@ -8,8 +8,17 @@
     };
 
     theme = {
-      name = "Nordic-darker";
-      package = pkgs.nordic;
+      # name = "Nordic-darker";
+      # package = pkgs.nordic;
+
+      name = "Catppuccin-Mocha-Compact-Blue-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "blue" ];
+        size = "compact";
+        tweaks = [ "rimless" ];
+        # tweaks = [ "rimless" "black" ];
+        variant = "mocha";
+      };
 
       # name = "Whitesur";
       # package = pkgs.whitesur-gtk-theme;
@@ -40,14 +49,26 @@
     };
   };
 
+  xdg.configFile = lib.mkIf (!config.my.settings.headless) {
+    "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+    "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+    "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+  };
+
   qt = lib.mkIf (!config.my.settings.headless) {
     enable = true;
     platformTheme = "gtk";
-    style.name = "Nordic-darker";
-    style.package = pkgs.whitesur-gtk-theme;
+    style.name = "Catppuccin-Mocha-Compact-Blue-Dark";
+    style.package = pkgs.catppuccin-gtk.override {
+      accents = [ "blue" ];
+      size = "compact";
+      tweaks = [ "rimless" ];
+      # tweaks = [ "rimless" "black" ];
+      variant = "mocha";
+    };
   };
 
-  home.sessionVariables.GTK_THEME = "Nordic-darker";
+  home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Compact-Blue-Dark";
   home.pointerCursor = lib.mkIf (!config.my.settings.headless) {
     name = "capitaine-cursors-white";
     package = pkgs.capitaine-cursors;
