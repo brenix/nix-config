@@ -158,6 +158,14 @@
     set label $argv[2]
     set fontsize (if test -n "$argv[3]"; echo $argv[3]; else; echo 42; end)
 
+    if test -z "$image"
+      echo "Image not provided as first arg"
+    end
+
+    if test -z "$label"
+      echo "Image label not provided as second arg"
+    end
+
     # resize image
     convert $image \
       -resize "600x600^" \
@@ -171,7 +179,7 @@
       -geometry +0+87 \
       -fill black \
       -pointsize $fontsize \
-      -font Inter-Semi-Bold \
+      -font Inter-SemiBold \
       -size 540x95 caption:"$label\ \ " \
       (basename $image .jpg)-resized.jpg \
       +swap \
