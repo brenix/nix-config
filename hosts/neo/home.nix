@@ -45,8 +45,8 @@
       };
 
       terminals = {
-        alacritty.enable = false;
-        foot.enable = true;
+        alacritty.enable = true;
+        foot.enable = false;
       };
     };
 
@@ -56,7 +56,7 @@
       host = "neo";
       default = {
         shell = "${pkgs.fish}/bin/fish";
-        terminal = "${pkgs.foot}/bin/foot";
+        terminal = "${pkgs.alacritty}/bin/alacritty";
         browser = "firefox";
         editor = "hx";
       };

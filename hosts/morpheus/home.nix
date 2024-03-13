@@ -40,8 +40,8 @@
       };
 
       terminals = {
-        foot.enable = true;
-        alacritty.enable = false;
+        foot.enable = false;
+        alacritty.enable = true;
       };
     };
 
@@ -51,7 +51,7 @@
       host = "morpheus";
       default = {
         shell = "${pkgs.fish}/bin/fish";
-        terminal = "${pkgs.foot}/bin/foot";
+        terminal = "${pkgs.alacritty}/bin/alacritty";
         browser = "firefox";
         editor = "hx";
       };
