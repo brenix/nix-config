@@ -1,16 +1,6 @@
-{ pkgs, config, ... }:
-let
-  pinentry = {
-    package = pkgs.pinentry-curses;
-    name = "curses";
-  };
-in
 {
-  home.packages = [ pinentry.package ];
-
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = pinentry.name;
     enableExtraSocket = true;
   };
 
@@ -33,5 +23,4 @@ in
   programs.gpg = {
     enable = true;
   };
-
 }
