@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.logrotate.settings.nginx = {
     files = "/var/log/nginx/*.log";
@@ -5,6 +6,7 @@
     frequency = "daily";
   };
   services.nginx = {
+    package = pkgs.nginxQuic;
     enable = true;
     resolver.ipv6 = false;
     appendHttpConfig = ''
@@ -20,7 +22,7 @@
       access_log /var/log/nginx/access.log;
     '';
 
-    virtualHosts."192.168.1.10" = {
+    virtualHosts."nix-cache.lan" = {
       locations."/" = {
         root = "/var/public-nix-cache";
         extraConfig = ''
