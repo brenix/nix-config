@@ -83,5 +83,12 @@ in
       options = "rw,noatime,lazytime";
       wantedBy = [ "multi-user.target" ];
     }
+    {
+      what = "/dev/mapper/data-games";
+      where = "/games";
+      type = "xfs";
+      options = "rw,noatime,lazytime";
+      wantedBy = [ "multi-user.target" ];
+    }
   ];
 }

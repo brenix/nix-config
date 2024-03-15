@@ -64,7 +64,7 @@
           partitions = {
             priimary = {
               label = "linux";
-              size = "250G";
+              size = "100%";
               content = {
                 type = "lvm_pv";
                 vg = "data";

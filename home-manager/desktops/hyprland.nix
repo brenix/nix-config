@@ -34,6 +34,7 @@ in
       extraConfig = ''
         monitor = eDP-1,highres,auto,1
         monitor = DP-1,highrr,auto,1
+        monitor = DP-2,highrr,auto,1
         monitor = HDMI-A-1,highrr,auto,1
         input {
           # kb_options = caps:swapescape

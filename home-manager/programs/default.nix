@@ -39,6 +39,7 @@
       directories = [
         ".local/bin"
         ".local/state/wireplumber"
+        ".local/share/Steam"
         "nix-config"
       ];
       allowOther = true;

@@ -1,10 +1,24 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export RADV_PERFTEST=aco
+    export DXVK_ASYNC=1
+    export PROTON_NO_ESYNC=1
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    export VK_LOADER_DRIVERS_SELECT=nvidia*
+    exec "$@"
+  '';
+in
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
+    inputs.hardware.nixosModules.common-gpu-nvidia
     inputs.hardware.nixosModules.common-pc-ssd
     # ./disks.nix # TODO: uncomment during reinstall
-    ./libvirt.nix
     ./mounts.nix # TODO: remove during reinstall
 
     ../../nixos
@@ -18,7 +32,7 @@
     clipcat.enable = false;
     ephemeral.enable = true;
     fonts.enable = true;
-    gaming.enable = false;
+    gaming.enable = true;
     login.enable = true;
     openconnect.enable = true;
     opengl.enable = true;
@@ -31,7 +45,7 @@
 
   # Boot
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-server;
+    kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       # "tsc=reliable"
       "usbcore.autosuspend=-1"
@@ -44,9 +58,7 @@
       "usbhid"
       "xhci_pci"
     ];
-    initrd.kernelModules = [
-      "amdgpu"
-    ];
+    initrd.kernelModules = [ ];
     kernelModules = [
       "dm-snapshot"
       "i2c-dev"
@@ -56,7 +68,6 @@
     ];
     blacklistedKernelModules = [
       "sp5100_tco"
-      "nouveau"
       "iwlwifi"
       "mac80211"
       "iTCO_wdt"
@@ -95,6 +106,14 @@
 
   # Hardware-specific stuff
   services.udev.packages = [ pkgs.wooting-udev-rules ];
+  hardware.nvidia = {
+    prime = {
+      amdgpuBusId = "PCI:13:0:0";
+      nvidiaBusId = "PCI:14:0:0";
+    };
+  };
+
+  environment.systemPackages = [ nvidia-offload ];
 
   # Programs
   programs = {
