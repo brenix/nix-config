@@ -16,7 +16,6 @@
         accents = [ "blue" ];
         size = "compact";
         tweaks = [ "rimless" ];
-        # tweaks = [ "rimless" "black" ];
         variant = "mocha";
       };
 
@@ -63,7 +62,6 @@
       accents = [ "blue" ];
       size = "compact";
       tweaks = [ "rimless" ];
-      # tweaks = [ "rimless" "black" ];
       variant = "mocha";
     };
   };

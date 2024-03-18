@@ -24,20 +24,6 @@ in
           format-padding = 0.5;
         };
 
-        # "colors" = {
-        #   bg = "#131313";
-        #   bg-alt = "#000000";
-        #   fg = "#ffffff";
-        #   fg-alt = "#ffffff";
-        #   blue = "#81a1c1";
-        #   cyan = "#8fbcbb";
-        #   green = "#a3be8c";
-        #   orange = "#d08770";
-        #   purple = "#b48ead";
-        #   red = "#bf616a";
-        #   yellow = "#ebcb8b";
-        # };
-
         "colors" = {
           bg = "#${palette.base00}";
           bg-alt = "#${palette.base00}";
@@ -127,7 +113,6 @@ in
         "module/temperature" = {
           type = "internal/temperature";
           interval = 3;
-          # hwmon-path = "\${env:HWMON_PATH}";
           hwmon-path =
             "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input";
           thermal-zone = 0;

@@ -11,7 +11,6 @@ in
   config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
-      # package = pkgs.firefox-beta;
       profiles.default = {
         name = "Default";
         settings = {
@@ -42,7 +41,6 @@ in
           "media.memory_cache_max_size" = 65536;
           "network.buffer.cache.count" = 128;
           "network.buffer.cache.size" = 262144;
-          # "network.dnsCacheExpiration" = 86400;
           "network.dns.disableIPv6" = true;
           "network.dns.max_high_priority_threads" = 16;
           "network.dnsCacheEntries" = 1000;
