@@ -22,7 +22,7 @@
 
       editors = {
         helix.enable = true;
-        vscode.enable = true;
+        vscode.enable = false;
       };
 
       multiplexers = {
