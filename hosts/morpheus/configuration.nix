@@ -28,7 +28,7 @@
 
   # Boot
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages;
     kernelParams = [
       "amd_pstate=active"
       "pcie_aspm=force"

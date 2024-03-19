@@ -31,7 +31,7 @@
 
   # Boot
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-server;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ ];
     initrd.availableKernelModules = [
       "ahci"
