@@ -15,7 +15,7 @@
 
   # Boot
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
     kernelParams = [ ];
     initrd.availableKernelModules = [
       "ahci"

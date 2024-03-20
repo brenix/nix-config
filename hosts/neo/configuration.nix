@@ -31,7 +31,7 @@
 
   # Boot
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
     kernelParams = [
       # "tsc=reliable"
       "usbcore.autosuspend=-1"
