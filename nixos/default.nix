@@ -53,7 +53,7 @@
   security.sudo.wheelNeedsPassword = false;
 
   # Enable some common services
-  services.bpftune.enable = true;
+  # services.bpftune.enable = true;
   services.dbus.enable = true;
   services.fwupd.enable = true;
   services.geoclue2.enable = true;
