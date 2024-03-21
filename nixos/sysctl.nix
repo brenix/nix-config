@@ -81,6 +81,10 @@
         # TCP reduce performance spikes
         "net.ipv4.tcp_timestamps" = 0;
 
+        # Disable TCP SACK
+        "net.ipv4.tcp_sack" = 0;
+        "net.ipv4.tcp_dsack" = 0;
+
         # Increase the memory dedicated to the network interfaces
         # https://blog.cloudflare.com/optimizing-tcp-for-high-throughput-and-low-latency/
         "net.core.rmem_default" = 1048576;
