@@ -39,12 +39,29 @@
   <resource>
     <partition>/machine</partition>
   </resource>
+  <sysinfo type='smbios'>
+    <bios>
+      <entry name='vendor'>American Megatrends International, LLC.</entry>
+      <entry name='version'>F37h</entry>
+      <entry name='date'>12/25/2023</entry>
+      <entry name='release'>5.17</entry>
+    </bios>
+    <system>
+      <entry name='manufacturer'>Gigabyte Technology Co., Ltd.</entry>
+      <entry name='product'>X570 AORUS MASTER</entry>
+      <entry name='version'>-CF</entry>
+      <entry name='serial'>Default string</entry>
+      <entry name='uuid'>e5c83d25-eea4-4ec5-b1dd-716b5e3bfd9a</entry>
+      <entry name='sku'>Default string</entry>
+      <entry name='family'>X570 MB</entry>
+    </system>
+  </sysinfo>
   <os>
     <type arch='x86_64' machine='pc-q35-8.2'>hvm</type>
     <loader readonly='yes' type='pflash'>/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
     <nvram template='/run/libvirt/nix-ovmf/OVMF_VARS.fd'>/var/lib/libvirt/qemu/nvram/windows_VARS.fd</nvram>
     <bootmenu enable='no'/>
-    <smbios mode='host'/>
+    <smbios mode='sysinfo'/>
   </os>
   <features>
     <acpi/>
