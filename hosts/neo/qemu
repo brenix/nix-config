@@ -76,7 +76,8 @@ if [[ $VM_NAME == "windows" ]]; then
       echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
       log "Performing optimizations"
-      echo 300 >/proc/sys/vm/stat_interval
+      echo 1000 >/proc/sys/vm/stat_interval
+      echo 0 >/pros/sys/kernel/watchdog
       echo -1 >/proc/sys/kernel/sched_rt_runtime_us
       ;;
     "started")
