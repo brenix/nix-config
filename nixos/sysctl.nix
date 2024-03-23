@@ -22,7 +22,7 @@
         # "net.ipv4.tcp_collapse_max_bytes" = 6291456;
         "net.ipv4.tcp_congestion_control" = "bbr";
         # "net.ipv4.tcp_dsack" = 0;
-        # "net.ipv4.tcp_ecn" = 1;
+        "net.ipv4.tcp_ecn" = 0;
         "net.ipv4.tcp_fastopen" = 3;
         "net.ipv4.tcp_notsent_lowat" = 131072;
         # "net.ipv4.tcp_rmem" = "8192 262144 536870912";
