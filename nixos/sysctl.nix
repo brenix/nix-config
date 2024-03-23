@@ -11,6 +11,7 @@
         "kernel.split_lock_mitigate" = 0;
         "kernel.unprivileged_userns_clone" = 1;
         # "net.core.default_qdisc" = "cake";
+        "net.core.default_qdisc" = "fq";
         "net.core.netdev_max_backlog" = 16384;
         "net.core.optmem_max" = 65536;
         # "net.core.rmem_default" = 19200000;
