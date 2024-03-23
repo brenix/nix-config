@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     apko
     atmos
-    awscli2
+    # awscli2 # Disabled until https://github.com/NixOS/nixpkgs/pull/296007
     bubblewrap
     certigo
     chamber

@@ -35,6 +35,7 @@
     kernelParams = [
       # "tsc=reliable"
       "usbcore.autosuspend=-1"
+      "nvme_core.default_ps_max_latency_us=0"
     ];
     initrd.availableKernelModules = [
       "ahci"
