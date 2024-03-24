@@ -31,11 +31,11 @@
         "net.ipv4.tcp_slow_start_after_idle" = 0;
         "net.ipv4.tcp_syncookies" = 1;
         "net.ipv4.tcp_timestamps" = 0;
+        "net.ipv4.tcp_tw_reuse" = 0;
         # "net.ipv4.tcp_wmem" = "4096 16384 536870912";
         "net.ipv4.udp_rmem_min" = 8192;
         "net.ipv4.udp_wmem_min" = 8192;
         "net.ipv4.tcp_shrink_window" = "1";
-        "net.ipv4.tcp_tw_reuse" = "1";
         "net.ipv4.tcp_syn_linear_timeouts" = "2";
         "net.ipv4.tcp_syn_retries" = "3";
         "net.ipv4.tcp_retries1" = "2";
