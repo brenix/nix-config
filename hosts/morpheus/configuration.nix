@@ -61,6 +61,7 @@
   nixpkgs.hostPlatform.system = "x86_64-linux";
 
   # Hardware-specific stuff
+  services.fprintd.enable = false;
   environment.systemPackages = with pkgs; [
     # framework-tool
     brightnessctl
