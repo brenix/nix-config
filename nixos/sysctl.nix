@@ -34,6 +34,14 @@
         # "net.ipv4.tcp_wmem" = "4096 16384 536870912";
         "net.ipv4.udp_rmem_min" = 8192;
         "net.ipv4.udp_wmem_min" = 8192;
+        "net.ipv4.tcp_shrink_window" = "1";
+        "net.ipv4.tcp_tw_reuse" = "1";
+        "net.ipv4.tcp_syn_linear_timeouts" = "2";
+        "net.ipv4.tcp_syn_retries" = "3";
+        "net.ipv4.tcp_retries1" = "2";
+        "net.ipv4.tcp_keepalive_intvl" = "60";
+        "net.ipv4.tcp_keepalive_time" = "1800";
+        "net.ipv4.tcp_keepalive_probes" = "3";
         "vm.dirty_background_bytes" = 134217728;
         "vm.dirty_bytes" = 268435456;
         "vm.dirty_writeback_centisecs" = 1500;
