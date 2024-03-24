@@ -5,7 +5,7 @@ in
 {
   programs.ssh = {
     enable = true;
-    includes = [ "~/.ssh/cells/config/*" ];
+    includes = [ "~/.ssh/cells/config/*" "~/.ssh/conf.d/*" ];
     matchBlocks = {
       net = {
         host = builtins.concatStringsSep " " hostnames;
