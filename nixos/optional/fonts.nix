@@ -17,7 +17,6 @@ in
         inter
         joypixels
         monaco
-        noto-fonts-emoji
         terminus_font
         # ubuntu_font_family
         uw-ttyp0
@@ -32,7 +31,7 @@ in
           serif = [ "Inter" ];
           sansSerif = [ "Inter" ];
           monospace = [ "Monaco Nerd Font Mono" ];
-          emoji = [ "Joypixels" "Noto Color Emoji" ];
+          emoji = [ "Joypixels" ];
         };
         subpixel = {
           rgba = "rgb"; # "rgb", "bgr", "vrgb", "vbgr", "none" (default)
