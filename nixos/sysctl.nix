@@ -36,6 +36,8 @@
         "net.ipv4.tcp_syn_retries" = "3";
         "net.ipv4.tcp_retries1" = "2";
         "net.ipv4.tcp_keepalive_intvl" = "60";
+        "net.core.rmem_max" = 2500000;
+        "net.core.wmem_max" = 2500000;
         "net.ipv4.tcp_keepalive_time" = "1800";
         "net.ipv4.tcp_keepalive_probes" = "3";
         "vm.dirty_background_bytes" = 134217728;
