@@ -6,7 +6,7 @@
     ./k3s.nix
     ./restic.nix
     ./mounts.nix # TODO: remove during reinstall
-    ./nix-cache.nix
+    # ./nix-cache.nix
 
     ../../nixos
     ../../nixos/users/brenix.nix

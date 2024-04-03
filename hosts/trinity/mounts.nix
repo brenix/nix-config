@@ -75,12 +75,12 @@ in
       options = "rw,noatime";
       wantedBy = [ "multi-user.target" ];
     }
-    {
-      what = "/dev/mapper/data-nix--cache";
-      where = "/var/cache/nginx";
-      type = "xfs";
-      options = "rw,noatime";
-      wantedBy = [ "multi-user.target" ];
-    }
+    # {
+    #   what = "/dev/mapper/data-nix--cache";
+    #   where = "/var/cache/nginx";
+    #   type = "xfs";
+    #   options = "rw,noatime";
+    #   wantedBy = [ "multi-user.target" ];
+    # }
   ];
 }

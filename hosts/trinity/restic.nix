@@ -30,6 +30,7 @@
       extraBackupArgs = [
         "--exclude MediaCover"
         "--exclude Metadata"
+        "--exclude nix-cache"
         "--iexclude cache"
         "--iexclude crash"
         "--iexclude logs"
