@@ -17,6 +17,8 @@
     sops
   ];
 
+  home.sessionVariables.SOPS_AGE_KEY_FILE = "~/.config/sops/age/keys.txt";
+
   # Fix issue where service is not started
   systemd.user.services.sops-nix = {
     Install = {
