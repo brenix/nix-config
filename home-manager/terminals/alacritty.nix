@@ -63,7 +63,7 @@ in
             family = lib.mkDefault config.my.settings.fonts.monospace;
             style = "Italic";
           };
-          size = lib.mkDefault 12.5;
+          size = lib.mkDefault 11.5;
           offset.y = -2;
         };
 
