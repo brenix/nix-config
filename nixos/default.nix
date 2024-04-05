@@ -53,11 +53,10 @@
   security.sudo.wheelNeedsPassword = false;
 
   # Enable some common services
-  services.bpftune.enable = true;
+  # services.bpftune.enable = true;
   services.dbus.enable = true;
   services.fwupd.enable = true;
   services.geoclue2.enable = true;
-  # services.udisks2.enable = true;
 
   # https://discourse.nixos.org/t/boot-faster-by-disabling-udev-settle-and-nm-wait-online/6339
   systemd.services.systemd-udev-settle.enable = false;
@@ -123,7 +122,6 @@
     ripgrep
     usbutils
     xfsprogs
-    scx # Perhaps needed by bpftune?
   ];
 
   # Toggle some features for chaotic flake

@@ -58,10 +58,6 @@ in
     #         url = "https://aur.archlinux.org/cgit/aur.git/plain/like-ultimate5.patch?h=freetype2-ultimate5";
     #         sha256 = "sha256-lVTTojYZpGz0jlEuW2M2r9CAL0L9r5suR7oMcYFD8d0=";
     #       })
-    #       # (fetchurl {
-    #       #   url = "https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/freetype2/trunk/0003-Enable-infinality-subpixel-hinting.patch";
-    #       #   sha256 = "sha256-jmHRLr27y3ZKONR5jucoB0usCqIJeNU4tucEWmOUmrg=";
-    #       # })
     #     ];
     #   });
     # }];

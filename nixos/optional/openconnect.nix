@@ -10,7 +10,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ openconnect ];
 
-    # Configure resolved to split DNS queries
+    # Split DNS queries
     environment.etc = {
       "vpnc/post-connect.d/resolved" = {
         text = "resolvectl default-route \${TUNDEV} false";

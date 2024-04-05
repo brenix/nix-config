@@ -5,7 +5,7 @@
     ../../home-manager/programs
     ../../home-manager/programs/containers.nix
     ../../home-manager/programs/development-tools.nix
-    ../../home-manager/programs/discord.nix
+    # ../../home-manager/programs/discord.nix
     ../../home-manager/programs/kubernetes.nix
     ../../home-manager/programs/slack.nix
     ../../home-manager/programs/spotify.nix
@@ -22,7 +22,7 @@
 
       editors = {
         helix.enable = true;
-        vscode.enable = false;
+        vscode.enable = true;
       };
 
       multiplexers = {

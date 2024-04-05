@@ -19,7 +19,6 @@
   time.hardwareClockInLocalTime = true;
   networking.timeServers = [
     "192.168.1.1"
-    "time.google.com"
     "time.cloudflare.com"
   ];
 

@@ -18,7 +18,6 @@
       ./multiplexers/tmux.nix
 
       ./desktops/bspwm.nix
-      ./desktops/openbox.nix
       ./desktops/hyprland.nix
       ./desktops/common
 

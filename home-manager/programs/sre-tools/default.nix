@@ -19,7 +19,6 @@
     melange
     openssl
     packer
-    parallel
     postgresql
     shfmt
     vault-bin

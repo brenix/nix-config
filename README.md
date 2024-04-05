@@ -66,7 +66,7 @@ Some features of my nix-config:
 - **Declarative** config including **themes**, **wallpapers** and **nix-colors**
 - **Opt-in persistance** through impermanence + blank snapshot
 - **sops-nix** for secrets management
-- Different desktops/wms like **hyprland**, **bspwm** or **openbox**
+- Different desktops/wms like **hyprland** or **bspwm**
 - Custom live media **ISO**, with an **"automated" install** script
 
 ## Structure

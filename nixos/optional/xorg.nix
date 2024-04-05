@@ -24,7 +24,6 @@ in
       desktopManager.xterm.enable = false;
 
       windowManager = { bspwm.enable = true; };
-      # windowManager = { openbox.enable = true; };
 
       libinput = {
         enable = true;

@@ -8,9 +8,6 @@
     };
 
     theme = {
-      # name = "Nordic-darker";
-      # package = pkgs.nordic;
-
       name = "Catppuccin-Mocha-Compact-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "blue" ];
@@ -18,6 +15,9 @@
         tweaks = [ "rimless" ];
         variant = "mocha";
       };
+
+      # name = "Nordic-darker";
+      # package = pkgs.nordic;
 
       # name = "Whitesur";
       # package = pkgs.whitesur-gtk-theme;
@@ -67,6 +67,7 @@
   };
 
   home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Compact-Blue-Dark";
+ 
   home.pointerCursor = lib.mkIf (!config.my.settings.headless) {
     name = "capitaine-cursors-white";
     package = pkgs.capitaine-cursors;
