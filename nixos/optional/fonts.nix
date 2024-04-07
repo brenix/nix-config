@@ -13,12 +13,9 @@ in
       fontDir.enable = true;
       packages = with pkgs; [
         # (nerdfonts.override { fonts = [ "FiraCode" "Ubuntu" ]; })
-        fira
-        inter
         joypixels
         monaco
         terminus_font
-        # ubuntu_font_family
         google-fonts
         uw-ttyp0
         weather-icons
