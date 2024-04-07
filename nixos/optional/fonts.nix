@@ -12,7 +12,7 @@ in
       enableDefaultPackages = false;
       fontDir.enable = true;
       packages = with pkgs; [
-        # (nerdfonts.override { fonts = [ "FiraCode" "Ubuntu" ]; })
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
         joypixels
         monaco
         terminus_font
@@ -28,7 +28,7 @@ in
         defaultFonts = {
           serif = [ "Inter" ];
           sansSerif = [ "Inter" ];
-          monospace = [ "Monaco Nerd Font Mono" ];
+          monospace = [ "JetBrainsMono Nerd Font" ];
           emoji = [ "Joypixels" ];
         };
         subpixel = {
