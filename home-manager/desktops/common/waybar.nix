@@ -201,7 +201,7 @@ in
             color: @white;
             border: 0;
             padding: 0 0;
-            font-family: Terminus, ${config.my.settings.fonts.monospace};
+            font-family: Bebas Neue, ${config.my.settings.fonts.monospace};
             font-size: 14px;
           }
 

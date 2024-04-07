@@ -19,6 +19,7 @@ in
         monaco
         terminus_font
         # ubuntu_font_family
+        google-fonts
         uw-ttyp0
         weather-icons
         tamzen
