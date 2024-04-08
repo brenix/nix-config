@@ -26,6 +26,7 @@
     podman.enable = true;
     systemd-boot.enable = true;
     wireless.enable = false;
+    xdg-portal.enable = true;
     xorg.enable = false;
   };
 

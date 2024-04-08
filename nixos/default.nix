@@ -34,6 +34,7 @@
       ./optional/systemd-boot.nix
       ./optional/vmware-guest.nix
       ./optional/wireless.nix
+      ./optional/xdg-portal.nix
       ./optional/xorg.nix
     ]
     ++ (builtins.attrValues outputs.nixosModules);

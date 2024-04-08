@@ -25,13 +25,4 @@
   services.playerctld = {
     enable = lib.mkIf (!config.my.settings.headless) true;
   };
-
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-  };
 }

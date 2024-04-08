@@ -67,7 +67,7 @@
   };
 
   home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Compact-Blue-Dark";
- 
+
   home.pointerCursor = lib.mkIf (!config.my.settings.headless) {
     name = "capitaine-cursors-white";
     package = pkgs.capitaine-cursors;
