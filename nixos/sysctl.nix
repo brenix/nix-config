@@ -43,7 +43,7 @@
         "vm.dirty_background_bytes" = 134217728;
         "vm.dirty_bytes" = 268435456;
         "vm.dirty_writeback_centisecs" = 1500;
-        "vm.max_map_count" = 2147483642;
+        "vm.max_map_count" = 1048576;
         "vm.min_free_kbytes" = 524288;
         "vm.page-cluster" = 0;
         "vm.swappiness" = 100;
