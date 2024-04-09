@@ -72,9 +72,12 @@
       stateVersion = lib.mkDefault "23.11";
     };
 
-    # xsession.windowManager.bspwm.monitors = {
-    #   DP-1 = [ "1" "2" ];
-    #   HDMI-1 = [ "3" "4" ];
-    # };
+    dconf.settings = {
+      # tell virt-manager to use the system connection
+      "org/virt-manager/virt-manager/connections" = {
+        autoconnect = ["qemu:///system"];
+        uris = ["qemu:///system"];
+      };
+    };
   };
 }
