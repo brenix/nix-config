@@ -2,6 +2,7 @@
 {
   programs.fzf = {
     enable = true;
+    enableFishIntegration = false; # TODO: Remove once fixed upstream
     defaultOptions = [
       "--color=fg:#${config.colorscheme.palette.base05},bg:#${config.colorscheme.palette.base01},hl:#${config.colorscheme.palette.base0B}"
       "--color=fg+:#${config.colorscheme.palette.base05},bg+:#${config.colorscheme.palette.base01},hl+:#${config.colorscheme.palette.base0B}"
