@@ -59,7 +59,7 @@ in
       monospace = mkOption {
         type = types.str;
         description = "The font for monospace text";
-        default = "JetBrainsMono Nerd Font";
+        default = "Monaco Nerd Font Mono";
       };
     };
 

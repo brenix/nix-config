@@ -28,7 +28,7 @@ in
         defaultFonts = {
           serif = [ "Inter" ];
           sansSerif = [ "Inter" ];
-          monospace = [ "JetBrainsMono Nerd Font" ];
+          monospace = [ "Monaco Nerd Font Mono" ];
           emoji = [ "Joypixels" ];
         };
         subpixel = {
