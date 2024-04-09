@@ -90,7 +90,7 @@ in
 
         bind = SUPER,Return,exec,${config.my.settings.default.terminal}
         bind = SUPERSHIFT,Return,exec,[floating] ${config.my.settings.default.terminal}
-        bind = SUPER,Space,exec,rofi -show run
+        bind = SUPER,Space,exec,${config.my.settings.default.launcher} --show run
         bind = SUPER,d,exec,${config.my.settings.default.browser}
         bind = SUPER,s,exec,spotify
         bind = SUPERSHIFT,s,exec,slack

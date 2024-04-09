@@ -10,6 +10,7 @@
     ./polybar
     ./rofi
     ./waybar.nix
+    ./wofi.nix
     ./xdg.nix
   ];
 

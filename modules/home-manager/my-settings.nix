@@ -29,6 +29,12 @@ in
         description = "The default editor to use";
         default = "hx";
       };
+
+      launcher = mkOption {
+        type = types.nullOr (types.enum [ "rofi" "wofi" ]);
+        description = "The default editor to use";
+        default = "wofi";
+      };
     };
 
     dpi = mkOption {

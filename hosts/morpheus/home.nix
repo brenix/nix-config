@@ -35,7 +35,8 @@
         notifications.mako.enable = true;
         bars.polybar.enable = false;
         bars.waybar.enable = true;
-        launchers.rofi.enable = true;
+        launchers.rofi.enable = false;
+        launchers.wofi.enable = true;
         compositor.picom.enable = false;
       };
 
