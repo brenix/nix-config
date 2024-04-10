@@ -3,7 +3,7 @@
   imports =
     [
       inputs.nix-colors.homeManagerModule
-      inputs.nur.hmModules.nur
+      # inputs.nur.hmModules.nur
       inputs.impermanence.nixosModules.home-manager.impermanence
       inputs.chaotic.homeManagerModules.default
 
