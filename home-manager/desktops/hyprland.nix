@@ -92,6 +92,7 @@ in
         bind = SUPERSHIFT,Return,exec,[floating] ${config.my.settings.default.terminal}
         bind = SUPER,Space,exec,${config.my.settings.default.launcher} --show run
         bind = SUPER,d,exec,${config.my.settings.default.browser}
+        bind = SUPER,c,exec,codium
         bind = SUPER,s,exec,spotify
         bind = SUPERSHIFT,s,exec,slack
         bind = SUPER,v,exec,pavucontrol
