@@ -16,7 +16,7 @@ in
 
     home.persistence = {
       "/persist/home/brenix" = {
-        directories = [ ".config/VSCodium" ];
+        directories = [ ".config/VSCodium" ".vscode-oss" ];
         allowOther = true;
       };
     };
