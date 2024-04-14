@@ -5,34 +5,30 @@
   ];
 
   home.packages = with pkgs; [
-    apko
-    atmos
-    awscli2
+    # apko
+    # atmos
+    # awscli2
     bubblewrap
     certigo
-    chamber
+    # chamber
     glab
     gomplate
     graphviz
     jwt-cli
-    markdownlint-cli
-    melange
-    openssl
+    # melange
     packer
-    postgresql
+    # postgresql
     shfmt
     vault-bin
-    velero
-    vendir
+    # velero
+    # vendir
   ];
 
-  home.persistence = {
-    "/persist/home/brenix" = {
-      directories = [
-        ".config/infractl"
-        ".vdp"
-      ];
-      allowOther = true;
-    };
-  };
+  # home.persistence = {
+  #   "/persist/home/brenix" = {
+  #     directories = [
+  #     ];
+  #     allowOther = true;
+  #   };
+  # };
 }
