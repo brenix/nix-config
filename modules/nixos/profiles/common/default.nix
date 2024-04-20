@@ -20,6 +20,7 @@ in
 
     services = {
       openssh.enable = true;
+      ntp.enable = true;
     };
 
     security = {
