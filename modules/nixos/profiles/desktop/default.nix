@@ -13,7 +13,7 @@ in
 
   config = mkIf cfg.enable {
     profiles = {
-      common.enable = true;
+      generic.enable = true;
 
       desktop.addons = {
         nautilus.enable = true;
@@ -21,6 +21,7 @@ in
     };
 
     hardware = {
+      audio.enable = true;
       logitechMouse.enable = true;
     };
 

@@ -3,24 +3,22 @@
 , ...
 }:
 with lib; let
-  cfg = config.profiles.common;
+  cfg = config.profiles.generic;
 in
 {
-  options.profiles.common = {
-    enable = mkEnableOption "Enable common configuration";
+  options.profiles.generic = {
+    enable = mkEnableOption "Enable generic configuration";
   };
 
   config = mkIf cfg.enable {
     nix.enable = true;
-    hardware = {
-      audio.enable = true;
-      bluetooth.enable = true;
-      # networking.enable = true;
-    };
 
     services = {
-      openssh.enable = true;
+      ananicy.enable = true;
+      # bpftune.enable = true;
+      dbus.enable = true;
       ntp.enable = true;
+      openssh.enable = true;
     };
 
     security = {
