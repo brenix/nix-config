@@ -13,12 +13,19 @@ in
   config = mkIf cfg.enable {
     nix.enable = true;
 
+    chaotic = {
+      nyx.overlay.enable = true;
+    };
+
     services = {
       ananicy.enable = true;
       # bpftune.enable = true;
       dbus.enable = true;
-      ntp.enable = true;
       openssh.enable = true;
+      systemd = {
+        timesyncd.enable = true;
+        resolved.enable = true;
+      };
     };
 
     security = {
@@ -28,7 +35,9 @@ in
     system = {
       boot.enable = true;
       fonts.enable = true;
+      impermanence.enable = true;
       locale.enable = true;
+      sysctl.enable = true;
     };
   };
 }

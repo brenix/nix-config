@@ -9,7 +9,7 @@ with lib.nixicle; let
 in
 {
   options.system.impermanence = with types; {
-    enable = mkBoolOpt true "Enable impermanence";
+    enable = mkBoolOpt false "Enable impermanence";
     removeTmpFilesOlderThan = mkOpt int 7 "Number of days to keep old btrfs_tmp files";
   };
 
