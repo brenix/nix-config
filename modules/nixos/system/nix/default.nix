@@ -15,7 +15,7 @@ in
   config = mkIf cfg.enable {
     sops.secrets.nixAccessTokens = {
       mode = "0440";
-      sopsFile = ./secrets.yaml;
+      sopsFile = ../../secrets.yaml;
     };
 
     nix = {
