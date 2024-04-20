@@ -34,6 +34,10 @@ in
       virtualisation.podman.enable = true;
     };
 
+    system = {
+      fonts.enable = true;
+    };
+
     user = {
       name = "brenix";
       initialPassword = "1";

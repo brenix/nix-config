@@ -34,7 +34,6 @@ in
 
     system = {
       boot.enable = true;
-      fonts.enable = true;
       impermanence.enable = true;
       locale.enable = true;
       sysctl.enable = true;
