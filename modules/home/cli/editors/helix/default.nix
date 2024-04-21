@@ -17,8 +17,8 @@ in
 
     programs.helix = {
       enable = true;
+      catppuccin.enable = true;
       settings = {
-        theme = "catppuccin_mocha";
         editor = {
           auto-pairs = false;
           bufferline = "always";
