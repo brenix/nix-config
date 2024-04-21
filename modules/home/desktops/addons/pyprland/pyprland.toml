@@ -1,0 +1,14 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.pavucontrol]
+animation = "fromTop"
+command = "pavucontrol"
+class = "pavucontrol"
+size = "50% 80%"
+
+[scratchpads.term]
+animation = "fromTop"
+command = "alacritty --class alacritty-dropterm -e yazi"
+class = "alacritty-dropterm"
+size = "75% 60%"
