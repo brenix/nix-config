@@ -20,9 +20,9 @@ in
     services.hyprpaper = {
       enable = true;
       preloads = [
-        "${pkgs.nixicle.wallpapers.Kurzgesagt-Galaxy_2}"
+        "${pkgs.nixicle.wallpapers.yosemite}"
       ];
-      wallpapers = [ ", ${pkgs.nixicle.wallpapers.Kurzgesagt-Galaxy_2}" ];
+      wallpapers = [ ", ${pkgs.nixicle.wallpapers.yosemite}" ];
     };
   };
 }

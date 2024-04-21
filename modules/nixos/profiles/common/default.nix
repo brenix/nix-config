@@ -3,11 +3,11 @@
 , ...
 }:
 with lib; let
-  cfg = config.profiles.generic;
+  cfg = config.profiles.common;
 in
 {
-  options.profiles.generic = {
-    enable = mkEnableOption "Enable generic configuration";
+  options.profiles.common = {
+    enable = mkEnableOption "Enable common configuration";
   };
 
   config = mkIf cfg.enable {

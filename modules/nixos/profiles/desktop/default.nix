@@ -13,7 +13,7 @@ in
 
   config = mkIf cfg.enable {
     profiles = {
-      generic.enable = true;
+      common.enable = true;
 
       desktop.addons = {
         nautilus.enable = true;
