@@ -1,9 +1,9 @@
 {
   disko.devices = {
     disk = {
-      nvme0n1 = {
+      vda = {
         type = "disk";
-        device = "/dev/nvme0n1";
+        device = "/dev/vda";
         content = {
           type = "gpt";
           partitions = {
@@ -38,7 +38,7 @@
                     mountOptions = [ "subvol=root" "compress=zstd" "noatime" ];
                   };
                   "/home" = {
-                    mountpoint = "/home";
+                    mountpoint = "/";
                     mountOptions = [ "subvol=home" "compress=zstd" "noatime" ];
                   };
                   "/nix" = {
@@ -48,10 +48,6 @@
                   "/persist" = {
                     mountpoint = "/persist";
                     mountOptions = [ "subvol=persist" "compress=zstd" "noatime" ];
-                  };
-                  "/swap" = {
-                    mountpoint = "/swap";
-                    swap.swapfile.size = "32G";
                   };
                 };
               };

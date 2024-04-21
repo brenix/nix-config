@@ -6,6 +6,7 @@
 with lib;
 with lib.nixicle; let
   cfg = config.system.impermanence;
+
 in
 {
   options.system.impermanence = with types; {
@@ -13,7 +14,17 @@ in
   };
 
   options.environment = with types; {
-    persist = mkOpt attrs { } "Files and directories to persist";
+    persist = mkOpt attrs
+      {
+        directories = [
+          "/var/lib/systemd"
+          "/var/lib/nixos"
+          "/var/log"
+        ];
+        files = [
+          "/etc/machine-id"
+        ];
+      } "Files and directories to persist";
   };
 
   config = {

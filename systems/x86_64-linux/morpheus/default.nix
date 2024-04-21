@@ -16,7 +16,7 @@
     virtualisation.podman.enable = true;
   };
 
-  suites = {
+  profiles = {
     desktop = {
       enable = true;
       addons = {

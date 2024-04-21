@@ -1,5 +1,5 @@
 {
-  suites = {
+  profiles = {
     development.enable = true;
   };
 
