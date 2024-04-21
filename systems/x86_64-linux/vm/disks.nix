@@ -38,7 +38,7 @@
                     mountOptions = ["subvol=root" "compress=zstd" "noatime"];
                   };
                   "/home" = {
-                    mountpoint = "/";
+                    mountpoint = "/home";
                     mountOptions = ["subvol=home" "compress=zstd" "noatime"];
                   };
                   "/nix" = {
