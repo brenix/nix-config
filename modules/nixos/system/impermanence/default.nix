@@ -10,7 +10,6 @@ in
 {
   options.system.impermanence = with types; {
     enable = mkBoolOpt false "Enable impermanence";
-    removeTmpFilesOlderThan = mkOpt int 7 "Number of days to keep old btrfs_tmp files";
   };
 
   options.environment = with types; {
@@ -18,31 +17,16 @@ in
   };
 
   config = {
-    # This script does the actual wipe of the system
-    # So if it doesn't run, the btrfs system effectively acts like a normal system
     boot.initrd.postDeviceCommands = mkIf cfg.enable (lib.mkAfter ''
-      mkdir /btrfs_tmp
-      mount /dev/pool/root /btrfs_tmp
-      if [[ -e /btrfs_tmp/root ]]; then
-          mkdir -p /btrfs_tmp/old_roots
-          timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
-          mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
-      fi
-
-      delete_subvolume_recursively() {
-          IFS=$'\n'
-          for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
-              delete_subvolume_recursively "/btrfs_tmp/$i"
-          done
-          btrfs subvolume delete "$1"
-      }
-
-      for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +${builtins.toString cfg.removeTmpFilesOlderThan}); do
-          delete_subvolume_recursively "$i"
-      done
-
-      btrfs subvolume create /btrfs_tmp/root
-      umount /btrfs_tmp
+      mkdir /mnt
+      mount -t btrfs -o subvol=/ /dev/disk/by-label/nixos /mnt
+      btrfs subvolume list -o /mnt/root | cut -f 9- -d ' ' | while read subvolume; do
+        btrfs subvolume delete "/mnt/$subvolume" 1>/dev/null
+      done &&
+      btrfs subvolume delete /mnt/root 1>/dev/null
+      btrfs subvolume snapshot /mnt/root-blank /mnt/root 1>/dev/null
+      rm -rf /mnt/root/root && mkdir /mnt/root/root
+      umount /mnt
     '');
 
     environment.persistence."/persist" = mkIf cfg.enable (mkAliasDefinitions options.environment.persist);
