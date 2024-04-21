@@ -1,12 +1,12 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib; let
   cfg = config.desktops.addons.wlogout;
-in
-{
+in {
   options.desktops.addons.wlogout = {
     enable = mkEnableOption "Enable wlogout screen for managing sessions.";
   };

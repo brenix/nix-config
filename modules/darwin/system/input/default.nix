@@ -1,14 +1,14 @@
-{ options
-, config
-, pkgs
-, lib
-, ...
+{
+  options,
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
-with lib.nixicle;
-let cfg = config.nixicle.system.input;
-in
-{
+with lib.nixicle; let
+  cfg = config.nixicle.system.input;
+in {
   options.nixicle.system.input = with types; {
     enable = mkEnableOption "macOS input";
   };

@@ -1,11 +1,11 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.desktops.addons.waybar;
-in
-{
+in {
   options.desktops.addons.waybar = {
     enable = mkEnableOption "Enable waybar";
   };
@@ -110,7 +110,7 @@ in
             format = "{icon} {capacity}%";
             format-alt = "{time}";
             format-charging = "  {capacity}%";
-            format-icons = [ "󰁻 " "󰁽 " "󰁿 " "󰂁 " "󰂂 " ];
+            format-icons = ["󰁻 " "󰁽 " "󰁿 " "󰂁 " "󰂂 "];
           };
           network = {
             interval = 1;
@@ -133,7 +133,7 @@ in
             format-icons = {
               headphone = "";
               headset = "";
-              default = [ "" "" ];
+              default = ["" ""];
             };
           };
           tray = {

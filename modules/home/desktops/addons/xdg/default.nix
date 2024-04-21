@@ -1,12 +1,12 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.desktops.addons.xdg;
-in
-{
+in {
   options.desktops.addons.xdg = with types; {
     enable = mkBoolOpt false "manage xdg config";
   };
@@ -25,13 +25,13 @@ in
       mimeApps = {
         enable = true;
         associations.added = {
-          "video/mp4" = [ "io.github.celluloid_player.Celluloid.desktop" ];
-          "video/quicktime" = [ "io.github.celluloid_player.Celluloid.desktop" ];
-          "video/webm" = [ "io.github.celluloid_player.Celluloid.desktop" ];
-          "image/gif" = [ "org.gnome.Loupe.desktop" ];
-          "image/png" = [ "org.gnome.Loupe.desktop" ];
-          "image/jpg" = [ "org.gnome.Loupe.desktop" ];
-          "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+          "video/mp4" = ["io.github.celluloid_player.Celluloid.desktop"];
+          "video/quicktime" = ["io.github.celluloid_player.Celluloid.desktop"];
+          "video/webm" = ["io.github.celluloid_player.Celluloid.desktop"];
+          "image/gif" = ["org.gnome.Loupe.desktop"];
+          "image/png" = ["org.gnome.Loupe.desktop"];
+          "image/jpg" = ["org.gnome.Loupe.desktop"];
+          "image/jpeg" = ["org.gnome.Loupe.desktop"];
         };
         defaultApplications = {
           "application/x-extension-htm" = "firefox";
@@ -42,25 +42,25 @@ in
           "application/xhtml+xml" = "firefox";
           "text/html" = "firefox";
           "x-scheme-handler/about" = "firefox";
-          "x-scheme-handler/chrome" = [ "chromium-browser.desktop" ];
+          "x-scheme-handler/chrome" = ["chromium-browser.desktop"];
           "x-scheme-handler/ftp" = "firefox";
           "x-scheme-handler/http" = "firefox";
           "x-scheme-handler/https" = "firefox";
           "x-scheme-handler/unknown" = "firefox";
 
-          "audio/*" = [ "mpv.desktop" ];
-          "video/*" = [ "org.gnome.Totem.dekstop" ];
-          "video/mp4" = [ "org.gnome.Totem.dekstop" ];
-          "image/*" = [ "org.gnome.loupe.desktop" ];
-          "image/png" = [ "org.gnome.loupe.desktop" ];
-          "image/jpg" = [ "org.gnome.loupe.desktop" ];
-          "application/json" = [ "gnome-text-editor.desktop" ];
+          "audio/*" = ["mpv.desktop"];
+          "video/*" = ["org.gnome.Totem.dekstop"];
+          "video/mp4" = ["org.gnome.Totem.dekstop"];
+          "image/*" = ["org.gnome.loupe.desktop"];
+          "image/png" = ["org.gnome.loupe.desktop"];
+          "image/jpg" = ["org.gnome.loupe.desktop"];
+          "application/json" = ["gnome-text-editor.desktop"];
           "application/pdf" = "firefox";
-          "application/x-gnome-saved-search" = [ "org.gnome.Nautilus.desktop" ];
-          "x-scheme-handler/discord" = [ "discord.desktop" ];
-          "x-scheme-handler/spotify" = [ "spotify.desktop" ];
-          "x-scheme-handler/zoom" = [ "Zoom.desktop" ];
-          "x-scheme-handler/tg" = [ "telegramdesktop.desktop" ];
+          "application/x-gnome-saved-search" = ["org.gnome.Nautilus.desktop"];
+          "x-scheme-handler/discord" = ["discord.desktop"];
+          "x-scheme-handler/spotify" = ["spotify.desktop"];
+          "x-scheme-handler/zoom" = ["Zoom.desktop"];
+          "x-scheme-handler/tg" = ["telegramdesktop.desktop"];
           "application/toml" = "org.gnome.TextEditor.desktop";
           "text/plain" = "org.gnome.TextEditor.desktop";
         };

@@ -1,6 +1,7 @@
-{ pkgs
-, lib
-, ...
+{
+  pkgs,
+  lib,
+  ...
 }: {
   imports = [
     ./hardware-configuration.nix
@@ -8,7 +9,7 @@
   ];
 
   hardware = {
-    wooting.enable = true;
+    wootingKeyboard.enable = true;
     logitechMouse.enable = true;
   };
 
@@ -29,7 +30,7 @@
   networking.hostName = "neo";
 
   boot = {
-    supportedFilesystems = lib.mkForce [ "btrfs" ];
+    supportedFilesystems = lib.mkForce ["btrfs"];
     kernelPackages = pkgs.linuxPackages_latest;
     resumeDevice = "/dev/disk/by-label/nixos";
   };

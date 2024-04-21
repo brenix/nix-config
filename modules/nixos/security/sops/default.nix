@@ -1,13 +1,13 @@
-{ options
-, config
-, lib
-, ...
+{
+  options,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.security.sops;
-in
-{
+in {
   options.security.sops = with types; {
     enable = mkBoolOpt false "Whether to enable SOPS for secrets management.";
   };
@@ -16,9 +16,9 @@ in
     sops = {
       gnupg = {
         home = "~/.gnupg";
-        sshKeyPaths = [ ];
+        sshKeyPaths = [];
       };
-      age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+      age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
     };
   };
 }

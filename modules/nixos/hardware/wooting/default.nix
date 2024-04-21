@@ -1,18 +1,18 @@
-{ options
-, config
-, lib
-, ...
+{
+  options,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
-  cfg = config.hardware.wooting;
-in
-{
-  options.hardware.wooting = with types; {
+  cfg = config.hardware.wootingKeyboard;
+in {
+  options.hardware.wootingKeyboard = with types; {
     enable = mkBoolOpt false "Enable support for wooting keyboards";
   };
 
   config = mkIf cfg.enable {
-    hardware.keyboard.wooting.enable = true;
+    hardware.wooting.enable = true;
   };
 }

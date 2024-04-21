@@ -1,20 +1,20 @@
-{ options
-, config
-, lib
-, ...
+{
+  options,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.system.impermanence;
-
-in
-{
+in {
   options.system.impermanence = with types; {
     enable = mkBoolOpt false "Enable impermanence";
   };
 
   options.environment = with types; {
-    persist = mkOpt attrs
+    persist =
+      mkOpt attrs
       {
         directories = [
           "/var/lib/systemd"

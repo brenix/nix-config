@@ -1,14 +1,14 @@
-{ options
-, config
-, lib
-, pkgs
-, ...
+{
+  options,
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.profiles.desktop.addons.xdg-portal;
-in
-{
+in {
   options.profiles.desktop.addons.xdg-portal = with types; {
     enable = mkBoolOpt false "Whether or not to add support for xdg portal.";
   };

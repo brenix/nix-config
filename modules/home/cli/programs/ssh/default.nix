@@ -1,12 +1,12 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.cli.programs.ssh;
-in
-{
+in {
   options.cli.programs.ssh = with types; {
     enable = mkBoolOpt false "Whether or not to enable ssh";
 
@@ -23,7 +23,7 @@ in
           };
         };
       });
-      default = { };
+      default = {};
       description = "A set of extra SSH hosts.";
       example = literalExample ''
         {
@@ -39,8 +39,8 @@ in
   config = mkIf cfg.enable {
     programs.keychain = {
       enable = true;
-      keys = [ "id_ed25519" ];
-      agents = [ "ssh" ];
+      keys = ["id_ed25519"];
+      agents = ["ssh"];
     };
 
     programs.ssh = {

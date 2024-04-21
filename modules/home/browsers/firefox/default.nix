@@ -1,12 +1,12 @@
-{ inputs
-, lib
-, config
-, ...
+{
+  inputs,
+  lib,
+  config,
+  ...
 }:
 with lib; let
   cfg = config.browsers.firefox;
-in
-{
+in {
   options.browsers.firefox = {
     enable = mkEnableOption "enable firefox browser";
   };

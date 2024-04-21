@@ -1,16 +1,16 @@
-{ inputs
-, config
-, lib
-, pkgs
-, ...
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.desktops.addons.hyprpaper;
   inherit (inputs) hyprpaper;
-in
-{
-  imports = [ hyprpaper.homeManagerModules.default ];
+in {
+  imports = [hyprpaper.homeManagerModules.default];
 
   options.desktops.addons.hyprpaper = with types; {
     enable = mkBoolOpt false "Whether to enable the hyprpaper config";
@@ -22,7 +22,7 @@ in
       preloads = [
         "${pkgs.nixicle.wallpapers.yosemite}"
       ];
-      wallpapers = [ ", ${pkgs.nixicle.wallpapers.yosemite}" ];
+      wallpapers = [", ${pkgs.nixicle.wallpapers.yosemite}"];
     };
   };
 }

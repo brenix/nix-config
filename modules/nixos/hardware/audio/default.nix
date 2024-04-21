@@ -1,13 +1,13 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.hardware.audio;
-in
-{
+in {
   options.hardware.audio = with types; {
     enable = mkBoolOpt false "Enable or disable pipewire";
   };

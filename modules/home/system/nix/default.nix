@@ -1,13 +1,13 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.system.nix;
-in
-{
+in {
   options.system.nix = with types; {
     enable = mkBoolOpt false "Whether or not to manage nix configuration";
   };
@@ -45,7 +45,7 @@ in
           "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
         ];
 
-        experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+        experimental-features = ["nix-command" "flakes" "repl-flake"];
         warn-dirty = false;
         use-xdg-base-directories = true;
       };
@@ -53,8 +53,8 @@ in
 
     news = {
       display = "silent";
-      json = lib.mkForce { };
-      entries = lib.mkForce [ ];
+      json = lib.mkForce {};
+      entries = lib.mkForce [];
     };
   };
 }

@@ -1,13 +1,13 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.profiles.gaming;
-in
-{
+in {
   options.profiles.gaming = with types; {
     enable = mkBoolOpt false "Enable the gaming suite";
   };

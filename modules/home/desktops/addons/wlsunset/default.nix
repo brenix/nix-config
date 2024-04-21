@@ -1,11 +1,11 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.desktops.addons.wlsunset;
-in
-{
+in {
   options.desktops.addons.wlsunset = {
     enable = mkEnableOption "Enable wlsunset night light";
   };

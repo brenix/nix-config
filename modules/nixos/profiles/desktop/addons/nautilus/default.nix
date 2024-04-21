@@ -1,13 +1,13 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.profiles.desktop.addons.nautilus;
-in
-{
+in {
   options.profiles.desktop.addons.nautilus = with types; {
     enable = mkBoolOpt false "Whether to enable the gnome file manager.";
   };

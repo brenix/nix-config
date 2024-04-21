@@ -1,12 +1,12 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.desktops.addons.kanshi;
-in
-{
+in {
   options.desktops.addons.kanshi = {
     enable = mkEnableOption "Enable kanshi display addon";
   };

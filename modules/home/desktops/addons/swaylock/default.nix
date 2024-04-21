@@ -1,14 +1,14 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   inherit (config.colorScheme) palette;
   cfg = config.desktops.addons.swaylock;
-in
-{
+in {
   options.desktops.addons.swaylock = {
     enable = mkEnableOption "Enable swaylock lock management";
     blur = mkOpt (types.nullOr types.str) "7x5" "radius x times blur the image.";
@@ -33,7 +33,7 @@ in
         effect-vignette = cfg.vignette;
         fade-in = 0.2;
 
-        font = "MonoLisa Nerd Font";
+        font = "Monaco Nerd Font Mono";
         ring-color = "${palette.base02}";
         inside-wrong-color = "${palette.base08}";
         ring-wrong-color = "${palette.base08}";

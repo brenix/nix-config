@@ -1,13 +1,13 @@
-{ options
-, config
-, lib
-, ...
+{
+  options,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.system.locale;
-in
-{
+in {
   options.system.locale = with types; {
     enable = mkBoolOpt false "Whether or not to manage locale settings.";
   };

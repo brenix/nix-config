@@ -1,13 +1,13 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.cli.multiplexers.tmux;
-in
-{
+in {
   options.cli.multiplexers.tmux = with types; {
     enable = mkBoolOpt false "enable tmux multiplexer";
   };

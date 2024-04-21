@@ -1,12 +1,12 @@
-{ inputs
-, config
-, lib
-, ...
+{
+  inputs,
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.desktops.hyprland;
-in
-{
+in {
   imports = with inputs;
     [
       hyprland-nix.homeManagerModules.default
@@ -24,8 +24,8 @@ in
 
   config = mkIf cfg.enable {
     nix.settings = {
-      trusted-substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+      trusted-substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
 
     xdg.configFile."hypr".recursive = true;

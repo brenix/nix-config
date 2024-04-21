@@ -1,7 +1,8 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.desktops.hyprland;
@@ -56,8 +57,7 @@ with lib; let
     hyprctl dispatch moveactive exact $pos_x $pos_y
     hyprctl dispatch resizeactive exact $size_x $size_y
   '';
-in
-{
+in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.keyBinds = {
       bind = {

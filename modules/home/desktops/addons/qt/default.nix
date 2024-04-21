@@ -1,12 +1,12 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.desktops.addons.qt;
-in
-{
+in {
   options.desktops.addons.qt = {
     enable = mkEnableOption "enable qt theme management";
   };
@@ -17,9 +17,9 @@ in
       platformTheme = "gtk";
       style.name = "Catppuccin-Mocha-Compact-Blue-Dark";
       style.package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ];
+        accents = ["blue"];
         size = "compact";
-        tweaks = [ "rimless" ];
+        tweaks = ["rimless"];
         variant = "mocha";
       };
     };

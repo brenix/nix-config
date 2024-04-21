@@ -1,13 +1,13 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.services.virtualisation.kvm;
-in
-{
+in {
   options.services.virtualisation.kvm = {
     enable = lib.mkEnableOption "Enable kvm virtualisation";
   };
@@ -67,7 +67,7 @@ in
           swtpm.enable = true;
           ovmf = {
             enable = true;
-            packages = [ pkgs.OVMFFull.fd ];
+            packages = [pkgs.OVMFFull.fd];
           };
         };
       };

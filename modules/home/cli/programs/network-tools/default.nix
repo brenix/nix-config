@@ -1,13 +1,13 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.cli.programs.network-tools;
-in
-{
+in {
   options.cli.programs.network-tools = with types; {
     enable = mkBoolOpt false "Whether or not to enable network tools";
   };

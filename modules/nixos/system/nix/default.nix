@@ -1,13 +1,13 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.system.nix;
-in
-{
+in {
   options.system.nix = with types; {
     enable = mkBoolOpt false "Whether or not to manage nix configuration";
   };
@@ -20,10 +20,10 @@ in
 
     nix = {
       settings = {
-        trusted-users = [ "root" "@wheel" ];
+        trusted-users = ["root" "@wheel"];
         auto-optimise-store = lib.mkDefault true;
         use-xdg-base-directories = true;
-        experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+        experimental-features = ["nix-command" "flakes" "repl-flake"];
         warn-dirty = false;
         system-features = [
           "gccarch-x86-64-v3" # chaotic-nyx v3

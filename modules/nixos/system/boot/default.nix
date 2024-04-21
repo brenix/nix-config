@@ -1,15 +1,14 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   inherit (lib) mkIf;
   inherit (lib.nixicle) mkBoolOpt;
 
   cfg = config.system.boot;
-in
-{
+in {
   options.system.boot = {
     enable = mkBoolOpt false "Whether or not to enable booting.";
     plymouth = mkBoolOpt false "Whether or not to enable plymouth boot splash.";
@@ -24,13 +23,14 @@ in
         efivar
         fwupd
       ]
-      ++ lib.optionals cfg.secureBoot [ sbctl ];
+      ++ lib.optionals cfg.secureBoot [sbctl];
 
     boot = {
-      kernelParams = [
-        "mitigations=off"
-      ]
-      ++ lib.optionals cfg.plymouth [ "quiet" ];
+      kernelParams =
+        [
+          "mitigations=off"
+        ]
+        ++ lib.optionals cfg.plymouth ["quiet"];
 
       lanzaboote = mkIf cfg.secureBoot {
         enable = true;
@@ -52,7 +52,7 @@ in
       plymouth = {
         enable = cfg.plymouth;
         theme = "catppuccin-mocha";
-        themePackages = [ pkgs.catppuccin-plymouth ];
+        themePackages = [pkgs.catppuccin-plymouth];
       };
     };
 

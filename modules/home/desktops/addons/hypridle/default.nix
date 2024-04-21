@@ -1,8 +1,9 @@
-{ inputs
-, config
-, lib
-, pkgs
-, ...
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
@@ -11,9 +12,8 @@ with lib.nixicle; let
   hyprlock = "${pkgs.hyprlock}/bin/hyprlock";
   hyprctl = "${pkgs.hyprland}/bin/hyprctl";
   loginctl = "${pkgs.systemd}/bin/loginctl";
-in
-{
-  imports = [ hypridle.homeManagerModules.default ];
+in {
+  imports = [hypridle.homeManagerModules.default];
 
   options.desktops.addons.hypridle = with types; {
     enable = mkBoolOpt false "Whether to enable the hypridle";

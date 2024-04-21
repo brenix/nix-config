@@ -1,12 +1,12 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.profiles.desktop;
-in
-{
+in {
   options.profiles.desktop = {
     enable = mkEnableOption "Enable desktop configuration";
   };

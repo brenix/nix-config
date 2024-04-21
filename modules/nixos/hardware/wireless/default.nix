@@ -1,11 +1,11 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.hardware.wireless;
-in
-{
+in {
   options.hardware.wireless = {
     enable = mkEnableOption "Enable wireless networking";
   };
@@ -41,7 +41,7 @@ in
     };
 
     # Ensure group exists
-    users.groups.network = { };
+    users.groups.network = {};
 
     # Fix issue where wpa_supplicant expects a config file
     systemd.services.wpa_supplicant.preStart = "touch /etc/wpa_supplicant.conf";

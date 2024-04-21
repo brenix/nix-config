@@ -1,11 +1,11 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 with lib; let
   cfg = config.profiles.common;
-in
-{
+in {
   options.profiles.common = {
     enable = mkEnableOption "Enable common configuration";
   };
@@ -13,6 +13,7 @@ in
   config = mkIf cfg.enable {
     nix.enable = true;
 
+    # FIXME
     # chaotic = {
     #   nyx.overlay.enable = true;
     # };

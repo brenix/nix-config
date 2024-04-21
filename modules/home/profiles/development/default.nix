@@ -1,11 +1,11 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 with lib; let
   cfg = config.profiles.development;
-in
-{
+in {
   options.profiles.development = {
     enable = mkEnableOption "Enable development configuration";
   };

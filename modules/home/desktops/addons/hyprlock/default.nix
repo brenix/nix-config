@@ -1,17 +1,17 @@
-{ inputs
-, config
-, lib
-, pkgs
-, ...
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.desktops.addons.hyprlock;
   inherit (inputs) hyprlock;
   inherit (config.colorScheme) palette;
-in
-{
-  imports = [ hyprlock.homeManagerModules.default ];
+in {
+  imports = [hyprlock.homeManagerModules.default];
 
   options.desktops.addons.hyprlock = with types; {
     enable = mkBoolOpt false "Whether to enable the hyprlock";

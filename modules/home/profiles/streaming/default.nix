@@ -1,13 +1,13 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.profiles.streaming;
-in
-{
+in {
   options.profiles.streaming = with types; {
     enable = mkBoolOpt false "Whether or not to manage streaming configuration";
   };

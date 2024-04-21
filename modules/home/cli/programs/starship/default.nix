@@ -1,12 +1,12 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.cli.programs.starship;
-in
-{
+in {
   options.cli.programs.starship = with types; {
     enable = mkBoolOpt false "Whether or not to enable starship";
   };

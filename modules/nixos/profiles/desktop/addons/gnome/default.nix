@@ -1,13 +1,13 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.profiles.desktop.addons.gnome;
-in
-{
+in {
   options.profiles.desktop.addons.gnome = with types; {
     enable = mkBoolOpt false "Enable or disable the gnome DE.";
   };
@@ -28,7 +28,7 @@ in
       };
     };
 
-    services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
     programs.dconf.enable = true;
   };
 }

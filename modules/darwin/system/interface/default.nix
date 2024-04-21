@@ -1,14 +1,14 @@
-{ options
-, config
-, pkgs
-, lib
-, ...
+{
+  options,
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
-with lib.nixicle;
-let cfg = config.nixicle.system.interface;
-in
-{
+with lib.nixicle; let
+  cfg = config.nixicle.system.interface;
+in {
   options.nixicle.system.interface = with types; {
     enable = mkEnableOption "macOS interface";
   };

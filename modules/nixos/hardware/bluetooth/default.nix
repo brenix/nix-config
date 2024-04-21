@@ -1,11 +1,11 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.hardware.bluetoothctl;
-in
-{
+in {
   options.hardware.bluetoothctl = {
     enable = mkEnableOption "Enable bluetooth service and packages";
   };

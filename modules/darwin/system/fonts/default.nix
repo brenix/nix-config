@@ -1,17 +1,17 @@
-{ options
-, config
-, pkgs
-, lib
-, ...
+{
+  options,
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
-with lib.nixicle;
-let cfg = config.nixicle.system.fonts;
-in
-{
+with lib.nixicle; let
+  cfg = config.nixicle.system.fonts;
+in {
   options.nixicle.system.fonts = with types; {
     enable = mkBoolOpt false "Whether or not to manage fonts.";
-    fonts = mkOpt (listOf package) [ ] "Custom font packages to install.";
+    fonts = mkOpt (listOf package) [] "Custom font packages to install.";
   };
 
   config = mkIf cfg.enable {
@@ -27,8 +27,9 @@ in
         [
           noto-fonts
           noto-fonts-emoji
-          (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-        ] ++ cfg.fonts;
+          (nerdfonts.override {fonts = ["JetBrainsMono"];})
+        ]
+        ++ cfg.fonts;
     };
   };
 }

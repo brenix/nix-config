@@ -1,7 +1,8 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 with lib;
 with lib.nixicle; let
@@ -19,10 +20,9 @@ with lib.nixicle; let
     concatMapStringsSep ''
       ,
     ''
-      escapeNixString
-      config.services.virtualisation.vfio.libvirtd.deviceACL;
-in
-{
+    escapeNixString
+    config.services.virtualisation.vfio.libvirtd.deviceACL;
+in {
   # Based on this https://gist.github.com/CRTified/43b7ce84cd238673f7f24652c85980b3
   options.services.virtualisation.vfio = {
     enable = mkEnableOption "enable kvm vfio virtualisation";
@@ -30,7 +30,7 @@ in
     libvirtd = {
       deviceACL = mkOption {
         type = types.listOf types.str;
-        default = [ ];
+        default = [];
       };
       clearEmulationCapabilities = mkOption {
         type = types.bool;
@@ -39,14 +39,14 @@ in
     };
 
     IOMMUType = mkOption {
-      type = types.enum [ "intel" "amd" ];
+      type = types.enum ["intel" "amd"];
       example = "intel";
       description = "Type of the IOMMU used";
     };
     devices = mkOption {
       type = types.listOf (types.strMatching "[0-9a-f]{4}:[0-9a-f]{4}");
-      default = [ ];
-      example = [ "10de:1b80" "10de:10f0" ];
+      default = [];
+      example = ["10de:1b80" "10de:10f0"];
       description = "PCI IDs of devices to bind to vfio-pci";
     };
     disableEFIfb = mkOption {
@@ -67,7 +67,7 @@ in
       description = "Enables or disables kvm guest access to model-specific registers";
     };
     sharedMemoryFiles = mkOption {
-      type = types.attrsOf (types.submodule ({ name, ... }: {
+      type = types.attrsOf (types.submodule ({name, ...}: {
         options = {
           name = mkOption {
             visible = false;
@@ -91,7 +91,7 @@ in
           };
         };
       }));
-      default = { };
+      default = {};
     };
     hugepages = {
       enable = mkEnableOption "Hugepages";
@@ -142,15 +142,15 @@ in
           "hugepages=${toString cfg.hugepages.numPages}"
         ];
 
-      kernelModules = [ "vfio_pci" "vfio_iommu_type1" "vfio" ];
-      initrd.kernelModules = [ "vfio_pci" "vfio_iommu_type1" "vfio" ];
+      kernelModules = ["vfio_pci" "vfio_iommu_type1" "vfio"];
+      initrd.kernelModules = ["vfio_pci" "vfio_iommu_type1" "vfio"];
       blacklistedKernelModules =
-        optionals cfg.blacklistNvidia [ "nvidia" "nouveau" ];
+        optionals cfg.blacklistNvidia ["nvidia" "nouveau"];
     };
 
     # Add qemu-libvirtd to the input group if required
     users.users."qemu-libvirtd" = {
-      extraGroups = optionals (!cfg.qemu.runAsRoot) [ "kvm" "input" ];
+      extraGroups = optionals (!cfg.qemu.runAsRoot) ["kvm" "input"];
       isSystemUser = true;
     };
 

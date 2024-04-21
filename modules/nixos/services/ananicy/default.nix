@@ -1,14 +1,13 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
-  cfg = config.services.ananicy;
-in
-{
-  options.services.ananicy = with types; {
+  cfg = config.services.ananicy-cpp;
+in {
+  options.services.ananicy-cpp = with types; {
     enable = mkBoolOpt false "Enable ananicy";
   };
 

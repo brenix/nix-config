@@ -127,7 +127,7 @@
 
       homes.modules = with inputs; [
         # impermanence.nixosModules.home-manager.impermanence
-        chaotic.homeManagerModules.default
+        # chaotic.homeManagerModules.default
       ];
 
       systems.hosts.morpheus.modules = with inputs; [

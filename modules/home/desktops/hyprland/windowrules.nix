@@ -1,38 +1,37 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib; let
-  rule = rules: attrs: attrs // { inherit rules; };
+  rule = rules: attrs: attrs // {inherit rules;};
   cfg = config.desktops.hyprland;
-in
-{
+in {
   config = mkIf cfg.enable {
-    wayland.windowManager.hyprland.windowRules =
-      let
-        firefoxVideo = {
-          class = [ "firefox" ];
-        };
-        guildWars = {
-          title = [ "Guild Wars 2" ];
-        };
-        bitwarden = {
-          title = [ ".*Bitwarden.*" ];
-        };
-        pavucontrol = {
-          class = [ "pavucontrol" ];
-        };
-        zoom = {
-          class = [ "zoom" ];
-        };
-      in
+    wayland.windowManager.hyprland.windowRules = let
+      firefoxVideo = {
+        class = ["firefox"];
+      };
+      guildWars = {
+        title = ["Guild Wars 2"];
+      };
+      bitwarden = {
+        title = [".*Bitwarden.*"];
+      };
+      pavucontrol = {
+        class = ["pavucontrol"];
+      };
+      zoom = {
+        class = ["zoom"];
+      };
+    in
       lib.concatLists [
-        (map (rule [ "idleinhibit fullscreen" ]) [ firefoxVideo ])
-        (map (rule [ "fullscreen" ]) [ guildWars ])
-        (map (rule [ "float" ]) [ bitwarden ])
-        (map (rule [ "float" ]) [ pavucontrol ])
-        (map (rule [ "float" ]) [ zoom ])
+        (map (rule ["idleinhibit fullscreen"]) [firefoxVideo])
+        (map (rule ["fullscreen"]) [guildWars])
+        (map (rule ["float"]) [bitwarden])
+        (map (rule ["float"]) [pavucontrol])
+        (map (rule ["float"]) [zoom])
       ];
   };
 }

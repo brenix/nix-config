@@ -1,6 +1,7 @@
-{ pkgs
-, lib
-, ...
+{
+  pkgs,
+  lib,
+  ...
 }: {
   imports = [
     ../../nixos
@@ -12,7 +13,7 @@
   };
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = ["nix-command" "flakes"];
     extraOptions = "experimental-features = nix-command flakes";
   };
 
@@ -23,7 +24,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    supportedFilesystems = lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" ];
+    supportedFilesystems = lib.mkForce ["btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
   };
 
   networking = {
@@ -32,7 +33,7 @@
 
   # TODO: gnome power settings do not turn off screen
   systemd = {
-    services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
+    services.sshd.wantedBy = pkgs.lib.mkForce ["multi-user.target"];
     targets = {
       sleep.enable = false;
       suspend.enable = false;
@@ -71,45 +72,45 @@
     )
     (
       writeShellScriptBin "nix_installer"
-        ''
-          #!/usr/bin/env bash
-          set -euo pipefail
-          gsettings set org.gnome.desktop.session idle-delay 0
-          gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+      ''
+        #!/usr/bin/env bash
+        set -euo pipefail
+        gsettings set org.gnome.desktop.session idle-delay 0
+        gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 
-          if [ "$(id -u)" -eq 0 ]; then
-          	echo "ERROR! $(basename "$0") should be run as a regular user"
-          	exit 1
-          fi
+        if [ "$(id -u)" -eq 0 ]; then
+        	echo "ERROR! $(basename "$0") should be run as a regular user"
+        	exit 1
+        fi
 
-          if [ ! -d "$HOME/nix-config/.git" ]; then
-          	git clone https://github.com/brenix/nix-config.git "$HOME/nix-config"
-          fi
+        if [ ! -d "$HOME/nix-config/.git" ]; then
+        	git clone https://github.com/brenix/nix-config.git "$HOME/nix-config"
+        fi
 
-          TARGET_HOST=$(ls -1 ~/nix-config/systems/*/*/default.nix | cut -d'/' -f6 | grep -v "minimal\|graphical" | gum choose)
-          TARGET_ARCH=$(basename $(dirname ~/nix-config/systems/*/$TARGET_HOST))
+        TARGET_HOST=$(ls -1 ~/nix-config/systems/*/*/default.nix | cut -d'/' -f6 | grep -v "minimal\|graphical" | gum choose)
+        TARGET_ARCH=$(basename $(dirname ~/nix-config/systems/*/$TARGET_HOST))
 
-          if [ ! -e "$HOME/nix-config/systems/$TARGET_ARCH/$TARGET_HOST/disks.nix" ]; then
-          	echo "ERROR! $(basename "$0") could not find the required $HOME/nix-config/systems/$TARGET_ARCH/$TARGET_HOST/disks.nix"
-          	exit 1
-          fi
+        if [ ! -e "$HOME/nix-config/systems/$TARGET_ARCH/$TARGET_HOST/disks.nix" ]; then
+        	echo "ERROR! $(basename "$0") could not find the required $HOME/nix-config/systems/$TARGET_ARCH/$TARGET_HOST/disks.nix"
+        	exit 1
+        fi
 
-          gum confirm  --default=false \
-          "🔥 🔥 🔥 WARNING!!!! This will ERASE ALL DATA on the disk $TARGET_HOST. Are you sure you want to continue?"
+        gum confirm  --default=false \
+        "🔥 🔥 🔥 WARNING!!!! This will ERASE ALL DATA on the disk $TARGET_HOST. Are you sure you want to continue?"
 
-          echo "Partitioning Disks"
-          sudo nix run github:nix-community/disko \
-          --extra-experimental-features "nix-command flakes" \
-          --no-write-lock-file \
-          -- \
-          --mode zap_create_mount \
-          "$HOME/nix-config/systems/$TARGET_ARCH/$TARGET_HOST/disks.nix"
+        echo "Partitioning Disks"
+        sudo nix run github:nix-community/disko \
+        --extra-experimental-features "nix-command flakes" \
+        --no-write-lock-file \
+        -- \
+        --mode zap_create_mount \
+        "$HOME/nix-config/systems/$TARGET_ARCH/$TARGET_HOST/disks.nix"
 
-          #echo "Creating blank volume"
-          #sudo btrfs subvolume snapshot -r /mnt/ /mnt/root-blank
+        #echo "Creating blank volume"
+        #sudo btrfs subvolume snapshot -r /mnt/ /mnt/root-blank
 
-          sudo nixos-install --flake "$HOME/nix-config#$TARGET_HOST"
-        ''
+        sudo nixos-install --flake "$HOME/nix-config#$TARGET_HOST"
+      ''
     )
   ];
   home.file.".config/autostart/foot.desktop".text = ''

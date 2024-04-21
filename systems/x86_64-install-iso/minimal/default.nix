@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{lib, ...}: {
   # `install-iso` adds wireless support that
   # is incompatible with networkmanager.
   networking.wireless.enable = lib.mkForce false;

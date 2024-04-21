@@ -1,15 +1,15 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.services.systemd.resolved;
-in
-{
+in {
   options.services.systemd.resolved = with types; {
     enable = mkBoolOpt false "Enable resolved";
-    domains = mkOpt (listOf str) [ ] "List of domains to use as search suffixes.";
+    domains = mkOpt (listOf str) [] "List of domains to use as search suffixes.";
   };
 
   config = mkIf cfg.enable {

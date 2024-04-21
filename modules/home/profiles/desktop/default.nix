@@ -1,12 +1,12 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.profiles.desktop;
-in
-{
+in {
   options.profiles.desktop = {
     enable = mkEnableOption "Enable desktop suite";
   };

@@ -1,12 +1,12 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib; let
   cfg = config.desktops.addons.swaync;
-in
-{
+in {
   options.desktops.addons.swaync = {
     enable = mkEnableOption "Enable sway notification center";
   };

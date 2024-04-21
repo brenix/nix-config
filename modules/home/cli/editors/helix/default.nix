@@ -1,13 +1,13 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.cli.editors.helix;
-in
-{
+in {
   options.cli.editors.helix = with types; {
     enable = mkBoolOpt false "enable helix editor";
   };
@@ -26,7 +26,7 @@ in
           color-modes = true;
           line-number = "absolute";
           indent-guides.render = true;
-          soft-wrap = { enable = false; };
+          soft-wrap = {enable = false;};
           cursor-shape = {
             normal = "block";
             insert = "bar";
@@ -70,9 +70,9 @@ in
         keys.normal = {
           "$" = "goto_line_end";
           "^" = "goto_first_nonwhitespace";
-          D = [ "extend_to_line_end" "delete_selection" ];
+          D = ["extend_to_line_end" "delete_selection"];
           G = "goto_file_end";
-          esc = [ "collapse_selection" "keep_primary_selection" ];
+          esc = ["collapse_selection" "keep_primary_selection"];
           minus = "file_picker_in_current_buffer_directory";
           p = "paste_clipboard_after";
           space.Q = ":q!";
@@ -98,7 +98,7 @@ in
         };
 
         keys.insert = {
-          esc = [ "collapse_selection" "normal_mode" ];
+          esc = ["collapse_selection" "normal_mode"];
           "C-space" = "completion";
         };
       };

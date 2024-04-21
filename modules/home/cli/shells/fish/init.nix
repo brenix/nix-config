@@ -6,15 +6,18 @@
         zoxide init fish | source
         alias cd 'z'
       end
-    '' +
+    ''
+    +
     # Paths
     ''
       set -gx PATH $PATH $HOME/.local/bin $HOME/.krew/bin $GOPATH/bin
-    '' +
+    ''
+    +
     # Completions
     ''
       complete -c ssh-multi -w ssh
-    '' +
+    ''
+    +
     # Set kubeconfig var
     ''
       if command -sq kubectl
@@ -22,13 +25,15 @@
           set -x KUBECONFIG "$KUBECONFIG:$line"
         end
       end
-    '' +
+    ''
+    +
     # Bindings
     ''
       bind \ce end-of-line
       bind ! bind_bang
       bind '$' bind_dollar
-    '' +
+    ''
+    +
     # Use terminal colors
     ''
       set -U fish_color_autosuggestion      brblack
@@ -57,7 +62,8 @@
       set -U fish_pager_color_description   yellow
       set -U fish_pager_color_prefix        'white' '--bold' '--underline'
       set -U fish_pager_color_progress      'brwhite' '--background=cyan'
-    '' +
+    ''
+    +
     # Source private files
     ''
       for file in ~/.config/fish/conf.local.d/*.fish

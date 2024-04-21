@@ -26,7 +26,7 @@
               size = "100%";
               content = {
                 type = "btrfs";
-                extraArgs = [ "-L" "nixos" "-f" ];
+                extraArgs = ["-L" "nixos" "-f"];
                 postCreateHook = ''
                   mount -t btrfs /dev/disk/by-label/nixos /mnt
                   btrfs subvolume snapshot -r /mnt /mnt/root-blank
@@ -35,15 +35,15 @@
                 subvolumes = {
                   "/root" = {
                     mountpoint = "/";
-                    mountOptions = [ "subvol=root" "compress=zstd" "noatime" ];
+                    mountOptions = ["subvol=root" "compress=zstd" "noatime"];
                   };
                   "/nix" = {
                     mountpoint = "/nix";
-                    mountOptions = [ "subvol=nix" "compress=zstd" "noatime" ];
+                    mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
                   };
                   "/persist" = {
                     mountpoint = "/persist";
-                    mountOptions = [ "subvol=persist" "compress=zstd" "noatime" ];
+                    mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
                   };
                   "/swap" = {
                     mountpoint = "/swap";

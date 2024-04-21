@@ -1,14 +1,14 @@
-{ lib
-, pkgs
-, config
-, inputs
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  inputs,
+  ...
 }:
 with lib;
 with inputs; let
   cfg = config.profiles.common;
-in
-{
+in {
   imports = [
     catppuccin.homeManagerModules.catppuccin
     nix-colors.homeManagerModule
@@ -31,8 +31,6 @@ in
     cli = {
       shells.fish.enable = true;
     };
-
-    profiles.guis.enable = true;
 
     security = {
       sops.enable = true;

@@ -1,7 +1,4 @@
-{ pkgs
-, ...
-}:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     golangci-lint-langserver
     gopls
@@ -22,7 +19,7 @@
       language-server = {
         vscode-json-language-server = {
           command = "${nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
-          args = [ "--stdio" ];
+          args = ["--stdio"];
         };
       };
       language = [
@@ -31,7 +28,7 @@
           auto-format = true;
           formatter = {
             command = "${shfmt}/bin/shfmt";
-            args = [ "-i" "2" "-ci" ];
+            args = ["-i" "2" "-ci"];
           };
         }
         {
@@ -39,7 +36,7 @@
           auto-format = true;
           formatter = {
             command = "${gotools}/bin/goimports";
-            args = [ "-local" "gitlab.eng" ];
+            args = ["-local" "gitlab.eng"];
           };
           indent = {
             tab-width = 2;
@@ -58,23 +55,24 @@
           auto-format = true;
           formatter = {
             command = "${deno}/bin/deno";
-            args = [ "fmt" "-" "--ext" "md" ];
+            args = ["fmt" "-" "--ext" "md"];
           };
         }
         {
           name = "nix";
           auto-format = true;
           formatter = {
-            command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
+            # command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
+            command = "${alejandra}/bin/alejandra";
           };
         }
         {
           name = "python";
-          language-servers = [ "pyright" ];
+          language-servers = ["pyright"];
           auto-format = true;
           formatter = {
             command = "${black}/bin/black";
-            args = [ "--quiet" "-" ];
+            args = ["--quiet" "-"];
           };
         }
       ];

@@ -1,13 +1,13 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.cli.programs.direnv;
-in
-{
+in {
   options.cli.programs.direnv = with types; {
     enable = mkBoolOpt false "Whether or not to enable direnv";
   };

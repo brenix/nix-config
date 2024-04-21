@@ -1,7 +1,8 @@
-{ inputs
-, pkgs
-, lib
-, ...
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
 }: {
   imports = [
     ./hardware-configuration.nix
@@ -31,7 +32,7 @@
     kernelParams = [
       "resume_offset=533760"
     ];
-    supportedFilesystems = lib.mkForce [ "btrfs" ];
+    supportedFilesystems = lib.mkForce ["btrfs"];
     kernelPackages = pkgs.linuxPackages_latest;
     resumeDevice = "/dev/disk/by-label/nixos";
   };

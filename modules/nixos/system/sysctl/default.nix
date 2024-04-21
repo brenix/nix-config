@@ -1,21 +1,21 @@
-{ options
-, config
-, pkgs
-, lib
-, ...
+{
+  options,
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.system.sysctl;
-in
-{
+in {
   options.system.sysctl = with types; {
     enable = mkBoolOpt false "Whether or not to enable sysctl tunings.";
   };
 
   config = mkIf cfg.enable {
     boot = {
-      kernelModules = [ "tcp_bbr" ];
+      kernelModules = ["tcp_bbr"];
       kernel = {
         sysctl = {
           "fs.file-max" = 2097152;

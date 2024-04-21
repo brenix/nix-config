@@ -1,14 +1,14 @@
-{ pkgs
-, lib
-, config
-, host
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  host,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.cli.shells.fish;
-in
-{
+in {
   options.cli.shells.fish = with types; {
     enable = mkBoolOpt false "enable fish shell";
   };

@@ -1,13 +1,13 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.desktops.hyprland;
   inherit (config.colorScheme) palette;
-in
-{
+in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
@@ -47,19 +47,17 @@ in
 
         animations.enabled = false;
 
-        misc =
-          let
-            FULLSCREEN_ONLY = 2;
-          in
-          {
-            vrr = 2;
-            disable_hyprland_logo = true;
-            disable_splash_rendering = true;
-            force_default_wallpaper = 0;
-            variable_framerate = true;
-            variable_refresh = FULLSCREEN_ONLY;
-            disable_autoreload = true;
-          };
+        misc = let
+          FULLSCREEN_ONLY = 2;
+        in {
+          vrr = 2;
+          disable_hyprland_logo = true;
+          disable_splash_rendering = true;
+          force_default_wallpaper = 0;
+          variable_framerate = true;
+          variable_refresh = FULLSCREEN_ONLY;
+          disable_autoreload = true;
+        };
 
         exec_once = [
           "dbus-update-activation-environment --systemd --all"

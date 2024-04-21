@@ -1,14 +1,14 @@
-{ pkgs
-, lib
-, options
-, config
-, ...
+{
+  pkgs,
+  lib,
+  options,
+  config,
+  ...
 }:
 with lib;
 with lib.nixicle; let
   cfg = config.hardware.logitechMouse;
-in
-{
+in {
   options.hardware.logitechMouse = with types; {
     enable = mkBoolOpt false "Enable logitech mouse hardware for their mice";
   };

@@ -1,7 +1,4 @@
-{ pkgs
-, ...
-}:
-{
+{pkgs, ...}: {
   programs.fish.functions = {
     fish_greeting = '''';
 
@@ -163,4 +160,3 @@
     '';
   };
 }
-
