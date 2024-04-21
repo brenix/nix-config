@@ -13,9 +13,9 @@ in
   config = mkIf cfg.enable {
     nix.enable = true;
 
-    chaotic = {
-      nyx.overlay.enable = true;
-    };
+    # chaotic = {
+    #   nyx.overlay.enable = true;
+    # };
 
     services = {
       ananicy.enable = true;

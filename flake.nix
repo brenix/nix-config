@@ -122,15 +122,17 @@
         sops-nix.nixosModules.sops
         nix-ld.nixosModules.nix-ld
         catppuccin.nixosModules.catppuccin
+        chaotic.nixosModules.default
       ];
 
-      systems.hosts.framework.modules = with inputs; [
+      homes.modules = with inputs; [
+        # impermanence.nixosModules.home-manager.impermanence
+        chaotic.homeManagerModules.default
+      ];
+
+      systems.hosts.morpheus.modules = with inputs; [
         hardware.nixosModules.framework-13-7040-amd
       ];
-
-      # homes.modules = with inputs; [
-      # impermanence.nixosModules.home-manager.impermanence
-      # ];
 
       overlays = with inputs; [
         nixgl.overlay
