@@ -29,6 +29,7 @@ in {
       kernelParams =
         [
           "mitigations=off"
+          "usbcore.autosuspend=-1"
         ]
         ++ lib.optionals cfg.plymouth ["quiet"];
 
