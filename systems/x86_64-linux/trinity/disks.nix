@@ -26,7 +26,7 @@
               size = "100%";
               content = {
                 type = "btrfs";
-                extraArgs = [ "-L" "nixos" "-f" ];
+                extraArgs = ["-L" "nixos" "-f"];
                 postCreateHook = ''
                   mount -t btrfs /dev/disk/by-label/nixos /mnt
                   btrfs subvolume snapshot -r /mnt /mnt/root-blank
@@ -35,19 +35,19 @@
                 subvolumes = {
                   "/root" = {
                     mountpoint = "/";
-                    mountOptions = [ "subvol=root" "compress=zstd" "autodefrag" "noatime" ];
+                    mountOptions = ["subvol=root" "compress=zstd" "autodefrag" "noatime"];
                   };
                   "/home" = {
                     mountpoint = "/home";
-                    mountOptions = [ "subvol=home" "compress=zstd" "autodefrag" "noatime" ];
+                    mountOptions = ["subvol=home" "compress=zstd" "autodefrag" "noatime"];
                   };
                   "/nix" = {
                     mountpoint = "/nix";
-                    mountOptions = [ "subvol=nix" "compress=zstd" "autodefrag" "noatime" ];
+                    mountOptions = ["subvol=nix" "compress=zstd" "autodefrag" "noatime"];
                   };
                   "/persist" = {
                     mountpoint = "/persist";
-                    mountOptions = [ "subvol=persist" "compress=zstd" "autodefrag" "noatime" ];
+                    mountOptions = ["subvol=persist" "compress=zstd" "autodefrag" "noatime"];
                   };
                   "/swap" = {
                     mountpoint = "/swap";
@@ -167,4 +167,5 @@
   };
 
   fileSystems."/persist".neededForBoot = true;
+  fileSystems."/home".neededForBoot = true;
 }

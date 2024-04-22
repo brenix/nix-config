@@ -12,14 +12,14 @@
     desktop = {
       enable = true;
       addons = {
-        hyprland.enable = true;
+        gnome.enable = true;
       };
     };
   };
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = ["console=ttyS0,115200"];
+    kernelParams = ["console=ttyS0,115200" "loglevel=7" "systemd.log_level=debug"];
   };
 
   services.qemuGuest.enable = true;
