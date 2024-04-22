@@ -13,6 +13,7 @@ in
     home.sessionVariables.COLORTERM = "truecolor";
 
     home.packages = with pkgs; [
+      alejandra
       golangci-lint-langserver
       gopls
       lua-language-server
@@ -165,7 +166,7 @@ in
             name = "nix";
             auto-format = true;
             formatter = {
-              command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
+              command = "${alejandra}/bin/alejandra";
             };
           }
           {
