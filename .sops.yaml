@@ -6,7 +6,6 @@ keys:
   - &hosts:
     - &neo age13aug9ksxkwksqjl4ghd8u3cf5c9tseaxtw75s7mpksdes9edfp7qa47044
     - &trinity age1g6hk6frqedn4dlz2l3s06f6jl6f95eqfwk96qvtdws4ctgv60fdqesv664
-    - &tank age1skhwa7un2xtrlvjgc7sj6ujup9595em9w488wwc7rjz0gjr99c4qerqzzx
     - &morpheus age18zvvf7gty8z6vmyyptkl7qr6vlq8r5d320t3du0zyup0yq26ccwqk4fwzu
 
 creation_rules:
@@ -16,5 +15,4 @@ creation_rules:
           - *brenix
           - *neo
           - *trinity
-          - *tank
           - *morpheus

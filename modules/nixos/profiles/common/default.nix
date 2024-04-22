@@ -11,8 +11,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    nix.enable = true;
-
     # FIXME
     # chaotic = {
     #   nyx.overlay.enable = true;
@@ -37,6 +35,7 @@ in {
       boot.enable = true;
       impermanence.enable = true;
       locale.enable = true;
+      nix.enable = true;
       sysctl.enable = true;
     };
   };
