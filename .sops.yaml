@@ -13,8 +13,5 @@ creation_rules:
   - path_regex: secrets.ya?ml$
     key_groups:
       - age:
-          - *brenix
-          - *neo
-          - *trinity
-          - *morpheus
-          - *vm
+          - *users
+          - *hosts
