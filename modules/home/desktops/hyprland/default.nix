@@ -4,7 +4,8 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+with lib.nixicle; let
   cfg = config.desktops.hyprland;
 in {
   imports = with inputs;
@@ -15,6 +16,7 @@ in {
 
   options.desktops.hyprland = {
     enable = mkEnableOption "enable hyprland window manager";
+    swapCapsEsc = mkBoolOpt false "swap capslock with escape";
   };
 
   # FIX: this hack to use nix catppuccin module: https://github.com/catppuccin/nix/issues/102

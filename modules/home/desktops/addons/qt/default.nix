@@ -14,7 +14,7 @@ in {
   config = mkIf cfg.enable {
     qt = {
       enable = true;
-      platformTheme = "gtk";
+      platformTheme.name = "gtk";
       style.name = "Catppuccin-Mocha-Compact-Blue-Dark";
       style.package = pkgs.catppuccin-gtk.override {
         accents = ["blue"];

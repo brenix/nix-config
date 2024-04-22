@@ -29,7 +29,24 @@ in {
     };
 
     cli = {
+      editors.helix.enable = true;
+      multiplexers.tmux.enable = true;
       shells.fish.enable = true;
+
+      programs = {
+        bat.enable = true;
+        direnv.enable = true;
+        fzf.enable = true;
+        git.enable = true;
+        k8s.enable = true;
+        modern-unix.enable = true;
+        network-tools.enable = true;
+        nix-index.enable = true;
+        ssh.enable = true;
+        starship.enable = true;
+        yazi.enable = true;
+        zoxide.enable = true;
+      };
     };
 
     security = {

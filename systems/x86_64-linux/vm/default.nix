@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./disks.nix
@@ -15,6 +15,10 @@
         hyprland.enable = true;
       };
     };
+  };
+
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   system.stateVersion = "23.11";

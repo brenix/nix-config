@@ -1,9 +1,8 @@
 {
-  # cli.programs.git.allowedSigners = "";
+  cli.programs.git.allowedSigners = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGH6D2sNMsbMo6DMdwuwDjPpRBM8ZDZtQa/FG4Ape5ei";
 
   profiles = {
     common.enable = true;
-    development.enable = true;
   };
 
   nixicle.user = {

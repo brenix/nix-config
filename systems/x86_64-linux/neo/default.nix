@@ -30,7 +30,7 @@
   networking.hostName = "neo";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
   };
 
   system.stateVersion = "23.11";

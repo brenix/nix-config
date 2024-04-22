@@ -14,9 +14,6 @@ in {
 
   config = mkIf cfg.enable {
     hardware = {
-      xpadneo.enable = true;
-      xone.enable = true;
-
       opengl = {
         enable = true;
         driSupport = true;

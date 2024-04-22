@@ -13,10 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.fish.shellInit = ''
-      fish_add_path ${t-smart-manager}/share/tmux-plugins/t-smart-tmux-session-manager/bin/
-    '';
-
     programs.tmux = {
       enable = true;
       shell = "fish";

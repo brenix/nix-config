@@ -27,7 +27,7 @@ in {
     };
 
     cli = {
-      terminals.foot.enable = true;
+      terminals.alacritty.enable = true;
     };
 
     home.sessionVariables = {

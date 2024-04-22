@@ -24,6 +24,7 @@ To remotely install NixOS onto a target system, I use
    ```sh
    [nixos@nixos:~]$ mkdir .ssh && curl https://github.com/brenix.keys > .ssh/authorized_keys
    ```
+
 1. Note the IP address of the system
 
 **On a separate NixOS host**:
@@ -38,7 +39,7 @@ To remotely install NixOS onto a target system, I use
 1. Run nixos-anywhere to remotely install NixOS on the target system
 
    ```sh
-   $ nix run github:nix-community/nixos-anywhere -- --flake '.#neo' nixos@192.168.1.9 # Replace with the target system IP from above
+   $ nixos-anywhere --flake '.#neo' nixos@192.168.1.9 # Replace with the target system IP from above
    ```
 
 ### Install from ISO
@@ -91,12 +92,11 @@ Some features of my nix-config:
 
 ## 🏠 Hosts
 
-- `neo`: My primary desktop computer | NixOS Hyprland
-- `morpheus`: Framework 13th gen laptop | NixOS Hyprland
-- `trinity`: My spare desktop now used as a K8S server and other self-hosted
-  tools | NixOS headless
-- `macbook`: Apple macbook pro M3 laptop for work | Darwin
-- `vm`: Qemu VM for testing | NixOS Hyprland
+- `neo`: My primary desktop computer
+- `morpheus`: Framework 13th gen laptop
+- `trinity`: My spare desktop now used as a K8S server
+- `macbook`: Apple macbook laptop
+- `vm`: Qemu VM for testing
 - `iso`: Builds custom installer ISO
 
 ## 📱 Applications
@@ -123,4 +123,6 @@ WIP
 
 - A lot of the configuration and inspiration comes from
   https://github.com/hmajid2301/dotfiles
+- For some additional snowfall/darwin config:
+  https://github.com/jakehamilton/config
 - Originally inspired by https://github.com/Misterio77/nix-config

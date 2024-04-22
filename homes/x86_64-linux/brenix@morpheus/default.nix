@@ -6,6 +6,7 @@
   };
 
   desktops.hyprland.enable = true;
+  desktops.hyprland.swapCapsEsc = true;
 
   nixicle.user = {
     enable = true;

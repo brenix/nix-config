@@ -88,16 +88,6 @@
       hyprland-protocols.follows = "hyprland-protocols-git";
     };
 
-    # nixvim = {
-    #   url = "github:pta2002/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # attic = {
-    #   url = "github:zhaofengli/attic";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     # For waiting for updates
     waybar.url = "github:Alexays/Waybar?rev=32eac3ccb738691974121b77b4af0c47d1cbe524";
 
@@ -135,14 +125,25 @@
         chaotic.nixosModules.default
       ];
 
-      homes.modules = with inputs; [
-        # impermanence.nixosModules.home-manager.impermanence
-        # chaotic.homeManagerModules.default
+      systems.hosts.neo.modules = with inputs; [
+        hardware.nixosModules.common-cpu-amd
+        hardware.nixosModules.common-gpu-amd
+        hardware.nixosModules.common-pc-ssd
       ];
 
       systems.hosts.morpheus.modules = with inputs; [
         hardware.nixosModules.framework-13-7040-amd
       ];
+
+      systems.hosts.trinity.modules = with inputs; [
+        hardware.nixosModules.common-cpu-intel
+        hardware.nixosModules.common-pc-ssd
+      ];
+
+      # homes.modules = with inputs; [
+      #   impermanence.nixosModules.home-manager.impermanence
+      #   chaotic.homeManagerModules.default
+      # ];
 
       overlays = with inputs; [
         nixgl.overlay
