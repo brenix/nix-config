@@ -1,0 +1,126 @@
+<div align="center">
+<h1>
+<img width="96" src="./images/logo.png"></img> <br>
+  Nix Config
+</h1>
+<!-- <img src="./images/terminal.png"></img> -->
+<h4>
+  :warning: This config repo is constantly changing and may be refactored often.
+</h4>
+</div>
+
+## 💽 Usage
+
+### Install over SSH (recommended)
+
+To remotely install NixOS onto a target system, I use
+[nixos-anywhere](https://github.com/nix-community/nixos-anywhere/blob/main/docs/howtos/no-os.md).
+
+**On the target system**:
+
+1. Boot the NixOS iso
+1. Configure SSH authorized keys to enable SSH into the system
+
+   ```sh
+   [nixos@nixos:~]$ mkdir .ssh && curl https://github.com/brenix.keys > .ssh/authorized_keys
+   ```
+1. Note the IP address of the system
+
+**On a separate NixOS host**:
+
+1. Pull or `cd` to the directory for this repository
+1. Enter the dev shell
+
+   ```sh
+   $ nix develop
+   ```
+
+1. Run nixos-anywhere to remotely install NixOS on the target system
+
+   ```sh
+   $ nix run github:nix-community/nixos-anywhere -- --flake '.#neo' nixos@192.168.1.9 # Replace with the target system IP from above
+   ```
+
+### Install from ISO
+
+1. Build the ISO
+
+   ```sh
+   $ make iso
+   ```
+
+1. Use `dd` or another tool to write the ISO to a USB stick
+1. Boot the ISO
+1. Update SOPS keys
+1. Run `nix-installer` script and follow prompts
+
+   ```sh
+   [nixos@nixos:~]$ nix-installer
+   ```
+
+### Building
+
+To build my nix-config for a specific host you can do something like:
+
+```sh
+git clone git@github.com:brenix/nix-config.git ~/nix-config/
+cd nix-config
+
+nix develop
+
+# To build system configuration
+sudo nixos-rebuild switch --flake .#framework
+
+# To build user configuration
+home-manager switch --flake .#haseeb@framework
+```
+
+## 🚀 Features
+
+Some features of my nix-config:
+
+- Structured to allow multiple **NixOS configurations**, including **desktop**,
+  **laptop**
+- **Declarative** config including **themes**, **wallpapers** and **nix-colors**
+- **Opt-in persistance** through impermanence + blank snapshot
+- **Encrypted btrfs partition**
+- **sops-nix** for secrets management
+- Different desktop environments like **hyprland**
+- Custom live media **ISO**, with an **"automated" install** script
+- Supports **vfio** for playing games on Windows
+
+## 🏠 Hosts
+
+- `neo`: My primary desktop computer | NixOS Hyprland
+- `morpheus`: Framework 13th gen laptop | NixOS Hyprland
+- `trinity`: My spare desktop now used as a K8S server and other self-hosted
+  tools | NixOS headless
+- `macbook`: Apple macbook pro M3 laptop for work | Darwin
+- `vm`: Qemu VM for testing | NixOS Hyprland
+- `iso`: Builds custom installer ISO
+
+## 📱 Applications
+
+| Type           |                          Program                          |
+| :------------- | :-------------------------------------------------------: |
+| OS             |                [NixOS](https://nixos.com/)                |
+| Editor         |             [Helix](https://helix-editor.com)             |
+| Multiplexer    |           [Tmux](https://github.com/tmux/tmux)            |
+| Prompt         |             [Starship](https://starship.rs/)              |
+| Launcher       |        [Rofi](https://github.com/davatorium/rofi)         |
+| Shell          |              [Fish](https://fishshell.com/)               |
+| Status Bar     |        [Waybar](https://github.com/Alexays/Waybar)        |
+| Terminal       |            [Alacritty](https://alacritty.org)             |
+| Window Manager |             [Hyprland](https://hyprland.org/)             |
+| Fonts          | [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface)) |
+| Colorscheme    |     [Catppuccin Mocha](https://github.com/catppuccin)     |
+
+## 🖼️ Showcase
+
+WIP
+
+## Acknowledgements
+
+- A lot of the configuration and inspiration comes from
+  https://github.com/hmajid2301/dotfiles
+- Originally inspired by https://github.com/Misterio77/nix-config
