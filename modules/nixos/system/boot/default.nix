@@ -59,7 +59,7 @@ in {
       tmp = {
         useTmpfs = true;
         tmpfsSize = "75%";
-      }
+      };
     };
 
     services.fwupd.enable = true;
