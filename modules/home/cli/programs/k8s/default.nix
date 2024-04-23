@@ -20,6 +20,10 @@ in {
       };
     };
 
+    systemd.user.tmpfiles.rules = [
+      "d %h/.kube 0700"
+    ];
+
     home.packages = with pkgs; [
       (wrapHelm kubernetes-helm {
         plugins = with pkgs.kubernetes-helmPlugins; [
