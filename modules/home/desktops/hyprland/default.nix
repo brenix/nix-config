@@ -33,8 +33,6 @@ in {
     xdg.configFile."hypr".recursive = true;
 
     desktops.addons = {
-      gtk.enable = true;
-      qt.enable = true;
       kanshi.enable = true;
       rofi.enable = true;
       swaync.enable = true;

@@ -20,7 +20,7 @@ in {
 
       config = {
         input = {
-          # kb_options = "caps:swapescape";
+          kb_options = mkIf cfg.swapCapsEsc "caps:swapescape";
           kb_layout = "us";
           repeat_rate = 45;
           repeat_delay = 280;

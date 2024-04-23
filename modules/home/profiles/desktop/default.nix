@@ -16,14 +16,10 @@ in {
       common.enable = true;
     };
 
-    system = {
-      fonts.enable = true;
-    };
-
-    desktops.addons.xdg.enable = true;
-
-    programs = {
-      discord.enable = true;
+    desktops.addons {
+      gtk.enable = true;
+      qt.enable = true;
+      xdg.enable = true;
     };
 
     cli = {

@@ -9,7 +9,7 @@ with lib.nixicle; let
   cfg = config.security.sops;
 in {
   options.security.sops = with types; {
-    enable = mkBoolOpt false "Whether to enable sop for secrets management.";
+    enable = mkBoolOpt false "Whether to enable SOPS for secrets management.";
   };
 
   imports = with inputs; [

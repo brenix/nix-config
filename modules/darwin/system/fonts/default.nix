@@ -27,6 +27,7 @@ in {
         [
           noto-fonts
           noto-fonts-emoji
+          google-fonts
           (nerdfonts.override {fonts = ["JetBrainsMono"];})
         ]
         ++ cfg.fonts;

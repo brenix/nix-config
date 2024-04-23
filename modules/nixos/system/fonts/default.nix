@@ -20,9 +20,9 @@ in {
       fontDir.enable = true;
       packages = with pkgs;
         [
-          google-fonts
-          jetbrains-mono
           (nerdfonts.override {fonts = ["JetBrainsMono"];})
+          google-fonts
+          monaco
           noto-fonts-emoji
           terminus_font
         ]
