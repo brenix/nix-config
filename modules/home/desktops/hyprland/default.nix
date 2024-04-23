@@ -33,8 +33,9 @@ in {
     xdg.configFile."hypr".recursive = true;
 
     desktops.addons = {
-      rofi.enable = true;
+      kanshi.enable = true;
       mako.enable = true;
+      rofi.enable = true;
       waybar.enable = true;
       wlogout.enable = true;
       wlsunset.enable = true;
