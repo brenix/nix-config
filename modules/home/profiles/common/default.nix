@@ -52,5 +52,12 @@ in {
     security = {
       sops.enable = true;
     };
+
+    # TODO move out
+    home.packages = with pkgs; [
+      gnumake
+      gettext
+      gcc
+    ];
   };
 }
