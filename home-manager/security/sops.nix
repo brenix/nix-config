@@ -1,4 +1,9 @@
-{ inputs, pkgs, lib, ... }: {
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
   ];
@@ -6,7 +11,7 @@
   sops = {
     gnupg = {
       home = "~/.gnupg";
-      sshKeyPaths = [ ];
+      sshKeyPaths = [];
     };
 
     defaultSymlinkPath = "/run/user/1000/secrets";
@@ -17,12 +22,12 @@
     sops
   ];
 
-  home.sessionVariables.SOPS_AGE_KEY_FILE = "~/.config/sops/age/keys.txt";
+  home.sessionVariables.SOPS_AGE_KEY_FILE = "/home/brenix/.config/sops/age/keys.txt";
 
   # Fix issue where service is not started
   systemd.user.services.sops-nix = {
     Install = {
-      WantedBy = lib.mkForce [ "basic.target" ];
+      WantedBy = lib.mkForce ["basic.target"];
     };
   };
 
