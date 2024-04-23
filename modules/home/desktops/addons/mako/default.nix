@@ -4,7 +4,7 @@
   pkgs,
   ...
 }:
-with lib; let
+with lib;
 with lib.nixicle; let
   cfg = config.desktops.addons.mako;
   inherit (config.colorScheme) palette;
