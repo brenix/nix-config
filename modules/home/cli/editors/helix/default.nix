@@ -13,6 +13,10 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.sessionVariables = {
+      EDITOR = "hx";
+    };
+
     home.packages = with pkgs; [
       golangci-lint-langserver
       gopls
