@@ -62,7 +62,7 @@ in {
             style = "Italic";
           };
           size = 14.0;
-          offsey.y = -2;
+          offset.y = -2;
         };
       };
     };
