@@ -1,8 +1,7 @@
 keys:
   # Users
-  - &users: # Generated with age-keygen - private key stored outside of repo
+  - &users:
     - &brenix age1kky7jzc2x626xp4sfvpz7acytczqgdn7h2jxjqkjxzfd4kndcdxs8zr6ka
-    - &brenix_morpheus age1mnszkv8dsxv4h45as5f0lmzt8t35stvgy67xx6pk59fzxqr0cv5q77pkn6
   # Hosts
   - &hosts:
     - &neo age13aug9ksxkwksqjl4ghd8u3cf5c9tseaxtw75s7mpksdes9edfp7qa47044
@@ -14,5 +13,8 @@ creation_rules:
   - path_regex: secrets.ya?ml$
     key_groups:
       - age:
-          - *users
-          - *hosts
+          - *brenix
+          - *neo
+          - *trinity
+          - *vm
+          - *morpheus

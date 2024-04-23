@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  pkgs,
   ...
 }:
 with lib;
@@ -17,6 +18,10 @@ in {
   ];
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      sops
+    ];
+
     sops = {
       age = {
         generateKey = true;

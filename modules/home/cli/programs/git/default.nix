@@ -17,8 +17,8 @@ with lib.nixicle; let
 in {
   options.cli.programs.git = with types; {
     enable = mkBoolOpt false "Whether or not to enable git.";
-    name = mkOpt (nullOr str) "" "The name to use with git.";
-    email = mkOpt (nullOr str) "" "The email to use with git.";
+    name = mkOpt (nullOr str) "Paul Nicholson" "The name to use with git.";
+    email = mkOpt (nullOr str) "brenix@gmail.com" "The email to use with git.";
     urlRewrites = mkOpt (attrsOf str) {} "url we need to rewrite i.e. ssh to http";
     allowedSigners = mkOpt str "" "The public key used for signing commits";
   };
