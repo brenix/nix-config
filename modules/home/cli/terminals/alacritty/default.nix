@@ -50,15 +50,15 @@ in {
 
         font = {
           normal = {
-            monospace = "Monaco Nerd Font Mono";
+            family = "Monaco Nerd Font Mono";
             style = "Regular";
           };
           bold = {
-            monospace = "Monaco Nerd Font Mono";
+            family = "Monaco Nerd Font Mono";
             style = "Regular";
           };
           italic = {
-            monospace = "Monaco Nerd Font Mono";
+            family = "Monaco Nerd Font Mono";
             style = "Italic";
           };
           size = 14.0;

@@ -22,7 +22,7 @@ in {
         [
           (nerdfonts.override {fonts = ["JetBrainsMono"];})
           google-fonts
-          monaco
+          nixicle.monaco
           noto-fonts-emoji
           terminus_font
         ]

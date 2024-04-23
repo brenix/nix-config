@@ -16,7 +16,7 @@ in {
       common.enable = true;
     };
 
-    desktops.addons {
+    desktops.addons = {
       gtk.enable = true;
       qt.enable = true;
       xdg.enable = true;
