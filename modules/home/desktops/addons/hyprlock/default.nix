@@ -82,7 +82,7 @@ in {
 
       backgrounds = [
         {
-          path = "${pkgs.nixicle.wallpapers.Kurzgesagt-Galaxies}";
+          path = "${pkgs.nixicle.wallpapers.yosemite}";
         }
       ];
     };

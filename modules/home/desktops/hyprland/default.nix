@@ -33,6 +33,7 @@ in {
     xdg.configFile."hypr".recursive = true;
 
     desktops.addons = {
+      hyprlock.enable = true;
       kanshi.enable = true;
       mako.enable = true;
       rofi.enable = true;
