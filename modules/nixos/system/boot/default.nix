@@ -55,6 +55,11 @@ in {
         theme = "catppuccin-mocha";
         themePackages = [pkgs.catppuccin-plymouth];
       };
+
+      tmp = {
+        useTmpfs = true;
+        tmpfsSize = "75%";
+      }
     };
 
     services.fwupd.enable = true;

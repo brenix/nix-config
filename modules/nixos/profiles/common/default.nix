@@ -29,6 +29,7 @@ in {
 
     security = {
       sops.enable = true;
+      sudo.wheelNeedsPassword = false;
     };
 
     system = {
