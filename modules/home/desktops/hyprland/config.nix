@@ -34,9 +34,9 @@ in {
         general = {
           gaps_in = 3;
           gaps_out = 5;
-          border_size = 3;
-          active_border_color = "0xff${palette.base07}";
-          inactive_border_color = "0xff${palette.base02}";
+          border_size = 1;
+          active_border_color = "0xff${palette.base03}";
+          inactive_border_color = "0xff${palette.base01}";
         };
 
         decoration = {
