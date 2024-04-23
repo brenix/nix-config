@@ -2,11 +2,11 @@ keys:
   # Users
   - &users: # Generated with age-keygen - private key stored outside of repo
     - &brenix age1kky7jzc2x626xp4sfvpz7acytczqgdn7h2jxjqkjxzfd4kndcdxs8zr6ka
+    - &brenix_morpheus age1mnszkv8dsxv4h45as5f0lmzt8t35stvgy67xx6pk59fzxqr0cv5q77pkn6
   # Hosts
   - &hosts:
     - &neo age13aug9ksxkwksqjl4ghd8u3cf5c9tseaxtw75s7mpksdes9edfp7qa47044
     - &trinity age1g6hk6frqedn4dlz2l3s06f6jl6f95eqfwk96qvtdws4ctgv60fdqesv664
-    - &morpheus age18zvvf7gty8z6vmyyptkl7qr6vlq8r5d320t3du0zyup0yq26ccwqk4fwzu
     - &vm age1d59p9nrrg7dy94q0xsmep77yh84t4zr76l5s99h2nx52etqv859qzzvvd2
 
 creation_rules:
