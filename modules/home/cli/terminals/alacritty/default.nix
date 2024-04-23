@@ -37,12 +37,14 @@ in {
           save_to_clipboard = true;
         };
 
-        mouse_bindings = [
-          {
-            mouse = "Right";
-            action = "Paste";
-          }
-        ];
+        mouse = {
+          bindings = [
+            {
+              mouse = "Right";
+              action = "PasteSelection";
+            }
+          ];
+        };
 
         env = {
           TERM = "xterm-256color";
