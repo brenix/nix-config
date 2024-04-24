@@ -127,6 +127,7 @@ in {
           ]
           else [
             "amd_iommu=on"
+            "iommu=pt"
           ]
         )
         ++ (optional (builtins.length cfg.devices > 0)
@@ -139,7 +140,9 @@ in {
         ++ optionals cfg.hugepages.enable [
           "default_hugepagesz=${cfg.hugepages.defaultPageSize}"
           "hugepagesz=${cfg.hugepages.pageSize}"
-          "hugepages=${toString cfg.hugepages.numPages}"
+
+          # Done through qemu script
+          # "hugepages=${toString cfg.hugepages.numPages}"
         ];
 
       kernelModules = ["vfio_pci" "vfio_iommu_type1" "vfio"];

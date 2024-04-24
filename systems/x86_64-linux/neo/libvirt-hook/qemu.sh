@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC1125,SC2034,SC2086,SC2068,SC2046,SC2207
+
+TOTAL_CORES='0-31'         # All CPUs
+HOST_CORES='0-7,16-23'     # Cores to reserve for host
+VIRT_CORES='8-15,24-31'    # Cores to reserve for VM
+VIRT_CORES_MASK='ff00ff00' # CPU affinity mask for VM cores
+DISPLAY_NUMBER='1'         # Display number according to ddcutil detect
+DISPLAY_INPUT_VM='0x0f'    # DisplayPort according to `ddcutil -d 1 capabilities``
+DISPLAY_INPUT_HOST='0x11'  # HDMI according to `ddcutil -d 1 capabilities`
+
+# Log a message in dmesg
+log() {
+  local msg="$*"
+  printf "libvirt-hook-qemu: %s\n" "${msg}" >/dev/kmsg
+}
+
+# Split a string based on delimiter
+# Usage: split foo,bar ,
+split() {
+  local string="$1"
+  local delimiter="$2"
+  IFS=$'\n' read -d "" -ra arr <<<"${1//$2/$'\n'}"
+  printf '%s\n' "${arr[@]}"
+}
+
+# List all CPUs individually given a range
+# Usage: listcpus 2-5,8-11
+listcpus() {
+  local range="$1"
+  local cpus=()
+  groups=$(split ${range} ,)
+  for g in ${groups[@]}; do
+    begin=$(echo ${g} | cut -d- -f1)
+    end=$(echo ${g} | cut -d- -f2)
+    cpus+=($(seq ${begin} ${end}))
+  done
+  printf '%s\n' "${cpus[@]}"
+}
+
+# Configure allowed CPUs
+set_cpu() {
+  systemctl set-property --runtime -- user.slice AllowedCPUs=${HOST_CORES}
+  systemctl set-property --runtime -- system.slice AllowedCPUs=${HOST_CORES}
+  systemctl set-property --runtime -- init.scope AllowedCPUs=${HOST_CORES}
+}
+
+# Restore allowed CPUs
+unset_cpu() {
+  systemctl set-property --runtime -- user.slice AllowedCPUs=${TOTAL_CORES}
+  systemctl set-property --runtime -- system.slice AllowedCPUs=${TOTAL_CORES}
+  systemctl set-property --runtime -- init.scope AllowedCPUs=${TOTAL_CORES}
+}
+
+# Load libvirt args
+VM_NAME=$1
+VM_ACTION=$2
+
+log "Hook initialized"
+
+if [[ $VM_NAME == "windows" ]]; then
+  case "$VM_ACTION" in
+    "prepare")
+      log "Optimizing memory utilization"
+      sync
+      echo 3 >/proc/sys/vm/drop_caches
+      sync
+      echo 1 >/proc/sys/vm/compact_memory
+
+      log "Allocating hugepages"
+      echo 32 >/sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
+      echo never >/sys/kernel/mm/transparent_hugepage/enabled
+
+      log "Allocating CPUs"
+      set_cpu
+      echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+      log "Performing optimizations"
+      echo 1000 >/proc/sys/vm/stat_interval
+      echo 0 >/pros/sys/kernel/watchdog
+      echo -1 >/proc/sys/kernel/sched_rt_runtime_us
+      ;;
+    "started")
+      # log "Prioritizing qemu process"
+      # ls /proc/$(pgrep -f $VM_NAME)/task | xargs -n 1 chrt -f -p 99
+      # ls /proc/$(pgrep -f $VM_NAME)/task | xargs renice -n -20
+      # sleep 10
+      ;;
+    "release")
+      log "Restoring CPUs"
+      unset_cpu
+      echo schedutil | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+      log "Restoring optimizations"
+      echo 1 >/proc/sys/vm/stat_interval
+      echo 980000 >/proc/sys/kernel/sched_rt_runtime_us
+
+      log "Disabling hugepages"
+      echo 0 >/sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
+      ;;
+  esac
+fi
