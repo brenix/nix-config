@@ -86,7 +86,6 @@ Some features of my nix-config:
 - **Opt-in persistance** through impermanence + blank snapshot
 - **Encrypted btrfs partition**
 - **sops-nix** for secrets management
-- Different desktop environments like **hyprland**
 - Custom live media **ISO**, with an **"automated" install** script
 - Supports **vfio** for playing games on Windows
 
