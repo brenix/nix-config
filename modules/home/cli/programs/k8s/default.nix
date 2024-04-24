@@ -32,6 +32,7 @@ in {
           helm-cm-push
         ];
       })
+      helm-docs
       helmfile
       krew
       kubecolor
@@ -39,6 +40,9 @@ in {
       kubelogin
       kubelogin-oidc
       stern
+      # kustomize
+      # talosctl
+      # trivy
     ];
   };
 }

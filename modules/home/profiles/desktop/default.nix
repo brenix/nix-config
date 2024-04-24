@@ -16,6 +16,17 @@ in {
       common.enable = true;
     };
 
+    browsers.firefox.enable = true;
+
+    home.packages = with pkgs; [
+      mpv
+      mupdf
+      nsxiv
+      pavucontrol
+      playerctl
+      xdg-utils
+    ];
+
     desktops.addons = {
       gtk.enable = true;
       qt.enable = true;

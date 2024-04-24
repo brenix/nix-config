@@ -20,13 +20,22 @@ in {
         main = {
           term = "foot";
           font = "Monaco Nerd Font Mono:size=14; Noto Color Emoji:size=20";
-          shell = "fish";
-          pad = "30x30";
-          selection-target = "clipboard";
+          line-height = "16px";
+          shell = "${pkgs.fish}/bin/fish";
+          selection-target = "primary";
         };
 
         scrollback = {
           lines = 10000;
+        };
+
+        mouse = {
+          hide-when-typing = "yes";
+        };
+
+        mouse-bindings = {
+          select-extend = "none";
+          primary-paste = "BTN_RIGHT";
         };
       };
     };

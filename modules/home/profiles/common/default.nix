@@ -22,8 +22,6 @@ in {
     colorscheme = nix-colors.colorSchemes.catppuccin-mocha;
     catppuccin.flavour = "mocha";
 
-    browsers.firefox.enable = true;
-
     system = {
       nix.enable = true;
     };
@@ -35,12 +33,12 @@ in {
 
       programs = {
         bat.enable = true;
+        common.enable = true;
+        dircolors.enable = true;
         direnv.enable = true;
         fzf.enable = true;
         git.enable = true;
         k8s.enable = true;
-        modern-unix.enable = true;
-        network-tools.enable = true;
         nix-index.enable = true;
         ssh.enable = true;
         starship.enable = true;
@@ -52,12 +50,5 @@ in {
     security = {
       sops.enable = true;
     };
-
-    # TODO move out
-    home.packages = with pkgs; [
-      gnumake
-      gettext
-      gcc
-    ];
   };
 }

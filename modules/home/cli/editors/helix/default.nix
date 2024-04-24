@@ -7,6 +7,7 @@
 with lib;
 with lib.nixicle; let
   cfg = config.cli.editors.helix;
+  # inherit (config) colorscheme;
 in {
   options.cli.editors.helix = with types; {
     enable = mkBoolOpt false "enable helix editor";
@@ -35,6 +36,7 @@ in {
     programs.helix = {
       enable = true;
       catppuccin.enable = true;
+      # themes = import ./theme.nix { inherit colorscheme; };
       settings = {
         editor = {
           auto-pairs = false;

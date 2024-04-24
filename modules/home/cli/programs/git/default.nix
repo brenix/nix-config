@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib;
@@ -25,6 +26,10 @@ in {
 
   config = mkIf cfg.enable {
     home.file.".ssh/allowed_signers".text = "* ${cfg.allowedSigners}";
+
+    home.packages = with pkgs; [
+      delta
+    ];
 
     programs.git = {
       enable = true;

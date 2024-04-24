@@ -22,6 +22,8 @@ in {
       sops
     ];
 
+    home.sessionVariables.SOPS_AGE_KEY_FILE = "/home/${config.nixicle.user.name}/.config/sops/age/keys.txt";
+
     sops = {
       age = {
         generateKey = true;

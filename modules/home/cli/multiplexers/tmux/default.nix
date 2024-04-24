@@ -15,7 +15,7 @@ in {
   config = mkIf cfg.enable {
     programs.tmux = {
       enable = true;
-      shell = "fish";
+      shell = "${pkgs.fish}/bin/fish";
       terminal = "tmux-256color";
       historyLimit = 100000;
       escapeTime = 0;
@@ -67,6 +67,13 @@ in {
       ];
       extraConfig = ''
         set -ag terminal-overrides ",xterm-256color:RGB"
+        set -g default-terminal "tmux-256color"
+        set -ga terminal-overrides ",xterm*:Tc"
+        set -ga terminal-overrides ",rxvt*:Tc"
+        set -ga terminal-overrides ",screen*:Tc"
+        set -ga terminal-overrides ",tmux*:Tc"
+        set -ga terminal-overrides ",alacritty*:Tc"
+        set -ga terminal-overrides ",st*:Tc"
         set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.local/share/tmux/plugins'
         set-option -g set-titles on
         set-option -g set-titles-string "#S / #W"
@@ -82,8 +89,23 @@ in {
         bind , select-layout even-vertical
         bind . select-layout even-horizontal
 
-        # Synchronize panes
+        # Windows
+        bind n new-window -c "#{pane_current_path}"
+        bind tab next-window
+        bind t command-prompt "rename-window %%"
+        bind-key -n M-q prev
+        bind-key -n M-e next
+
+        # Panes
         bind v setw synchronize-panes\; display "Sync panes is now #{?pane_synchronized,on,off}!"
+        bind h select-pane -L
+        bind l select-pane -R
+        bind k select-pane -U
+        bind j select-pane -D
+        bind up resize-pane -U 5
+        bind down resize-pane -D 5
+        bind left resize-pane -L 5
+        bind right resize-pane -R 5
 
         # Use vim keybindings in copy mode
         set-window-option -g mode-keys vi
@@ -99,7 +121,7 @@ in {
         # Easier reload of config
         bind r source-file ~/.config/tmux/tmux.conf
 
-        set-option -g status-position top
+        #set-option -g status-position top
 
         # make Prefix p paste the buffer.
         unbind p
