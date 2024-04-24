@@ -59,13 +59,6 @@
     };
   };
 
-  programs = {
-    cli.go.enable = true;
-    discord.enable = true;
-    spotify.enable = true;
-    vscode.enable = true;
-  };
-
   networking.hostName = "neo";
   networking.useDHCP = pkgs.lib.mkForce false;
   networking.useNetworkd = false;

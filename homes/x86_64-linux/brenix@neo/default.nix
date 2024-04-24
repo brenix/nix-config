@@ -8,7 +8,10 @@
   };
 
   programs = {
+    cli.go.enable = true;
     discord.enable = true;
+    spotify.enable = true;
+    vscode.enable = true;
   };
 
   desktops.hyprland.enable = true;
