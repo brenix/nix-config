@@ -20,7 +20,7 @@ in {
       ananicy.enable = true;
       # bpftune.enable = true;
       dbus.enable = true;
-      openssh.enable = true;
+      ssh.enable = true;
       systemd = {
         timesyncd.enable = true;
         resolved.enable = true;

@@ -7,6 +7,7 @@
 with lib;
 with lib.nixicle; let
   cfg = config.security.sops;
+  key = builtins.elemAt (builtins.filter (k: k.type == "ed25519") config.services.openssh.hostKeys) 0;
 in {
   options.security.sops = with types; {
     enable = mkBoolOpt false "Whether to enable SOPS for secrets management.";
@@ -18,7 +19,7 @@ in {
         home = "~/.gnupg";
         sshKeyPaths = [];
       };
-      age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+      age.sshKeyPaths = [key.path];
     };
   };
 }

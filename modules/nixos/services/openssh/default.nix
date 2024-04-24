@@ -7,6 +7,7 @@
 with lib;
 with lib.nixicle; let
   cfg = config.services.ssh;
+  hasPersistence = config.environment.persistence ? "/persist";
 in {
   options.services.ssh = with types; {
     enable = mkBoolOpt false "Enable ssh";
@@ -27,6 +28,18 @@ in {
         StreamLocalBindUnlink = "yes";
         GatewayPorts = "clientspecified";
       };
+
+      hostKeys = [
+        {
+          path = "${lib.optionalString hasPersistence "/persist"}/etc/ssh/ssh_host_ed25519_key";
+          type = "ed25519";
+        }
+      ];
+
+      # TEMP: Fix warning about authorized keys
+      authorizedKeysFiles = lib.mkForce [
+        "/etc/ssh/authorized_keys.d/%u"
+      ];
     };
 
     # Passwordless sudo when SSH'ing with keys
