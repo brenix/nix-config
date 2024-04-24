@@ -8,6 +8,10 @@ nixos:
 upgrade:
 	@sudo nixos-rebuild switch --verbose --upgrade-all --recreate-lock-file --flake ".#$(HOSTNAME)"
 
+## Update keys for all secrets
+updatekeys:
+	@fd 'secrets.ya?ml' -x sops updatekeys
+
 ## Generate ISO
 iso:
 	@sudo sudo nix build .#nixosConfigurations.iso.config.system.build.isoImage

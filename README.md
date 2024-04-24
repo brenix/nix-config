@@ -36,10 +36,32 @@ To remotely install NixOS onto a target system, I use
    $ nix develop
    ```
 
+1. Run ssh-to-age to get a pubkey for SOPS
+
+   ```sh
+   $ ssh-keyscan $TARGET_HOST | ssh-to-age
+   ```
+
+1. Update the [`.sops.yaml`](.sops.yaml) file and add a new host to the keys and
+   creation rules
+1. Update all of the secrets in the repo to include the new key
+
+   ```sh
+   $ make updatekeys
+   ```
+
 1. Run nixos-anywhere to remotely install NixOS on the target system
 
    ```sh
-   $ nixos-anywhere --flake '.#neo' nixos@192.168.1.9 # Replace with the target system IP from above
+   $ nixos-anywhere --no-reboot --flake '.#neo' nixos@192.168.1.9 # Replace with the target system IP from above
+   ```
+
+**On the target system**:
+
+1. Copy the livecd ssh host keys to the persist directory
+
+   ```sh
+   $ sudo mkdir -p /mnt/persist/etc/ssh && sudo cp /etc/ssh/ssh_host_ed25519* /mnt/persist/etc/ssh/
    ```
 
 ### Install from ISO
