@@ -1,0 +1,242 @@
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <name>windows</name>
+  <uuid>e5c83d25-eea4-4ec5-b1dd-716b5e3bfd9a</uuid>
+  <metadata>
+    <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
+      <libosinfo:os id="http://microsoft.com/win/10"/>
+    </libosinfo:libosinfo>
+  </metadata>
+  <memory unit='KiB'>33554432</memory>
+  <currentMemory unit='KiB'>33554432</currentMemory>
+  <memoryBacking>
+    <hugepages/>
+  </memoryBacking>
+  <vcpu placement='static'>16</vcpu>
+  <iothreads>1</iothreads>
+  <iothreadids>
+    <iothread id='1'/>
+  </iothreadids>
+  <cputune>
+    <vcpupin vcpu='0' cpuset='8'/>
+    <vcpupin vcpu='1' cpuset='24'/>
+    <vcpupin vcpu='2' cpuset='9'/>
+    <vcpupin vcpu='3' cpuset='25'/>
+    <vcpupin vcpu='4' cpuset='10'/>
+    <vcpupin vcpu='5' cpuset='26'/>
+    <vcpupin vcpu='6' cpuset='11'/>
+    <vcpupin vcpu='7' cpuset='27'/>
+    <vcpupin vcpu='8' cpuset='12'/>
+    <vcpupin vcpu='9' cpuset='28'/>
+    <vcpupin vcpu='10' cpuset='13'/>
+    <vcpupin vcpu='11' cpuset='29'/>
+    <vcpupin vcpu='12' cpuset='14'/>
+    <vcpupin vcpu='13' cpuset='30'/>
+    <vcpupin vcpu='14' cpuset='15'/>
+    <vcpupin vcpu='15' cpuset='31'/>
+    <emulatorpin cpuset='0-7,16-23'/>
+    <iothreadpin iothread='1' cpuset='0-7,16-23'/>
+  </cputune>
+  <resource>
+    <partition>/machine</partition>
+  </resource>
+  <sysinfo type='smbios'>
+    <bios>
+      <entry name='vendor'>American Megatrends International, LLC.</entry>
+      <entry name='version'>F37h</entry>
+      <entry name='date'>12/25/2023</entry>
+      <entry name='release'>5.17</entry>
+    </bios>
+    <system>
+      <entry name='manufacturer'>Gigabyte Technology Co., Ltd.</entry>
+      <entry name='product'>X570 AORUS MASTER</entry>
+      <entry name='version'>-CF</entry>
+      <entry name='serial'>Default string</entry>
+      <entry name='uuid'>e5c83d25-eea4-4ec5-b1dd-716b5e3bfd9a</entry>
+      <entry name='sku'>Default string</entry>
+      <entry name='family'>X570 MB</entry>
+    </system>
+  </sysinfo>
+  <os>
+    <type arch='x86_64' machine='pc-q35-8.2'>hvm</type>
+    <loader readonly='yes' type='pflash'>/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
+    <nvram template='/run/libvirt/nix-ovmf/OVMF_VARS.fd'>/var/lib/libvirt/qemu/nvram/windows_VARS.fd</nvram>
+    <bootmenu enable='no'/>
+    <smbios mode='sysinfo'/>
+  </os>
+  <features>
+    <acpi/>
+    <apic eoi='on'/>
+    <hyperv mode='custom'>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='8191'/>
+      <vpindex state='on'/>
+      <runtime state='on'/>
+      <synic state='on'/>
+      <stimer state='on'>
+        <direct state='on'/>
+      </stimer>
+      <reset state='on'/>
+      <vendor_id state='on' value='AuthenticAMD'/>
+      <frequencies state='on'/>
+      <reenlightenment state='on'/>
+      <tlbflush state='on'/>
+      <ipi state='on'/>
+      <evmcs state='off'/>
+      <avic state='off'/>
+    </hyperv>
+    <kvm>
+      <hidden state='on'/>
+    </kvm>
+    <vmport state='off'/>
+    <smm state='on'/>
+    <ioapic driver='kvm'/>
+  </features>
+  <cpu mode='host-passthrough' check='none' migratable='off'>
+    <topology sockets='1' dies='1' cores='8' threads='2'/>
+    <cache mode='passthrough'/>
+    <feature policy='require' name='topoext'/>
+    <feature policy='disable' name='svm'/>
+  </cpu>
+  <clock offset='localtime'>
+    <timer name='rtc' tickpolicy='catchup'/>
+    <timer name='pit' tickpolicy='discard'/>
+    <timer name='hpet' present='no'/>
+    <timer name='hypervclock' present='yes'/>
+  </clock>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <pm>
+    <suspend-to-mem enabled='no'/>
+    <suspend-to-disk enabled='no'/>
+  </pm>
+  <devices>
+    <emulator>/run/libvirt/nix-emulators/qemu-system-x86_64</emulator>
+    <disk type='block' device='disk'>
+      <driver name='qemu' type='raw' cache='none' io='threads' iothread='1'/>
+      <source dev='/dev/disk/by-id/ata-Samsung_SSD_870_EVO_1TB_S625NJ0R432717H-part2'/>
+      <target dev='vda' bus='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x09' slot='0x00' function='0x0'/>
+    </disk>
+    <disk type='file' device='cdrom'>
+      <driver name='qemu' type='raw'/>
+      <target dev='sda' bus='sata'/>
+      <readonly/>
+      <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+    </disk>
+    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
+      <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
+    </controller>
+    <controller type='pci' index='0' model='pcie-root'/>
+    <controller type='pci' index='1' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='1' port='0x8'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0' multifunction='on'/>
+    </controller>
+    <controller type='pci' index='2' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='2' port='0x9'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
+    </controller>
+    <controller type='pci' index='3' model='pcie-root-port'>
+      <model name='ioh3420'/>
+      <target chassis='3' port='0xa'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2' multifunction='on'/>
+    </controller>
+    <controller type='pci' index='4' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='4' port='0xb'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x3'/>
+    </controller>
+    <controller type='pci' index='5' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='5' port='0xc'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x4'/>
+    </controller>
+    <controller type='pci' index='6' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='6' port='0xd'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x5'/>
+    </controller>
+    <controller type='pci' index='7' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='7' port='0xe'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x6'/>
+    </controller>
+    <controller type='pci' index='8' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='8' port='0xf'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x7'/>
+    </controller>
+    <controller type='pci' index='9' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='9' port='0x10'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
+    </controller>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
+    </controller>
+    <input type='evdev'>
+      <source dev='/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse'/>
+    </input>
+    <input type='evdev'>
+      <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__A02B2305W052H07682-if03-event-kbd' grab='all' repeat='on'/>
+    </input>
+    <input type='mouse' bus='ps2'/>
+    <input type='keyboard' bus='ps2'/>
+    <input type='mouse' bus='virtio'>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
+    </input>
+    <input type='keyboard' bus='virtio'>
+      <address type='pci' domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
+    </input>
+    <audio id='1' type='none'/>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
+      </source>
+      <boot order='1'/>
+      <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x0'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x1'/>
+      </source>
+      <rom bar='off'/>
+      <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
+    </hostdev>
+    <watchdog model='itco' action='reset'/>
+    <memballoon model='none'/>
+    <rng model='virtio'>
+      <backend model='random'>/dev/urandom</backend>
+      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
+    </rng>
+  </devices>
+  <qemu:commandline>
+    <qemu:arg value='-fw_cfg'/>
+    <qemu:arg value='opt/ovmf/X-PciMmio64Mb,string=65536'/>
+    <qemu:arg value='-audiodev'/>
+    <qemu:arg value='pipewire,id=audio0'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='intel-hda,addr=0x1b'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='hda-duplex,audiodev=audio0'/>
+    <qemu:env name='PIPEWIRE_RUNTIME_DIR' value='/run/user/1000'/>
+    <qemu:env name='PIPEWIRE_LATENCY' value='512/48000'/>
+    <qemu:env name='LD_LIBRARY_PATH' value='$LD_LIBRARY_PATH:/run/current-system/sw/lib/pipewire'/>
+  </qemu:commandline>
+</domain>
+

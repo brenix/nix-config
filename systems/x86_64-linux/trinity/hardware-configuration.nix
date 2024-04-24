@@ -13,9 +13,9 @@
 
   swapDevices = [{device = "/swap/swapfile";}];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = [];
+  boot.initrd.availableKernelModules = ["xhci_pci"];
+  boot.initrd.kernelModules = ["dm-snapshot"];
+  boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

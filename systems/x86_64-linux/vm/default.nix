@@ -4,9 +4,7 @@
     ./disks.nix
   ];
 
-  networking = {
-    hostName = "vm";
-  };
+  networking.hostName = "vm";
 
   profiles = {
     desktop = {

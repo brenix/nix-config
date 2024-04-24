@@ -67,6 +67,21 @@
   };
 
   networking.hostName = "neo";
+  networking.useDHCP = pkgs.lib.mkForce false;
+  networking.useNetworkd = false;
+  systemd.network.enable = true;
+  systemd.network.networks.enp7s0 = {
+    matchConfig = {Name = "enp7s0";};
+    DHCP = "yes";
+    routes = [
+      {
+        routeConfig = {
+          InitialCongestionWindow = 50;
+          InitialAdvertisedReceiveWindow = 50;
+        };
+      }
+    ];
+  };
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
