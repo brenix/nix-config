@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.terminals.foot;
 in {
   options.cli.terminals.foot = with types; {

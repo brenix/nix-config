@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.services.virtualisation.kvm;
 in {
   options.services.virtualisation.kvm = {

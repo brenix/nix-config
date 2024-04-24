@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.system.nix;
 in {
   options.system.nix = with types; {
@@ -27,7 +27,7 @@ in {
     };
 
     home.sessionVariables = {
-      FLAKE = "/home/${config.nixicle.user.name}/nix-config";
+      FLAKE = "/home/${config.matrix.user.name}/nix-config";
     };
 
     nix = {

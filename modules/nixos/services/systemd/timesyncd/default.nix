@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.services.systemd.timesyncd;
 in {
   options.services.systemd.timesyncd = with types; {

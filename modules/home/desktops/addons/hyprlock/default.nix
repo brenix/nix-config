@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.desktops.addons.hyprlock;
   inherit (inputs) hyprlock;
   inherit (config.colorScheme) palette;
@@ -82,7 +82,7 @@ in {
 
       backgrounds = [
         {
-          path = "${pkgs.nixicle.wallpapers.yosemite}";
+          path = "${pkgs.matrix.wallpapers.yosemite}";
         }
       ];
     };

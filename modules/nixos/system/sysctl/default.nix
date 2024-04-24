@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.system.sysctl;
 in {
   options.system.sysctl = with types; {

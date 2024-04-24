@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.profiles.desktop;
 in {
   options.profiles.desktop = {
@@ -24,7 +24,7 @@ in {
     };
 
     services = {
-      nixicle.avahi.enable = true;
+      matrix.avahi.enable = true;
       virtualisation.podman.enable = true;
     };
 

@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.services.ananicy-cpp;
 in {
   options.services.ananicy-cpp = with types; {

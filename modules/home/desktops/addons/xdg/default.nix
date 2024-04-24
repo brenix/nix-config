@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.desktops.addons.xdg;
 in {
   options.desktops.addons.xdg = with types; {

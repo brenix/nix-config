@@ -6,10 +6,10 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
-  cfg = config.nixicle.apps.iterm2;
+with lib.matrix; let
+  cfg = config.matrix.apps.iterm2;
 in {
-  options.nixicle.apps.iterm2 = with types; {
+  options.matrix.apps.iterm2 = with types; {
     enable = mkBoolOpt false "Whether or not to enable iTerm2.";
   };
 

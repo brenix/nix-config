@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.desktops.addons.hyprpaper;
   inherit (inputs) hyprpaper;
 in {
@@ -20,9 +20,9 @@ in {
     services.hyprpaper = {
       enable = true;
       preloads = [
-        "${pkgs.nixicle.wallpapers.yosemite}"
+        "${pkgs.matrix.wallpapers.yosemite}"
       ];
-      wallpapers = [", ${pkgs.nixicle.wallpapers.yosemite}"];
+      wallpapers = [", ${pkgs.matrix.wallpapers.yosemite}"];
     };
   };
 }

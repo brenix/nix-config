@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.programs.openconnect;
 in {
   options.cli.programs.openconnect = with types; {

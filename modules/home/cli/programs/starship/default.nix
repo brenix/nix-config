@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.programs.starship;
 in {
   options.cli.programs.starship = with types; {

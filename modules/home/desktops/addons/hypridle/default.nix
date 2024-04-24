@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.desktops.addons.hypridle;
   inherit (inputs) hypridle;
   hyprlock = "${pkgs.hyprlock}/bin/hyprlock";

@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.programs.k8s;
 in {
   options.cli.programs.k8s = with types; {

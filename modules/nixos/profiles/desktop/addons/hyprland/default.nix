@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.profiles.desktop.addons.hyprland;
 in {
   options.profiles.desktop.addons.hyprland = with types; {

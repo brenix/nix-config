@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.services.systemd.resolved;
 in {
   options.services.systemd.resolved = with types; {

@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.multiplexers.tmux;
 in {
   options.cli.multiplexers.tmux = with types; {

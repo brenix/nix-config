@@ -102,10 +102,10 @@
       inherit inputs;
       src = ./.;
       snowfall = {
-        metadata = "nixicle";
-        namespace = "nixicle";
+        metadata = "matrix";
+        namespace = "matrix";
         meta = {
-          name = "nixicle";
+          name = "matrix";
           title = "brenix's Nix Flake";
         };
       };

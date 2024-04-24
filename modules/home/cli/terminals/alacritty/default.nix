@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.terminals.alacritty;
 in {
   options.cli.terminals.alacritty = with types; {

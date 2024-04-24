@@ -6,10 +6,10 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
-  cfg = config.nixicle.system.input;
+with lib.matrix; let
+  cfg = config.matrix.system.input;
 in {
-  options.nixicle.system.input = with types; {
+  options.matrix.system.input = with types; {
     enable = mkEnableOption "macOS input";
   };
 

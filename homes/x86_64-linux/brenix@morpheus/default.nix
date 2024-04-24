@@ -10,7 +10,7 @@
   desktops.hyprland.enable = true;
   desktops.hyprland.swapCapsEsc = true;
 
-  nixicle.user = {
+  matrix.user = {
     enable = true;
     name = "brenix";
   };

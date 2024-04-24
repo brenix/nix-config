@@ -132,7 +132,7 @@
     };
   };
 
-  nixicle.user = {
+  matrix.user = {
     enable = true;
     name = "nixos";
   };

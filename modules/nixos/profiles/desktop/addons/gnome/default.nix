@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.profiles.desktop.addons.gnome;
 in {
   options.profiles.desktop.addons.gnome = with types; {

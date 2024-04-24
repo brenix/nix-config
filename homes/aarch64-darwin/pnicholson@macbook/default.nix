@@ -1,5 +1,5 @@
 {
-  nixicle.user = {
+  matrix.user = {
     enable = true;
     name = "pnicholson";
   };

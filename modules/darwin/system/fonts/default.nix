@@ -6,10 +6,10 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
-  cfg = config.nixicle.system.fonts;
+with lib.matrix; let
+  cfg = config.matrix.system.fonts;
 in {
-  options.nixicle.system.fonts = with types; {
+  options.matrix.system.fonts = with types; {
     enable = mkBoolOpt false "Whether or not to manage fonts.";
     fonts = mkOpt (listOf package) [] "Custom font packages to install.";
   };

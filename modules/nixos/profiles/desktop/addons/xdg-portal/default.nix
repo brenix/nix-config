@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.profiles.desktop.addons.xdg-portal;
 in {
   options.profiles.desktop.addons.xdg-portal = with types; {

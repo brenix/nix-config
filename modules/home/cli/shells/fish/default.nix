@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.shells.fish;
 in {
   options.cli.shells.fish = with types; {
@@ -57,7 +57,7 @@ in {
         curl = "curlie";
         grep = "rg";
         hmr = "home-manager generations | fzf --tac --no-sort | awk '{print $7}' | xargs -I{} bash {}/activate";
-        hms = "home-manager switch --flake ~/nix-config#${config.nixicle.user.name}@${host}";
+        hms = "home-manager switch --flake ~/nix-config#${config.matrix.user.name}@${host}";
         kdd = "kubectl describe deployment";
         kdno = "kubectl describe node";
         kdp = "kubectl describe pod";

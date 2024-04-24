@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.hardware.wootingKeyboard;
 in {
   options.hardware.wootingKeyboard = with types; {

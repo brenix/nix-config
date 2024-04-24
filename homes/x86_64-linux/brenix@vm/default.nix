@@ -9,7 +9,7 @@
 
   desktops.hyprland.enable = true;
 
-  nixicle.user = {
+  matrix.user = {
     enable = true;
     name = "brenix";
   };

@@ -4,7 +4,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.programs.nh;
 in {
   options.cli.programs.nh = with types; {

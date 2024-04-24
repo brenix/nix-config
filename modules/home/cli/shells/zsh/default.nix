@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.shells.zsh;
 in {
   options.cli.shells.zsh = with types; {

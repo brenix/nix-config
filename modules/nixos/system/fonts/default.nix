@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.system.fonts;
 in {
   options.system.fonts = with types; {
@@ -22,7 +22,7 @@ in {
         [
           (nerdfonts.override {fonts = ["JetBrainsMono"];})
           google-fonts
-          nixicle.monaco
+          matrix.monaco
           noto-fonts-emoji
           terminus_font
         ]

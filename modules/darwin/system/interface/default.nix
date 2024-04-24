@@ -6,10 +6,10 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
-  cfg = config.nixicle.system.interface;
+with lib.matrix; let
+  cfg = config.matrix.system.interface;
 in {
-  options.nixicle.system.interface = with types; {
+  options.matrix.system.interface = with types; {
     enable = mkEnableOption "macOS interface";
   };
 

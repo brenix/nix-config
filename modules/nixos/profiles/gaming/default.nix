@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.profiles.gaming;
 in {
   options.profiles.gaming = with types; {

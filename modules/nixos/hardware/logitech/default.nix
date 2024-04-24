@@ -6,7 +6,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.hardware.logitechMouse;
 in {
   options.hardware.logitechMouse = with types; {

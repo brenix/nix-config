@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.programs.zoxide;
 in {
   options.cli.programs.zoxide = with types; {

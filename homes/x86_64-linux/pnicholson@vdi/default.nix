@@ -7,7 +7,7 @@
     common.enable = true;
   };
 
-  nixicle.user = {
+  matrix.user = {
     enable = true;
     name = "pnicholson";
   };

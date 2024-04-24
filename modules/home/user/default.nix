@@ -4,10 +4,10 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
-  cfg = config.nixicle.user;
+with lib.matrix; let
+  cfg = config.matrix.user;
 in {
-  options.nixicle.user = {
+  options.matrix.user = {
     enable = mkOpt types.bool false "Whether to configure the user account.";
     home = mkOpt (types.nullOr types.str) "/home/${cfg.name}" "The user's home directory.";
     name = mkOpt (types.nullOr types.str) config.snowfallorg.user.name "The user account.";
@@ -18,7 +18,7 @@ in {
       assertions = [
         {
           assertion = cfg.name != null;
-          message = "nixicle.user.name must be set";
+          message = "matrix.user.name must be set";
         }
       ];
 

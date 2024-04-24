@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
+with lib.matrix; let
   cfg = config.cli.programs.nix-ld;
 in {
   options.cli.programs.nix-ld = with types; {

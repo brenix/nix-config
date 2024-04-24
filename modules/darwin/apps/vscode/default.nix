@@ -6,10 +6,10 @@
   ...
 }:
 with lib;
-with lib.nixicle; let
-  cfg = config.nixicle.apps.vscode;
+with lib.matrix; let
+  cfg = config.matrix.apps.vscode;
 in {
-  options.nixicle.apps.vscode = with types; {
+  options.matrix.apps.vscode = with types; {
     enable = mkBoolOpt false "Whether or not to enable vscode.";
   };
 
