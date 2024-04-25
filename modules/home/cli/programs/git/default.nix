@@ -22,7 +22,7 @@ in {
     name = mkOpt (nullOr str) "Paul Nicholson" "The name to use with git.";
     email = mkOpt (nullOr str) "brenix@gmail.com" "The email to use with git.";
     urlRewrites = mkOpt (attrsOf str) {} "url we need to rewrite i.e. ssh to http";
-    allowedSigners = mkOpt str "" "The public key used for signing commits";
+    allowedSigners = mkOpt str "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG++dlRrheRZgVLtzadOWFJgHgEL27t70oUZyLwL1o0F" "The public key used for signing commits";
   };
 
   config = mkIf cfg.enable {

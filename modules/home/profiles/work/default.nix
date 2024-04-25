@@ -12,15 +12,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs = {
-      cli = {
-        go.enable = true;
-        k8s.enable = true;
-        python.enable = true;
-      };
-
-      gh.enable = true;
+    cli.programs = {
+      go.enable = true;
+      k8s.enable = true;
+      python.enable = true;
     };
+
+    programs.gh.enable = true;
 
     home.packages = with pkgs; [
       argocd
