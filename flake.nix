@@ -126,6 +126,10 @@
         nix-ld.nixosModules.nix-ld
         catppuccin.nixosModules.catppuccin
         chaotic.nixosModules.default
+        {
+          # manually import overlay
+          chaotic.nyx.overlay.enable = false;
+        }
       ];
 
       systems.hosts.neo.modules = with inputs; [
@@ -145,11 +149,11 @@
 
       # homes.modules = with inputs; [
       #   impermanence.nixosModules.home-manager.impermanence
-      #   chaotic.homeManagerModules.default
       # ];
 
       overlays = with inputs; [
         nixgl.overlay
+        chaotic.overlays.default
       ];
     };
 }

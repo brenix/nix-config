@@ -14,8 +14,7 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      discord
-      # discord-krisp # FIXME
+      discord-krisp # chaotic-nyx
     ];
   };
 }
