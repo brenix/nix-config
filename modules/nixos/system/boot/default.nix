@@ -63,5 +63,8 @@ in {
     };
 
     services.fwupd.enable = true;
+
+    # Enable cgroups v2
+    systemd.enableUnifiedCgroupHierarchy = true;
   };
 }
