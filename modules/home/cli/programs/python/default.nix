@@ -13,9 +13,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    # TODO: fix error
-    # programs.poetry = {
-    #   enable = true;
-    # };
+    programs.poetry = {
+      enable = true;
+    };
   };
 }

@@ -36,7 +36,6 @@ in {
       nmap
       # ouch
       # packer
-      postgresql
       ripgrep
       sd
       shfmt

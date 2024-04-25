@@ -47,6 +47,7 @@ in {
       enable = true;
       addKeysToAgent = "yes";
       matchBlocks = cfg.extraHosts;
+      includes = ["~/.ssh/conf.local.d/*"];
     };
   };
 }

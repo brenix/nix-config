@@ -9,7 +9,7 @@ with lib.matrix; let
   cfg = config.profiles.gaming;
 in {
   options.profiles.gaming = with types; {
-    enable = mkBoolOpt false "Enable the gaming suite";
+    enable = mkBoolOpt false "Enable the gaming profile";
   };
 
   config = mkIf cfg.enable {

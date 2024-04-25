@@ -8,7 +8,7 @@ with lib; let
   cfg = config.profiles.desktop;
 in {
   options.profiles.desktop = {
-    enable = mkEnableOption "Enable desktop suite";
+    enable = mkEnableOption "Enable desktop profile";
   };
 
   config = mkIf cfg.enable {
