@@ -39,7 +39,7 @@ in {
         };
         git_branch = {
           format = "[\\[$branch\\] ]($style)";
-          style = "purple";
+          style = "lavender";
         };
         git_status = {
           disabled = false;
@@ -68,7 +68,7 @@ in {
         };
         python = {
           format = "[(($virtualenv)) ]($style)";
-          style = "fg:purple bold";
+          style = "fg:lavender bold";
         };
         username = {
           disabled = true;
