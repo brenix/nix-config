@@ -29,8 +29,7 @@ in {
         "SUPER, W" = "killactive,";
         "SUPER_SHIFT, F" = "Fullscreen,0";
         "SUPER, F" = "togglefloating,";
-        "SUPER, V" = "exec, ${pkgs.pyprland}/bin/pypr toggle pavucontrol";
-        "SUPER_SHIFT, T" = "exec, ${pkgs.pyprland}/bin/pypr toggle term";
+        "SUPER, V" = "exec, pavucontrol";
         "SUPER, D" = "exec, firefox";
         "SUPER, S" = "exec, spotify";
         "SUPER_SHIFT, Q" = "exit";
@@ -99,10 +98,10 @@ in {
       bindi = {
         ",XF86MonBrightnessUp" = "exec, ${pkgs.brightnessctl}/bin/brightnessctl +5%";
         ",XF86MonBrightnessDown" = "exec, ${pkgs.brightnessctl}/bin/brightnessctl -5% ";
-        ",XF86AudioRaiseVolume" = "exec, ${pkgs.pamixer}/bin/pamixer -i 5";
-        ",XF86AudioLowerVolume" = "exec, ${pkgs.pamixer}/bin/pamixer -d 5";
-        ",XF86AudioMute" = "exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute";
-        ",XF86AudioMicMute" = "exec, ${pkgs.pamixer}/bin/pamixer --default-source --toggle-mute";
+        ",XF86AudioRaiseVolume" = "exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+";
+        ",XF86AudioLowerVolume" = "exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-";
+        ",XF86AudioMute" = "exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+        ",XF86AudioMicMute" = "exec, wpctl set-mute @DEFAULT_INPUT_SOURCE@ toggle";
         ",XF86AudioNext" = "exec,playerctl next";
         ",XF86AudioPrev" = "exec,playerctl previous";
         ",XF86AudioPlay" = "exec,playerctl play-pause";
