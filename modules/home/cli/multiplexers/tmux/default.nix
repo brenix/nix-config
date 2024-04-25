@@ -29,7 +29,6 @@ in {
         better-mouse-mode
         yank
         tmux-thumbs
-        # must be before continuum edits right status bar
         {
           plugin = catppuccin;
           extraConfig = ''
@@ -53,15 +52,6 @@ in {
             #set -g @catppuccin_status_connect_separator "no"
 
             set -g @catppuccin_directory_text "#{pane_current_path}"
-          '';
-        }
-        {
-          plugin = continuum;
-          extraConfig = ''
-            set -g @continuum-restore 'on'
-            set -g @continuum-boot 'on'
-            set -g @continuum-save-interval '10'
-            set -g @continuum-systemd-start-cmd 'start-server'
           '';
         }
       ];
