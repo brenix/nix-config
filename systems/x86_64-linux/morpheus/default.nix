@@ -7,6 +7,8 @@
   imports = [
     ./hardware-configuration.nix
     ./disks.nix
+
+    ./wireguard.nix
   ];
 
   hardware = {
