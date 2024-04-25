@@ -2,6 +2,7 @@
   inputs,
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib;
@@ -31,6 +32,10 @@ in {
     };
 
     xdg.configFile."hypr".recursive = true;
+
+    home.packages = with pkgs; [
+      wl-clipboard
+    ];
 
     desktops.addons = {
       hyprpaper.enable = true;
