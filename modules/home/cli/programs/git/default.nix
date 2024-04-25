@@ -7,6 +7,7 @@
 with lib;
 with lib.matrix; let
   cfg = config.cli.programs.git;
+  inherit (config.colorscheme) variant;
 
   rewriteURL =
     lib.mapAttrs'
@@ -50,37 +51,81 @@ in {
 
           core = {
             editor = "hx";
-            pager = "delta";
             whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol";
+          };
+
+          format = {
+            pretty = "%C(yellow)%H%Creset %C(magenta)%cd%Creset %d %s %C(green)%an";
           };
 
           color = {
             ui = true;
           };
 
+          color."branch" = {
+            current = "normal reverse";
+            local = "normal";
+            remote = "green";
+          };
+          color."diff" = {
+            meta = "white bold";
+            frag = "magenta bold";
+            old = "red bold";
+            new = "green bold";
+          };
+          color."status" = {
+            added = "green";
+            changed = "magenta";
+            untracked = "white";
+          };
+
           interactive = {
-            diffFitler = "delta --color-only";
+            diffFilter = "delta --color-only";
           };
 
           delta = {
             enable = true;
-            navigate = true;
-            light = false;
+            light =
+              if variant == "light"
+              then true
+              else false;
             side-by-side = false;
-            options.syntax-theme = "catppuccin";
-            options.color-only = true;
+            options = {
+              syntax-theme = "catppuccin";
+              color-only = true;
+              minus-style =
+                if variant == "dark"
+                then "black #9f7777"
+                else "black #ffebe9";
+              minus-emph-style =
+                if variant == "dark"
+                then "black #f7b9b9"
+                else "black #ffc0c0";
+              plus-style =
+                if variant == "dark"
+                then "black #98ad9c"
+                else "black #e6ffec";
+              plus-emph-style =
+                if variant == "dark"
+                then "black #e1ffe6"
+                else "black #abf2bc";
+            };
           };
 
           diff."sopsdiffer" = {textconv = "sops -d";};
 
           pull = {
-            ff = "only";
             rebase = true;
           };
 
           push = {
             default = "current";
             autoSetupRemote = true;
+          };
+
+          fetch = {
+            pruneTags = true;
+            prune = true;
           };
         }
         // rewriteURL;
