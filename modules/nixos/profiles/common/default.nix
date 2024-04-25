@@ -11,10 +11,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    # FIXME
-    # chaotic = {
-    #   nyx.overlay.enable = true;
-    # };
+    networking.firewall.enable = false;
 
     services = {
       ananicy.enable = true;
