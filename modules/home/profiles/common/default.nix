@@ -47,6 +47,10 @@ in {
       };
     };
 
+    programs = {
+      gh.enable = true;
+    };
+
     security = {
       sops.enable = true;
     };

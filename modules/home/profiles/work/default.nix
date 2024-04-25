@@ -18,8 +18,6 @@ in {
       python.enable = true;
     };
 
-    programs.gh.enable = true;
-
     home.packages = with pkgs; [
       argocd
       cilium-cli
