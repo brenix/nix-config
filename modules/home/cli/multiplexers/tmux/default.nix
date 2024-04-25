@@ -74,6 +74,7 @@ in {
         set -ga terminal-overrides ",tmux*:Tc"
         set -ga terminal-overrides ",alacritty*:Tc"
         set -ga terminal-overrides ",st*:Tc"
+        set -ga terminal-overrides ",foot*:Tc"
         set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.local/share/tmux/plugins'
         set-option -g set-titles on
         set-option -g set-titles-string "#S / #W"

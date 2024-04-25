@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }:
@@ -19,8 +20,9 @@ in {
       settings = {
         main = {
           term = "foot";
-          font = "Monaco Nerd Font Mono:size=14; Noto Color Emoji:size=20";
-          line-height = "16px";
+          font = "Monaco Nerd Font Mono:size=14, Noto Color Emoji:size=20";
+          font-bold = "Monaco Nerd Font Mono:size=14:weight=Regular";
+          line-height = "20px";
           shell = "${pkgs.fish}/bin/fish";
           selection-target = "primary";
         };

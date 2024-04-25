@@ -18,7 +18,7 @@ in {
     programs.rofi = {
       enable = true;
       package = cfg.package;
-      terminal = "${pkgs.alacritty}/bin/alacritty";
+      terminal = "${pkgs.foot}/bin/foot";
       # INFO: Cannot overwrite font atm.
       # catppuccin.enable = true;
       font = "Monaco Nerd Font Mono 12";

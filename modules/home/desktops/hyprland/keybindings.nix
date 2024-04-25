@@ -23,8 +23,8 @@ in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.keyBinds = {
       bind = {
-        "SUPER, Return" = "exec, alacritty";
-        "SUPER_SHIFT, Return" = "exec,[floating] alacritty";
+        "SUPER, Return" = "exec, foot";
+        "SUPER_SHIFT, Return" = "exec,[floating] foot";
         "SUPER, Space" = "exec, ${config.desktops.addons.rofi.package}/bin/rofi -show drun -mode drun";
         "SUPER, W" = "killactive,";
         "SUPER_SHIFT, F" = "Fullscreen,0";

@@ -23,6 +23,7 @@ in {
 
         TERM alacritty
         TERM alacritty-direct
+        TERM foot
         TERM ansi
         TERM *color*
         TERM con[0-9]*x[0-9]*

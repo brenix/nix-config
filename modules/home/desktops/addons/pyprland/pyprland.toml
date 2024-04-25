@@ -9,6 +9,6 @@ size = "50% 80%"
 
 [scratchpads.term]
 animation = "fromTop"
-command = "alacritty --class alacritty-dropterm -e yazi"
-class = "alacritty-dropterm"
+command = "foot --class foot-dropterm -e yazi"
+class = "foot-dropterm"
 size = "75% 60%"
