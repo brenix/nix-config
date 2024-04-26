@@ -31,7 +31,7 @@ in {
           "mitigations=off"
           "usbcore.autosuspend=-1"
         ]
-        ++ lib.optionals cfg.plymouth ["quiet"];
+        ++ lib.optionals cfg.plymouth ["quiet" "splash" "loglevel=3" "udev.log_level=0"];
 
       lanzaboote = mkIf cfg.secureBoot {
         enable = true;
@@ -53,7 +53,7 @@ in {
       plymouth = {
         enable = cfg.plymouth;
         theme = "catppuccin-mocha";
-        themePackages = [pkgs.catppuccin-plymouth];
+        themePackages = [(pkgs.catppuccin-plymouth.override {variant = "mocha";})];
       };
 
       tmp = {
