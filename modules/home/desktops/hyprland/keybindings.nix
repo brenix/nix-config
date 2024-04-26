@@ -96,8 +96,8 @@ in {
         "SUPERSHIFT,u" = "movetoworkspace,special";
       };
       bindi = {
-        ",XF86MonBrightnessUp" = "exec, ${pkgs.brightnessctl}/bin/brightnessctl +5%";
-        ",XF86MonBrightnessDown" = "exec, ${pkgs.brightnessctl}/bin/brightnessctl -5% ";
+        ",XF86MonBrightnessUp" = "exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+";
+        ",XF86MonBrightnessDown" = "exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
         ",XF86AudioRaiseVolume" = "exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+";
         ",XF86AudioLowerVolume" = "exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-";
         ",XF86AudioMute" = "exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
