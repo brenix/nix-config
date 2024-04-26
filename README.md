@@ -11,7 +11,7 @@
 
 ## 💽 Usage
 
-### Install over SSH (recommended)
+### Install
 
 To remotely install NixOS onto a target system, I use
 [nixos-anywhere](https://github.com/nix-community/nixos-anywhere/blob/main/docs/howtos/no-os.md).
@@ -62,23 +62,6 @@ To remotely install NixOS onto a target system, I use
 
    ```sh
    $ sudo mkdir -p /mnt/persist/etc/ssh && sudo cp /etc/ssh/ssh_host_ed25519* /mnt/persist/etc/ssh/
-   ```
-
-### Install from ISO
-
-1. Build the ISO
-
-   ```sh
-   $ make iso
-   ```
-
-1. Use `dd` or another tool to write the ISO to a USB stick
-1. Boot the ISO
-1. Update SOPS keys
-1. Run `nix-installer` script and follow prompts
-
-   ```sh
-   [nixos@nixos:~]$ nix-installer
    ```
 
 ### Building

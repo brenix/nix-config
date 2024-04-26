@@ -15,9 +15,8 @@ in {
       enable = true;
       settings = rec {
         default_session = {
-          command = "Hyprland";
-          # TODO: make this configurable using snowfall username
-          user = "brenix";
+          command = "Hyprland &>/dev/null";
+          user = config.user.name;
         };
         initial_session = default_session;
       };

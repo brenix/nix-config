@@ -13,6 +13,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
     programs.hyprland.enable = true;
     profiles.desktop.addons.greetd.enable = true;
     profiles.desktop.addons.xdg-portal.enable = true;
