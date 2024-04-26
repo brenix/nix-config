@@ -105,13 +105,13 @@ in {
           };
           temperature = {
             interval = 1;
-            hwmon-path = [ "/sys/class/hwmon/hwmon4/temp1_input" "/sys/class/hwmon/hwmon1/temp1_input" ];
+            hwmon-path = ["/sys/class/hwmon/hwmon4/temp1_input" "/sys/class/hwmon/hwmon1/temp1_input"];
             tooltip = false;
             thermal-zone = 1;
             critical-threshold = 80;
             format = "{icon} {temperatureC}°C";
             format-critical = "{icon} {temperatureC}°C";
-            format-icons = [ "" "" "" "" "" ];
+            format-icons = ["" "" "" "" ""];
           };
           cpu = {
             interval = 1;
@@ -126,8 +126,8 @@ in {
           network = {
             interval = 1;
             format-wifi = "  {essid}";
-            format-ethernet = "󰈀";
-            format-disconnected = "󱚵";
+            format-ethernet = " 󰈀 ";
+            format-disconnected = " 󱚵 ";
             tooltip-format = ''
               {ifname}
               {ipaddr}/{cidr}
@@ -140,11 +140,11 @@ in {
             scroll-step = 2;
             format = "{icon} {volume}%";
             format-bluetooth = " {icon} {volume}%";
-            format-muted = "";
+            format-muted = "  ";
             format-icons = {
-              headphone = "";
-              headset = "";
-              default = ["" ""];
+              headphone = "  ";
+              headset = "  ";
+              default = ["  " "  "];
             };
           };
           tray = {
