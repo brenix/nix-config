@@ -6,9 +6,9 @@
 }:
 with lib;
 with lib.matrix; let
-  cfg = config.profiles.gaming;
+  cfg = config.roles.gaming;
 in {
-  options.profiles.gaming = with types; {
+  options.roles.gaming = with types; {
     enable = mkBoolOpt false "Enable the gaming profile";
   };
 

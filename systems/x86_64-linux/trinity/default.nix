@@ -12,7 +12,7 @@
     ./restic.nix
   ];
 
-  profiles.common.enable = true;
+  roles.common.enable = true;
 
   networking.hostName = "trinity";
   networking.useDHCP = pkgs.lib.mkForce false;

@@ -5,9 +5,9 @@
   ...
 }:
 with lib; let
-  cfg = config.profiles.work;
+  cfg = config.roles.work;
 in {
-  options.profiles.work = {
+  options.roles.work = {
     enable = mkEnableOption "Enable work profile";
   };
 

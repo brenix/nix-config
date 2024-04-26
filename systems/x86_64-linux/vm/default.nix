@@ -6,7 +6,7 @@
 
   networking.hostName = "vm";
 
-  profiles = {
+  roles = {
     desktop = {
       enable = true;
       addons = {

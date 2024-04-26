@@ -122,7 +122,7 @@ in {
         };
       };
 
-      # TODO: Split these into their own development profiles
+      # TODO: Split these into their own development roles
       languages = with pkgs; {
         language-server = {
           vscode-json-language-server = {

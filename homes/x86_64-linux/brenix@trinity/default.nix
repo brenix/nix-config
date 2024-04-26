@@ -1,5 +1,5 @@
 {
-  profiles = {
+  roles = {
     common.enable = true;
   };
 

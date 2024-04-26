@@ -23,7 +23,7 @@
     '';
   };
 
-  profiles = {
+  roles = {
     desktop = {
       enable = true;
       addons = {

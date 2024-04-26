@@ -1,5 +1,5 @@
 {
-  profiles = {
+  roles = {
     desktop.enable = true;
   };
 

@@ -5,14 +5,14 @@
 }:
 with lib;
 with lib.matrix; let
-  cfg = config.profiles.desktop;
+  cfg = config.roles.desktop;
 in {
-  options.profiles.desktop = {
+  options.roles.desktop = {
     enable = mkEnableOption "Enable desktop configuration";
   };
 
   config = mkIf cfg.enable {
-    profiles = {
+    roles = {
       common.enable = true;
       desktop.addons = {
         nautilus.enable = true;

@@ -4,9 +4,9 @@
   ...
 }:
 with lib; let
-  cfg = config.profiles.desktop.addons.greetd;
+  cfg = config.roles.desktop.addons.greetd;
 in {
-  options.profiles.desktop.addons.greetd = {
+  options.roles.desktop.addons.greetd = {
     enable = mkEnableOption "Enable login greeter";
   };
 

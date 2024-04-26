@@ -6,14 +6,14 @@
 }:
 with lib;
 with lib.matrix; let
-  cfg = config.profiles.desktop.addons.gnome;
+  cfg = config.roles.desktop.addons.gnome;
 in {
-  options.profiles.desktop.addons.gnome = with types; {
+  options.roles.desktop.addons.gnome = with types; {
     enable = mkBoolOpt false "Enable or disable the gnome DE.";
   };
 
   config = mkIf cfg.enable {
-    profiles.desktop.addons.nautilus.enable = true;
+    roles.desktop.addons.nautilus.enable = true;
 
     services = {
       xserver = {

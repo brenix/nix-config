@@ -4,7 +4,7 @@
     name = "pnicholson";
   };
 
-  profiles = {
+  roles = {
     common.enable = true;
   };
 

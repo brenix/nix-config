@@ -4,7 +4,7 @@
     email = "pnicholson@coreweave.com";
   };
 
-  profiles = {
+  roles = {
     common.enable = true;
     work.enable = true;
   };

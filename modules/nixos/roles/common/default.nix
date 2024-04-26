@@ -4,9 +4,9 @@
   ...
 }:
 with lib; let
-  cfg = config.profiles.common;
+  cfg = config.roles.common;
 in {
-  options.profiles.common = {
+  options.roles.common = {
     enable = mkEnableOption "Enable common configuration";
   };
 

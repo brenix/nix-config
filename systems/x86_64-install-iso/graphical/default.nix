@@ -1,7 +1,7 @@
 {lib, ...}: {
   networking.wireless.enable = lib.mkForce false;
 
-  profiles = {
+  roles = {
     desktop.enable = true;
     desktop.addons.gnome.enable = true;
   };

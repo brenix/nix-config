@@ -6,9 +6,9 @@
 }:
 with lib;
 with lib.matrix; let
-  cfg = config.profiles.streaming;
+  cfg = config.roles.streaming;
 in {
-  options.profiles.streaming = with types; {
+  options.roles.streaming = with types; {
     enable = mkBoolOpt false "Whether or not to manage streaming configuration";
   };
 

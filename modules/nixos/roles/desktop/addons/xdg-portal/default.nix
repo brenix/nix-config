@@ -7,9 +7,9 @@
 }:
 with lib;
 with lib.matrix; let
-  cfg = config.profiles.desktop.addons.xdg-portal;
+  cfg = config.roles.desktop.addons.xdg-portal;
 in {
-  options.profiles.desktop.addons.xdg-portal = with types; {
+  options.roles.desktop.addons.xdg-portal = with types; {
     enable = mkBoolOpt false "Whether or not to add support for xdg portal.";
   };
 

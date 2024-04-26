@@ -7,14 +7,14 @@
 }:
 with lib;
 with inputs; let
-  cfg = config.profiles.common;
+  cfg = config.roles.common;
 in {
   imports = [
     catppuccin.homeManagerModules.catppuccin
     nix-colors.homeManagerModule
   ];
 
-  options.profiles.common = {
+  options.roles.common = {
     enable = mkEnableOption "Enable common configuration";
   };
 
