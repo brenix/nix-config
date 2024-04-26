@@ -34,6 +34,7 @@ in {
     xdg.configFile."hypr".recursive = true;
 
     home.packages = with pkgs; [
+      grimblast
       wl-clipboard
     ];
 
