@@ -32,6 +32,13 @@ in {
           "big-parallel"
           "nixos-test"
         ];
+        substituters = [
+          "http://nix-cache.lan"
+          "https://nix-community.cachix.org"
+        ];
+        trusted-public-keys = [
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        ];
       };
       extraOptions = ''
         !include ${config.sops.secrets.nixAccessTokens.path}
