@@ -13,6 +13,8 @@ in {
   config = mkIf cfg.enable {
     networking.firewall.enable = false;
 
+    programs.fish.enable = true;
+
     services = {
       ananicy.enable = true;
       # bpftune.enable = true;

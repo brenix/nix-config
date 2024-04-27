@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }:
@@ -29,6 +30,7 @@ in {
         hashedPassword = "$6$NM641C6TKGPNuZS4$XMSGEVXzzYh9miRoMBGAno9Lo09xw8yUMk8Sot5io/QDncuGsZhuOuwifLEHiD6PYNDzPw81o0my.GIxCRD/11";
         home = "/home/brenix";
         group = "users";
+        shell = pkgs.fish;
         extraGroups =
           [
             "audio"
