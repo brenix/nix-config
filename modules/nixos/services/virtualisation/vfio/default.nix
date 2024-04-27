@@ -153,7 +153,7 @@ in {
 
     # Add qemu-libvirtd to the input group if required
     users.users."qemu-libvirtd" = {
-      extraGroups = optionals (!cfg.qemu.runAsRoot) ["kvm" "input"];
+      extraGroups = optionals (!config.virtualisation.libvirtd.qemu.runAsRoot) ["kvm" "input"];
       isSystemUser = true;
     };
 
