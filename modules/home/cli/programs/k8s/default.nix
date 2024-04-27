@@ -25,6 +25,7 @@ in {
     ];
 
     home.packages = with pkgs; [
+      fluxcd
       (wrapHelm kubernetes-helm {
         plugins = with pkgs.kubernetes-helmPlugins; [
           helm-diff
