@@ -63,7 +63,8 @@ in {
                 '')
               ];
           });
-          runAsRoot = false;
+          # Purposely set runAsRoot to true, as the user/group will be overwritten via the vfio module
+          runAsRoot = true;
           swtpm.enable = true;
           ovmf = {
             enable = true;

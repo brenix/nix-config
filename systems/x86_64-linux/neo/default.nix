@@ -77,7 +77,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
     kernelParams = [
       "preempt=voluntary"
       "intremap=no_x2apic_optout"

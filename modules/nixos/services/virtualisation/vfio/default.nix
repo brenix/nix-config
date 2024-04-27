@@ -36,6 +36,14 @@ in {
         type = types.bool;
         default = true;
       };
+      user = mkOption {
+        type = types.str;
+        default = config.user.name;
+      };
+      group = mkOption {
+        type = types.str;
+        default = "kvm";
+      };
     };
 
     IOMMUType = mkOption {
@@ -151,22 +159,29 @@ in {
         optionals cfg.blacklistNvidia ["nvidia" "nouveau"];
     };
 
-    # Add qemu-libvirtd to the input group if required
-    users.users."qemu-libvirtd" = {
-      extraGroups = optionals (!config.virtualisation.libvirtd.qemu.runAsRoot) ["kvm" "input"];
-      isSystemUser = true;
-    };
-
     environment.systemPackages = with pkgs; [
       virtiofsd
       # looking-glass-client
     ];
 
     virtualisation.libvirtd.qemu.verbatimConfig = ''
+      user = "${cfg.libvirtd.user}"
+      group = "${cfg.libvirtd.group}"
+      namespaces = []
+      security_driver = []
+      security_default_confined = 0
+      seccomp_sandbox = 0
       clear_emulation_capabilities = ${
         boolToZeroOne cfg.libvirtd.clearEmulationCapabilities
       }
       cgroup_device_acl = [
+        "/dev/full",
+        "/dev/kvm",
+        "/dev/null",
+        "/dev/ptmx",
+        "/dev/random",
+        "/dev/urandom",
+        "/dev/zero",
         ${aclString}
       ]
     '';

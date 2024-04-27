@@ -40,7 +40,7 @@ in {
             {
               criteria = "LG Electronics LG ULTRAGEAR 105NTZNA9053";
               position = "2560,0";
-              mode = "2560x1440@144Hz";
+              mode = "2560x1440@143.93Hz";
             }
           ];
         };
