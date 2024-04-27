@@ -114,7 +114,7 @@ Some features of my nix-config:
 | Launcher       |        [Rofi](https://github.com/davatorium/rofi)         |
 | Shell          |              [Fish](https://fishshell.com/)               |
 | Status Bar     |        [Waybar](https://github.com/Alexays/Waybar)        |
-| Terminal       |            [Alacritty](https://alacritty.org)             |
+| Terminal       |          [Foot](https://codeberg.org/dnkl/foot)           |
 | Window Manager |             [Hyprland](https://hyprland.org/)             |
 | Fonts          | [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface)) |
 | Colorscheme    |     [Catppuccin Mocha](https://github.com/catppuccin)     |
