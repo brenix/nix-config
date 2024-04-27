@@ -4,7 +4,7 @@ keys:
     - &brenix age1kky7jzc2x626xp4sfvpz7acytczqgdn7h2jxjqkjxzfd4kndcdxs8zr6ka
   # Hosts
   - &hosts:
-    - &neo age13aug9ksxkwksqjl4ghd8u3cf5c9tseaxtw75s7mpksdes9edfp7qa47044
+    - &neo age1qrduxvns6v5vuanhekjmqtk8lla0f9zz8xu8v3kudx9hjr3ruq6sjxswkn
     - &trinity age1g6hk6frqedn4dlz2l3s06f6jl6f95eqfwk96qvtdws4ctgv60fdqesv664
     - &vm age1d59p9nrrg7dy94q0xsmep77yh84t4zr76l5s99h2nx52etqv859qzzvvd2
     - &morpheus age1rvkgaxf3c9y0ywjnlxrummfq6e09eaz44l3ctnmm0wdn4tzvwspq22yg24

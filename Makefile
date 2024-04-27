@@ -19,7 +19,7 @@ update:
 
 ## Update keys for all secrets
 updatekeys:
-	@fd 'secrets.ya?ml' -x sops updatekeys
+	@fd 'secrets.ya?ml' -x sops updatekeys -y
 
 ## Generate ISO
 iso:
