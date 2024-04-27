@@ -74,13 +74,6 @@
                 vg = "data";
               };
             };
-            primary = {
-              label = "windata";
-              size = "100%";
-              content = {
-                type = "ntfs";
-              };
-            };
           };
         };
       };
