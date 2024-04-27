@@ -121,45 +121,30 @@
     lvm_vg = {
       data = {
         type = "lvm_vg";
-        lvs = {
-          config = {
-            size = "100G";
-            extraArgs = "--stripes 2 --stripesize 256k";
-            content = {
-              type = "filesystem";
-              format = "xfs";
-              mountpoint = "/config";
-              mountOptions = [
-                "defaults"
-                "noatime"
-              ];
-            };
+        media = {
+          size = "800G";
+          extraArgs = "--stripes 2 --stripesize 256k";
+          content = {
+            type = "filesystem";
+            format = "xfs";
+            mountpoint = "/media";
+            mountOptions = [
+              "defaults"
+              "noatime"
+            ];
           };
-          media = {
-            size = "800G";
-            extraArgs = "--stripes 2 --stripesize 256k";
-            content = {
-              type = "filesystem";
-              format = "xfs";
-              mountpoint = "/media";
-              mountOptions = [
-                "defaults"
-                "noatime"
-              ];
-            };
-          };
-          nix-cache = {
-            size = "30G";
-            extraArgs = "--stripes 2 --stripesize 256k";
-            content = {
-              type = "filesystem";
-              format = "xfs";
-              mountpoint = "/var/cache/nginx";
-              mountOptions = [
-                "defaults"
-                "noatime"
-              ];
-            };
+        };
+        nix-cache = {
+          size = "30G";
+          extraArgs = "--stripes 2 --stripesize 256k";
+          content = {
+            type = "filesystem";
+            format = "xfs";
+            mountpoint = "/var/cache/nginx";
+            mountOptions = [
+              "defaults"
+              "noatime"
+            ];
           };
         };
       };

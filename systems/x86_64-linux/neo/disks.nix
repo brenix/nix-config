@@ -129,19 +129,6 @@
               ];
             };
           };
-          work = {
-            size = "20G";
-            content = {
-              type = "filesystem";
-              format = "xfs";
-              mountpoint = "/home/brenix/work";
-              mountOptions = [
-                "defaults"
-                "noatime"
-                "lazytime"
-              ];
-            };
-          };
         };
       };
     };
