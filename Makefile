@@ -1,8 +1,13 @@
 HOSTNAME ?= $(shell hostname)
+USERNAME ?= $(shell whoami)
 
 ## Rebuild NixOS configuration
 nixos:
 	@sudo nixos-rebuild switch --verbose --flake ".#$(HOSTNAME)"
+
+## Rebuild Home-manager configuration
+home:
+	@home-manager switch --flake ".#$(USERNAME)"
 
 ## Update flake and rebuild
 upgrade: update
