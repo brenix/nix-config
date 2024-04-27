@@ -3,8 +3,9 @@
     desktop.enable = true;
   };
 
+  cli.programs.go.enable = true;
+
   programs = {
-    cli.go.enable = true;
     discord.enable = true;
     spotify.enable = true;
     vscode.enable = true;
