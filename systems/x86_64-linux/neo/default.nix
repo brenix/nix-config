@@ -85,8 +85,12 @@
       "nohz_full=8-15,24-31"
       "rcu_nocb_poll"
       "rcu_nocbs=8-15,24-31"
+      "usbcore.autosuspend=-1"
+      "nvme_core.default_ps_max_latency_us=0"
     ];
     extraModprobeConfig = ''
+      options usbhid kbpoll=1
+      options usbhid mousepoll=2
       options kvm halt_poll_ns=0
       options kvm nx_huge_pages=off
       # options kvm_amd avic=1
@@ -95,6 +99,10 @@
       options kvm_amd npt=1
       options vfio_iommu_type1 allow_unsafe_interrupts=1
       options vfio_iommu_type1 disable_hugepages=0
+    '';
+    postBootCommands = ''
+      # Reset GPU
+      echo 1 >/sys/devices/pci0000:00/0000:00:03.2/0000:0e:00.0/reset
     '';
   };
 

@@ -17,6 +17,17 @@ in {
       k9s = {
         enable = true;
         catppuccin.enable = true;
+        settings = {
+          k9s = {
+            skipLatestRevCheck = true;
+            ui = {
+              logoless = true;
+            };
+            logger = {
+              buffer = 200000;
+            };
+          };
+        };
       };
     };
 
