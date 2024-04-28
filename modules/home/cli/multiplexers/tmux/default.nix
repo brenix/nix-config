@@ -45,8 +45,8 @@ in {
             set -g @catppuccin_window_current_text "#W"
 
             set -g @catppuccin_status_modules "application session date_time"
-            set -g @catppuccin_status_left_separator  ""
-            set -g @catppuccin_status_right_separator ""
+            set -g @catppuccin_status_left_separator  "█"
+            set -g @catppuccin_status_right_separator "█"
             set -g @catppuccin_status_right_separator_inverse "no"
             set -g @catppuccin_status_fill "icon"
             #set -g @catppuccin_status_connect_separator "no"
