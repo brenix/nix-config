@@ -26,6 +26,8 @@ in {
       nix.enable = true;
     };
 
+    desktops.addons.xdg.enable = true; # required by catppuccin theme
+
     cli = {
       editors.helix.enable = true;
       multiplexers.tmux.enable = true;
