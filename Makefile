@@ -7,7 +7,7 @@ nixos:
 
 ## Rebuild Home-manager configuration
 home:
-	@home-manager switch --flake ".#$(USERNAME)"
+	@home-manager switch --flake ".#$(USERNAME)@$(HOSTNAME)"
 
 ## Update flake and rebuild
 upgrade: update
