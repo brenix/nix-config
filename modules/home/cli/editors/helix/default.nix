@@ -16,6 +16,7 @@ in {
   config = mkIf cfg.enable {
     home.sessionVariables = {
       EDITOR = "hx";
+      COLORTERM = "truecolor";
     };
 
     home.packages = with pkgs; [
