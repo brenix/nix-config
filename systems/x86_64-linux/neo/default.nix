@@ -39,7 +39,7 @@
         "10de:1aef" # RTX 3080 HD Audio
         "8086:1539" # I211 Gigabit Ethernet
       ];
-      disableEFIfb = true;
+      disableEFIfb = false;
       blacklistNvidia = true;
       ignoreMSRs = true;
       hugepages = {

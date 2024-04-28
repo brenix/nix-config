@@ -134,6 +134,19 @@
             ];
           };
         };
+        openebs = {
+          size = "300G";
+          extraArgs = "--stripes 2 --stripesize 256k";
+          content = {
+            type = "filesystem";
+            format = "xfs";
+            mountpoint = "/var/openebs/local";
+            mountOptions = [
+              "defaults"
+              "noatime"
+            ];
+          };
+        };
         nix-cache = {
           size = "30G";
           extraArgs = "--stripes 2 --stripesize 256k";
