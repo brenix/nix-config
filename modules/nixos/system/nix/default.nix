@@ -33,7 +33,7 @@ in {
           "nixos-test"
         ];
         substituters = [
-          "http://nix-cache.lan"
+          # "http://nix-cache.lan"
           "https://nix-community.cachix.org"
         ];
         trusted-public-keys = [
