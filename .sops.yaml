@@ -5,7 +5,7 @@ keys:
   # Hosts
   - &hosts:
     - &neo age1qrduxvns6v5vuanhekjmqtk8lla0f9zz8xu8v3kudx9hjr3ruq6sjxswkn
-    - &trinity age1g6hk6frqedn4dlz2l3s06f6jl6f95eqfwk96qvtdws4ctgv60fdqesv664
+    - &trinity age1w9440dtna6g6henpvmn5jgelw58fk7ysc5t2jalxk8plepm5qcwq5zllhz
     - &vm age1d59p9nrrg7dy94q0xsmep77yh84t4zr76l5s99h2nx52etqv859qzzvvd2
     - &morpheus age1rvkgaxf3c9y0ywjnlxrummfq6e09eaz44l3ctnmm0wdn4tzvwspq22yg24
 
