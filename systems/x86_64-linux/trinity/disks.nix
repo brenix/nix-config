@@ -66,7 +66,7 @@
         content = {
           type = "gpt";
           partitions = {
-            priimary = {
+            primary = {
               size = "100%";
               content = {
                 type = "lvm_pv";
@@ -83,7 +83,7 @@
         content = {
           type = "gpt";
           partitions = {
-            priimary = {
+            primary = {
               size = "100%";
               content = {
                 type = "lvm_pv";
@@ -100,7 +100,7 @@
         content = {
           type = "gpt";
           partitions = {
-            priimary = {
+            primary = {
               size = "100%";
               content = {
                 type = "filesystem";
@@ -121,43 +121,45 @@
     lvm_vg = {
       data = {
         type = "lvm_vg";
-        media = {
-          size = "800G";
-          extraArgs = "--stripes 2 --stripesize 256k";
-          content = {
-            type = "filesystem";
-            format = "xfs";
-            mountpoint = "/media";
-            mountOptions = [
-              "defaults"
-              "noatime"
-            ];
+        lvs = {
+          media = {
+            size = "800G";
+            extraArgs = ["--stripes 2" "--stripesize 256k"];
+            content = {
+              type = "filesystem";
+              format = "xfs";
+              mountpoint = "/media";
+              mountOptions = [
+                "defaults"
+                "noatime"
+              ];
+            };
           };
-        };
-        openebs = {
-          size = "300G";
-          extraArgs = "--stripes 2 --stripesize 256k";
-          content = {
-            type = "filesystem";
-            format = "xfs";
-            mountpoint = "/var/openebs/local";
-            mountOptions = [
-              "defaults"
-              "noatime"
-            ];
+          openebs = {
+            size = "300G";
+            extraArgs = ["--stripes 2" "--stripesize 256k"];
+            content = {
+              type = "filesystem";
+              format = "xfs";
+              mountpoint = "/var/openebs/local";
+              mountOptions = [
+                "defaults"
+                "noatime"
+              ];
+            };
           };
-        };
-        nix-cache = {
-          size = "30G";
-          extraArgs = "--stripes 2 --stripesize 256k";
-          content = {
-            type = "filesystem";
-            format = "xfs";
-            mountpoint = "/var/cache/nginx";
-            mountOptions = [
-              "defaults"
-              "noatime"
-            ];
+          nix-cache = {
+            size = "30G";
+            extraArgs = ["--stripes 2" "--stripesize 256k"];
+            content = {
+              type = "filesystem";
+              format = "xfs";
+              mountpoint = "/var/cache/nginx";
+              mountOptions = [
+                "defaults"
+                "noatime"
+              ];
+            };
           };
         };
       };

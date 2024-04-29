@@ -26,7 +26,7 @@
 in {
   services.k3s.enable = true;
   services.k3s.configPath = "${k3sConfig}";
-  services.k3s.package = pkgs.k3s_1_30;
+  services.k3s.package = pkgs.k3s_1_29;
 
   services.logind.extraConfig = ''
     InhibitDelayMaxSec=60s

@@ -66,7 +66,7 @@
         content = {
           type = "gpt";
           partitions = {
-            priimary = {
+            primary = {
               label = "linux";
               size = "250G";
               content = {
