@@ -24,7 +24,7 @@ in {
         PermitRootLogin =
           if format == "install-iso"
           then "yes"
-          else "no";
+          else "without-password";
         StreamLocalBindUnlink = "yes";
         GatewayPorts = "clientspecified";
       };
