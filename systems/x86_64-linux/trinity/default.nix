@@ -33,6 +33,9 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+
+    # Workaround UEFI issues
+    loader.systemd-boot.graceful = true;
   };
 
   system.stateVersion = "23.11";
