@@ -17,6 +17,7 @@ in {
       enable = true;
       catppuccin.enable = true;
       font = "Terminus 12";
+      defaultTimeout = 30000;
     };
 
     home.packages = with pkgs; [
