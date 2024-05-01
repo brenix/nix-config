@@ -22,7 +22,7 @@ in {
       keyMode = "vi";
       prefix = "C-x";
       sensibleOnTop = true;
-      mouse = true;
+      mouse = false;
       baseIndex = 1;
 
       plugins = with pkgs.tmuxPlugins; [
@@ -73,7 +73,7 @@ in {
         # Open new split at cwd of current split
         unbind %
         unbind '"'
-        bind v split-window -h -c "#{pane_current_path}"
+        bind | split-window -h -c "#{pane_current_path}"
         bind - split-window -v -c "#{pane_current_path}"
 
         # Layout

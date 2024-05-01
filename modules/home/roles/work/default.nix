@@ -15,7 +15,6 @@ in {
     cli.programs = {
       go.enable = true;
       k8s.enable = true;
-      python.enable = true;
     };
 
     home.packages = with pkgs; [
