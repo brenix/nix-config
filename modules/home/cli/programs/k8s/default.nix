@@ -51,6 +51,8 @@ in {
       kubectl
       kubelogin
       kubelogin-oidc
+      # minikube
+      # docker-machine-kvm2
       stern
       # kustomize
       # talosctl
