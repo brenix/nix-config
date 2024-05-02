@@ -19,9 +19,10 @@ in {
 
     home.packages = with pkgs; [
       argocd
-      cilium-cli
       cfssl
+      cilium-cli
       doppler
+      jira-cli-go
       kubevirt
       postgresql
       pre-commit
