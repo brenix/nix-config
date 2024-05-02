@@ -20,9 +20,9 @@ in {
     services.hyprpaper = {
       enable = true;
       preloads = [
-        "${pkgs.matrix.wallpapers.yosemite}"
+        "${pkgs.matrix.wallpapers.pattern-01}"
       ];
-      wallpapers = [", ${pkgs.matrix.wallpapers.yosemite}"];
+      wallpapers = [", ${pkgs.matrix.wallpapers.pattern-01}"];
     };
   };
 }

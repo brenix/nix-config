@@ -82,7 +82,7 @@ in {
 
       backgrounds = [
         {
-          path = "${pkgs.matrix.wallpapers.yosemite}";
+          path = "${pkgs.matrix.wallpapers.pattern-01}";
         }
       ];
     };
