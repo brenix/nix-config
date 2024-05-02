@@ -20,6 +20,7 @@ in {
     home.packages = with pkgs; [
       argocd
       cilium-cli
+      cfssl
       doppler
       kubevirt
       postgresql
