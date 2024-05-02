@@ -43,6 +43,7 @@ in {
         kubectl = "kubecolor";
         l = "ls --format=vertical";
         la = "ls -A --format=vertical";
+        mkdir = "mkdir -p";
         mv = "mv -iv";
         rm = "rm -I";
         sw = "git switch";
