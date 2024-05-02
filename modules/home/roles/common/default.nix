@@ -40,6 +40,7 @@ in {
         direnv.enable = true;
         fzf.enable = true;
         git.enable = true;
+        htop.enable = true;
         k8s.enable = true;
         nix-index.enable = true;
         ssh.enable = true;

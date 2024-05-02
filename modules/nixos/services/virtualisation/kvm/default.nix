@@ -21,9 +21,11 @@ in {
       virt-viewer
     ];
 
-    environment.persist.directories = [
-      "/var/lib/libvirt"
-    ];
+    environment.persistence."/persist" = {
+      directories = [
+        "/var/lib/libvirt"
+      ];
+    };
 
     virtualisation = {
       spiceUSBRedirection.enable = true;

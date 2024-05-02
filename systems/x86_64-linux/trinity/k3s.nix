@@ -62,8 +62,10 @@ in {
     };
   };
 
-  environment.persist.directories = [
-    # "/var/openebs" # not needed as volume is mounted
-    "/var/lib/rancher"
-  ];
+  environment.persistence."/persist" = {
+    directories = [
+      # "/var/openebs" # not needed as volume is mounted
+      "/var/lib/rancher"
+    ];
+  };
 }

@@ -12,24 +12,7 @@ in {
     enable = mkBoolOpt false "Enable impermanence";
   };
 
-  options.environment = with types; {
-    persist =
-      mkOpt attrs
-      {
-        directories = [
-          "/var/lib/systemd"
-          "/var/lib/nixos"
-          "/var/log"
-        ];
-        files = [
-          "/etc/machine-id"
-          "/etc/ssh/ssh_host_ed25519_key"
-          "/etc/ssh/ssh_host_ed25519_key.pub"
-        ];
-      } "Files and directories to persist";
-  };
-
-  config = {
+  config = mkIf cfg.enable {
     boot.initrd.postDeviceCommands = mkIf cfg.enable (lib.mkAfter ''
       mkdir /mnt
       mount -t btrfs -o subvol=/ /dev/disk/by-label/nixos /mnt
@@ -44,6 +27,17 @@ in {
       umount /mnt
     '');
 
-    environment.persistence."/persist" = mkIf cfg.enable (mkAliasDefinitions options.environment.persist);
+    environment.persistence."/persist" = {
+      directories = [
+        "/var/lib/systemd"
+        "/var/lib/nixos"
+        "/var/log"
+      ];
+      files = [
+        "/etc/machine-id"
+        "/etc/ssh/ssh_host_ed25519_key"
+        "/etc/ssh/ssh_host_ed25519_key.pub"
+      ];
+    };
   };
 }
