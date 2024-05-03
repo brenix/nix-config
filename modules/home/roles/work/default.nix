@@ -27,6 +27,7 @@ in {
       postgresql
       pre-commit
       shellcheck-minimal
+      sshpass
       vcluster
       yamllint
     ];
