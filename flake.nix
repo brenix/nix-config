@@ -8,6 +8,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nur.url = "github:nix-community/NUR";
+
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -135,6 +137,7 @@
       overlays = with inputs; [
         nixgl.overlay
         chaotic.overlays.default
+        nur.overlay
       ];
     };
 }

@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 with lib; let
@@ -11,10 +12,25 @@ in {
   };
 
   config = mkIf cfg.enable {
+    xdg.mimeApps.defaultApplications = {
+      "text/html" = ["firefox.desktop"];
+      "text/xml" = ["firefox.desktop"];
+      "x-scheme-handler/http" = ["firefox.desktop"];
+      "x-scheme-handler/https" = ["firefox.desktop"];
+    };
+
     programs.firefox = {
       enable = true;
       profiles.default = {
         name = "Default";
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          # bitwarden
+          decentraleyes
+          istilldontcareaboutcookies
+          linkding-extension
+          onepassword-password-manager
+          ublock-origin-lite
+        ];
         settings = {
           "browser.aboutConfig.showWarning" = false;
           "browser.compactmode.show" = true;
