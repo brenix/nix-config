@@ -3,10 +3,11 @@
   config,
   ...
 }:
-with lib; let
-  cfg = config.browsers.firefox;
+with lib;
+with lib.matrix; let
+  cfg = config.matrix.apps.firefox;
 in {
-  options.browsers.firefox = {
+  options.matrix.apps.firefox = {
     enable = mkEnableOption "enable firefox browser";
   };
 
