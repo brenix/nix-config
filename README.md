@@ -9,7 +9,7 @@
 </h4>
 </div>
 
-## 💽 Usage
+## Usage
 
 ### Install
 
@@ -66,22 +66,63 @@ To remotely install NixOS onto a target system, I use
 
 ### Building
 
-To build my nix-config for a specific host you can do something like:
+I use a Makefile to simplify running of some commands
+
+#### NixOS
+
+**Make Target**:
 
 ```sh
-git clone git@github.com:brenix/nix-config.git ~/nix-config/
-cd nix-config
-
-nix develop
-
-# To build system configuration
-sudo nixos-rebuild switch --flake .#framework
-
-# To build user configuration
-home-manager switch --flake .#haseeb@framework
+make nixos
 ```
 
-## 🚀 Features
+**CLI**:
+
+```sh
+sudo nixos-rebuild switch --verbose --flake ".#hostname"
+```
+
+#### Home-Manager Only
+
+**Make Target**:
+
+```sh
+make home
+```
+
+**CLI**:
+
+```sh
+home-manager switch --flake ".#username@hostname"
+```
+
+**Bootstrap**:
+
+```sh
+nix run home-manager -- switch --flake ".#username@hostname"
+```
+
+#### Darwin
+
+**Make Target**:
+
+```sh
+make nixos
+```
+
+**CLI**:
+
+```sh
+darwin-rebuild switch --verbose --flake ".#macbook"
+```
+
+**Bootstrap**:
+
+```sh
+nix run darwin-rebuild -- switch --flake ".#macbook"
+```
+
+## Features
 
 Some features of my nix-config:
 
@@ -94,7 +135,7 @@ Some features of my nix-config:
 - Custom live media **ISO**, with an **"automated" install** script
 - Supports **vfio** for playing games on Windows
 
-## 🏠 Hosts
+## Hosts
 
 - `neo`: My primary desktop computer
 - `morpheus`: Framework 13th gen laptop
@@ -103,7 +144,7 @@ Some features of my nix-config:
 - `vm`: Qemu VM for testing
 - `iso`: Builds custom installer ISO
 
-## 📱 Applications
+## Applications
 
 | Type           |                          Program                          |
 | :------------- | :-------------------------------------------------------: |
@@ -118,10 +159,6 @@ Some features of my nix-config:
 | Window Manager |             [Hyprland](https://hyprland.org/)             |
 | Fonts          | [Monaco](https://en.wikipedia.org/wiki/Monaco_(typeface)) |
 | Colorscheme    |     [Catppuccin Mocha](https://github.com/catppuccin)     |
-
-## 🖼️ Showcase
-
-WIP
 
 ## Acknowledgements
 
