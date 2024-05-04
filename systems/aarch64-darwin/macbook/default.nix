@@ -11,6 +11,7 @@
   matrix = {
     apps = {
       iterm2.enable = true;
+      mindnode.enable = true;
       vscode.enable = true;
     };
 
