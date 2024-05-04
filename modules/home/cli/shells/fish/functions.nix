@@ -104,7 +104,7 @@
       echo "please install fzf: github.com/junegunn/fzf" >&2
       return 1
     end
-    set selected (find $HOME/.kube -maxdepth 1 \( -type f -o -type l \) -exec basename {} \; | fzf -0 -1 --reverse)
+    set selected (find $HOME/.kube -maxdepth 1 \( -type f -o -type l -not -name '.*' \) -exec basename {} \; | fzf -0 -1 --reverse)
     if not test -z $selected
       set -x KUBECONFIG $HOME/.kube/$selected
     end
