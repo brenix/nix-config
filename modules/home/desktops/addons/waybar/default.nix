@@ -125,9 +125,9 @@ in {
           };
           network = {
             interval = 1;
-            format-wifi = "  {essid}";
-            format-ethernet = " 󰈀 ";
-            format-disconnected = " 󱚵 ";
+            format-wifi = " {essid}";
+            format-ethernet = " 󰈀  Wired";
+            format-disconnected = " 󱚵  Disconnected";
             tooltip-format = ''
               {ifname}
               {ipaddr}/{cidr}
