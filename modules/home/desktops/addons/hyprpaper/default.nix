@@ -20,9 +20,9 @@ in {
     services.hyprpaper = {
       enable = true;
       preloads = [
-        "${pkgs.matrix.wallpapers.pattern-01}"
+        "${pkgs.matrix.wallpapers.nix-catppuccin}"
       ];
-      wallpapers = [", ${pkgs.matrix.wallpapers.pattern-01}"];
+      wallpapers = [", ${pkgs.matrix.wallpapers.nix-catppuccin}"];
     };
   };
 }
