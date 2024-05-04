@@ -1,17 +1,28 @@
-{
+{pkgs, ...}: {
   environment.systemPath = [
     "/opt/homebrew/bin"
   ];
 
   programs.fish.enable = true;
+  environment.shells = [pkgs.fish];
+
   services.nix-daemon.enable = true;
 
   matrix = {
-    services.netskopeBundler.enable = true;
+    apps = {
+      iterm2.enable = true;
+      vscode.enable = true;
+    };
+
+    services = {
+      netskopeBundler.enable = true;
+    };
+
     system = {
       input.enable = true;
       fonts.enable = true;
       interface.enable = true;
+      security.enable = true;
     };
   };
 
