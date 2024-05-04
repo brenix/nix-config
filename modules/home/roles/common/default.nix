@@ -21,12 +21,11 @@ in {
   config = mkIf cfg.enable {
     colorscheme = nix-colors.colorSchemes.catppuccin-mocha;
     catppuccin.flavour = "mocha";
+    xdg.enable = true; # required by catppuccin module
 
     system = {
       nix.enable = true;
     };
-
-    desktops.addons.xdg.enable = true; # required by catppuccin theme
 
     cli = {
       editors.helix.enable = true;
@@ -45,7 +44,7 @@ in {
         nix-index.enable = true;
         ssh.enable = true;
         starship.enable = true;
-        yazi.enable = true;
+        yazi.enable = false;
         zoxide.enable = true;
       };
     };

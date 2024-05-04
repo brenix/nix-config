@@ -1,9 +1,14 @@
 HOSTNAME ?= $(shell hostname)
 USERNAME ?= $(shell whoami)
+UNAME := $(shell uname)
 
 ## Rebuild NixOS configuration
 nixos:
+ifeq ($(UNAME), Darwin)
+	@darwin-rebuild switch --verbose --flake ".#macbook"
+else
 	@sudo nixos-rebuild switch --verbose --flake ".#$(HOSTNAME)"
+endif
 
 ## Rebuild Home-manager configuration
 home:

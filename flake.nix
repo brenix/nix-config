@@ -109,6 +109,10 @@
         }
       ];
 
+      systems.modules.darwin = with inputs; [
+        home-manager.darwinModules.home-manager
+      ];
+
       systems.hosts.neo.modules = with inputs; [
         hardware.nixosModules.common-cpu-amd
         hardware.nixosModules.common-gpu-amd

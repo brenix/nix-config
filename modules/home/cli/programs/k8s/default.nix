@@ -31,9 +31,15 @@ in {
       };
     };
 
-    systemd.user.tmpfiles.rules = [
-      "d %h/.kube 0700"
-    ];
+    home.file.".kube/.keep" = {
+      text = ''
+      '';
+    };
+
+    # NOTE: Is not OS agnostic
+    # systemd.user.tmpfiles.rules = [
+    #   "d %h/.kube 0700"
+    # ];
 
     home.packages = with pkgs; [
       fluxcd

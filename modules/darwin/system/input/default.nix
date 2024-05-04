@@ -22,10 +22,6 @@ in {
         };
 
         defaults = {
-          ".GlobalPreferences" = {
-            "com.apple.mouse.scaling" = "1";
-          };
-
           NSGlobalDomain = {
             AppleKeyboardUIMode = 3;
             ApplePressAndHoldEnabled = false;

@@ -2,14 +2,11 @@
   matrix.user = {
     enable = true;
     name = "pnicholson";
+    home = "/Users/pnicholson";
   };
 
   roles = {
     common.enable = true;
-  };
-
-  programs = {
-    cli.go.enable = true;
   };
 
   home.sessionPath = [
