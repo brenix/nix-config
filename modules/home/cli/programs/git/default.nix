@@ -37,6 +37,12 @@ in {
       enable = true;
       userName = cfg.name;
       userEmail = cfg.email;
+      includes = [
+        {
+          path = "~/work/.gitconfig";
+          condition = "gitdir:~/work/";
+        }
+      ];
       extraConfig =
         {
           apply = {whitespace = "strip";};

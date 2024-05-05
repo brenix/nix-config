@@ -39,7 +39,7 @@ in {
   config = mkIf cfg.enable {
     programs.keychain = {
       enable = true;
-      keys = ["id_ed25519"];
+      keys = ["id_ed25519" "id_ed25519_work"];
       agents = ["ssh"];
     };
 
