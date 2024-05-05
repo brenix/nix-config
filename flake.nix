@@ -72,11 +72,6 @@
     hyprland-nix.inputs.hyprland.follows = "hyprland-git";
     hyprland-nix.inputs.hyprland-xdph.follows = "hyprland-xdph-git";
     hyprland-nix.inputs.hyprland-protocols.follows = "hyprland-protocols-git";
-
-    waybar.url = "github:Alexays/Waybar?rev=32eac3ccb738691974121b77b4af0c47d1cbe524";
-
-    firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
-    firefox-gnome-theme.flake = false;
   };
 
   outputs = inputs:
