@@ -33,6 +33,7 @@ in {
       shells.fish.enable = true;
 
       programs = {
+        atuin.enable = true;
         bat.enable = true;
         common.enable = true;
         dircolors.enable = true;
