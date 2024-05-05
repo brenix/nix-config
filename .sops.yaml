@@ -2,6 +2,7 @@ keys:
   # Users
   - &users:
     - &brenix age1kky7jzc2x626xp4sfvpz7acytczqgdn7h2jxjqkjxzfd4kndcdxs8zr6ka
+    - &brenix-ssh age1z0l70szylsym8705q0jrjkt38trxh9dp6pqx9xat7syj797zr3hqmhacka
     - &pnicholson age13y24rlj2fehralwlexshgsv47q8e5uk03p9qk9qd42n7ccvd2ghqd5q5ry
     - &pnicholson-ssh age1mkc7mqjwtgu4lfrr3ljvshyev2l2vl5hwsyfk6fdaf75wd03rydqsvqg94
   # Hosts
@@ -17,6 +18,7 @@ creation_rules:
     key_groups:
       - age:
           - *brenix
+          - *brenix-ssh
           - *pnicholson
           - *pnicholson-1
           - *pnicholson-ssh
