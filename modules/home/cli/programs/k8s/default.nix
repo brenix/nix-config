@@ -21,6 +21,7 @@ in {
           k9s = {
             skipLatestRevCheck = true;
             ui = {
+              headless = true;
               logoless = true;
             };
             logger = {
