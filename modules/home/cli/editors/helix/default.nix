@@ -155,7 +155,7 @@ in {
               # taskfile
               "http://json.schemastore.org/taskfile.json" = "Taskfile*.{yml,yaml}";
               # kubernetes
-              "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.30.0/all.json" = "/*.yaml";
+              # "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.30.0/all.json" = "/*.yaml";
               # github workflow
               "http://json.schemastore.org/github-workflow" = ".github/workflows/*";
               # github actions
