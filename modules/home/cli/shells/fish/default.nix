@@ -41,8 +41,7 @@ in {
         gsh = "git show --format=raw -m";
         grhh = "git reset --hard HEAD";
         kubectl = "kubecolor";
-        l = "ls --format=vertical";
-        la = "ls -A --format=vertical";
+        l = "ls -A --format=vertical";
         mkdir = "mkdir -p";
         mv = "mv -iv";
         rm = "rm -I";
