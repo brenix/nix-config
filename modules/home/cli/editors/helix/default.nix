@@ -45,7 +45,10 @@ in {
           undercurl = true;
           color-modes = true;
           line-number = "absolute";
-          indent-guides.render = true;
+          indent-guides = {
+            render = true;
+            rainbow-option = "dim";
+          };
           soft-wrap = {enable = false;};
           cursor-shape = {
             normal = "block";
@@ -76,7 +79,7 @@ in {
             ];
             right = [
               "diagnostics"
-              "position"
+              "position-percentage"
               "file-type"
             ];
             mode = {

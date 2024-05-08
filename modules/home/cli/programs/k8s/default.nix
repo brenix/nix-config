@@ -19,10 +19,14 @@ in {
         catppuccin.enable = true;
         settings = {
           k9s = {
+            liveViewAutoRefresh = true;
+            refreshRate = 1;
+            maxConnRetry = 3;
             skipLatestRevCheck = true;
             ui = {
               headless = true;
               logoless = true;
+              enableMouse = true;
             };
             logger = {
               buffer = 200000;
