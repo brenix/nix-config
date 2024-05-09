@@ -65,7 +65,7 @@ in {
       # minikube
       # docker-machine-kvm2
       stern
-      # kustomize
+      kustomize
       # talosctl
       # trivy
     ];
