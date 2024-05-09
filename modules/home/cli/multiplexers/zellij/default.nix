@@ -28,7 +28,8 @@ in {
         auto_layouts = true;
         default_layout = "compact";
         on_force_close = "quit";
-        pane_frames = true;
+        pane_frames = false;
+        mouse_mode = false;
         pane_viewport_serialization = true;
         scrollback_lines_to_serialize = 1000;
         session_serialization = true;
@@ -36,6 +37,17 @@ in {
         ui.pane_frames = {
           rounded_corners = true;
           hide_session_name = true;
+        };
+
+        keybinds = {
+          normal = {
+            "bind \"Alt v\"" = {
+              ToggleActiveSyncTab = [];
+            };
+            "bind \"Alt d\"" = {
+              Detach = [];
+            };
+          };
         };
 
         # load internal plugins from built-in paths
