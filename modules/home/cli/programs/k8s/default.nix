@@ -20,7 +20,7 @@ in {
         settings = {
           k9s = {
             liveViewAutoRefresh = true;
-            refreshRate = 1;
+            refreshRate = 2;
             maxConnRetry = 3;
             skipLatestRevCheck = true;
             ui = {
