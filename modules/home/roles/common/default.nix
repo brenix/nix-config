@@ -29,7 +29,7 @@ in {
 
     cli = {
       editors.helix.enable = true;
-      multiplexers.tmux.enable = true;
+      multiplexers.zellij.enable = true;
       shells.fish.enable = true;
 
       programs = {

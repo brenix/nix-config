@@ -26,6 +26,7 @@ in {
           else "";
 
         auto_layouts = true;
+        default_layout = "compact";
         on_force_close = "quit";
         pane_frames = true;
         pane_viewport_serialization = true;
