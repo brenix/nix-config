@@ -98,20 +98,6 @@ in {
           name = "bass";
           inherit (pkgs.fishPlugins.bass) src;
         }
-        {
-          name = "fzf-fish";
-          inherit (pkgs.fishPlugins.fzf-fish) src;
-        }
-        {
-          name = "nix.fish";
-          # TODO: Remove once merged upstream: https://github.com/kidonng/nix.fish/pull/2
-          src = pkgs.fetchFromGitHub {
-            owner = "Animeshz";
-            repo = "nix.fish";
-            rev = "a3256cf49846ee4de072c3a9af7a58aad4021693";
-            sha256 = "sha256-3M0dU30SrdjInp6MWEC0q7MTInrZNtY6Z9mhBw43PKs=";
-          };
-        }
       ];
 
       functions = import ./functions.nix;

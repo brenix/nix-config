@@ -14,7 +14,6 @@ in {
   config = mkIf cfg.enable {
     programs.fzf = {
       enable = true;
-      enableFishIntegration = false;
       catppuccin.enable = true;
     };
   };

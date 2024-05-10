@@ -18,13 +18,6 @@ in {
       catppuccin.enable = true;
 
       settings = {
-        copy_command =
-          if pkgs.stdenv.isLinux
-          then "wl-copy"
-          else if pkgs.stdenv.isDarwin
-          then "pbcopy"
-          else "";
-
         auto_layouts = true;
         default_layout = "compact";
         on_force_close = "quit";
