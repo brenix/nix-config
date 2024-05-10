@@ -33,6 +33,7 @@ in {
         };
 
         keybinds = {
+          unbind = "Ctrl h";
           normal = {
             "bind \"Alt v\"" = {
               ToggleActiveSyncTab = [];
