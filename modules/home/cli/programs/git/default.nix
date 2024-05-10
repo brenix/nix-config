@@ -150,35 +150,5 @@ in {
       default = git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
       reset = git reset --hard HEAD && git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git clean -d -f
     '';
-
-    programs.lazygit = {
-      enable = true;
-      catppuccin.enable = true;
-      settings = {
-        git = {
-          paging = {
-            colorArg = "always";
-            pager = "delta --color-only --dark --paging=never";
-            useConfig = false;
-          };
-        };
-        customCommands = [
-          {
-            key = "W";
-            command = "git commit -m '{{index .PromptResponses 0}}' --no-verify";
-            description = "commit without verification";
-            context = "global";
-            subprocess = true;
-          }
-          {
-            key = "S";
-            command = "git commit -m '{{index .PromptResponses 0}}' --no-gpg-sign";
-            description = "commit without gpg signing";
-            context = "global";
-            subprocess = true;
-          }
-        ];
-      };
-    };
   };
 }
