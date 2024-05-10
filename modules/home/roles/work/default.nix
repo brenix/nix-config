@@ -23,7 +23,6 @@ in {
       cilium-cli
       doppler
       jira-cli-go
-      kubevirt
       postgresql
       pre-commit
       shellcheck-minimal

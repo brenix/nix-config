@@ -61,6 +61,7 @@ in {
       kubecolor
       kubectl
       kubelogin
+      kubevirt
       kubelogin-oidc
       # minikube
       # docker-machine-kvm2
