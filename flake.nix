@@ -59,12 +59,6 @@
     hypridle.url = "github:hyprwm/Hypridle";
     hypridle.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprlock.url = "github:hyprwm/Hyprlock";
-    hyprlock.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprpaper.url = "github:hyprwm/hyprpaper";
-    hyprpaper.inputs.nixpkgs.follows = "nixpkgs";
-
     pyprland.url = "github:hyprland-community/pyprland";
     pyprland.inputs.nixpkgs.follows = "nixpkgs";
 

@@ -20,31 +20,50 @@ in {
       enable = true;
       package = pkgs.kanshi;
       systemdTarget = "";
-      profiles = {
-        framework = {
-          outputs = [
+      settings = [
+        {
+          profile.name = "framework";
+          profile.outputs = [
             {
               criteria = "eDP-1";
               scale = 1.0;
               status = "enable";
             }
           ];
-        };
-        desktop = {
-          outputs = [
+        }
+        {
+          profile.name = "dual";
+          profile.outputs = [
             {
               criteria = "LG Electronics LG ULTRAGEAR 105NTSUA9054";
               position = "0,0";
               mode = "2560x1440@165Hz";
+              status = "enable";
             }
             {
               criteria = "LG Electronics LG ULTRAGEAR 105NTZNA9053";
               position = "2560,0";
               mode = "2560x1440@143.93Hz";
+              status = "enable";
             }
           ];
-        };
-      };
+        }
+        {
+          profile.name = "single";
+          profile.outputs = [
+            {
+              criteria = "LG Electronics LG ULTRAGEAR 105NTSUA9054";
+              position = "0,0";
+              mode = "2560x1440@165Hz";
+              status = "enable";
+            }
+            {
+              criteria = "LG Electronics LG ULTRAGEAR 105NTZNA9053";
+              status = "disable";
+            }
+          ];
+        }
+      ];
     };
   };
 }
