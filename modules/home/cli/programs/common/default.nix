@@ -13,6 +13,28 @@ in {
   };
 
   config = mkIf cfg.enable {
+    programs.ripgrep = {
+      enable = true;
+      arguments = [
+        "--max-columns=150"
+        "--max-columns-preview"
+        "--glob=!.git/*"
+        "--smart-case"
+      ];
+    };
+
+    programs.fd = {
+      enable = true;
+      hidden = true;
+      extraOptions = [
+        "--no-ignore"
+        "--absolute-path"
+      ];
+      ignores = [
+        ".git/"
+      ];
+    };
+
     home.packages = with pkgs; [
       age
       # awscli2
@@ -20,7 +42,6 @@ in {
       curlie
       dig
       dysk
-      fd
       gcc
       gettext
       gnumake
@@ -36,7 +57,6 @@ in {
       nmap
       # ouch
       # packer
-      ripgrep
       sd
       shfmt
       unrar
