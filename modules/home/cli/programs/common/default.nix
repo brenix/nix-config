@@ -28,7 +28,6 @@ in {
       hidden = true;
       extraOptions = [
         "--no-ignore"
-        "--absolute-path"
       ];
       ignores = [
         ".git/"
