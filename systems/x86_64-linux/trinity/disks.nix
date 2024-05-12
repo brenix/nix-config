@@ -3,7 +3,7 @@
     disk = {
       disk0 = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-Samsung_SSD_840_PRO_Series_S1ANNSAF710885R";
+        device = "/dev/disk/by-id/ata-Corsair_Force_GT_122579040000150203D8";
         content = {
           type = "gpt";
           partitions = {
@@ -93,29 +93,6 @@
           };
         };
       };
-
-      disk3 = {
-        type = "disk";
-        device = "/dev/disk/by-id/ata-Corsair_Force_GT_122579040000150203D8";
-        content = {
-          type = "gpt";
-          partitions = {
-            primary = {
-              size = "100%";
-              content = {
-                type = "filesystem";
-                format = "xfs";
-                mountpoint = "/var/lib/rancher/k3s/agent/containerd";
-                mountOptions = [
-                  "defaults"
-                  "noatime"
-                  "lazytime"
-                ];
-              };
-            };
-          };
-        };
-      };
     };
 
     lvm_vg = {
@@ -158,6 +135,20 @@
               mountOptions = [
                 "defaults"
                 "noatime"
+              ];
+            };
+          };
+          containerd = {
+            size = "100G";
+            extraArgs = ["--stripes 2" "--stripesize 256k"];
+            content = {
+              type = "filesystem";
+              format = "xfs";
+              mountpoint = "/var/lib/rancher/k3s/agent/containerd";
+              mountOptions = [
+                "defaults"
+                "noatime"
+                "lazytime"
               ];
             };
           };

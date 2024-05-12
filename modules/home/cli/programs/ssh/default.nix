@@ -46,7 +46,6 @@ in {
     programs.ssh = {
       enable = true;
       addKeysToAgent = "yes";
-      controlMaster = "yes";
       matchBlocks = cfg.extraHosts;
       includes = ["~/.ssh/conf.local.d/*"];
     };

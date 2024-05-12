@@ -36,7 +36,7 @@ in {
           "nixos-test"
         ];
         substituters = [
-          "http://nix-cache.lan"
+          # "http://nix-cache.lan"
           "https://hyprland.cachix.org"
           "https://nix-community.cachix.org"
           "https://nixpkgs-wayland.cachix.org"

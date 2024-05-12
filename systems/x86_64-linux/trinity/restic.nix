@@ -24,7 +24,7 @@
       passwordFile = config.sops.secrets.resticPassword.path;
       paths = [
         "/var/openebs/local"
-        "/var/lib/rancher/k3s/server/db"
+        "/var/lib/rancher/k3s"
       ];
       pruneOpts = [
         "--keep-daily 7"
@@ -40,6 +40,7 @@
         "--exclude Pal"
         "--exclude steamapps"
         "--exclude linux64"
+        "--exclude containerd"
       ];
       timerConfig = {
         OnCalendar = "03:00";

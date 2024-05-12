@@ -33,7 +33,7 @@ in {
     nix = {
       settings = {
         trusted-substituters = [
-          "http://nix-cache.lan"
+          # "http://nix-cache.lan"
           "https://cache.nixos.org"
           "https://nix-community.cachix.org"
           "https://numtide.cachix.org?priority=42"

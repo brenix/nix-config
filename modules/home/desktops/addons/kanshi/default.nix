@@ -49,7 +49,7 @@ in {
           ];
         }
         {
-          profile.name = "single";
+          profile.name = "vfio";
           profile.outputs = [
             {
               criteria = "LG Electronics LG ULTRAGEAR 105NTSUA9054";
@@ -60,6 +60,21 @@ in {
             {
               criteria = "LG Electronics LG ULTRAGEAR 105NTZNA9053";
               status = "disable";
+            }
+          ];
+        }
+        {
+          profile.name = "work";
+          profile.outputs = [
+            {
+              criteria = "LG Electronics LG ULTRAGEAR 105NTSUA9054";
+              status = "disable";
+            }
+            {
+              criteria = "LG Electronics LG ULTRAGEAR 105NTZNA9053";
+              position = "0,0";
+              mode = "2560x1440@143.93Hz";
+              status = "enable";
             }
           ];
         }
