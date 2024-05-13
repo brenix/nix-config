@@ -12,6 +12,7 @@
     apps = {
       iterm2.enable = true;
       mindnode.enable = true;
+      mtr.enable = true;
       # vscode.enable = true;
     };
 
