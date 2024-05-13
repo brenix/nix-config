@@ -90,7 +90,7 @@ in {
             command = "${pkgs.gotools}/bin/goimports";
             args = [
               "-local"
-              "gitlab.eng"
+              "corew"
             ];
           };
           indent = {
