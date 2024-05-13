@@ -13,9 +13,6 @@
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
-    # FIXME: Remove after https://github.com/gytis-ivaskevicius/flake-utils-plus/pull/146
-    snowfall-lib.inputs.flake-utils-plus.url = "github:fl42v/flake-utils-plus";
-
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -24,8 +21,6 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     impermanence.url = "github:nix-community/impermanence";
-
-    lanzaboote.url = "github:nix-community/lanzaboote";
 
     nixgl.url = "github:nix-community/nixGL";
 
@@ -91,7 +86,6 @@
       systems.modules.nixos = with inputs; [
         home-manager.nixosModules.home-manager
         disko.nixosModules.disko
-        lanzaboote.nixosModules.lanzaboote
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
         nix-ld.nixosModules.nix-ld

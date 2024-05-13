@@ -50,11 +50,13 @@ in {
       extraOptions = ''
         !include ${config.sops.secrets.nixAccessTokens.path}
       '';
-      gc = {
-        automatic = true;
-        dates = "daily";
-        options = "--delete-older-than 2d";
-      };
+
+      # gc = {
+      #   automatic = true;
+      #   dates = "daily";
+      #   options = "--delete-older-than 2d";
+      # };
+
       # flake-utils-plus
       generateRegistryFromInputs = true;
       generateNixPathFromInputs = true;

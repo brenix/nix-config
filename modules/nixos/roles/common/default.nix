@@ -15,6 +15,10 @@ in {
 
     programs.fish.enable = true;
 
+    cli.programs = {
+      nh.enable = true;
+    };
+
     services = {
       ananicy.enable = true;
       # bpftune.enable = true;
