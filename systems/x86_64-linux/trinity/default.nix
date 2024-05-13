@@ -34,7 +34,7 @@
   systemd.extraConfig = "DefaultLimitNOFILE=4096:524288";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-lto;
+    kernelPackages = pkgs.linuxPackages_cachyos;
 
     # Workaround UEFI issue: https://github.com/NixOS/nixpkgs/issues/75457
     loader.systemd-boot.graceful = true;
