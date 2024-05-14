@@ -15,26 +15,14 @@
   roles.common.enable = true;
 
   networking.hostName = "trinity";
-  networking.useDHCP = pkgs.lib.mkForce false;
-  networking.useNetworkd = false;
-  systemd.network.enable = true;
-  systemd.network.networks.enp7s0 = {
-    matchConfig = {Name = "enp7s0";};
-    DHCP = "yes";
-    routes = [
-      {
-        routeConfig = {
-          InitialCongestionWindow = 50;
-          InitialAdvertisedReceiveWindow = 50;
-        };
-      }
-    ];
-  };
+  networking.useNetworkd = true;
+  networking.bridges.br0.interfaces = ["enp7s0" "eno1"];
+  networking.interfaces.br0.useDHCP = true;
 
   systemd.extraConfig = "DefaultLimitNOFILE=4096:524288";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     # Workaround UEFI issue: https://github.com/NixOS/nixpkgs/issues/75457
     loader.systemd-boot.graceful = true;
