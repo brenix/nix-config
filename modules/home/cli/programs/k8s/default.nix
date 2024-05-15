@@ -67,7 +67,7 @@ in {
       # docker-machine-kvm2
       stern
       kustomize
-      # talosctl
+      talosctl
       # trivy
     ];
   };
