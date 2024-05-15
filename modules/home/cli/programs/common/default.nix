@@ -36,7 +36,6 @@ in {
 
     home.packages = with pkgs; [
       age
-      # awscli2
       certigo
       curlie
       dig
@@ -46,7 +45,6 @@ in {
       gnumake
       gomplate
       go-task
-      # graphviz
       htop
       hugo
       imagemagick
@@ -54,10 +52,9 @@ in {
       jwt-cli
       libqalculate
       nmap
-      # ouch
-      # packer
       sd
       shfmt
+      tcpdump
       unrar
       unzip
       vault-bin
