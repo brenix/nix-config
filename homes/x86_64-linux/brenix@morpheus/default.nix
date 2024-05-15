@@ -1,4 +1,4 @@
-{lib, ...}: {
+{
   roles = {
     desktop.enable = true;
   };
