@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./disks.nix
@@ -14,9 +11,21 @@
   roles.common.enable = true;
 
   networking.hostName = "trinity";
-  networking.useNetworkd = true;
-  networking.bridges.br0.interfaces = ["enp7s0" "eno1"];
-  networking.interfaces.br0.useDHCP = true;
+  networking.useDHCP = pkgs.lib.mkForce false;
+  networking.useNetworkd = false;
+  systemd.network.enable = true;
+  systemd.network.networks.enp7s0 = {
+    matchConfig = {Name = "enp7s0";};
+    DHCP = "yes";
+    routes = [
+      {
+        routeConfig = {
+          InitialCongestionWindow = 50;
+          InitialAdvertisedReceiveWindow = 50;
+        };
+      }
+    ];
+  };
 
   systemd.extraConfig = "DefaultLimitNOFILE=4096:524288";
 
