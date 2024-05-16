@@ -20,7 +20,7 @@ in {
         auto_layouts = true;
         default_layout = "compact";
         on_force_close = "quit";
-        pane_frames = false;
+        pane_frames = true;
         mouse_mode = false;
         pane_viewport_serialization = true;
         scrollback_lines_to_serialize = 1000;
