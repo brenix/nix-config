@@ -41,6 +41,8 @@
         "--exclude steamapps"
         "--exclude linux64"
         "--exclude containerd"
+        "--exclude dl"
+        "--exclude server"
       ];
       timerConfig = {
         OnCalendar = "03:00";
