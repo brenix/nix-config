@@ -11,6 +11,7 @@ in {
     home.packages = with pkgs; [
       golangci-lint-langserver
       gopls
+      helm-ls
       # lua-language-server
       marksman
       nil
