@@ -21,11 +21,13 @@ in {
       argocd
       cfssl
       cilium-cli
+      cockroachdb-bin
       doppler
       jira-cli-go
       postgresql
       pre-commit
       shellcheck-minimal
+      slides
       sshpass
       vcluster
       yamllint
