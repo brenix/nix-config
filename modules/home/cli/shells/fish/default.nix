@@ -77,8 +77,8 @@ in {
         kk = "kubectl get pod";
         k = "kubectl";
         kl = "kubectl logs";
-        kvsec = "kubectl view-secret";
-        kvs = "kubectl view-secret";
+        kvsec = "kubectl-view-secret";
+        kvs = "kubectl-view-secret";
         nd = "nix develop";
         nfu = "nix flake update";
         nhh = "nh home switch";

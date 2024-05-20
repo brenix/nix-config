@@ -58,6 +58,10 @@ in {
       helm-docs
       helmfile
       krew
+      kubectl-neat
+      kubectl-view-secret
+      kubectl-example
+      kubectl-cnpg
       kubecolor
       kubectl
       kubelogin
