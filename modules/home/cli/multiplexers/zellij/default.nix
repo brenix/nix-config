@@ -17,17 +17,17 @@ in {
       catppuccin.enable = true;
 
       settings = {
-        auto_layouts = true;
+        auto_layouts = false;
         default_layout = "compact";
         on_force_close = "quit";
-        pane_frames = true;
+        pane_frames = false;
         mouse_mode = false;
         pane_viewport_serialization = true;
         scrollback_lines_to_serialize = 1000;
         session_serialization = true;
 
         ui.pane_frames = {
-          rounded_corners = true;
+          rounded_corners = false;
           hide_session_name = true;
         };
 
