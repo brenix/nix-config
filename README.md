@@ -3,10 +3,6 @@
 <img width="96" src="./images/logo.png"></img> <br>
   Nix Config
 </h1>
-<!-- <img src="./images/terminal.png"></img> -->
-<h4>
-  :warning: This config repo is constantly changing and may be refactored often.
-</h4>
 </div>
 
 ## Usage
@@ -150,7 +146,7 @@ Some features of my nix-config:
 | :------------- | :-------------------------------------------------------: |
 | OS             |                [NixOS](https://nixos.com/)                |
 | Editor         |             [Helix](https://helix-editor.com)             |
-| Multiplexer    |           [Tmux](https://github.com/tmux/tmux)            |
+| Multiplexer    |               [Zellij](https://zellij.dev/)               |
 | Prompt         |             [Starship](https://starship.rs/)              |
 | Launcher       |        [Rofi](https://github.com/davatorium/rofi)         |
 | Shell          |              [Fish](https://fishshell.com/)               |
