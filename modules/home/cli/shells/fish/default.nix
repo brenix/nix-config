@@ -56,7 +56,6 @@ in {
         calc = "qalc";
         cat = "bat";
         curl = "curlie";
-        grep = "rg";
         hmr = "home-manager generations | fzf --tac --no-sort | awk '{print $7}' | xargs -I{} bash {}/activate";
         hms = "home-manager switch --flake ~/nix-config#${config.matrix.user.name}@${host}";
         kdd = "kubectl describe deployment";
@@ -86,6 +85,7 @@ in {
         nhu = "nh os --update";
         niso = "nix build .#nixosConfigurations.iso.config.system.build.isoImage";
         nrs = "sudo nixos-rebuild switch --flake ~/nix-config#${host}";
+        replace = "ambr";
         v = "hx";
       };
 

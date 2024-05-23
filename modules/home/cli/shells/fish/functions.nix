@@ -41,9 +41,6 @@
     set -x -g $var1 $var2
   '';
 
-  # replace a given string across files matching a pattern
-  replace = "rg -l $argv[1] | xargs sd $argv[1] $argv[2]";
-
   # switch-namespace
   kns = ''
     set context

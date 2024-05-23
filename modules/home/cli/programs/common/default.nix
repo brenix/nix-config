@@ -35,7 +35,9 @@ in {
     };
 
     home.packages = with pkgs; [
+      #sd
       age
+      amber
       certigo
       curlie
       dig
@@ -43,8 +45,8 @@ in {
       gcc
       gettext
       gnumake
-      gomplate
       go-task
+      gomplate
       htop
       hugo
       imagemagick
@@ -52,7 +54,6 @@ in {
       jwt-cli
       libqalculate
       nmap
-      sd
       shfmt
       tcpdump
       unrar
