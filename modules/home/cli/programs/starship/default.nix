@@ -19,7 +19,7 @@ in {
       settings = {
         add_newline = false;
         format = ''
-          $kubernetes$username$hostname$shlvl$directory$git_branch$git_commit$git_state$git_status$aws$python
+          $username$hostname$kubernetes$shlvl$directory$git_branch$git_commit$git_state$git_status$aws$python
           $jobs$status$character
         '';
         aws = {
@@ -57,7 +57,7 @@ in {
           style = "bold red";
           contexts = [
             {
-              context_pattern = "*dev.*";
+              context_pattern = ".*(dev|local).*";
               style = "green";
             }
           ];
