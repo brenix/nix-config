@@ -121,15 +121,6 @@ in {
           complete -c ssh-multi -w ssh
         ''
         +
-        # Set kubeconfig var
-        ''
-          if command -sq kubectl
-            for line in (find $HOME/.kube -maxdepth 1 \( -type f -o -type l -not -name '.*' \) -print)
-              set -x KUBECONFIG "$KUBECONFIG:$line"
-            end
-          end
-        ''
-        +
         # Bindings
         ''
           bind \ce end-of-line

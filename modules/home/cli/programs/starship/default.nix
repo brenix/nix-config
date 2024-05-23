@@ -54,17 +54,13 @@ in {
         kubernetes = {
           disabled = false;
           format = "[\\[$context:$namespace\\]]($style) ";
-          style = "bright-black";
-          # contexts = [
-          #   {
-          #     context_pattern = ".*vdp.*";
-          #     context_alias = "vdp";
-          #   }
-          #   {
-          #     context_pattern = "(?P<var_cell>[\\w-]+)-aws-\\w+-(?P<var_cluster>[\\w-]+)-.*";
-          #     context_alias = "$var_cell-$var_cluster";
-          #   }
-          # ];
+          style = "bold red";
+          contexts = [
+            {
+              context_pattern = "*dev.*";
+              style = "green";
+            }
+          ];
         };
         python = {
           format = "[(($virtualenv)) ]($style)";
