@@ -53,12 +53,12 @@ in {
         };
         kubernetes = {
           disabled = false;
-          format = "[\\[$context:$namespace\\]]($style) ";
+          format = "[$context:$namespace]($style) ";
           style = "bold red";
           contexts = [
             {
               context_pattern = ".*(dev|local).*";
-              style = "green";
+              style = "white";
             }
           ];
         };
@@ -69,7 +69,7 @@ in {
         username = {
           disabled = true;
           show_always = false;
-          format = "[$user]($style)";
+          format = "[$user@]($style)";
           style_user = "bright-black";
           style_root = "bold red";
         };
