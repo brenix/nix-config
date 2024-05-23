@@ -19,7 +19,7 @@ in {
 
   config = mkIf cfg.enable {
     colorscheme = nix-colors.colorSchemes.catppuccin-mocha;
-    catppuccin.flavour = "mocha";
+    catppuccin.flavor = "mocha";
     xdg.enable = true; # required by catppuccin module
 
     system = {

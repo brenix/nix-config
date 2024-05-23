@@ -11,6 +11,7 @@
   roles.common.enable = true;
 
   networking.hostName = "trinity";
+  networking.nameservers = ["192.168.1.1"];
   networking.bridges.br0.interfaces = ["enp7s0"];
   networking.bridges.br0.rstp = true;
   networking.interfaces.br0.ipv4.addresses = [

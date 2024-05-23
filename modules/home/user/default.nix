@@ -10,7 +10,7 @@ in {
   options.matrix.user = {
     enable = mkOpt types.bool false "Whether to configure the user account.";
     home = mkOpt (types.nullOr types.str) "/home/${cfg.name}" "The user's home directory.";
-    name = mkOpt (types.nullOr types.str) config.snowfallorg.user.name "The user account.";
+    name = mkOpt (types.nullOr types.str) config.snowfallorg.users.name "The user account.";
   };
 
   config = mkIf cfg.enable (mkMerge [
