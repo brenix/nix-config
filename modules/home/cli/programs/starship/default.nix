@@ -58,7 +58,7 @@ in {
           contexts = [
             {
               context_pattern = ".*(dev|local).*";
-              style = "white";
+              style = "yellow";
             }
           ];
         };
