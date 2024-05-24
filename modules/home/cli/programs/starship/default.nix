@@ -19,7 +19,8 @@ in {
       settings = {
         add_newline = false;
         format = ''
-          $username$hostname$kubernetes$directory$git_branch$git_commit$git_state$git_status$jobs$status$shlvl$character
+          $username$hostname$kubernetes$directory$git_branch$git_commit$git_state$git_status
+          $jobs$status$shlvl$character
         '';
         aws = {
           format = "[$profile \\($region\\) ]($style)";
@@ -41,9 +42,10 @@ in {
         };
         git_status = {
           disabled = false;
-          format = "([:](overlay2)[$all_status](maroon))[\\) ](lavender)";
+          format = "([:](overlay2)[$all_status$ahead_behind](maroon))[\\) ](lavender)";
         };
         hostname = {
+          disabled = true;
           ssh_only = true;
           format = "[$hostname ]($style)";
           style = "bright-black";
