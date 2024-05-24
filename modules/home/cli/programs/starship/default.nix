@@ -19,32 +19,29 @@ in {
       settings = {
         add_newline = false;
         format = ''
-          $username$hostname$kubernetes$shlvl$directory$git_branch$git_commit$git_state$git_status$aws$python
-          $jobs$status$character
+          $username$hostname$kubernetes$directory$git_branch$git_commit$git_state$git_status$jobs$status$shlvl$character
         '';
         aws = {
           format = "[$profile \\($region\\) ]($style)";
         };
         fill = {
           symbol = " ";
-          style = "bg:#191c26";
         };
         character = {
-          success_symbol = "[\\$](bold green)";
-          error_symbol = "[\\$](bold red)";
+          success_symbol = "[▶](bold green)";
+          error_symbol = "[▶](bold red)";
         };
         directory = {
           format = "[$path ]($style)";
           style = "blue";
         };
         git_branch = {
-          format = "[\\[$branch\\] ]($style)";
+          format = "[\\($branch]($style)[:](overlay2)";
           style = "lavender";
         };
         git_status = {
           disabled = false;
-          format = "([\\[$all_status$ahead_behind\\] ]($style))";
-          style = "bold red";
+          format = "[$all_status$ahead_behind](maroon)[\\) ](lavender)";
         };
         hostname = {
           ssh_only = true;
@@ -53,12 +50,12 @@ in {
         };
         kubernetes = {
           disabled = false;
-          format = "[$context:$namespace]($style) ";
+          format = "[\\[$context:$namespace\\]]($style) ";
           style = "bold red";
           contexts = [
             {
               context_pattern = ".*(dev|local).*";
-              style = "yellow";
+              style = "cyan";
             }
           ];
         };
