@@ -36,12 +36,12 @@ in {
           style = "blue";
         };
         git_branch = {
-          format = "[\\($branch]($style)[:](overlay2)";
+          format = "[\\($branch]($style)";
           style = "lavender";
         };
         git_status = {
           disabled = false;
-          format = "[$all_status$ahead_behind](maroon)[\\) ](lavender)";
+          format = "([:](overlay2)[$all_status](maroon))[\\) ](lavender)";
         };
         hostname = {
           ssh_only = true;
