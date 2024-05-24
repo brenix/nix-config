@@ -43,6 +43,10 @@ in {
           condition = "gitdir:~/work/";
         }
       ];
+      aliases = {
+        cleanbr = "! git branch --merged | egrep -v \"(^\\*|master|main|develop)\" | xargs git branch -D 2>/dev/null || true";
+        cleanbrall = "! git branch | egrep -v \"(^\\*|master|main|develop)\" | xargs git branch -D 2>/dev/null || true";
+      };
       extraConfig =
         {
           apply = {whitespace = "strip";};
@@ -146,6 +150,8 @@ in {
       git_gc = git gc --aggressive "$@"
       git_tags = git tag -l
       git_branches = git branch
+      git_cleanbr = git branch --merged | egrep -v "(^\*|master|main|develop)" | xargs git branch -D 2>/dev/null || true
+      git_cleanbrall = git branch | egrep -v "(^\*|master|main|develop)" | xargs git branch -D 2>/dev/null || true
       branch = printf "\e[1;33m%-6s\e[m\n" $(git rev-parse --abbrev-ref HEAD)
       default = git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
       reset = git reset --hard HEAD && git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git clean -d -f
