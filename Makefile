@@ -7,16 +7,16 @@ nixos:
 ifeq ($(UNAME), Darwin)
 	@darwin-rebuild switch --verbose --flake ".#macbook"
 else
-	@sudo nixos-rebuild switch --verbose --flake ".#$(HOSTNAME)"
+	@nh os switch
 endif
 
 ## Rebuild Home-manager configuration
 home:
-	@home-manager switch --flake ".#$(USERNAME)@$(HOSTNAME)"
+	@nh home switch
 
 ## Update flake and rebuild
 upgrade: update
-	@sudo nixos-rebuild switch --verbose --flake ".#$(HOSTNAME)"
+	@nh os switch
 
 ## Rebuild and upgrade NixOS configuration
 update:
@@ -32,6 +32,6 @@ iso:
 
 ## Run garbage collection
 gc:
-	@sudo nix-collect-garbage -d
+	@nh clean all
 
 .PHONY: nixos upgrade gc
