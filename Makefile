@@ -5,7 +5,7 @@ UNAME := $(shell uname)
 ## Rebuild NixOS configuration
 nixos:
 ifeq ($(UNAME), Darwin)
-	@darwin-rebuild switch --verbose --flake ".#macbook"
+	@darwin-rebuild switch --verbose --flake ".#$(HOSTNAME)"
 else
 	@nh os switch
 endif
