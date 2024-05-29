@@ -34,6 +34,21 @@ in {
         keybinds = {
           unbind = "Ctrl h";
           normal = {
+            "bind \"Alt N\"" = {
+              NewPane = ["Down"];
+            };
+            "bind \"Alt H\"" = {
+              Resize = ["Left"];
+            };
+            "bind \"Alt J\"" = {
+              Resize = ["Down"];
+            };
+            "bind \"Alt K\"" = {
+              Resize = ["Up"];
+            };
+            "bind \"Alt L\"" = {
+              Resize = ["Right"];
+            };
             "bind \"Alt v\"" = {
               ToggleActiveSyncTab = [];
             };
