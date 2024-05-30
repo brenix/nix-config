@@ -55,6 +55,9 @@ in {
             "bind \"Alt d\"" = {
               Detach = [];
             };
+            "bind \"Alt f\"" = {
+              ToggleFocusFullscreen = [];
+            };
           };
         };
 
