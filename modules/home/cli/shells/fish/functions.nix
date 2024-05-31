@@ -105,7 +105,7 @@
     end
   '';
 
-  # ssh to multiple hosts in tmux panes
+  # ssh to multiple hosts in zellij panes
   ssh-multi = ''
     set -l hosts
     if test -t 0
@@ -116,17 +116,11 @@
       end
     end
 
-    set -l target ssh-multi
-
-    tmux new-window -n "$target" "ssh $hosts[1]"
-
-    for host in $hosts[2..-1]
-      tmux split-window -t :"$target" -v "ssh $host"
-      tmux select-layout -t :"$target" even-vertical >/dev/null
-    end
-
-    tmux select-pane -t 0
-    tmux set-window-option synchronize-panes on
+    set -l layout_file (mktemp)
+    printf 'layout {%s}' (string join "" (for host in $hosts; printf 'pane {command "ssh"; args "%s"; close_on_exit=true;}; ' $host; end)) > $layout_file
+    zellij action new-tab -l $layout_file -n ssh-multi
+    zellij action toggle-active-sync-tab
+    rm -f $layout_file
   '';
 
   # ssh to multiple k8s nodes in tmux panes
