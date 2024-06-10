@@ -5,7 +5,8 @@
       - resolv-conf=/run/systemd/resolve/resolv.conf
       - image-gc-high-threshold=50
       - image-gc-low-threshold=30
-      - serialize-image-pulls=false
+      - serialize-image-pulls=true
+      - registry-qps=1
 
     kube-controller-manager-arg:
       - terminated-pod-gc-threshold=1
