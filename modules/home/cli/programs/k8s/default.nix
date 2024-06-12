@@ -57,6 +57,7 @@ in {
       })
       helm-docs
       helmfile
+      k3d
       krew
       kubectl-neat
       kubectl-view-secret
