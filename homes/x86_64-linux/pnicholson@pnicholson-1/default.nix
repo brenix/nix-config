@@ -8,6 +8,8 @@
     email = "pnicholson@coreweave.com";
   };
 
+  cli.programs.python.enable = true;
+
   roles = {
     common.enable = true;
     work.enable = true;

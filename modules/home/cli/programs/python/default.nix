@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib;
@@ -15,5 +16,9 @@ in {
     programs.poetry = {
       enable = true;
     };
+
+    home.packages = with pkgs; [
+      pipenv
+    ];
   };
 }
