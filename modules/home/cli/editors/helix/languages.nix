@@ -15,7 +15,7 @@ in {
       # lua-language-server
       marksman
       nil
-      nodePackages.bash-language-server
+      bash-language-server
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.vscode-css-languageserver-bin
       nodePackages.vscode-json-languageserver-bin
