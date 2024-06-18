@@ -9,6 +9,7 @@ with lib; let
 in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      deno
       golangci-lint-langserver
       gopls
       helm-ls
