@@ -21,9 +21,9 @@
     };
 
     system = {
-      input.enable = true;
+      # input.enable = true;
       fonts.enable = true;
-      interface.enable = true;
+      # interface.enable = true;
       security.enable = true;
     };
   };
