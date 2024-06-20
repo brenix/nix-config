@@ -65,6 +65,7 @@ in {
       kubectl-cnpg
       kubecolor
       kubectl
+      kubernetes
       kubelogin
       kubevirt
       kubelogin-oidc

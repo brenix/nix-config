@@ -117,7 +117,7 @@
     end
 
     set -l layout_file (mktemp)
-    printf 'layout {%s}' (string join "" (for host in $hosts; printf 'pane {command "ssh"; args "%s"; close_on_exit=true;}; ' $host; end)) > $layout_file
+    printf 'layout {%s}' (string join "" (for host in $hosts; printf 'pane {command "ssh"; args "%s"; close_on_exit true;}; ' $host; end)) > $layout_file
     zellij action new-tab -l $layout_file -n ssh-multi
     zellij action toggle-active-sync-tab
     rm -f $layout_file
