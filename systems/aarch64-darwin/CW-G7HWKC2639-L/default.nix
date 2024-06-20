@@ -10,6 +10,7 @@
 
   matrix = {
     apps = {
+      easy-move-plus-resize.enable = true;
       iterm2.enable = true;
       mindnode.enable = true;
       mtr.enable = true;
