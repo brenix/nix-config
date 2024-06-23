@@ -27,6 +27,7 @@ in {
       systemd = {
         timesyncd.enable = true;
         resolved.enable = true;
+        resolved.domains = ["lan"];
       };
     };
 
