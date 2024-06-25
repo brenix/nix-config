@@ -102,7 +102,8 @@ in {
               else false;
             side-by-side = false;
             options = {
-              syntax-theme = "catppuccin";
+              # syntax-theme = "catppuccin";
+              syntax-theme = "gruvbox-dark";
               color-only = true;
               minus-style =
                 if variant == "dark"

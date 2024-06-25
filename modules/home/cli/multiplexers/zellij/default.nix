@@ -6,6 +6,7 @@
 with lib;
 with lib.matrix; let
   cfg = config.cli.multiplexers.zellij;
+  inherit (config.colorscheme) palette;
 in {
   options.cli.multiplexers.zellij = {
     enable = mkBoolOpt false "Whether or not to enable zellij.";
@@ -14,9 +15,9 @@ in {
   config = mkIf cfg.enable {
     programs.zellij = {
       enable = true;
-      catppuccin.enable = true;
-
+      catppuccin.enable = false;
       settings = {
+        theme = "nix-colors";
         auto_layouts = false;
         default_layout = "compact";
         on_force_close = "quit";
@@ -58,6 +59,22 @@ in {
             "bind \"Alt f\"" = {
               ToggleFocusFullscreen = [];
             };
+          };
+        };
+
+        themes = {
+          nix-colors = {
+            fg = "#${palette.base05}";
+            bg = "#1d2021";
+            black = "#282828";
+            red = "#${palette.base08}";
+            green = "#${palette.base0B}";
+            yellow = "#${palette.base0A}";
+            blue = "#${palette.base0D}";
+            magenta = "#${palette.base0E}";
+            cyan = "#${palette.base0C}";
+            white = "#${palette.base05}";
+            orange = "#${palette.base0A}";
           };
         };
 

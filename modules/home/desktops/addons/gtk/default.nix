@@ -20,13 +20,15 @@ in {
       };
 
       theme = {
-        name = "Catppuccin-Mocha-Compact-Blue-Dark";
-        package = pkgs.catppuccin-gtk.override {
-          accents = ["blue"];
-          size = "compact";
-          tweaks = ["rimless"];
-          variant = "mocha";
-        };
+        name = "adw-gtk3-dark";
+        package = pkgs.adw-gtk3;
+        # name = "Catppuccin-Mocha-Compact-Blue-Dark";
+        # package = pkgs.catppuccin-gtk.override {
+        #   accents = ["blue"];
+        #   size = "compact";
+        #   tweaks = ["rimless"];
+        #   variant = "mocha";
+        # };
       };
 
       iconTheme = {
@@ -67,11 +69,10 @@ in {
         gtk-application-prefer-dark-theme = true;
         gtk-recent-files-max-age = 0;
       };
-
-      gtk4.extraCss = builtins.readFile ./gtk.css;
     };
 
-    home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Compact-Blue-Dark";
+    # home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Compact-Blue-Dark";
+    home.sessionVariables.GTK_THEME = "Adwaita:dark";
     home.pointerCursor = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;

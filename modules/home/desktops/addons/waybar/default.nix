@@ -73,21 +73,6 @@ in {
           clock = {
             format = "󰃰 {:%Y-%m-%d %I:%M %p}";
             interval = 1;
-            tooltip-format = "<tt><small>{calendar}</small></tt>";
-            calendar = {
-              mode = "year";
-              "mode-mon-col" = 3;
-              "weeks-pos" = "right";
-              "on-scroll" = 1;
-              "on-click-right" = "mode";
-              format = {
-                months = "<span color='#cba6f7'><b>{}</b></span>";
-                days = "<span color='#b4befe'><b>{}</b></span>";
-                weeks = "<span color='#89dceb'><b>W{}</b></span>";
-                weekdays = "<span color='#f2cdcd'><b>{}</b></span>";
-                today = "<span color='#f38ba8'><b><u>{}</u></b></span>";
-              };
-            };
           };
           backlight = {
             format = " {percent}%";
@@ -128,13 +113,7 @@ in {
             format-wifi = " {essid}";
             format-ethernet = " 󰈀  Wired";
             format-disconnected = " 󱚵  Disconnected";
-            tooltip-format = ''
-              {ifname}
-              {ipaddr}/{cidr}
-              {signalstrength}
-              Up: {bandwidthUpBits}
-              Down: {bandwidthDownBits}
-            '';
+            tooltip-format = "{ipaddr}/{cidr}";
           };
           pulseaudio = {
             scroll-step = 2;
@@ -154,7 +133,7 @@ in {
         }
       ];
 
-      style = builtins.readFile ./styles.css;
+      style = builtins.readFile ./styles-gruvbox-material.css;
     };
   };
 }

@@ -21,8 +21,9 @@ in {
 
     programs.helix = {
       enable = true;
-      catppuccin.enable = true;
+      catppuccin.enable = false;
       settings = {
+        theme = "gruvbox_material_dark_hard";
         editor = {
           auto-pairs = false;
           bufferline = "always";

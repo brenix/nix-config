@@ -16,7 +16,7 @@ in {
     programs = {
       k9s = {
         enable = true;
-        catppuccin.enable = true;
+        catppuccin.enable = false;
         settings = {
           k9s = {
             liveViewAutoRefresh = true;
@@ -27,6 +27,8 @@ in {
               headless = true;
               logoless = true;
               enableMouse = true;
+              noIcons = true;
+              skin = "transparent";
             };
             logger = {
               buffer = 200000;

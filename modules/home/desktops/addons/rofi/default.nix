@@ -19,8 +19,7 @@ in {
       enable = true;
       package = cfg.package;
       terminal = "${pkgs.foot}/bin/foot";
-      # INFO: Cannot overwrite font atm.
-      # catppuccin.enable = true;
+      # catppuccin.enable = false;
       font = "Monaco Nerd Font Mono 12";
       extraConfig = {
         modi = "run,drun,window";

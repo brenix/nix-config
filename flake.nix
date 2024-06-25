@@ -13,9 +13,6 @@
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
-    # FIXME: Remove after snowfall lib is updated
-    snowfall-lib.inputs.flake-utils-plus.url = "github:fl42v/flake-utils-plus";
-
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 

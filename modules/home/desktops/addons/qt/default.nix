@@ -15,13 +15,16 @@ in {
     qt = {
       enable = true;
       platformTheme.name = "gtk";
-      style.name = "Catppuccin-Mocha-Compact-Blue-Dark";
-      style.package = pkgs.catppuccin-gtk.override {
-        accents = ["blue"];
-        size = "compact";
-        tweaks = ["rimless"];
-        variant = "mocha";
-      };
+
+      style.name = "Adwaita:dark";
+      style.package = pkgs.adw-gtk3;
+      # style.name = "Catppuccin-Mocha-Compact-Blue-Dark";
+      # style.package = pkgs.catppuccin-gtk.override {
+      #   accents = ["blue"];
+      #   size = "compact";
+      #   tweaks = ["rimless"];
+      #   variant = "mocha";
+      # };
     };
   };
 }
