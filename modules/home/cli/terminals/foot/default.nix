@@ -21,9 +21,9 @@ in {
       settings = {
         main = {
           term = "foot";
-          font = "Monaco Nerd Font Mono:size=11.5, Noto Color Emoji:size=18";
-          font-bold = "Monaco Nerd Font Mono:size=11.5:weight=Regular";
-          line-height = "18px";
+          font = "Monaco Nerd Font Mono:size=10.5, Noto Color Emoji:size=18";
+          font-bold = "Monaco Nerd Font Mono:size=10.5:weight=Regular";
+          line-height = "16px";
           shell = "${pkgs.fish}/bin/fish";
           selection-target = "primary";
         };

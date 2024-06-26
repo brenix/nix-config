@@ -46,7 +46,7 @@ in {
         nix-index.enable = true;
         ssh.enable = true;
         starship.enable = true;
-        yazi.enable = false;
+        yazi.enable = true;
         zoxide.enable = true;
       };
     };
