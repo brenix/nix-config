@@ -8,7 +8,10 @@
     email = "pnicholson@coreweave.com";
   };
 
-  cli.programs.python.enable = true;
+  cli.programs = {
+    python.enable = true;
+    yazi.enable = true;
+  };
 
   roles = {
     common.enable = true;
@@ -17,6 +20,7 @@
 
   home.packages = [
     pkgs.nh
+    pkgs.kubernetes
   ];
 
   programs.fish.shellInit = lib.mkForce '''';

@@ -29,7 +29,7 @@ in {
 
     cli = {
       editors.helix.enable = true;
-      multiplexers.tmux.enable = true;
+      multiplexers.tmux.enable = false;
       multiplexers.zellij.enable = true;
       shells.fish.enable = true;
 
@@ -46,7 +46,6 @@ in {
         nix-index.enable = true;
         ssh.enable = true;
         starship.enable = true;
-        yazi.enable = true;
         zoxide.enable = true;
       };
     };
