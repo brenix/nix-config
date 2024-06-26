@@ -34,7 +34,7 @@ in {
       shells.fish.enable = true;
 
       programs = {
-        atuin.enable = true;
+        atuin.enable = false;
         bat.enable = true;
         common.enable = true;
         dircolors.enable = true;
