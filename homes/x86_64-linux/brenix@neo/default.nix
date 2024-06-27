@@ -3,7 +3,10 @@
     desktop.enable = true;
   };
 
-  cli.programs.go.enable = true;
+  cli.programs = {
+    go.enable = true;
+    yazi.enable = true;
+  };
 
   programs = {
     discord.enable = true;
