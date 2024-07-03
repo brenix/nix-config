@@ -15,7 +15,7 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       libguestfs
-      win-virtio
+      # win-virtio
       win-spice
       virt-manager
       virt-viewer
