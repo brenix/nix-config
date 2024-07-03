@@ -14,7 +14,7 @@ in {
   config = mkIf cfg.enable {
     programs.alacritty = {
       enable = true;
-      catppuccin.enable = false;
+      catppuccin.enable = true;
 
       settings = {
         shell = {

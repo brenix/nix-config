@@ -15,7 +15,7 @@ in {
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
-      catppuccin.enable = false;
+      catppuccin.enable = true;
       settings = {
         add_newline = false;
         format = ''
@@ -38,13 +38,13 @@ in {
         };
         git_branch = {
           format = "[\\($branch]($style)";
-          # style = "lavender"; # Catppuccin
-          style = "magenta";
+          style = "lavender"; # Catppuccin
+          # style = "magenta";
         };
         git_status = {
           disabled = false;
-          # format = "([:](overlay2)[$all_status$ahead_behind](maroon))[\\) ](lavender)"; # Catppuccin
-          format = "([:](overlay2)[$all_status$ahead_behind](red))[\\) ](magenta)";
+          format = "([:](overlay2)[$all_status$ahead_behind](maroon))[\\) ](lavender)"; # Catppuccin
+          # format = "([:](overlay2)[$all_status$ahead_behind](red))[\\) ](magenta)";
         };
         hostname = {
           disabled = true;
@@ -65,8 +65,8 @@ in {
         };
         python = {
           format = "[(($virtualenv)) ]($style)";
-          # style = "fg:lavender bold"; # Catppuccin
-          style = "fg:magenta bold";
+          style = "fg:lavender bold"; # Catppuccin
+          # style = "fg:magenta bold";
         };
         username = {
           disabled = true;

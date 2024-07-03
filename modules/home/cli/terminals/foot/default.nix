@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.foot = {
       enable = true;
-      # catppuccin.enable = false;
+      catppuccin.enable = true;
 
       settings = {
         main = {
@@ -29,7 +29,8 @@ in {
         };
         colors = {
           foreground = palette.base05;
-          background = "1d2021";
+          background = palette.base00;
+          # background = "1d2021";
           regular0 = palette.base02;
           regular1 = palette.base08;
           regular2 = palette.base0B;

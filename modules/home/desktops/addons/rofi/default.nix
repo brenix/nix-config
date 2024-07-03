@@ -19,7 +19,7 @@ in {
       enable = true;
       package = cfg.package;
       terminal = "${pkgs.foot}/bin/foot";
-      # catppuccin.enable = false;
+      # catppuccin.enable = true;
       font = "Monaco Nerd Font Mono 12";
       extraConfig = {
         modi = "run,drun,window";

@@ -15,7 +15,7 @@ in {
   config = mkIf cfg.enable {
     services.mako = {
       enable = true;
-      catppuccin.enable = false;
+      catppuccin.enable = true;
       font = "Terminus 12";
       defaultTimeout = 30000;
 

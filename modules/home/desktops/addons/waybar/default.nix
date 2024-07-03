@@ -133,7 +133,7 @@ in {
         }
       ];
 
-      style = builtins.readFile ./styles-gruvbox-material.css;
+      style = builtins.readFile ./styles-catppuccin.css;
     };
   };
 }

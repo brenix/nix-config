@@ -15,9 +15,9 @@ in {
   config = mkIf cfg.enable {
     programs.zellij = {
       enable = true;
-      catppuccin.enable = false;
+      catppuccin.enable = true;
       settings = {
-        theme = "nix-colors";
+        # theme = "nix-colors";
         auto_layouts = false;
         default_layout = "compact";
         on_force_close = "quit";

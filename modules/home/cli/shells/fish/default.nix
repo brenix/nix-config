@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.fish = {
       enable = true;
-      catppuccin.enable = false;
+      catppuccin.enable = true;
 
       shellAliases = {
         bat = "bat --paging=never --style=plain --decorations=never";
