@@ -18,15 +18,14 @@ in {
       catppuccin.enable = true;
       font = "Terminus 12";
       defaultTimeout = 30000;
-
-      backgroundColor = "#${config.colorscheme.palette.base00}";
-      textColor = "#${config.colorscheme.palette.base05}";
-      borderColor = "#${config.colorscheme.palette.base01}";
-      progressColor = "over #${config.colorscheme.palette.base02}";
-      extraConfig = ''
-        [urgency=high]
-        border-color=#${config.colorscheme.palette.base09}
-      '';
+      # backgroundColor = "#${config.colorscheme.palette.base00}";
+      # textColor = "#${config.colorscheme.palette.base05}";
+      # borderColor = "#${config.colorscheme.palette.base01}";
+      # progressColor = "over #${config.colorscheme.palette.base02}";
+      # extraConfig = ''
+      #   [urgency=high]
+      #   border-color=#${config.colorscheme.palette.base09}
+      # '';
     };
 
     home.packages = with pkgs; [

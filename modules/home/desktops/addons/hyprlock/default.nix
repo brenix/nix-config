@@ -78,7 +78,7 @@ in {
 
         backgrounds = [
           {
-            path = "${pkgs.matrix.wallpapers.nixos-dark}";
+            path = "${pkgs.matrix.wallpapers.nix-catppuccin}";
           }
         ];
       };
