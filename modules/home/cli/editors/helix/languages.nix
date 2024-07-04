@@ -18,8 +18,7 @@ in {
       nil
       bash-language-server
       nodePackages.dockerfile-language-server-nodejs
-      nodePackages.vscode-css-languageserver-bin
-      nodePackages.vscode-json-languageserver-bin
+      nodePackages.vscode-langservers-extracted
       nodePackages.yaml-language-server
       pyright
       # terraform-ls
@@ -27,11 +26,6 @@ in {
 
     programs.helix.languages = {
       language-server = {
-        vscode-json-language-server = {
-          command = "${pkgs.nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
-          args = ["--stdio"];
-        };
-
         yaml-language-server = {
           config.yaml = {
             completion = true;

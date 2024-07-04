@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   lib,
   ...
@@ -18,14 +17,5 @@ in {
       catppuccin.enable = true;
       enableFishIntegration = true;
     };
-
-    home.packages = with pkgs; [
-      imagemagick
-      ffmpegthumbnailer
-      fontpreview
-      unar
-      poppler
-      unar
-    ];
   };
 }
