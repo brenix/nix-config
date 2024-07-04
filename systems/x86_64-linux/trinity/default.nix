@@ -8,7 +8,7 @@
     ./restic.nix
   ];
 
-  roles.common.enable = true;
+  matrix.roles.common.enable = true;
 
   networking.hostName = "trinity";
   networking.nameservers = ["192.168.1.1"];

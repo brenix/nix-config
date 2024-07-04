@@ -1,19 +1,21 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.system.locale;
+}: let
+  inherit (lib) mkIf mkDefault mkForce;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.system.locale;
 in {
-  options.system.locale = with types; {
+  options.${namespace}.system.locale = {
     enable = mkBoolOpt false "Whether or not to manage locale settings.";
   };
 
   config = mkIf cfg.enable {
     i18n = {
-      defaultLocale = lib.mkDefault "en_US.UTF-8";
+      defaultLocale = mkDefault "en_US.UTF-8";
     };
 
     console = {
@@ -21,6 +23,6 @@ in {
       keyMap = mkForce "us";
     };
 
-    time.timeZone = lib.mkDefault "America/Los_Angeles";
+    time.timeZone = mkDefault "America/Los_Angeles";
   };
 }

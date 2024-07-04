@@ -1,12 +1,14 @@
 {
-  matrix.user = {
-    enable = true;
-    name = "pnicholson";
-    home = "/Users/pnicholson";
-  };
+  matrix = {
+    user = {
+      enable = true;
+      name = "pnicholson";
+      home = "/Users/pnicholson";
+    };
 
-  roles = {
-    common.enable = true;
+    roles = {
+      common.enable = true;
+    };
   };
 
   home.sessionPath = [

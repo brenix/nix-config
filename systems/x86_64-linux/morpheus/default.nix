@@ -22,11 +22,13 @@
     '';
   };
 
-  roles = {
-    desktop = {
-      enable = true;
-      addons = {
-        hyprland.enable = true;
+  matrix = {
+    roles = {
+      desktop = {
+        enable = true;
+        addons = {
+          hyprland.enable = true;
+        };
       };
     };
   };

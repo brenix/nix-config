@@ -5,7 +5,7 @@
   networking.wireless.enable = lib.mkForce false;
   hardware.networking.enable = true;
 
-  roles = {
+  matrix.roles = {
     desktop.addons.gnome.enable = true;
   };
 

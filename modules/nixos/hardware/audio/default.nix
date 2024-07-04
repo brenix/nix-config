@@ -1,13 +1,15 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.hardware.audio;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.hardware.audio;
 in {
-  options.hardware.audio = with types; {
+  options.${namespace}.hardware.audio = {
     enable = mkBoolOpt false "Enable or disable pipewire";
   };
 

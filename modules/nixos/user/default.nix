@@ -1,15 +1,17 @@
 {
   config,
-  pkgs,
   lib,
+  namespace,
+  pkgs,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.user;
+}: let
+  inherit (lib) types;
+  inherit (lib.${namespace}) mkOpt;
+
+  cfg = config.${namespace}.user;
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
-  options.user = with types; {
+  options.${namespace}.user = with types; {
     name = mkOpt str "brenix" "The name of the user's account";
     initialPassword =
       mkOpt str "1"

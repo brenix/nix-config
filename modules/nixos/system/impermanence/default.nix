@@ -1,14 +1,15 @@
 {
-  options,
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.system.impermanence;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.system.impermanence;
 in {
-  options.system.impermanence = with types; {
+  options.${namespace}.system.impermanence = {
     enable = mkBoolOpt false "Enable impermanence";
   };
 

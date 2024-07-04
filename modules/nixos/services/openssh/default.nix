@@ -1,15 +1,17 @@
 {
   config,
   lib,
+  namespace,
   format ? "",
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.services.ssh;
+}: let
+  inherit (lib) mkIf types;
+  inherit (lib.${namespace}) mkBoolOpt mkOpt;
+
+  cfg = config.${namespace}.services.ssh;
   hasPersistence = config.environment.persistence ? "/persist";
 in {
-  options.services.ssh = with types; {
+  options.${namespace}.services.ssh = with types; {
     enable = mkBoolOpt false "Enable ssh";
     authorizedKeys = mkOpt (listOf str) [] "The public keys to apply.";
   };
@@ -46,7 +48,7 @@ in {
     security.pam.sshAgentAuth.enable = true;
 
     users.users = {
-      ${config.user.name}.openssh.authorizedKeys.keys = [
+      ${config.${namespace}.user.name}.openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG++dlRrheRZgVLtzadOWFJgHgEL27t70oUZyLwL1o0F"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGH6D2sNMsbMo6DMdwuwDjPpRBM8ZDZtQa/FG4Ape5ei"
       ];

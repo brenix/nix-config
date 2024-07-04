@@ -1,15 +1,14 @@
 {
-  options,
   config,
-  pkgs,
   lib,
+  namespace,
+  pkgs,
   ...
 }:
-with lib;
-with lib.matrix; let
-  cfg = config.matrix.system.fonts;
+with lib; let
+  cfg = config.${namespace}.system.fonts;
 in {
-  options.matrix.system.fonts = with types; {
+  options.${namespace}.system.fonts = with types; {
     enable = mkBoolOpt false "Whether or not to manage fonts.";
     fonts = mkOpt (listOf package) [] "Custom font packages to install.";
   };

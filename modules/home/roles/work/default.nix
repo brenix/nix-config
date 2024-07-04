@@ -1,20 +1,30 @@
 {
-  pkgs,
   config,
   lib,
+  namespace,
+  pkgs,
   ...
 }:
-with lib; let
-  cfg = config.roles.work;
+let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.roles.work;
 in {
-  options.roles.work = {
-    enable = mkEnableOption "Enable work profile";
+  options.${namespace}.roles.work = {
+    enable = mkBoolOpt false "Enable work profile";
   };
 
   config = mkIf cfg.enable {
-    cli.programs = {
-      go.enable = true;
-      k8s.enable = true;
+    matrix = {
+      programs = {
+        terminal = {
+          tools = {
+            go.enable = true;
+            k8s.enable = true;
+          };
+        };
+      };
     };
 
     home.packages = with pkgs; [

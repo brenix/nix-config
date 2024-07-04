@@ -1,12 +1,14 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib; let
-  cfg = config.roles.desktop.addons.greetd;
+}: let
+  inherit (lib) mkIf mkEnableOption;
+
+  cfg = config.${namespace}.roles.desktop.addons.greetd;
 in {
-  options.roles.desktop.addons.greetd = {
+  options.${namespace}.roles.desktop.addons.greetd = {
     enable = mkEnableOption "Enable login greeter";
   };
 
@@ -16,7 +18,7 @@ in {
       settings = rec {
         default_session = {
           command = "Hyprland &>/dev/null";
-          user = config.user.name;
+          user = config.${namespace}.user.name;
         };
         initial_session = default_session;
       };

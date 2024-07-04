@@ -1,24 +1,36 @@
 {
-  roles = {
-    desktop.enable = true;
-  };
+  matrix = {
+    user = {
+      enable = true;
+      name = "brenix";
+    };
 
-  cli.programs = {
-    go.enable = true;
-    yazi.enable = true;
-  };
+    roles = {
+      desktop.enable = true;
+    };
 
-  programs = {
-    discord.enable = true;
-    spotify.enable = true;
-    vscode.enable = true;
-  };
+    programs = {
+      terminal = {
+        tools = {
+          go.enable = true;
+          yazi.enable = true;
+        };
+      };
 
-  desktops.hyprland.enable = true;
+      graphical = {
+        apps = {
+          discord.enable = true;
+          spotify.enable = true;
+        };
 
-  matrix.user = {
-    enable = true;
-    name = "brenix";
+        editors.vscode = {
+          enable = true;
+          declarativeConfig = false;
+        };
+
+        wms.hyprland.enable = true;
+      };
+    };
   };
 
   home.stateVersion = "23.11";

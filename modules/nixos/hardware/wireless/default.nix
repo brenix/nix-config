@@ -1,13 +1,15 @@
 {
   config,
   lib,
+  namespace,
   pkgs,
   ...
-}:
-with lib; let
-  cfg = config.hardware.wireless;
+}: let
+  inherit (lib) mkIf mkEnableOption;
+
+  cfg = config.${namespace}.hardware.wireless;
 in {
-  options.hardware.wireless = {
+  options.${namespace}.hardware.wireless = {
     enable = mkEnableOption "Enable wireless networking";
   };
 

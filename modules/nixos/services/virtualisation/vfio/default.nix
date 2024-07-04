@@ -1,13 +1,12 @@
 {
-  lib,
-  pkgs,
   config,
+  lib,
+  namespace,
+  pkgs,
   ...
 }:
-with lib;
-with lib.matrix; let
-  inherit (lib) types mkOption mkEnableOption optional optionals;
-  cfg = config.services.virtualisation.vfio;
+with lib; let
+  cfg = config.${namespace}.services.virtualisation.vfio;
 
   tmpfileEntry = name: f: "f /dev/shm/${name} ${f.mode} ${f.user} ${f.group} -";
 
@@ -21,10 +20,10 @@ with lib.matrix; let
       ,
     ''
     escapeNixString
-    config.services.virtualisation.vfio.libvirtd.deviceACL;
+    config.${namespace}.services.virtualisation.vfio.libvirtd.deviceACL;
 in {
   # Based on this https://gist.github.com/CRTified/43b7ce84cd238673f7f24652c85980b3
-  options.services.virtualisation.vfio = {
+  options.${namespace}.services.virtualisation.vfio = {
     enable = mkEnableOption "enable kvm vfio virtualisation";
 
     libvirtd = {
@@ -38,7 +37,7 @@ in {
       };
       user = mkOption {
         type = types.str;
-        default = config.user.name;
+        default = config.${namespace}.user.name;
       };
       group = mkOption {
         type = types.str;
@@ -122,8 +121,8 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enable {
-    services.virtualisation.kvm.enable = true;
+  config = mkIf cfg.enable {
+    ${namespace}.services.virtualisation.kvm.enable = true;
 
     boot = {
       kernelParams =

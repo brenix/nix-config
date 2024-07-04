@@ -1,14 +1,13 @@
 {
-  options,
   config,
   lib,
+  namespace,
   ...
 }:
-with lib;
-with lib.matrix; let
-  cfg = config.matrix.system.security;
+with lib; let
+  cfg = config.${namespace}.system.security;
 in {
-  options.matrix.system.security = with types; {
+  options.${namespace}.system.security = with types; {
     enable = mkEnableOption "macOS security";
   };
 

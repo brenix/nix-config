@@ -1,15 +1,17 @@
 {
   config,
-  lib,
   inputs,
+  lib,
+  namespace,
   pkgs,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.security.sops;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.security.sops;
 in {
-  options.security.sops = with types; {
+  options.${namespace}.security.sops = {
     enable = mkBoolOpt false "Whether to enable SOPS for secrets management.";
   };
 
@@ -22,13 +24,13 @@ in {
       sops
     ];
 
-    home.sessionVariables.SOPS_AGE_KEY_FILE = "/home/${config.matrix.user.name}/.config/sops/age/keys.txt";
+    home.sessionVariables.SOPS_AGE_KEY_FILE = "/home/${config.${namespace}.user.name}/.config/sops/age/keys.txt";
 
     sops = {
       age = {
         generateKey = true;
-        keyFile = "/home/${config.matrix.user.name}/.config/sops/age/keys.txt";
-        sshKeyPaths = ["/home/${config.matrix.user.name}/.ssh/id_ed25519"];
+        keyFile = "/home/${config.${namespace}.user.name}/.config/sops/age/keys.txt";
+        sshKeyPaths = ["/home/${config.${namespace}.user.name}/.ssh/id_ed25519"];
       };
 
       defaultSymlinkPath = "/run/user/1000/secrets";

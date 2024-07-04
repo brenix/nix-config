@@ -6,11 +6,13 @@
 
   networking.hostName = "vm";
 
-  roles = {
-    desktop = {
-      enable = true;
-      addons = {
-        gnome.enable = true;
+  matrix = {
+    roles = {
+      desktop = {
+        enable = true;
+        addons = {
+          gnome.enable = true;
+        };
       };
     };
   };

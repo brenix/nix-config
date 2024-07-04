@@ -1,13 +1,16 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib; let
-  cfg = config.services.virtualisation.podman;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.services.virtualisation.podman;
 in {
-  options.services.virtualisation.podman = {
-    enable = mkEnableOption "Enable podman";
+  options.${namespace}.services.virtualisation.podman = {
+    enable = mkBoolOpt false "Enable podman";
   };
 
   config = mkIf cfg.enable {

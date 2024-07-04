@@ -1,14 +1,13 @@
 {
-  options,
   config,
   lib,
+  namespace,
   ...
 }:
-with lib;
-with lib.matrix; let
-  cfg = config.matrix.system.input;
+with lib; let
+  cfg = config.${namespace}.system.input;
 in {
-  options.matrix.system.input = with types; {
+  options.${namespace}.system.input = with types; {
     enable = mkEnableOption "macOS input";
   };
 

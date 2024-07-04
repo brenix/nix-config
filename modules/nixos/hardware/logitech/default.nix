@@ -1,15 +1,16 @@
 {
-  pkgs,
-  lib,
-  options,
   config,
+  lib,
+  namespace,
+  pkgs,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.hardware.logitechMouse;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.hardware.logitech;
 in {
-  options.hardware.logitechMouse = with types; {
+  options.${namespace}.hardware.logitech = {
     enable = mkBoolOpt false "Enable logitech mouse hardware for their mice";
   };
 

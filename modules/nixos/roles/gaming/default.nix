@@ -1,14 +1,16 @@
 {
   config,
   lib,
+  namespace,
   pkgs,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.roles.gaming;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.roles.gaming;
 in {
-  options.roles.gaming = with types; {
+  options.${namespace}.roles.gaming = {
     enable = mkBoolOpt false "Enable the gaming profile";
   };
 

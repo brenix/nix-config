@@ -1,13 +1,15 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.roles.streaming;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.roles.streaming;
 in {
-  options.roles.streaming = with types; {
+  options.${namespace}.roles.streaming = {
     enable = mkBoolOpt false "Whether or not to manage streaming configuration";
   };
 

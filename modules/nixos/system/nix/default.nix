@@ -1,13 +1,15 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.system.nix;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.system.nix;
 in {
-  options.system.nix = with types; {
+  options.${namespace}.system.nix = {
     enable = mkBoolOpt false "Whether or not to manage nix configuration";
   };
 

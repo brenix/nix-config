@@ -1,14 +1,15 @@
 {
-  options,
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.hardware.wootingKeyboard;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.hardware.wooting;
 in {
-  options.hardware.wootingKeyboard = with types; {
+  options.${namespace}.hardware.wooting = {
     enable = mkBoolOpt false "Enable support for wooting keyboards";
   };
 

@@ -2,61 +2,81 @@
   description = "brenix's Nix/NixOS Config";
 
   inputs = {
+    # Base packages
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Hardware support
     hardware.url = "github:nixos/nixos-hardware";
 
+    # Home-manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Nix user repository
     nur.url = "github:nix-community/NUR";
 
+    # Snowfall lib
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 
+    # MacOS support
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    # SOPS (secrets)
     sops-nix.url = "github:mic92/sops-nix";
 
+    # Bleeding edge packages (linux-cachyos)
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    # Impermanence
     impermanence.url = "github:nix-community/impermanence";
 
+    # OpenGL wrapper for nix
     nixgl.url = "github:nix-community/nixGL";
 
+    # Colorscheme management
     nix-colors.url = "github:misterio77/nix-colors";
 
+    # Catppuccin colorscheme
     catppuccin.url = "github:catppuccin/nix";
 
+    # Run unpatched dynamic binaries
     nix-ld.url = "github:Mic92/nix-ld";
 
+    # Nix index database
     nix-index-database.url = "github:nix-community/nix-index-database";
 
+    # Declarative disk management
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Remote installation support
     nixos-anywhere.url = "github:numtide/nixos-anywhere";
     nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs";
     nixos-anywhere.inputs.disko.follows = "disko";
 
-    nixos-generators.url = "github:nix-community/nixos-generators";
-    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
-
+    # Comma CLI tool
     comma.url = "github:nix-community/comma";
     comma.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Hyprland - Contrib
     hypr-contrib.url = "github:hyprwm/Hyprcursor";
     hypr-contrib.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Hyprland - Cursor
     hyprcursor.url = "github:hyprwm/Hyprcursor";
     hyprcursor.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Hyprland - Idle
     hypridle.url = "github:hyprwm/Hypridle";
     hypridle.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Hyprland - Scratchpad and Extras
     pyprland.url = "github:hyprland-community/pyprland";
     pyprland.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Hyprland - Main
     hyprland-git.url = "github:hyprwm/hyprland";
     hyprland-xdph-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     hyprland-protocols-git.url = "github:hyprwm/xdg-desktop-portal-hyprland";

@@ -1,12 +1,14 @@
 {
-  lib,
   config,
+  lib,
+  namespace,
   ...
-}:
-with lib; let
-  cfg = config.roles.common;
+}: let
+  inherit (lib) mkIf mkEnableOption;
+
+  cfg = config.${namespace}.roles.common;
 in {
-  options.roles.common = {
+  options.${namespace}.roles.common = {
     enable = mkEnableOption "Enable common configuration";
   };
 
@@ -15,33 +17,43 @@ in {
 
     programs.fish.enable = true;
 
-    cli.programs = {
-      nh.enable = true;
-    };
+    matrix = {
+      programs = {
+        terminal = {
+          tools = {
+            nh.enable = true;
+          };
+        };
+      };
 
-    services = {
-      ananicy.enable = true;
-      # bpftune.enable = true;
-      dbus.enable = true;
-      ssh.enable = true;
-      systemd = {
-        timesyncd.enable = true;
-        resolved.enable = true;
-        resolved.domains = ["lan"];
+      services = {
+        ananicy.enable = true;
+        ssh.enable = true;
+        systemd = {
+          timesyncd.enable = true;
+          resolved.enable = true;
+          resolved.domains = ["lan"];
+        };
+      };
+
+      security.sops.enable = true;
+
+      system = {
+        boot.enable = true;
+        impermanence.enable = true;
+        locale.enable = true;
+        nix.enable = true;
+        sysctl.enable = true;
       };
     };
 
-    security = {
-      sops.enable = true;
-      sudo.wheelNeedsPassword = false;
+    services = {
+      # bpftune.enable = true;
+      dbus.enable = true;
     };
 
-    system = {
-      boot.enable = true;
-      impermanence.enable = true;
-      locale.enable = true;
-      nix.enable = true;
-      sysctl.enable = true;
+    security = {
+      sudo.wheelNeedsPassword = false;
     };
   };
 }

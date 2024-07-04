@@ -1,15 +1,16 @@
 {
-  options,
   config,
   pkgs,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.system.fonts;
+}: let
+  inherit (lib) mkIf types;
+  inherit (lib.${namespace}) mkBoolOpt mkOpt;
+
+  cfg = config.${namespace}.system.fonts;
 in {
-  options.system.fonts = with types; {
+  options.${namespace}.system.fonts = with types; {
     enable = mkBoolOpt false "Whether or not to manage fonts.";
     fonts = mkOpt (listOf package) [] "Custom font packages to install.";
   };

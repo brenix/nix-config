@@ -1,15 +1,16 @@
 {
-  options,
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.security.sops;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.security.sops;
   key = builtins.elemAt (builtins.filter (k: k.type == "ed25519") config.services.openssh.hostKeys) 0;
 in {
-  options.security.sops = with types; {
+  options.${namespace}.security.sops = {
     enable = mkBoolOpt false "Whether to enable SOPS for secrets management.";
   };
 

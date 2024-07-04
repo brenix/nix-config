@@ -1,13 +1,15 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.services.systemd.resolved;
+}: let
+  inherit (lib) mkIf types;
+  inherit (lib.${namespace}) mkBoolOpt mkOpt;
+
+  cfg = config.${namespace}.services.systemd.resolved;
 in {
-  options.services.systemd.resolved = with types; {
+  options.${namespace}.services.systemd.resolved = with types; {
     enable = mkBoolOpt false "Enable resolved";
     domains = mkOpt (listOf str) [] "List of domains to use as search suffixes.";
   };
@@ -15,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     services.resolved = {
       enable = true;
-      domains = config.services.systemd.resolved.domains;
+      domains = config.${namespace}.services.systemd.resolved.domains;
       dnssec = "false";
     };
   };

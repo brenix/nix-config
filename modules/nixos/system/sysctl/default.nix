@@ -1,14 +1,15 @@
 {
-  options,
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.system.sysctl;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.system.sysctl;
 in {
-  options.system.sysctl = with types; {
+  options.${namespace}.system.sysctl = {
     enable = mkBoolOpt false "Whether or not to enable sysctl tunings.";
   };
 

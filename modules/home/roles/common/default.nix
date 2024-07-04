@@ -1,20 +1,23 @@
 {
-  lib,
   config,
   inputs,
+  lib,
+  namespace,
   ...
 }:
-with lib;
 with inputs; let
-  cfg = config.roles.common;
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.roles.common;
 in {
   imports = [
     catppuccin.homeManagerModules.catppuccin
     nix-colors.homeManagerModule
   ];
 
-  options.roles.common = {
-    enable = mkEnableOption "Enable common configuration";
+  options.${namespace}.roles.common = {
+    enable = mkBoolOpt false "Enable common configuration";
   };
 
   config = mkIf cfg.enable {
@@ -23,39 +26,38 @@ in {
     catppuccin.flavor = "mocha";
     xdg.enable = true; # required by catppuccin module
 
-    system = {
-      nix.enable = true;
-    };
-
-    cli = {
-      editors.helix.enable = true;
-      multiplexers.tmux.enable = false;
-      multiplexers.zellij.enable = true;
-      shells.fish.enable = true;
-
+    matrix = {
       programs = {
-        atuin.enable = false;
-        bat.enable = true;
-        common.enable = true;
-        dircolors.enable = true;
-        direnv.enable = true;
-        fzf.enable = true;
-        git.enable = true;
-        htop.enable = true;
-        k8s.enable = true;
-        nix-index.enable = true;
-        ssh.enable = true;
-        starship.enable = true;
-        zoxide.enable = true;
+        terminal = {
+          editors.helix.enable = true;
+          shells.fish.enable = true;
+          tools = {
+            atuin.enable = false;
+            bat.enable = true;
+            common.enable = true;
+            dircolors.enable = true;
+            direnv.enable = true;
+            fzf.enable = true;
+            git.enable = true;
+            htop.enable = true;
+            k8s.enable = true;
+            nix-index.enable = true;
+            ssh.enable = true;
+            starship.enable = true;
+            zoxide.enable = true;
+          };
+        };
+      };
+
+      security.sops.enable = true;
+
+      system = {
+        nix.enable = true;
       };
     };
 
     programs = {
       gh.enable = true;
-    };
-
-    security = {
-      sops.enable = true;
     };
   };
 }

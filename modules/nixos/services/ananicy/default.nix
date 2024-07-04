@@ -1,13 +1,16 @@
 {
   config,
   lib,
+  namespace,
+  pkgs,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.services.ananicy-cpp;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.services.ananicy;
 in {
-  options.services.ananicy-cpp = with types; {
+  options.${namespace}.services.ananicy = {
     enable = mkBoolOpt false "Enable ananicy";
   };
 

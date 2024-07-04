@@ -1,22 +1,45 @@
 {
-  pkgs,
   config,
   lib,
+  namespace,
+  pkgs,
   ...
-}:
-with lib; let
-  cfg = config.roles.desktop;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.roles.desktop;
 in {
-  options.roles.desktop = {
-    enable = mkEnableOption "Enable desktop profile";
+  options.${namespace}.roles.desktop = {
+    enable = mkBoolOpt false "Enable desktop profile";
   };
 
   config = mkIf cfg.enable {
-    roles = {
-      common.enable = true;
-    };
+    matrix = {
+      roles = {
+        common.enable = true;
+      };
 
-    browsers.firefox.enable = true;
+      programs = {
+        graphical = {
+          browsers.firefox.enable = true;
+        };
+
+        terminal = {
+          emulators.foot.enable = true;
+          tools.spotify-player.enable = true;
+        };
+      };
+
+      theme = {
+        gtk.enable = true;
+        qt.enable = true;
+      };
+
+      system = {
+        xdg.enable = pkgs.stdenv.isLinux;
+      };
+    };
 
     home.packages = with pkgs; [
       mpv
@@ -26,16 +49,6 @@ in {
       playerctl
       xdg-utils
     ];
-
-    desktops.addons = {
-      gtk.enable = true;
-      qt.enable = true;
-      xdg.enable = true;
-    };
-
-    cli = {
-      terminals.foot.enable = true;
-    };
 
     home.sessionVariables = {
       MOZ_ENABLE_WAYLAND = 1;

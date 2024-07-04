@@ -1,14 +1,16 @@
 {
-  roles = {
-    desktop.enable = true;
-  };
+  matrix = {
+    user = {
+      enable = true;
+      name = "brenix";
+    };
 
-  desktops.hyprland.enable = true;
-  desktops.hyprland.swapCapsEsc = true;
+    roles = {
+      desktop.enable = true;
+    };
 
-  matrix.user = {
-    enable = true;
-    name = "brenix";
+    programs.graphical.wms.hyprland.enable = true;
+    programs.graphical.wms.swapCapsEsc = true;
   };
 
   home.stateVersion = "23.11";

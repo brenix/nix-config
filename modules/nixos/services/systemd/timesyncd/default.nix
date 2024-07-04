@@ -1,13 +1,15 @@
 {
   config,
   lib,
+  namespace,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.services.systemd.timesyncd;
+}: let
+  inherit (lib) mkIf types;
+  inherit (lib.${namespace}) mkBoolOpt mkOpt;
+
+  cfg = config.${namespace}.services.systemd.timesyncd;
 in {
-  options.services.systemd.timesyncd = with types; {
+  options.${namespace}.services.systemd.timesyncd = with types; {
     enable = mkBoolOpt false "Enable timesyncd";
     servers = mkOpt (listOf str) ["time.cloudflare.com" "time.google.com"] "Custom set of NTP servers from which to synchronise.";
   };
@@ -15,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     services.timesyncd = {
       enable = true;
-      servers = config.services.systemd.timesyncd.servers;
+      servers = config.${namespace}.services.systemd.timesyncd.servers;
     };
   };
 }

@@ -9,12 +9,18 @@
   services.nix-daemon.enable = true;
 
   matrix = {
-    apps = {
-      easy-move-plus-resize.enable = true;
-      iterm2.enable = true;
-      mindnode.enable = true;
-      mtr.enable = true;
-      # vscode.enable = true;
+    programs = {
+      graphical = {
+        addons.easy-move-plus-resize.enable = true;
+        emulators.iterm2.enable = true;
+        apps.mindnode.enable = true;
+      };
+
+      terminal = {
+        tools = {
+          mtr.enable = true;
+        };
+      };
     };
 
     services = {

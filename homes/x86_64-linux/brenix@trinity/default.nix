@@ -1,12 +1,13 @@
 {
-  roles = {
-    common.enable = true;
-  };
+  matrix = {
+    roles = {
+      common.enable = true;
+    };
 
-  matrix.user = {
-    enable = true;
-    name = "brenix";
+    user = {
+      enable = true;
+      name = "brenix";
+    };
   };
-
   home.stateVersion = "23.11";
 }

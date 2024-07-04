@@ -1,13 +1,16 @@
-{  config,  lib,
+{
+  config,
+  lib,
+  namespace,
   pkgs,
   ...
 }: let
   inherit (lib) mkIf;
-  inherit (lib.matrix) mkBoolOpt;
+  inherit (lib.${namespace}) mkBoolOpt;
 
-  cfg = config.system.boot;
+  cfg = config.${namespace}.system.boot;
 in {
-  options.system.boot = {
+  options.${namespace}.system.boot = {
     enable = mkBoolOpt false "Whether or not to enable booting.";
   };
 

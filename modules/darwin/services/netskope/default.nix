@@ -1,12 +1,12 @@
 {
   config,
-  pkgs,
   lib,
+  namespace,
+  pkgs,
   ...
 }:
-with lib;
-with lib.matrix; let
-  cfg = config.matrix.services.netskopeBundler;
+with lib; let
+  cfg = config.${namespace}.services.netskopeBundler;
   mkBundle = pkgs.writeShellScriptBin "mkBundle.sh" ''
     cacert='/Library/Application Support/Netskope/STAgent/data/'nscacert.pem
     tenantcert='/Library/Application Support/Netskope/STAgent/data/'nstenantcert.pem
@@ -34,12 +34,12 @@ with lib.matrix; let
     fi
   '';
 in {
-  options.matrix.services.netskopeBundler = {
+  options.${namespace}.services.netskopeBundler = {
     enable = mkEnableOption ''
       a bundled certificate trust store and update it on login
     '';
   };
-  options.matrix.services.netskopeBundler.certPath = mkOption {
+  options.${namespace}.services.netskopeBundler.certPath = mkOption {
     default = "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem";
     type = types.path;
     description = ''

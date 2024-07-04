@@ -1,14 +1,13 @@
 {
-  options,
   config,
   lib,
+  namespace,
   ...
 }:
-with lib;
-with lib.matrix; let
-  cfg = config.matrix.system.interface;
+with lib; let
+  cfg = config.${namespace}.system.interface;
 in {
-  options.matrix.system.interface = with types; {
+  options.${namespace}.system.interface = with types; {
     enable = mkEnableOption "macOS interface";
   };
 

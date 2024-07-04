@@ -1,15 +1,16 @@
 {
-  options,
   config,
   lib,
+  namespace,
   pkgs,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.roles.desktop.addons.xdg-portal;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.roles.desktop.addons.xdg-portal;
 in {
-  options.roles.desktop.addons.xdg-portal = with types; {
+  options.${namespace}.roles.desktop.addons.xdg-portal = {
     enable = mkBoolOpt false "Whether or not to add support for xdg portal.";
   };
 

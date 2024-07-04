@@ -1,20 +1,20 @@
 {
   config,
   lib,
+  namespace,
   pkgs,
   ...
-}:
-with lib;
-with lib.matrix; let
-  cfg = config.roles.desktop.addons.gnome;
+}: let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
+  cfg = config.${namespace}.roles.desktop.addons.gnome;
 in {
-  options.roles.desktop.addons.gnome = with types; {
+  options.${namespace}.roles.desktop.addons.gnome = {
     enable = mkBoolOpt false "Enable or disable the gnome DE.";
   };
 
   config = mkIf cfg.enable {
-    roles.desktop.addons.nautilus.enable = true;
-
     services = {
       xserver = {
         enable = true;
