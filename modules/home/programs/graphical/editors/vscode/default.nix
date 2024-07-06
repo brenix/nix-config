@@ -99,7 +99,6 @@ in {
         "terminal.integrated.gpuAcceleration" = "on";
 
         # Workbench
-        "workbench.editor.tabCloseButton" = "left";
         "workbench.fontAliasing" = "antialiased";
         "workbench.list.smoothScrolling" = true;
         "workbench.panel.defaultLocation" = "right";
