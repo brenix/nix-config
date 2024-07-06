@@ -24,10 +24,14 @@ in {
         bbenoist.nix
         catppuccin.catppuccin-vsc
         christian-kohler.path-intellisense
+        davidanson.vscode-markdownlint
+        denoland.vscode-deno
         eamodio.gitlens
+        editorconfig.editorconfig
         esbenp.prettier-vscode
         github.vscode-github-actions
         github.vscode-pull-request-github
+        golang.go
         gruntfuggly.todo-tree
         kamadorueda.alejandra
         ms-kubernetes-tools.vscode-kubernetes-tools
@@ -36,6 +40,7 @@ in {
         redhat.vscode-yaml
         shardulm94.trailing-spaces
         sumneko.lua
+        tim-koehler.helm-intellisense
         timonwong.shellcheck
         usernamehw.errorlens
         vscode-icons-team.vscode-icons
