@@ -4,10 +4,13 @@
   namespace,
   ...
 }:
-with lib; let
+let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
   cfg = config.${namespace}.programs.graphical.apps.mindnode;
 in {
-  options.${namespace}.programs.graphical.apps.mindnode = with types; {
+  options.${namespace}.programs.graphical.apps.mindnode = {
     enable = mkBoolOpt false "Whether or not to enable mindnode.";
   };
 

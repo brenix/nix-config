@@ -5,7 +5,10 @@
   pkgs,
   ...
 }:
-with lib; let
+let
+  inherit (lib) mkIf types;
+  inherit (lib.${namespace}) mkBoolOpt mkOpt;
+
   cfg = config.${namespace}.system.fonts;
 in {
   options.${namespace}.system.fonts = with types; {

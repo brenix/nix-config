@@ -4,11 +4,14 @@
   namespace,
   ...
 }:
-with lib; let
+let
+  inherit (lib) mkIf mkMerge;
+  inherit (lib.${namespace}) mkBoolOpt;
+
   cfg = config.${namespace}.system.input;
 in {
-  options.${namespace}.system.input = with types; {
-    enable = mkEnableOption "macOS input";
+  options.${namespace}.system.input = {
+    enable = mkBoolOpt false "Enable macOS input tweaks";
   };
 
   config = mkIf cfg.enable (mkMerge [

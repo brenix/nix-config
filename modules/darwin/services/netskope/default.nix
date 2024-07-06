@@ -38,13 +38,14 @@ in {
     enable = mkEnableOption ''
       a bundled certificate trust store and update it on login
     '';
-  };
-  options.${namespace}.services.netskopeBundler.certPath = mkOption {
-    default = "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem";
-    type = types.path;
-    description = ''
-      Desired location of bundled certificate.
-    '';
+
+    certPath = mkOption {
+      default = "/Library/Application Support/Netskope/STAgent/data/netskope-cert-bundle.pem";
+      type = types.path;
+      description = ''
+        Desired location of bundled certificate.
+      '';
+    };
   };
 
   config = lib.mkIf cfg.enable {

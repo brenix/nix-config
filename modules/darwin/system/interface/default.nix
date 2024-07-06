@@ -4,11 +4,14 @@
   namespace,
   ...
 }:
-with lib; let
+let
+  inherit (lib) mkIf;
+  inherit (lib.${namespace}) mkBoolOpt;
+
   cfg = config.${namespace}.system.interface;
 in {
-  options.${namespace}.system.interface = with types; {
-    enable = mkEnableOption "macOS interface";
+  options.${namespace}.system.interface = {
+    enable = mkBoolOpt false "Enable macOS interface tweaks";
   };
 
   config = mkIf cfg.enable {
