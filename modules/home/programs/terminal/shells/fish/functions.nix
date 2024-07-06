@@ -128,4 +128,14 @@
     set -l hosts (string split " " (kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' "$argv"))
     ssh-multi $hosts
   '';
+
+  # yazi recommended function
+  yy = ''
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+      cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+  '';
 }
