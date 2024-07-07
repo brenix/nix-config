@@ -44,6 +44,7 @@ in {
             nix-index.enable = true;
             ssh.enable = true;
             starship.enable = true;
+            zellij.enable = true;
             zoxide.enable = true;
           };
         };
