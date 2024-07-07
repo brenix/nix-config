@@ -34,6 +34,7 @@ in {
         "SUPER, V" = "exec, pavucontrol";
         "SUPER, D" = "exec, firefox";
         "SUPER, S" = "exec, spotify";
+        "SUPER, X" = "exec, VSCodium";
         "SUPER_SHIFT, Q" = "exit";
 
         # Screenshot
