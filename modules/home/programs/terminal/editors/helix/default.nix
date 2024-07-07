@@ -31,6 +31,7 @@ in {
           bufferline = "always";
           undercurl = true;
           color-modes = true;
+          completion-replace = true;
           line-number = "absolute";
           indent-guides = {
             render = true;
@@ -42,8 +43,15 @@ in {
           cursor-shape = {
             normal = "block";
             insert = "bar";
-            select = "underline";
+            select = "block";
           };
+          gutters = [
+            "diagnostics"
+            "line-numbers"
+            "spacer"
+            "diff"
+          ];
+          idle-timeout = 1;
           file-picker = {
             hidden = false;
             parents = false;
@@ -55,6 +63,8 @@ in {
             display-inlay-hints = false;
             snippets = true;
           };
+          rulers = [80];
+          scrolloff = 5;
           statusline = {
             left = [
               "mode"
