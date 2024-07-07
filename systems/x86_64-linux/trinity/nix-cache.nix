@@ -1,4 +1,3 @@
-# TODO: convert to module or use attic
 {pkgs, ...}: {
   services.logrotate.settings.nginx = {
     files = "/var/log/nginx/*.log";

@@ -1,4 +1,3 @@
-# TODO: convert to module
 {pkgs, ...}: let
   k3sConfig = pkgs.writeText "k3s-config.yaml" ''
     kubelet-arg:

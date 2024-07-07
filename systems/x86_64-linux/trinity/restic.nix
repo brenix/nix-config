@@ -1,4 +1,3 @@
-# TODO: move to module
 {
   pkgs,
   config,

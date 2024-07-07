@@ -15,7 +15,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    # TODO: move to homes
     xdg = {
       autostart.enable = true;
       portal = {

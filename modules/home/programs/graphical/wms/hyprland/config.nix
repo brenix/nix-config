@@ -15,7 +15,7 @@ in {
       enable = true;
       package = pkgs.hyprland;
 
-      # FIXME: Results in home-manager switch failing due to unable to connect to hyprctl socket
+      # TODO: Results in home-manager switch failing due to unable to connect to hyprctl socket
       reloadConfig = false;
 
       systemdIntegration = true;
