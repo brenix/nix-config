@@ -27,7 +27,7 @@ in {
       };
 
       services = {
-        ananicy.enable = true;
+        ananicy.enable = false; # FIXME: uncomment once build failure fixed
         ssh.enable = true;
         systemd = {
           timesyncd.enable = true;

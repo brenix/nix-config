@@ -53,12 +53,12 @@ in {
         "catppuccin.accentColor" = "blue";
 
         # Font
-        "editor.fontFamily" = "Monaco Nerd Font Mono, monospace";
-        "editor.codeLensFontFamily" = "Monaco Nerd Font Mono, monospace";
-        "editor.inlayHints.fontFamily" = "Monaco Nerd Font Mono, monospace";
-        "debug.console.fontFamily" = "Monaco Nerd Font Mono, monospace";
-        "scm.inputFontFamily" = "Monaco Nerd Font Mono, monospace";
-        "terminal.integrated.fontFamily" = "Monaco Nerd Font Mono, monospace";
+        "editor.fontFamily" = "JetBrainsMono Nerd Font, monospace";
+        "editor.codeLensFontFamily" = "JetBrainsMono Nerd Font, monospace";
+        "editor.inlayHints.fontFamily" = "JetBrainsMono Nerd Font, monospace";
+        "debug.console.fontFamily" = "JetBrainsMono Nerd Font, monospace";
+        "scm.inputFontFamily" = "JetBrainsMono Nerd Font, monospace";
+        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font, monospace";
 
         # Git settings
         "git.allowForcePush" = true;
