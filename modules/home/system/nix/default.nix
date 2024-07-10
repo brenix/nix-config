@@ -49,6 +49,8 @@ in {
         experimental-features = ["nix-command" "flakes"];
         warn-dirty = false;
         use-xdg-base-directories = true;
+
+        netrc-file = "/home/${config.${namespace}.user.name}/.netrc";
       };
     };
 

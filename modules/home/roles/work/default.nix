@@ -4,8 +4,7 @@
   namespace,
   pkgs,
   ...
-}:
-let
+}: let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
 
@@ -32,7 +31,7 @@ in {
       cfssl
       cilium-cli
       cockroachdb-bin
-      doppler
+      # doppler # FIXME: https://github.com/NixOS/nixpkgs/pull/326008
       jira-cli-go
       postgresql
       pre-commit
