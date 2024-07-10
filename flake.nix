@@ -86,10 +86,11 @@
     hyprland-nix.inputs.hyprland-protocols.follows = "hyprland-protocols-git";
   };
 
-  outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
+  outputs = inputs: let
+    lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
       src = ./.;
+
       snowfall = {
         metadata = "matrix";
         namespace = "matrix";
@@ -98,7 +99,9 @@
           title = "brenix's Nix Flake";
         };
       };
-
+    };
+  in
+    lib.mkFlake {
       channels-config = {
         allowUnfree = true;
       };
