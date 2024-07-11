@@ -22,7 +22,7 @@ in {
 
       extensions = with pkgs.vscode-extensions; [
         bbenoist.nix
-        catppuccin.catppuccin-vsc
+        # catppuccin.catppuccin-vsc
         christian-kohler.path-intellisense
         davidanson.vscode-markdownlint
         denoland.vscode-deno
