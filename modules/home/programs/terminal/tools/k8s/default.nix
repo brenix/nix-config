@@ -34,6 +34,8 @@ in {
             };
             logger = {
               buffer = 200000;
+              sinceSeconds = -1;
+              tail = 500;
             };
           };
         };
