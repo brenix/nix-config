@@ -24,7 +24,6 @@ in {
 
       services = {
         avahi.enable = true;
-        virtualisation.podman.enable = true;
       };
 
       system = {

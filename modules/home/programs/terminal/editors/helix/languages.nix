@@ -104,9 +104,7 @@ in {
           name = "nix";
           auto-format = true;
           formatter = {
-            # command = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
             command = "${pkgs.alejandra}/bin/alejandra";
-            # command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
           };
         }
         {

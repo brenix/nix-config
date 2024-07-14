@@ -3,6 +3,7 @@
   inputs,
   lib,
   namespace,
+  pkgs,
   ...
 }:
 with inputs; let
@@ -23,7 +24,7 @@ in {
   config = mkIf cfg.enable {
     colorscheme = nix-colors.colorSchemes.catppuccin-mocha;
     catppuccin.flavor = "mocha";
-    xdg.enable = true; # required by catppuccin module
+    xdg.enable = pkgs.stdenv.isLinux; # required by catppuccin module
 
     matrix = {
       programs = {

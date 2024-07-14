@@ -31,9 +31,10 @@ in {
         "SUPER, W" = "killactive,";
         "SUPER_SHIFT, F" = "Fullscreen,0";
         "SUPER, F" = "togglefloating,";
-        "SUPER, V" = "exec, pavucontrol";
+        "SUPER, C" = "exec, codium";
         "SUPER, D" = "exec, firefox";
         "SUPER, S" = "exec, spotify";
+        "SUPER, V" = "exec, pavucontrol";
         "SUPER, X" = "exec, VSCodium";
         "SUPER_SHIFT, Q" = "exit";
 
