@@ -22,7 +22,7 @@ in {
 
       settings = {
         main = {
-          term = "foot";
+          term = "xterm-256color";
           font = "JetBrainsMono Nerd Font:size=10, Noto Color Emoji:size=18";
           font-bold = "JetBrainsMono Nerd Font:size=10:weight=Regular";
           line-height = "14px";
