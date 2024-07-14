@@ -15,6 +15,11 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.file.".kube/.keep" = {
+      text = ''
+      '';
+    };
+
     programs = {
       k9s = {
         enable = true;
@@ -30,7 +35,6 @@ in {
               logoless = true;
               enableMouse = true;
               noIcons = true;
-              # skin = "transparent";
             };
             logger = {
               buffer = 200000;
@@ -42,13 +46,7 @@ in {
       };
     };
 
-    home.file.".kube/.keep" = {
-      text = ''
-      '';
-    };
-
     home.packages = with pkgs; [
-      fluxcd
       (wrapHelm kubernetes-helm {
         plugins = with pkgs.kubernetes-helmPlugins; [
           helm-diff
@@ -56,24 +54,25 @@ in {
           helm-cm-push
         ];
       })
+      # docker-machine-kvm2
+      # fluxcd
       helm-docs
       helmfile
-      k3d
+      # k3d
       krew
-      kubectl-neat
-      kubectl-view-secret
-      kubectl-example
-      kubectl-cnpg
       kubecolor
       kubectl
+      kubectl-cnpg
+      kubectl-example
+      kubectl-neat
+      kubectl-view-secret
       kubelogin
-      kubevirt
       kubelogin-oidc
-      # minikube
-      # docker-machine-kvm2
-      stern
+      kubevirt
       kustomize
-      talosctl
+      # minikube
+      stern
+      # talosctl
       # trivy
     ];
   };

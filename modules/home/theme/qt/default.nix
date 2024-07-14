@@ -4,8 +4,7 @@
   namespace,
   pkgs,
   ...
-}:
-let
+}: let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
 
@@ -19,9 +18,6 @@ in {
     qt = {
       enable = true;
       platformTheme.name = "gtk";
-
-      # style.name = "Adwaita:dark";
-      # style.package = pkgs.adw-gtk3;
 
       style.name = "Catppuccin-Mocha-Compact-Blue-Dark";
       style.package = pkgs.catppuccin-gtk.override {

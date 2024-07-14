@@ -25,7 +25,6 @@ in {
       enable = true;
       catppuccin.enable = true;
       settings = {
-        # theme = "gruvbox_material_dark_hard";
         editor = {
           auto-pairs = false;
           bufferline = "always";

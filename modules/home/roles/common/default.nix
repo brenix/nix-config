@@ -22,7 +22,6 @@ in {
 
   config = mkIf cfg.enable {
     colorscheme = nix-colors.colorSchemes.catppuccin-mocha;
-    # colorscheme = nix-colors.colorSchemes.gruvbox-material-dark-hard;
     catppuccin.flavor = "mocha";
     xdg.enable = true; # required by catppuccin module
 
@@ -30,6 +29,7 @@ in {
       programs = {
         terminal = {
           editors.helix.enable = true;
+          editors.language-servers.enable = true;
           shells.fish.enable = true;
           tools = {
             atuin.enable = false;

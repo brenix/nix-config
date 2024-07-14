@@ -37,30 +37,20 @@ in {
     };
 
     home.packages = with pkgs; [
-      #sd
       age
       amber
       certigo
       curlie
       dig
-      dysk
       gcc
       gettext
       gnumake
-      go-task
-      gomplate
       htop
-      hugo
-      imagemagick
       jq
-      jwt-cli
       libqalculate
-      nmap
-      shfmt
       tcpdump
       unrar
       unzip
-      vault-bin
       wireguard-tools
       yq-go
     ];

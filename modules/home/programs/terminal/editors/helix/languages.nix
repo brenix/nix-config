@@ -10,22 +10,6 @@
   cfg = config.${namespace}.programs.terminal.editors.helix;
 in {
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      deno
-      golangci-lint-langserver
-      gopls
-      helm-ls
-      # lua-language-server
-      marksman
-      nil
-      bash-language-server
-      nodePackages.dockerfile-language-server-nodejs
-      nodePackages.vscode-langservers-extracted
-      nodePackages.yaml-language-server
-      pyright
-      # terraform-ls
-    ];
-
     programs.helix.languages = {
       language-server = {
         yaml-language-server = {

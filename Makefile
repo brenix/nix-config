@@ -10,6 +10,10 @@ else
 	@nh os switch
 endif
 
+## Build config only
+build:
+	@nh os build
+
 ## Rebuild Home-manager configuration
 home:
 	@nh home switch
