@@ -136,7 +136,6 @@ Some features of my nix-config:
 - `neo`: My primary desktop computer
 - `morpheus`: Framework 13th gen laptop
 - `trinity`: My spare desktop now used as a K8S server
-- `macbook`: Apple macbook laptop
 - `vm`: Qemu VM for testing
 - `iso`: Builds custom installer ISO
 
