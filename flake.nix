@@ -41,9 +41,6 @@
     # Catppuccin colorscheme
     catppuccin.url = "github:catppuccin/nix";
 
-    # Run unpatched dynamic binaries
-    nix-ld.url = "github:Mic92/nix-ld";
-
     # Nix index database
     nix-index-database.url = "github:nix-community/nix-index-database";
 
@@ -111,7 +108,6 @@
         disko.nixosModules.disko
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
-        nix-ld.nixosModules.nix-ld
         catppuccin.nixosModules.catppuccin
         chaotic.nixosModules.default
         {
