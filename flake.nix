@@ -144,5 +144,9 @@
         chaotic.overlays.default
         nur.overlay
       ];
+
+      outputs-builder = channels: {
+        formatter = channels.nixpkgs.alejandra;
+      };
     };
 }
