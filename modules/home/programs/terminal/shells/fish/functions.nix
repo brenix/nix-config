@@ -129,8 +129,8 @@
     ssh-multi $hosts
   '';
 
-  # yazi recommended function
-  yy = ''
+  # yazi function
+  zz = ''
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
     if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
