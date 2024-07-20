@@ -39,11 +39,12 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.keychain = {
-      enable = true;
-      keys = ["id_ed25519"];
-      agents = ["ssh"];
-    };
+    # NOTE: disabled for slowing down my shell
+    # programs.keychain = {
+    #   enable = true;
+    #   keys = ["id_ed25519"];
+    #   agents = ["ssh"];
+    # };
 
     programs.ssh = {
       enable = true;

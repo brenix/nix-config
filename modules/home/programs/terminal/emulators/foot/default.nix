@@ -22,9 +22,9 @@ in {
 
       settings = {
         main = {
-          font = "JetBrainsMono Nerd Font:size=10, Noto Color Emoji:size=18";
-          font-bold = "JetBrainsMono Nerd Font:size=10:weight=Regular";
-          line-height = "14px";
+          font = "JetBrainsMono Nerd Font:size=11.5, Noto Color Emoji:size=18";
+          font-bold = "JetBrainsMono Nerd Font:size=11.5:weight=Regular";
+          line-height = "15px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
           term = "xterm-256color";

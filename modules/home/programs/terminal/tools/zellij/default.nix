@@ -60,6 +60,9 @@ in {
             "bind \"Alt f\"" = {
               ToggleFocusFullscreen = [];
             };
+            "bind \"Alt '\"" = {
+              NewTab = [];
+            };
           };
         };
 
