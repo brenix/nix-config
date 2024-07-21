@@ -15,7 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-      kernelModules = ["tcp_bbr"];
+      # kernelModules = ["tcp_bbr"];
       kernel = {
         sysctl = {
           "fs.file-max" = 2097152;
