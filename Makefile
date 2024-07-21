@@ -7,22 +7,25 @@ nixos:
 ifeq ($(UNAME), Darwin)
 	@darwin-rebuild switch --verbose --flake ".#$(HOSTNAME)"
 else
-	@nh os switch
+	@sudo nixos-rebuild switch --verbose --flake ".#$(HOSTNAME)"
 endif
 
 ## Build config only
 build:
-	@nh os build
+ifeq ($(UNAME), Darwin)
+	@darwin-rebuild build --verbose --flake ".#$(HOSTNAME)"
+else
+	@sudo nixos-rebuild switch --verbose --flake ".#$(HOSTNAME)"
+endif
 
 ## Rebuild Home-manager configuration
 home:
-	@nh home switch
+	@home-manager switch --flake ".#$(USERNAME)@$(HOSTNAME)"
 
 ## Update flake and rebuild
-upgrade: update
-	@nh os switch
+upgrade: update nixos
 
-## Rebuild and upgrade NixOS configuration
+## Update flake
 update:
 	@nix flake update
 
