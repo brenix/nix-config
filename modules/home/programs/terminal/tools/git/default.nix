@@ -46,6 +46,8 @@ in {
         }
       ];
       aliases = {
+        publish = "!git push -u origin $(git branch --show-current)";
+        unpublish = "!git push origin :$(git branch --show-current)";
         cleanbr = "! git branch --merged | egrep -v \"(^\\*|master|main|develop)\" | xargs git branch -D 2>/dev/null || true";
         cleanbrall = "! git branch | egrep -v \"(^\\*|master|main|develop)\" | xargs git branch -D 2>/dev/null || true";
       };
