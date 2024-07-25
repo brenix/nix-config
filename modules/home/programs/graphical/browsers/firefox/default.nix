@@ -62,7 +62,7 @@ in {
           "media.memory_cache_max_size" = 65536;
           "network.buffer.cache.count" = 128;
           "network.buffer.cache.size" = 262144;
-          "network.dnsCacheEntries" = 1000;
+          "network.dnsCacheEntries" = 20000;
           "network.dns.disableIPv6" = true;
           "network.dns.max_high_priority_threads" = 16;
           "network.http.http3.enabled" = true;
