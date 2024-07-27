@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   matrix = {
     roles = {
       common.enable = true;
@@ -9,5 +9,10 @@
       name = "brenix";
     };
   };
+
+  home.packages = with pkgs; [
+    fluxcd
+  ];
+
   home.stateVersion = "23.11";
 }
