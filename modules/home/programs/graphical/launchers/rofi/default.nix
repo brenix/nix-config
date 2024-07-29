@@ -22,7 +22,7 @@ in {
       package = cfg.package;
       terminal = "${pkgs.foot}/bin/foot";
       # catppuccin.enable = true;
-      font = "JetBrainsMono Nerd Font 12";
+      font = "SFMono Nerd Font 12";
       extraConfig = {
         modi = "run,drun,window";
         show-icons = true;

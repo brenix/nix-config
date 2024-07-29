@@ -54,15 +54,15 @@ in {
 
         font = {
           normal = {
-            family = "JetBrainsMono Nerd Font";
+            family = "SFMono Nerd Font";
             style = "Regular";
           };
           bold = {
-            family = "JetBrainsMono Nerd Font";
+            family = "SFMono Nerd Font";
             style = "Regular";
           };
           italic = {
-            family = "JetBrainsMono Nerd Font";
+            family = "SFMono Nerd Font";
             style = "Italic";
           };
           size = 14.0;

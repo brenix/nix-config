@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   namespace,
   ...
 }: let
@@ -25,6 +26,7 @@ in {
           google-fonts
           matrix.monaco
           noto-fonts-emoji
+          inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
           terminus_font
         ]
         ++ cfg.fonts;
@@ -34,7 +36,7 @@ in {
         defaultFonts = {
           serif = ["Inter"];
           sansSerif = ["Inter"];
-          monospace = ["JetBrainsMono Nerd Font" "Monaco Nerd Font Mono"];
+          monospace = ["SFMono Nerd Font" "Monaco Nerd Font Mono"];
           emoji = ["Noto Color Emoji"];
         };
         enable = true;

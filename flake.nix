@@ -57,6 +57,10 @@
     comma.url = "github:nix-community/comma";
     comma.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Apple fonts (SF Mono)
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+    apple-fonts.inputs.nixpkgs.follows = "nixpkgs";
+
     # Hyprland - Contrib
     hypr-contrib.url = "github:hyprwm/Hyprcursor";
     hypr-contrib.inputs.nixpkgs.follows = "nixpkgs";
