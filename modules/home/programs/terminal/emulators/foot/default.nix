@@ -22,8 +22,8 @@ in {
 
       settings = {
         main = {
-          font = "SFMono Nerd Font:size=11.5:weight=Regular, Noto Color Emoji:size=18";
-          font-bold = "SFMono Nerd Font:size=11.5:weight=Regular";
+          font = "JetBrainsMono Nerd Font:size=11.5:weight=Regular, Noto Color Emoji:size=18";
+          font-bold = "JetBrainsMono Nerd Font:size=11.5:weight=Regular";
           line-height = "15px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";

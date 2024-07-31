@@ -36,7 +36,7 @@ in {
         defaultFonts = {
           serif = ["Inter"];
           sansSerif = ["Inter"];
-          monospace = ["SFMono Nerd Font" "Monaco Nerd Font Mono"];
+          monospace = ["JetBrainsMono Nerd Font" "Monaco Nerd Font Mono"];
           emoji = ["Noto Color Emoji"];
         };
         enable = true;
