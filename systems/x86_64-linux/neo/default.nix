@@ -76,6 +76,7 @@
         routeConfig = {
           InitialCongestionWindow = 50;
           InitialAdvertisedReceiveWindow = 50;
+          QuickAck = true;
         };
       }
     ];
