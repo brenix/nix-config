@@ -4,9 +4,8 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
   inherit (lib.${namespace}) mkBoolOpt;
-  # inherit (config.colorscheme) palette;
 
   cfg = config.${namespace}.programs.terminal.tools.zellij;
 in {
@@ -17,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.zellij = {
       enable = true;
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
       settings = {
         auto_layouts = false;
         default_layout = "compact";
@@ -72,6 +71,13 @@ in {
           status-bar.path = "status-bar";
           strider.path = "strider";
           compact-bar.path = "compact-bar";
+        };
+
+        themes.stylix = with config.lib.stylix.colors.withHashtag; {
+          bg = mkForce base00;
+          fg = mkForce base05;
+          white = mkForce base05;
+          green = mkForce base0D;
         };
       };
     };

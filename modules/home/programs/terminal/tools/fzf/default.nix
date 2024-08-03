@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.fzf = {
       enable = true;
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
     };
   };
 }

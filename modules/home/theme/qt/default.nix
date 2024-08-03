@@ -18,14 +18,6 @@ in {
     qt = {
       enable = true;
       platformTheme.name = "gtk";
-
-      style.name = "Catppuccin-Mocha-Compact-Blue-Dark";
-      style.package = pkgs.catppuccin-gtk.override {
-        accents = ["blue"];
-        size = "compact";
-        tweaks = ["rimless"];
-        variant = "mocha";
-      };
     };
   };
 }

@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.alacritty = {
       enable = true;
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
 
       settings = {
         shell = {
@@ -53,19 +53,6 @@ in {
         };
 
         font = {
-          normal = {
-            family = "JetBrainsMono Nerd Font";
-            style = "Regular";
-          };
-          bold = {
-            family = "JetBrainsMono Nerd Font";
-            style = "Regular";
-          };
-          italic = {
-            family = "JetBrainsMono Nerd Font";
-            style = "Italic";
-          };
-          size = 14.0;
           offset.y = -2;
         };
       };

@@ -7,7 +7,7 @@
 }: let
   inherit (lib) mkIf types;
   inherit (lib.${namespace}) mkBoolOpt mkOpt;
-  inherit (config.colorscheme) variant;
+  inherit (config.stylix) polarity;
 
   cfg = config.${namespace}.programs.terminal.tools.git;
 
@@ -101,7 +101,7 @@ in {
           delta = {
             enable = true;
             light =
-              if variant == "light"
+              if polarity == "light"
               then true
               else false;
             side-by-side = false;
@@ -110,19 +110,19 @@ in {
               # syntax-theme = "gruvbox-dark";
               color-only = true;
               minus-style =
-                if variant == "dark"
+                if polarity == "dark"
                 then "black #9f7777"
                 else "black #ffebe9";
               minus-emph-style =
-                if variant == "dark"
+                if polarity == "dark"
                 then "black #f7b9b9"
                 else "black #ffc0c0";
               plus-style =
-                if variant == "dark"
+                if polarity == "dark"
                 then "black #98ad9c"
                 else "black #e6ffec";
               plus-emph-style =
-                if variant == "dark"
+                if polarity == "dark"
                 then "black #e1ffe6"
                 else "black #abf2bc";
             };

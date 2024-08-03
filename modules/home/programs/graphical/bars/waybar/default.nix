@@ -3,10 +3,11 @@
   lib,
   namespace,
   ...
-}: let
+}:
+with config.lib.stylix.colors.withHashtag;
+with config.stylix.fonts; let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
-
   cfg = config.${namespace}.programs.graphical.bars.waybar;
 in {
   options.${namespace}.programs.graphical.bars.waybar = {
@@ -136,7 +137,157 @@ in {
         }
       ];
 
-      style = builtins.readFile ./styles-catppuccin.css;
+      style = ''
+        @define-color black #222;
+        @define-color white #ececec;
+        @define-color blue ${base0D};
+        @define-color green ${base0B};
+        @define-color red ${base08};
+
+        * {
+          border: 0;
+          padding: 0 0;
+          font-family: "${monospace.name}";
+          font-size: ${builtins.toString sizes.terminal}pt;
+          color: white;
+        }
+
+        window#waybar {
+          border: 0px solid rgba(0, 0, 0, 0);
+          background-color: @black;
+        }
+
+        #workspaces * {
+          color: white;
+        }
+
+        #workspaces {
+          border-style: solid;
+          margin: 0 4px;
+          background-color: @black;
+        }
+
+        #workspaces button {
+          color: @black;
+        }
+
+        #workspaces button.active * {
+          color: @white;
+          background-color: @white;
+        }
+
+        #workspaces button.visible {
+          color: white;
+          background-color: @white;
+        }
+
+        #workspaces button.visible * {
+          color: @black;
+        }
+
+        #clock,
+        #battery,
+        #cpu,
+        #memory,
+        #temperature,
+        #backlight,
+        #network,
+        #pulseaudio,
+        #mode,
+        #tray {
+          padding: 1px 8px;
+          border-style: solid;
+          background-color: @black;
+          opacity: 1;
+        }
+
+        #clock {
+          color: @white;
+        }
+
+        #backlight {
+          color: @white;
+        }
+
+        #battery {
+          color: @white;
+        }
+
+        #battery.critical:not(.charging) {
+          color: @red;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+        }
+
+        #battery.charging {
+          color: @green;
+        }
+
+        @keyframes blink {
+          to {
+            color: @red;
+          }
+        }
+
+        #pulseaudio {
+          color: @white;
+        }
+
+        #pulseaudio.muted {
+          color: #3b4252;
+        }
+
+        #temperature {
+          color: @white;
+        }
+
+        #temperature.critical {
+          color: @red;
+        }
+
+        #cpu {
+          color: @white;
+        }
+
+        #cpu #cpu-icon {
+          color: @white;
+        }
+
+        #memory {
+          color: @white;
+        }
+
+        #network {
+          color: @white;
+        }
+
+        #custom-player{
+          color: @white;
+        }
+
+        #custom-currentplayer{
+          color: @white;
+        }
+
+        #network.disconnected {
+          color: @red;
+        }
+
+        #custom-power {
+          /* margin: 8px; */
+          padding: 1px;
+          transition: none;
+          color: @red;
+          background: @black;
+        }
+
+        #window {
+          border-style: hidden;
+        }
+      '';
     };
   };
 }

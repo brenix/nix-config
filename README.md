@@ -124,7 +124,7 @@ Some features of my nix-config:
 
 - Structured to allow multiple **NixOS configurations**, including **desktop**,
   **laptop**
-- **Declarative** config including **themes**, **wallpapers** and **nix-colors**
+- **Declarative** config including **themes** and **wallpapers**
 - **Opt-in persistance** through impermanence + blank snapshot
 - **Encrypted btrfs partition**
 - **sops-nix** for secrets management

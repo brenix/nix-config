@@ -19,9 +19,9 @@ in {
       enable = true;
       settings = {
         preload = [
-          "${pkgs.${namespace}.wallpapers.nix-catppuccin}"
+          "${pkgs.${namespace}.wallpapers.nixos-dark}"
         ];
-        wallpaper = [", ${pkgs.${namespace}.wallpapers.nix-catppuccin}"];
+        wallpaper = [", ${pkgs.${namespace}.wallpapers.nixos-dark}"];
       };
     };
   };

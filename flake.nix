@@ -36,7 +36,7 @@
     nixgl.url = "github:nix-community/nixGL";
 
     # Colorscheme management
-    nix-colors.url = "github:misterio77/nix-colors";
+    stylix.url = "github:danth/stylix";
 
     # Catppuccin colorscheme
     catppuccin.url = "github:catppuccin/nix";
@@ -56,10 +56,6 @@
     # Comma CLI tool
     comma.url = "github:nix-community/comma";
     comma.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Apple fonts (SF Mono)
-    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
-    apple-fonts.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hyprland - Contrib
     hypr-contrib.url = "github:hyprwm/Hyprcursor";
@@ -113,6 +109,7 @@
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
         catppuccin.nixosModules.catppuccin
+        # stylix.nixosModules.stylix
         chaotic.nixosModules.default
         {
           # manually import overlay
@@ -139,9 +136,9 @@
         hardware.nixosModules.common-pc-ssd
       ];
 
-      # homes.modules = with inputs; [
-      #   impermanence.nixosModules.home-manager.impermanence
-      # ];
+      homes.modules = with inputs; [
+        stylix.homeManagerModules.stylix
+      ];
 
       overlays = with inputs; [
         nixgl.overlay

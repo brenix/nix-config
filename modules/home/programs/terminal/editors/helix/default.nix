@@ -23,8 +23,9 @@ in {
 
     programs.helix = {
       enable = true;
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
       settings = {
+        theme = "modus_operandi";
         editor = {
           auto-pairs = false;
           bufferline = "always";

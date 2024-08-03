@@ -7,7 +7,6 @@
 }: let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
-  # inherit (config.colorscheme) palette;
 
   cfg = config.${namespace}.programs.terminal.emulators.foot;
 in {
@@ -18,13 +17,13 @@ in {
   config = mkIf cfg.enable {
     programs.foot = {
       enable = true;
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
 
       settings = {
         main = {
-          font = "JetBrainsMono Nerd Font:size=11.5:weight=Regular, Noto Color Emoji:size=18";
-          font-bold = "JetBrainsMono Nerd Font:size=11.5:weight=Regular";
-          line-height = "15px";
+          # font = "JetBrainsMono Nerd Font:size=11.5:weight=Regular, Noto Color Emoji:size=18";
+          font-bold = with config.stylix.fonts; "${monospace.name}:size=${toString sizes.terminal}";
+          line-height = "14px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
           term = "xterm-256color";

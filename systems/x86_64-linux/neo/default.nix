@@ -73,11 +73,9 @@
     DHCP = "yes";
     routes = [
       {
-        routeConfig = {
-          InitialCongestionWindow = 50;
-          InitialAdvertisedReceiveWindow = 50;
-          QuickAck = true;
-        };
+        InitialCongestionWindow = 50;
+        InitialAdvertisedReceiveWindow = 50;
+        QuickAck = true;
       }
     ];
   };

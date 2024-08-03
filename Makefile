@@ -18,6 +18,14 @@ else
 	@sudo nixos-rebuild switch --verbose --flake ".#$(HOSTNAME)"
 endif
 
+## Build config only using fast
+build-fast:
+ifeq ($(UNAME), Darwin)
+	@darwin-rebuild build --verbose --fast --flake ".#$(HOSTNAME)"
+else
+	@sudo nixos-rebuild switch --verbose --fast --flake ".#$(HOSTNAME)"
+endif
+
 ## Rebuild Home-manager configuration
 home:
 	@home-manager switch --flake ".#$(USERNAME)@$(HOSTNAME)"

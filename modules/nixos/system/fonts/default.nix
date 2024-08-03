@@ -26,7 +26,6 @@ in {
           google-fonts
           matrix.monaco
           noto-fonts-emoji
-          inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
           terminus_font
         ]
         ++ cfg.fonts;

@@ -16,9 +16,8 @@ in {
   config = mkIf cfg.enable {
     programs.bat = {
       enable = true;
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
       config.pager = "less -inMRF";
-      # config.theme = "base16";
     };
   };
 }
