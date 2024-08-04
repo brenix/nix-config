@@ -25,6 +25,11 @@
       address = "0.0.0.0";
       prefixLength = 0;
       via = "192.168.1.1";
+      options = {
+        quickack = "1";
+        initcwnd = "50";
+        initrwnd = "50";
+      };
     }
   ];
 
