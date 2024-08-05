@@ -2,7 +2,6 @@
   config,
   lib,
   namespace,
-  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
@@ -17,12 +16,6 @@ in {
   config = mkIf cfg.enable {
     services.hyprpaper = {
       enable = true;
-      settings = {
-        preload = [
-          "${pkgs.${namespace}.wallpapers.nixos-dark}"
-        ];
-        wallpaper = [", ${pkgs.${namespace}.wallpapers.nixos-dark}"];
-      };
     };
   };
 }
