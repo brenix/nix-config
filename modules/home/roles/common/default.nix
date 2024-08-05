@@ -55,7 +55,7 @@ in {
         sizes = {
           desktop = 10;
           applications = 10;
-          terminal = 10;
+          terminal = 9;
           popups = 10;
         };
 
@@ -68,8 +68,9 @@ in {
 
         monospace = with pkgs; {
           # package = pkgs.gohufont;
-          package = nerdfonts.override {fonts = ["JetBrainsMono"];};
-          name = "JetBrainsMono NF Light";
+          # package = nerdfonts.override {fonts = ["JetBrainsMono"];};
+          package = google-fonts.override {fonts = ["Inter" "Cousine"];};
+          name = "Cousine";
         };
 
         emoji = {

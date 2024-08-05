@@ -50,8 +50,5 @@ in {
       enable = true;
       daemonSettings.EspLocation = config.boot.loader.efi.efiSysMountPoint;
     };
-
-    # Enable cgroups v2
-    systemd.enableUnifiedCgroupHierarchy = true;
   };
 }

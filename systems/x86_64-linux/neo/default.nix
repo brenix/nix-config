@@ -81,6 +81,7 @@
         quickack = "1";
         initcwnd = "50";
         initrwnd = "50";
+        fastopen_no_cookie = "1";
       };
     }
   ];

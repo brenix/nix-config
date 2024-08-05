@@ -23,7 +23,7 @@ in {
         main = {
           # font = "JetBrainsMono Nerd Font:size=11.5:weight=Regular, Noto Color Emoji:size=18";
           font-bold = with config.stylix.fonts; "${monospace.name}:size=${toString sizes.terminal}";
-          line-height = "14px";
+          line-height = "13px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
           term = "xterm-256color";

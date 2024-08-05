@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  inputs,
   namespace,
   ...
 }: let
@@ -23,7 +22,7 @@ in {
       packages = with pkgs;
         [
           (nerdfonts.override {fonts = ["JetBrainsMono"];})
-          google-fonts
+          (google-fonts.override {fonts = ["Inter" "Cousine"];})
           matrix.monaco
           noto-fonts-emoji
           terminus_font
@@ -35,7 +34,7 @@ in {
         defaultFonts = {
           serif = ["Inter"];
           sansSerif = ["Inter"];
-          monospace = ["JetBrainsMono Nerd Font" "Monaco Nerd Font Mono"];
+          monospace = ["Cousine" "JetBrainsMono Nerd Font"];
           emoji = ["Noto Color Emoji"];
         };
         enable = true;
