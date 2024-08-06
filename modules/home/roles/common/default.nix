@@ -45,6 +45,7 @@ in {
       image = "${pkgs.${namespace}.wallpapers.nixos-dark}";
 
       targets = {
+        gtk.enable = false;
         helix.enable = false;
         k9s.enable = false;
         vscode.enable = false;
@@ -53,10 +54,10 @@ in {
 
       fonts = {
         sizes = {
-          desktop = 10;
-          applications = 10;
-          terminal = 9;
-          popups = 10;
+          desktop = 11;
+          applications = 11;
+          terminal = 10;
+          popups = 11;
         };
 
         sansSerif = {

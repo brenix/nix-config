@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
   inherit (lib.${namespace}) mkBoolOpt;
 
   cfg = config.${namespace}.programs.terminal.emulators.foot;
@@ -21,9 +21,9 @@ in {
 
       settings = {
         main = {
-          # font = "JetBrainsMono Nerd Font:size=11.5:weight=Regular, Noto Color Emoji:size=18";
-          font-bold = with config.stylix.fonts; "${monospace.name}:size=${toString sizes.terminal}";
-          line-height = "13px";
+          font = with config.stylix.fonts; mkForce "${monospace.name}:size=10.5";
+          font-bold = with config.stylix.fonts; "${monospace.name}:size=10.5";
+          line-height = "14px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
           term = "xterm-256color";

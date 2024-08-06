@@ -2,6 +2,7 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
@@ -16,6 +17,10 @@ in {
   config = mkIf cfg.enable {
     gtk = {
       enable = true;
+      theme = {
+        package = pkgs.orchis-theme;
+        name = "Orchis-Light-Compact";
+      };
     };
   };
 }

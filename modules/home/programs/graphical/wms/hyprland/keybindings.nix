@@ -25,7 +25,7 @@ in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.keyBinds = {
       bind = {
-        "SUPER, Return" = "exec, foot";
+        "SUPER, Return" = "exec,[floating] foot";
         "SUPER_SHIFT, Return" = "exec,[floating] foot";
         "SUPER, Space" = "exec, ${config.${namespace}.programs.graphical.launchers.rofi.package}/bin/rofi -show drun -mode drun";
         "SUPER, W" = "killactive,";
