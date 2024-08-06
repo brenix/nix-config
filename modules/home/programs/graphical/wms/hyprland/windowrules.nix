@@ -14,23 +14,15 @@ in {
       firefoxVideo = {
         class = ["firefox"];
       };
-      guildWars = {
-        title = ["Guild Wars 2"];
-      };
-      bitwarden = {
-        title = [".*Bitwarden.*"];
-      };
       pavucontrol = {
-        class = ["pavucontrol"];
+        class = ["org.pulseaudio.pavucontrol"];
       };
       zoom = {
         class = ["zoom"];
       };
     in
       lib.concatLists [
-        (map (rule ["idleinhibit fullscreen"]) [firefoxVideo])
-        (map (rule ["fullscreen"]) [guildWars])
-        (map (rule ["float"]) [bitwarden])
+        (map (rule ["float"]) [firefoxVideo])
         (map (rule ["float"]) [pavucontrol])
         (map (rule ["float"]) [zoom])
       ];
