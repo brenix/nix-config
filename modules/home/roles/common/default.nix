@@ -54,10 +54,10 @@ in {
 
       fonts = {
         sizes = {
-          desktop = 11;
-          applications = 11;
-          terminal = 10;
-          popups = 11;
+          desktop = 10;
+          applications = 10;
+          terminal = 8;
+          popups = 10;
         };
 
         sansSerif = {
@@ -70,8 +70,11 @@ in {
         monospace = with pkgs; {
           # package = pkgs.gohufont;
           # package = nerdfonts.override {fonts = ["JetBrainsMono"];};
-          package = google-fonts.override {fonts = ["Inter" "Cousine"];};
-          name = "Cousine";
+          # package = google-fonts.override {fonts = ["Cousine"];};
+          # name = "Cousine";
+
+          package = cozette;
+          name = "Cozette";
         };
 
         emoji = {
