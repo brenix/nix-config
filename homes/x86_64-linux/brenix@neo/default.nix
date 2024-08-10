@@ -31,6 +31,11 @@
         wms.hyprland.enable = true;
       };
     };
+
+    services.mpd = {
+      enable = true;
+      musicDirectory = "/home/brenix/.local/share/mpd/music";
+    };
   };
 
   home.stateVersion = "23.11";

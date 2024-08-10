@@ -31,7 +31,6 @@ in {
 
         cursor = {
           style = "underline";
-          color = "ff0000";
         };
 
         scrollback = {
