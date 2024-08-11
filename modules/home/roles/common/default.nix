@@ -20,27 +20,28 @@ in {
 
     stylix = {
       enable = true;
-      polarity = "light";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
 
       # modus-operandi
-      base16Scheme = {
-        base00 = "ffffff"; # background
-        base01 = "fefefe"; # dark gray
-        base02 = "e1e4e8"; # gray
-        base03 = "d1d5da"; # light gray
-        base04 = "585858"; # secondary
-        base05 = "000000"; # foreground
-        base06 = "f4dbd6"; # lighter gray
-        base07 = "b7bdf8"; # white
-        base08 = "a60000"; # red
-        base09 = "f66a0a"; # orange
-        base0A = "6f5500"; # yellow
-        base0B = "006800"; # green
-        base0C = "005e8b"; # cyan
-        base0D = "0031a9"; # blue
-        base0E = "721045"; # magenta
-        base0F = "8a290f"; # brown
-      };
+      # polarity = "light";
+      # base16Scheme = {
+      #   base00 = "ffffff"; # background
+      #   base01 = "fefefe"; # dark gray
+      #   base02 = "e1e4e8"; # gray
+      #   base03 = "d1d5da"; # light gray
+      #   base04 = "585858"; # secondary
+      #   base05 = "000000"; # foreground
+      #   base06 = "f4dbd6"; # lighter gray
+      #   base07 = "b7bdf8"; # white
+      #   base08 = "a60000"; # red
+      #   base09 = "f66a0a"; # orange
+      #   base0A = "6f5500"; # yellow
+      #   base0B = "006800"; # green
+      #   base0C = "005e8b"; # cyan
+      #   base0D = "0031a9"; # blue
+      #   base0E = "721045"; # magenta
+      #   base0F = "8a290f"; # brown
+      # };
 
       image = "${pkgs.${namespace}.wallpapers.nixos-dark}";
 
@@ -54,10 +55,10 @@ in {
 
       fonts = {
         sizes = {
-          desktop = 10;
-          applications = 10;
-          terminal = 8;
-          popups = 10;
+          desktop = 11;
+          applications = 11;
+          terminal = 11;
+          popups = 11;
         };
 
         sansSerif = {
@@ -68,13 +69,14 @@ in {
         serif = config.stylix.fonts.sansSerif;
 
         monospace = with pkgs; {
-          # package = pkgs.gohufont;
-          # package = nerdfonts.override {fonts = ["JetBrainsMono"];};
+          package = nerdfonts.override {fonts = ["JetBrainsMono"];};
+          name = "JetBrainsMonoNL NF";
+
           # package = google-fonts.override {fonts = ["Cousine"];};
           # name = "Cousine";
 
-          package = cozette;
-          name = "Cozette";
+          # package = cozette;
+          # name = "Cozette";
         };
 
         emoji = {

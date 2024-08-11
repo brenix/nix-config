@@ -21,9 +21,9 @@ in {
 
       settings = {
         main = {
-          font = with config.stylix.fonts; mkForce "${monospace.name}:${toString sizes.terminal}";
-          font-bold = with config.stylix.fonts; "${monospace.name}:${toString sizes.terminal}";
-          line-height = "12px";
+          font = with config.stylix.fonts; mkForce "${monospace.name}:size=10.5";
+          font-bold = with config.stylix.fonts; "${monospace.name}:size=10.5";
+          line-height = "15px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
           term = "xterm-256color";
