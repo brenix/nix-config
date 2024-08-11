@@ -6,6 +6,7 @@
   ...
 }: let
   inherit (lib) mkIf;
+  inherit (config.lib.stylix) colors;
 
   cfg = config.${namespace}.programs.graphical.wms.hyprland;
 in {
@@ -38,8 +39,8 @@ in {
           gaps_in = 3;
           gaps_out = 5;
           border_size = 1;
-          # active_border_color = "0xff${palette.base03}";
-          # inactive_border_color = "0xff${palette.base01}";
+          active_border_color = "0xff${colors.base03-hex}";
+          inactive_border_color = "0xff${colors.base01-hex}";
         };
 
         decoration = {

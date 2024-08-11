@@ -3,11 +3,10 @@
   lib,
   namespace,
   ...
-}:
-with config.lib.stylix.colors.withHashtag;
-with config.stylix.fonts; let
+}: let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
+
   cfg = config.${namespace}.programs.graphical.bars.waybar;
 in {
   options.${namespace}.programs.graphical.bars.waybar = {
@@ -137,18 +136,22 @@ in {
         }
       ];
 
-      style = ''
-        @define-color black #222;
-        @define-color white #ececec;
+      style = with config.lib.stylix.colors.withHashtag; ''
+        @define-color black ${base00};
+        @define-color white ${base05};
         @define-color blue ${base0D};
         @define-color green ${base0B};
         @define-color red ${base08};
+        @define-color orange ${base09};
+        @define-color yellow ${base0A};
+        @define-color cyan ${base0C};
+        @define-color magenta ${base0E};
 
         * {
           border: 0;
           border-radius: 0;
           padding: 0 0;
-          font-family: "Terminus";
+          font-family: "JetBrainsMonoNL NF";
           font-size: 10pt;
           color: white;
         }
@@ -203,7 +206,7 @@ in {
         }
 
         #clock {
-          color: @white;
+          color: @yellow;
         }
 
         #backlight {
@@ -234,7 +237,7 @@ in {
         }
 
         #pulseaudio {
-          color: @white;
+          color: @cyan;
         }
 
         #pulseaudio.muted {
@@ -242,7 +245,7 @@ in {
         }
 
         #temperature {
-          color: @white;
+          color: @orange;
         }
 
         #temperature.critical {
@@ -250,19 +253,19 @@ in {
         }
 
         #cpu {
-          color: @white;
+          color: @blue;
         }
 
         #cpu #cpu-icon {
-          color: @white;
+          color: @blue;
         }
 
         #memory {
-          color: @white;
+          color: @green;
         }
 
         #network {
-          color: @white;
+          color: @red;
         }
 
         #custom-player{

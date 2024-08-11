@@ -24,8 +24,16 @@ in {
     programs.helix = {
       enable = true;
       # catppuccin.enable = true;
+
+      themes = {
+        gruvbox_material = {
+          inherits = "gruvbox_material_dark_hard";
+          "ui.background" = {bg = "none";};
+        };
+      };
+
       settings = {
-        theme = "gruvbox_material_dark_hard";
+        theme = "gruvbox_material";
         editor = {
           auto-pairs = false;
           bufferline = "always";
