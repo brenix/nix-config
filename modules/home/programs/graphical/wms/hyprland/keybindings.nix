@@ -106,10 +106,10 @@ in {
         ",XF86AudioLowerVolume" = "exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-";
         ",XF86AudioMute" = "exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         ",XF86AudioMicMute" = "exec, wpctl set-mute @DEFAULT_INPUT_SOURCE@ toggle";
-        ",XF86AudioNext" = "exec,playerctl next";
-        ",XF86AudioPrev" = "exec,playerctl previous";
-        ",XF86AudioPlay" = "exec,playerctl play-pause";
-        ",XF86AudioStop" = "exec,playerctl stop";
+        ",XF86AudioNext" = "exec,playerctl -p spotify next";
+        ",XF86AudioPrev" = "exec,playerctl -p spotify previous";
+        ",XF86AudioPlay" = "exec,playerctl -p spotify play-pause";
+        ",XF86AudioStop" = "exec,playerctl -p spotify stop";
       };
       bindl = {
         ",switch:Lid Switch" = "exec, ${laptop_lid_switch}/bin/laptop_lid_switch";
