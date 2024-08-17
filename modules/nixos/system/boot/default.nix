@@ -22,6 +22,9 @@ in {
       fwupd
     ];
 
+    systemd.extraConfig = "DefaultLimitNOFILE=4096:5242880";
+    systemd.services.nix-daemon.serviceConfig.LimitNOFILE = lib.mkForce "5242880";
+
     boot = {
       kernelParams = [
         "mitigations=off"
@@ -41,7 +44,7 @@ in {
       };
 
       tmp = {
-        useTmpfs = true;
+        # useTmpfs = true;
         tmpfsSize = "75%";
       };
     };

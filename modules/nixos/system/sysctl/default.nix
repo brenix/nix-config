@@ -17,7 +17,7 @@ in {
     boot = {
       kernel = {
         sysctl = {
-          "fs.file-max" = 2097152;
+          "fs.file-max" = 5242880;
           "fs.inotify.max_user_instances" = 1024;
           "fs.inotify.max_user_watches" = 524288;
           "fs.xfs.xfssyncd_centisecs" = 10000;

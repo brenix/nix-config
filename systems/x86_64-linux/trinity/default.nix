@@ -33,8 +33,6 @@
     }
   ];
 
-  systemd.extraConfig = "DefaultLimitNOFILE=4096:524288";
-
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-server;
 

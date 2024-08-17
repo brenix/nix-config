@@ -31,7 +31,7 @@ in {
     home.file.".ssh/allowed_signers".text = "* ${cfg.allowedSigners}";
 
     home.packages = with pkgs; [
-      delta
+      # delta # TODO: reenable once fixed upstream
       mr
     ];
 
@@ -94,9 +94,10 @@ in {
             untracked = "white";
           };
 
-          interactive = {
-            diffFilter = "delta --color-only";
-          };
+          # TODO: reenable once fixed upstream
+          # interactive = {
+          #   diffFilter = "delta --color-only";
+          # };
 
           delta = {
             enable = true;
