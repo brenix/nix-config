@@ -47,9 +47,9 @@ in {
         wlogout.enable = true;
         wlsunset.enable = true;
       };
-      bars.waybar.enable = true;
-      launchers.rofi.enable = true;
-      notifications.mako.enable = true;
+      bars.yambar.enable = true;
+      launchers.fuzzel.enable = true;
+      notifications.fnott.enable = true;
     };
   };
 }

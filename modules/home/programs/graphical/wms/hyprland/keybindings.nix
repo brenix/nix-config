@@ -27,7 +27,7 @@ in {
       bind = {
         "SUPER, Return" = "exec,[floating] foot";
         "SUPER_SHIFT, Return" = "exec,[floating] foot";
-        "SUPER, Space" = "exec, ${config.${namespace}.programs.graphical.launchers.rofi.package}/bin/rofi -show drun -mode drun";
+        "SUPER, Space" = "exec, fuzzel";
         "SUPER, W" = "killactive,";
         "SUPER_SHIFT, F" = "Fullscreen,0";
         "SUPER, F" = "togglefloating,";
