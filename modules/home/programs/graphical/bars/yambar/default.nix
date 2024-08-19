@@ -21,9 +21,9 @@ in {
       settings = {
         bar = {
           location = "top";
-          height = 16;
+          height = 22;
           spacing = 5;
-          # margin = 24;
+          margin = 5;
           background = "${base00}ff";
           font = "Terminus:pixelsize=10";
 
@@ -34,19 +34,63 @@ in {
           # center = {};
 
           right = [
-            # TODO
-            # {
-            #   pipewire = {};
-            # }
-            # {
-            #   network = {};
-            # }
+            {
+              pulse.content = [
+                {
+                  map.conditions = {
+                    sink_muted.string = {
+                      text = "󰖁";
+                      foreground = "${base08}ff";
+                      right-margin = 4;
+                    };
+                    "~sink_muted".string = {
+                      text = "󰕾";
+                      foreground = "${base0B}ff";
+                      right-margin = 4;
+                    };
+                  };
+                }
+                {string.text = "{sink_percent}";}
+              ];
+            }
+            {
+              network = {
+                poll-interval = 10000;
+                content.map.conditions."name == enp7s0 || name == wlp1s0" = [
+                  {
+                    string = {
+                      text = "";
+                      right-margin = 4;
+                    };
+                  }
+                  {
+                    map = {
+                      default.string.text = "{dl-speed:kib:.0}K";
+                      conditions."dl-speed >= 1048576".string.text = "{dl-speed:mib:.1}M";
+                    };
+                  }
+                  {
+                    string = {
+                      text = "";
+                      left-margin = 6;
+                      right-margin = 4;
+                    };
+                  }
+                  {
+                    map = {
+                      default.string.text = "{ul-speed:kib:.0}K";
+                      conditions."ul-speed >= 1048576".string.text = "{ul-speed:mib:.1}M";
+                    };
+                  }
+                ];
+              };
+            }
             # {
             #   disk-io = {};
             # }
             {
               cpu = {
-                poll-interval = 2500;
+                poll-interval = 5000;
                 content.map.conditions."id == -1" = [
                   {
                     string = {
@@ -57,7 +101,7 @@ in {
                   }
                   {
                     string = {
-                      text = "  {cpu:02}%";
+                      text = "  {cpu}%";
                     };
                   }
                 ];
@@ -76,7 +120,7 @@ in {
                   }
                   {
                     string = {
-                      text = "  {used:mb}MB";
+                      text = "  {used:gb}GB";
                     };
                   }
                 ];

@@ -3,7 +3,8 @@
   lib,
   namespace,
   ...
-}: let
+}:
+with config.stylix.fonts; let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
 
@@ -16,7 +17,11 @@ in {
   config = mkIf cfg.enable {
     services.fnott = {
       enable = true;
-      # catppuccin.enable = true;
+      settings = {
+        main = {
+          notification-margin = 2;
+        };
+      };
     };
   };
 }
