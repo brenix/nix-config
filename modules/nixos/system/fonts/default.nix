@@ -21,7 +21,7 @@ in {
       fontDir.enable = true;
       packages = with pkgs;
         [
-          (nerdfonts.override {fonts = ["JetBrainsMono"];})
+          (nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];})
           (google-fonts.override {fonts = ["Inter" "Cousine"];})
           matrix.monaco
           noto-fonts-emoji
@@ -34,7 +34,7 @@ in {
         defaultFonts = {
           serif = ["Inter"];
           sansSerif = ["Inter"];
-          monospace = ["Cousine" "JetBrainsMono Nerd Font"];
+          monospace = ["Iosevka NFM" "Cousine" "JetBrainsMono Nerd Font"];
           emoji = ["Noto Color Emoji"];
         };
         enable = true;

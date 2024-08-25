@@ -70,8 +70,8 @@ in {
         serif = config.stylix.fonts.sansSerif;
 
         monospace = with pkgs; {
-          package = nerdfonts.override {fonts = ["JetBrainsMono"];};
-          name = "JetBrainsMonoNL NF";
+          package = nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];};
+          name = "Iosevka NFM";
 
           # package = google-fonts.override {fonts = ["Cousine"];};
           # name = "Cousine";
