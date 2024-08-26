@@ -21,8 +21,8 @@ in {
 
       settings = {
         main = {
-          font = with config.stylix.fonts; mkForce "${monospace.name}:size=11";
-          font-bold = with config.stylix.fonts; "${monospace.name}:size=11";
+          font = with config.stylix.fonts; mkForce "${monospace.name}:size=12";
+          font-bold = with config.stylix.fonts; "${monospace.name}:size=12";
           line-height = "16px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
