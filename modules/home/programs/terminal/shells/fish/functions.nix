@@ -29,7 +29,7 @@
   '';
 
   # cd to root of git dir
-  cdu = ''
+  cdr = ''
     set -l root_path (git rev-parse --show-toplevel)
     builtin cd $root_path
   '';
@@ -41,8 +41,16 @@
     set -x -g $var1 $var2
   '';
 
+  # git switch to branch with fzf
+  gwf = ''
+    git for-each-ref --sort=-committerdate --format='%(refname:short) (%(committerdate:relative))' refs/heads |
+      fzf --prompt " " |
+      awk '{ print $1 }' |
+      xargs git switch
+  '';
+
   # switch-namespace
-  kns = ''
+  kn = ''
     set context
     set namespace
     set selected
@@ -94,7 +102,7 @@
   '';
 
   # switch kubeconfig
-  ktx = ''
+  kx = ''
     if not command -sq fzf
       echo "please install fzf: github.com/junegunn/fzf" >&2
       return 1

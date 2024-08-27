@@ -42,6 +42,7 @@ in {
         gst = "git status";
         gsh = "git show --format=raw -m";
         grhh = "git reset --hard HEAD";
+        gmt = "go mod tidy";
         kubectl = "kubecolor";
         l = "ls -l";
         la = "ls -Al";
@@ -128,6 +129,7 @@ in {
           bind \ce end-of-line
           bind ! bind_bang
           bind '$' bind_dollar
+          bind -k nul 'zi && commandline --function repaint'
         ''
         +
         # Use terminal colors
