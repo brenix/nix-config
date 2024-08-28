@@ -21,9 +21,11 @@ in {
 
       settings = {
         main = {
-          font = with config.stylix.fonts; mkForce "${monospace.name}:size=12";
-          font-bold = with config.stylix.fonts; "${monospace.name}:size=12";
-          line-height = "16px";
+          font = with config.stylix.fonts; mkForce "${monospace.name}:size=14";
+          font-bold = with config.stylix.fonts; "${monospace.name}:size=14";
+          line-height = "20px";
+          letter-spacing = -0.5;
+          vertical-letter-offset = "-1px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
           term = "xterm-256color";

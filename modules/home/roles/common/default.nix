@@ -69,9 +69,9 @@ in {
 
         serif = config.stylix.fonts.sansSerif;
 
-        monospace = with pkgs; {
-          package = nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];};
-          name = "Iosevka NFM";
+        monospace = {
+          package = pkgs.matrix.berkeley-mono;
+          name = "Berkeley Mono";
 
           # package = google-fonts.override {fonts = ["Cousine"];};
           # name = "Cousine";
