@@ -21,11 +21,11 @@ in {
       settings = {
         bar = {
           location = "top";
-          height = 22;
+          height = 24;
           spacing = 5;
           margin = 5;
           background = "${base00}ff";
-          font = "Terminus:pixelsize=10";
+          font = "Berkeley Mono:pixelsize=14";
 
           # TODO
           # left = {};
