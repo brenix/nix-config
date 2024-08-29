@@ -11,9 +11,6 @@
 in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.windowRules = let
-      firefoxVideo = {
-        class = ["firefox"];
-      };
       pavucontrol = {
         class = ["org.pulseaudio.pavucontrol"];
       };
@@ -22,7 +19,6 @@ in {
       };
     in
       lib.concatLists [
-        (map (rule ["float"]) [firefoxVideo])
         (map (rule ["float"]) [pavucontrol])
         (map (rule ["float"]) [zoom])
       ];

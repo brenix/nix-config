@@ -21,7 +21,7 @@ in {
     stylix = {
       enable = true;
       polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
 
       # modus-operandi
       # polarity = "light";
@@ -44,7 +44,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.forest-stairs}";
+      image = "${pkgs.${namespace}.wallpapers.treeline}";
 
       targets = {
         gtk.enable = false;

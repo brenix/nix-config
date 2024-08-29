@@ -33,7 +33,7 @@ in {
       };
 
       settings = {
-        theme = "gruvbox_material";
+        theme = "nord-night";
         editor = {
           auto-pairs = false;
           bufferline = "always";
