@@ -22,34 +22,38 @@ in {
 
       shellAliases = {
         bat = "bat --paging=never --style=plain --decorations=never";
-        g = "git";
-        ga = "git add";
+        ee = "hx .";
+        e = "hx";
         gaa = "git add --all";
-        gb = "git branch";
+        ga = "git add";
         gba = "git branch --all";
-        gc = "git commit --verbose";
+        gb = "git branch";
         gca = "git commit --verbose --all";
-        gco = "git checkout";
+        gc = "git commit --verbose";
         gcl = "git clone --recurse-submodules";
-        gd = "git diff";
+        gco = "git checkout";
         gdc = "git diff --cached";
+        gd = "git diff";
+        g = "git";
         gl = "git pull --prune";
         glo = "git log --oneline --decorate --pretty=format:'%C(auto)%h %s (%Cgreen%an%C(auto))'";
+        gmt = "go mod tidy";
+        "gpf!" = "git push --force";
+        gpf = "git push --force-with-lease";
         gp = "git push";
         gpv = "git push --verbose";
-        gpf = "git push --force-with-lease";
-        "gpf!" = "git push --force";
-        gst = "git status";
-        gsh = "git show --format=raw -m";
         grhh = "git reset --hard HEAD";
-        gmt = "go mod tidy";
+        grm = "git rebase -i (git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')";
+        gsh = "git show --format=raw -m";
+        gst = "git status";
         kubectl = "kubecolor";
-        l = "ls -l";
         la = "ls -Al";
+        l = "ls -l";
         mkdir = "mkdir -p";
         mv = "mv -iv";
         rm = "rm -I";
         sw = "git switch";
+        v = "hx";
         virsh = "virsh -c qemu:///system";
         vm = "virsh start windows";
       };
@@ -89,7 +93,6 @@ in {
         niso = "nix build .#nixosConfigurations.iso.config.system.build.isoImage";
         nrs = "sudo nixos-rebuild switch --flake ~/nix-config#${host}";
         replace = "ambr";
-        v = "hx";
       };
 
       plugins = [

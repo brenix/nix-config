@@ -25,7 +25,7 @@ in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.keyBinds = {
       bind = {
-        "SUPER, Return" = "exec,[floating] foot";
+        "SUPER, Return" = "exec, foot";
         "SUPER_SHIFT, Return" = "exec,[floating] foot";
         "SUPER, Space" = "exec, fuzzel";
         "SUPER, W" = "killactive,";
