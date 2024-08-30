@@ -53,12 +53,12 @@ in {
         "catppuccin.accentColor" = "blue";
 
         # Font
-        "editor.fontFamily" = "Berkeley Mono, monospace";
-        "editor.codeLensFontFamily" = "Berkeley Mono, monospace";
-        "editor.inlayHints.fontFamily" = "Berkeley Mono, monospace";
-        "debug.console.fontFamily" = "Berkeley Mono, monospace";
-        "scm.inputFontFamily" = "Berkeley Mono, monospace";
-        "terminal.integrated.fontFamily" = "Berkeley Mono, monospace";
+        "editor.fontFamily" = "BerkeleyMono Nerd Font Mono, monospace";
+        "editor.codeLensFontFamily" = "BerkeleyMono Nerd Font Mono, monospace";
+        "editor.inlayHints.fontFamily" = "BerkeleyMono Nerd Font Mono, monospace";
+        "debug.console.fontFamily" = "BerkeleyMono Nerd Font Mono, monospace";
+        "scm.inputFontFamily" = "BerkeleyMono Nerd Font Mono, monospace";
+        "terminal.integrated.fontFamily" = "BerkeleyMono Nerd Font Mono, monospace";
 
         # Git settings
         "git.allowForcePush" = true;

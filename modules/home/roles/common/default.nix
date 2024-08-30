@@ -22,6 +22,10 @@ in {
       enable = true;
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+      override = {
+        base00 = "252933";
+        base04 = "C0C5CF";
+      };
 
       # modus-operandi
       # polarity = "light";
@@ -71,7 +75,7 @@ in {
 
         monospace = {
           package = pkgs.matrix.berkeley-mono;
-          name = "Berkeley Mono";
+          name = "BerkeleyMono Nerd Font Mono";
 
           # package = google-fonts.override {fonts = ["Cousine"];};
           # name = "Cousine";

@@ -21,10 +21,10 @@ in {
 
       settings = {
         main = {
-          font = with config.stylix.fonts; mkForce "${monospace.name}:size=14";
-          font-bold = with config.stylix.fonts; "${monospace.name}:size=14";
+          font = with config.stylix.fonts; mkForce "${monospace.name}:size=13";
+          font-bold = with config.stylix.fonts; "${monospace.name}:size=13";
           line-height = "20px";
-          letter-spacing = -0.1;
+          # letter-spacing = -0.1;
           vertical-letter-offset = "-1px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";

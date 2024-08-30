@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   src = requireFile rec {
     name = "${finalAttrs.pname}-${variant}-${finalAttrs.version}.zip";
-    sha256 = "0mwdgsqmqaj6hgx50v8l25zn3x7pi9kkzgxnn7xsxp8ng2anpvfy";
+    sha256 = "1jy95ngmp0sm11bra0il8sh19q2zy7qxnsz7ck36sj4a6k4k2c9q";
     message = ''
       This file needs to be manually downloaded from the Berkeley Graphics
       site (https://berkeleygraphics.com/accounts). An email will be sent to
@@ -27,7 +27,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     '';
   };
 
-  outputs = ["out" "web" "variable" "variableweb"];
+  # outputs = ["out" "web" "variable" "variableweb"];
+  outputs = ["out"];
 
   nativeBuildInputs = [
     unzip
@@ -42,9 +43,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     install -D -m444 -t $out/share/fonts/opentype berkeley-mono/OTF/*.otf
     install -D -m444 -t $out/share/fonts/truetype berkeley-mono/TTF/*.ttf
-    install -D -m444 -t $web/share/fonts/webfonts berkeley-mono/WEB/*.woff2
-    install -D -m444 -t $variable/share/fonts/truetype berkeley-mono-variable/TTF/*.ttf
-    install -D -m444 -t $variableweb/share/fonts/webfonts berkeley-mono-variable/WEB/*.woff2
+    # install -D -m444 -t $web/share/fonts/webfonts berkeley-mono/WEB/*.woff2
+    # install -D -m444 -t $variable/share/fonts/truetype berkeley-mono-variable/TTF/*.ttf
+    # install -D -m444 -t $variableweb/share/fonts/webfonts berkeley-mono-variable/WEB/*.woff2
 
     runHook postInstall
   '';

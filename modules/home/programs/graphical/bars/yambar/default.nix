@@ -25,7 +25,7 @@ in {
           spacing = 5;
           margin = 5;
           background = "${base00}ff";
-          font = "Berkeley Mono:pixelsize=14";
+          font = "BerkeleyMono Nerd Font Mono:pixelsize=14";
 
           # TODO
           # left = {};
