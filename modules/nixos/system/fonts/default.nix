@@ -42,7 +42,7 @@ in {
         hinting = {
           autohint = false;
           enable = true;
-          style = "slight";
+          style = "none";
         };
         subpixel = {
           rgba = "rgb";
@@ -57,7 +57,7 @@ in {
     #   40=new freetype
     environment.sessionVariables = {
       # FREETYPE_PROPERTIES = "truetype:interpreter-version=35 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:no-stem-darkening=0";
-      FREETYPE_PROPERTIES = "truetype:interpreter-version=38 autofitter:no-stem-darkening=0 cff:no-stem-darkening=0";
+      FREETYPE_PROPERTIES = "truetype:interpreter-version=40 autofitter:no-stem-darkening=0 cff:no-stem-darkening=0";
     };
   };
 }
