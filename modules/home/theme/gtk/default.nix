@@ -18,8 +18,11 @@ in {
     gtk = {
       enable = true;
       theme = {
-        package = pkgs.orchis-theme;
-        name = "Orchis-Light-Compact";
+        # package = pkgs.orchis-theme;
+        # name = "Orchis-Light-Compact";
+
+        package = pkgs.nordic;
+        name = "Nordic";
       };
     };
   };
