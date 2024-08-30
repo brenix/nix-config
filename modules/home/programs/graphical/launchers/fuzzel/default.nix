@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
   inherit (lib.${namespace}) mkBoolOpt mkPackageOpt;
 
   cfg = config.${namespace}.programs.graphical.launchers.fuzzel;
@@ -19,6 +19,7 @@ in {
     programs.fuzzel = {
       enable = true;
       package = cfg.package;
+      settings.main.font = mkForce "${config.stylix.fonts.monospace.name}:size=${toString config.stylix.fonts.sizes.popups}";
     };
   };
 }

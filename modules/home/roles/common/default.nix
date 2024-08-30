@@ -60,10 +60,10 @@ in {
 
       fonts = {
         sizes = {
-          desktop = 11;
-          applications = 11;
-          terminal = 11;
-          popups = 11;
+          desktop = 12;
+          applications = 12;
+          terminal = 12;
+          popups = 12;
         };
 
         sansSerif = {
