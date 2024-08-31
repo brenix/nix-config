@@ -110,7 +110,8 @@ in {
             nix-index.enable = true;
             ssh.enable = true;
             starship.enable = true;
-            zellij.enable = true;
+            tmux.enable = true;
+            zellij.enable = false;
             zoxide.enable = true;
           };
         };

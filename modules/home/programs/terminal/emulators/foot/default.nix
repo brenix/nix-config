@@ -21,8 +21,8 @@ in {
 
       settings = {
         main = {
-          font = with config.stylix.fonts; mkForce "${monospace.name}:size=12";
-          font-bold = with config.stylix.fonts; "${monospace.name}:size=12";
+          font = with config.stylix.fonts; mkForce "${monospace.name}:pixelsize=16";
+          font-bold = with config.stylix.fonts; "${monospace.name}:pixelsize=16";
           line-height = "18px";
           # letter-spacing = -0.1;
           vertical-letter-offset = "-1px";
