@@ -16,9 +16,8 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      tmux-sessionizer
+      sesh
     ];
-
     programs.tmux = {
       enable = true;
       shell = "${pkgs.fish}/bin/fish";
@@ -87,6 +86,7 @@ in {
         bind-key -n M-J resize-pane -D 5
         bind-key -n M-K resize-pane -U 5
         bind-key -n M-L resize-pane -R 5
+        bind-key x kill-pane
 
         # Copy/Paste
         set-window-option -g mode-keys vi
@@ -104,8 +104,17 @@ in {
         set-option -g detach-on-destroy off
 
         bind-key -n M-S-Enter command-prompt -p "Enter session name:" "new-session -s '%%'"
-        bind-key -n C-o display-popup -E "tms"
-        bind-key -n C-p display-popup -E "tms switch"
+        bind-key -n C-o run-shell "sesh connect \"$(
+          sesh list | fzf-tmux -p 55%,60% \
+          --no-sort --ansi --prompt '⚡  ' \
+          --bind 'tab:down,btab:up' \
+          --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list)' \
+          --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t)' \
+          --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c)' \
+          --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z)' \
+          --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+          --bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(⚡  )+reload(sesh list)'
+        )\""
       '';
     };
   };

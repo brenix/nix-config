@@ -49,6 +49,16 @@
       xargs git switch
   '';
 
+  # git worktree add
+  gwa = ''
+    set repo (basename (git rev-parse --show-toplevel))
+    set branch (git branch --show-current | string replace -a '/' '-')
+    git worktree add ../$repo-$branch
+    if command -sq zoxide
+      zoxide add ../$repo-$branch
+    end
+  '';
+
   # switch-namespace
   kn = ''
     set context

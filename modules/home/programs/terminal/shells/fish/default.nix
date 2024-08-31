@@ -55,6 +55,7 @@ in {
         v = "hx";
         virsh = "virsh -c qemu:///system";
         vm = "virsh start windows";
+        zad = "ls -d */ | xargs -I {} zoxide add {}";
       };
 
       shellAbbrs = {
