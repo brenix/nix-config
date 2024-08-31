@@ -45,7 +45,7 @@ in {
         hyprpaper.enable = true;
         kanshi.enable = true;
         wlogout.enable = true;
-        wlsunset.enable = true;
+        wlsunset.enable = false;
       };
       bars.yambar.enable = true;
       launchers.fuzzel.enable = true;
