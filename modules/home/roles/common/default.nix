@@ -76,12 +76,6 @@ in {
         monospace = {
           package = pkgs.matrix.berkeley-mono;
           name = "BerkeleyMono Nerd Font Mono";
-
-          # package = google-fonts.override {fonts = ["Cousine"];};
-          # name = "Cousine";
-
-          # package = cozette;
-          # name = "Cozette";
         };
 
         emoji = {
@@ -127,5 +121,9 @@ in {
     programs = {
       gh.enable = true;
     };
+
+    home.packages = with pkgs; [
+      matrix.bins
+    ];
   };
 }

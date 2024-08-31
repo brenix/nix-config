@@ -57,8 +57,8 @@ in {
         unbind '"'
         bind | split-window -h -c "#{pane_current_path}"
         bind - split-window -v -c "#{pane_current_path}"
-        bind-key -n M-n split-window -h -c "#{pane_current_path}"
-        bind-key -n M-N split-window -v -c "#{pane_current_path}"
+        bind-key -n M-N split-window -h -c "#{pane_current_path}"
+        bind-key -n M-n split-window -v -c "#{pane_current_path}"
 
         # Layout
         bind , select-layout even-vertical
@@ -99,6 +99,13 @@ in {
 
         # Easier reload of config
         bind r source-file ~/.config/tmux/tmux.conf
+
+        # Sessions
+        set-option -g detach-on-destroy off
+
+        bind-key -n M-S-Enter command-prompt -p "Enter session name:" "new-session -s '%%'"
+        bind-key -n C-o display-popup -E "tms"
+        bind-key -n C-p display-popup -E "tms switch"
       '';
     };
   };

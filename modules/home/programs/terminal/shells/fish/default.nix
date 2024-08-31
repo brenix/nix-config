@@ -22,8 +22,7 @@ in {
 
       shellAliases = {
         bat = "bat --paging=never --style=plain --decorations=never";
-        ee = "hx .";
-        e = "hx";
+        e = "hx .";
         gaa = "git add --all";
         ga = "git add";
         gba = "git branch --all";

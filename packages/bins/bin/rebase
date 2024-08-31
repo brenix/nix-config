@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+default_branch=$(git symbolic-ref refs/remotes/origin/HEAD --short | cut -d / -f2)
+GIT_SEQUENCE_EDITOR=true git rebase -i "${default_branch}"
