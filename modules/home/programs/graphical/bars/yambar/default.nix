@@ -43,8 +43,8 @@ in {
                         ws_3 = "";
                         ws_4 = "";
                         ws_other = "${base05}ff";
-                        ws_focused = "${base0C}ff";
-                        ws_active = "${base0B}ff";
+                        ws_focused = "${base0A}ff";
+                        ws_active = "${base05}ff";
                         ws_empty = "${base05}ff";
                       in [
                         # WORKSPACE 1

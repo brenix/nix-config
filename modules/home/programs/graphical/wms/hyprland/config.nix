@@ -35,6 +35,13 @@ in {
           };
         };
 
+        workspace = [
+          "1, persistent:true"
+          "2, persistent:true"
+          "3, persistent:true"
+          "4, persistent:true"
+        ];
+
         general = {
           gaps_in = 3;
           gaps_out = 5;
