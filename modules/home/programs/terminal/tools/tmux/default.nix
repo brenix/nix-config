@@ -17,7 +17,9 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       sesh
+      gum
     ];
+
     programs.tmux = {
       enable = true;
       shell = "${pkgs.fish}/bin/fish";
@@ -33,7 +35,6 @@ in {
 
       plugins = with pkgs.tmuxPlugins; [
         better-mouse-mode
-        nord
         sensible
         tmux-thumbs
         yank
@@ -48,6 +49,7 @@ in {
         set -ga terminal-overrides ",foot*:Tc"
         setenv -g COLORTERM "truecolor"
         set -g allow-passthrough on
+        set -g set-clipboard on
         set -ga update-environment TERM
         set -ga update-environment TERM_PROGRAM
 
@@ -66,9 +68,10 @@ in {
         # Windows
         set-option -g set-titles on
         set-option -g set-titles-string "#S / #W"
-        set-option -g status-interval 1
+        set-option -g status-interval 2
         set-option -g automatic-rename on
         set-option -g automatic-rename-format '#{b:pane_current_path}'
+        set-option -g renumber-windows on
 
         bind n new-window -c "#{pane_current_path}"
         bind-key -n M-Enter new-window
@@ -102,19 +105,21 @@ in {
 
         # Sessions
         set-option -g detach-on-destroy off
-
-        bind-key -n M-S-Enter command-prompt -p "Enter session name:" "new-session -s '%%'"
-        bind-key -n C-o run-shell "sesh connect \"$(
-          sesh list | fzf-tmux -p 55%,60% \
-          --no-sort --ansi --prompt '⚡  ' \
-          --bind 'tab:down,btab:up' \
-          --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list)' \
-          --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t)' \
-          --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c)' \
-          --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z)' \
-          --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
-          --bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(⚡  )+reload(sesh list)'
+        bind-key -n C-o display-popup -E -w 40% "sesh connect \"$(
+          sesh list -i | gum filter --limit 1 --fuzzy --no-sort --match.foreground=11 --indicator.foreground=10
         )\""
+
+        # Statusbar
+        set -g status "on"
+        set -g status-bg "#2e3440"
+        set -g status-fg white
+        set -g status-justify "left"
+        set -g status-left-length "100"
+        set -g status-left ""
+        set -g status-right-length "100"
+        set -g status-right "  #S"
+        setw -g window-status-current-format "#[fg=black,bg=blue] #I #[fg=green,bg=default] #W "
+        setw -g window-status-format "#[fg=black,bg=brightblack] #I #[fg=brightblack,bg=default] #W "
       '';
     };
   };
