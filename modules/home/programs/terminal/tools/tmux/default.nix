@@ -118,7 +118,7 @@ in {
         set -g status-left ""
         set -g status-right-length "100"
         set -g status-right "  #S"
-        setw -g window-status-current-format "#[fg=black,bg=blue] #I #[fg=green,bg=default] #W "
+        setw -g window-status-current-format "#[fg=black,bg=blue] #I #[fg=white,bg=default] #W "
         setw -g window-status-format "#[fg=black,bg=brightblack] #I #[fg=brightblack,bg=default] #W "
       '';
     };
