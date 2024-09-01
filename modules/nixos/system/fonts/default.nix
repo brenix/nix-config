@@ -22,7 +22,7 @@ in {
       packages = with pkgs;
         [
           (nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];})
-          (google-fonts.override {fonts = ["Inter" "Cousine"];})
+          (google-fonts.override {fonts = ["Poppins" "Cousine"];})
           matrix.monaco
           noto-fonts-emoji
           terminus_font
@@ -33,8 +33,8 @@ in {
       fontconfig = {
         antialias = true;
         defaultFonts = {
-          serif = ["Inter"];
-          sansSerif = ["Inter"];
+          serif = ["Poppins"];
+          sansSerif = ["Poppins"];
           monospace = ["BerkeleyMono Nerd Font Mono" "Iosevka NFM" "Cousine" "JetBrainsMono Nerd Font"];
           emoji = ["Noto Color Emoji"];
         };

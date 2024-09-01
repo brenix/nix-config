@@ -67,8 +67,8 @@ in {
         };
 
         sansSerif = {
-          package = pkgs.inter;
-          name = "Inter";
+          package = pkgs.poppins;
+          name = "Poppins";
         };
 
         serif = config.stylix.fonts.sansSerif;
