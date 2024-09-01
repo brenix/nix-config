@@ -38,10 +38,10 @@ in {
                   list = {
                     items = [
                       (let
-                        ws_1 = "";
-                        ws_2 = "";
-                        ws_3 = "󱄅";
-                        ws_4 = "";
+                        ws_1 = "";
+                        ws_2 = "";
+                        ws_3 = "";
+                        ws_4 = "";
                         ws_other = "${base05}ff";
                         ws_focused = "${base0C}ff";
                         ws_active = "${base0B}ff";
@@ -167,8 +167,37 @@ in {
             }
           ];
 
-          # TODO
-          # center = [];
+          center = [
+            {
+              script = {
+                path = "${pkgs.playerctl}/bin/playerctl";
+                args = [
+                  "--follow"
+                  "metadata"
+                  "-f"
+                  ''
+                    status|string|{{status}}
+                    artist|string|{{artist}}
+                    title|string|{{title}}
+                  ''
+                ];
+                content = {
+                  map = {
+                    conditions."status == Paused".string.text = "";
+                    conditions."status == Playing".list.items = [
+                      {
+                        string.text = " ";
+                        string.font = icon_font;
+                      }
+                      {
+                        string.text = "{artist} - {title}";
+                      }
+                    ];
+                  };
+                };
+              };
+            }
+          ];
 
           right = [
             {

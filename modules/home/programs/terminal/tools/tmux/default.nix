@@ -99,6 +99,7 @@ in {
         bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
         bind p paste-buffer
         bind Escape copy-mode
+        bind-key -n C-s copy-mode
 
         # Easier reload of config
         bind r source-file ~/.config/tmux/tmux.conf
