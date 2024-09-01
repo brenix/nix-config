@@ -47,6 +47,6 @@ iso:
 
 ## Run garbage collection
 gc:
-	@nh clean all
+	@sudo nh clean all
 
 .PHONY: nixos upgrade gc
