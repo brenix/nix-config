@@ -123,6 +123,11 @@
     end
   '';
 
+  # create dir and switch to it
+  mkcd = ''
+    mkdir -p "$argv" && cd "$argv"
+  '';
+
   # ssh to multiple hosts in zellij panes
   ssh-multi = ''
     set -l hosts
