@@ -89,6 +89,7 @@ in {
       programs = {
         terminal = {
           editors.helix.enable = true;
+          editors.nvim.enable = true;
           editors.language-servers.enable = true;
           shells.fish.enable = true;
           tools = {
