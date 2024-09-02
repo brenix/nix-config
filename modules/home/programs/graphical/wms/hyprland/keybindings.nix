@@ -36,8 +36,7 @@ in {
         "SUPER, S" = "exec, spotify";
         "SUPER, V" = "exec, pavucontrol";
         "SUPER, X" = "exec, VSCodium";
-        # "SUPER, O" = "exec, foot -D \"$(zoxide query -l | fuzzel --dmenu -l 10)\"";
-        "SUPER, O" = "exec, foot sesh connect \"$(sesh list | fuzzel --dmenu -l 30)\"";
+        "SUPER, O" = "exec, foot sesh connect \"$(sesh list | fuzzel --dmenu -w 80)\"";
         "SUPER_SHIFT, Q" = "exit";
 
         # Screenshot

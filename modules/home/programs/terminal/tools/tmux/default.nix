@@ -106,7 +106,7 @@ in {
 
         # Sessions
         set-option -g detach-on-destroy off
-        bind-key -n C-o display-popup -E -w 40% "sesh connect \"$(
+        bind-key -n M-o display-popup -E -w 40% "sesh connect \"$(
           sesh list -i | gum filter --limit 1 --fuzzy --no-sort --match.foreground=11 --indicator.foreground=10
         )\""
 
