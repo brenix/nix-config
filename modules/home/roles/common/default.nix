@@ -48,7 +48,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.keyboard}";
+      image = "${pkgs.${namespace}.wallpapers.sf}";
 
       targets = {
         gtk.enable = false;
