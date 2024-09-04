@@ -44,7 +44,7 @@
   # git switch to branch with fzf
   gwf = ''
     git for-each-ref --sort=-committerdate --format='%(refname:short) (%(committerdate:relative))' refs/heads |
-      fzf --prompt " " |
+      fzf --height 40% --prompt " " |
       awk '{ print $1 }' |
       xargs git switch
   '';
@@ -68,12 +68,8 @@
       kubectl config set-context (kubectl config current-context) --namespace $argv[1]
       return 0
     end
-    if not command -sq fzf
-      echo "please install fzf: github.com/junegunn/fzf" >&2
-      return 1
-    end
     set context (kubectl config current-context)
-    set selected (kubectl get namespaces -o name | cut -d / -f2 | fzf -0 -1 --reverse)
+    set selected (kubectl get namespaces -o name | cut -d / -f2 | fzf --height 40% --prompt "󱃾 " -0 -1)
     if not test -z $selected
       kubectl config set-context $context "--namespace=$selected"
     end
@@ -101,11 +97,7 @@
       kubectl config use-context $argv[1]
       return 0
     end
-    if not command -sq fzf
-      echo "please install fzf: github.com/junegunn/fzf" >&2
-      return 1
-    end
-    set selected (kubectl config get-contexts -o name | fzf -0 -1 --reverse)
+    set selected (kubectl config get-contexts -o name | fzf --height 40% --prompt "󱃾 " -0 -1)
     if not test -z $selected
       kubectl config use-context $selected
     end
@@ -113,11 +105,7 @@
 
   # switch kubeconfig
   kx = ''
-    if not command -sq fzf
-      echo "please install fzf: github.com/junegunn/fzf" >&2
-      return 1
-    end
-    set selected (find $HOME/.kube -maxdepth 1 \( -type f -o -type l -not -name '.*' \) -exec basename {} \; | fzf -0 -1 --reverse)
+    set selected (find $HOME/.kube -maxdepth 1 \( -type f -o -type l -not -name '.*' \) -exec basename {} \; | fzf --height 40% --prompt "󱃾 " -0 -1)
     if not test -z $selected
       set -x -g KUBECONFIG "$HOME/.kube/$selected"
     end

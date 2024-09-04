@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
   inherit (lib.${namespace}) mkBoolOpt;
 
   cfg = config.${namespace}.programs.terminal.tools.fzf;
@@ -17,6 +17,14 @@ in {
     programs.fzf = {
       enable = true;
       # catppuccin.enable = true;
+      colors = with config.lib.stylix.colors.withHashtag; {
+        "bg+" = mkForce base00;
+        "fg+" = mkForce base0D;
+      };
+
+      defaultOptions = [
+        "--layout=reverse"
+      ];
     };
   };
 }
