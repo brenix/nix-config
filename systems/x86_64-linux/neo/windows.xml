@@ -57,7 +57,7 @@
     </system>
   </sysinfo>
   <os>
-    <type arch='x86_64' machine='pc-q35-8.2'>hvm</type>
+    <type arch='x86_64' machine='pc-q35-9.0'>hvm</type>
     <loader readonly='yes' type='pflash'>/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
     <nvram template='/run/libvirt/nix-ovmf/OVMF_VARS.fd'>/var/lib/libvirt/qemu/nvram/windows_VARS.fd</nvram>
     <bootmenu enable='no'/>
@@ -93,7 +93,7 @@
     <ioapic driver='kvm'/>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='off'>
-    <topology sockets='1' dies='1' cores='8' threads='2'/>
+    <topology sockets='1' dies='1' clusters='1' cores='8' threads='2'/>
     <cache mode='passthrough'/>
     <feature policy='require' name='topoext'/>
     <feature policy='disable' name='svm'/>
@@ -178,7 +178,7 @@
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
     </controller>
     <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-Logitech_USB_Receiver-event-mouse'/>
+      <source dev='/dev/input/by-id/usb-Beijing_Jingyunmake_Technology_Co.__Ltd._G-Wolves_HSK_Pro_Receiver-N_ADC2149E82440365-event-mouse'/>
     </input>
     <input type='evdev'>
       <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__A02B2305W052H07682-if03-event-kbd' grab='all' repeat='on'/>
