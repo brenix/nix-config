@@ -48,7 +48,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.sf}";
+      image = "${pkgs.${namespace}.wallpapers.misty_mountains}";
 
       targets = {
         gtk.enable = false;
@@ -67,8 +67,8 @@ in {
         };
 
         sansSerif = {
-          package = pkgs.poppins;
-          name = "Poppins";
+          package = pkgs.inter;
+          name = "Inter";
         };
 
         serif = config.stylix.fonts.sansSerif;
