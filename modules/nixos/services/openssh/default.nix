@@ -47,6 +47,15 @@ in {
     # Passwordless sudo when SSH'ing with keys
     security.pam.sshAgentAuth.enable = true;
 
+    # Add github/gitlab known hosts system-wide
+    programs.ssh.knownHosts = {
+      "github.com".hostNames = ["github.com"];
+      "github.com".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+
+      "gitlab.com".hostNames = ["gitlab.com"];
+      "gitlab.com".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAfuCHKVTjquxvt6CM6tdG4SLp1Btn/nOeHHE5UOzRdf";
+    };
+
     users.users = {
       ${config.${namespace}.user.name}.openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG++dlRrheRZgVLtzadOWFJgHgEL27t70oUZyLwL1o0F"
