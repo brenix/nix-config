@@ -19,6 +19,13 @@ in {
       sopsFile = ../../secrets.yaml;
     };
 
+    # NOTE: allows 'sudo nixos-rebuild' to fetch private repos
+    sops.secrets.sshKey = {
+      mode = "0440";
+      sopsFile = ../../secrets.yaml;
+      path = "/root/.ssh/id_ed25519";
+    };
+
     nix = {
       settings = {
         trusted-users = ["root" "@wheel"];
