@@ -40,5 +40,9 @@
     loader.systemd-boot.graceful = true;
   };
 
+  # HACK: Adds dconf to avoid home-manager issues.
+  # This is because gtk.enabled is somehow making it through on a headless system
+  programs.dconf.enable = true;
+
   system.stateVersion = "23.11";
 }
