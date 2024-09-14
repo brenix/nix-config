@@ -108,8 +108,13 @@ in {
 
         # Sessions
         set-option -g detach-on-destroy off
+
+        bind T display-popup -E -w 40% "sesh connect \"$(
+          sesh list -i -c -t -z | gum filter --limit 1 --fuzzy --sort --match.foreground=11 --indicator.foreground=10
+        )\""
+
         bind-key -n M-o display-popup -E -w 40% "sesh connect \"$(
-          sesh list -i | gum filter --limit 1 --fuzzy --no-sort --match.foreground=11 --indicator.foreground=10
+          sesh list -i -c -t -z| gum filter --limit 1 --fuzzy --sort --match.foreground=11 --indicator.foreground=10
         )\""
 
         # Statusbar

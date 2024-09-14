@@ -41,21 +41,23 @@
     set -x -g $var1 $var2
   '';
 
-  # git switch to branch with fzf
-  gwf = ''
-    git for-each-ref --sort=-committerdate --format='%(refname:short) (%(committerdate:relative))' refs/heads |
-      fzf --height 40% --prompt " " |
-      awk '{ print $1 }' |
-      xargs git switch
-  '';
-
   # git worktree add
   gwa = ''
-    set repo (basename (git rev-parse --show-toplevel))
-    set branch (git branch --show-current | string replace -a '/' '-')
-    git worktree add ../$repo-$branch
-    if command -sq zoxide
-      zoxide add ../$repo-$branch
+    set -l repo (basename (git rev-parse --show-toplevel))
+    if not set -q argv[1]
+      set -l branch (git branch --show-current)
+      set -l primary (git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+      set -l name (echo $branch | string replace -a '/' '-')
+      git switch $primary
+      git worktree add ../$repo-$name $branch
+      zoxide add ../$repo-$name
+      cd ../$repo-$name
+    else
+      set -l branch $argv[1]
+      set -l name (echo $branch | string replace -a '/' '-')
+      git worktree add -b $branch ../$repo-$name
+      zoxide add ../$repo-$name
+      cd ../$repo-$name
     end
   '';
 
