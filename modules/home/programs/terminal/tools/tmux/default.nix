@@ -119,7 +119,9 @@ in {
 
         # Statusbar
         set -g status "on"
-        set -g status-bg "#2e3440"
+        # set -g status-bg "#2e3440"
+        # set -g status-bg "#dedede"
+        set -g status-bg brightblack
         set -g status-fg white
         set -g status-justify "left"
         set -g status-left-length "100"

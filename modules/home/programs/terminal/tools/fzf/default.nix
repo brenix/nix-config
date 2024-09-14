@@ -17,10 +17,10 @@ in {
     programs.fzf = {
       enable = true;
       # catppuccin.enable = true;
-      colors = with config.lib.stylix.colors.withHashtag; {
-        "bg+" = mkForce base00;
-        "fg+" = mkForce base0D;
-      };
+      # colors = with config.lib.stylix.colors.withHashtag; {
+      #   "bg+" = mkForce base00;
+      #   "fg+" = mkForce base0D;
+      # };
 
       defaultOptions = [
         "--layout=reverse"

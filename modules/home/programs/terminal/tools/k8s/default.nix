@@ -98,7 +98,7 @@ in {
               errorColor = base08-hex;
               highlightcolor = base0A-hex;
               killColor = base0F-hex;
-              completedColor = base02-hex;
+              completedColor = base03-hex;
             };
 
             title = {

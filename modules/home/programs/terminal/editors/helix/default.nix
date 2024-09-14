@@ -33,7 +33,7 @@ in {
       };
 
       settings = {
-        theme = "nord-night";
+        theme = "sonokai";
         editor = {
           auto-pairs = false;
           bufferline = "always";
