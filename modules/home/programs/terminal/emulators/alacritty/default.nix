@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
   inherit (lib.${namespace}) mkBoolOpt;
 
   cfg = config.${namespace}.programs.terminal.emulators.alacritty;
@@ -54,6 +54,11 @@ in {
 
         font = {
           offset.y = -2;
+          size = mkForce 14;
+          bold = {
+            family = config.stylix.fonts.monospace.name;
+            style = "Regular";
+          };
         };
       };
     };

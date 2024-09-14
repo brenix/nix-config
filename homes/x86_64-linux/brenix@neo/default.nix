@@ -11,8 +11,7 @@
 
     programs = {
       terminal = {
-        # Testing wezterm
-        emulators.wezterm.enable = true;
+        emulators.alacritty.enable = true;
 
         tools = {
           go.enable = true;

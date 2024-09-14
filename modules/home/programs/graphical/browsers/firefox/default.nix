@@ -27,12 +27,10 @@ in {
       profiles.default = {
         name = "Default";
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          # bitwarden
           decentraleyes
           istilldontcareaboutcookies
           linkding-extension
           onepassword-password-manager
-          ublock-origin-lite
         ];
         settings = {
           "browser.aboutConfig.showWarning" = false;
