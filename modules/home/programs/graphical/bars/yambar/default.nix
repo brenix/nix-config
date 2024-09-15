@@ -28,7 +28,7 @@ in {
           spacing = 5;
           margin = 5;
           background = "${base00}ff";
-          font = "BerkeleyMono Nerd Font Mono:pixelsize=14";
+          font = "Terminus:pixelsize=14";
           left = [
             {
               script = {
