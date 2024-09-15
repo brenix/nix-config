@@ -92,7 +92,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.murky-peaks}";
+      image = "${pkgs.${namespace}.wallpapers.sky}";
 
       targets = {
         gtk.enable = false;
