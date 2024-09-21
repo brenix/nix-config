@@ -42,6 +42,7 @@
         "--exclude containerd"
         "--exclude dl"
         "--exclude server"
+        "--exclude models"
       ];
       timerConfig = {
         OnCalendar = "03:00";
