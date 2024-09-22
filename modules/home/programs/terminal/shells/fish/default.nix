@@ -113,7 +113,6 @@ in {
         ''
           if command -sq zoxide
             zoxide init fish | source
-            alias cd 'z'
           end
         ''
         +

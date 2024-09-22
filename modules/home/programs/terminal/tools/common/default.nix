@@ -49,6 +49,7 @@ in {
       jq
       libqalculate
       tcpdump
+      skim
       unrar
       unzip
       wireguard-tools

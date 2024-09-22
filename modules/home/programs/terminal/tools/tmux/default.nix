@@ -17,7 +17,6 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       sesh
-      gum
     ];
 
     programs.tmux = {
@@ -108,13 +107,14 @@ in {
 
         # Sessions
         set-option -g detach-on-destroy off
+        bind -N "last-session (via sesh) " L run-shell "sesh last"
 
         bind T display-popup -E -w 40% "sesh connect \"$(
-          sesh list -i -c -t -z | gum filter --limit 1 --fuzzy --sort --match.foreground=11 --indicator.foreground=10
+          sesh list -i -c -t -T -z | sk --ansi --reverse --filepath-word
         )\""
 
         bind-key -n M-o display-popup -E -w 40% "sesh connect \"$(
-          sesh list -i -c -t -z| gum filter --limit 1 --fuzzy --sort --match.foreground=11 --indicator.foreground=10
+          sesh list -i -c -t -T -z | sk --ansi --reverse --filepath-word
         )\""
 
         # Statusbar
