@@ -28,7 +28,7 @@ in {
           spacing = 5;
           margin = 5;
           background = "${base00}ff";
-          font = "Terminus:pixelsize=14";
+          font = "Terminus:pixelsize=12";
           left = [
             {
               script = {
