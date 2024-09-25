@@ -11,11 +11,8 @@
 
     programs = {
       terminal = {
-        emulators.alacritty.enable = true;
-
         tools = {
           go.enable = true;
-          yazi.enable = true;
         };
       };
 

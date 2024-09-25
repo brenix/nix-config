@@ -26,10 +26,10 @@ in {
     networking.wireless = {
       enable = true;
       fallbackToWPA2 = true;
-      environmentFile = config.sops.secrets.wifiNetworks.path;
+      secretsFile = config.sops.secrets.wifiNetworks.path;
       networks = {
         "ciphernet" = {
-          psk = "@CIPHERNET@";
+          pskRaw = "ext:ciphernet";
         };
       };
 

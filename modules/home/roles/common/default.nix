@@ -151,6 +151,7 @@ in {
             ssh.enable = true;
             starship.enable = true;
             tmux.enable = true;
+            yazi.enable = true;
             zellij.enable = false;
             zoxide.enable = true;
           };
