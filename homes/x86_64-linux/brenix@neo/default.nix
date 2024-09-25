@@ -28,6 +28,7 @@
         };
 
         wms.hyprland.enable = true;
+        wms.labwc.enable = true;
       };
     };
 
