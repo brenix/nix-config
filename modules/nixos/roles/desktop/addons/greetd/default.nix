@@ -17,7 +17,7 @@ in {
       enable = true;
       settings = rec {
         default_session = {
-          command = "Hyprland &>/dev/null";
+          command = "labwc &>/dev/null";
           user = config.${namespace}.user.name;
         };
         initial_session = default_session;

@@ -9,8 +9,7 @@
       desktop.enable = true;
     };
 
-    programs.graphical.wms.hyprland.enable = true;
-    programs.graphical.wms.hyprland.swapCapsEsc = true;
+    programs.graphical.wms.labwc.enable = true;
   };
 
   home.stateVersion = "23.11";
