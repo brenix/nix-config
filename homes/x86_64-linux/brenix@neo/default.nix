@@ -10,11 +10,11 @@
     };
 
     programs = {
-      terminal = {
-        tools = {
-          go.enable = true;
-        };
-      };
+      # terminal = {
+      #   tools = {
+      #     go.enable = true;
+      #   };
+      # };
 
       graphical = {
         apps = {
@@ -22,19 +22,19 @@
           spotify.enable = true;
         };
 
-        editors.vscode = {
-          enable = true;
-          declarativeConfig = false;
-        };
+        # editors.vscode = {
+        #   enable = true;
+        #   declarativeConfig = false;
+        # };
 
         wms.labwc.enable = true;
       };
     };
 
-    services.mpd = {
-      enable = true;
-      musicDirectory = "/home/brenix/.local/share/mpd/music";
-    };
+    # services.mpd = {
+    #   enable = true;
+    #   musicDirectory = "/home/brenix/.local/share/mpd/music";
+    # };
   };
 
   home.stateVersion = "23.11";

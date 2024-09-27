@@ -50,6 +50,7 @@ in {
     services = {
       # bpftune.enable = true;
       dbus.enable = true;
+      dbus.implementation = "broker";
     };
 
     security = {

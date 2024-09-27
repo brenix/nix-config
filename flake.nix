@@ -57,10 +57,6 @@
     comma.url = "github:nix-community/comma";
     comma.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Hyprland - Contrib
-    hypr-contrib.url = "github:hyprwm/Hyprcursor";
-    hypr-contrib.inputs.nixpkgs.follows = "nixpkgs";
-
     # Hyprland - Cursor
     hyprcursor.url = "github:hyprwm/Hyprcursor";
     hyprcursor.inputs.nixpkgs.follows = "nixpkgs";
@@ -81,6 +77,10 @@
     hyprland-nix.inputs.hyprland.follows = "hyprland-git";
     hyprland-nix.inputs.hyprland-xdph.follows = "hyprland-xdph-git";
     hyprland-nix.inputs.hyprland-protocols.follows = "hyprland-protocols-git";
+
+    # Labwc configuration
+    # TODO: Switch back to JaydenPahukula/labwc-manager once mousebind fix upstreamed
+    labwc-manager.url = "github:brenix/labwc-manager";
   };
 
   outputs = inputs: let
@@ -138,6 +138,7 @@
 
       homes.modules = with inputs; [
         stylix.homeManagerModules.stylix
+        labwc-manager.homeManagerModule
       ];
 
       overlays = with inputs; [

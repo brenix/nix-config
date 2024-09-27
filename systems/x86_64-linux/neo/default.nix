@@ -58,7 +58,7 @@
       desktop = {
         enable = true;
         addons = {
-          hyprland.enable = true;
+          labwc.enable = true;
         };
       };
     };
