@@ -29,143 +29,143 @@ in {
           margin = 5;
           background = "${base00}ff";
           font = "Terminus:pixelsize=12";
-          left = [
-            {
-              script = {
-                # TODO: switch back to official package. Alpha build was required to work
-                path = "${pkgs.${namespace}.yambar-hyprland-wses}/bin/yambar-hyprland-wses";
-                content = {
-                  list = {
-                    items = [
-                      (let
-                        ws_1 = "1";
-                        ws_2 = "2";
-                        ws_3 = "3";
-                        ws_4 = "4";
-                        ws_other = "${base05}ff";
-                        ws_focused = "${base0A}ff";
-                        ws_active = "${base05}ff";
-                        ws_empty = "${base05}ff";
-                      in [
-                        # WORKSPACE 1
-                        {
-                          map = {
-                            default.string = {
-                              text = ws_1;
-                              foreground = ws_other;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions.workspace_1_focused.string = {
-                              text = ws_1;
-                              foreground = ws_focused;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions.workspace_1_active.string = {
-                              text = ws_1;
-                              foreground = ws_active;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions."workspace_count < 2 || workspace_1_windows == 0".string = {
-                              text = ws_1;
-                              foreground = ws_empty;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                          };
-                        }
-                        # WORKSPACE 2
-                        {
-                          map = {
-                            default.string = {
-                              text = ws_2;
-                              foreground = ws_other;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions.workspace_2_focused.string = {
-                              text = ws_2;
-                              foreground = ws_focused;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions.workspace_2_active.string = {
-                              text = ws_2;
-                              foreground = ws_active;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions."workspace_count < 3 || workspace_2_windows == 0".string = {
-                              text = ws_2;
-                              foreground = ws_empty;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                          };
-                        }
-                        # WORKSPACE 3
-                        {
-                          map = {
-                            default.string = {
-                              text = ws_3;
-                              foreground = ws_other;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions.workspace_3_focused.string = {
-                              text = ws_3;
-                              foreground = ws_focused;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions.workspace_3_active.string = {
-                              text = ws_3;
-                              foreground = ws_active;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                            conditions."workspace_count < 4 || workspace_3_windows == 0".string = {
-                              text = ws_3;
-                              foreground = ws_empty;
-                              # font = icon_font;
-                              right-margin = 4;
-                            };
-                          };
-                        }
-                        # WORKSPACE 4
-                        {
-                          map = {
-                            default.string = {
-                              text = ws_4;
-                              foreground = ws_other;
-                              # font = icon_font;
-                            };
-                            conditions.workspace_4_focused.string = {
-                              text = ws_4;
-                              foreground = ws_focused;
-                              # font = icon_font;
-                            };
-                            conditions.workspace_4_active.string = {
-                              text = ws_4;
-                              foreground = ws_active;
-                              # font = icon_font;
-                            };
-                            conditions."workspace_count < 5 || workspace_4_windows == 0".string = {
-                              text = ws_4;
-                              foreground = ws_empty;
-                              # font = icon_font;
-                            };
-                          };
-                        }
-                      ])
-                    ];
-                  };
-                };
-              };
-            }
-          ];
+          # left = [
+          #   {
+          #     script = {
+          #       # TODO: switch back to official package. Alpha build was required to work
+          #       path = "${pkgs.${namespace}.yambar-hyprland-wses}/bin/yambar-hyprland-wses";
+          #       content = {
+          #         list = {
+          #           items = [
+          #             (let
+          #               ws_1 = "1";
+          #               ws_2 = "2";
+          #               ws_3 = "3";
+          #               ws_4 = "4";
+          #               ws_other = "${base05}ff";
+          #               ws_focused = "${base0A}ff";
+          #               ws_active = "${base05}ff";
+          #               ws_empty = "${base05}ff";
+          #             in [
+          #               # WORKSPACE 1
+          #               {
+          #                 map = {
+          #                   default.string = {
+          #                     text = ws_1;
+          #                     foreground = ws_other;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions.workspace_1_focused.string = {
+          #                     text = ws_1;
+          #                     foreground = ws_focused;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions.workspace_1_active.string = {
+          #                     text = ws_1;
+          #                     foreground = ws_active;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions."workspace_count < 2 || workspace_1_windows == 0".string = {
+          #                     text = ws_1;
+          #                     foreground = ws_empty;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                 };
+          #               }
+          #               # WORKSPACE 2
+          #               {
+          #                 map = {
+          #                   default.string = {
+          #                     text = ws_2;
+          #                     foreground = ws_other;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions.workspace_2_focused.string = {
+          #                     text = ws_2;
+          #                     foreground = ws_focused;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions.workspace_2_active.string = {
+          #                     text = ws_2;
+          #                     foreground = ws_active;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions."workspace_count < 3 || workspace_2_windows == 0".string = {
+          #                     text = ws_2;
+          #                     foreground = ws_empty;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                 };
+          #               }
+          #               # WORKSPACE 3
+          #               {
+          #                 map = {
+          #                   default.string = {
+          #                     text = ws_3;
+          #                     foreground = ws_other;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions.workspace_3_focused.string = {
+          #                     text = ws_3;
+          #                     foreground = ws_focused;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions.workspace_3_active.string = {
+          #                     text = ws_3;
+          #                     foreground = ws_active;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                   conditions."workspace_count < 4 || workspace_3_windows == 0".string = {
+          #                     text = ws_3;
+          #                     foreground = ws_empty;
+          #                     # font = icon_font;
+          #                     right-margin = 4;
+          #                   };
+          #                 };
+          #               }
+          #               # WORKSPACE 4
+          #               {
+          #                 map = {
+          #                   default.string = {
+          #                     text = ws_4;
+          #                     foreground = ws_other;
+          #                     # font = icon_font;
+          #                   };
+          #                   conditions.workspace_4_focused.string = {
+          #                     text = ws_4;
+          #                     foreground = ws_focused;
+          #                     # font = icon_font;
+          #                   };
+          #                   conditions.workspace_4_active.string = {
+          #                     text = ws_4;
+          #                     foreground = ws_active;
+          #                     # font = icon_font;
+          #                   };
+          #                   conditions."workspace_count < 5 || workspace_4_windows == 0".string = {
+          #                     text = ws_4;
+          #                     foreground = ws_empty;
+          #                     # font = icon_font;
+          #                   };
+          #                 };
+          #               }
+          #             ])
+          #           ];
+          #         };
+          #       };
+          #     };
+          #   }
+          # ];
 
           center = [
             {
