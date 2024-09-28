@@ -9,7 +9,7 @@
   cfg = config.${namespace}.programs.graphical.wms.labwc;
 in {
   config = mkIf cfg.enable {
-    xdg.configFile."labwc/themerc-override".text = ''
+    xdg.configFile."labwc/themerc-override".text = with config.lib.stylix.colors.withHashtag; ''
       # general
       border.width: 1
       padding.width: 0
@@ -20,19 +20,19 @@ in {
       titlebar.height: 10
 
       # window border
-      window.active.border.color: #464649
-      window.inactive.border.color: #27272a
+      window.active.border.color: ${base03}
+      window.inactive.border.color: ${base01}
 
       # ToggleKeybinds status indicator
-      window.active.indicator.toggled-keybind.color: #ff0000
+      window.active.indicator.toggled-keybind.color: ${base08}
 
       # window titlebar background
-      window.active.title.bg.color: #27272a
-      window.inactive.title.bg.color: #161617
+      window.active.title.bg.color: ${base01}
+      window.inactive.title.bg.color: ${base00}
 
       # window titlebar text
-      window.active.label.text.color: #c9c7cd
-      window.inactive.label.text.color: #353539
+      window.active.label.text.color: ${base05}
+      window.inactive.label.text.color: ${base02}
       window.label.text.justify: center
 
       # window button width and spacing
@@ -43,8 +43,8 @@ in {
       window.button.hover.bg.shape: rectangle
 
       # window buttons
-      window.active.button.unpressed.image.color: #909095
-      window.inactive.button.unpressed.image.color: #909095
+      window.active.button.unpressed.image.color: ${base04}
+      window.inactive.button.unpressed.image.color: ${base04}
 
       # window drop-shadows
       window.active.shadow.size: 60
@@ -62,8 +62,8 @@ in {
       menu.overlap.y: 0
       menu.width.min: 50
       menu.width.max: 200
-      menu.items.bg.color: #161617
-      menu.items.text.color: #c9c7cd
+      menu.items.bg.color: ${base00}
+      menu.items.text.color: ${base05}
       menu.items.active.bg.color: #e1dedb
       menu.items.active.text.color: #000000
       menu.items.padding.x: 6
@@ -71,8 +71,8 @@ in {
       menu.separator.width: 1
       menu.separator.padding.width: 6
       menu.separator.padding.height: 1
-      menu.separator.color: #909095
-      menu.title.bg.color: #161617
+      menu.separator.color: ${base04}
+      menu.title.bg.color: ${base01}
       menu.title.text.color: #ffffff
       menu.title.text.justify: Center
 
