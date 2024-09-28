@@ -1276,11 +1276,11 @@
     },
     "labwc-manager": {
       "locked": {
-        "lastModified": 1727453448,
-        "narHash": "sha256-syvhxG0vW/xx1haUGiEpEhVs3J+Th1W0n1ucqTNW9N4=",
+        "lastModified": 1727488389,
+        "narHash": "sha256-pxKdwMngF3vAtRTtostspeCfMYaKwjKQf40ZInKOA9I=",
         "owner": "brenix",
         "repo": "labwc-manager",
-        "rev": "c1d8d1cc5a288c3a2064c2eb4c66014fa1f458ee",
+        "rev": "42c463ac328fbe9cb4a725aa97a684dcd6b92e7f",
         "type": "github"
       },
       "original": {
