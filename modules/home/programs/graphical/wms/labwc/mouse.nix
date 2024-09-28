@@ -1,6 +1,5 @@
 {
   programs.labwc.config.mouse = {
-    scrollFactor = 0.5;
     default = false;
     mousebinds = {
       "Root" = [
