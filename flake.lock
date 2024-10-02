@@ -1276,15 +1276,15 @@
     },
     "labwc-manager": {
       "locked": {
-        "lastModified": 1727488389,
+        "lastModified": 1727568235,
         "narHash": "sha256-pxKdwMngF3vAtRTtostspeCfMYaKwjKQf40ZInKOA9I=",
-        "owner": "brenix",
+        "owner": "JaydenPahukula",
         "repo": "labwc-manager",
-        "rev": "42c463ac328fbe9cb4a725aa97a684dcd6b92e7f",
+        "rev": "3dc7bafdcf847f818f6f1330f6be113526a2e625",
         "type": "github"
       },
       "original": {
-        "owner": "brenix",
+        "owner": "JaydenPahukula",
         "repo": "labwc-manager",
         "type": "github"
       }

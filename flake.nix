@@ -79,8 +79,7 @@
     hyprland-nix.inputs.hyprland-protocols.follows = "hyprland-protocols-git";
 
     # Labwc configuration
-    # TODO: Switch back to JaydenPahukula/labwc-manager once mousebind fix upstreamed
-    labwc-manager.url = "github:brenix/labwc-manager";
+    labwc-manager.url = "github:JaydenPahukula/labwc-manager";
   };
 
   outputs = inputs: let
