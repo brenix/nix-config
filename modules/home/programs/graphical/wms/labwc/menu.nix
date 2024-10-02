@@ -23,6 +23,9 @@ in {
         <item label="DISCORD">
           <action name="Execute" command="discord" />
         </item>
+        <item label="SPOTIFY">
+          <action name="Execute" command="spotify" />
+        </item>
         <separator />
         <item label="RELOAD">
           <action name="Reconfigure" />
