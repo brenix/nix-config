@@ -118,10 +118,10 @@ in {
         serif = config.stylix.fonts.sansSerif;
 
         monospace = {
-          # package = pkgs.matrix.berkeley-mono;
-          # name = "BerkeleyMono Nerd Font Mono";
-          package = pkgs.terminus_font;
-          name = "Terminus";
+          package = pkgs.matrix.berkeley-mono;
+          name = "BerkeleyMono Nerd Font Mono";
+          # package = pkgs.terminus_font;
+          # name = "Terminus";
         };
 
         emoji = {
