@@ -9,9 +9,10 @@
       desktop.enable = true;
     };
 
-    programs.graphical.wms.labwc.enable = true;
-    programs.graphical.wms.labwc.swapCapsEsc = true;
-    programs.labwc.config.mouse.scrollFactor = 0.5;
+    programs.graphical.wms.labwc = {
+      enable = true;
+      swapCapsEsc = true;
+    };
   };
 
   home.stateVersion = "23.11";
