@@ -4,7 +4,7 @@
       - resolv-conf=/run/systemd/resolve/resolv.conf
       - image-gc-high-threshold=50
       - image-gc-low-threshold=30
-      - serialize-image-pulls=true
+      - serialize-image-pulls=false
       - registry-qps=1
 
     kube-controller-manager-arg:
