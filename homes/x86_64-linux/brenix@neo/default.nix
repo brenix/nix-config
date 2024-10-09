@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   matrix = {
     user = {
       enable = true;
@@ -36,6 +36,10 @@
     #   musicDirectory = "/home/brenix/.local/share/mpd/music";
     # };
   };
+
+  home.packages = with pkgs; [
+    talosctl
+  ];
 
   home.stateVersion = "23.11";
 }
