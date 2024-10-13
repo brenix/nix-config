@@ -38,7 +38,7 @@ in {
         focus = {
           followMouse = true;
           followMouseRequiresMovement = true;
-          raiseOnFocus = true;
+          raiseOnFocus = false;
         };
 
         libinput.default = {
