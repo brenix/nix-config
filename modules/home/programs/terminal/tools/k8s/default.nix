@@ -172,7 +172,7 @@ in {
         ];
       })
       # docker-machine-kvm2
-      # fluxcd
+      fluxcd
       helm-docs
       helmfile
       # k3d
@@ -189,7 +189,7 @@ in {
       kustomize
       # minikube
       stern
-      # talosctl
+      talosctl
       # trivy
     ];
   };
