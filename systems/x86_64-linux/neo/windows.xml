@@ -57,7 +57,7 @@
     </system>
   </sysinfo>
   <os>
-    <type arch='x86_64' machine='pc-q35-9.0'>hvm</type>
+    <type arch='x86_64' machine='pc-q35-9.1'>hvm</type>
     <loader readonly='yes' type='pflash'>/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
     <nvram template='/run/libvirt/nix-ovmf/OVMF_VARS.fd'>/var/lib/libvirt/qemu/nvram/windows_VARS.fd</nvram>
     <bootmenu enable='no'/>
