@@ -19,8 +19,10 @@ in {
       # catppuccin.enable = true;
 
       settings = {
-        shell = {
-          program = "fish";
+        terminal = {
+          shell = {
+            program = "fish";
+          };
         };
 
         window = {
