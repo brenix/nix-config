@@ -10,11 +10,11 @@
     };
 
     programs = {
-      # terminal = {
-      #   tools = {
-      #     go.enable = true;
-      #   };
-      # };
+      terminal = {
+        tools = {
+          go.enable = true;
+        };
+      };
 
       graphical = {
         apps = {
