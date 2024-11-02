@@ -27,7 +27,7 @@
         #   declarativeConfig = false;
         # };
 
-        wms.labwc.enable = true;
+        wms.hyprland.enable = true;
       };
     };
 

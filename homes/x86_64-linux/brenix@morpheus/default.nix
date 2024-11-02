@@ -9,7 +9,7 @@
       desktop.enable = true;
     };
 
-    programs.graphical.wms.labwc = {
+    programs.graphical.wms.hyprland = {
       enable = true;
       swapCapsEsc = true;
     };

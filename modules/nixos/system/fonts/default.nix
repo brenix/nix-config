@@ -47,7 +47,7 @@ in {
         };
         subpixel = {
           rgba = "rgb";
-          lcdfilter = "default";
+          lcdfilter = "light";
         };
       };
     };
