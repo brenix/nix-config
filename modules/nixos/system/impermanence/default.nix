@@ -35,7 +35,7 @@ in {
         "/var/log"
       ];
       files = [
-        "/etc/machine-id"
+        # "/etc/machine-id" # handled automatically now
         "/etc/ssh/ssh_host_ed25519_key"
         "/etc/ssh/ssh_host_ed25519_key.pub"
       ];

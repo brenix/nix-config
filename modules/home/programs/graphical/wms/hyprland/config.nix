@@ -44,7 +44,7 @@ in {
 
         general = {
           gaps_in = 3;
-          gaps_out = 5;
+          gaps_out = 10;
           border_size = 1;
           active_border_color = "0xff${colors.base03-hex}";
           inactive_border_color = "0xff${colors.base01-hex}";
@@ -74,7 +74,8 @@ in {
           "dbus-update-activation-environment --systemd --all"
           "systemctl --user import-environment QT_QPA_PLATFORMTHEME"
           "${pkgs.kanshi}/bin/kanshi"
-          "${pkgs.yambar}/bin/yambar"
+          # "${pkgs.yambar}/bin/yambar"
+          "${pkgs.waybar}/bin/waybar"
           "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         ];
       };

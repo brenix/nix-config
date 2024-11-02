@@ -104,11 +104,11 @@ in {
           cpu = {
             interval = 1;
             tooltip = false;
-            format = " {usage}%";
+            format = "  {usage}%";
           };
           memory = {
             interval = 30;
-            format = " {used:0.1f}GiB";
+            format = "  {used:0.1f}GiB";
             tooltip-format = "{used:0.1f}GiB/{total:0.1f}GiB";
           };
           network = {
@@ -151,8 +151,8 @@ in {
           border: 0;
           border-radius: 0;
           padding: 0 0;
-          font-family: "JetBrainsMonoNL NF";
-          font-size: 10pt;
+          font-family: "Terminus";
+          font-size: 12pt;
           color: white;
         }
 
@@ -176,18 +176,20 @@ in {
         }
 
         #workspaces button.active * {
-          color: @white;
-          background-color: @white;
+          color: @black;
+          background-color: @blue;
         }
 
         #workspaces button.visible {
           color: white;
-          background-color: @white;
+          background-color: @black;
         }
 
+        /*
         #workspaces button.visible * {
           color: @black;
         }
+        */
 
         #clock,
         #battery,

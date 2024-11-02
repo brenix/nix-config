@@ -47,7 +47,8 @@ in {
         wlogout.enable = true;
         wlsunset.enable = false;
       };
-      bars.yambar.enable = true;
+      bars.yambar.enable = false;
+      bars.waybar.enable = true;
       launchers.fuzzel.enable = true;
       notifications.fnott.enable = true;
     };
