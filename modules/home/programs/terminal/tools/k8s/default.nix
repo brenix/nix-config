@@ -164,13 +164,15 @@ in {
     };
 
     home.packages = with pkgs; [
-      (wrapHelm kubernetes-helm {
-        plugins = with pkgs.kubernetes-helmPlugins; [
-          helm-diff
-          helm-git
-          helm-cm-push
-        ];
-      })
+      # (wrapHelm kubernetes-helm {
+      #   plugins = with pkgs.kubernetes-helmPlugins; [
+      #     helm-diff
+      #     helm-git
+      #     helm-cm-push
+      #   ];
+      # })
+      kubernetes-helm
+      kcl
       # docker-machine-kvm2
       fluxcd
       helm-docs
