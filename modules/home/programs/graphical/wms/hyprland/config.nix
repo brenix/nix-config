@@ -53,7 +53,6 @@ in {
         decoration = {
           rounding = 0;
           blur.enabled = false;
-          drop_shadow = false;
         };
 
         animations.enabled = false;

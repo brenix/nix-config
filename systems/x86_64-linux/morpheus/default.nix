@@ -37,6 +37,7 @@
   };
 
   networking.hostName = "morpheus";
+  networking.nameservers = ["192.168.1.1" "1.1.1.1"];
 
   boot = {
     kernelParams = [
