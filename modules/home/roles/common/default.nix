@@ -18,6 +18,9 @@ in {
     # catppuccin.flavor = "mocha";
     # xdg.enable = pkgs.stdenv.isLinux; # required by catppuccin module
 
+    # We do things on the bleeding edge around here..
+    home.enableNixpkgsReleaseCheck = false;
+
     stylix = {
       enable = true;
       # -- Mashup

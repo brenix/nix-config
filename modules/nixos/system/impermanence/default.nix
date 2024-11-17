@@ -28,6 +28,11 @@ in {
       umount /mnt
     '');
 
+    # NOTE: To work around persisting /etc/machine-id
+    # https://github.com/nix-community/impermanence/issues/229
+    boot.initrd.systemd.suppressedUnits = ["systemd-machine-id-commit.service"];
+    systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
+
     environment.persistence."/persist" = {
       directories = [
         "/var/lib/systemd"
@@ -35,7 +40,7 @@ in {
         "/var/log"
       ];
       files = [
-        # "/etc/machine-id" # handled automatically now
+        "/etc/machine-id"
         "/etc/ssh/ssh_host_ed25519_key"
         "/etc/ssh/ssh_host_ed25519_key.pub"
       ];
