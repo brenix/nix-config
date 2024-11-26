@@ -3,7 +3,7 @@
 
   inputs = {
     # Base packages
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Hardware support
     hardware.url = "github:nixos/nixos-hardware";
