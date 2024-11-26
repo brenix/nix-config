@@ -22,7 +22,6 @@
       repository = "rclone:gdrive:backups/trinity";
       passwordFile = config.sops.secrets.resticPassword.path;
       paths = [
-        "/var/openebs/local"
         "/var/lib/rancher/k3s"
       ];
       pruneOpts = [

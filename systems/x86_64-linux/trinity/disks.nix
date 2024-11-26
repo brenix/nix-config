@@ -112,13 +112,13 @@
               ];
             };
           };
-          openebs = {
+          storage = {
             size = "300G";
             extraArgs = ["--stripes 2" "--stripesize 256k"];
             content = {
               type = "filesystem";
               format = "xfs";
-              mountpoint = "/var/openebs/local";
+              mountpoint = "/var/lib/rancher/k3s/storage";
               mountOptions = [
                 "defaults"
                 "noatime"
