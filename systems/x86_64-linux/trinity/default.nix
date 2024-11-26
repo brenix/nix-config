@@ -10,6 +10,11 @@
 
   matrix.roles.common.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    sqlite
+    fd
+  ];
+
   networking.hostName = "trinity";
   networking.nameservers = ["192.168.1.1"];
   networking.bridges.br0.interfaces = ["enp7s0"];
