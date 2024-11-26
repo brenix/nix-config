@@ -41,7 +41,6 @@
         "--exclude linux64"
         "--exclude containerd"
         "--exclude dl"
-        "--exclude server"
         "--exclude models"
       ];
       timerConfig = {
