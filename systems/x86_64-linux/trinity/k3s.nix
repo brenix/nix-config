@@ -18,7 +18,6 @@
     disable:
       - traefik
       - servicelb
-      - local-storage
 
     disable-network-policy: true
 
