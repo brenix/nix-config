@@ -4,8 +4,7 @@
   namespace,
   pkgs,
   ...
-}:
-let
+}: let
   inherit (lib) mkIf types;
   inherit (lib.${namespace}) mkBoolOpt mkOpt;
 
@@ -28,7 +27,7 @@ in {
           noto-fonts
           noto-fonts-emoji
           google-fonts
-          (nerdfonts.override {fonts = ["JetBrainsMono"];})
+          nerd-fonts.jetbrains-mono
         ]
         ++ cfg.fonts;
     };

@@ -21,9 +21,10 @@ in {
       fontDir.enable = true;
       packages = with pkgs;
         [
-          (nerdfonts.override {fonts = ["JetBrainsMono" "Iosevka"];})
           (google-fonts.override {fonts = ["Poppins" "Cousine"];})
           inter
+          nerd-fonts.jetbrains-mono
+          nerd-fonts.iosevka
           matrix.monaco
           noto-fonts-emoji
           terminus_font
