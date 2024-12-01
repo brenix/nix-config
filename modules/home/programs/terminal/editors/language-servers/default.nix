@@ -20,6 +20,8 @@ in {
       # terraform-ls
       alejandra
       bash-language-server
+      cue
+      cuelsp
       deno
       golangci-lint-langserver
       gopls
