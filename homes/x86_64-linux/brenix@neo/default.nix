@@ -39,6 +39,7 @@
 
   home.packages = with pkgs; [
     talosctl
+    renovate
   ];
 
   home.stateVersion = "23.11";
