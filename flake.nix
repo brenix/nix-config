@@ -33,13 +33,13 @@
     impermanence.url = "github:nix-community/impermanence";
 
     # OpenGL wrapper for nix
-    nixgl.url = "github:nix-community/nixGL";
+    # nixgl.url = "github:nix-community/nixGL";
 
     # Colorscheme management
     stylix.url = "github:danth/stylix";
 
     # Catppuccin colorscheme
-    catppuccin.url = "github:catppuccin/nix";
+    # catppuccin.url = "github:catppuccin/nix";
 
     # Nix index database
     nix-index-database.url = "github:nix-community/nix-index-database";
@@ -58,16 +58,16 @@
     comma.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hyprland - Cursor
-    hyprcursor.url = "github:hyprwm/Hyprcursor";
-    hyprcursor.inputs.nixpkgs.follows = "nixpkgs";
+    # hyprcursor.url = "github:hyprwm/Hyprcursor";
+    # hyprcursor.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hyprland - Idle
-    hypridle.url = "github:hyprwm/Hypridle";
-    hypridle.inputs.nixpkgs.follows = "nixpkgs";
+    # hypridle.url = "github:hyprwm/Hypridle";
+    # hypridle.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hyprland - Scratchpad and Extras
-    pyprland.url = "github:hyprland-community/pyprland";
-    pyprland.inputs.nixpkgs.follows = "nixpkgs";
+    # pyprland.url = "github:hyprland-community/pyprland";
+    # pyprland.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hyprland - Main
     hyprland-git.url = "github:hyprwm/hyprland";
@@ -110,7 +110,7 @@
         disko.nixosModules.disko
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
-        catppuccin.nixosModules.catppuccin
+        # catppuccin.nixosModules.catppuccin
         # stylix.nixosModules.stylix
         chaotic.nixosModules.default
         {
@@ -144,9 +144,9 @@
       ];
 
       overlays = with inputs; [
-        nixgl.overlay
+        # nixgl.overlay
         chaotic.overlays.default
-        nur.overlay
+        nur.overlays.default
         talhelper.overlays.default
       ];
 
