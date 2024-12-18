@@ -80,6 +80,9 @@
 
     # Labwc configuration
     labwc-manager.url = "github:JaydenPahukula/labwc-manager";
+
+    # Talhelper
+    talhelper.url = "github:budimanjojo/talhelper";
   };
 
   outputs = inputs: let
@@ -144,6 +147,7 @@
         nixgl.overlay
         chaotic.overlays.default
         nur.overlay
+        talhelper.overlays.default
       ];
 
       outputs-builder = channels: {
