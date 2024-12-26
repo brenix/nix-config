@@ -3,9 +3,9 @@
     ./hardware-configuration.nix
     ./disks.nix
 
-    ./k3s.nix
-    ./nix-cache.nix
-    ./restic.nix
+    # ./k3s.nix
+    # ./nix-cache.nix
+    # ./restic.nix
   ];
 
   matrix.roles.common.enable = true;
