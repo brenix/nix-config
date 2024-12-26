@@ -53,10 +53,6 @@
     nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs";
     nixos-anywhere.inputs.disko.follows = "disko";
 
-    # Comma CLI tool
-    comma.url = "github:nix-community/comma";
-    comma.inputs.nixpkgs.follows = "nixpkgs";
-
     # Hyprland - Cursor
     # hyprcursor.url = "github:hyprwm/Hyprcursor";
     # hyprcursor.inputs.nixpkgs.follows = "nixpkgs";

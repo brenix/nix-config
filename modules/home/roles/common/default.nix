@@ -150,7 +150,7 @@ in {
             git.enable = true;
             htop.enable = true;
             k8s.enable = true;
-            nix-index.enable = true;
+            # nix-index.enable = true;
             ssh.enable = true;
             starship.enable = true;
             tmux.enable = true;

@@ -171,12 +171,13 @@ in {
       #     helm-cm-push
       #   ];
       # })
+      cilium-cli
       kubernetes-helm
       kcl
       # docker-machine-kvm2
       fluxcd
-      helm-docs
-      helmfile
+      # helm-docs
+      # helmfile
       # k3d
       krew
       kubecolor
@@ -186,7 +187,7 @@ in {
       kubectl-neat
       kubectl-view-secret
       kubelogin
-      kubelogin-oidc
+      # kubelogin-oidc
       kubevirt
       kustomize
       # minikube
