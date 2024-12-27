@@ -193,6 +193,7 @@ in {
       # minikube
       stern
       talosctl
+      timoni
       # trivy
     ];
   };
