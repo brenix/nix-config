@@ -40,6 +40,7 @@
   home.packages = with pkgs; [
     talosctl
     talhelper
+    go-task
     renovate
   ];
 

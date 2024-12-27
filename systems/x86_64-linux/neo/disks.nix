@@ -129,4 +129,9 @@
 
   fileSystems."/persist".neededForBoot = true;
   fileSystems."/home".neededForBoot = true;
+  fileSystems."/mnt/main" = {
+    device = "truenas.lan:/mnt/main";
+    fsType = "nfs";
+    options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+  };
 }
