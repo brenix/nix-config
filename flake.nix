@@ -79,6 +79,11 @@
 
     # Talhelper
     talhelper.url = "github:budimanjojo/talhelper";
+
+    # Ghostty
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = inputs: let
