@@ -17,7 +17,6 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       efibootmgr
-      efitools
       efivar
       fwupd
     ];

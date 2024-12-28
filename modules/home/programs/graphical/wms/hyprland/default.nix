@@ -36,6 +36,7 @@ in {
     xdg.configFile."hypr".recursive = true;
 
     home.packages = with pkgs; [
+      hyprland-qtutils
       grimblast
       wl-clipboard
     ];

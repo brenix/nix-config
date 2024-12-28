@@ -44,8 +44,9 @@ in {
       ];
     };
 
+    # TODO: build failures; uncomment once fixed upstream
     # Passwordless sudo when SSH'ing with keys
-    security.pam.sshAgentAuth.enable = true;
+    # security.pam.sshAgentAuth.enable = true;
 
     # Add github/gitlab known hosts system-wide
     programs.ssh.knownHosts = {
