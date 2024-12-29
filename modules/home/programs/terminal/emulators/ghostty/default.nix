@@ -29,6 +29,7 @@ in {
       cursor-style = block
       adjust-cell-height = -5%
       freetype-load-flags = no-hinting,no-force-autohint
+      term = xterm-256color
     '';
 
     home.packages = with inputs; [
