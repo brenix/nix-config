@@ -19,7 +19,7 @@ in {
       font-family = "BerkeleyMono Nerd Font Mono"
       command = fish
       gtk-titlebar = false
-      font-size = 12.5
+      font-size = 11.5
       font-style-bold = false
       font-style-italic = false
       font-style-bold-italic = false
