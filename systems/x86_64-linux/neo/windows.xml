@@ -57,9 +57,9 @@
     </system>
   </sysinfo>
   <os>
-    <type arch='x86_64' machine='pc-q35-9.1'>hvm</type>
-    <loader readonly='yes' type='pflash'>/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
-    <nvram template='/run/libvirt/nix-ovmf/OVMF_VARS.fd'>/var/lib/libvirt/qemu/nvram/windows_VARS.fd</nvram>
+    <type arch='x86_64' machine='pc-q35-9.2'>hvm</type>
+    <loader readonly='yes' type='pflash' format='raw'>/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
+    <nvram template='/run/libvirt/nix-ovmf/OVMF_VARS.fd' templateFormat='raw' format='raw'>/var/lib/libvirt/qemu/nvram/windows_VARS.fd</nvram>
     <bootmenu enable='no'/>
     <smbios mode='sysinfo'/>
   </os>
@@ -217,6 +217,13 @@
       </source>
       <rom bar='off'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x054c'/>
+        <product id='0x09cc'/>
+      </source>
+      <address type='usb' bus='0' port='1'/>
     </hostdev>
     <watchdog model='itco' action='reset'/>
     <memballoon model='none'/>
