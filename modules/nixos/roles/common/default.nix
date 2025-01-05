@@ -2,6 +2,7 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf mkEnableOption;
@@ -16,6 +17,10 @@ in {
     networking.firewall.enable = false;
 
     programs.fish.enable = true;
+
+    environment.systemPackages = with pkgs; [
+      usbutils
+    ];
 
     matrix = {
       programs = {
