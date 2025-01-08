@@ -14,13 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    nixpkgs = {
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = _: true;
-      };
-    };
-
     systemd.user.startServices = "sd-switch";
 
     programs = {
