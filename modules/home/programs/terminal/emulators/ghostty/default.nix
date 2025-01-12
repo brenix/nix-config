@@ -25,7 +25,7 @@ in {
       font-style-bold-italic = false
       window-padding-x = 2
       window-padding-y = 2
-      copy-on-select = clipboard
+      # copy-on-select = clipboard
       cursor-style = block
       adjust-cell-height = -5%
       freetype-load-flags = no-hinting,no-force-autohint
