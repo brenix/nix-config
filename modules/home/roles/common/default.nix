@@ -95,7 +95,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.wanderer}";
+      image = "${pkgs.${namespace}.wallpapers.treeline}";
 
       targets = {
         gtk.enable = false;
