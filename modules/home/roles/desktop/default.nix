@@ -27,7 +27,7 @@ in {
 
         terminal = {
           emulators.alacritty.enable = true;
-          emulators.ghostty.enable = true;
+          emulators.ghostty.enable = false;
           tools.spotify-player.enable = true;
         };
       };
