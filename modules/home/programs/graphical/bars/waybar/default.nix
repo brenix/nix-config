@@ -137,6 +137,7 @@ in {
       ];
 
       style = with config.lib.stylix.colors.withHashtag; ''
+        /*
         @define-color black ${base00};
         @define-color white ${base05};
         @define-color blue ${base0D};
@@ -146,13 +147,24 @@ in {
         @define-color yellow ${base0A};
         @define-color cyan ${base0C};
         @define-color magenta ${base0E};
+        */
+
+        @define-color black #161617;
+        @define-color white #c9c7cd;
+        @define-color blue #9cb2cf;
+        @define-color green #90b99f;
+        @define-color red #ea83a5;
+        @define-color orange #e6b99d;
+        @define-color yellow #e6dc9d;
+        @define-color cyan #85b5ba;
+        @define-color magenta #ae9ee2;
 
         * {
           border: 0;
           border-radius: 0;
           padding: 0 0;
-          font-family: "Terminus";
-          font-size: 12pt;
+          font-family: "Azeret Mono";
+          font-size: 10pt;
           color: white;
         }
 
