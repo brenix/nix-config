@@ -163,8 +163,8 @@ in {
           border: 0;
           border-radius: 0;
           padding: 0 0;
-          font-family: "Azeret Mono";
-          font-size: 10pt;
+          font-family: "Terminus";
+          font-size: 9pt;
           color: white;
         }
 

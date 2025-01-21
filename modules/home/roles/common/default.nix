@@ -95,7 +95,7 @@ in {
         base0F = "8a290f"; # brown
       };
 
-      image = "${pkgs.${namespace}.wallpapers.treeline}";
+      image = "${pkgs.${namespace}.wallpapers.cracks}";
 
       targets = {
         gtk.enable = false;
@@ -124,11 +124,11 @@ in {
           # package = pkgs.matrix.berkeley-mono;
           # name = "BerkeleyMono Nerd Font Mono";
 
-          package = pkgs.azeret-mono;
-          name = "Azeret Mono";
+          # package = pkgs.azeret-mono;
+          # name = "Azeret Mono";
 
-          # package = pkgs.terminus_font;
-          # name = "Terminus";
+          package = pkgs.terminus_font;
+          name = "Terminus";
         };
 
         emoji = {
