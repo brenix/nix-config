@@ -24,7 +24,7 @@ in {
     stylix = {
       enable = true;
       polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/grayscale-dark.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
 
       # -- Mashup
       # polarity = "dark";
@@ -98,7 +98,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.cracks}";
+      image = "${pkgs.${namespace}.wallpapers.island}";
 
       targets = {
         gtk.enable = false;
@@ -124,14 +124,14 @@ in {
         serif = config.stylix.fonts.sansSerif;
 
         monospace = {
-          # package = pkgs.matrix.berkeley-mono;
-          # name = "BerkeleyMono Nerd Font Mono";
+          package = pkgs.matrix.berkeley-mono;
+          name = "BerkeleyMono Nerd Font Mono";
 
           # package = pkgs.azeret-mono;
           # name = "Azeret Mono";
 
-          package = pkgs.terminus_font;
-          name = "Terminus";
+          # package = pkgs.terminus_font;
+          # name = "Terminus";
         };
 
         emoji = {
