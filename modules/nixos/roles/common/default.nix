@@ -36,7 +36,10 @@ in {
         ananicy.enable = true;
         ssh.enable = true;
         systemd = {
-          timesyncd.enable = true;
+          timesyncd = {
+            enable = true;
+            servers = ["192.168.1.1"];
+          };
           resolved.enable = true;
           resolved.domains = ["lan"];
         };
