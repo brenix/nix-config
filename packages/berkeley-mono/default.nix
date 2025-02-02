@@ -9,7 +9,7 @@ stdenv.mkDerivation {
   src = builtins.fetchGit {
     url = "git@github.com:brenix/berkeley-mono.git";
     ref = "main";
-    rev = "4611aafaec9dcc84b5a7592db7048c0b3f79e7e2";
+    rev = "6519428ea186d824a37cc36f5af226c1e498c335";
   };
 
   installPhase = ''

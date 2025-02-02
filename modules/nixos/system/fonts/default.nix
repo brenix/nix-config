@@ -37,7 +37,7 @@ in {
         defaultFonts = {
           serif = ["Inter"];
           sansSerif = ["Inter"];
-          monospace = ["BerkeleyMono Nerd Font Mono" "Iosevka NFM" "Cousine" "JetBrainsMono Nerd Font"];
+          monospace = ["Berkeley Mono" "Iosevka NFM" "Cousine" "JetBrainsMono Nerd Font"];
           emoji = ["Noto Color Emoji"];
         };
         enable = true;

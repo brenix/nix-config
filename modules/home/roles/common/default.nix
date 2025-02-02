@@ -125,7 +125,7 @@ in {
 
         monospace = {
           package = pkgs.matrix.berkeley-mono;
-          name = "BerkeleyMono Nerd Font Mono";
+          name = "Berkeley Mono SemiCondensed";
 
           # package = pkgs.azeret-mono;
           # name = "Azeret Mono";

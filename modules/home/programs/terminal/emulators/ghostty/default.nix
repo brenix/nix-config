@@ -16,7 +16,7 @@ in {
 
   config = mkIf cfg.enable {
     xdg.configFile."ghostty/config".text = ''
-      font-family = "BerkeleyMono Nerd Font Mono"
+      font-family = "Berkeley Mono"
       command = fish
       gtk-titlebar = false
       font-size = 11.5
