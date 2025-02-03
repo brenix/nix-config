@@ -23,8 +23,8 @@ in {
 
     stylix = {
       enable = true;
-      polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+      polarity = "light";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";
 
       # -- Mashup
       # polarity = "dark";
@@ -98,11 +98,13 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.fog-forest}";
+      image = "${pkgs.${namespace}.wallpapers.solarizedlightstripes}";
 
       targets = {
         gtk.enable = false;
         helix.enable = false;
+        hyprpaper.enable = false;
+        hyprland.enable = false;
         k9s.enable = false;
         vscode.enable = false;
         waybar.enable = false;

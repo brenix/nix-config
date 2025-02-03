@@ -166,7 +166,7 @@ in {
       };
 
       settings = {
-        theme = "everforest_dark_hard";
+        theme = "solarized_light";
         editor = {
           auto-pairs = false;
           bufferline = "always";

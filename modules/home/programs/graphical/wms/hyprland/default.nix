@@ -43,7 +43,7 @@ in {
 
     ${namespace}.programs.graphical = {
       addons = {
-        hyprpaper.enable = true;
+        hyprpaper.enable = false;
         kanshi.enable = true;
         wlogout.enable = true;
         wlsunset.enable = false;

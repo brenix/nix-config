@@ -6,6 +6,7 @@
 }: let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
+  inherit (config.stylix) polarity;
 
   cfg = config.${namespace}.programs.graphical.bars.waybar;
 in {
@@ -136,10 +137,19 @@ in {
         }
       ];
 
-      style = with config.lib.stylix.colors.withHashtag; ''
-
-        @define-color black ${base00};
-        @define-color white ${base05};
+      style = with config.lib.stylix.colors.withHashtag; let
+        background =
+          if polarity == "light"
+          then base07
+          else base00;
+        foreground =
+          if polarity == "light"
+          then base00
+          else base07;
+      in ''
+        @define-color black ${background};
+        @define-color white ${foreground};
+        @define-color grey ${base01};
         @define-color blue ${base0D};
         @define-color green ${base0B};
         @define-color red ${base08};
@@ -147,18 +157,6 @@ in {
         @define-color yellow ${base0A};
         @define-color cyan ${base0C};
         @define-color magenta ${base0E};
-
-        /*
-        @define-color black #161617;
-        @define-color white #c9c7cd;
-        @define-color blue #9cb2cf;
-        @define-color green #90b99f;
-        @define-color red #ea83a5;
-        @define-color orange #e6b99d;
-        @define-color yellow #e6dc9d;
-        @define-color cyan #85b5ba;
-        @define-color magenta #ae9ee2;
-        */
 
         * {
           border: 0;
@@ -190,7 +188,7 @@ in {
 
         #workspaces button.active * {
           color: @black;
-          background-color: @blue;
+          background-color: @white;
         }
 
         #workspaces button.visible {
@@ -221,7 +219,7 @@ in {
         }
 
         #clock {
-          color: @yellow;
+          color: @white;
         }
 
         #backlight {
@@ -242,7 +240,7 @@ in {
         }
 
         #battery.charging {
-          color: @green;
+          color: @white;
         }
 
         @keyframes blink {
@@ -252,15 +250,15 @@ in {
         }
 
         #pulseaudio {
-          color: @cyan;
+          color: @white;
         }
 
         #pulseaudio.muted {
-          color: #3b4252;
+          color: @grey;
         }
 
         #temperature {
-          color: @orange;
+          color: @white;
         }
 
         #temperature.critical {
@@ -268,19 +266,19 @@ in {
         }
 
         #cpu {
-          color: @blue;
+          color: @white;
         }
 
         #cpu #cpu-icon {
-          color: @blue;
+          color: @white;
         }
 
         #memory {
-          color: @green;
+          color: @white;
         }
 
         #network {
-          color: @red;
+          color: @white;
         }
 
         #custom-player{
@@ -292,7 +290,7 @@ in {
         }
 
         #network.disconnected {
-          color: @red;
+          color: @white;
         }
 
         #custom-power {
