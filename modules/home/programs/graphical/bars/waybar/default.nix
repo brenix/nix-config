@@ -164,8 +164,8 @@ in {
           border: 0;
           border-radius: 0;
           padding: 0 0;
-          font-family: "Terminus";
-          font-size: 9pt;
+          font-family: "Berkeley Mono";
+          font-size: 12pt;
           color: white;
         }
 

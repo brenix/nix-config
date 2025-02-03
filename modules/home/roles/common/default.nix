@@ -24,7 +24,7 @@ in {
     stylix = {
       enable = true;
       polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 
       # -- Mashup
       # polarity = "dark";
@@ -98,7 +98,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.island}";
+      image = "${pkgs.${namespace}.wallpapers.fog-forest}";
 
       targets = {
         gtk.enable = false;
