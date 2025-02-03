@@ -166,7 +166,7 @@ in {
       };
 
       settings = {
-        theme = "stylix";
+        theme = "everforest_dark_hard";
         editor = {
           auto-pairs = false;
           bufferline = "always";
