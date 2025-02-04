@@ -140,7 +140,7 @@ in {
       style = with config.lib.stylix.colors.withHashtag; let
         background =
           if polarity == "light"
-          then base07
+          then "#181818"
           else base00;
         foreground =
           if polarity == "light"
