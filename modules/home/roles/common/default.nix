@@ -98,7 +98,7 @@ in {
       #   base0F = "8a290f"; # brown
       # };
 
-      image = "${pkgs.${namespace}.wallpapers.solarizedlightstripes}";
+      image = "${pkgs.${namespace}.wallpapers.mountains}";
 
       targets = {
         gtk.enable = false;

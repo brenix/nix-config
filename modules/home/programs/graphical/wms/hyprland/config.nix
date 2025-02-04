@@ -67,7 +67,7 @@ in {
           variable_framerate = true;
           variable_refresh = FULLSCREEN_ONLY;
           disable_autoreload = true;
-          background_color = "0xff${colors.base00-hex}";
+          # background_color = "0xff${colors.base00-hex}";
         };
 
         exec_once = [

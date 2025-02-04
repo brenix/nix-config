@@ -22,7 +22,7 @@ in {
         {
           layer = "top";
           position = "top";
-          height = 13;
+          height = 9;
           margin = "0 0 0 0";
           modules-left = [
             "hyprland/workspaces"
@@ -162,8 +162,8 @@ in {
           border: 0;
           border-radius: 0;
           padding: 0 0;
-          font-family: "Berkeley Mono";
-          font-size: 12pt;
+          font-family: "Terminus";
+          font-size: 9pt;
           color: white;
         }
 
