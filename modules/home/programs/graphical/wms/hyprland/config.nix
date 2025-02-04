@@ -43,8 +43,8 @@ in {
         ];
 
         general = {
-          gaps_in = 3;
-          gaps_out = 10;
+          gaps_in = 20;
+          gaps_out = 30;
           border_size = 1;
           active_border_color = "0xff${colors.base03-hex}";
           inactive_border_color = "0xff${colors.base01-hex}";

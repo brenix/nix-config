@@ -103,7 +103,6 @@ in {
       targets = {
         gtk.enable = false;
         helix.enable = false;
-        hyprpaper.enable = false;
         hyprland.enable = false;
         k9s.enable = false;
         vscode.enable = false;
