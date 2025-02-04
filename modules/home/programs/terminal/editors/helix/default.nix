@@ -166,7 +166,7 @@ in {
       };
 
       settings = {
-        theme = "solarized_light";
+        theme = "flexoki_light";
         editor = {
           auto-pairs = false;
           bufferline = "always";
