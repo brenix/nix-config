@@ -145,7 +145,7 @@ in {
         foreground =
           if polarity == "light"
           then base00
-          else base07;
+          else base05;
       in ''
         @define-color black ${background};
         @define-color white ${foreground};

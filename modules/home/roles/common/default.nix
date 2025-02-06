@@ -65,7 +65,7 @@ in {
         serif = config.stylix.fonts.sansSerif;
         monospace = {
           package = pkgs.matrix.berkeley-mono;
-          name = "Berkeley Mono Condensed";
+          name = "Berkeley Mono";
         };
         emoji = {
           package = pkgs.noto-fonts-emoji;

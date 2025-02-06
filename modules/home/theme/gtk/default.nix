@@ -24,6 +24,42 @@ in {
       #   # package = pkgs.nordic;
       #   # name = "Nordic";
       # };
+
+      gtk2 = {
+        configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+        extraConfig = ''
+          gtk-xft-antialias=1
+          gtk-xft-hinting=1
+          gtk-xft-hintstyle="hintslight"
+          gtk-xft-rgba="rgb"
+        '';
+      };
+
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+        gtk-button-images = 1;
+        gtk-decoration-layout = "appmenu:none";
+        gtk-enable-event-sounds = 0;
+        gtk-enable-input-feedback-sounds = 0;
+        gtk-error-bell = 0;
+        gtk-menu-images = 1;
+        gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
+        gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
+        gtk-xft-antialias = 1;
+        gtk-xft-hinting = 1;
+        gtk-xft-hintstyle = "hintnone";
+      };
+
+      gtk4.extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+        gtk-decoration-layout = "appmenu:none";
+        gtk-enable-event-sounds = 0;
+        gtk-enable-input-feedback-sounds = 0;
+        gtk-error-bell = 0;
+        gtk-xft-antialias = 1;
+        gtk-xft-hinting = 1;
+        gtk-xft-hintstyle = "hintnone";
+      };
     };
   };
 }
