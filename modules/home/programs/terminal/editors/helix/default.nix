@@ -23,7 +23,6 @@ in {
 
     programs.helix = {
       enable = true;
-      # catppuccin.enable = true;
       themes = with config.lib.stylix.colors.withHashtag; {
         stylix = {
           "attributes" = base09;
@@ -166,7 +165,7 @@ in {
       };
 
       settings = {
-        theme = "flexoki_light";
+        # theme = "stylix";
         editor = {
           auto-pairs = false;
           bufferline = "always";

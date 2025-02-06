@@ -17,7 +17,6 @@ in {
   config = mkIf cfg.enable {
     services.mako = {
       enable = true;
-      # catppuccin.enable = true;
       defaultTimeout = 30000;
     };
 

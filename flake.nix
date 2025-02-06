@@ -39,7 +39,7 @@
     stylix.url = "github:danth/stylix";
 
     # Catppuccin colorscheme
-    # catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix";
 
     # Nix index database
     nix-index-database.url = "github:nix-community/nix-index-database";
@@ -140,6 +140,7 @@
       ];
 
       homes.modules = with inputs; [
+        catppuccin.homeManagerModules.catppuccin
         stylix.homeManagerModules.stylix
         labwc-manager.homeManagerModule
       ];

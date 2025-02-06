@@ -15,112 +15,31 @@ in {
   };
 
   config = mkIf cfg.enable {
-    # catppuccin.flavor = "mocha";
-    # xdg.enable = pkgs.stdenv.isLinux; # required by catppuccin module
-
-    # We do things on the bleeding edge around here..
     home.enableNixpkgsReleaseCheck = false;
+
+    catppuccin = {
+      enable = true;
+      flavor = "frappe";
+      accent = "blue";
+
+      gtk = {
+        enable = true;
+        size = "compact";
+        tweaks = ["rimless"];
+      };
+    };
 
     stylix = {
       enable = true;
-      # polarity = "light";
-      # base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";
-
-      # -- Mashup
-      # polarity = "dark";
-      # base16Scheme = {
-      #   base00 = "161617"; # background
-      #   base01 = "27272a"; # dark gray
-      #   base02 = "353539"; # gray
-      #   base03 = "464649"; # light gray
-      #   base04 = "909095"; # secondary
-      #   base05 = "c9c7cd"; # foreground
-      #   base06 = "a4a3a8"; # lighter gray
-      #   base07 = "c9c7cd"; # white
-      #   base08 = "ea83a5"; # red
-      #   # base08 = "fc5d7c"; # red
-      #   base09 = "e6b99d"; # orange
-      #   base0A = "e6dc9d"; # yellow
-      #   base0B = "90b99f"; # green
-      #   base0C = "85b5ba"; # cyan
-      #   base0D = "9cb2cf"; # blue
-      #   base0E = "ae9ee2"; # magenta
-      #   base0F = "ab9c93"; # brown
-      # };
-
-      # -- Sonokai
-      # polarity = "dark";
-      # base16Scheme = {
-      #   base00 = "2c2e34"; # background
-      #   base01 = "33353f"; # dark gray
-      #   base02 = "363944"; # gray
-      #   base03 = "3b3e48"; # light gray
-      #   base04 = "414550"; # secondary
-      #   base05 = "e2e2e3"; # foreground
-      #   base06 = "595f6f"; # lighter gray
-      #   base07 = "7f8490"; # white
-      #   base08 = "fc5d7c"; # red
-      #   base09 = "f39660"; # orange
-      #   base0A = "e7c664"; # yellow
-      #   base0B = "9ed072"; # green
-      #   base0C = "76cce0"; # cyan
-      #   base0D = "85d3f2"; # blue
-      #   base0E = "b39df3"; # magenta
-      #   base0F = "4e432f"; # brown
-      # };
-
-      # -- Nord
-      # polarity = "dark";
-      # base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+      autoEnable = false;
+      polarity = "dark";
+      # base16Scheme = import ./themes/mashup.nix;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
       # override = {
       #   base00 = "252933";
       #   base04 = "C0C5CF";
       # };
-
-      # -- Modus operandi
-      # polarity = "light";
-      # base16Scheme = {
-      #   base00 = "ffffff"; # background
-      #   base01 = "fefefe"; # dark gray
-      #   base02 = "e1e4e8"; # gray
-      #   base03 = "d1d5da"; # light gray
-      #   base04 = "585858"; # secondary
-      #   base05 = "000000"; # foreground
-      #   base06 = "f4dbd6"; # lighter gray
-      #   base07 = "b7bdf8"; # white
-      #   base08 = "a60000"; # red
-      #   base09 = "f66a0a"; # orange
-      #   base0A = "6f5500"; # yellow
-      #   base0B = "006800"; # green
-      #   base0C = "005e8b"; # cyan
-      #   base0D = "0031a9"; # blue
-      #   base0E = "721045"; # magenta
-      #   base0F = "8a290f"; # brown
-      # };
-
-      # -- Flexoki light
-      polarity = "light";
-      base16Scheme = {
-        base00 = "fffcf0"; # background
-        base01 = "f2f0e5"; # dark gray
-        base02 = "e6e4d9"; # gray
-        base03 = "dad8ce"; # light gray
-        base04 = "403e3c"; # secondary
-        base05 = "100f0f"; # foreground
-        base06 = "343331"; # lighter gray
-        base07 = "6f6e69"; # white
-        base08 = "af3029"; # red
-        base09 = "bc5215"; # orange
-        base0A = "ad8301"; # yellow
-        base0B = "66800b"; # green
-        base0C = "24837b"; # cyan
-        base0D = "205ea6"; # blue
-        base0E = "5e409d"; # magenta
-        base0F = "a02f6f"; # brown
-      };
-
-      image = "${pkgs.${namespace}.wallpapers.mountains}";
-
+      image = "${pkgs.${namespace}.wallpapers.wanderer}";
       targets = {
         gtk.enable = false;
         helix.enable = false;
@@ -128,8 +47,10 @@ in {
         k9s.enable = false;
         vscode.enable = false;
         waybar.enable = false;
-      };
 
+        # selectively enable when autoEnable=false
+        hyprpaper.enable = true;
+      };
       fonts = {
         sizes = {
           desktop = 12;
@@ -137,25 +58,15 @@ in {
           terminal = 12;
           popups = 12;
         };
-
         sansSerif = {
           package = pkgs.inter;
           name = "Inter";
         };
-
         serif = config.stylix.fonts.sansSerif;
-
         monospace = {
           package = pkgs.matrix.berkeley-mono;
-          name = "Berkeley Mono SemiCondensed";
-
-          # package = pkgs.azeret-mono;
-          # name = "Azeret Mono";
-
-          # package = pkgs.terminus_font;
-          # name = "Terminus";
+          name = "Berkeley Mono Condensed";
         };
-
         emoji = {
           package = pkgs.noto-fonts-emoji;
           name = "Noto Color Emoji";

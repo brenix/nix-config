@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   namespace,
   ...
@@ -15,25 +14,27 @@ in {
   };
 
   config = mkIf cfg.enable {
-    xdg.configFile."ghostty/config".text = ''
-      font-family = "Berkeley Mono SemiCondensed"
-      command = fish
-      gtk-titlebar = false
-      font-size = 10
-      font-style-bold = false
-      font-style-italic = false
-      font-style-bold-italic = false
-      window-padding-x = 2
-      window-padding-y = 2
-      # copy-on-select = clipboard
-      cursor-style = block
-      adjust-cell-height = -25%
-      freetype-load-flags = no-hinting,no-force-autohint
-      term = xterm-256color
-    '';
-
-    home.packages = with inputs; [
-      ghostty.packages.x86_64-linux.default
-    ];
+    programs.ghostty = {
+      enable = true;
+      settings = {
+        font-family = config.stylix.fonts.monospace.name;
+        command = "fish";
+        gtk-titlebar = "false";
+        font-size = 13;
+        font-style-bold = false;
+        font-style-italic = false;
+        font-style-bold-italic = false;
+        font-thicken = true;
+        font-thicken-strength = 50;
+        window-padding-x = 2;
+        window-padding-y = 2;
+        copy-on-select = "clipboard";
+        cursor-style = "block";
+        # adjust-cell-width = "-10%";
+        adjust-cell-height = "-15%";
+        freetype-load-flags = "no-autohint,no-force-autohint";
+        term = "xterm-256color";
+      };
+    };
   };
 }

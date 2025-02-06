@@ -18,8 +18,6 @@ in {
   config = mkIf cfg.enable {
     programs.fish = {
       enable = true;
-      # catppuccin.enable = true;
-
       shellAliases = {
         bat = "bat --paging=never --style=plain --decorations=never";
         e = "hx .";

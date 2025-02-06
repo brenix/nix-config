@@ -16,7 +16,6 @@ in {
   config = mkIf cfg.enable {
     programs.zellij = {
       enable = true;
-      # catppuccin.enable = true;
       settings = {
         auto_layouts = false;
         default_layout = "compact";

@@ -22,7 +22,6 @@ in {
 
     programs.k9s = {
       enable = true;
-      # catppuccin.enable = true;
       settings = {
         k9s = {
           liveViewAutoRefresh = true;

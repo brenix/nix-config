@@ -17,8 +17,6 @@ in {
   config = mkIf cfg.enable {
     programs.foot = {
       enable = true;
-      # catppuccin.enable = true;
-
       settings = {
         main = {
           font = with config.stylix.fonts; mkForce "${monospace.name}:pixelsize=18";

@@ -126,8 +126,8 @@ in {
         set -g status-left ""
         set -g status-right-length "100"
         set -g status-right "  #S"
-        setw -g window-status-current-format "#[fg=colour0,bg=colour4] #I #[fg=colour0,bg=colour7] #W "
-        setw -g window-status-format "#[fg=colour7,bg=colour15] #I #[fg=colour7,bg=colour19] #W "
+        setw -g window-status-current-format "#[fg=colour0,bg=colour2] #I #[fg=colour7,bg=colour19] #W "
+        setw -g window-status-format "#[fg=colour8,bg=colour20] #I #[fg=colour20,bg=colour19] #W "
       '';
     };
   };

@@ -17,7 +17,6 @@ in {
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
-      # catppuccin.enable = true;
       settings = {
         add_newline = false;
         format = ''

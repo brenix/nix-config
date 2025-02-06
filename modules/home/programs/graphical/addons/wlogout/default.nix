@@ -55,7 +55,7 @@ in {
           keybind = "r";
         }
       ];
-      style = builtins.readFile ./style.css;
+      # style = builtins.readFile ./style.css;
     };
 
     xdg.configFile."wlogout/icons" = {

@@ -20,7 +20,6 @@ in {
       enable = true;
       package = cfg.package;
       terminal = "${pkgs.foot}/bin/foot";
-      # catppuccin.enable = true;
       extraConfig = {
         modi = "run,drun,window";
         show-icons = true;

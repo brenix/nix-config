@@ -17,13 +17,13 @@ in {
   config = mkIf cfg.enable {
     gtk = {
       enable = true;
-      theme = {
-        package = pkgs.orchis-theme;
-        name = "Orchis-Dark-Compact";
+      # theme = {
+      #   package = pkgs.orchis-theme;
+      #   name = "Orchis-Dark-Compact";
 
-        # package = pkgs.nordic;
-        # name = "Nordic";
-      };
+      #   # package = pkgs.nordic;
+      #   # name = "Nordic";
+      # };
     };
   };
 }

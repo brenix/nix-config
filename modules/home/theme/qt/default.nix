@@ -4,7 +4,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
   inherit (lib.${namespace}) mkBoolOpt;
 
   cfg = config.${namespace}.theme.qt;
@@ -16,7 +16,8 @@ in {
   config = mkIf cfg.enable {
     qt = {
       enable = true;
-      # platformTheme.name = "gtk";
+      platformTheme.name = mkForce "kvantum";
+      style.name = "kvantum";
     };
   };
 }

@@ -23,9 +23,9 @@ in {
         [
           (google-fonts.override {fonts = ["Poppins" "Cousine"];})
           inter
-          nerd-fonts.jetbrains-mono
+          # nerd-fonts.jetbrains-mono
           nerd-fonts.iosevka
-          matrix.monaco
+          # matrix.monaco
           noto-fonts-emoji
           terminus_font
           matrix.berkeley-mono
@@ -37,7 +37,7 @@ in {
         defaultFonts = {
           serif = ["Inter"];
           sansSerif = ["Inter"];
-          monospace = ["Berkeley Mono" "Iosevka NFM" "Cousine" "JetBrainsMono Nerd Font"];
+          monospace = ["Berkeley Mono" "Iosevka NFM" "Cousine"];
           emoji = ["Noto Color Emoji"];
         };
         enable = true;
@@ -58,7 +58,8 @@ in {
     #   38=infinality
     #   40=new freetype
     environment.sessionVariables = {
-      FREETYPE_PROPERTIES = "truetype:interpreter-version=35 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:no-stem-darkening=0";
+      # FREETYPE_PROPERTIES = "truetype:interpreter-version=35 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:no-stem-darkening=0";
+      FREETYPE_PROPERTIES = "truetype:interpreter-version=40 autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:darkening-parameters=500,450,1000,325,1667,325,2333,0 cff:no-stem-darkening=0";
       # FREETYPE_PROPERTIES = "truetype:interpreter-version=40 autofitter:no-stem-darkening=0 cff:no-stem-darkening=0 type1:no-stem-darkening=0 t1cid:no-stem-darkening=0";
     };
 
