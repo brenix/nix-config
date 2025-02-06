@@ -27,6 +27,15 @@ in {
         size = "compact";
         tweaks = ["rimless"];
       };
+
+      tmux = {
+        extraConfig = ''
+          set -g @catppuccin_status_modules_right "application session user host date_time"
+          set -g status-right-length 100
+          set -g status-left-length 100
+          set -g status-left ""
+        '';
+      };
     };
 
     stylix = {
