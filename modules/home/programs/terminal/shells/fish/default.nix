@@ -132,36 +132,36 @@ in {
           bind -k nul 'zi && commandline --function repaint'
         ''
         +
-        # Use terminal colors
-        ''
-          set -U fish_color_autosuggestion      brblack
-          set -U fish_color_cancel              -r
-          set -U fish_color_command             brgreen
-          set -U fish_color_comment             brmagenta
-          set -U fish_color_cwd                 green
-          set -U fish_color_cwd_root            red
-          set -U fish_color_end                 brmagenta
-          set -U fish_color_error               brred
-          set -U fish_color_escape              brcyan
-          set -U fish_color_history_current     --bold
-          set -U fish_color_host                normal
-          set -U fish_color_match               --background=brblue
-          set -U fish_color_normal              normal
-          set -U fish_color_operator            cyan
-          set -U fish_color_param               brblue
-          set -U fish_color_quote               yellow
-          set -U fish_color_redirection         bryellow
-          set -U fish_color_search_match        'bryellow' '--background=brblack'
-          set -U fish_color_selection           'white' '--bold' '--background=brblack'
-          set -U fish_color_status              red
-          set -U fish_color_user                brgreen
-          set -U fish_color_valid_path          --underline
-          set -U fish_pager_color_completion    normal
-          set -U fish_pager_color_description   yellow
-          set -U fish_pager_color_prefix        'white' '--bold' '--underline'
-          set -U fish_pager_color_progress      'brwhite' '--background=cyan'
-        ''
-        +
+        # # Use terminal colors
+        # ''
+        #   set -gx fish_color_autosuggestion      brblack
+        #   set -gx fish_color_cancel              -r
+        #   set -gx fish_color_command             brgreen
+        #   set -gx fish_color_comment             brmagenta
+        #   set -gx fish_color_cwd                 green
+        #   set -gx fish_color_cwd_root            red
+        #   set -gx fish_color_end                 brmagenta
+        #   set -gx fish_color_error               brred
+        #   set -gx fish_color_escape              brcyan
+        #   set -gx fish_color_history_current     --bold
+        #   set -gx fish_color_host                normal
+        #   set -gx fish_color_match               --background=brblue
+        #   set -gx fish_color_normal              normal
+        #   set -gx fish_color_operator            cyan
+        #   set -gx fish_color_param               brblue
+        #   set -gx fish_color_quote               yellow
+        #   set -gx fish_color_redirection         bryellow
+        #   set -gx fish_color_search_match        'bryellow' '--background=brblack'
+        #   set -gx fish_color_selection           'white' '--bold' '--background=brblack'
+        #   set -gx fish_color_status              red
+        #   set -gx fish_color_user                brgreen
+        #   set -gx fish_color_valid_path          --underline
+        #   set -gx fish_pager_color_completion    normal
+        #   set -gx fish_pager_color_description   yellow
+        #   set -gx fish_pager_color_prefix        'white' '--bold' '--underline'
+        #   set -gx fish_pager_color_progress      'brwhite' '--background=cyan'
+        # ''
+        # +
         # Source private files
         ''
           for file in ~/.config/fish/conf.local.d/*.fish
