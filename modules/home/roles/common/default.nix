@@ -64,8 +64,8 @@ in {
         sizes = {
           desktop = 12;
           applications = 12;
-          terminal = 12;
-          popups = 12;
+          terminal = 13;
+          popups = 13;
         };
         sansSerif = {
           package = pkgs.inter;
@@ -73,8 +73,8 @@ in {
         };
         serif = config.stylix.fonts.sansSerif;
         monospace = {
-          package = pkgs.matrix.berkeley-mono;
-          name = "Berkeley Mono";
+          package = pkgs.terminus_font;
+          name = "Terminus";
         };
         emoji = {
           package = pkgs.noto-fonts-emoji;

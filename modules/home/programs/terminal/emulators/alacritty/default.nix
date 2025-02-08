@@ -55,6 +55,9 @@ in {
         font = {
           offset.y = -3;
           size = mkForce 12;
+          normal = {
+            family = config.stylix.fonts.monospace.name;
+          };
           bold = {
             family = config.stylix.fonts.monospace.name;
             style = "Regular";

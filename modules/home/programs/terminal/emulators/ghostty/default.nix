@@ -17,7 +17,8 @@ in {
     programs.ghostty = {
       enable = true;
       settings = {
-        font-family = config.stylix.fonts.monospace.name;
+        # font-family = config.stylix.fonts.monospace.name;
+        font-family = "Berkeley Mono";
         command = "fish";
         gtk-titlebar = "false";
         font-size = 14;
@@ -32,6 +33,7 @@ in {
         adjust-cell-height = "-15%";
         freetype-load-flags = "no-autohint,no-force-autohint";
         term = "xterm-256color";
+        app-notifications = false;
       };
     };
   };

@@ -13,6 +13,8 @@
       terminal = {
         tools = {
           go.enable = true;
+          mpd.enable = true;
+          ncmpcpp.enable = true;
         };
       };
 
