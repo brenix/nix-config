@@ -13,7 +13,6 @@
       terminal = {
         tools = {
           go.enable = true;
-          mpd.enable = true;
           ncmpcpp.enable = true;
         };
       };
@@ -33,10 +32,10 @@
       };
     };
 
-    # services.mpd = {
-    #   enable = true;
-    #   musicDirectory = "/home/brenix/.local/share/mpd/music";
-    # };
+    services.mpd = {
+      enable = true;
+      musicDirectory = "/home/brenix/.local/share/mpd/music";
+    };
   };
 
   home.packages = with pkgs; [

@@ -59,6 +59,31 @@ in {
            mixer_type	          "software"
            format		            "44100:16:2"
           }
+
+          playlist_plugin {
+            name "m3u"
+            enabled "true"
+          }
+          playlist_plugin {
+            name "pls"
+            enabled "true"
+          }
+          playlist_plugin {
+            name "asx"
+            enabled "false"
+          }
+          playlist_plugin {
+            name "cue"
+            enabled "false"
+          }
+          playlist_plugin {
+            name "embcue"
+            enabled "false"
+          }
+          playlist_plugin {
+            name "xspf"
+            enabled "false"
+          }
         '';
       };
 
@@ -74,20 +99,6 @@ in {
         mpd = {
           # inherit (config.services.mpd) musicDirectory;
           musicDirectory = null;
-        };
-      };
-
-      # discord rich presence for mpd
-      mpd-discord-rpc = {
-        enable = false;
-
-        settings = {
-          format = {
-            details = "$title";
-            state = "On $album by $artist";
-            large_text = "$album";
-            small_image = "";
-          };
         };
       };
     };
