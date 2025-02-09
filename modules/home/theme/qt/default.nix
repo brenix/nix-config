@@ -17,7 +17,10 @@ in {
     qt = {
       enable = true;
       platformTheme.name = mkForce "kvantum";
-      style.name = "kvantum";
+      style.name =
+        if config.catppuccin.enable
+        then "kvantum"
+        else null;
     };
   };
 }

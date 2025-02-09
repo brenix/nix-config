@@ -165,7 +165,7 @@ in {
       };
 
       settings = {
-        # theme = "stylix";
+        theme = "stylix";
         editor = {
           auto-pairs = false;
           bufferline = "always";

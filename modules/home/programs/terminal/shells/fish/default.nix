@@ -44,8 +44,9 @@ in {
         gsh = "git show --format=raw -m";
         gst = "git status";
         kubectl = "kubecolor";
-        la = "ls -Al";
-        l = "ls -l";
+        la = "ls -Al --color=none";
+        l = "ls -l --color=none";
+        ls = "ls --color=none";
         mkdir = "mkdir -p";
         mv = "mv -iv";
         rm = "rm -I";
@@ -132,36 +133,36 @@ in {
           bind -k nul 'zi && commandline --function repaint'
         ''
         +
-        # # Use terminal colors
-        # ''
-        #   set -gx fish_color_autosuggestion      brblack
-        #   set -gx fish_color_cancel              -r
-        #   set -gx fish_color_command             brgreen
-        #   set -gx fish_color_comment             brmagenta
-        #   set -gx fish_color_cwd                 green
-        #   set -gx fish_color_cwd_root            red
-        #   set -gx fish_color_end                 brmagenta
-        #   set -gx fish_color_error               brred
-        #   set -gx fish_color_escape              brcyan
-        #   set -gx fish_color_history_current     --bold
-        #   set -gx fish_color_host                normal
-        #   set -gx fish_color_match               --background=brblue
-        #   set -gx fish_color_normal              normal
-        #   set -gx fish_color_operator            cyan
-        #   set -gx fish_color_param               brblue
-        #   set -gx fish_color_quote               yellow
-        #   set -gx fish_color_redirection         bryellow
-        #   set -gx fish_color_search_match        'bryellow' '--background=brblack'
-        #   set -gx fish_color_selection           'white' '--bold' '--background=brblack'
-        #   set -gx fish_color_status              red
-        #   set -gx fish_color_user                brgreen
-        #   set -gx fish_color_valid_path          --underline
-        #   set -gx fish_pager_color_completion    normal
-        #   set -gx fish_pager_color_description   yellow
-        #   set -gx fish_pager_color_prefix        'white' '--bold' '--underline'
-        #   set -gx fish_pager_color_progress      'brwhite' '--background=cyan'
-        # ''
-        # +
+        # Use terminal colors
+        ''
+          set -gx fish_color_autosuggestion      brblack
+          set -gx fish_color_cancel              -r
+          set -gx fish_color_command             brgreen
+          set -gx fish_color_comment             brmagenta
+          set -gx fish_color_cwd                 green
+          set -gx fish_color_cwd_root            red
+          set -gx fish_color_end                 brmagenta
+          set -gx fish_color_error               brred
+          set -gx fish_color_escape              brcyan
+          set -gx fish_color_history_current     --bold
+          set -gx fish_color_host                normal
+          set -gx fish_color_match               --background=brblue
+          set -gx fish_color_normal              normal
+          set -gx fish_color_operator            cyan
+          set -gx fish_color_param               brblue
+          set -gx fish_color_quote               yellow
+          set -gx fish_color_redirection         bryellow
+          set -gx fish_color_search_match        'bryellow' '--background=brblack'
+          set -gx fish_color_selection           'white' '--bold' '--background=brblack'
+          set -gx fish_color_status              red
+          set -gx fish_color_user                brgreen
+          set -gx fish_color_valid_path          --underline
+          set -gx fish_pager_color_completion    normal
+          set -gx fish_pager_color_description   yellow
+          set -gx fish_pager_color_prefix        'white' '--bold' '--underline'
+          set -gx fish_pager_color_progress      'brwhite' '--background=cyan'
+        ''
+        +
         # Source private files
         ''
           for file in ~/.config/fish/conf.local.d/*.fish

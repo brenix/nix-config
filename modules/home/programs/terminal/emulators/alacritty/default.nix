@@ -57,7 +57,7 @@ in {
           size = mkForce 12;
           normal = {
             # family = config.stylix.fonts.monospace.name;
-            family = "Terminus";
+            family = mkForce "Terminus";
           };
           bold = {
             # family = config.stylix.fonts.monospace.name;

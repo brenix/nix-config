@@ -18,7 +18,7 @@ in {
     home.enableNixpkgsReleaseCheck = false;
 
     catppuccin = {
-      enable = true;
+      enable = false;
       flavor = "frappe";
       accent = "blue";
 
@@ -40,15 +40,15 @@ in {
 
     stylix = {
       enable = true;
-      autoEnable = false;
+      # autoEnable = false;
       polarity = "dark";
-      # base16Scheme = import ./themes/mashup.nix;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+      base16Scheme = import ./themes/oldschool.nix;
+      # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
       # override = {
       #   base00 = "252933";
       #   base04 = "C0C5CF";
       # };
-      image = "${pkgs.${namespace}.wallpapers.wanderer}";
+      image = "${pkgs.${namespace}.wallpapers.skyscraper}";
       targets = {
         gtk.enable = false;
         helix.enable = false;
@@ -93,7 +93,7 @@ in {
             atuin.enable = false;
             bat.enable = true;
             common.enable = true;
-            dircolors.enable = true;
+            dircolors.enable = false;
             direnv.enable = true;
             fzf.enable = true;
             git.enable = true;
