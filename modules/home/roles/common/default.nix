@@ -73,8 +73,8 @@ in {
         };
         serif = config.stylix.fonts.sansSerif;
         monospace = {
-          package = pkgs.terminus_font;
-          name = "Terminus";
+          package = pkgs.matrix.berkeley-mono;
+          name = "Berkeley Mono";
         };
         emoji = {
           package = pkgs.noto-fonts-emoji;

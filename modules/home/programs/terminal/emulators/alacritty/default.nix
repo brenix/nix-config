@@ -56,10 +56,12 @@ in {
           offset.y = -3;
           size = mkForce 12;
           normal = {
-            family = config.stylix.fonts.monospace.name;
+            # family = config.stylix.fonts.monospace.name;
+            family = "Terminus";
           };
           bold = {
-            family = config.stylix.fonts.monospace.name;
+            # family = config.stylix.fonts.monospace.name;
+            family = "Terminus";
             style = "Regular";
           };
         };
