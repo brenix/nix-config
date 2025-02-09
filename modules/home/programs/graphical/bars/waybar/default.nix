@@ -28,7 +28,7 @@ in {
             "hyprland/workspaces"
           ];
           modules-center = [
-            "custom/nowplaying"
+            "custom/mpd"
           ];
           modules-right = [
             "pulseaudio"
@@ -60,8 +60,8 @@ in {
             };
             on-click = "activate";
           };
-          "custom/nowplaying" = {
-            exec-if = "playerctl status";
+          "custom/spotify" = {
+            exec-if = "playerctl -p spotify status";
             exec = ''playerctl metadata --format '{"text": "{{artist}} - {{title}}", "alt": "{{status}}", "tooltip": "{{title}} ({{artist}} - {{album}})"}' '';
             return-type = "json";
             interval = 1;
@@ -73,6 +73,21 @@ in {
               "Stopped" = "";
             };
             on-click = "playerctl play-pause";
+          };
+          "custom/mpd" = {
+            exec-if = ''mpc status "%state%"'';
+            exec = ''mpc current --format '{"text": "%title%", "tooltip": "%name%"}' '';
+            return-type = "json";
+            interval = 1;
+            max-length = 100;
+            format = "{icon} {}";
+            format-icons = {
+              "Playing" = "";
+              "Paused" = "";
+              "Stopped" = "";
+            };
+            on-click = "mpc toggle";
+            escape = true;
           };
           clock = {
             format = "󰃰 {:%Y-%m-%d %I:%M %p}";
