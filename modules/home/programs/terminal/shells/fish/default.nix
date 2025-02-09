@@ -44,9 +44,8 @@ in {
         gsh = "git show --format=raw -m";
         gst = "git status";
         kubectl = "kubecolor";
-        la = "ls -Al --color=none";
-        l = "ls -l --color=none";
-        ls = "ls --color=none";
+        la = "ls -Al";
+        l = "ls -l";
         mkdir = "mkdir -p";
         mv = "mv -iv";
         rm = "rm -I";

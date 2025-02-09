@@ -118,16 +118,16 @@ in {
         )\""
 
         # Statusbar
-        # set -g status "on"
-        # set -g status-bg colour18
-        # set -g status-fg colour7
-        # set -g status-justify "left"
-        # set -g status-left-length "100"
-        # set -g status-left ""
-        # set -g status-right-length "100"
-        # set -g status-right "  #S"
-        # setw -g window-status-current-format "#[fg=colour0,bg=colour2] #I #[fg=colour7,bg=colour19] #W "
-        # setw -g window-status-format "#[fg=colour8,bg=colour20] #I #[fg=colour20,bg=colour19] #W "
+        set -g status "on"
+        set -g status-bg colour18
+        set -g status-fg colour7
+        set -g status-justify "left"
+        set -g status-left-length "100"
+        set -g status-left ""
+        set -g status-right-length "100"
+        set -g status-right "  #S"
+        setw -g window-status-current-format "#[fg=colour0,bg=colour2] #I #[fg=colour7,bg=colour19] #W "
+        setw -g window-status-format "#[fg=colour8,bg=colour20] #I #[fg=colour20,bg=colour19] #W "
       '';
     };
   };
