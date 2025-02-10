@@ -11,6 +11,9 @@
 in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.windowRules = let
+      all = {
+        class = [".*"];
+      };
       pavucontrol = {
         class = ["org.pulseaudio.pavucontrol"];
       };
@@ -19,6 +22,7 @@ in {
       };
     in
       lib.concatLists [
+        (map (rule ["float"]) [all])
         (map (rule ["float"]) [pavucontrol])
         (map (rule ["float"]) [zoom])
       ];

@@ -19,9 +19,9 @@ in {
       enable = true;
       settings = {
         main = {
-          font = mkForce "Terminus:pixelsize=12";
-          font-bold = mkForce "Terminus:pixelsize=12";
-          line-height = "11px";
+          font = mkForce "Terminus:pixelsize=14";
+          font-bold = mkForce "Terminus:pixelsize=14";
+          line-height = "13px";
           # letter-spacing = -0.1;
           # vertical-letter-offset = "-4px";
           selection-target = "primary";
