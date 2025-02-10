@@ -23,7 +23,7 @@ in {
       accent = "blue";
 
       gtk = {
-        enable = true;
+        enable = false;
         size = "compact";
         tweaks = ["rimless"];
       };

@@ -19,11 +19,11 @@ in {
       enable = true;
       settings = {
         main = {
-          font = with config.stylix.fonts; mkForce "${monospace.name}:pixelsize=18";
-          font-bold = with config.stylix.fonts; "${monospace.name}:pixelsize=18";
-          line-height = "20px";
+          font = mkForce "Terminus:pixelsize=12";
+          font-bold = mkForce "Terminus:pixelsize=12";
+          line-height = "11px";
           # letter-spacing = -0.1;
-          vertical-letter-offset = "-1px";
+          # vertical-letter-offset = "-4px";
           selection-target = "primary";
           shell = "${pkgs.fish}/bin/fish";
           term = "xterm-256color";

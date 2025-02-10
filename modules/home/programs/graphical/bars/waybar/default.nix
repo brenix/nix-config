@@ -297,11 +297,11 @@ in {
           color: @white;
         }
 
-        #custom-player{
+        #spotify{
           color: @white;
         }
 
-        #custom-currentplayer{
+        #mpd{
           color: @white;
         }
 

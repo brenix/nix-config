@@ -17,13 +17,29 @@ in {
   config = mkIf cfg.enable {
     gtk = {
       enable = true;
-      # theme = {
-      #   package = pkgs.orchis-theme;
-      #   name = "Orchis-Dark-Compact";
+      theme = {
+        # package = pkgs.orchis-theme;
+        # name = "Orchis-Dark-Compact";
 
-      #   # package = pkgs.nordic;
-      #   # name = "Nordic";
-      # };
+        package = pkgs.colloid-gtk-theme.override {
+          colorVariants = ["dark"];
+          themeVariants = ["grey"];
+          sizeVariants = ["compact"];
+          tweaks = [
+            "rimless"
+            "black"
+          ];
+        };
+        name = "Colloid-Grey-Dark-Compact";
+
+        # package = pkgs.nordic;
+        # name = "Nordic";
+      };
+
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme.override {color = "black";};
+      };
 
       gtk2 = {
         configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
