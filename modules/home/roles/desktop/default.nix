@@ -26,10 +26,10 @@ in {
         };
 
         terminal = {
-          emulators.alacritty.enable = true;
+          emulators.alacritty.enable = false;
           emulators.foot.enable = true;
           emulators.ghostty.enable = false;
-          tools.spotify-player.enable = true;
+          tools.spotify-player.enable = false;
         };
       };
 
