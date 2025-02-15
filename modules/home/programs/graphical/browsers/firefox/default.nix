@@ -60,9 +60,9 @@ in {
           "media.memory_cache_max_size" = 65536;
           "network.buffer.cache.count" = 128;
           "network.buffer.cache.size" = 262144;
-          "network.dnsCacheEntries" = 20000;
           "network.dns.disableIPv6" = true;
           "network.dns.max_high_priority_threads" = 16;
+          "network.dnsCacheEntries" = 20000;
           "network.http.http3.enabled" = true;
           "network.http.max-connections" = 256;
           "network.http.max-persistent-connections-per-server" = 12;
@@ -73,9 +73,14 @@ in {
           "network.tcp.tcp_fastopen_enable" = true;
           "nglayout.initialpaint.delay" = 0;
           "nglayout.initialpaint.delay_in_oopif" = 0;
+          "sidebar.ansibmation.enabled" = false;
+          "sidebar.main.tools" = null;
+          "sidebar.revamp" = true;
+          "sidebar.verticalTabs" = true;
+          "sidebar.visibility" = "always-show";
           "svc.context-properties.content.enabled" = true;
-          "widget.non-native-theme.use-theme-accent" = true;
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "widget.non-native-theme.use-theme-accent" = true;
         };
       };
     };
