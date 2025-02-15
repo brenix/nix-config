@@ -26,9 +26,12 @@ in {
           summary-color = "${base05}ff";
           body-color = "${base05}ff";
 
-          title-font = "Terminus:size=${builtins.toString sizes.popups}";
-          summary-font = "Terminus:size=${builtins.toString sizes.popups}";
-          body-font = "Terminus:size=${builtins.toString sizes.popups}";
+          # title-font = "Terminus:size=${builtins.toString sizes.popups}";
+          # summary-font = "Terminus:size=${builtins.toString sizes.popups}";
+          # body-font = "Terminus:size=${builtins.toString sizes.popups}";
+          title-font = "Terminus:size=12";
+          summary-font = "Terminus:size=12";
+          body-font = "Terminus:size=12";
 
           padding-vertical = 5;
           padding-horizontal = 5;

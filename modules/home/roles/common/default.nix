@@ -48,7 +48,7 @@ in {
       #   base00 = "252933";
       #   base04 = "C0C5CF";
       # };
-      image = "${pkgs.${namespace}.wallpapers.night}";
+      image = "${pkgs.${namespace}.wallpapers.blacksquares}";
       targets = {
         gtk.enable = false;
         helix.enable = false;

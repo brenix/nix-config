@@ -73,9 +73,16 @@ in {
           "network.tcp.tcp_fastopen_enable" = true;
           "nglayout.initialpaint.delay" = 0;
           "nglayout.initialpaint.delay_in_oopif" = 0;
+          "svc.context-properties.content.enabled" = true;
+          "widget.non-native-theme.use-theme-accent" = true;
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
       };
+    };
+
+    home.file.".mozilla/firefox/default/chrome" = {
+      source = ./chrome;
+      recursive = true;
     };
   };
 }

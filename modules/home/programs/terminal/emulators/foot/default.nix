@@ -29,9 +29,9 @@ in {
           term = "xterm-256color";
         };
 
-        colors = {
-          alpha = mkForce 0.8;
-        };
+        # colors = {
+        #   alpha = mkForce 0.8;
+        # };
 
         cursor = {
           style = "underline";
