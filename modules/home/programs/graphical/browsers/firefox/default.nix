@@ -54,7 +54,7 @@ in {
           "identity.fxaccounts.enabled" = true;
           "image.mem.decode_bytes_at_a_time" = 32768;
           "layers.acceleration.force-enabled" = true;
-          "layout.css.prefers-color-scheme.content-override" = 1;
+          "layout.css.prefers-color-scheme.content-override" = 2;
           "media.cache_readahead_limit" = 7200;
           "media.cache_resume_threshold" = 3600;
           "media.memory_cache_max_size" = 65536;

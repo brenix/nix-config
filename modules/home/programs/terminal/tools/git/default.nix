@@ -51,6 +51,9 @@ in {
         cleanbr = "! git branch --merged | egrep -v \"(^\\*|master|main|develop)\" | xargs git branch -D 2>/dev/null || true";
         cleanbrall = "! git branch | egrep -v \"(^\\*|master|main|develop)\" | xargs git branch -D 2>/dev/null || true";
       };
+      signing = {
+        format = "ssh";
+      };
       extraConfig =
         {
           apply = {whitespace = "strip";};
@@ -59,7 +62,6 @@ in {
             defaultBranch = "main";
           };
 
-          gpg.format = "ssh";
           gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
           commit.gpgsign = true;
           user.signingkey = "~/.ssh/id_ed25519.pub";
