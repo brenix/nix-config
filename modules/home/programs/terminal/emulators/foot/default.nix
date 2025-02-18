@@ -21,7 +21,7 @@ in {
         main = {
           font = mkForce "Terminus:pixelsize=14";
           font-bold = mkForce "Terminus:pixelsize=14";
-          line-height = "13px";
+          line-height = "14px";
           # letter-spacing = -0.1;
           # vertical-letter-offset = "-4px";
           selection-target = "primary";
