@@ -18,17 +18,20 @@ in {
     home.enableNixpkgsReleaseCheck = false;
 
     catppuccin = {
-      enable = false;
-      flavor = "frappe";
+      enable = true;
+      flavor = "mocha";
       accent = "blue";
 
+      k9s.transparent = true;
+
       gtk = {
-        enable = false;
+        enable = true;
         size = "compact";
         tweaks = ["rimless"];
       };
 
       tmux = {
+        enable = false;
         extraConfig = ''
           set -g @catppuccin_status_modules_right "application session user host date_time"
           set -g status-right-length 100
@@ -40,15 +43,15 @@ in {
 
     stylix = {
       enable = true;
-      # autoEnable = false;
+      autoEnable = false;
       polarity = "dark";
-      base16Scheme = import ./themes/oldschool.nix;
-      # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+      # base16Scheme = import ./themes/oldschool.nix;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       # override = {
       #   base00 = "252933";
       #   base04 = "C0C5CF";
       # };
-      image = "${pkgs.${namespace}.wallpapers.blacksquares}";
+      image = "${pkgs.${namespace}.wallpapers.purpled-night}";
       targets = {
         gtk.enable = false;
         helix.enable = false;
