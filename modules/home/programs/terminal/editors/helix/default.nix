@@ -165,7 +165,7 @@ in {
       };
 
       settings = {
-        # theme = "catppuccin_mocha";
+        theme = "stylix";
         editor = {
           auto-pairs = false;
           bufferline = "always";

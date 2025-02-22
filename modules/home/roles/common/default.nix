@@ -18,14 +18,14 @@ in {
     home.enableNixpkgsReleaseCheck = false;
 
     catppuccin = {
-      enable = true;
+      enable = false;
       flavor = "mocha";
       accent = "blue";
 
       k9s.transparent = true;
 
       gtk = {
-        enable = true;
+        enable = false;
         size = "compact";
         tweaks = ["rimless"];
       };
@@ -43,15 +43,15 @@ in {
 
     stylix = {
       enable = true;
-      autoEnable = false;
+      autoEnable = true;
       polarity = "dark";
-      # base16Scheme = import ./themes/oldschool.nix;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+      base16Scheme = import ./themes/oldschool.nix;
+      # base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
       # override = {
       #   base00 = "252933";
       #   base04 = "C0C5CF";
       # };
-      image = "${pkgs.${namespace}.wallpapers.purpled-night}";
+      image = "${pkgs.${namespace}.wallpapers.blacksquares}";
       targets = {
         gtk.enable = false;
         helix.enable = false;

@@ -506,11 +506,11 @@
 @-moz-document url("about:home"), url("about:newtab"), url("about:welcome"), url("about:privatebrowsing") {
 	body {
 		/* background: url("neptune/image/RainbowLight.png") center/cover no-repeat fixed !important; */
-		background: #1e1e2e !important;
+		background: #222 !important;
 
 		@media (prefers-color-scheme: dark) {
 			/* background: url("neptune/image/RainbowDark.png") center/cover no-repeat fixed !important; */
-			background: #1e1e2e !important;
+			background: #222 !important;
 		}
 	}
 

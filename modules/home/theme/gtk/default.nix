@@ -18,28 +18,28 @@ in {
     gtk = {
       enable = true;
       theme = {
-        # package = pkgs.orchis-theme;
-        # name = "Orchis-Dark-Compact";
-
-        # package = pkgs.colloid-gtk-theme.override {
-        #   colorVariants = ["dark"];
-        #   themeVariants = ["grey"];
-        #   sizeVariants = ["compact"];
-        #   tweaks = [
-        #     "rimless"
-        #     "black"
-        #   ];
-        # };
-        # name = "Colloid-Grey-Dark-Compact";
+        package = pkgs.colloid-gtk-theme.override {
+          colorVariants = ["dark"];
+          themeVariants = ["default"];
+          sizeVariants = ["compact"];
+          tweaks = [
+            "rimless"
+            "black"
+          ];
+        };
+        name = "Colloid-Grey-Dark-Compact";
 
         # package = pkgs.nordic;
         # name = "Nordic";
       };
 
-      # iconTheme = {
-      #   name = "Papirus-Dark";
-      #   package = pkgs.papirus-icon-theme.override {color = "black";};
-      # };
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme.override {color = "black";};
+
+        # name = "Nordzy";
+        # package = pkgs.nordzy-icon-theme;
+      };
 
       gtk2 = {
         configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
