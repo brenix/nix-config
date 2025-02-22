@@ -28,6 +28,7 @@ in {
           # matrix.monaco
           noto-fonts-emoji
           terminus_font
+          gohufont
           matrix.berkeley-mono
         ]
         ++ cfg.fonts;

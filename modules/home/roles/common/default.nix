@@ -67,8 +67,8 @@ in {
         sizes = {
           desktop = 12;
           applications = 12;
-          terminal = 13;
-          popups = 13;
+          terminal = 12;
+          popups = 12;
         };
         sansSerif = {
           package = pkgs.inter;

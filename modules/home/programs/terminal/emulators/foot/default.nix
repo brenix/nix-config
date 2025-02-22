@@ -19,8 +19,8 @@ in {
       enable = true;
       settings = {
         main = {
-          font = mkForce "Terminus:pixelsize=14";
-          font-bold = mkForce "Terminus:pixelsize=14";
+          font = mkForce "Gohufont:pixelsize=14";
+          font-bold = mkForce "Gohufont:pixelsize=14";
           line-height = "14px";
           # letter-spacing = -0.1;
           # vertical-letter-offset = "-4px";
