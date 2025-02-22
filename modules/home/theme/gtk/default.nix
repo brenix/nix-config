@@ -27,7 +27,7 @@ in {
             "black"
           ];
         };
-        name = "Colloid-Grey-Dark-Compact";
+        name = "Colloid-Dark-Compact";
 
         # package = pkgs.nordic;
         # name = "Nordic";
