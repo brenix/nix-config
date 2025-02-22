@@ -26,7 +26,7 @@ in {
       enable = true;
       profiles.default = {
         name = "Default";
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           decentraleyes
           istilldontcareaboutcookies
           linkding-extension
