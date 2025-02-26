@@ -19,14 +19,9 @@
 
       graphical = {
         apps = {
-          discord.enable = true;
+          discord.enable = false;
           spotify.enable = true;
         };
-
-        # editors.vscode = {
-        #   enable = true;
-        #   declarativeConfig = false;
-        # };
 
         wms.hyprland.enable = true;
       };

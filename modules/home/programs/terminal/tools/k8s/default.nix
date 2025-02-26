@@ -171,9 +171,8 @@ in {
       #   ];
       # })
       cilium-cli
+      doppler
       kubernetes-helm
-      kcl
-      # docker-machine-kvm2
       fluxcd
       # helm-docs
       # helmfile
@@ -186,14 +185,11 @@ in {
       kubectl-neat
       kubectl-view-secret
       kubelogin
-      # kubelogin-oidc
       kubevirt
       kustomize
-      # minikube
       stern
       talosctl
       timoni
-      # trivy
     ];
   };
 }
