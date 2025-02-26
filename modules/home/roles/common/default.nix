@@ -100,7 +100,7 @@ in {
             direnv.enable = true;
             fzf.enable = true;
             git.enable = true;
-            htop.enable = true;
+            htop.enable = false;
             k8s.enable = true;
             nix-index.enable = true;
             ssh.enable = true;

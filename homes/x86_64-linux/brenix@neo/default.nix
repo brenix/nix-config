@@ -13,6 +13,7 @@
       terminal = {
         tools = {
           go.enable = true;
+          python.enable = true;
         };
       };
 
