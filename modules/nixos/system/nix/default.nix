@@ -2,15 +2,17 @@
   config,
   lib,
   namespace,
+  pkgs,
   ...
 }: let
-  inherit (lib) mkIf;
-  inherit (lib.${namespace}) mkBoolOpt;
+  inherit (lib) mkIf types;
+  inherit (lib.${namespace}) mkBoolOpt mkOpt;
 
   cfg = config.${namespace}.system.nix;
 in {
   options.${namespace}.system.nix = {
     enable = mkBoolOpt false "Whether or not to manage nix configuration";
+    package = mkOpt types.package pkgs.lix "Which nix package to use";
   };
 
   config = mkIf cfg.enable {
@@ -27,6 +29,7 @@ in {
     };
 
     nix = {
+      package = cfg.package;
       settings = {
         trusted-users = ["root" "@wheel"];
         auto-optimise-store = lib.mkDefault true;

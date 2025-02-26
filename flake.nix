@@ -5,6 +5,12 @@
     # Base packages
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # Lix
+    lix = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Hardware support
     hardware.url = "github:nixos/nixos-hardware";
 
@@ -111,8 +117,6 @@
         disko.nixosModules.disko
         impermanence.nixosModules.impermanence
         sops-nix.nixosModules.sops
-        # catppuccin.nixosModules.catppuccin
-        # stylix.nixosModules.stylix
         chaotic.nixosModules.default
         {
           # manually import overlay
@@ -147,6 +151,7 @@
 
       overlays = with inputs; [
         # nixgl.overlay
+        lix.overlays.default
         chaotic.overlays.default
         nur.overlays.default
         talhelper.overlays.default
