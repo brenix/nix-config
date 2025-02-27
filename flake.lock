@@ -1598,6 +1598,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_14": {
+      "locked": {
+        "lastModified": 1728492678,
+        "narHash": "sha256-9UTxR8eukdg+XZeHgxW5hQA9fIKHsKCdOIUycTryeVw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5633bcff0c6162b9e4b5f1264264611e950c8ec7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1740367490,
@@ -1769,6 +1785,21 @@
         "type": "github"
       }
     },
+    "nur_3": {
+      "locked": {
+        "lastModified": 1729125404,
+        "narHash": "sha256-2ZtXYNBPi9Ejeb2Heqh+yFTBcstapvtna8Vyl/ugb7w=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "7aafd5f0d772efbd2e611c132cc290c3508fe049",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -1815,7 +1846,8 @@
         "snowfall-lib": "snowfall-lib",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
-        "talhelper": "talhelper"
+        "talhelper": "talhelper",
+        "textfox": "textfox"
       }
     },
     "rust-analyzer-src": {
@@ -2061,6 +2093,25 @@
       "original": {
         "owner": "budimanjojo",
         "repo": "talhelper",
+        "type": "github"
+      }
+    },
+    "textfox": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_14",
+        "nur": "nur_3"
+      },
+      "locked": {
+        "lastModified": 1739260881,
+        "narHash": "sha256-/g0f7j7qFUtO9tX7qMwVjIvb7LxRUjnm2c9wNU/kprQ=",
+        "owner": "adriankarlen",
+        "repo": "textfox",
+        "rev": "e0d002eea7a5a3791bbf3f4b64c9197a531a4f96",
+        "type": "github"
+      },
+      "original": {
+        "owner": "adriankarlen",
+        "repo": "textfox",
         "type": "github"
       }
     },

@@ -7,6 +7,7 @@
 }: let
   inherit (lib) mkIf;
   inherit (lib.${namespace}) mkBoolOpt;
+  inherit (config.lib.stylix) colors;
 
   cfg = config.${namespace}.programs.graphical.browsers.firefox;
 in {
@@ -20,6 +21,36 @@ in {
       "text/xml" = ["firefox.desktop"];
       "x-scheme-handler/http" = ["firefox.desktop"];
       "x-scheme-handler/https" = ["firefox.desktop"];
+    };
+
+    textfox = with colors; {
+      enable = true;
+      profile = "default";
+      config = {
+        background.color = "#${base00}";
+        border = {
+          color = "#${base06}";
+          width = "1px";
+          radius = "0px";
+        };
+        displayWindowControls = false;
+        displayNavButtons = true;
+        displayTitles = false;
+        newtabLogo =
+          # text
+          ''
+              __ _           __
+             / _(_)_ __ ___ / _| _____  __
+            | |_| | '__/ _ \ |_ / _ \ \/ /
+            |  _| | | |  __/  _| (_) >  <
+            |_| |_|_|  \___|_|  \___/_/\_\
+
+          '';
+        font = {
+          family = config.stylix.fonts.monospace.name;
+          accent = "#${base06}";
+        };
+      };
     };
 
     programs.firefox = {
@@ -83,11 +114,6 @@ in {
           "widget.non-native-theme.use-theme-accent" = true;
         };
       };
-    };
-
-    home.file.".mozilla/firefox/default/chrome" = {
-      source = ./chrome;
-      recursive = true;
     };
   };
 }

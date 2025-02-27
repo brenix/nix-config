@@ -35,6 +35,9 @@
     # Bleeding edge packages (linux-cachyos)
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    # textfox
+    textfox.url = "github:adriankarlen/textfox";
+
     # Impermanence
     impermanence.url = "github:nix-community/impermanence";
 
@@ -147,6 +150,7 @@
         catppuccin.homeManagerModules.catppuccin
         stylix.homeManagerModules.stylix
         labwc-manager.homeManagerModule
+        textfox.homeManagerModules.default
       ];
 
       overlays = with inputs; [
