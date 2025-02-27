@@ -24,7 +24,7 @@ in {
     };
 
     textfox = with colors; {
-      enable = true;
+      enable = false;
       profile = "default";
       config = {
         background.color = "#${base00}";
@@ -47,7 +47,9 @@ in {
 
           '';
         font = {
-          family = config.stylix.fonts.monospace.name;
+          # family = config.stylix.fonts.monospace.name;
+          family = "Terminus";
+          size = "12px";
           accent = "#${base06}";
         };
       };
@@ -107,7 +109,7 @@ in {
           "sidebar.ansibmation.enabled" = false;
           "sidebar.main.tools" = null;
           "sidebar.revamp" = true;
-          "sidebar.verticalTabs" = true;
+          "sidebar.verticalTabs" = false;
           "sidebar.visibility" = "always-show";
           "svc.context-properties.content.enabled" = true;
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
