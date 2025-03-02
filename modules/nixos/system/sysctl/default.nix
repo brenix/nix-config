@@ -55,16 +55,39 @@ in {
           "net.ipv4.tcp_wmem" = "4096 65536 33554432";
           "net.ipv4.udp_rmem_min" = 8192;
           "net.ipv4.udp_wmem_min" = 8192;
-          "vm.dirty_background_bytes" = 134217728;
+          "vm.dirty_background_bytes" = 67108864;
           "vm.dirty_bytes" = 268435456;
           "vm.dirty_writeback_centisecs" = 1500;
           "vm.max_map_count" = 1048576;
           "vm.min_free_kbytes" = 524288;
           "vm.page-cluster" = 0;
           "vm.swappiness" = 100;
-          "vm.vfs_cache_pressure" = 10;
+          "vm.vfs_cache_pressure" = 50;
         };
       };
     };
+
+    systemd.tmpfiles.rules = [
+      # Clear all coredumps that were created more than 3 days ago
+      "d /var/lib/systemd/coredump 0755 root root 3d"
+
+      # Disable zswap
+      "w! /sys/module/zswap/parameters/enabled - - - - N"
+
+      # Increase the highest requested RTC interrupt frequency
+      "w! /sys/class/rtc/rtc0/max_user_freq - - - - 3072"
+      "w! /proc/sys/dev/hpet/max-user-freq  - - - - 3072"
+
+      # THP Shrinker has been added in the 6.12 Kernel
+      # Default Value is 511
+      # THP=always policy vastly overprovisions THPs in sparsely accessed memory areas, resulting in excessive memory pressure and premature OOM killing
+      # 409 means that any THP that has more than 409 out of 512 (80%) zero filled filled pages will be split.
+      # This reduces the memory usage, when THP=always used and the memory usage goes down to around the same usage as when madvise is used, while still providing an equal performance improvement
+      "w! /sys/kernel/mm/transparent_hugepage/khugepaged/max_ptes_none - - - - 409"
+
+      # Improve performance for applications that use tcmalloc
+      # https://github.com/google/tcmalloc/blob/master/docs/tuning.md#system-level-optimizations
+      "w! /sys/kernel/mm/transparent_hugepage/defrag - - - - defer+madvise"
+    ];
   };
 }
