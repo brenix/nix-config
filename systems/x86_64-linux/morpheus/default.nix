@@ -40,6 +40,10 @@
   networking.nameservers = ["192.168.1.1" "1.1.1.1"];
 
   boot = {
+    blacklistedKernelModules = [
+      # Blacklist the AMD Ryzen SP5100 TCO Watchdog/Timer module
+      "sp5100_tco"
+    ];
     kernelParams = [
       "resume_offset=533760"
     ];

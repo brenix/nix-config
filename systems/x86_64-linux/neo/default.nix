@@ -87,6 +87,10 @@
   ];
 
   boot = {
+    blacklistedKernelModules = [
+      # Blacklist the AMD Ryzen SP5100 TCO Watchdog/Timer module
+      "sp5100_tco"
+    ];
     kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       "preempt=voluntary"
