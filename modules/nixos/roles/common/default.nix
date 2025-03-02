@@ -53,6 +53,7 @@ in {
         locale.enable = true;
         nix.enable = true;
         sysctl.enable = true;
+        zram.enable = true;
       };
     };
 
