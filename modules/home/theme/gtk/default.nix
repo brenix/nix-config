@@ -34,11 +34,14 @@ in {
       };
 
       iconTheme = {
-        name = "Papirus-Dark";
-        package = pkgs.papirus-icon-theme.override {color = "black";};
+        # name = "Papirus-Dark";
+        # package = pkgs.papirus-icon-theme.override {color = "black";};
 
         # name = "Nordzy";
         # package = pkgs.nordzy-icon-theme;
+
+        name = "Colloid-Dark";
+        package = pkgs.colloid-icon-theme;
       };
 
       gtk2 = {
