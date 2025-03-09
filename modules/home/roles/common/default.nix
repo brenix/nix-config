@@ -53,6 +53,7 @@ in {
       # };
       image = "${pkgs.${namespace}.wallpapers.blacksquares}";
       targets = {
+        fnott.enable = false;
         gtk.enable = false;
         helix.enable = false;
         hyprland.enable = false;
