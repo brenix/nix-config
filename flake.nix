@@ -63,8 +63,8 @@
     nixos-anywhere.inputs.disko.follows = "disko";
 
     # Hyprland - Cursor
-    # hyprcursor.url = "github:hyprwm/Hyprcursor";
-    # hyprcursor.inputs.nixpkgs.follows = "nixpkgs";
+    hyprcursor.url = "github:hyprwm/Hyprcursor";
+    hyprcursor.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hyprland - Idle
     # hypridle.url = "github:hyprwm/Hypridle";

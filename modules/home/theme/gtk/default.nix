@@ -15,6 +15,13 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.pointerCursor = {
+      name = "macOS-White";
+      package = pkgs.apple-cursor;
+      size = 24;
+      gtk.enable = true;
+    };
+
     gtk = {
       enable = true;
       theme = {

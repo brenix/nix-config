@@ -55,6 +55,11 @@ in {
           blur.enabled = false;
         };
 
+        cursor = {
+          enable_hyprcursor = true;
+          sync_gsettings_theme = true;
+        };
+
         animations.enabled = false;
 
         misc = let
