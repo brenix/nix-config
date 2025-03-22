@@ -48,8 +48,9 @@ in {
       htop
       jq
       libqalculate
-      tcpdump
+      rush-parallel
       skim
+      tcpdump
       unrar
       unzip
       wireguard-tools
