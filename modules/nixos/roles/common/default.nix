@@ -61,7 +61,10 @@ in {
       # bpftune.enable = true;
       dbus.enable = true;
       dbus.implementation = "broker";
+      nscd.enable = false;
     };
+
+    system.nssModules = lib.mkForce [];
 
     security = {
       sudo.wheelNeedsPassword = false;

@@ -172,7 +172,12 @@
     <controller type='pci' index='9' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='9' port='0x10'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0' multifunction='on'/>
+    </controller>
+    <controller type='pci' index='10' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='10' port='0x11'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x1'/>
     </controller>
     <controller type='sata' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
@@ -181,7 +186,7 @@
       <source dev='/dev/input/by-id/usb-Beijing_Jingyunmake_Technology_Co.__Ltd._G-Wolves_HSK_Pro_Receiver-N_ADC2149E82440365-event-mouse'/>
     </input>
     <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__A02B2305W052H07682-if03-event-kbd' grab='all' repeat='on'/>
+      <source dev='/dev/input/by-id/usb-Wooting_Wooting_60HE__ARM__A02B2305W052H07682-if01-event-kbd' grab='all' repeat='on'/>
     </input>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
@@ -218,12 +223,12 @@
       <rom bar='off'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <vendor id='0x054c'/>
-        <product id='0x09cc'/>
+        <address domain='0x0000' bus='0x10' slot='0x00' function='0x3'/>
       </source>
-      <address type='usb' bus='0' port='1'/>
+      <rom bar='off'/>
+      <address type='pci' domain='0x0000' bus='0x0a' slot='0x00' function='0x0'/>
     </hostdev>
     <watchdog model='itco' action='reset'/>
     <memballoon model='none'/>
