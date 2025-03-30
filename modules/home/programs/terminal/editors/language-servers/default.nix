@@ -23,7 +23,7 @@ in {
       cue
       cuelsp
       deno
-      golangci-lint-langserver
+      # golangci-lint-langserver
       gopls
       helm-ls
       marksman

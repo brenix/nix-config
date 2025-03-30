@@ -36,6 +36,7 @@
   home.packages = with pkgs; [
     talosctl
     talhelper
+    podman-compose
   ];
 
   home.stateVersion = "23.11";
