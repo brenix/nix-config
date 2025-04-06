@@ -45,7 +45,9 @@
     # nixgl.url = "github:nix-community/nixGL";
 
     # Colorscheme management
-    stylix.url = "github:danth/stylix";
+    # TODO: re-enable upstream once hyprland stuff is fixed
+    # stylix.url = "github:danth/stylix";
+    stylix.url = "github:brenix/stylix/hyprland-removals";
 
     # Catppuccin colorscheme
     catppuccin.url = "github:catppuccin/nix";
