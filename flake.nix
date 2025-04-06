@@ -147,7 +147,7 @@
       ];
 
       homes.modules = with inputs; [
-        catppuccin.homeManagerModules.catppuccin
+        catppuccin.homeModules.catppuccin
         stylix.homeManagerModules.stylix
         labwc-manager.homeManagerModule
         textfox.homeManagerModules.default
