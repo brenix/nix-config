@@ -21,7 +21,7 @@
       access_log /var/log/nginx/access.log;
     '';
 
-    virtualHosts."nix-cache.lan" = {
+    virtualHosts."nix-cache.home.arpa" = {
       locations."/" = {
         root = "/var/public-nix-cache";
         extraConfig = ''

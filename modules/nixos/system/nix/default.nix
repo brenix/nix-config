@@ -47,7 +47,7 @@ in {
           "nixos-test"
         ];
         substituters = [
-          "http://nix-cache.lan"
+          "http://nix-cache.home.arpa"
           "https://nyx.chaotic.cx"
           # "https://hyprland.cachix.org"
           # "https://nix-community.cachix.org"
