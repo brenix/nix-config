@@ -205,6 +205,9 @@ in {
           };
           rulers = [80];
           scrolloff = 5;
+          search = {
+            smart-case = false;
+          };
           statusline = {
             left = [
               "mode"
